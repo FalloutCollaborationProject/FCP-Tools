@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
-	<!--__________ Filth __________-->
-
-	<!-- Ash -->
-
 	<ThingDef ParentName="BaseFilth">
-		<defName>FG_Filth_AshPile</defName>
-		<label>ash</label>
+		<defName>FG_Filth_Goop</defName>
+		<label>goop</label>
 		<statBases>
 			<Beauty>-12</Beauty>
 			<Cleanliness>-15</Cleanliness>
 		</statBases>
 		<graphicData>
 			<graphicClass>Graphic_Single</graphicClass>
-			<texPath>Filth/AshPile</texPath>
+			<texPath>Filth/Goop/Goop</texPath>
 			<drawSize>1</drawSize>
 			<onGroundRandomRotateAngle>0</onGroundRandomRotateAngle>
 		</graphicData>
@@ -23,5 +18,4 @@
 			<canFilthAttach>true</canFilthAttach>
 		</filth>
 	</ThingDef>
-
 </Defs>
