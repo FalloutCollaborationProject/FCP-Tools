@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!--__________ FCP Plasma Weapons __________-->
+
+    <!-- plasma Pistol -->
+
+    <ThingDef ParentName="BaseHumanMakeableGun">
+        <defName>FCP_Gun_Plasma_Pistol</defName>
+        <label>Plasma Pistol</label>
+        <description>A downscaled version of the plasma rifle. The plasma pistol has five tributary
+            energy arcs connected to a central cathode, and the cathode functions as a point of
+            focus, or the barrel. The energy is projected forward and forms a plasma pinch; though
+            rather slow, the pinch carries high levels of both thermal and kinetic energy,
+            inflicting massive damage.</description>
+        <techLevel>Spacer</techLevel>
+        <graphicData>
+            <texPath>Plasma/FCP_Plasma_Pistol</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <soundInteract>Interact_ChargeRifle</soundInteract>
+        <statBases>
+            <WorkToMake>50000</WorkToMake>
+            <Mass>3.6</Mass>
+            <AccuracyTouch>0.80</AccuracyTouch>
+            <AccuracyShort>0.75</AccuracyShort>
+            <AccuracyMedium>0.55</AccuracyMedium>
+            <AccuracyLong>0.45</AccuracyLong>
+            <RangedWeapon_Cooldown>1.4</RangedWeapon_Cooldown>
+        </statBases>
+        <recipeMaker>
+            <researchPrerequisite>ChargedShot</researchPrerequisite>
+            <skillRequirements>
+                <Crafting>7</Crafting>
+            </skillRequirements>
+            <recipeUsers Inherit="False">
+                <li>FabricationBench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Plasteel>25</Plasteel>
+            <ComponentSpacer>2</ComponentSpacer>
+        </costList>
+        <thingSetMakerTags>
+            <li>RewardStandardLowFreq</li>
+            <li>RewardStandardQualitySuper</li>
+        </thingSetMakerTags>
+        <weaponTags>
+            <li>SpacerGun</li>
+        </weaponTags>
+        <weaponClasses>
+            <li>RangedLight</li>
+        </weaponClasses>
+        <verbs>
+            <li>
+                <verbClass>Verb_Shoot</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <defaultProjectile>Bullet_Plasma</defaultProjectile>
+                <warmupTime>1.0</warmupTime>
+                <range>18.9</range>
+                <soundCast>Shot_Plasma</soundCast>
+                <soundCastTail>GunTail_Medium</soundCastTail>
+                <muzzleFlashScale>9</muzzleFlashScale>
+            </li>
+        </verbs>
+        <tools>
+            <li>
+                <label>stock</label>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>9</power>
+                <cooldownTime>2</cooldownTime>
+            </li>
+            <li>
+                <label>barrel</label>
+                <capacities>
+                    <li>Blunt</li>
+                    <li>Poke</li>
+                </capacities>
+                <power>9</power>
+                <cooldownTime>2</cooldownTime>
+            </li>
+        </tools>
+        <modExtensions>
+            <li Class="FalloutCore.DeathEffectModExtension">
+                <effectChance>0.15</effectChance>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!-- Plasma Defender -->
+
+    <ThingDef ParentName="BaseHumanMakeableGun">
+        <defName>FCP_Gun_Plasma_Defender</defName>
+        <label>Plasma Defender</label>
+        <description>An Austrian-made energy pistol, the plasma defender fires superheated bolts of
+            green plasma. Despite its small frame, its projectiles deal significant damage and are
+            able to penetrate most armors with ease. It does more damage, is more accurate and fires
+            faster compared to the standard plasma pistol. However, it’s an exceptionally rare and
+            expensive weapon usually reserved as a sidearm for high-ranking officers in high-tech
+            groups such as the Enclave.</description>
+        <techLevel>Spacer</techLevel>
+        <graphicData>
+            <texPath>Plasma/FCP_Plasma_Defender</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <soundInteract>Interact_ChargeRifle</soundInteract>
+        <statBases>
+            <WorkToMake>50000</WorkToMake>
+            <Mass>3.6</Mass>
+            <AccuracyTouch>0.85</AccuracyTouch>
+            <AccuracyShort>0.80</AccuracyShort>
+            <AccuracyMedium>0.60</AccuracyMedium>
+            <AccuracyLong>0.40</AccuracyLong>
+            <RangedWeapon_Cooldown>1.6</RangedWeapon_Cooldown>
+        </statBases>
+        <recipeMaker>
+            <researchPrerequisite>ChargedShot</researchPrerequisite>
+            <skillRequirements>
+                <Crafting>7</Crafting>
+            </skillRequirements>
+            <recipeUsers Inherit="False">
+                <li>FabricationBench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Plasteel>25</Plasteel>
+            <ComponentSpacer>2</ComponentSpacer>
+        </costList>
+        <thingSetMakerTags>
+            <li>RewardStandardLowFreq</li>
+            <li>RewardStandardQualitySuper</li>
+        </thingSetMakerTags>
+        <weaponTags>
+            <li>SpacerGun</li>
+        </weaponTags>
+        <weaponClasses>
+            <li>RangedLight</li>
+        </weaponClasses>
+        <verbs>
+            <li>
+                <verbClass>Verb_Shoot</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <defaultProjectile>Bullet_Plasma</defaultProjectile>
+                <warmupTime>1.0</warmupTime>
+                <range>17.9</range>
+                <soundCast>Shot_Plasma</soundCast>
+                <soundCastTail>GunTail_Medium</soundCastTail>
+                <muzzleFlashScale>9</muzzleFlashScale>
+            </li>
+        </verbs>
+        <tools>
+            <li>
+                <label>stock</label>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>9</power>
+                <cooldownTime>2</cooldownTime>
+            </li>
+            <li>
+                <label>barrel</label>
+                <capacities>
+                    <li>Blunt</li>
+                    <li>Poke</li>
+                </capacities>
+                <power>9</power>
+                <cooldownTime>2</cooldownTime>
+            </li>
+        </tools>
+        <modExtensions>
+            <li Class="FalloutCore.DeathEffectModExtension">
+                <effectChance>0.18</effectChance>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!-- Plasma Rifle -->
+
+    <ThingDef ParentName="BaseHumanMakeableGun">
+        <defName>FCP_Gun_Plasma_Rifle</defName>
+        <label>Plasma Rifle</label>
+        <description>The plasma rifle fires superheated bolts of plasma capable of reducing its
+            target to a pile of goo. It is a rare and nowadays poorly understood weapon which
+            demands proper care and maintenance. Its “projectiles” are significantly more dangerous
+            than those of a lase rifle but move somewhat slow however, making it a weapon best
+            suited for experienced soldiers.</description>
+        <techLevel>Spacer</techLevel>
+        <graphicData>
+            <texPath>Plasma/FCP_Plasma_Rifle</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <soundInteract>Interact_ChargeRifle</soundInteract>
+        <statBases>
+            <WorkToMake>70000</WorkToMake>
+            <Mass>3.6</Mass>
+            <AccuracyTouch>0.75</AccuracyTouch>
+            <AccuracyShort>0.70</AccuracyShort>
+            <AccuracyMedium>0.65</AccuracyMedium>
+            <AccuracyLong>0.60</AccuracyLong>
+            <RangedWeapon_Cooldown>1.75</RangedWeapon_Cooldown>
+        </statBases>
+        <recipeMaker>
+            <researchPrerequisite>ChargedShot</researchPrerequisite>
+            <skillRequirements>
+                <Crafting>8</Crafting>
+            </skillRequirements>
+            <recipeUsers Inherit="False">
+                <li>FabricationBench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Plasteel>25</Plasteel>
+            <ComponentSpacer>2</ComponentSpacer>
+        </costList>
+        <thingSetMakerTags>
+            <li>RewardStandardLowFreq</li>
+            <li>RewardStandardQualitySuper</li>
+        </thingSetMakerTags>
+        <weaponTags>
+            <li>SpacerGun</li>
+        </weaponTags>
+        <weaponClasses>
+            <li>RangedLight</li>
+        </weaponClasses>
+        <verbs>
+            <li>
+                <verbClass>Verb_Shoot</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <defaultProjectile>Bullet_Plasma</defaultProjectile>
+                <warmupTime>1.0</warmupTime>
+                <range>20.9</range>
+                <ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+                <burstShotCount>3</burstShotCount>
+                <soundCast>Shot_Plasma</soundCast>
+                <soundCastTail>GunTail_Medium</soundCastTail>
+                <muzzleFlashScale>9</muzzleFlashScale>
+            </li>
+        </verbs>
+        <tools>
+            <li>
+                <label>stock</label>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>9</power>
+                <cooldownTime>2</cooldownTime>
+            </li>
+            <li>
+                <label>barrel</label>
+                <capacities>
+                    <li>Blunt</li>
+                    <li>Poke</li>
+                </capacities>
+                <power>9</power>
+                <cooldownTime>2</cooldownTime>
+            </li>
+        </tools>
+        <modExtensions>
+            <li Class="FalloutCore.DeathEffectModExtension">
+                <effectChance>0.25</effectChance>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!-- Q-35 matter modulator -->
+
+    <ThingDef ParentName="BaseHumanMakeableGun">
+        <defName>FCP_Gun_Q35_Matter_Modulator</defName>
+        <label>Q-35 Matter Modulator</label>
+        <description>Also known as the V.35 Quantum plasma modulation matter injection rifle, the
+            Q-35 matter modulator was created by REPCONN Aerospace engineers as part of the Quantum
+            Plasma Modulation Matter Injection Rifle project, The prototype, whose three previous
+            versions (V.32, V.33, V.34) had failed,[1] was created by a team of engineers under the
+            leadership of Senior Staff Engineer Xuan Duong, using design specifications stolen from
+            Poseidon Energy for the canceled plasma rifle initiative, Project SEMELE, in conjunction
+            with designs from their own plasma engine, the failed quantum matter modulator of the
+            Z43-521P rocket. Poseidon data allowed the REPCONN team to rectify issues with matter
+            inversion by using a polarized quantum spin, simultaneously solving the issues with
+            matter conversion in the Heisenberg compensation field, enabling the creation of the
+            first prototype of a new line of plasma weapon With the data from the SEMELE project,
+            REPCONN was finally able to create a functional prototype. While prototype materials
+            make it unsuitable for prolonged field use, the Q-35 has a longer refire rate on
+            average, but a more consistent delay between shots, an increase in active bolt charge
+            time, increased accuracy and a 30% increase in bolt energy.</description>
+        <techLevel>Spacer</techLevel>
+        <graphicData>
+            <texPath>Plasma/FCP_Q35_Matter_Modulator</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <soundInteract>Interact_ChargeRifle</soundInteract>
+        <statBases>
+            <WorkToMake>100000</WorkToMake>
+            <Mass>3.6</Mass>
+            <AccuracyTouch>0.80</AccuracyTouch>
+            <AccuracyShort>0.75</AccuracyShort>
+            <AccuracyMedium>0.70</AccuracyMedium>
+            <AccuracyLong>0.65</AccuracyLong>
+            <RangedWeapon_Cooldown>1.55</RangedWeapon_Cooldown>
+        </statBases>
+        <recipeMaker>
+            <researchPrerequisite>ChargedShot</researchPrerequisite>
+            <skillRequirements>
+                <Crafting>10</Crafting>
+            </skillRequirements>
+            <recipeUsers Inherit="False">
+                <li>FabricationBench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Plasteel>25</Plasteel>
+            <ComponentSpacer>2</ComponentSpacer>
+        </costList>
+        <thingSetMakerTags>
+            <li>RewardStandardLowFreq</li>
+            <li>RewardStandardQualitySuper</li>
+        </thingSetMakerTags>
+        <weaponTags>
+            <li>SpacerGun</li>
+        </weaponTags>
+        <weaponClasses>
+            <li>RangedLight</li>
+        </weaponClasses>
+        <verbs>
+            <li>
+                <verbClass>Verb_Shoot</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <defaultProjectile>Bullet_Plasma</defaultProjectile>
+                <warmupTime>1.5</warmupTime>
+                <range>25.9</range>
+                <ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+                <burstShotCount>5</burstShotCount>
+                <soundCast>Shot_Plasma</soundCast>
+                <soundCastTail>GunTail_Medium</soundCastTail>
+                <muzzleFlashScale>9</muzzleFlashScale>
+            </li>
+        </verbs>
+        <tools>
+            <li>
+                <label>stock</label>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>9</power>
+                <cooldownTime>2</cooldownTime>
+            </li>
+            <li>
+                <label>barrel</label>
+                <capacities>
+                    <li>Blunt</li>
+                    <li>Poke</li>
+                </capacities>
+                <power>9</power>
+                <cooldownTime>2</cooldownTime>
+            </li>
+        </tools>
+        <modExtensions>
+            <li Class="FalloutCore.DeathEffectModExtension">
+                <effectChance>0.65</effectChance>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!-- Multiplas Rifle -->
+
+    <ThingDef ParentName="BaseHumanMakeableGun">
+        <defName>FCP_Gun_Multiplas_Rifle</defName>
+        <label>Multiplas Rifle</label>
+        <description>Effectively a plasma shotgun, the multiplas rifle is easily distinguishable by
+            its three plasma barrels at the rifle's tip, which fire three very destructive rounds of
+            plasma. Like less advanced shotguns, the multiplas rifle is best suited for combat over
+            short ranges.</description>
+        <techLevel>Spacer</techLevel>
+        <graphicData>
+            <texPath>Plasma/FCP_Multiplas_Rifle</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <soundInteract>Interact_ChargeRifle</soundInteract>
+        <statBases>
+            <WorkToMake>75000</WorkToMake>
+            <Mass>3.6</Mass>
+            <AccuracyTouch>0.85</AccuracyTouch>
+            <AccuracyShort>0.85</AccuracyShort>
+            <AccuracyMedium>0.60</AccuracyMedium>
+            <AccuracyLong>0.45</AccuracyLong>
+            <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+        </statBases>
+        <recipeMaker>
+            <researchPrerequisite>ChargedShot</researchPrerequisite>
+            <skillRequirements>
+                <Crafting>8</Crafting>
+            </skillRequirements>
+            <recipeUsers Inherit="False">
+                <li>FabricationBench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Plasteel>25</Plasteel>
+            <ComponentSpacer>2</ComponentSpacer>
+        </costList>
+        <thingSetMakerTags>
+            <li>RewardStandardLowFreq</li>
+            <li>RewardStandardQualitySuper</li>
+        </thingSetMakerTags>
+        <weaponTags>
+            <li>SpacerGun</li>
+        </weaponTags>
+        <weaponClasses>
+            <li>RangedLight</li>
+        </weaponClasses>
+        <verbs>
+            <li>
+                <verbClass>Verb_Shoot</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <defaultProjectile>Bullet_Plasma</defaultProjectile>
+                <warmupTime>1.0</warmupTime>
+                <range>15.9</range>
+                <ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+                <burstShotCount>3</burstShotCount>
+                <soundCast>Shot_Plasma</soundCast>
+                <soundCastTail>GunTail_Medium</soundCastTail>
+                <muzzleFlashScale>9</muzzleFlashScale>
+            </li>
+        </verbs>
+        <tools>
+            <li>
+                <label>stock</label>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>9</power>
+                <cooldownTime>2</cooldownTime>
+            </li>
+            <li>
+                <label>barrel</label>
+                <capacities>
+                    <li>Blunt</li>
+                    <li>Poke</li>
+                </capacities>
+                <power>9</power>
+                <cooldownTime>2</cooldownTime>
+            </li>
+        </tools>
+        <modExtensions>
+            <li Class="FalloutCore.DeathEffectModExtension">
+                <effectChance>0.20</effectChance>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!-- Plasma Caster -->
+
+    <ThingDef ParentName="BaseHumanMakeableGun">
+        <defName>FCP_Gun_Plasma_Caster</defName>
+        <label>Plasma Caster</label>
+        <description>The plasma caster functions very similar to its rifle-based counterpart. It was
+            first developed as an industrial tool but was soon after downscaled and adapted as a
+            weapon, it’s still very heavy though. Compared to the plasma rifle, it fires both faster
+            and harder-hitting, but is significantly less accurate.</description>
+        <techLevel>Spacer</techLevel>
+        <graphicData>
+            <texPath>Plasma/FCP_Plasma_Caster</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <equippedAngleOffset>45</equippedAngleOffset>
+        <soundInteract>Interact_ChargeRifle</soundInteract>
+        <statBases>
+            <WorkToMake>90000</WorkToMake>
+            <Mass>3.6</Mass>
+            <AccuracyTouch>0.85</AccuracyTouch>
+            <AccuracyShort>0.85</AccuracyShort>
+            <AccuracyMedium>0.75</AccuracyMedium>
+            <AccuracyLong>0.75</AccuracyLong>
+            <RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown>
+        </statBases>
+        <recipeMaker>
+            <researchPrerequisite>ChargedShot</researchPrerequisite>
+            <skillRequirements>
+                <Crafting>9</Crafting>
+            </skillRequirements>
+            <recipeUsers Inherit="False">
+                <li>FabricationBench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Plasteel>45</Plasteel>
+            <ComponentSpacer>3</ComponentSpacer>
+        </costList>
+        <thingSetMakerTags>
+            <li>RewardStandardLowFreq</li>
+            <li>RewardStandardQualitySuper</li>
+        </thingSetMakerTags>
+        <weaponTags>
+            <li>SpacerGun</li>
+        </weaponTags>
+        <weaponClasses>
+            <li>RangedLight</li>
+        </weaponClasses>
+        <verbs>
+            <li>
+                <verbClass>Verb_Shoot</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <defaultProjectile>Bullet_Plasma</defaultProjectile>
+                <warmupTime>1.50</warmupTime>
+                <range>35.9</range>
+                <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+                <burstShotCount>4</burstShotCount>
+                <soundCast>Shot_Plasma</soundCast>
+                <soundCastTail>GunTail_Medium</soundCastTail>
+                <muzzleFlashScale>9</muzzleFlashScale>
+            </li>
+        </verbs>
+        <tools>
+            <li>
+                <label>stock</label>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>9</power>
+                <cooldownTime>2</cooldownTime>
+            </li>
+            <li>
+                <label>barrel</label>
+                <capacities>
+                    <li>Blunt</li>
+                    <li>Poke</li>
+                </capacities>
+                <power>9</power>
+                <cooldownTime>2</cooldownTime>
+            </li>
+        </tools>
+        <modExtensions>
+            <li Class="FalloutCore.DeathEffectModExtension">
+                <effectChance>0.65</effectChance>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!-- Sounds -->
+
+    <SoundDef>
+        <defName>Shot_Plasma</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Plasma</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>34.76471</min>
+                    <max>34.76471</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Damage and Hediff -->
+
+    <DamageDef Name="BurnPlasma">
+        <defName>Plasmaburn</defName>
+        <workerClass>FalloutCore.PlasmaBurn</workerClass>
+        <label>plasma burn</label>
+        <hasForcefulImpact>false</hasForcefulImpact>
+        <makesBlood>false</makesBlood>
+        <canInterruptJobs>false</canInterruptJobs>
+        <externalViolence>true</externalViolence>
+        <deathMessage>{0} has been burned to death by plasma.</deathMessage>
+        <hediff>PlasmaBurn</hediff>
+        <armorCategory>Heat</armorCategory>
+        <buildingDamageFactor>2</buildingDamageFactor>
+        <minDamageToFragment>15</minDamageToFragment>
+        <defaultArmorPenetration>0.6</defaultArmorPenetration>
+        <explosionHeatEnergyPerCell>15</explosionHeatEnergyPerCell>
+        <explosionCellFleck>BlastFlame</explosionCellFleck>
+        <explosionColorCenter>(1, 0.7, 0.7)</explosionColorCenter>
+        <explosionColorEdge>(1, 1, 0.7)</explosionColorEdge>
+        <soundExplosion>Explosion_Flame</soundExplosion>
+        <combatLogRules>Damage_Flame</combatLogRules>
+        <canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+    </DamageDef>
+
+    <HediffDef ParentName="InjuryBase">
+        <defName>PlasmaBurn</defName>
+        <label>plasma burn</label>
+        <labelNoun>a plasma burn</labelNoun>
+        <description>A painless plasma burn.</description>
+        <comps>
+            <li Class="HediffCompProperties_TendDuration">
+                <labelTendedWell>bandaged</labelTendedWell>
+                <labelTendedWellInner>tended</labelTendedWellInner>
+                <labelSolidTendedWell>tended</labelSolidTendedWell>
+            </li>
+            <li Class="HediffCompProperties_Infecter">
+                <infectionChance>0.30</infectionChance>
+            </li>
+            <li Class="HediffCompProperties_GetsPermanent">
+                <permanentLabel>plasma burn scar</permanentLabel>
+            </li>
+        </comps>
+        <injuryProps>
+            <painPerSeverity>0.0042</painPerSeverity>
+            <averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+            <canMerge>true</canMerge>
+            <destroyedLabel>Burned off</destroyedLabel>
+            <destroyedOutLabel>Burned out</destroyedOutLabel>
+        </injuryProps>
+    </HediffDef>
+
+    <!-- Bullet -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>Bullet_Plasma</defName>
+        <label>Plasma Cast</label>
+        <graphicData>
+            <texPath>Things/Projectile/FCP_Plasma</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Plasmaburn</damageDef>
+            <damageAmountBase>18</damageAmountBase>
+            <armorPenetrationBase>1.5</armorPenetrationBase>
+            <speed>55</speed>
+        </projectile>
+    </ThingDef>
+
+</Defs>

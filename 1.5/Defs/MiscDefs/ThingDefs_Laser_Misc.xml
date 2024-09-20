@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!--__________ Filth __________-->
+
+	<!-- Ash -->
+
+	<ThingDef ParentName="BaseFilth">
+		<defName>FG_Filth_AshPile</defName>
+		<label>ash</label>
+		<statBases>
+			<Beauty>-12</Beauty>
+			<Cleanliness>-15</Cleanliness>
+		</statBases>
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+			<texPath>Filth/AshPile</texPath>
+			<drawSize>1</drawSize>
+			<onGroundRandomRotateAngle>0</onGroundRandomRotateAngle>
+		</graphicData>
+		<filth>
+			<cleaningWorkToReduceThickness>70</cleaningWorkToReduceThickness>
+			<canFilthAttach>true</canFilthAttach>
+		</filth>
+	</ThingDef>
+
+</Defs>

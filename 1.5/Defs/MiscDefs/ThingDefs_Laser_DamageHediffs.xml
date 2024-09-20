@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!--_________ Damage and Hediffs __________-->
+
+    <!-- Laser Burns -->
+
+    <DamageDef Name="BurnLaser">
+        <defName>laserburn</defName>
+        <workerClass>FalloutCore.LaserBurn</workerClass>
+        <label>laser burn</label>
+        <hasForcefulImpact>false</hasForcefulImpact>
+        <makesBlood>false</makesBlood>
+        <canInterruptJobs>false</canInterruptJobs>
+        <externalViolence>true</externalViolence>
+        <deathMessage>{0} has been laser burned to death.</deathMessage>
+        <hediff>LaserBurn</hediff>
+        <armorCategory>Heat</armorCategory>
+        <minDamageToFragment>15</minDamageToFragment>
+        <defaultDamage>10</defaultDamage>
+        <defaultArmorPenetration>0</defaultArmorPenetration>
+        <explosionHeatEnergyPerCell>15</explosionHeatEnergyPerCell>
+        <explosionCellFleck>BlastFlame</explosionCellFleck>
+        <explosionColorCenter>(1, 0.7, 0.7)</explosionColorCenter>
+        <explosionColorEdge>(1, 1, 0.7)</explosionColorEdge>
+        <soundExplosion>Explosion_Flame</soundExplosion>
+        <combatLogRules>Damage_Flame</combatLogRules>
+        <canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+    </DamageDef>
+
+    <HediffDef ParentName="InjuryBase">
+        <defName>LaserBurn</defName>
+        <label>laser burn</label>
+        <labelNoun>a laser burn</labelNoun>
+        <description>A painless laser burn.</description>
+        <comps>
+            <li Class="HediffCompProperties_TendDuration">
+                <labelTendedWell>bandaged</labelTendedWell>
+                <labelTendedWellInner>tended</labelTendedWellInner>
+                <labelSolidTendedWell>tended</labelSolidTendedWell>
+            </li>
+            <li Class="HediffCompProperties_Infecter">
+                <infectionChance>0.30</infectionChance>
+            </li>
+            <li Class="HediffCompProperties_GetsPermanent">
+                <permanentLabel>laser burn scar</permanentLabel>
+            </li>
+        </comps>
+        <injuryProps>
+            <painPerSeverity>0.0042</painPerSeverity>
+            <averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+            <canMerge>true</canMerge>
+            <destroyedLabel>Burned off</destroyedLabel>
+            <destroyedOutLabel>Burned out</destroyedOutLabel>
+        </injuryProps>
+    </HediffDef>
+
+</Defs>
