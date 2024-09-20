@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "rOBpgtQ2NUb0ddjo6gItM5xGbvA5OEzw+fFFmf6iUOQBSWgUmFz+y2S/Zz/RE+kq9h+CqAwiIxVYdLYDaGGvvQ==",
+  "success": true,
+  "projectFilePath": "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FalloutCore\\1.3\\Source\\ApparelExtension\\ApparelExtension.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Vova\\.nuget\\packages\\krafs.rimworld.ref\\1.3.3146-beta\\krafs.rimworld.ref.1.3.3146-beta.nupkg.sha512",
+    "C:\\Users\\Vova\\.nuget\\packages\\lib.harmony\\2.1.1\\lib.harmony.2.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}
