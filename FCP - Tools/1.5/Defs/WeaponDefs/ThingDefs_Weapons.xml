@@ -1,33 +1,37 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-    <!--__________ FCP Laser Weapons __________-->
+    <!--__________ FCP Plasma Weapons __________-->
 
-    <!-- Laser Pistol -->
+    <!-- plasma Pistol -->
 
     <ThingDef ParentName="BaseHumanMakeableGun">
-        <defName>FCP_Gun_Laser_Pistol</defName>
-        <label>Laser Pistol</label>
-        <description>The AEP7 laser pistol comes with a generous battery size, tight shot grouping at range, resilience to extended use, and fairly decent damage output, it is a very good choice for a sidearm and is used extensively in this role by the Brotherhood of Steel and the Enclave. Like other energy weapons, the laser pistol has the ability to reduce enemies to piles of steaming ash.</description>
+        <defName>FCP_Gun_Plasma_Pistol</defName>
+        <label>Plasma Pistol</label>
+        <description>A downscaled version of the plasma rifle. The plasma pistol has five tributary
+            energy arcs connected to a central cathode, and the cathode functions as a point of
+            focus, or the barrel. The energy is projected forward and forms a plasma pinch; though
+            rather slow, the pinch carries high levels of both thermal and kinetic energy,
+            inflicting massive damage.</description>
         <techLevel>Spacer</techLevel>
         <graphicData>
-            <texPath>Laser/FCP_Laser_Pistol</texPath>
+            <texPath>Plasma/FCP_Plasma_Pistol</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <soundInteract>Interact_ChargeRifle</soundInteract>
         <statBases>
-            <WorkToMake>45000</WorkToMake>
+            <WorkToMake>50000</WorkToMake>
             <Mass>3.6</Mass>
             <AccuracyTouch>0.80</AccuracyTouch>
             <AccuracyShort>0.75</AccuracyShort>
-            <AccuracyMedium>0.60</AccuracyMedium>
-            <AccuracyLong>0.50</AccuracyLong>
+            <AccuracyMedium>0.55</AccuracyMedium>
+            <AccuracyLong>0.45</AccuracyLong>
             <RangedWeapon_Cooldown>1.4</RangedWeapon_Cooldown>
         </statBases>
         <recipeMaker>
             <researchPrerequisite>ChargedShot</researchPrerequisite>
             <skillRequirements>
-                <Crafting>6</Crafting>
+                <Crafting>7</Crafting>
             </skillRequirements>
             <recipeUsers Inherit="False">
                 <li>FabricationBench</li>
@@ -51,10 +55,10 @@
             <li>
                 <verbClass>Verb_Shoot</verbClass>
                 <hasStandardCommand>true</hasStandardCommand>
-                <defaultProjectile>Bullet_Laser</defaultProjectile>
+                <defaultProjectile>Bullet_Plasma</defaultProjectile>
                 <warmupTime>1.0</warmupTime>
-                <range>17.0</range>
-                <soundCast>Shot_Laser</soundCast>
+                <range>18.9</range>
+                <soundCast>Shot_Plasma</soundCast>
                 <soundCastTail>GunTail_Medium</soundCastTail>
                 <muzzleFlashScale>9</muzzleFlashScale>
             </li>
@@ -80,30 +84,35 @@
         </tools>
         <modExtensions>
             <li Class="FalloutCore.DeathEffectModExtension">
-                <effectChance>0.10</effectChance>
+                <effectChance>0.15</effectChance>
             </li>
         </modExtensions>
     </ThingDef>
 
-    <!-- Pew Pew -->
+    <!-- Plasma Defender -->
 
     <ThingDef ParentName="BaseHumanMakeableGun">
-        <defName>FCP_Gun_Pew_Pew</defName>
-        <label>Pew Pew</label>
-        <description>This unique laser pistol once belonged to a man who murdered people for their sunset sarsaparilla star bottle caps. It’s coloured red, looks scratched and worn and its focus adjustment knob was replaced with a bottle cap. Despite its ramshackle appearance, it’s projectiles hit extremely hard, but it fires much slower than the standard laser pistol.</description>
+        <defName>FCP_Gun_Plasma_Defender</defName>
+        <label>Plasma Defender</label>
+        <description>An Austrian-made energy pistol, the plasma defender fires superheated bolts of
+            green plasma. Despite its small frame, its projectiles deal significant damage and are
+            able to penetrate most armors with ease. It does more damage, is more accurate and fires
+            faster compared to the standard plasma pistol. However, it’s an exceptionally rare and
+            expensive weapon usually reserved as a sidearm for high-ranking officers in high-tech
+            groups such as the Enclave.</description>
         <techLevel>Spacer</techLevel>
         <graphicData>
-            <texPath>Laser/FCP_Pew_Pew</texPath>
+            <texPath>Plasma/FCP_Plasma_Defender</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <soundInteract>Interact_ChargeRifle</soundInteract>
         <statBases>
-            <WorkToMake>70000</WorkToMake>
+            <WorkToMake>50000</WorkToMake>
             <Mass>3.6</Mass>
-            <AccuracyTouch>0.90</AccuracyTouch>
-            <AccuracyShort>0.90</AccuracyShort>
-            <AccuracyMedium>0.85</AccuracyMedium>
-            <AccuracyLong>0.85</AccuracyLong>
+            <AccuracyTouch>0.85</AccuracyTouch>
+            <AccuracyShort>0.80</AccuracyShort>
+            <AccuracyMedium>0.60</AccuracyMedium>
+            <AccuracyLong>0.40</AccuracyLong>
             <RangedWeapon_Cooldown>1.6</RangedWeapon_Cooldown>
         </statBases>
         <recipeMaker>
@@ -133,10 +142,10 @@
             <li>
                 <verbClass>Verb_Shoot</verbClass>
                 <hasStandardCommand>true</hasStandardCommand>
-                <defaultProjectile>Bullet_Laser</defaultProjectile>
+                <defaultProjectile>Bullet_Plasma</defaultProjectile>
                 <warmupTime>1.0</warmupTime>
-                <range>15.0</range>
-                <soundCast>Shot_Laser</soundCast>
+                <range>17.9</range>
+                <soundCast>Shot_Plasma</soundCast>
                 <soundCastTail>GunTail_Medium</soundCastTail>
                 <muzzleFlashScale>9</muzzleFlashScale>
             </li>
@@ -162,31 +171,35 @@
         </tools>
         <modExtensions>
             <li Class="FalloutCore.DeathEffectModExtension">
-                <effectChance>0.30</effectChance>
+                <effectChance>0.18</effectChance>
             </li>
         </modExtensions>
     </ThingDef>
 
-    <!-- Laser Rifle -->
+    <!-- Plasma Rifle -->
 
     <ThingDef ParentName="BaseHumanMakeableGun">
-        <defName>FCP_Gun_Laser_Rifle</defName>
-        <label>laser Rifle</label>
-        <description>A staple of the pre-war armed forces, the laser rifle has become a somewhat unusual sight in the wasteland, especially one in good condition. They emit a concentrated beam of coherent light capable of severely damaging what- or whoever it was aimed at.</description>
+        <defName>FCP_Gun_Plasma_Rifle</defName>
+        <label>Plasma Rifle</label>
+        <description>The plasma rifle fires superheated bolts of plasma capable of reducing its
+            target to a pile of goo. It is a rare and nowadays poorly understood weapon which
+            demands proper care and maintenance. Its “projectiles” are significantly more dangerous
+            than those of a lase rifle but move somewhat slow however, making it a weapon best
+            suited for experienced soldiers.</description>
         <techLevel>Spacer</techLevel>
         <graphicData>
-            <texPath>Laser/FCP_Laser_Rifle</texPath>
+            <texPath>Plasma/FCP_Plasma_Rifle</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <soundInteract>Interact_ChargeRifle</soundInteract>
         <statBases>
-            <WorkToMake>65000</WorkToMake>
+            <WorkToMake>70000</WorkToMake>
             <Mass>3.6</Mass>
-            <AccuracyTouch>0.85</AccuracyTouch>
-            <AccuracyShort>0.80</AccuracyShort>
-            <AccuracyMedium>0.75</AccuracyMedium>
-            <AccuracyLong>0.70</AccuracyLong>
-            <RangedWeapon_Cooldown>0.88</RangedWeapon_Cooldown>
+            <AccuracyTouch>0.75</AccuracyTouch>
+            <AccuracyShort>0.70</AccuracyShort>
+            <AccuracyMedium>0.65</AccuracyMedium>
+            <AccuracyLong>0.60</AccuracyLong>
+            <RangedWeapon_Cooldown>1.75</RangedWeapon_Cooldown>
         </statBases>
         <recipeMaker>
             <researchPrerequisite>ChargedShot</researchPrerequisite>
@@ -215,10 +228,12 @@
             <li>
                 <verbClass>Verb_Shoot</verbClass>
                 <hasStandardCommand>true</hasStandardCommand>
-                <defaultProjectile>Bullet_Laser</defaultProjectile>
+                <defaultProjectile>Bullet_Plasma</defaultProjectile>
                 <warmupTime>1.0</warmupTime>
-                <range>25.9</range>
-                <soundCast>Shot_Laser</soundCast>
+                <range>20.9</range>
+                <ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+                <burstShotCount>3</burstShotCount>
+                <soundCast>Shot_Plasma</soundCast>
                 <soundCastTail>GunTail_Medium</soundCastTail>
                 <muzzleFlashScale>9</muzzleFlashScale>
             </li>
@@ -249,26 +264,40 @@
         </modExtensions>
     </ThingDef>
 
-    <!-- AER14 Prototype -->
+    <!-- Q-35 matter modulator -->
 
     <ThingDef ParentName="BaseHumanMakeableGun">
-        <defName>FCP_Gun_AER14_Prototype</defName>
-        <label>AER14 Prototype</label>
-        <description>A unique, light grey prototype laser rifle with orange trims. It also has two circuit chips taped to its stock, which are connected to the rest of the weapon via wires. Its beams do a lot more damage and are of green color.</description>
+        <defName>FCP_Gun_Q35_Matter_Modulator</defName>
+        <label>Q-35 Matter Modulator</label>
+        <description>Also known as the V.35 Quantum plasma modulation matter injection rifle, the
+            Q-35 matter modulator was created by REPCONN Aerospace engineers as part of the Quantum
+            Plasma Modulation Matter Injection Rifle project, The prototype, whose three previous
+            versions (V.32, V.33, V.34) had failed,[1] was created by a team of engineers under the
+            leadership of Senior Staff Engineer Xuan Duong, using design specifications stolen from
+            Poseidon Energy for the canceled plasma rifle initiative, Project SEMELE, in conjunction
+            with designs from their own plasma engine, the failed quantum matter modulator of the
+            Z43-521P rocket. Poseidon data allowed the REPCONN team to rectify issues with matter
+            inversion by using a polarized quantum spin, simultaneously solving the issues with
+            matter conversion in the Heisenberg compensation field, enabling the creation of the
+            first prototype of a new line of plasma weapon With the data from the SEMELE project,
+            REPCONN was finally able to create a functional prototype. While prototype materials
+            make it unsuitable for prolonged field use, the Q-35 has a longer refire rate on
+            average, but a more consistent delay between shots, an increase in active bolt charge
+            time, increased accuracy and a 30% increase in bolt energy.</description>
         <techLevel>Spacer</techLevel>
         <graphicData>
-            <texPath>Laser/FCP_AER14_Prototype</texPath>
+            <texPath>Plasma/FCP_Q35_Matter_Modulator</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <soundInteract>Interact_ChargeRifle</soundInteract>
         <statBases>
             <WorkToMake>100000</WorkToMake>
             <Mass>3.6</Mass>
-            <AccuracyTouch>0.95</AccuracyTouch>
-            <AccuracyShort>0.85</AccuracyShort>
-            <AccuracyMedium>0.80</AccuracyMedium>
-            <AccuracyLong>0.70</AccuracyLong>
-            <RangedWeapon_Cooldown>1.25</RangedWeapon_Cooldown>
+            <AccuracyTouch>0.80</AccuracyTouch>
+            <AccuracyShort>0.75</AccuracyShort>
+            <AccuracyMedium>0.70</AccuracyMedium>
+            <AccuracyLong>0.65</AccuracyLong>
+            <RangedWeapon_Cooldown>1.55</RangedWeapon_Cooldown>
         </statBases>
         <recipeMaker>
             <researchPrerequisite>ChargedShot</researchPrerequisite>
@@ -297,10 +326,12 @@
             <li>
                 <verbClass>Verb_Shoot</verbClass>
                 <hasStandardCommand>true</hasStandardCommand>
-                <defaultProjectile>Bullet_Laser</defaultProjectile>
+                <defaultProjectile>Bullet_Plasma</defaultProjectile>
                 <warmupTime>1.5</warmupTime>
-                <range>30</range>
-                <soundCast>Shot_Laser</soundCast>
+                <range>25.9</range>
+                <ticksBetweenBurstShots>12</ticksBetweenBurstShots>
+                <burstShotCount>5</burstShotCount>
+                <soundCast>Shot_Plasma</soundCast>
                 <soundCastTail>GunTail_Medium</soundCastTail>
                 <muzzleFlashScale>9</muzzleFlashScale>
             </li>
@@ -326,30 +357,33 @@
         </tools>
         <modExtensions>
             <li Class="FalloutCore.DeathEffectModExtension">
-                <effectChance>0.50</effectChance>
+                <effectChance>0.65</effectChance>
             </li>
         </modExtensions>
     </ThingDef>
 
-    <!-- Tri-Beam Laser Rifle -->
+    <!-- Multiplas Rifle -->
 
     <ThingDef ParentName="BaseHumanMakeableGun">
-        <defName>FCP_Gun_Tri_Beam_Laser_Rifle</defName>
-        <label>Tri-Beam Laser Rifle</label>
-        <description>The tri-beam laser rifle appears to be a shortened laser rifle with a different emitter at its tip. It fires three beams of laser at once, serving as a high-tech alternative to shotguns. Like less advanced shotguns, the tri-beam laser rifle is best suited for combat over short ranges.</description>
+        <defName>FCP_Gun_Multiplas_Rifle</defName>
+        <label>Multiplas Rifle</label>
+        <description>Effectively a plasma shotgun, the multiplas rifle is easily distinguishable by
+            its three plasma barrels at the rifle's tip, which fire three very destructive rounds of
+            plasma. Like less advanced shotguns, the multiplas rifle is best suited for combat over
+            short ranges.</description>
         <techLevel>Spacer</techLevel>
         <graphicData>
-            <texPath>Laser/FCP_Tri_Beam_Laser_Rifle</texPath>
+            <texPath>Plasma/FCP_Multiplas_Rifle</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <soundInteract>Interact_ChargeRifle</soundInteract>
         <statBases>
-            <WorkToMake>70000</WorkToMake>
+            <WorkToMake>75000</WorkToMake>
             <Mass>3.6</Mass>
-            <AccuracyTouch>0.90</AccuracyTouch>
-            <AccuracyShort>0.80</AccuracyShort>
-            <AccuracyMedium>0.65</AccuracyMedium>
-            <AccuracyLong>0.35</AccuracyLong>
+            <AccuracyTouch>0.85</AccuracyTouch>
+            <AccuracyShort>0.85</AccuracyShort>
+            <AccuracyMedium>0.60</AccuracyMedium>
+            <AccuracyLong>0.45</AccuracyLong>
             <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
         </statBases>
         <recipeMaker>
@@ -379,12 +413,12 @@
             <li>
                 <verbClass>Verb_Shoot</verbClass>
                 <hasStandardCommand>true</hasStandardCommand>
-                <defaultProjectile>Bullet_Laser</defaultProjectile>
+                <defaultProjectile>Bullet_Plasma</defaultProjectile>
                 <warmupTime>1.0</warmupTime>
-                <range>17.9</range>
-                <ticksBetweenBurstShots>9</ticksBetweenBurstShots>
+                <range>15.9</range>
+                <ticksBetweenBurstShots>12</ticksBetweenBurstShots>
                 <burstShotCount>3</burstShotCount>
-                <soundCast>Shot_Laser</soundCast>
+                <soundCast>Shot_Plasma</soundCast>
                 <soundCastTail>GunTail_Medium</soundCastTail>
                 <muzzleFlashScale>9</muzzleFlashScale>
             </li>
@@ -410,454 +444,48 @@
         </tools>
         <modExtensions>
             <li Class="FalloutCore.DeathEffectModExtension">
-                <effectChance>0.25</effectChance>
+                <effectChance>0.20</effectChance>
             </li>
         </modExtensions>
     </ThingDef>
 
-    <!-- Gatling Laser -->
+    <!-- Plasma Caster -->
 
     <ThingDef ParentName="BaseHumanMakeableGun">
-        <defName>FCP_Gun_Gatling_Laser</defName>
-        <label>Gatling Laser</label>
-        <description>A huge and heavy laser weapon reminiscent of Minigun and popular with the Brotherhood of Steel. Its individual shots do little damage, but this is entirely compensated by its extremely high rate of fire. It excels at the same areas as the Minigun, providing suppressing fire over short and medium distances.</description>
+        <defName>FCP_Gun_Plasma_Caster</defName>
+        <label>Plasma Caster</label>
+        <description>The plasma caster functions very similar to its rifle-based counterpart. It was
+            first developed as an industrial tool but was soon after downscaled and adapted as a
+            weapon, it’s still very heavy though. Compared to the plasma rifle, it fires both faster
+            and harder-hitting, but is significantly less accurate.</description>
         <techLevel>Spacer</techLevel>
         <graphicData>
-            <texPath>Laser/FCP_Gatling_Laser</texPath>
+            <texPath>Plasma/FCP_Plasma_Caster</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
+        <equippedAngleOffset>45</equippedAngleOffset>
         <soundInteract>Interact_ChargeRifle</soundInteract>
         <statBases>
-            <WorkToMake>95000</WorkToMake>
+            <WorkToMake>90000</WorkToMake>
             <Mass>3.6</Mass>
-            <AccuracyTouch>0.75</AccuracyTouch>
-            <AccuracyShort>0.75</AccuracyShort>
-            <AccuracyMedium>0.65</AccuracyMedium>
-            <AccuracyLong>0.50</AccuracyLong>
-            <RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown>
-        </statBases>
-        <recipeMaker>
-            <researchPrerequisite>ChargedShot</researchPrerequisite>
-            <skillRequirements>
-                <Crafting>9</Crafting>
-            </skillRequirements>
-            <recipeUsers Inherit="False">
-                <li>FabricationBench</li>
-            </recipeUsers>
-        </recipeMaker>
-        <costList>
-            <Plasteel>45</Plasteel>
-            <ComponentSpacer>3</ComponentSpacer>
-        </costList>
-        <thingSetMakerTags>
-            <li>RewardStandardLowFreq</li>
-            <li>RewardStandardQualitySuper</li>
-        </thingSetMakerTags>
-        <weaponTags>
-            <li>SpacerGun</li>
-        </weaponTags>
-        <weaponClasses>
-            <li>RangedLight</li>
-        </weaponClasses>
-        <verbs>
-            <li>
-                <verbClass>Verb_Shoot</verbClass>
-                <hasStandardCommand>true</hasStandardCommand>
-                <defaultProjectile>Bullet_Laser</defaultProjectile>
-                <warmupTime>1.50</warmupTime>
-                <range>30.9</range>
-                <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
-                <burstShotCount>15</burstShotCount>
-                <soundCast>Shot_Laser</soundCast>
-                <soundCastTail>GunTail_Medium</soundCastTail>
-                <muzzleFlashScale>9</muzzleFlashScale>
-            </li>
-        </verbs>
-        <tools>
-            <li>
-                <label>stock</label>
-                <capacities>
-                    <li>Blunt</li>
-                </capacities>
-                <power>9</power>
-                <cooldownTime>2</cooldownTime>
-            </li>
-            <li>
-                <label>barrel</label>
-                <capacities>
-                    <li>Blunt</li>
-                    <li>Poke</li>
-                </capacities>
-                <power>9</power>
-                <cooldownTime>2</cooldownTime>
-            </li>
-        </tools>
-        <modExtensions>
-            <li Class="FalloutCore.DeathEffectModExtension">
-                <effectChance>0.55</effectChance>
-            </li>
-        </modExtensions>
-    </ThingDef>
-
-    <!-- Sprtel-Wood 9700 -->
-
-    <ThingDef ParentName="BaseHumanMakeableGun">
-        <defName>FCP_Gun_Sprtel_Wood_9700a</defName>
-        <label>Sprtel-Wood 9700</label>
-        <description>The Sprtel-Wood 9700 is a high-speed Gatling laser that shoots green lasers. It has an ammunition capacity of 90 electron charge packs and moderate weapon spread. The Sprtel-Wood 9700 can inflict 16 damage per hit in good condition, but it has a slightly below-average critical hit chance for an automatic weapon.</description>
-        <techLevel>Spacer</techLevel>
-        <graphicData>
-            <texPath>Laser/FCP_Sprtel_Wood_9700a</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-        </graphicData>
-        <soundInteract>Interact_ChargeRifle</soundInteract>
-        <statBases>
-            <WorkToMake>125000</WorkToMake>
-            <Mass>4.6</Mass>
-            <AccuracyTouch>0.90</AccuracyTouch>
-            <AccuracyShort>0.80</AccuracyShort>
-            <AccuracyMedium>0.75</AccuracyMedium>
-            <AccuracyLong>0.65</AccuracyLong>
-            <RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown>
-        </statBases>
-        <recipeMaker>
-            <researchPrerequisite>ChargedShot</researchPrerequisite>
-            <skillRequirements>
-                <Crafting>9</Crafting>
-            </skillRequirements>
-            <recipeUsers Inherit="False">
-                <li>FabricationBench</li>
-            </recipeUsers>
-        </recipeMaker>
-        <costList>
-            <Plasteel>45</Plasteel>
-            <ComponentSpacer>3</ComponentSpacer>
-        </costList>
-        <thingSetMakerTags>
-            <li>RewardStandardLowFreq</li>
-            <li>RewardStandardQualitySuper</li>
-        </thingSetMakerTags>
-        <weaponTags>
-            <li>SpacerGun</li>
-        </weaponTags>
-        <weaponClasses>
-            <li>RangedLight</li>
-        </weaponClasses>
-        <verbs>
-            <li>
-                <verbClass>Verb_Shoot</verbClass>
-                <hasStandardCommand>true</hasStandardCommand>
-                <defaultProjectile>Bullet_Laser_S</defaultProjectile>
-                <warmupTime>1.50</warmupTime>
-                <range>30.9</range>
-                <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
-                <burstShotCount>10</burstShotCount>
-                <soundCast>Shot_Laser</soundCast>
-                <soundCastTail>GunTail_Medium</soundCastTail>
-                <muzzleFlashScale>9</muzzleFlashScale>
-            </li>
-        </verbs>
-        <tools>
-            <li>
-                <label>stock</label>
-                <capacities>
-                    <li>Blunt</li>
-                </capacities>
-                <power>9</power>
-                <cooldownTime>2</cooldownTime>
-            </li>
-            <li>
-                <label>barrel</label>
-                <capacities>
-                    <li>Blunt</li>
-                    <li>Poke</li>
-                </capacities>
-                <power>9</power>
-                <cooldownTime>2</cooldownTime>
-            </li>
-        </tools>
-        <modExtensions>
-            <li Class="FalloutCore.DeathEffectModExtension">
-                <effectChance>0.60</effectChance>
-            </li>
-        </modExtensions>
-    </ThingDef>
-
-    <!-- Laser RCW -->
-
-    <ThingDef ParentName="BaseHumanMakeableGun">
-        <defName>FCP_Gun_Laser_RCW</defName>
-        <label>Laser RCW</label>
-        <description>The laser rapid capacitor weapon is a strange gun that mimics a submachinegun. The unique feature of the RCW is the addition of a drum magazine, which gives this weapon its unique look, high rate of fire, and name. This weapon exhibits moderate accuracy due to a high spread for a laser weapon, making it useful for taking down enemies at almost any range.</description>
-        <techLevel>Spacer</techLevel>
-        <graphicData>
-            <texPath>Laser/FCP_Laser_RCW</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-        </graphicData>
-        <soundInteract>Interact_ChargeRifle</soundInteract>
-        <statBases>
-            <WorkToMake>68000</WorkToMake>
-            <Mass>1.6</Mass>
-            <AccuracyTouch>0.80</AccuracyTouch>
-            <AccuracyShort>0.65</AccuracyShort>
-            <AccuracyMedium>0.60</AccuracyMedium>
-            <AccuracyLong>0.50</AccuracyLong>
-            <RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown>
-        </statBases>
-        <recipeMaker>
-            <researchPrerequisite>ChargedShot</researchPrerequisite>
-            <skillRequirements>
-                <Crafting>7</Crafting>
-            </skillRequirements>
-            <recipeUsers Inherit="False">
-                <li>FabricationBench</li>
-            </recipeUsers>
-        </recipeMaker>
-        <costList>
-            <Plasteel>45</Plasteel>
-            <ComponentSpacer>3</ComponentSpacer>
-        </costList>
-        <thingSetMakerTags>
-            <li>RewardStandardLowFreq</li>
-            <li>RewardStandardQualitySuper</li>
-        </thingSetMakerTags>
-        <weaponTags>
-            <li>SpacerGun</li>
-        </weaponTags>
-        <weaponClasses>
-            <li>RangedLight</li>
-        </weaponClasses>
-        <verbs>
-            <li>
-                <verbClass>Verb_Shoot</verbClass>
-                <hasStandardCommand>true</hasStandardCommand>
-                <defaultProjectile>Bullet_Laser</defaultProjectile>
-                <warmupTime>1.9</warmupTime>
-                <range>20.9</range>
-                <ticksBetweenBurstShots>9</ticksBetweenBurstShots>
-                <burstShotCount>10</burstShotCount>
-                <soundCast>Shot_Laser</soundCast>
-                <soundCastTail>GunTail_Medium</soundCastTail>
-                <muzzleFlashScale>9</muzzleFlashScale>
-            </li>
-        </verbs>
-        <tools>
-            <li>
-                <label>stock</label>
-                <capacities>
-                    <li>Blunt</li>
-                </capacities>
-                <power>9</power>
-                <cooldownTime>2</cooldownTime>
-            </li>
-            <li>
-                <label>barrel</label>
-                <capacities>
-                    <li>Blunt</li>
-                    <li>Poke</li>
-                </capacities>
-                <power>9</power>
-                <cooldownTime>2</cooldownTime>
-            </li>
-        </tools>
-        <modExtensions>
-            <li Class="FalloutCore.DeathEffectModExtension">
-                <effectChance>0.25</effectChance>
-            </li>
-        </modExtensions>
-    </ThingDef>
-
-    <!-- Recharger Rifle -->
-
-    <ThingDef ParentName="BaseHumanMakeableGun">
-        <defName>FCP_Gun_Recharger_Rifle</defName>
-        <label>Recharger Rifle</label>
-        <description>The recharger rifle was the first energy weapon featuring a microfusion breeder. It replenishes its ammunition automatically, no reloading required. However, the underlying technology wasn’t very sophisticated yet. It can fire rapidly, but the projectiles do significantly less damage compared to a laser rifle. The inefficient breeder generates ammunition at a slow rate, meaning it can shoot bursts of projectiles fast, but there is a considerably time in between those bursts. At least it usually is a lot cheaper than a laser rifle.</description>
-        <techLevel>Spacer</techLevel>
-        <graphicData>
-            <texPath>Laser/FCP_Recharger_Rifle</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-        </graphicData>
-        <soundInteract>Interact_ChargeRifle</soundInteract>
-        <statBases>
-            <WorkToMake>60000</WorkToMake>
-            <Mass>2.1</Mass>
             <AccuracyTouch>0.85</AccuracyTouch>
-            <AccuracyShort>0.80</AccuracyShort>
+            <AccuracyShort>0.85</AccuracyShort>
             <AccuracyMedium>0.75</AccuracyMedium>
-            <AccuracyLong>0.70</AccuracyLong>
-            <RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
-        </statBases>
-        <recipeMaker>
-            <researchPrerequisite>ChargedShot</researchPrerequisite>
-            <skillRequirements>
-                <Crafting>8</Crafting>
-            </skillRequirements>
-            <recipeUsers Inherit="False">
-                <li>FabricationBench</li>
-            </recipeUsers>
-        </recipeMaker>
-        <costList>
-            <Plasteel>25</Plasteel>
-            <ComponentSpacer>2</ComponentSpacer>
-        </costList>
-        <thingSetMakerTags>
-            <li>RewardStandardLowFreq</li>
-            <li>RewardStandardQualitySuper</li>
-        </thingSetMakerTags>
-        <weaponTags>
-            <li>SpacerGun</li>
-        </weaponTags>
-        <weaponClasses>
-            <li>RangedLight</li>
-        </weaponClasses>
-        <verbs>
-            <li>
-                <verbClass>Verb_Shoot</verbClass>
-                <hasStandardCommand>true</hasStandardCommand>
-                <defaultProjectile>Bullet_MF_Breeder</defaultProjectile>
-                <warmupTime>1.0</warmupTime>
-                <range>25.9</range>
-                <ticksBetweenBurstShots>18</ticksBetweenBurstShots>
-                <burstShotCount>10</burstShotCount>
-                <soundCast>Shot_Laser</soundCast>
-                <soundCastTail>GunTail_Medium</soundCastTail>
-                <muzzleFlashScale>9</muzzleFlashScale>
-            </li>
-        </verbs>
-        <tools>
-            <li>
-                <label>stock</label>
-                <capacities>
-                    <li>Blunt</li>
-                </capacities>
-                <power>9</power>
-                <cooldownTime>2</cooldownTime>
-            </li>
-            <li>
-                <label>barrel</label>
-                <capacities>
-                    <li>Blunt</li>
-                    <li>Poke</li>
-                </capacities>
-                <power>9</power>
-                <cooldownTime>2</cooldownTime>
-            </li>
-        </tools>
-    </ThingDef>
-
-    <!-- Recharger Pistol -->
-
-    <ThingDef ParentName="BaseHumanMakeableGun">
-        <defName>FCP_Gun_Recharger_Pistol</defName>
-        <label>Recharger Pistol</label>
-        <description>The recharger rifle was the first energy weapon featuring a microfusion breeder. It replenishes its ammunition automatically, no reloading required. However, the underlying technology wasn’t very sophisticated yet. It can fire rapidly, but the projectiles do significantly less damage compared to a laser rifle. The inefficient breeder generates ammunition at a slow rate, meaning it can shoot bursts of projectiles fast, but there is a considerably time in between those bursts. At least it usually is a lot cheaper than a laser rifle.</description>
-        <techLevel>Spacer</techLevel>
-        <graphicData>
-            <texPath>Laser/FCP_Recharger_Pistol</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-        </graphicData>
-        <soundInteract>Interact_ChargeRifle</soundInteract>
-        <statBases>
-            <WorkToMake>55000</WorkToMake>
-            <Mass>1.6</Mass>
-            <AccuracyTouch>0.85</AccuracyTouch>
-            <AccuracyShort>0.75</AccuracyShort>
-            <AccuracyMedium>0.70</AccuracyMedium>
-            <AccuracyLong>0.68</AccuracyLong>
-            <RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
-        </statBases>
-        <recipeMaker>
-            <researchPrerequisite>ChargedShot</researchPrerequisite>
-            <skillRequirements>
-                <Crafting>8</Crafting>
-            </skillRequirements>
-            <recipeUsers Inherit="False">
-                <li>FabricationBench</li>
-            </recipeUsers>
-        </recipeMaker>
-        <costList>
-            <Plasteel>25</Plasteel>
-            <ComponentSpacer>2</ComponentSpacer>
-        </costList>
-        <thingSetMakerTags>
-            <li>RewardStandardLowFreq</li>
-            <li>RewardStandardQualitySuper</li>
-        </thingSetMakerTags>
-        <weaponTags>
-            <li>SpacerGun</li>
-        </weaponTags>
-        <weaponClasses>
-            <li>RangedLight</li>
-        </weaponClasses>
-        <verbs>
-            <li>
-                <verbClass>Verb_Shoot</verbClass>
-                <hasStandardCommand>true</hasStandardCommand>
-                <defaultProjectile>Bullet_MF_Breeder</defaultProjectile>
-                <warmupTime>1.0</warmupTime>
-                <range>16.9</range>
-                <ticksBetweenBurstShots>14</ticksBetweenBurstShots>
-                <burstShotCount>10</burstShotCount>
-                <soundCast>Shot_Laser</soundCast>
-                <soundCastTail>GunTail_Medium</soundCastTail>
-                <muzzleFlashScale>9</muzzleFlashScale>
-            </li>
-        </verbs>
-        <tools>
-            <li>
-                <label>stock</label>
-                <capacities>
-                    <li>Blunt</li>
-                </capacities>
-                <power>9</power>
-                <cooldownTime>2</cooldownTime>
-            </li>
-            <li>
-                <label>barrel</label>
-                <capacities>
-                    <li>Blunt</li>
-                    <li>Poke</li>
-                </capacities>
-                <power>9</power>
-                <cooldownTime>2</cooldownTime>
-            </li>
-        </tools>
-    </ThingDef>
-
-    <!-- MF Hyperbreeder Alpha -->
-
-    <ThingDef ParentName="BaseHumanMakeableGun">
-        <defName>FCP_Gun_MF_hyperbreeder_Alpha</defName>
-        <label>MF Hyperbreeder Alpha</label>
-        <description>This recharger pistol is the second version of a self-charging weapon, with effectively limitless ammunition. It is a more advanced and compact version of the recharger rifle, which is fitted with a microfusion breeder that provides virtually limitless power, as well as a 10-shot charge capacity. It takes 0.3 seconds to recharge one shot, and three seconds are required to recover from a fully discharged state. It will not recharge unless equipped and is not automatically charged when drawn. This causes a delay before the first shot can be fired..</description>
-        <techLevel>Spacer</techLevel>
-        <graphicData>
-            <texPath>Laser/FCP_MF_hyperbreeder_Alpha</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-        </graphicData>
-        <soundInteract>Interact_ChargeRifle</soundInteract>
-        <statBases>
-            <WorkToMake>110000</WorkToMake>
-            <Mass>1.6</Mass>
-            <AccuracyTouch>0.95</AccuracyTouch>
-            <AccuracyShort>0.90</AccuracyShort>
-            <AccuracyMedium>0.80</AccuracyMedium>
             <AccuracyLong>0.75</AccuracyLong>
-            <RangedWeapon_Cooldown>0.8</RangedWeapon_Cooldown>
+            <RangedWeapon_Cooldown>1.9</RangedWeapon_Cooldown>
         </statBases>
         <recipeMaker>
             <researchPrerequisite>ChargedShot</researchPrerequisite>
             <skillRequirements>
-                <Crafting>8</Crafting>
+                <Crafting>9</Crafting>
             </skillRequirements>
             <recipeUsers Inherit="False">
                 <li>FabricationBench</li>
             </recipeUsers>
         </recipeMaker>
         <costList>
-            <Plasteel>25</Plasteel>
-            <ComponentSpacer>2</ComponentSpacer>
+            <Plasteel>45</Plasteel>
+            <ComponentSpacer>3</ComponentSpacer>
         </costList>
         <thingSetMakerTags>
             <li>RewardStandardLowFreq</li>
@@ -873,12 +501,12 @@
             <li>
                 <verbClass>Verb_Shoot</verbClass>
                 <hasStandardCommand>true</hasStandardCommand>
-                <defaultProjectile>Bullet_MF_Breeder</defaultProjectile>
-                <warmupTime>1.0</warmupTime>
-                <range>20.9</range>
-                <ticksBetweenBurstShots>14</ticksBetweenBurstShots>
-                <burstShotCount>10</burstShotCount>
-                <soundCast>Shot_Laser</soundCast>
+                <defaultProjectile>Bullet_Plasma</defaultProjectile>
+                <warmupTime>1.50</warmupTime>
+                <range>35.9</range>
+                <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+                <burstShotCount>4</burstShotCount>
+                <soundCast>Shot_Plasma</soundCast>
                 <soundCastTail>GunTail_Medium</soundCastTail>
                 <muzzleFlashScale>9</muzzleFlashScale>
             </li>
@@ -902,6 +530,103 @@
                 <cooldownTime>2</cooldownTime>
             </li>
         </tools>
+        <modExtensions>
+            <li Class="FalloutCore.DeathEffectModExtension">
+                <effectChance>0.65</effectChance>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!-- Sounds -->
+
+    <SoundDef>
+        <defName>Shot_Plasma</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Plasma</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>34.76471</min>
+                    <max>34.76471</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Damage and Hediff -->
+
+    <DamageDef Name="BurnPlasma">
+        <defName>Plasmaburn</defName>
+        <workerClass>FalloutCore.PlasmaBurn</workerClass>
+        <label>plasma burn</label>
+        <hasForcefulImpact>false</hasForcefulImpact>
+        <makesBlood>false</makesBlood>
+        <canInterruptJobs>false</canInterruptJobs>
+        <externalViolence>true</externalViolence>
+        <deathMessage>{0} has been burned to death by plasma.</deathMessage>
+        <hediff>PlasmaBurn</hediff>
+        <armorCategory>Heat</armorCategory>
+        <buildingDamageFactor>2</buildingDamageFactor>
+        <minDamageToFragment>15</minDamageToFragment>
+        <defaultArmorPenetration>0.6</defaultArmorPenetration>
+        <explosionHeatEnergyPerCell>15</explosionHeatEnergyPerCell>
+        <explosionCellFleck>BlastFlame</explosionCellFleck>
+        <explosionColorCenter>(1, 0.7, 0.7)</explosionColorCenter>
+        <explosionColorEdge>(1, 1, 0.7)</explosionColorEdge>
+        <soundExplosion>Explosion_Flame</soundExplosion>
+        <combatLogRules>Damage_Flame</combatLogRules>
+        <canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+    </DamageDef>
+
+    <HediffDef ParentName="InjuryBase">
+        <defName>PlasmaBurn</defName>
+        <label>plasma burn</label>
+        <labelNoun>a plasma burn</labelNoun>
+        <description>A painless plasma burn.</description>
+        <comps>
+            <li Class="HediffCompProperties_TendDuration">
+                <labelTendedWell>bandaged</labelTendedWell>
+                <labelTendedWellInner>tended</labelTendedWellInner>
+                <labelSolidTendedWell>tended</labelSolidTendedWell>
+            </li>
+            <li Class="HediffCompProperties_Infecter">
+                <infectionChance>0.30</infectionChance>
+            </li>
+            <li Class="HediffCompProperties_GetsPermanent">
+                <permanentLabel>plasma burn scar</permanentLabel>
+            </li>
+        </comps>
+        <injuryProps>
+            <painPerSeverity>0.0042</painPerSeverity>
+            <averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+            <canMerge>true</canMerge>
+            <destroyedLabel>Burned off</destroyedLabel>
+            <destroyedOutLabel>Burned out</destroyedOutLabel>
+        </injuryProps>
+    </HediffDef>
+
+    <!-- Bullet -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>Bullet_Plasma</defName>
+        <label>Plasma Cast</label>
+        <graphicData>
+            <texPath>Things/Projectile/FCP_Plasma</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Plasmaburn</damageDef>
+            <damageAmountBase>18</damageAmountBase>
+            <armorPenetrationBase>1.5</armorPenetrationBase>
+            <speed>55</speed>
+        </projectile>
     </ThingDef>
 
 </Defs>
