@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="ResourceBase">
+		<defName>ESCP_CurrencySeptim</defName>
+		<label>septim</label>
+		<description>A gold coin, one side bearing the Imperial Dragon, the other side the face of Tiber Septim. The typical currency of the Empire, and the lands they have invaded.</description>
+		<graphicData>
+			<texPath>Things/Item/Currencies/ESCP_Septim</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<resourceReadoutPriority>First</resourceReadoutPriority>
+		<soundInteract>Silver_Drop</soundInteract>
+		<soundDrop>Silver_Drop</soundDrop>
+		<useHitPoints>false</useHitPoints>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<resourceReadoutAlwaysShow>true</resourceReadoutAlwaysShow>
+		<statBases>
+			<MarketValue>1</MarketValue>
+			<Mass>0.008</Mass>
+		</statBases>
+		<thingCategories>
+			<li>ESCP_Currencies</li>
+		</thingCategories>
+		<stackLimit>500</stackLimit>
+		<smallVolume>true</smallVolume>
+		<allowedArchonexusCount>1000</allowedArchonexusCount>
+		<possessionCount>40</possessionCount>
+	</ThingDef>
+</Defs>
