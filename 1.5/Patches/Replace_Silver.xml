@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName = "Silver"]/graphicData/texPath</xpath>
+        <value>
+            <texPath>Things/Items/Currencies/FCP_Bottle_Caps_Currency</texPath>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName = "Silver"]/description</xpath>
+        <value>
+            <description>Bottle caps are the most common form of currency in the wasteland.</description>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName = "Silver"]/smeltable</xpath>
+        <value>
+            <smeltable>false</smeltable>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName = "Silver"]/label</xpath>
+        <value>
+            <label>Bottle Caps</label>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>/Defs/ThingDef[defName = "MineableSilver"]/building/mineableThing</xpath>
+        <value>
+            <mineableThing>ReplacedSilver</mineableThing>
+        </value>
+    </Operation>
+
+</Patch>
