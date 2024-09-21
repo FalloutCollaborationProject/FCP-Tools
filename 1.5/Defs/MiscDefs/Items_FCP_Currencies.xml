@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<ThingDef ParentName="ResourceBase">
-		<defName>ESCP_CurrencySeptim</defName>
+		<defName>FCP_CurrencyCaps</defName>
 		<label>septim</label>
-		<description>A gold coin, one side bearing the Imperial Dragon, the other side the face of Tiber Septim. The typical currency of the Empire, and the lands they have invaded.</description>
+		<description>An old Nuka Cola bottle cap. What used to be garbage is now the most commonly used currency in the wastes today.</description>
 		<graphicData>
-			<texPath>Things/Item/Currencies/ESCP_Septim</texPath>
+			<texPath>Things/Item/Currencies/FCP_Caps</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<resourceReadoutPriority>First</resourceReadoutPriority>
@@ -19,7 +19,7 @@
 			<Mass>0.008</Mass>
 		</statBases>
 		<thingCategories>
-			<li>ESCP_Currencies</li>
+			<li>FCP_Currencies</li>
 		</thingCategories>
 		<stackLimit>500</stackLimit>
 		<smallVolume>true</smallVolume>
