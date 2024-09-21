@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<!--
+		- Automatically adds the mod extension to every faction that DOESN'T already have the mod extensions
+		- If a faction already has the mod extension, they'll keep using whatever currency is already defined
+		- HOWEVER make sure you use <modExtensions Inherit="False"> if inheriting from a non-abstract faction def, otherwise they will use the currency from that def instead
+	-->
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/FactionDef[not(modExtensions/li[@Class="FalloutCurrencies_NonReplacement.CurrencyReplacement"])]</xpath>
+		<value>
+			<li Class="FalloutCurrencies_NonReplacement.CurrencyReplacement">
+				<currency>ESCP_CurrencySeptim</currency>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/TraderKindDef[orbital="true" and not(modExtensions/li[@Class="FalloutCurrencies_NonReplacement.CurrencyReplacement"])]</xpath>
+		<value>
+			<li Class="FalloutCurrencies_NonReplacement.CurrencyReplacement">
+				<currency>ESCP_CurrencySeptim</currency>
+			</li>
+		</value>
+	</Operation>
+	
+	<!-- Patch to replace scenarios that start with silver, to instead start with septims -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Silver"]/thingDef</xpath>
+		<value>
+			<thingDef>ESCP_CurrencySeptim</thingDef>
+		</value>
+	</Operation>
+</Patch>
