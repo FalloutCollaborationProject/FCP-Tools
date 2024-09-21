@@ -1,8 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+
+	<!--__________ Currencies __________-->
+
+	<!-- Bottlecaps -->
+
 	<ThingDef ParentName="ResourceBase">
 		<defName>FCP_Currency_Caps</defName>
-		<label>septim</label>
+		<label>Caps</label>
 		<description>An old Nuka Cola bottle cap. What used to be garbage is now the most commonly used currency in the wastes today.</description>
 		<graphicData>
 			<texPath>Things/Items/Currencies/FCP_Bottle_Caps_Currency</texPath>
@@ -26,4 +31,5 @@
 		<allowedArchonexusCount>1000</allowedArchonexusCount>
 		<possessionCount>40</possessionCount>
 	</ThingDef>
+
 </Defs>
