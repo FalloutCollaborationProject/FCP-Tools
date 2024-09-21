@@ -4,7 +4,7 @@
 		<defName>FCP_Currencies</defName>
 		<label>currencies</label>
 		<parent>Manufactured</parent>
-		<iconPath>Things/Item/Currencies/FCP_Caps/FCP_Caps_c</iconPath>
+		<iconPath>Things/Item/Currencies/FCP_Bottle_Caps_Currency/FCP_Caps_c</iconPath>
 		<resourceReadoutRoot>true</resourceReadoutRoot>
 	</ThingCategoryDef>
 </Defs>
