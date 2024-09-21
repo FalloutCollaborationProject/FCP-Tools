@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<ThingDef ParentName="ResourceBase">
-		<defName>FCP_CurrencyCaps</defName>
+		<defName>FCP_Currency_Caps</defName>
 		<label>septim</label>
 		<description>An old Nuka Cola bottle cap. What used to be garbage is now the most commonly used currency in the wastes today.</description>
 		<graphicData>
