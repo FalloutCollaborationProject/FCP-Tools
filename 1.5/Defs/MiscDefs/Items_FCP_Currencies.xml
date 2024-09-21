@@ -5,7 +5,7 @@
 		<label>septim</label>
 		<description>An old Nuka Cola bottle cap. What used to be garbage is now the most commonly used currency in the wastes today.</description>
 		<graphicData>
-			<texPath>Things/Item/Currencies/FCP_Caps</texPath>
+			<texPath>Things/Item/Currencies/FCP_Bottle_Caps_Currency</texPath>
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<resourceReadoutPriority>First</resourceReadoutPriority>
