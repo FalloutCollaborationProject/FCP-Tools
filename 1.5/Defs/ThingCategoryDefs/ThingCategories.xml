@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<ThingCategoryDef>
-		<defName>ESCP_Currencies</defName>
+		<defName>FCP_Currencies</defName>
 		<label>currencies</label>
 		<parent>Manufactured</parent>
-		<iconPath>Things/Item/Currencies/ESCP_Septim/ESCP_Septim_c</iconPath>
+		<iconPath>Things/Item/Currencies/FCP_Cap/FCP_Cap_c</iconPath>
 		<resourceReadoutRoot>true</resourceReadoutRoot>
 	</ThingCategoryDef>
 </Defs>
