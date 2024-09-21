@@ -9,7 +9,7 @@
 		<xpath>Defs/FactionDef[not(modExtensions/li[@Class="FalloutCurrencies_NonReplacement.CurrencyReplacement"])]</xpath>
 		<value>
 			<li Class="FalloutCurrencies_NonReplacement.CurrencyReplacement">
-				<currency>ESCP_CurrencySeptim</currency>
+				<currency>FCP_Currency_Caps</currency>
 			</li>
 		</value>
 	</Operation>
@@ -17,7 +17,7 @@
 		<xpath>Defs/TraderKindDef[orbital="true" and not(modExtensions/li[@Class="FalloutCurrencies_NonReplacement.CurrencyReplacement"])]</xpath>
 		<value>
 			<li Class="FalloutCurrencies_NonReplacement.CurrencyReplacement">
-				<currency>ESCP_CurrencySeptim</currency>
+				<currency>FCP_Currency_Caps</currency>
 			</li>
 		</value>
 	</Operation>
@@ -26,7 +26,7 @@
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Silver"]/thingDef</xpath>
 		<value>
-			<thingDef>ESCP_CurrencySeptim</thingDef>
+			<thingDef>FCP_Currency_Caps</thingDef>
 		</value>
 	</Operation>
 </Patch>
