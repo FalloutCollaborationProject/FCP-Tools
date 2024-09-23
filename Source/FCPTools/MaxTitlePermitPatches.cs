@@ -53,8 +53,7 @@ public static class MaxTitlePermitPatches
             pawn.royalty.AllFactionPermits.Remove(permit);
         }
     }
-
-    [HarmonyDebug]
+    
     [HarmonyTranspiler]
     [HarmonyPatch(typeof(PermitsCardUtility), "DoLeftRect")]
     private static IEnumerable<CodeInstruction> PermitsCardUtility_LeftRect_Transpiler(
@@ -103,7 +102,7 @@ public static class MaxTitlePermitPatches
             );
 
         // Get the index for storing text
-        int textIndex = ((matcher.NamedMatch("storeText").operand as LocalBuilder)!).LocalIndex;
+        int textIndex = (matcher.NamedMatch("storeText").operand as LocalBuilder)!.LocalIndex;
         
         // 5 - 6
         matcher.Advance(1) // move back up to the insertion point
