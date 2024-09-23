@@ -22,7 +22,7 @@
 		</value>
 	</Operation>
 	
-	<!-- Patch to replace scenarios that start with silver, to instead start with septims -->
+	<!-- Patch to replace scenarios that start with silver, to instead start with caps -->
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Silver"]/thingDef</xpath>
 		<value>

@@ -1,23 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-    <!-- Sounds -->
+    <!--__________ Sounds __________-->
+
+    <!-- Lasers -->
 
     <SoundDef>
-        <defName>Shot_Laser</defName>  
+        <defName>Shot_Laser</defName>
         <context>MapOnly</context>
-        <maxSimultaneous>1</maxSimultaneous>  
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
         <subSounds>
             <li>
                 <grains>
                     <li Class="AudioGrain_Clip">
-                        <clipPath>Laser</clipPath>
+                        <clipPath>FCP_Shot_Laser</clipPath>
                     </li>
-                </grains>      
+                </grains>
                 <volumeRange>
-                    <min>34.76471</min>        
-                    <max>34.76471</max>
-                </volumeRange>      
+                    <min>39.76471</min>
+                    <max>41.76471</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+    
+    <!-- Plasma -->
+
+    <SoundDef>
+        <defName>Shot_Plasma</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>FCP_Shot_Plasma</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39.76471</min>
+                    <max>41.76471</max>
+                </volumeRange>
                 <sustainLoop>False</sustainLoop>
             </li>
         </subSounds>
