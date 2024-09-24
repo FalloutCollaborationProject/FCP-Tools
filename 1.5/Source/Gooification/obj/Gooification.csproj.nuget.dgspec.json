@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FalloutCore\\1.3\\Rick\\Gooification\\Gooification.csproj": {}
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\1.5\\Source\\Gooification\\Gooification.csproj": {}
   },
   "projects": {
-    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FalloutCore\\1.3\\Rick\\Gooification\\Gooification.csproj": {
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\1.5\\Source\\Gooification\\Gooification.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FalloutCore\\1.3\\Rick\\Gooification\\Gooification.csproj",
+        "projectUniqueName": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\1.5\\Source\\Gooification\\Gooification.csproj",
         "projectName": "Gooification",
-        "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FalloutCore\\1.3\\Rick\\Gooification\\Gooification.csproj",
+        "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\1.5\\Source\\Gooification\\Gooification.csproj",
         "packagesPath": "C:\\Users\\Vova\\.nuget\\packages\\",
-        "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FalloutCore\\1.3\\Rick\\Gooification\\obj\\",
+        "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\1.5\\Source\\Gooification\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
@@ -29,6 +29,11 @@
           "net472": {
             "projectReferences": {}
           }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -36,13 +41,20 @@
           "dependencies": {
             "Krafs.Rimworld.Ref": {
               "target": "Package",
-              "version": "[1.3.3111-beta, )"
+              "version": "[1.5.4104, )"
+            },
+            "Lib.Harmony": {
+              "target": "Package",
+              "version": "[2.3.3, )"
             }
           }
         }
       },
       "runtimes": {
         "win": {
+          "#import": []
+        },
+        "win-arm64": {
           "#import": []
         },
         "win-x64": {

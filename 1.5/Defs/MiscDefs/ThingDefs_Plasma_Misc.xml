@@ -3,6 +3,7 @@
 	<ThingDef ParentName="BaseFilth">
 		<defName>FG_Filth_Goop</defName>
 		<label>goop</label>
+		<altitudeLayer>Projectile</altitudeLayer>
 		<statBases>
 			<Beauty>-12</Beauty>
 			<Cleanliness>-15</Cleanliness>

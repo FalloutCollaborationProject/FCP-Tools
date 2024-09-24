@@ -41,16 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompProperties_DeathFilth.cs" />
-    <Compile Include="Comp_DeathFilth.cs" />
-    <Compile Include="DamageLaserBurn.cs" />
-    <Compile Include="DamagePlasmaBurn.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="DamageWithFilth.cs" />
     <Compile Include="DeathEffectModExtension.cs" />
+    <Compile Include="Pawn_Kill_Patch.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">
-      <Version>1.3.3111-beta</Version>
+      <Version>1.5.4104</Version>
+    </PackageReference>
+    <PackageReference Include="Lib.Harmony">
+      <Version>2.3.3</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -2,24 +2,31 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.7.2": {
-      "Krafs.Rimworld.Ref/1.3.3111-beta": {
+      "Krafs.Rimworld.Ref/1.5.4104": {
         "type": "package",
         "compile": {
           "ref/net472/Assembly-CSharp-firstpass.dll": {},
           "ref/net472/Assembly-CSharp.dll": {},
+          "ref/net472/Assembly-CSharp_publicised.dll": {},
           "ref/net472/ISharpZipLib.dll": {},
           "ref/net472/Mono.Posix.dll": {},
           "ref/net472/Mono.Security.dll": {},
           "ref/net472/NAudio.dll": {},
           "ref/net472/NVorbis.dll": {},
+          "ref/net472/System.ComponentModel.Composition.dll": {},
           "ref/net472/System.Configuration.dll": {},
           "ref/net472/System.Core.dll": {},
           "ref/net472/System.Runtime.Serialization.dll": {},
+          "ref/net472/System.Runtime.dll": {},
           "ref/net472/System.Security.dll": {},
           "ref/net472/System.ServiceModel.Internals.dll": {},
           "ref/net472/System.Xml.Linq.dll": {},
           "ref/net472/System.Xml.dll": {},
           "ref/net472/System.dll": {},
+          "ref/net472/Unity.Burst.Unsafe.dll": {},
+          "ref/net472/Unity.Burst.dll": {},
+          "ref/net472/Unity.Mathematics.dll": {},
+          "ref/net472/Unity.MemoryProfiler.dll": {},
           "ref/net472/Unity.TextMeshPro.dll": {},
           "ref/net472/UnityEngine.AIModule.dll": {},
           "ref/net472/UnityEngine.ARModule.dll": {},
@@ -82,29 +89,50 @@
           "ref/net472/UnityEngine.WindModule.dll": {},
           "ref/net472/UnityEngine.XRModule.dll": {},
           "ref/net472/UnityEngine.dll": {},
+          "ref/net472/com.rlabrecque.steamworks.net.dll": {},
           "ref/net472/mscorlib.dll": {}
+        }
+      },
+      "Lib.Harmony/2.3.3": {
+        "type": "package",
+        "compile": {
+          "lib/net472/0Harmony.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net472/0Harmony.dll": {
+            "related": ".pdb"
+          }
         }
       }
     },
     ".NETFramework,Version=v4.7.2/win": {
-      "Krafs.Rimworld.Ref/1.3.3111-beta": {
+      "Krafs.Rimworld.Ref/1.5.4104": {
         "type": "package",
         "compile": {
           "ref/net472/Assembly-CSharp-firstpass.dll": {},
           "ref/net472/Assembly-CSharp.dll": {},
+          "ref/net472/Assembly-CSharp_publicised.dll": {},
           "ref/net472/ISharpZipLib.dll": {},
           "ref/net472/Mono.Posix.dll": {},
           "ref/net472/Mono.Security.dll": {},
           "ref/net472/NAudio.dll": {},
           "ref/net472/NVorbis.dll": {},
+          "ref/net472/System.ComponentModel.Composition.dll": {},
           "ref/net472/System.Configuration.dll": {},
           "ref/net472/System.Core.dll": {},
           "ref/net472/System.Runtime.Serialization.dll": {},
+          "ref/net472/System.Runtime.dll": {},
           "ref/net472/System.Security.dll": {},
           "ref/net472/System.ServiceModel.Internals.dll": {},
           "ref/net472/System.Xml.Linq.dll": {},
           "ref/net472/System.Xml.dll": {},
           "ref/net472/System.dll": {},
+          "ref/net472/Unity.Burst.Unsafe.dll": {},
+          "ref/net472/Unity.Burst.dll": {},
+          "ref/net472/Unity.Mathematics.dll": {},
+          "ref/net472/Unity.MemoryProfiler.dll": {},
           "ref/net472/Unity.TextMeshPro.dll": {},
           "ref/net472/UnityEngine.AIModule.dll": {},
           "ref/net472/UnityEngine.ARModule.dll": {},
@@ -167,29 +195,156 @@
           "ref/net472/UnityEngine.WindModule.dll": {},
           "ref/net472/UnityEngine.XRModule.dll": {},
           "ref/net472/UnityEngine.dll": {},
+          "ref/net472/com.rlabrecque.steamworks.net.dll": {},
           "ref/net472/mscorlib.dll": {}
+        }
+      },
+      "Lib.Harmony/2.3.3": {
+        "type": "package",
+        "compile": {
+          "lib/net472/0Harmony.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net472/0Harmony.dll": {
+            "related": ".pdb"
+          }
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win-arm64": {
+      "Krafs.Rimworld.Ref/1.5.4104": {
+        "type": "package",
+        "compile": {
+          "ref/net472/Assembly-CSharp-firstpass.dll": {},
+          "ref/net472/Assembly-CSharp.dll": {},
+          "ref/net472/Assembly-CSharp_publicised.dll": {},
+          "ref/net472/ISharpZipLib.dll": {},
+          "ref/net472/Mono.Posix.dll": {},
+          "ref/net472/Mono.Security.dll": {},
+          "ref/net472/NAudio.dll": {},
+          "ref/net472/NVorbis.dll": {},
+          "ref/net472/System.ComponentModel.Composition.dll": {},
+          "ref/net472/System.Configuration.dll": {},
+          "ref/net472/System.Core.dll": {},
+          "ref/net472/System.Runtime.Serialization.dll": {},
+          "ref/net472/System.Runtime.dll": {},
+          "ref/net472/System.Security.dll": {},
+          "ref/net472/System.ServiceModel.Internals.dll": {},
+          "ref/net472/System.Xml.Linq.dll": {},
+          "ref/net472/System.Xml.dll": {},
+          "ref/net472/System.dll": {},
+          "ref/net472/Unity.Burst.Unsafe.dll": {},
+          "ref/net472/Unity.Burst.dll": {},
+          "ref/net472/Unity.Mathematics.dll": {},
+          "ref/net472/Unity.MemoryProfiler.dll": {},
+          "ref/net472/Unity.TextMeshPro.dll": {},
+          "ref/net472/UnityEngine.AIModule.dll": {},
+          "ref/net472/UnityEngine.ARModule.dll": {},
+          "ref/net472/UnityEngine.AccessibilityModule.dll": {},
+          "ref/net472/UnityEngine.AndroidJNIModule.dll": {},
+          "ref/net472/UnityEngine.AnimationModule.dll": {},
+          "ref/net472/UnityEngine.AssetBundleModule.dll": {},
+          "ref/net472/UnityEngine.AudioModule.dll": {},
+          "ref/net472/UnityEngine.ClothModule.dll": {},
+          "ref/net472/UnityEngine.ClusterInputModule.dll": {},
+          "ref/net472/UnityEngine.ClusterRendererModule.dll": {},
+          "ref/net472/UnityEngine.CoreModule.dll": {},
+          "ref/net472/UnityEngine.CrashReportingModule.dll": {},
+          "ref/net472/UnityEngine.DSPGraphModule.dll": {},
+          "ref/net472/UnityEngine.DirectorModule.dll": {},
+          "ref/net472/UnityEngine.GameCenterModule.dll": {},
+          "ref/net472/UnityEngine.GridModule.dll": {},
+          "ref/net472/UnityEngine.HotReloadModule.dll": {},
+          "ref/net472/UnityEngine.IMGUIModule.dll": {},
+          "ref/net472/UnityEngine.ImageConversionModule.dll": {},
+          "ref/net472/UnityEngine.InputLegacyModule.dll": {},
+          "ref/net472/UnityEngine.InputModule.dll": {},
+          "ref/net472/UnityEngine.JSONSerializeModule.dll": {},
+          "ref/net472/UnityEngine.LocalizationModule.dll": {},
+          "ref/net472/UnityEngine.ParticleSystemModule.dll": {},
+          "ref/net472/UnityEngine.PerformanceReportingModule.dll": {},
+          "ref/net472/UnityEngine.Physics2DModule.dll": {},
+          "ref/net472/UnityEngine.PhysicsModule.dll": {},
+          "ref/net472/UnityEngine.ProfilerModule.dll": {},
+          "ref/net472/UnityEngine.ScreenCaptureModule.dll": {},
+          "ref/net472/UnityEngine.SharedInternalsModule.dll": {},
+          "ref/net472/UnityEngine.SpriteMaskModule.dll": {},
+          "ref/net472/UnityEngine.SpriteShapeModule.dll": {},
+          "ref/net472/UnityEngine.StreamingModule.dll": {},
+          "ref/net472/UnityEngine.SubstanceModule.dll": {},
+          "ref/net472/UnityEngine.SubsystemsModule.dll": {},
+          "ref/net472/UnityEngine.TLSModule.dll": {},
+          "ref/net472/UnityEngine.TerrainModule.dll": {},
+          "ref/net472/UnityEngine.TerrainPhysicsModule.dll": {},
+          "ref/net472/UnityEngine.TextCoreModule.dll": {},
+          "ref/net472/UnityEngine.TextRenderingModule.dll": {},
+          "ref/net472/UnityEngine.TilemapModule.dll": {},
+          "ref/net472/UnityEngine.UI.dll": {},
+          "ref/net472/UnityEngine.UIElementsModule.dll": {},
+          "ref/net472/UnityEngine.UIModule.dll": {},
+          "ref/net472/UnityEngine.UNETModule.dll": {},
+          "ref/net472/UnityEngine.UmbraModule.dll": {},
+          "ref/net472/UnityEngine.UnityAnalyticsModule.dll": {},
+          "ref/net472/UnityEngine.UnityConnectModule.dll": {},
+          "ref/net472/UnityEngine.UnityTestProtocolModule.dll": {},
+          "ref/net472/UnityEngine.UnityWebRequestAssetBundleModule.dll": {},
+          "ref/net472/UnityEngine.UnityWebRequestAudioModule.dll": {},
+          "ref/net472/UnityEngine.UnityWebRequestModule.dll": {},
+          "ref/net472/UnityEngine.UnityWebRequestTextureModule.dll": {},
+          "ref/net472/UnityEngine.UnityWebRequestWWWModule.dll": {},
+          "ref/net472/UnityEngine.VFXModule.dll": {},
+          "ref/net472/UnityEngine.VRModule.dll": {},
+          "ref/net472/UnityEngine.VehiclesModule.dll": {},
+          "ref/net472/UnityEngine.VideoModule.dll": {},
+          "ref/net472/UnityEngine.WindModule.dll": {},
+          "ref/net472/UnityEngine.XRModule.dll": {},
+          "ref/net472/UnityEngine.dll": {},
+          "ref/net472/com.rlabrecque.steamworks.net.dll": {},
+          "ref/net472/mscorlib.dll": {}
+        }
+      },
+      "Lib.Harmony/2.3.3": {
+        "type": "package",
+        "compile": {
+          "lib/net472/0Harmony.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net472/0Harmony.dll": {
+            "related": ".pdb"
+          }
         }
       }
     },
     ".NETFramework,Version=v4.7.2/win-x64": {
-      "Krafs.Rimworld.Ref/1.3.3111-beta": {
+      "Krafs.Rimworld.Ref/1.5.4104": {
         "type": "package",
         "compile": {
           "ref/net472/Assembly-CSharp-firstpass.dll": {},
           "ref/net472/Assembly-CSharp.dll": {},
+          "ref/net472/Assembly-CSharp_publicised.dll": {},
           "ref/net472/ISharpZipLib.dll": {},
           "ref/net472/Mono.Posix.dll": {},
           "ref/net472/Mono.Security.dll": {},
           "ref/net472/NAudio.dll": {},
           "ref/net472/NVorbis.dll": {},
+          "ref/net472/System.ComponentModel.Composition.dll": {},
           "ref/net472/System.Configuration.dll": {},
           "ref/net472/System.Core.dll": {},
           "ref/net472/System.Runtime.Serialization.dll": {},
+          "ref/net472/System.Runtime.dll": {},
           "ref/net472/System.Security.dll": {},
           "ref/net472/System.ServiceModel.Internals.dll": {},
           "ref/net472/System.Xml.Linq.dll": {},
           "ref/net472/System.Xml.dll": {},
           "ref/net472/System.dll": {},
+          "ref/net472/Unity.Burst.Unsafe.dll": {},
+          "ref/net472/Unity.Burst.dll": {},
+          "ref/net472/Unity.Mathematics.dll": {},
+          "ref/net472/Unity.MemoryProfiler.dll": {},
           "ref/net472/Unity.TextMeshPro.dll": {},
           "ref/net472/UnityEngine.AIModule.dll": {},
           "ref/net472/UnityEngine.ARModule.dll": {},
@@ -252,29 +407,50 @@
           "ref/net472/UnityEngine.WindModule.dll": {},
           "ref/net472/UnityEngine.XRModule.dll": {},
           "ref/net472/UnityEngine.dll": {},
+          "ref/net472/com.rlabrecque.steamworks.net.dll": {},
           "ref/net472/mscorlib.dll": {}
+        }
+      },
+      "Lib.Harmony/2.3.3": {
+        "type": "package",
+        "compile": {
+          "lib/net472/0Harmony.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net472/0Harmony.dll": {
+            "related": ".pdb"
+          }
         }
       }
     },
     ".NETFramework,Version=v4.7.2/win-x86": {
-      "Krafs.Rimworld.Ref/1.3.3111-beta": {
+      "Krafs.Rimworld.Ref/1.5.4104": {
         "type": "package",
         "compile": {
           "ref/net472/Assembly-CSharp-firstpass.dll": {},
           "ref/net472/Assembly-CSharp.dll": {},
+          "ref/net472/Assembly-CSharp_publicised.dll": {},
           "ref/net472/ISharpZipLib.dll": {},
           "ref/net472/Mono.Posix.dll": {},
           "ref/net472/Mono.Security.dll": {},
           "ref/net472/NAudio.dll": {},
           "ref/net472/NVorbis.dll": {},
+          "ref/net472/System.ComponentModel.Composition.dll": {},
           "ref/net472/System.Configuration.dll": {},
           "ref/net472/System.Core.dll": {},
           "ref/net472/System.Runtime.Serialization.dll": {},
+          "ref/net472/System.Runtime.dll": {},
           "ref/net472/System.Security.dll": {},
           "ref/net472/System.ServiceModel.Internals.dll": {},
           "ref/net472/System.Xml.Linq.dll": {},
           "ref/net472/System.Xml.dll": {},
           "ref/net472/System.dll": {},
+          "ref/net472/Unity.Burst.Unsafe.dll": {},
+          "ref/net472/Unity.Burst.dll": {},
+          "ref/net472/Unity.Mathematics.dll": {},
+          "ref/net472/Unity.MemoryProfiler.dll": {},
           "ref/net472/Unity.TextMeshPro.dll": {},
           "ref/net472/UnityEngine.AIModule.dll": {},
           "ref/net472/UnityEngine.ARModule.dll": {},
@@ -337,38 +513,61 @@
           "ref/net472/UnityEngine.WindModule.dll": {},
           "ref/net472/UnityEngine.XRModule.dll": {},
           "ref/net472/UnityEngine.dll": {},
+          "ref/net472/com.rlabrecque.steamworks.net.dll": {},
           "ref/net472/mscorlib.dll": {}
+        }
+      },
+      "Lib.Harmony/2.3.3": {
+        "type": "package",
+        "compile": {
+          "lib/net472/0Harmony.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net472/0Harmony.dll": {
+            "related": ".pdb"
+          }
         }
       }
     }
   },
   "libraries": {
-    "Krafs.Rimworld.Ref/1.3.3111-beta": {
-      "sha512": "PIzT1VlJ/+VsI/nklM3bnjjzuJ3BRdppaBSbll7FY3MS7gFP5/YrWsLduiWj9ww+Yc1AnZIwu84zA/CE2C/Xww==",
+    "Krafs.Rimworld.Ref/1.5.4104": {
+      "sha512": "/EQrSATOpDbBNtYDQJIT27FMNTuzL6fVuvyCxoqHWWdoINjljPna8s2/9wqD5AwDGiG9A8QN53zXnWTqUdy0Cw==",
       "type": "package",
-      "path": "krafs.rimworld.ref/1.3.3111-beta",
+      "path": "krafs.rimworld.ref/1.5.4104",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "LICENSE.txt",
+        "LICENSE.md",
+        "README.md",
         "icon.png",
-        "krafs.rimworld.ref.1.3.3111-beta.nupkg.sha512",
+        "krafs.rimworld.ref.1.5.4104.nupkg.sha512",
         "krafs.rimworld.ref.nuspec",
         "ref/net472/Assembly-CSharp-firstpass.dll",
         "ref/net472/Assembly-CSharp.dll",
+        "ref/net472/Assembly-CSharp_hash.hash",
+        "ref/net472/Assembly-CSharp_publicised.dll",
         "ref/net472/ISharpZipLib.dll",
         "ref/net472/Mono.Posix.dll",
         "ref/net472/Mono.Security.dll",
         "ref/net472/NAudio.dll",
         "ref/net472/NVorbis.dll",
+        "ref/net472/System.ComponentModel.Composition.dll",
         "ref/net472/System.Configuration.dll",
         "ref/net472/System.Core.dll",
         "ref/net472/System.Runtime.Serialization.dll",
+        "ref/net472/System.Runtime.dll",
         "ref/net472/System.Security.dll",
         "ref/net472/System.ServiceModel.Internals.dll",
         "ref/net472/System.Xml.Linq.dll",
         "ref/net472/System.Xml.dll",
         "ref/net472/System.dll",
+        "ref/net472/Unity.Burst.Unsafe.dll",
+        "ref/net472/Unity.Burst.dll",
+        "ref/net472/Unity.Mathematics.dll",
+        "ref/net472/Unity.MemoryProfiler.dll",
         "ref/net472/Unity.TextMeshPro.dll",
         "ref/net472/UnityEngine.AIModule.dll",
         "ref/net472/UnityEngine.ARModule.dll",
@@ -431,13 +630,50 @@
         "ref/net472/UnityEngine.WindModule.dll",
         "ref/net472/UnityEngine.XRModule.dll",
         "ref/net472/UnityEngine.dll",
+        "ref/net472/com.rlabrecque.steamworks.net.dll",
         "ref/net472/mscorlib.dll"
+      ]
+    },
+    "Lib.Harmony/2.3.3": {
+      "sha512": "qxO8d2q7luoY8mTfCStQFOgRSd3dWZSS0Ffi5nrjX4qFkZxEBAEvNh5b/ZejTl2kY0fJs62LmfRJkBBTeiuuyQ==",
+      "type": "package",
+      "path": "lib.harmony/2.3.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "HarmonyLogo.png",
+        "LICENSE",
+        "README.md",
+        "lib.harmony.2.3.3.nupkg.sha512",
+        "lib.harmony.nuspec",
+        "lib/net35/0Harmony.dll",
+        "lib/net35/0Harmony.pdb",
+        "lib/net452/0Harmony.dll",
+        "lib/net452/0Harmony.pdb",
+        "lib/net472/0Harmony.dll",
+        "lib/net472/0Harmony.pdb",
+        "lib/net48/0Harmony.dll",
+        "lib/net48/0Harmony.pdb",
+        "lib/net5.0/0Harmony.dll",
+        "lib/net5.0/0Harmony.pdb",
+        "lib/net6.0/0Harmony.dll",
+        "lib/net6.0/0Harmony.pdb",
+        "lib/net7.0/0Harmony.dll",
+        "lib/net7.0/0Harmony.pdb",
+        "lib/net8.0/0Harmony.dll",
+        "lib/net8.0/0Harmony.pdb",
+        "lib/netcoreapp3.0/0Harmony.dll",
+        "lib/netcoreapp3.0/0Harmony.pdb",
+        "lib/netcoreapp3.1/0Harmony.dll",
+        "lib/netcoreapp3.1/0Harmony.pdb",
+        "lib/netstandard2.0/_._"
       ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.2": [
-      "Krafs.Rimworld.Ref >= 1.3.3111-beta"
+      "Krafs.Rimworld.Ref >= 1.5.4104",
+      "Lib.Harmony >= 2.3.3"
     ]
   },
   "packageFolders": {
@@ -446,11 +682,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FalloutCore\\1.3\\Rick\\Gooification\\Gooification.csproj",
+      "projectUniqueName": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\1.5\\Source\\Gooification\\Gooification.csproj",
       "projectName": "Gooification",
-      "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FalloutCore\\1.3\\Rick\\Gooification\\Gooification.csproj",
+      "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\1.5\\Source\\Gooification\\Gooification.csproj",
       "packagesPath": "C:\\Users\\Vova\\.nuget\\packages\\",
-      "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FalloutCore\\1.3\\Rick\\Gooification\\obj\\",
+      "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\1.5\\Source\\Gooification\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -468,6 +704,11 @@
         "net472": {
           "projectReferences": {}
         }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -475,13 +716,20 @@
         "dependencies": {
           "Krafs.Rimworld.Ref": {
             "target": "Package",
-            "version": "[1.3.3111-beta, )"
+            "version": "[1.5.4104, )"
+          },
+          "Lib.Harmony": {
+            "target": "Package",
+            "version": "[2.3.3, )"
           }
         }
       }
     },
     "runtimes": {
       "win": {
+        "#import": []
+      },
+      "win-arm64": {
         "#import": []
       },
       "win-x64": {
