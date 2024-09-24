@@ -7,8 +7,9 @@
     <Copyright>Copyright ©Fallout Collaboration Project 2024</Copyright>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
-    <RootNamespace>FCP.Tools</RootNamespace>
+    <RootNamespace>FCP.TitleExtensions</RootNamespace>
     <Authors>Fallout Collaboration Project</Authors>
+    <AssemblyName>FCPTitleExtensions</AssemblyName>
   </PropertyGroup>
   <PropertyGroup>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
@@ -16,12 +17,12 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>portable</DebugType>
-    <OutputPath>..\..\1.5\Assemblies\</OutputPath>
+    <OutputPath>..\..\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE;RIMWORLD_1_5</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
-    <OutputPath>..\..\1.5\Assemblies\</OutputPath>
+    <OutputPath>..\..\Assemblies\</OutputPath>
     <DefineConstants>TRACE;RIMWORLD_1_5</DefineConstants>
   </PropertyGroup>
   <ItemGroup>

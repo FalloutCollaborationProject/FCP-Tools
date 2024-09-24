@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FCPTools", "FCPTools.csproj", "{2BAFC8AB-B141-4F2E-B5A6-E68AE0ECAC98}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FCPTitleExtensions", "FCPTitleExtensions.csproj", "{2BAFC8AB-B141-4F2E-B5A6-E68AE0ECAC98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

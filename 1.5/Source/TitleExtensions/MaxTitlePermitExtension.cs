@@ -1,5 +1,5 @@
 ﻿// ReSharper disable UnassignedField.Global
-namespace FCP.Tools;
+namespace FCP.TitleExtensions;
 
 [UsedImplicitly]
 public class MaxTitlePermitExtension : DefModExtension

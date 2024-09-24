@@ -1,58 +1,14 @@
-﻿using System.Reflection;
-using System.Reflection.Emit;
+﻿using System.Reflection.Emit;
 using HarmonyLib;
 using UnityEngine;
 
+namespace FCP.TitleExtensions;
+
 // ReSharper disable InconsistentNaming
 
-namespace FCP.Tools;
-
 [HarmonyPatch]
-public static class MaxTitlePermitPatches
+public static class PermitsCardUtilityPatches
 {
-
-    [HarmonyPostfix]
-    [HarmonyPatch(typeof(RoyalTitlePermitDef), nameof(RoyalTitlePermitDef.AvailableForPawn))]
-    private static void AvailableForPawnPostfix(ref bool __result, RoyalTitlePermitDef __instance, Pawn pawn, Faction faction)
-    {
-        if (__result == false)
-            return;
-        
-        var permitExtension = __instance.GetModExtension<MaxTitlePermitExtension>();
-        if (permitExtension == null) 
-            return;
-        
-        var currentTitle = pawn.royalty.GetCurrentTitle(faction);
-
-        if (currentTitle.seniority < __instance.minTitle.seniority ||
-            currentTitle.seniority > permitExtension.maxTitle.seniority)
-        {
-            __result = false;
-        }
-    }
-
-    [HarmonyPostfix]
-    [HarmonyPatch(typeof(RoyalTitleAwardWorker), nameof(RoyalTitleAwardWorker.DoAward))]
-    [HarmonyPatch(typeof(RoyalTitleAwardWorker_Instant), nameof(RoyalTitleAwardWorker.DoAward))]
-    private static void DoAwardPostfix(Pawn pawn, Faction faction, RoyalTitleDef currentTitle, RoyalTitleDef newTitle)
-    {
-        var permitsToRemove = new List<FactionPermit>();
-        foreach (var permit in pawn.royalty.AllFactionPermits.ToList())
-        {
-            var permitExtension = permit.Permit.GetModExtension<MaxTitlePermitExtension>();
-            if (permitExtension == null) continue;
-
-            if (newTitle.seniority > permitExtension.maxTitle.seniority)
-            {
-                permitsToRemove.Add(permit);
-            }
-        }
-        foreach (var permit in permitsToRemove)
-        {
-            Messages.Message($"Due to their promotion to {newTitle.GetLabelFor(pawn)}, {pawn.Name} has lost their {permit.Permit.LabelCap} permit", MessageTypeDefOf.NeutralEvent);
-            pawn.royalty.AllFactionPermits.Remove(permit);
-        }
-    }
     
     [HarmonyTranspiler]
     [HarmonyPatch(typeof(PermitsCardUtility), "DoLeftRect")]
@@ -107,17 +63,21 @@ public static class MaxTitlePermitPatches
         // 5 - 6
         matcher.Advance(1) // move back up to the insertion point
             .Insert(
-            // 5
-            CodeInstruction.LoadLocal(textIndex), // text Field
-            CodeInstruction.LoadArgument(1), // Pawn
-            // 6
-            CodeInstruction.Call(typeof(MaxTitlePermitPatches), nameof(AppendMaxTitleStatus)),
-            CodeInstruction.StoreLocal(textIndex)
-        );
+                // 5
+                CodeInstruction.LoadLocal(textIndex), // text Field
+                CodeInstruction.LoadArgument(1), // Pawn
+                // 6
+                CodeInstruction.Call(typeof(MaxTitlePermitPatches), nameof(AppendMaxTitleStatus)),
+                CodeInstruction.StoreLocal(textIndex)
+            );
 
         return matcher.Instructions();
     }
+    // ReSharper restore InconsistentNaming
 
+    /// <summary>
+    /// Retrieves the Extension and if nessecary, append the max title text.
+    /// </summary>
     private static string AppendMaxTitleStatus(string text, Pawn pawn)
     {
         var permitExtension = PermitsCardUtility.selectedPermit.GetModExtension<MaxTitlePermitExtension>();
@@ -134,4 +94,3 @@ public static class MaxTitlePermitPatches
         return text;
     }
 }
-    
