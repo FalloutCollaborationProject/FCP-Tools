@@ -7,9 +7,9 @@
     <Copyright>Copyright ©Fallout Collaboration Project 2024</Copyright>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
-    <RootNamespace>FCP.TitleExtensions</RootNamespace>
+    <RootNamespace>FCP</RootNamespace>
     <Authors>Fallout Collaboration Project</Authors>
-    <AssemblyName>FCPTitleExtensions</AssemblyName>
+    <AssemblyName>FCP_FactionTools</AssemblyName>
   </PropertyGroup>
   <PropertyGroup>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
