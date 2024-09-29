@@ -8,14 +8,12 @@ namespace FCP.Factions;
 public static class IncidentWorker_NeutralGroup_Patches
 {
     
-    [HarmonyDebug]
     [HarmonyTranspiler]
     [HarmonyPatch("FactionCanBeGroupSource")]
     private static IEnumerable<CodeInstruction> FactionCanBeGroupSource_Transpiler(
         IEnumerable<CodeInstruction> instructions, ILGenerator generator)
     {
         var factionGetHiddenMethod = typeof(Faction).PropertyGetter(nameof(Faction.Hidden));
-        
         
         var matcher = new CodeMatcher(instructions, generator)
             .MatchEndForward(
