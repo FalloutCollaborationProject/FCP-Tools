@@ -24,6 +24,11 @@
                 <milkIntervalDays>1</milkIntervalDays>
                 <milkAmount>30</milkAmount>
             </li>
+            <li Class="CompProperties_Spawner">
+                <thingToSpawn>FCP_Brahmin_Cow_Patty</thingToSpawn>
+                <spawnCount>1</spawnCount>
+                <spawnIntervalRange>50000~60000</spawnIntervalRange>
+            </li>
         </comps>
         <tools>
             <li>
@@ -68,7 +73,7 @@
             </li>
         </tools>
         <race>
-            <body>QuadrupedAnimalWithHooves</body>
+            <body>FCP_Body_Animal_Quadruped_Animal_With_Hooves_Two_Heads</body>
             <herdAnimal>true</herdAnimal>
             <baseBodySize>2.0</baseBodySize>
             <baseHungerRate>0.45</baseHungerRate>
@@ -78,7 +83,7 @@
             <wildness>0.05</wildness>
             <trainability>None</trainability>
             <packAnimal>true</packAnimal>
-            <meatLabel>beef</meatLabel>
+            <useMeatFrom>Cow</useMeatFrom>
             <gestationPeriodDays>12</gestationPeriodDays>
             <lifeExpectancy>30</lifeExpectancy>
             <manhunterOnDamageChance>0.40</manhunterOnDamageChance>
@@ -90,11 +95,11 @@
                 </li>
                 <li>
                     <def>AnimalJuvenile</def>
-                    <minAge>0.2</minAge>
+                    <minAge>0.25</minAge>
                 </li>
                 <li>
                     <def>AnimalAdult</def>
-                    <minAge>0.45</minAge>
+                    <minAge>0.3333</minAge>
                     <soundWounded>Pawn_Muffalo_Wounded</soundWounded>
                     <soundDeath>Pawn_Muffalo_Death</soundDeath>
                     <soundCall>Pawn_Muffalo_Call</soundCall>
@@ -106,8 +111,7 @@
             <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
         </race>
         <tradeTags>
-            <li>AnimalCommon</li>
-            <li>AnimalFarm</li>
+            <li>FCP_Animal_Farm_Brahmin</li>
         </tradeTags>
     </ThingDef>
 
@@ -138,7 +142,7 @@
                 </bodyGraphicData>
                 <femaleGraphicData>
                     <texPath>Things/Pawn/Animal/Brahmin/FCP_Brahmin_Cow</texPath>
-                    <drawSize>1.25</drawSize>
+                    <drawSize>1.0</drawSize>
                     <color>(200,200,200)</color>
                     <shadowData>
                         <volume>(0.4, 0.3, 0.3)</volume>

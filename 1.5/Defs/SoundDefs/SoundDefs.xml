@@ -49,4 +49,23 @@
         </subSounds>
     </SoundDef>
 
+    <!-- Game Start Line -->
+
+    <SoundDef>
+        <defName>FCP_War_Never_Changes</defName>
+        <maxVoices>1</maxVoices>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <onCamera>True</onCamera>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Songs/Entry/FCP_Michael_Rosson_War_Never_Changes</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>100~100</volumeRange>
+            </li>
+        </subSounds>
+    </SoundDef>
+
 </Defs>

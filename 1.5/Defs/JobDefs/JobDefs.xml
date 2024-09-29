@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Job Defs __________-->
+
+    <!--_____ Power Armor Job Defs _____-->
+
+    <!-- Refuel Power Armor -->
+
+    <JobDef>
+        <defName>RR_RefuelPowerArmor</defName>
+        <driverClass>RangerRick_PowerArmor.JobDriver_RefuelPowerArmor</driverClass>
+        <reportString>Refueling TargetA.</reportString>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+
+    <!-- Power Armor Training Trait -->
+
+    <JobDef>
+        <defName>RR_TrainTrait</defName>
+        <driverClass>RangerRick_PowerArmor.JobDriver_TrainTrait</driverClass>
+        <reportString>Training at TargetA.</reportString>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+
+</Defs>

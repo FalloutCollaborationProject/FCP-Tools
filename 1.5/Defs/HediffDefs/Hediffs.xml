@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Hediffs __________-->
+
+    <!--_____ Power Armor Hediffs _____-->
+
+    <!-- Power Armor Empty Fuel -->
+
+    <HediffDef ParentName="DiseaseBase">
+        <defName>FCP_Power_Armor_Empty_Fusion_Core</defName>
+        <label>Power Armor (Empty Fusion Core)</label>
+        <description>Your power armor is out of fusion cores!</description>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <postFactor>0.3</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <postFactor>0.3</postFactor>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+
+</Defs>
