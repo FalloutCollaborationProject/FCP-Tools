@@ -429,12 +429,3 @@ FodyWeavers.xsd
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,visualstudio
-Source/TitularRoyalty/obj/Debug/TitularRoyalty.csproj.AssemblyReference.cache
-*.cache
-Source/TitularRoyalty/.vs/TitularRoyalty/v17/.suo
-*.cache
-Source/TitularRoyalty/obj/Debug/TitularRoyalty.csproj.AssemblyReference.cache
-Source/TitularRoyalty/.vs/TitularRoyalty/v17/.suo
-*.vsidx
-Source/TitularRoyalty/obj/Debug/TitularRoyalty.csproj.FileListAbsolute.txt
-/Source/TitularRoyalty/.idea/.idea.TitularRoyalty/.idea/copilot

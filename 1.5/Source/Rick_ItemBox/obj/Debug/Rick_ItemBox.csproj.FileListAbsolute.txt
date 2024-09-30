@@ -1,4 +1,0 @@
-J:\Modding\Github\MashedCore\1.5\LoadFolders\ItemBox\Assemblies\Rick_ItemBox.dll
-J:\Modding\Github\MashedCore\1.5\LoadFolders\ItemBox\Source\Rick_ItemBox\obj\Debug\Rick_ItemBox.csproj.AssemblyReference.cache
-J:\Modding\Github\MashedCore\1.5\LoadFolders\ItemBox\Source\Rick_ItemBox\obj\Debug\Rick_ItemBox.csproj.CoreCompileInputs.cache
-J:\Modding\Github\MashedCore\1.5\LoadFolders\ItemBox\Source\Rick_ItemBox\obj\Debug\Rick_ItemBox.dll
