@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "6Cjk/hB29tk=",
+  "dgSpecHash": "fMjHsW45spw=",
   "success": true,
-  "projectFilePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\1.5\\Source\\Gooification\\Gooification.csproj",
+  "projectFilePath": "F:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\Source\\Gooification\\Gooification.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Vova\\.nuget\\packages\\krafs.rimworld.ref\\1.5.4104\\krafs.rimworld.ref.1.5.4104.nupkg.sha512",
-    "C:\\Users\\Vova\\.nuget\\packages\\lib.harmony\\2.3.3\\lib.harmony.2.3.3.nupkg.sha512"
+    "C:\\Users\\Canon\\.nuget\\packages\\krafs.rimworld.ref\\1.5.4104\\krafs.rimworld.ref.1.5.4104.nupkg.sha512",
+    "C:\\Users\\Canon\\.nuget\\packages\\lib.harmony\\2.3.3\\lib.harmony.2.3.3.nupkg.sha512"
   ],
   "logs": []
 }

@@ -1,21 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\1.5\\Source\\Gooification\\Gooification.csproj": {}
+    "F:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\Source\\Gooification\\Gooification.csproj": {}
   },
   "projects": {
-    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\1.5\\Source\\Gooification\\Gooification.csproj": {
+    "F:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\Source\\Gooification\\Gooification.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\1.5\\Source\\Gooification\\Gooification.csproj",
+        "projectUniqueName": "F:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\Source\\Gooification\\Gooification.csproj",
         "projectName": "Gooification",
-        "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\1.5\\Source\\Gooification\\Gooification.csproj",
-        "packagesPath": "C:\\Users\\Vova\\.nuget\\packages\\",
-        "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\1.5\\Source\\Gooification\\obj\\",
+        "projectPath": "F:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\Source\\Gooification\\Gooification.csproj",
+        "packagesPath": "C:\\Users\\Canon\\.nuget\\packages\\",
+        "outputPath": "F:\\SteamLibrary\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\Source\\Gooification\\obj\\",
         "projectStyle": "PackageReference",
-        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Vova\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Canon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -23,12 +26,21 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "E:\\localnuget": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/discord-net/api/v3/index.json": {}
         },
         "frameworks": {
           "net472": {
+            "targetAlias": "net472",
             "projectReferences": {}
           }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
         },
         "restoreAuditProperties": {
           "enableAudit": "true",
@@ -38,6 +50,7 @@
       },
       "frameworks": {
         "net472": {
+          "targetAlias": "net472",
           "dependencies": {
             "Krafs.Rimworld.Ref": {
               "target": "Package",
@@ -47,21 +60,8 @@
               "target": "Package",
               "version": "[2.3.3, )"
             }
-          }
-        }
-      },
-      "runtimes": {
-        "win": {
-          "#import": []
-        },
-        "win-arm64": {
-          "#import": []
-        },
-        "win-x64": {
-          "#import": []
-        },
-        "win-x86": {
-          "#import": []
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-preview.5.24307.3\\RuntimeIdentifierGraph.json"
         }
       }
     }
