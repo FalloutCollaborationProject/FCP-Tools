@@ -1,5 +1,10 @@
 ﻿// ReSharper disable UnassignedField.Global
-namespace FCP.TitleExtensions;
+
+using JetBrains.Annotations;
+using RimWorld;
+using Verse;
+
+namespace FCP.Factions;
 
 [UsedImplicitly]
 public class MaxTitlePermitExtension : DefModExtension

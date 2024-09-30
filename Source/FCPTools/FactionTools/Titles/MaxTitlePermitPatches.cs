@@ -1,8 +1,12 @@
-﻿using HarmonyLib;
+﻿using System.Collections.Generic;
+using System.Linq;
+using HarmonyLib;
+using RimWorld;
+using Verse;
 
 // ReSharper disable InconsistentNaming
 
-namespace FCP.TitleExtensions;
+namespace FCP.Factions;
 
 [HarmonyPatch]
 public static class MaxTitlePermitPatches

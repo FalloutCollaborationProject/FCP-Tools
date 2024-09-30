@@ -1,10 +1,14 @@
-﻿using System.Reflection;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using System.Reflection.Emit;
 using HarmonyLib;
+using RimWorld;
+using Verse;
 
 namespace FCP.Factions;
 
-[HarmonyDebug, HarmonyPatch]
+[HarmonyPatch]
 public static class IncidentWorker_CaravanMeeting_Patches
 {
     private static MethodBase TargetMethod()
@@ -22,8 +26,7 @@ public static class IncidentWorker_CaravanMeeting_Patches
 
         return method;
     }
-
-    [HarmonyDebug]
+    
     private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions,
         ILGenerator generator)
     {

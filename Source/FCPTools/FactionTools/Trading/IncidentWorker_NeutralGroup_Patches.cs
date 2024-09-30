@@ -1,9 +1,10 @@
-﻿using System.Reflection.Emit;
+﻿using System.Collections.Generic;
+using System.Reflection.Emit;
 using HarmonyLib;
+using RimWorld;
 
 namespace FCP.Factions;
 
-[HarmonyDebug]
 [HarmonyPatch(typeof(IncidentWorker_NeutralGroup))]
 public static class IncidentWorker_NeutralGroup_Patches
 {
@@ -24,7 +25,7 @@ public static class IncidentWorker_NeutralGroup_Patches
         
         var failurePoint = matcher.Operand;
         
-        matcher.CreateLabelAt(matcher.Pos + 1, out var nextCheckPoint)
+        matcher.CreateLabelWithOffsets(1, out var nextCheckPoint)
             .SetAndAdvance(OpCodes.Brfalse, nextCheckPoint)
             .Insert(
                 CodeInstruction.LoadArgument(1), // Load Faction

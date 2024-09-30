@@ -1,7 +1,11 @@
-﻿using System.Reflection.Emit;
+﻿using System.Collections.Generic;
+using System.Reflection.Emit;
 using HarmonyLib;
+using RimWorld;
+using UnityEngine;
+using Verse;
 
-namespace FCP.TitleExtensions;
+namespace FCP.Factions;
 
 // ReSharper disable InconsistentNaming
 

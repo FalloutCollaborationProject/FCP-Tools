@@ -1,4 +1,6 @@
 ﻿using HarmonyLib;
+using RimWorld;
+using Verse;
 
 namespace FCP.Factions;
 
