@@ -6,17 +6,17 @@
 		- HOWEVER make sure you use <modExtensions Inherit="False"> if inheriting from a non-abstract faction def, otherwise they will use the currency from that def instead
 	-->
 	<Operation Class="PatchOperationAddModExtension">
-		<xpath>Defs/FactionDef[not(modExtensions/li[@Class="FalloutCurrencies_NonReplacement.CurrencyReplacement"])]</xpath>
+		<xpath>Defs/FactionDef[not(modExtensions/li[@Class="FCP.Currencies.CurrencyReplacement"])]</xpath>
 		<value>
-			<li Class="FalloutCurrencies_NonReplacement.CurrencyReplacement">
+			<li Class="FCP.Currencies.CurrencyReplacement">
 				<currency>FCP_Currency_Caps</currency>
 			</li>
 		</value>
 	</Operation>
 	<Operation Class="PatchOperationAddModExtension">
-		<xpath>Defs/TraderKindDef[orbital="true" and not(modExtensions/li[@Class="FalloutCurrencies_NonReplacement.CurrencyReplacement"])]</xpath>
+		<xpath>Defs/TraderKindDef[orbital="true" and not(modExtensions/li[@Class="FCP.Currencies.CurrencyReplacement"])]</xpath>
 		<value>
-			<li Class="FalloutCurrencies_NonReplacement.CurrencyReplacement">
+			<li Class="FCP.Currencies.CurrencyReplacement">
 				<currency>FCP_Currency_Caps</currency>
 			</li>
 		</value>
