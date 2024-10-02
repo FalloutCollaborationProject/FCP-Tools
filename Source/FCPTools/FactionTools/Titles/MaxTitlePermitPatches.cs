@@ -37,21 +37,16 @@ public static class MaxTitlePermitPatches
     [HarmonyPatch(typeof(RoyalTitleAwardWorker_Instant), nameof(RoyalTitleAwardWorker.DoAward))]
     private static void DoAwardPostfix(Pawn pawn, Faction faction, RoyalTitleDef currentTitle, RoyalTitleDef newTitle)
     {
-        var permitsToRemove = new List<FactionPermit>();
         foreach (var permit in pawn.royalty.AllFactionPermits.ToList())
         {
             var permitExtension = permit.Permit.GetModExtension<MaxTitlePermitExtension>();
-            if (permitExtension == null) continue;
 
-            if (newTitle.seniority > permitExtension.maxTitle.seniority)
+            if (newTitle.seniority > permitExtension?.maxTitle.seniority)
             {
-                permitsToRemove.Add(permit);
+                Messages.Message("FCP_MessagePermitLostOnPromotion".Translate(pawn, currentTitle.GetLabelFor(pawn), permit.Permit),
+                    MessageTypeDefOf.NeutralEvent);
+                pawn.royalty.AllFactionPermits.Remove(permit);
             }
-        }
-        foreach (var permit in permitsToRemove)
-        {
-            Messages.Message($"Due to their promotion to {newTitle.GetLabelFor(pawn)}, {pawn.Name} has lost their {permit.Permit.LabelCap} permit", MessageTypeDefOf.NeutralEvent);
-            pawn.royalty.AllFactionPermits.Remove(permit);
         }
     }
 }

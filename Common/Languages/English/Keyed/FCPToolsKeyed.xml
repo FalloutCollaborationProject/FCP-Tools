@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+	<FCP_MessagePermitLostOnPromotion>Due to {0_possessive} promotion to {1}, {0_labelShort} has lost {0_possessive} {2} permit</FCP_MessagePermitLostOnPromotion>
+</LanguageData>
