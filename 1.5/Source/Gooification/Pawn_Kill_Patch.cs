@@ -54,6 +54,7 @@ namespace FalloutCore
                     var old = drop.def.category;
                     drop.def.category = ThingCategory.Mote;
                     GenSpawn.Spawn(drop, pos, map);
+                    drop.SetForbidden(true);
                     drop.def.category = old;
                 }
                 __instance.Corpse.Destroy();
