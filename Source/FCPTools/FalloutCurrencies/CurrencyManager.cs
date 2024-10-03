@@ -1,4 +1,6 @@
-﻿using RimWorld;
+﻿using HarmonyLib;
+using RimWorld;
+using System.Collections.Generic;
 using Verse;
 
 namespace FCP.Currencies;
@@ -7,7 +9,7 @@ namespace FCP.Currencies;
 public static class CurrencyManager
 {
     public static ThingDef defaultCurrencyDef;
-    
+    public static HashSet<StockGenerator_SingleDef> silverStockGenerators = new HashSet<StockGenerator_SingleDef>();
     static CurrencyManager()
     {
         defaultCurrencyDef = ThingDefOf.Silver;
@@ -17,13 +19,16 @@ public static class CurrencyManager
                                                                        && singleDef.thingDef == ThingDefOf.Gold);
             if (stock != null)
             {
-                traderKind.stockGenerators.Add(new StockGenerator_SingleDef
+                var silverStock = new StockGenerator_SingleDef
                 {
                     thingDef = defaultCurrencyDef,
                     countRange = new IntRange(stock.countRange.min * 2, stock.countRange.max * 2)
-                });
+                };
+                silverStockGenerators.Add(silverStock);
+                traderKind.stockGenerators.Add(silverStock);
             }
         }
+        new Harmony("FCPCurrencies").PatchAll();
     }
 
     public static bool TryGetCurrency(this ITrader trader, out ThingDef currency)
@@ -66,8 +71,6 @@ public static class CurrencyManager
 
     public static void SwapCurrency(ThingDef newDef)
     {
-        Log.Message("Swapping silver to: " + newDef.label);
         ThingDefOf.Silver = newDef;
-        Log.Message("Silver is now: " + ThingDefOf.Silver.label);
     }
 }

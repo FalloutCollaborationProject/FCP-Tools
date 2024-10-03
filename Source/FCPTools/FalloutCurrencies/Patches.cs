@@ -1,6 +1,7 @@
 ﻿using FCP.Currencies;
 using HarmonyLib;
 using RimWorld;
+using System.Collections.Generic;
 using Verse;
 
 namespace FCP.Currency;
@@ -76,6 +77,17 @@ public static class RewardsGenerator_DoGenerate_Patch
     }
 }
 
+[HarmonyPatch(typeof(Tradeable), "IsCurrency", MethodType.Getter)]
+public static class Tradeable_IsCurrency_Patch
+{
+    public static void Postfix(Tradeable __instance, ref bool __result)
+    {
+        if (__result is false && TradeSession.trader.TryGetCurrency(out var currency) && __instance.ThingDef == currency)
+        {
+            __result = true;
+        }
+    }
+}
 /// <summary>
 /// Replaces all instances of Silver with the factions specified currency
 /// Obviously raises the issue that traders can never actually sell silver, 
@@ -84,19 +96,19 @@ public static class RewardsGenerator_DoGenerate_Patch
 [HarmonyPatch(typeof(StockGenerator_SingleDef), "GenerateThings")]
 public static class GenerateThings_Patch
 {
-    public static void Prefix(StockGenerator_SingleDef __instance, ref ThingDef ___thingDef, out ThingDef __state,
-        int forTile, Faction faction = null)
+    public static IEnumerable<Thing> Postfix(IEnumerable<Thing> result, StockGenerator_SingleDef __instance, int forTile, 
+        Faction faction = null)
     {
-        __state = ___thingDef;
-        if (___thingDef == CurrencyManager.defaultCurrencyDef
+        var __state = __instance.thingDef;
+        if (__instance.thingDef == CurrencyManager.defaultCurrencyDef && CurrencyManager.silverStockGenerators.Contains(__instance) is false
             && (faction.TryGetCurrency(out var currency) || __instance.trader.TryGetCurrency(out currency)))
         {
-            ___thingDef = currency;
+            __instance.thingDef = currency;
         }
-    }
-
-    public static void Postfix(ref ThingDef ___thingDef, ThingDef __state)
-    {
-        ___thingDef = __state;
+        foreach (var thing in result)
+        {
+            yield return thing;
+        }
+        __instance.thingDef = __state;
     }
 }
