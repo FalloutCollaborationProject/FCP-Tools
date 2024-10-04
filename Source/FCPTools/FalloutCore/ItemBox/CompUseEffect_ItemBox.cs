@@ -42,9 +42,15 @@ public class CompUseEffect_ItemBox : CompUseEffect
 
     private void DoDrop(ThingDef thingDef, int stackCount)
     {
+        var randomQuality = QualityUtility.GenerateQualityTraderItem();
+        if (Rand.Chance(0.025f))
+        {
+            randomQuality = QualityCategory.Legendary;
+        }
+        
         Thing droppedThing = ThingMaker.MakeThing(thingDef);
         droppedThing.stackCount = stackCount;
-        droppedThing.TryGetComp<CompQuality>()?.SetQuality(QualityUtility.GenerateQualityRandomEqualChance(), ArtGenerationContext.Colony);
+        droppedThing.TryGetComp<CompQuality>()?.SetQuality(randomQuality, ArtGenerationContext.Outsider);
         GenPlace.TryPlaceThing(droppedThing, parent.Position, parent.Map, ThingPlaceMode.Near);
     }
 }
