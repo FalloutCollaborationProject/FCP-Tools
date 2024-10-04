@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>  
+<?xml version="1.0" encoding="UTF-8"?>
 
 <Defs>
 
@@ -6,17 +6,364 @@
 
     <!--_____ Wastelander Clothing _____-->
 
-    <!--___ Wastelanders ___-->
+    <!--___ Armor ___-->
 
-    <!-- Army Uniform -->
+    <!--__ Pre-War Armor __-->
 
+    <!--_ Combat Armor _-->
+
+    <!-- Combat Armor Base -->
+
+    <ThingDef Name="FCP_Apparel_Combat_Armor_Base" Abstract="True" ParentName="ApparelBase">
+        <techLevel>Industrial</techLevel>
+        <smeltable>false</smeltable>
+        <thingCategories>
+            <li>ApparelArmor</li>
+        </thingCategories>
+        <statBases>
+            <MaxHitPoints>250</MaxHitPoints>
+            <WorkToMake>9200</WorkToMake>
+            <Mass>5.0</Mass>
+            <ArmorRating_Sharp>0.90</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+            <Insulation_Cold>5</Insulation_Cold>
+            <Insulation_Heat>3</Insulation_Heat>
+            <EquipDelay>1.2</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>Neck</li>
+                <li>Torso</li>
+                <li>Shoulders</li>
+            </bodyPartGroups>
+            <layers>
+                <li>OnSkin</li>
+                <li>Middle</li>
+            </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+                <li>FCP_Combat_Armors</li>
+            </tags>
+            <defaultOutfitTags>
+                <li>Soldier</li>
+            </defaultOutfitTags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Combat Armor -->
+
+    <ThingDef ParentName="FCP_Apparel_Combat_Armor_Base">
+        <defName>FCP_Apparel_Combat_Armor</defName>
+        <description>A short-sleeved armor with pauldrons and chest plates covering the torso.</description>
+        <label>Combat Armor</label>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/CombatArmor/FCP_Combat_Armor_Male_south</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/CombatArmor/FCP_Combat_Armor</wornGraphicPath>
+        </apparel>
+    </ThingDef>
+
+    <!-- Combat Armor Van Graff -->
+
+    <ThingDef ParentName="FCP_Apparel_Combat_Armor_Base">
+        <defName>FCP_Apparel_Van_Graff_Combat_Armor</defName>
+        <description>The Van Graff combat armor is colored matte black for "brand recognition purposes," but has no matching black helmet.</description>
+        <label>Van GraffCombat Armor</label>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/CombatArmor/FCP_Van_Graff_Combat_Armor_Male_south</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/CombatArmor/FCP_Van_Graff_Combat_Armor</wornGraphicPath>
+        </apparel>
+    </ThingDef>
+
+
+    <!-- Combat Armor Light -->
+
+    <ThingDef ParentName="ApparelBase">
+        <defName>FCP_Apparel_Combat_Armor_Light</defName>
+        <description>Combat armor was issued within the United States Armed Forces during the Great War, this is the standard version of the armor</description>
+        <techLevel>Industrial</techLevel>
+        <label>Combat Armor Light</label>
+        <smeltable>false</smeltable>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/CombatArmorLight/FCP_Combat_Armor_Chestpiece_Modular_Light</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <thingCategories>
+            <li>ApparelArmor</li>
+        </thingCategories>
+        <statBases>
+            <MaxHitPoints>250</MaxHitPoints>
+            <WorkToMake>9200</WorkToMake>
+            <Mass>5.0</Mass>
+            <ArmorRating_Sharp>0.40</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.20</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.30</ArmorRating_Heat>
+            <Insulation_Cold>5</Insulation_Cold>
+            <Insulation_Heat>3</Insulation_Heat>
+            <EquipDelay>1.2</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>Neck</li>
+                <li>Torso</li>
+                <li>Shoulders</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/CombatArmorLight/FCP_Combat_Armor_Chestpiece_Modular_Light</wornGraphicPath>
+            <layers>
+                <li>Shell</li>
+                <li>Middle</li>
+            </layers>
+            <defaultOutfitTags>
+                <li>Soldier</li>
+            </defaultOutfitTags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Combat Armor Sturdy -->
+
+    <ThingDef ParentName="ApparelBase">
+        <defName>FCP_Apparel_Combat_Armor_Sturdy</defName>
+        <description>Combat armor was issued within the United States Armed Forces during the Great War, this is the sturdy version of the armor</description>
+        <techLevel>Industrial</techLevel>
+        <label>Combat Armor Sturdy</label>
+        <smeltable>false</smeltable>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/CombatArmorSturdy/FCP_Combat_Armor_Chestpiece_Modular_Sturdy</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <thingCategories>
+            <li>ApparelArmor</li>
+        </thingCategories>
+        <statBases>
+            <MaxHitPoints>250</MaxHitPoints>
+            <WorkToMake>9200</WorkToMake>
+            <Mass>5.0</Mass>
+            <ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.37</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.75</ArmorRating_Heat>
+            <Insulation_Cold>5</Insulation_Cold>
+            <Insulation_Heat>3</Insulation_Heat>
+            <EquipDelay>1.2</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>Neck</li>
+                <li>Torso</li>
+                <li>Shoulders</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/CombatArmorSturdy/FCP_Combat_Armor_Chestpiece_Modular_Sturdy</wornGraphicPath>
+            <layers>
+                <li>Shell</li>
+                <li>Middle</li>
+            </layers>
+            <defaultOutfitTags>
+                <li>Soldier</li>
+            </defaultOutfitTags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Combat Armor Heavy-->
+
+    <ThingDef ParentName="ApparelBase">
+        <defName>FCP_Apparel_Combat_Armor_Heavy</defName>
+        <description>Combat armor was issued within the United States Armed Forces during the Great War, this is the heavy version of the armor</description>
+        <techLevel>Industrial</techLevel>
+        <label>Combat Armor Heavy</label>
+        <smeltable>false</smeltable>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/CombatArmorHeavy/FCP_Combat_Armor_Chestpiece_Modular_Heavy</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <thingCategories>
+            <li>ApparelArmor</li>
+        </thingCategories>
+        <statBases>
+            <MaxHitPoints>250</MaxHitPoints>
+            <WorkToMake>9200</WorkToMake>
+            <Mass>5.0</Mass>
+            <ArmorRating_Sharp>1.01</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.50</ArmorRating_Blunt>
+            <ArmorRating_Heat>1.01</ArmorRating_Heat>
+            <Insulation_Cold>5</Insulation_Cold>
+            <Insulation_Heat>3</Insulation_Heat>
+            <EquipDelay>1.2</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>Neck</li>
+                <li>Torso</li>
+                <li>Shoulders</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/CombatArmorHeavy/FCP_Combat_Armor_Chestpiece_Modular_Heavy</wornGraphicPath>
+            <layers>
+                <li>Shell</li>
+                <li>Middle</li>
+            </layers>
+            <defaultOutfitTags>
+                <li>Soldier</li>
+            </defaultOutfitTags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Reinforced Combat Armor -->
+
+    <ThingDef ParentName="ApparelBase">
+        <defName>FCP_Apparel_Reinforced_Combat_Armor</defName>
+        <label>Reinforced Combat Armor</label>
+        <description>A more advanced version of the standard combat armor.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/ReinforcedCombatArmor/FCP_Reinforced_Combat_Armor</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <smeltable>false</smeltable>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <ArmorRating_Sharp>1.04</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.52</ArmorRating_Blunt>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <ToxicResistance>0.30</ToxicResistance>
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/ReinforcedCombatArmor/FCP_Reinforced_Combat_Armor</wornGraphicPath>
+            <layers>
+                <li>Middle</li>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+                <li>FCP_Combat_Armors</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Reinforced Combat Armor II -->
+
+    <ThingDef ParentName="ApparelBase">
+        <defName>FCP_Apparel_Reinforced_Combat_Armor_II</defName>
+        <label>Reinforced Combat Armor II</label>
+        <description>An even more advanced version of the reinforced combat armor, offering more protection.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/ReinforcedCombatArmorII/FCP_Reinforced_Combat_Armor_Mk_II</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <smeltable>false</smeltable>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <ArmorRating_Sharp>1.22</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.68</ArmorRating_Blunt>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <ToxicResistance>0.30</ToxicResistance>
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/ReinforcedCombatArmorII/FCP_Reinforced_Combat_Armor_Mk_II</wornGraphicPath>
+            <layers>
+                <li>Middle</li>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+                <li>FCP_Combat_Armors</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!--___ Apparel ___-->
+
+    <!--__ Pre-War Apparel __-->
+
+    <!-- Military Fatigues -->
+
+    <ThingDef ParentName="ApparelBase">
+        <defName>FCP_Apparel_Military_Fatigues</defName>
+        <label>Military Fatigues</label>
+        <description>The military fatigues consist of a dirty set of pea-green fatigues with black boots.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/MilitaryFatigues/FCP_Military_Fatigues</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <smeltable>false</smeltable>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <ArmorRating_Heat>0.05</ArmorRating_Heat>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <RangedCooldownFactor>0.10</RangedCooldownFactor>            <!-- AGILITY +2 -->
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/ArmyUniform/FCP_Army_Uniform_Clean</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+                <li>FCP_Pre_War_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Pre-War Army Uniform -->
 
     <ThingDef ParentName="ApparelBase">
         <defName>FCP_Apparel_Army_Uniform</defName>
-        <label>Army Uniform</label>
-        <description>It consists of a white undershirt, a green uniform top with a belt, matching pants, and black boots.</description>
+        <label>Pre-War Army Uniform</label>
+        <description>.</description>
         <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/ArmyUniform/FCP_Army_Uniform_Clean</texPath>
+            <texPath>Things/Apparel/Wasteland_Apparel/ArmyUniform/FCP_Army_Uniform_Clean</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
@@ -40,63 +387,25 @@
                 <li>Arms</li>
                 <li>Legs</li>
             </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/ArmyUniform/FCP_Army_Uniform_Clean</wornGraphicPath>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/ArmyUniform/FCP_Army_Uniform_Clean</wornGraphicPath>
             <layers>
-                <li>Middle</li>
                 <li>OnSkin</li>
             </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+                <li>FCP_Pre_War_Apparel</li>
+            </tags>
         </apparel>
     </ThingDef>
 
-
-    <!-- Athletic Outfit -->
-
-    <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_Athletic_Outfit</defName>
-        <label>Athletic Outfit</label>
-        <description>The athletic outfit appears as a tattered and stitched baseball uniform with boots and knee pads.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/AthleticOutfit/FCP_Athletic_Outfit</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <smeltable>false</smeltable>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/AthleticOutfit/FCP_Athletic_Outfit</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
-        </apparel>
-    </ThingDef>
-
-
-    <!-- Benny -->
+    <!-- Pre-War Fancy Suit (Clean) -->
 
     <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_Benny</defName>
+        <defName>FCP_Apparel_Benny_Pre_War_Fancy_Suit_Clean</defName>
         <label>Benny</label>
         <description>Benny's suit is a black and white buffalo plaid suit jacket worn with light grey dress pants, white dress shirt, and black tie</description>
         <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/Benny/FCP_Pre_War_Fancy_Suit_Clean</texPath>
+            <texPath>Things/Apparel/Wasteland_Apparel/PreWarFancySuitClean/FCP_Pre_War_Fancy_Suit_Clean</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
@@ -112,9 +421,9 @@
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
         </statBases>
-        <equippedStatOffsets>        
-            <SocialImpact>0.15</SocialImpact>                       <!-- Speech +5 -->
-            <TradePriceImprovement>0.15</TradePriceImprovement>     <!-- Barter +5 -->    
+        <equippedStatOffsets>
+            <SocialImpact>0.15</SocialImpact>            <!-- Speech +5 -->
+            <TradePriceImprovement>0.15</TradePriceImprovement>            <!-- Barter +5 -->
         </equippedStatOffsets>
         <smeltable>false</smeltable>
         <apparel>
@@ -124,22 +433,831 @@
                 <li>Arms</li>
                 <li>Legs</li>
             </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/Benny/FCP_Pre_War_Fancy_Suit_Clean</wornGraphicPath>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/PreWarFancySuitClean/FCP_Pre_War_Fancy_Suit_Clean</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+                <li>FCP_Pre_War_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Business Pre War -->
+
+    <ThingDef ParentName="ApparelBase">
+        <defName>FCP_Apparel_Business_Pre_War</defName>
+        <label>Business Pre War</label>
+        <description>A light beige suit with a blue tie.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/BusinessPreWar/FCP_Business_Pre_War_Clean</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <smeltable>false</smeltable>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <SocialImpact>0.15</SocialImpact>            <!-- Speech +5 -->
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/BusinessPreWar/FCP_Business_Pre_War_Clean</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+                <li>FCP_Pre_War_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Spring Pre War Dress -->
+
+    <ThingDef ParentName="ApparelBase">
+        <defName>FCP_Apparel_Spring_Pre_War_Dress</defName>
+        <label>Spring Pre War Dress</label>
+        <description>A pink dress with red heels.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/SpringPreWarDress/FCP_Spring_Pre_War_Dress</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <smeltable>false</smeltable>
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <RangedCooldownFactor>0.05</RangedCooldownFactor>            <!-- AGILITY +1 -->
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/SpringPreWarDress/FCP_Spring_Pre_War_Dress</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <gender>Female</gender>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+                <li>FCP_Pre_War_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Spring Pre War Shirt -->
+
+    <ThingDef ParentName="ApparelBase">
+        <defName>FCP_Apparel_Spring_Pre_War_Shirt</defName>
+        <label>Spring Pre War Shirt</label>
+        <description>A red plaid shirt and brown pants.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/SpringPreWarShirt/FCP_Spring_Pre_War_Shirt</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <smeltable>false</smeltable>
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <RangedCooldownFactor>0.05</RangedCooldownFactor>            <!-- AGILITY +1 -->
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/SpringPreWarShirt/FCP_Spring_Pre_War_Shirt</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <gender>Male</gender>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+                <li>FCP_Pre_War_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Radiation Suit -->
+
+    <ThingDef ParentName="ApparelBase">
+        <defName>FCP_Apparel_Radiation_Suit</defName>
+        <label>Radiations Suit</label>
+        <description>The radiation suit is a suit that protects its wearer from the harmful effects of radiation to a certain extent.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/RadiationSuit/FCP_Radiation_Suit</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <smeltable>false</smeltable>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.13</ArmorRating_Blunt>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <ToxicResistance>0.30</ToxicResistance>
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/RadiationSuit/FCP_Radiation_Suit</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+                <li>FCP_Pre_War_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Red Rocket Overalls-->
+
+    <ThingDef ParentName="ApparelBase">
+        <defName>FCP_Apparel_Red_Rocket_Overalls</defName>
+        <label>Red Rocket Overalls</label>
+        <description>Overalls worn by the workers of the Red Rocket gas stations.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/RedRocketOveralls/FCP_Red_Rocket_Overalls</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <smeltable>false</smeltable>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/RedRocketOveralls/FCP_Red_Rocket_Overalls</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+                <li>FCP_Pre_War_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Naughty Nightgown -->
+
+    <ThingDef ParentName="ApparelBase">
+        <defName>FCP_Apparel_Naughty_Nightgown</defName>
+        <label>Naughty Nightgown</label>
+        <description>A set of leopard print pajamas.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/NaughtyNightgown/FCP_Naughty_Nightgown</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <smeltable>false</smeltable>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <SocialImpact>0.20</SocialImpact>            <!-- Speech +10 -->
+            <WorkSpeedGlobal>0.05</WorkSpeedGlobal>            <!-- LUCK +1 -->
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/NaughtyNightgown/FCP_Naughty_Nightgown</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <gender>Female</gender>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+                <li>FCP_Pre_War_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Naughty Nightwear -->
+
+    <ThingDef ParentName="ApparelBase">
+        <defName>FCP_Apparel_Naughty_Nightwear</defName>
+        <label>Naughty Nightwear</label>
+        <description>A set of leopard print pajamas.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/NaughtyNightwear/FCP_Naughty_Nightwear</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <smeltable>false</smeltable>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <SocialImpact>0.20</SocialImpact>            <!-- Speech +10 -->
+            <WorkSpeedGlobal>0.05</WorkSpeedGlobal>            <!-- LUCK +1 -->
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/NaughtyNightwear/FCP_Naughty_Nightwear</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+                <li>FCP_Pre_War_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Fancy Gambler Dress -->
+
+    <ThingDef ParentName="ApparelBase">
+        <defName>FCP_Apparel_Fancy_Gambler_Dress</defName>
+        <label>Fancy Gambler Dress</label>
+        <description>A worn brown dress with slingback high-heels.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/FancyGamblerDress/FCP_Fancy_Gambler_Dress_Clean</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <smeltable>false</smeltable>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/FancyGamblerDress/FCP_Fancy_Gambler_Dress_Clean</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <gender>Female</gender>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+                <li>FCP_Pre_War_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Fancy Gambler Suit -->
+
+    <ThingDef ParentName="ApparelBase">
+        <defName>FCP_Apparel_Fancy_Gambler_Suit</defName>
+        <label>Fancy Gambler Suit</label>
+        <description>A tan blazer with brown lapels and slacks, complete with a dark brown bow tie.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/FancyGamblerSuit/FCP_Fancy_Gambler_Suit_Clean</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <smeltable>false</smeltable>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/FancyGamblerSuit/FCP_Fancy_Gambler_Suit_Clean</wornGraphicPath>
             <layers>
                 <li>Middle</li>
                 <li>OnSkin</li>
             </layers>
+            <gender>Male</gender>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+                <li>FCP_Pre_War_Apparel</li>
+            </tags>
         </apparel>
     </ThingDef>
 
-      <!-- Brahmin Skin Outfit -->
+    <!-- Lab Coat Capital -->
 
-      <ThingDef ParentName="ApparelMakeableBase">
+    <ThingDef ParentName="ApparelBase">
+        <defName>FCP_Apparel_Lab_Coat_Capital</defName>
+        <label>Lab Coat Capital</label>
+        <description>A clean white lab coat with a blue undershirt and a brown tie. It provides a bonus to Intelligence while worn.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/LabCoatCapital/FCP_Lab_Coat_Capital_Wasteland_Scientist</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <smeltable>false</smeltable>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <GlobalLearningFactor>0.05</GlobalLearningFactor>            <!-- Intelligence +1-->
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/LabCoatCapital/FCP_Lab_Coat_Capital_Wasteland_Scientist</wornGraphicPath>
+            <layers>
+                <li>Middle</li>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+                <li>FCP_Pre_War_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Lab Coat Commonwealth-->
+
+    <ThingDef ParentName="ApparelBase">
+        <defName>FCP_Apparel_Lab_Coat_Commonwealth</defName>
+        <label>Lab Coat Commonwealth</label>
+        <description>A lab coat with a dosimeter on the left breast and with a white undershirt and a black tie. It provides a bonus to Intelligence while worn</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/LabCoatCommonwealth/FCP_Lab_Coat_Commonwealth_Scientist</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <smeltable>false</smeltable>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <GlobalLearningFactor>0.10</GlobalLearningFactor>            <!-- Intelligence +2-->
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/LabCoatCommonwealth/FCP_Lab_Coat_Commonwealth_Scientist</wornGraphicPath>
+            <layers>
+                <li>Middle</li>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+                <li>FCP_Pre_War_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Mistress Mistery -->
+
+    <ThingDef ParentName="ApparelBase">
+        <defName>FCP_Apparel_Mistress_Mystery</defName>
+        <label>Mistress Mystery Costume</label>
+        <description>The outfit worn by the Mistress of Mystery, one of the longest-running and most popular superhero characters in the Hubris Comics universe.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/MistressMystery/FCP_Mistress_Mystery_Costume</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <smeltable>false</smeltable>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/MistressMystery/FCP_Mistress_Mystery_Costume</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Pre_War_Costume</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Grognak Female -->
+
+    <ThingDef ParentName="ApparelBase">
+        <defName>FCP_Apparel_Grognak_Female</defName>
+        <label>Grognak Female</label>
+        <description>A loincloth with a leather made bra.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/Grognak/GrognakFemale/FCP_Grognak_Female_Costume</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <smeltable>false</smeltable>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.15</ArmorRating_Heat>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <ToxicResistance>0.15</ToxicResistance>
+            <CarryingCapacity>10</CarryingCapacity>            <!-- +2 STRENGTH -->
+            <MeleeDamageFactor>0.25</MeleeDamageFactor>
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Waist</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/Grognak/GrognakFemale/FCP_Grognak_Female_Costume</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <gender>Female</gender>
+            <tags>
+                <li>FCP_Pre_War_Costume</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Grognak Male -->
+
+    <ThingDef ParentName="ApparelBase">
+        <defName>FCP_Apparel_Grognak_Male</defName>
+        <label>Grognak Male</label>
+        <description>A loincloth.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/Grognak/GrognakMale/FCP_Grognak_Male_Costume</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <smeltable>false</smeltable>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.15</ArmorRating_Heat>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <ToxicResistance>0.15</ToxicResistance>
+            <CarryingCapacity>10</CarryingCapacity>            <!-- +2 STRENGTH -->
+            <MeleeDamageFactor>0.25</MeleeDamageFactor>
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>Waist</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/Grognak/GrognakMale/FCP_Grognak_Male_Costume</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <gender>Male</gender>
+            <tags>
+                <li>FCP_Pre_War_Costume</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Inspector -->
+
+    <ThingDef ParentName="ApparelBase">
+        <defName>FCP_Apparel_The_Inspector</defName>
+        <label>The Inspector Costume</label>
+        <description>A costume version of the outfit worn by The Inspector, a Hubris Comics superhero and member of The Unstoppables!</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/Inspector/FCP_The_Inspector_Costume</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <smeltable>false</smeltable>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/Inspector/FCP_The_Inspector_Costume</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Pre_War_Costume</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Silver Shroud-->
+
+    <ThingDef ParentName="ApparelBase">
+        <defName>FCP_Apparel_Silver_Shroud</defName>
+        <label>Silver Shroud Costume</label>
+        <description>A recreation of the costume worn by the comic book character, the Silver Shroud.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/SilverShroud/FCP_Silver_Shroud_Costume</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <smeltable>false</smeltable>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <ArmorRating_Heat>0.15</ArmorRating_Heat>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <ToxicResistance>0.15</ToxicResistance>
+            <ShootingAccuracyPawn>5</ShootingAccuracyPawn>            <!-- PERCEPTION +1 -->
+            <RangedCooldownFactor>0.05</RangedCooldownFactor>            <!-- AGILITY +1 -->
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/SilverShroud/FCP_Silver_Shroud_Costume</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Pre_War_Costume</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Manta Man -->
+
+    <ThingDef ParentName="ApparelBase">
+        <defName>FCP_Apparel_Manta_Man</defName>
+        <label>Manta Man Costume</label>
+        <description>An outfit stylized to resemble that of the Hubris Comics superhero Manta Man.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/MantaMan/FCP_Manta_Man_Costume</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <smeltable>false</smeltable>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/MantaMan/FCP_Manta_Man_Costume</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Pre_War_Costume</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!--__ Wasteland Apparel __-->
+
+    <!-- Athletic Outfit -->
+
+    <ThingDef ParentName="ApparelBase">
+        <defName>FCP_Apparel_Athletic_Outfit</defName>
+        <label>Athletic Outfit</label>
+        <description>The athletic outfit appears as a tattered and stitched baseball uniform with boots and knee pads.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/AthleticOutfit/FCP_Athletic_Outfit</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <smeltable>false</smeltable>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/AthleticOutfit/FCP_Athletic_Outfit</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Brahmin Skin Outfit -->
+
+    <ThingDef ParentName="ApparelMakeableBase">
         <defName>FCP_Apparel_Brahmin_Skin_Outfit</defName>
         <label>Brahmin Skin Outfit</label>
         <description>A basic outfit consisting of a white shirt and patched overalls with Y-shaped suspenders complete with boots.</description>
         <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/BrahminSkinOutfit/FCP_Brahmin_Skin_Outfit</texPath>
+            <texPath>Things/Apparel/Wasteland_Apparel/BrahminSkinOutfit/FCP_Brahmin_Skin_Outfit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
@@ -167,8 +1285,8 @@
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
         </statBases>
-        <equippedStatOffsets>        
-            <MoveSpeed>0.2</MoveSpeed>  
+        <equippedStatOffsets>
+            <MoveSpeed>0.2</MoveSpeed>
         </equippedStatOffsets>
         <apparel>
             <bodyPartGroups>
@@ -177,104 +1295,13 @@
                 <li>Arms</li>
                 <li>Legs</li>
             </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/BrahminSkinOutfit/FCP_Brahmin_Skin_Outfit</wornGraphicPath>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/BrahminSkinOutfit/FCP_Brahmin_Skin_Outfit</wornGraphicPath>
             <layers>
-                <li>Middle</li>
                 <li>OnSkin</li>
             </layers>
-        </apparel>
-    </ThingDef>
-
-
-      <!-- Bright Brotherhood Robe -->
-
-      <ThingDef ParentName="ApparelMakeableBase">
-        <defName>FCP_Apparel_Bright_Brotherhood_Robe</defName>
-        <label>Bright Brotherhood Robe</label>
-        <description>These are robes worn by Bright Follower ghouls. They are  slightly tattered and have a brownish-green color.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/BrightBrotherhoodRobe/FCP_Bright_Brotherhood_Robe</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <recipeMaker Inherit= "false">
-            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
-            <skillRequirements>
-                <Crafting>4</Crafting>
-            </skillRequirements>
-            <recipeUsers>
-                <li>FCP_Production_Tailoring_Workbench</li>
-            </recipeUsers>
-        </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <costList>
-            <Cloth>70</Cloth>
-        </costList>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/BrightBrotherhoodRobe/FCP_Bright_Brotherhood_Robe</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
-        </apparel>
-    </ThingDef>
-
-    <!-- Business Pre War -->
-
-    <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_Business_Pre_War</defName>
-        <label>Business Pre War</label>
-        <description>A light beige suit with a blue tie.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/BusinessPreWar/FCP_Business_Pre_War_Clean</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <smeltable>false</smeltable>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <equippedStatOffsets>        
-            <SocialImpact>0.15</SocialImpact>                       <!-- Speech +5 -->   
-        </equippedStatOffsets>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/BusinessPreWar/FCP_Business_Pre_War_Clean</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+            </tags>
         </apparel>
     </ThingDef>
 
@@ -283,9 +1310,9 @@
     <ThingDef ParentName="ApparelMakeableBase">
         <defName>FCP_Apparel_Caravaneer_Outfit</defName>
         <label>Caravaneer Outfit</label>
-        <description>It consists of a dark brown shirt with orange and mustard-yellow stripes with a white satchel over the shoulder with the NCR logo on it. Around the neck is a red bandanna with black goggles.</description>
+        <description>It consists of a dark brown shirt with orange and mustard-yellow stripes with a white satchel over the shoulder with the Wastelander logo on it. Around the neck is a red bandanna with black goggles.</description>
         <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/CaravaneerOutfit/FCP_Caravaneer_Outfit</texPath>
+            <texPath>Things/Apparel/Wasteland_Apparel/CaravaneerOutfit/FCP_Caravaneer_Outfit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
@@ -323,404 +1350,11 @@
             </bodyPartGroups>
             <wornGraphicPath>Apparel/CaravaneerOutfit/FCP_Caravaneer_Outfit</wornGraphicPath>
             <layers>
-                <li>Middle</li>
                 <li>OnSkin</li>
             </layers>
-        </apparel>
-    </ThingDef>
-
-    <!-- Chained Prostitute Outfit -->
-
-    <ThingDef ParentName="ApparelMakeableBase">
-        <defName>FCP_Apparel_Chained_Prostitute_Outfit</defName>
-        <label>Chained Prostitute Outfit</label>
-        <description>It appears as bondage harness on the chest with multiple leather bracelets and armbands. The bottom consists of a pair of low-rise, black leather pants</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/ChainedProstituteOutfit/FCP_Chained_Prostitute_Outfit</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <recipeMaker Inherit= "false">
-            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
-            <skillRequirements>
-                <Crafting>4</Crafting>
-            </skillRequirements>
-            <recipeUsers>
-                <li>FCP_Production_Tailoring_Workbench</li>
-            </recipeUsers>
-        </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <costList>
-            <Leather_Plain>60</Leather_Plain>
-        </costList>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/ChainedProstituteOutfit/FCP_Chained_Prostitute_Outfit</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
-        </apparel>
-    </ThingDef>
-
-    <!-- Combat Armor -->
-
-    <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_NCR_Combat_Armor</defName>
-        <description>A short-sleeved armor with pauldrons and chest plates covering the torso.</description>
-        <techLevel>Industrial</techLevel>
-        <label>Combat Armor</label>
-        <smeltable>false</smeltable>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/CombatArmor/FCP_Combat_Armor_Male_south</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-        </graphicData>
-        <thingCategories>
-            <li>ApparelArmor</li>  
-        </thingCategories>
-        <statBases>
-            <MaxHitPoints>250</MaxHitPoints>
-            <WorkToMake>9200</WorkToMake>
-            <Mass>5.0</Mass>
-            <ArmorRating_Sharp>0.90</ArmorRating_Sharp>
-            <ArmorRating_Blunt>0.45</ArmorRating_Blunt>
-            <Insulation_Cold>5</Insulation_Cold>
-            <Insulation_Heat>3</Insulation_Heat>
-            <EquipDelay>1.2</EquipDelay>
-        </statBases>
-        <apparel>
-            <bodyPartGroups>
-                <li>Neck</li>
-                <li>Torso</li>
-                <li>Shoulders</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/CombatArmor/FCP_Combat_Armor</wornGraphicPath>
-            <layers>
-                <li>Shell</li>
-                <li>Middle</li>
-            </layers>
-            <defaultOutfitTags>
-                <li>Soldier</li>
-            </defaultOutfitTags>
-        </apparel>
-    </ThingDef>
-
-    <!-- Combat Armor Van Graff -->
-
-    <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_NCR_Van_Graff_Combat_Armor</defName>
-        <description>The Van Graff combat armor is colored matte black for "brand recognition purposes," but has no matching black helmet.</description>
-        <techLevel>Industrial</techLevel>
-        <label>Combat Armor</label>
-        <smeltable>false</smeltable>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/CombatArmor/FCP_Van_Graff_Combat_Armor_Male_south</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-        </graphicData>
-        <thingCategories>
-            <li>ApparelArmor</li>  
-        </thingCategories>
-        <statBases>
-            <MaxHitPoints>250</MaxHitPoints>
-            <WorkToMake>9200</WorkToMake>
-            <Mass>5.0</Mass>
-            <ArmorRating_Sharp>0.90</ArmorRating_Sharp>
-            <ArmorRating_Blunt>0.45</ArmorRating_Blunt>
-            <Insulation_Cold>5</Insulation_Cold>
-            <Insulation_Heat>3</Insulation_Heat>
-            <EquipDelay>1.2</EquipDelay>
-        </statBases>
-        <apparel>
-            <bodyPartGroups>
-                <li>Neck</li>
-                <li>Torso</li>
-                <li>Shoulders</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/CombatArmor/FCP_Van_Graff_Combat_Armor</wornGraphicPath>
-            <layers>
-                <li>Shell</li>
-                <li>Middle</li>
-            </layers>
-            <defaultOutfitTags>
-                <li>Soldier</li>
-            </defaultOutfitTags>
-        </apparel>
-    </ThingDef>
-
-    
-    <!-- Combat Armor Light -->
-
-    <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_NCR_Combat_Armor_Light</defName>
-        <description>Combat armor was issued within the United States Armed Forces during the Great War, this is the standard version of the armor</description>
-        <techLevel>Industrial</techLevel>
-        <label>Combat Armor Light</label>
-        <smeltable>false</smeltable>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/CombatArmorLight/FCP_Combat_Armor_Chestpiece_Modular_Light</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-        </graphicData>
-        <thingCategories>
-            <li>ApparelArmor</li>  
-        </thingCategories>
-        <statBases>
-            <MaxHitPoints>250</MaxHitPoints>
-            <WorkToMake>9200</WorkToMake>
-            <Mass>5.0</Mass>
-            <ArmorRating_Sharp>0.40</ArmorRating_Sharp>
-            <ArmorRating_Blunt>0.20</ArmorRating_Blunt>
-            <ArmorRating_Heat>0.30</ArmorRating_Heat>
-            <Insulation_Cold>5</Insulation_Cold>
-            <Insulation_Heat>3</Insulation_Heat>
-            <EquipDelay>1.2</EquipDelay>
-        </statBases>
-        <apparel>
-            <bodyPartGroups>
-                <li>Neck</li>
-                <li>Torso</li>
-                <li>Shoulders</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/CombatArmorLight/FCP_Combat_Armor_Chestpiece_Modular_Light</wornGraphicPath>
-            <layers>
-                <li>Shell</li>
-                <li>Middle</li>
-            </layers>
-            <defaultOutfitTags>
-                <li>Soldier</li>
-            </defaultOutfitTags>
-        </apparel>
-    </ThingDef>
-
-   <!-- Combat Armor Sturdy -->
-
-   <ThingDef ParentName="ApparelBase">
-    <defName>FCP_Apparel_NCR_Combat_Armor_Sturdy</defName>
-    <description>Combat armor was issued within the United States Armed Forces during the Great War, this is the sturdy version of the armor</description>
-    <techLevel>Industrial</techLevel>
-    <label>Combat Armor Sturdy</label>
-    <smeltable>false</smeltable>
-    <graphicData>
-        <texPath>Apparel/Wasteland_Apparel/CombatArmorSturdy/FCP_Combat_Armor_Chestpiece_Modular_Sturdy</texPath>
-        <graphicClass>Graphic_Single</graphicClass>
-    </graphicData>
-    <thingCategories>
-        <li>ApparelArmor</li>  
-    </thingCategories>
-    <statBases>
-        <MaxHitPoints>250</MaxHitPoints>
-        <WorkToMake>9200</WorkToMake>
-        <Mass>5.0</Mass>
-        <ArmorRating_Sharp>0.75</ArmorRating_Sharp>
-        <ArmorRating_Blunt>0.37</ArmorRating_Blunt>
-        <ArmorRating_Heat>0.75</ArmorRating_Heat>
-        <Insulation_Cold>5</Insulation_Cold>
-        <Insulation_Heat>3</Insulation_Heat>
-        <EquipDelay>1.2</EquipDelay>
-    </statBases>
-    <apparel>
-        <bodyPartGroups>
-            <li>Neck</li>
-            <li>Torso</li>
-            <li>Shoulders</li>
-        </bodyPartGroups>
-        <wornGraphicPath>Apparel/Wasteland_Apparel/CombatArmorSturdy/FCP_Combat_Armor_Chestpiece_Modular_Sturdy</wornGraphicPath>
-        <layers>
-            <li>Shell</li>
-            <li>Middle</li>
-        </layers>
-        <defaultOutfitTags>
-            <li>Soldier</li>
-        </defaultOutfitTags>
-    </apparel>
-</ThingDef>
-
-    <!-- Combat Armor Heavy-->
-
-    <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_NCR_Combat_Armor_Heavy</defName>
-        <description>Combat armor was issued within the United States Armed Forces during the Great War, this is the heavy version of the armor</description>
-        <techLevel>Industrial</techLevel>
-        <label>Combat Armor Heavy</label>
-        <smeltable>false</smeltable>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/CombatArmorHeavy/FCP_Combat_Armor_Chestpiece_Modular_Heavy</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-        </graphicData>
-        <thingCategories>
-            <li>ApparelArmor</li>  
-        </thingCategories>
-        <statBases>
-            <MaxHitPoints>250</MaxHitPoints>
-            <WorkToMake>9200</WorkToMake>
-            <Mass>5.0</Mass>
-            <ArmorRating_Sharp>1.01</ArmorRating_Sharp>
-            <ArmorRating_Blunt>0.50</ArmorRating_Blunt>
-            <ArmorRating_Heat>1.01</ArmorRating_Heat>
-            <Insulation_Cold>5</Insulation_Cold>
-            <Insulation_Heat>3</Insulation_Heat>
-            <EquipDelay>1.2</EquipDelay>
-        </statBases>
-        <apparel>
-            <bodyPartGroups>
-                <li>Neck</li>
-                <li>Torso</li>
-                <li>Shoulders</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/CombatArmorHeavy/FCP_Combat_Armor_Chestpiece_Modular_Heavy</wornGraphicPath>
-            <layers>
-                <li>Shell</li>
-                <li>Middle</li>
-            </layers>
-            <defaultOutfitTags>
-                <li>Soldier</li>
-            </defaultOutfitTags>
-        </apparel>
-    </ThingDef>
-
-<!-- Exposed Prostitute Outfit -->
-
-    <ThingDef ParentName="ApparelMakeableBase">
-        <defName>FCP_Apparel_Exposed_Prostitute_Outfit</defName>
-        <label>Exposed Prostitute Outfit</label>
-        <description>This outfit consists of black cowboy boots, black ripped tights worn under gray boxers, chains covering the wearer's chest which are connected to a spiked choker necklace, and a wrestling singlet.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/ExposedProstituteOutfit/FCP_Exposed_Prostitute_Outfit</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <recipeMaker Inherit= "false">
-            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
-            <skillRequirements>
-                <Crafting>4</Crafting>
-            </skillRequirements>
-            <recipeUsers>
-                <li>FCP_Production_Tailoring_Workbench</li>
-            </recipeUsers>
-        </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <costList>
-            <Leather_Plain>50</Leather_Plain>
-        </costList>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/ExposedProstituteOutfit/FCP_Exposed_Prostitute_Outfit</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
-        </apparel>
-    </ThingDef>
-
-
-    <!-- Fancy Gambler Dress -->
-
-    <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_Fancy_Gambler_Dress</defName>
-        <label>Fancy Gambler Dress</label>
-        <description>A worn brown dress with slingback high-heels.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/FancyGamblerDress/FCP_Fancy_Gambler_Dress_Clean</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <smeltable>false</smeltable>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/FancyGamblerDress/FCP_Fancy_Gambler_Dress_Clean</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
-            <gender>Female</gender>
-        </apparel>
-    </ThingDef>
-
-    <!-- Fancy Gambler Suit -->
-
-    <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_Fancy_Gambler_Suit</defName>
-        <label>Fancy Gambler Suit</label>
-        <description>A tan blazer with brown lapels and slacks, complete with a dark brown bow tie.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/FancyGamblerSuit/FCP_Fancy_Gambler_Suit_Clean</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <smeltable>false</smeltable>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/FancyGamblerSuit/FCP_Fancy_Gambler_Suit_Clean</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
-            <gender>Male</gender>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+            </tags>
         </apparel>
     </ThingDef>
 
@@ -731,7 +1365,7 @@
         <label>Field Hand Female Outfit</label>
         <description>A red dress worn with a white apron and waterskins.</description>
         <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/FieldHandFemaleOutfit/FCP_Field_Hand_Female_Outfit</texPath>
+            <texPath>Things/Apparel/Wasteland_Apparel/FieldHandFemaleOutfit/FCP_Field_Hand_Female_Outfit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
@@ -755,12 +1389,14 @@
                 <li>Arms</li>
                 <li>Legs</li>
             </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/FieldHandFemaleOutfit/FCP_Field_Hand_Female_Outfit</wornGraphicPath>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/FieldHandFemaleOutfit/FCP_Field_Hand_Female_Outfit</wornGraphicPath>
             <layers>
-                <li>Middle</li>
                 <li>OnSkin</li>
             </layers>
             <gender>Female</gender>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+            </tags>
         </apparel>
     </ThingDef>
 
@@ -771,7 +1407,7 @@
         <label>Field Hand Male Outfit</label>
         <description>A black long-sleeve shirt with suspenders, brown rolled-up pants complete with a red scarf and black gloves.</description>
         <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/FieldHandMaleOutfit/FCP_Field_Hand_Male_Outfit</texPath>
+            <texPath>Things/Apparel/Wasteland_Apparel/FieldHandMaleOutfit/FCP_Field_Hand_Male_Outfit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
@@ -795,12 +1431,14 @@
                 <li>Arms</li>
                 <li>Legs</li>
             </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/FieldHandMaleOutfit/FCP_Field_Hand_Male_Outfit</wornGraphicPath>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/FieldHandMaleOutfit/FCP_Field_Hand_Male_Outfit</wornGraphicPath>
             <layers>
-                <li>Middle</li>
                 <li>OnSkin</li>
             </layers>
             <gender>Male</gender>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+            </tags>
         </apparel>
     </ThingDef>
 
@@ -811,7 +1449,7 @@
         <label>Gas Ranger Outfit</label>
         <description>Outfit invented by Rick, i don't know how to describe it, i'll ask him maybe</description>
         <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/GasRanger/GasRangerWhite/FCP_Rickys_Rando_Rangers_Outfit_White</texPath>
+            <texPath>Things/Apparel/Wasteland_Apparel/GasRanger/GasRangerWhite/FCP_Rickys_Rando_Rangers_Outfit_White</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
@@ -846,272 +1484,12 @@
                 <li>Arms</li>
                 <li>Legs</li>
             </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/GasRanger/GasRangerWhite/FCP_Rickys_Rando_Rangers_Outfit_White</wornGraphicPath>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/GasRanger/GasRangerWhite/FCP_Rickys_Rando_Rangers_Outfit_White</wornGraphicPath>
             <layers>
-                <li>Middle</li>
                 <li>OnSkin</li>
             </layers>
         </apparel>
     </ThingDef>
-
-    <!-- Grognak Female -->
-
-    <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_Grognak_Female</defName>
-        <label>Grognak Female</label>
-        <description>A loincloth with a leather made bra.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/Grognak/GrognakFemale/FCP_Grognak_Female_Costume</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <smeltable>false</smeltable>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
-            <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
-            <ArmorRating_Heat>0.15</ArmorRating_Heat>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <equippedStatOffsets>  
-            <ToxicResistance>0.15</ToxicResistance>
-            <CarryingCapacity>10</CarryingCapacity>                   <!-- +2 STRENGTH -->  
-            <MeleeDamageFactor>0.25</MeleeDamageFactor>                        
-        </equippedStatOffsets>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Waist</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/Grognak/GrognakFemale/FCP_Grognak_Female_Costume</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
-            <gender>Female</gender>
-        </apparel>
-    </ThingDef>
-
-    <!-- Grognak Male -->
-
-    <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_Grognak_Male</defName>
-        <label>Grognak Male</label>
-        <description>A loincloth.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/Grognak/GrognakMale/FCP_Grognak_Male_Costume</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <smeltable>false</smeltable>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
-            <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
-            <ArmorRating_Heat>0.15</ArmorRating_Heat>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <equippedStatOffsets>  
-            <ToxicResistance>0.15</ToxicResistance>
-            <CarryingCapacity>10</CarryingCapacity>                   <!-- +2 STRENGTH -->  
-            <MeleeDamageFactor>0.25</MeleeDamageFactor>                        
-        </equippedStatOffsets>
-        <apparel>
-            <bodyPartGroups>
-                <li>Waist</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/Grognak/GrognakMale/FCP_Grognak_Male_Costume</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
-            <gender>Male</gender>
-        </apparel>
-    </ThingDef>
-
-    <!-- Inspector -->
-
-    <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_The_Inspector</defName>
-        <label>The Inspector Costume</label>
-        <description>A costume version of the outfit worn by The Inspector, a Hubris Comics superhero and member of The Unstoppables!</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/Inspector/FCP_The_Inspector_Costume</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <smeltable>false</smeltable>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/Inspector/FCP_The_Inspector_Costume</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
-        </apparel>
-    </ThingDef>
-
-    <!-- Jason Bright -->
-
-    <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_Jason_Bright</defName>
-        <label>Jason Bright Costume</label>
-        <description>Outfit worn by Jason Bright, it appears to resemble a weathered fancy gambler suit, without the tie.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/JasonBright/FCP_Bright_Brotherhood_Leaders_Suit</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <smeltable>false</smeltable>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <ArmorRating_Sharp>0.07</ArmorRating_Sharp>
-            <ArmorRating_Blunt>0.04</ArmorRating_Blunt>
-            <Mass>2</Mass>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <equippedStatOffsets>  
-            <ToxicResistance>0.40</ToxicResistance>                      
-        </equippedStatOffsets>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/JasonBright/FCP_Bright_Brotherhood_Leaders_Suit</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
-        </apparel>
-    </ThingDef>
-
-    <!-- Lab Coat Capital -->
-
-    <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_Lab_Coat_Capital</defName>
-        <label>Lab Coat Capital</label>
-        <description>A clean white lab coat with a blue undershirt and a brown tie. It provides a bonus to Intelligence while worn.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/LabCoatCapital/FCP_Lab_Coat_Capital_Wasteland_Scientist</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <smeltable>false</smeltable>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <equippedStatOffsets>  
-            <GlobalLearningFactor>0.05</GlobalLearningFactor>               <!-- Intelligence +1-->              
-        </equippedStatOffsets>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/LabCoatCapital/FCP_Lab_Coat_Capital_Wasteland_Scientist</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
-        </apparel>
-    </ThingDef>
-    
-    <!-- Lab Coat Commonwealth-->
-
-    <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_Lab_Coat_Commonwealth</defName>
-        <label>Lab Coat Commonwealth</label>
-        <description>A lab coat with a dosimeter on the left breast and with a white undershirt and a black tie. It provides a bonus to Intelligence while worn</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/LabCoatCommonwealth/FCP_Lab_Coat_Commonwealth_Scientist</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <smeltable>false</smeltable>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <equippedStatOffsets>  
-            <GlobalLearningFactor>0.10</GlobalLearningFactor>               <!-- Intelligence +2-->              
-        </equippedStatOffsets>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/LabCoatCommonwealth/FCP_Lab_Coat_Commonwealth_Scientist</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
-        </apparel>
-    </ThingDef>
-
 
     <!-- Lab Coat Followers -->
 
@@ -1120,7 +1498,7 @@
         <label>Followers Lab Coat</label>
         <description>A lab coat worn by the followers of the apocalypse. It provides a bonus to science and medicine while worn.</description>
         <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/LabCoatFollowers/FCP_Lab_Coat_tFollowers_of_the_Appocolypse</texPath>
+            <texPath>Things/Apparel/Wasteland_Apparel/LabCoatFollowers/FCP_Lab_Coat_tFollowers_of_the_Appocolypse</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
@@ -1146,9 +1524,9 @@
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
         </statBases>
-        <equippedStatOffsets>  
-            <HackingSpeed>0.20</HackingSpeed>               <!-- Science +10 -->  
-            <MedicalQualityMax>0.20</MedicalQualityMax>     <!-- Medicine +10 -->       
+        <equippedStatOffsets>
+            <HackingSpeed>0.20</HackingSpeed>            <!-- Science +10 -->
+            <MedicalQualityMax>0.20</MedicalQualityMax>            <!-- Medicine +10 -->
         </equippedStatOffsets>
         <costList>
             <Cloth>50</Cloth>
@@ -1160,11 +1538,14 @@
                 <li>Arms</li>
                 <li>Legs</li>
             </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/LabCoatFollowers/FCP_Lab_Coat_tFollowers_of_the_Appocolypse</wornGraphicPath>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/LabCoatFollowers/FCP_Lab_Coat_tFollowers_of_the_Appocolypse</wornGraphicPath>
             <layers>
                 <li>Middle</li>
                 <li>OnSkin</li>
             </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+            </tags>
         </apparel>
     </ThingDef>
 
@@ -1175,7 +1556,7 @@
         <label>Leather Coat</label>
         <description>The leather coat consists of a long, ankle length leather coat, with gloves and boots which appear to be made from duct tape.</description>
         <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/LeatherCoat/FCP_Leather_Coat</texPath>
+            <texPath>Things/Apparel/Wasteland_Apparel/LeatherCoat/FCP_Leather_Coat</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
@@ -1210,50 +1591,13 @@
                 <li>Arms</li>
                 <li>Legs</li>
             </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/LeatherCoat/FCP_Leather_Coat</wornGraphicPath>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/LeatherCoat/FCP_Leather_Coat</wornGraphicPath>
             <layers>
-                <li>Middle</li>
                 <li>OnSkin</li>
             </layers>
-        </apparel>
-    </ThingDef>
-
-    <!-- Manta Man -->
-
-    <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_Manta_Man</defName>
-        <label>Manta Man Costume</label>
-        <description>An outfit stylized to resemble that of the Hubris Comics superhero Manta Man.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/MantaMan/FCP_Manta_Man_Costume</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <smeltable>false</smeltable>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/MantaMan/FCP_Manta_Man_Costume</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+            </tags>
         </apparel>
     </ThingDef>
 
@@ -1264,7 +1608,7 @@
         <label>Merc Adventurer Outfit</label>
         <description>A large leather jacket with torn-off sleeves, a red sweater underneath, a brown bandolier, along with several watches.</description>
         <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/MercAdventurerOutfit/FCP_Merc_Adventurer_Outfit</texPath>
+            <texPath>Things/Apparel/Wasteland_Apparel/MercAdventurerOutfit/FCP_Merc_Adventurer_Outfit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
@@ -1295,9 +1639,9 @@
             <Leather_Plain>25</Leather_Plain>
             <Cloth>25</Cloth>
         </costList>
-        <equippedStatOffsets>  
-            <MeleeHitChance>1</MeleeHitChance>               <!-- Melee Weapons +2 -->  
-            <ShootingAccuracyPawn>1</ShootingAccuracyPawn>     <!-- Guns +2 -->       
+        <equippedStatOffsets>
+            <MeleeHitChance>1</MeleeHitChance>            <!-- Melee Weapons +2 -->
+            <ShootingAccuracyPawn>1</ShootingAccuracyPawn>            <!-- Guns +2 -->
         </equippedStatOffsets>
         <apparel>
             <bodyPartGroups>
@@ -1306,11 +1650,13 @@
                 <li>Arms</li>
                 <li>Legs</li>
             </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/MercAdventurerOutfit/FCP_Merc_Adventurer_Outfit</wornGraphicPath>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/MercAdventurerOutfit/FCP_Merc_Adventurer_Outfit</wornGraphicPath>
             <layers>
-                <li>Middle</li>
                 <li>OnSkin</li>
             </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+            </tags>
         </apparel>
     </ThingDef>
 
@@ -1321,7 +1667,7 @@
         <label>Merc Charmer Dress</label>
         <description>A gray-blue suit top with a matching mini-skirt and ripped black fishnet tights.</description>
         <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/MercCharmerDress/FCP_Merc_Charmer_Dress</texPath>
+            <texPath>Things/Apparel/Wasteland_Apparel/MercCharmerDress/FCP_Merc_Charmer_Dress</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
@@ -1352,9 +1698,9 @@
             <Leather_Plain>25</Leather_Plain>
             <Cloth>25</Cloth>
         </costList>
-        <equippedStatOffsets>  
-            <MeleeHitChance>1</MeleeHitChance>               <!-- Melee Weapons +2 -->  
-            <ShootingAccuracyPawn>1</ShootingAccuracyPawn>     <!-- Guns +2 -->       
+        <equippedStatOffsets>
+            <MeleeHitChance>1</MeleeHitChance>            <!-- Melee Weapons +2 -->
+            <ShootingAccuracyPawn>1</ShootingAccuracyPawn>            <!-- Guns +2 -->
         </equippedStatOffsets>
         <apparel>
             <bodyPartGroups>
@@ -1363,11 +1709,13 @@
                 <li>Arms</li>
                 <li>Legs</li>
             </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/MercCharmerDress/FCP_Merc_Charmer_Dress</wornGraphicPath>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/MercCharmerDress/FCP_Merc_Charmer_Dress</wornGraphicPath>
             <layers>
-                <li>Middle</li>
                 <li>OnSkin</li>
             </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+            </tags>
         </apparel>
     </ThingDef>
 
@@ -1378,7 +1726,7 @@
         <label>Merc Charmer Suit</label>
         <description>A faded teal suit jacket and pants with a gray shirt underneath, as well as a strange collar that protects the neck.</description>
         <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/MercCharmerSuit/FCP_Merc_Charmer_Suit</texPath>
+            <texPath>Things/Apparel/Wasteland_Apparel/MercCharmerSuit/FCP_Merc_Charmer_Suit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
@@ -1409,9 +1757,9 @@
             <Leather_Plain>25</Leather_Plain>
             <Cloth>25</Cloth>
         </costList>
-        <equippedStatOffsets>  
-            <MeleeHitChance>1</MeleeHitChance>               <!-- Melee Weapons +2 -->  
-            <ShootingAccuracyPawn>1</ShootingAccuracyPawn>     <!-- Guns +2 -->       
+        <equippedStatOffsets>
+            <MeleeHitChance>1</MeleeHitChance>            <!-- Melee Weapons +2 -->
+            <ShootingAccuracyPawn>1</ShootingAccuracyPawn>            <!-- Guns +2 -->
         </equippedStatOffsets>
         <apparel>
             <bodyPartGroups>
@@ -1420,22 +1768,24 @@
                 <li>Arms</li>
                 <li>Legs</li>
             </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/MercCharmerSuit/FCP_Merc_Charmer_Suit</wornGraphicPath>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/MercCharmerSuit/FCP_Merc_Charmer_Suit</wornGraphicPath>
             <layers>
-                <li>Middle</li>
                 <li>OnSkin</li>
             </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+            </tags>
         </apparel>
     </ThingDef>
 
-        <!-- Merc Charmer Suit -->
+    <!-- Merc Charmer Suit -->
 
     <ThingDef ParentName="ApparelMakeableBase">
         <defName>FCP_Apparel_Merc_Cruiser_Outfit</defName>
         <label>Merc Cruiser Outfit</label>
         <description>A long leather jacket with the sleeves removed with a white T-shirt underneath.</description>
         <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/MercCruiserOutfit/FCP_Merc_Cruiser_Outfit</texPath>
+            <texPath>Things/Apparel/Wasteland_Apparel/MercCruiserOutfit/FCP_Merc_Cruiser_Outfit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
@@ -1466,9 +1816,9 @@
             <Leather_Plain>25</Leather_Plain>
             <Cloth>25</Cloth>
         </costList>
-        <equippedStatOffsets>  
-            <MeleeHitChance>1</MeleeHitChance>               <!-- Melee Weapons +2 -->  
-            <ShootingAccuracyPawn>1</ShootingAccuracyPawn>     <!-- Guns +2 -->       
+        <equippedStatOffsets>
+            <MeleeHitChance>1</MeleeHitChance>            <!-- Melee Weapons +2 -->
+            <ShootingAccuracyPawn>1</ShootingAccuracyPawn>            <!-- Guns +2 -->
         </equippedStatOffsets>
         <apparel>
             <bodyPartGroups>
@@ -1477,179 +1827,13 @@
                 <li>Arms</li>
                 <li>Legs</li>
             </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/MercCruiserOutfit/FCP_Merc_Cruiser_Outfit</wornGraphicPath>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/MercCruiserOutfit/FCP_Merc_Cruiser_Outfit</wornGraphicPath>
             <layers>
-                <li>Middle</li>
                 <li>OnSkin</li>
             </layers>
-        </apparel>
-    </ThingDef>
-
-    <!-- Military Fatigues -->
-
-    <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_Military_Fatigues</defName>
-        <label>Military Fatigues</label>
-        <description>The military fatigues consist of a dirty set of pea-green fatigues with black boots.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/MilitaryFatigues/FCP_Military_Fatigues</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <smeltable>false</smeltable>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <ArmorRating_Heat>0.05</ArmorRating_Heat>
-            <Mass>2</Mass>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <equippedStatOffsets>  
-            <RangedCooldownFactor>0.10</RangedCooldownFactor>               <!-- AGILITY +2 -->       
-        </equippedStatOffsets>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/ArmyUniform/FCP_Army_Uniform_Clean</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
-        </apparel>
-    </ThingDef>
-
-    <!-- Mistress Mistery -->
-
-    <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_Mistress_Mystery</defName>
-        <label>Mistress Mystery Costume</label>
-        <description>The outfit worn by the Mistress of Mystery, one of the longest-running and most popular superhero characters in the Hubris Comics universe.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/MistressMystery/FCP_Mistress_Mystery_Costume</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <smeltable>false</smeltable>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/MistressMystery/FCP_Mistress_Mystery_Costume</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
-        </apparel>
-    </ThingDef>
-
-    <!-- Naughty Nightgown -->
-
-    <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_Naughty_Nightgown</defName>
-        <label>Naughty Nightgown</label>
-        <description>A set of leopard print pajamas.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/NaughtyNightgown/FCP_Naughty_Nightgown</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <smeltable>false</smeltable>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <equippedStatOffsets>  
-            <SocialImpact>0.20</SocialImpact>               <!-- Speech +10 -->  
-            <WorkSpeedGlobal>0.05</WorkSpeedGlobal>         <!-- LUCK +1 -->
-        </equippedStatOffsets>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/NaughtyNightgown/FCP_Naughty_Nightgown</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
-        </apparel>
-    </ThingDef>
-
-    <!-- Naughty Nightwear -->
-
-    <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_Naughty_Nightwear</defName>
-        <label>Naughty Nightwear</label>
-        <description>A set of leopard print pajamas.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/NaughtyNightwear/FCP_Naughty_Nightwear</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <smeltable>false</smeltable>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <equippedStatOffsets>  
-            <SocialImpact>0.20</SocialImpact>               <!-- Speech +10 -->  
-            <WorkSpeedGlobal>0.05</WorkSpeedGlobal>         <!-- LUCK +1 -->
-        </equippedStatOffsets>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/NaughtyNightwear/FCP_Naughty_Nightwear</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+            </tags>
         </apparel>
     </ThingDef>
 
@@ -1660,7 +1844,7 @@
         <label>Prospector Outfit</label>
         <description>This outfit consists of denim overalls, a brown satchel, and a tan long sleeve shirt underneath.</description>
         <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/ProspectorOutfit/FCP_Prospector_Outfit</texPath>
+            <texPath>Things/Apparel/Wasteland_Apparel/ProspectorOutfit/FCP_Prospector_Outfit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
@@ -1698,196 +1882,13 @@
                 <li>Arms</li>
                 <li>Legs</li>
             </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/ProspectorOutfit/FCP_Prospector_Outfit</wornGraphicPath>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/ProspectorOutfit/FCP_Prospector_Outfit</wornGraphicPath>
             <layers>
-                <li>Middle</li>
                 <li>OnSkin</li>
             </layers>
-        </apparel>
-    </ThingDef>
-
-    <!-- Prostitute Outfit Female -->
-
-    <ThingDef ParentName="ApparelMakeableBase">
-        <defName>FCP_Apparel_Prostitute_Outfit_Female</defName>
-        <label>Prostitute Outfit Female</label>
-        <description>This female outfit consists of a black leather crop-top with purple lacing down the sides of the sleeves and black leather lace-up short-shorts finished with a studded belt and spiked collar.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/ProstituteOutfitFemale/FCP_Prostitute_Outfit_Female</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <recipeMaker Inherit= "false">
-            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
-            <skillRequirements>
-                <Crafting>4</Crafting>
-            </skillRequirements>
-            <recipeUsers>
-                <li>FCP_Production_Tailoring_Workbench</li>
-            </recipeUsers>
-        </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <costList>
-            <Leather_Plain>35</Leather_Plain>
-        </costList>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/ProstituteOutfitFemale/FCP_Prostitute_Outfit_Female</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
-            <gender>Female</gender>
-        </apparel>
-    </ThingDef>
-
-    <!-- Prostitute Outfit Male -->
-
-    <ThingDef ParentName="ApparelMakeableBase">
-        <defName>FCP_Apparel_Prostitute_Outfit_Male</defName>
-        <label>Prostitute Outfit Male</label>
-        <description>This male outfit consists of a sheriff's vest complete with the badge, jean short-shorts and cowboy boots.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/ProstituteOutfitMale/FCP_Prostitute_Outfit_Male</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <recipeMaker Inherit= "false">
-            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
-            <skillRequirements>
-                <Crafting>4</Crafting>
-            </skillRequirements>
-            <recipeUsers>
-                <li>FCP_Production_Tailoring_Workbench</li>
-            </recipeUsers>
-        </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <costList>
-            <Leather_Plain>35</Leather_Plain>
-        </costList>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/ProstituteOutfitMale/FCP_Prostitute_Outfit_Male</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
-            <gender>Male</gender>
-        </apparel>
-    </ThingDef>
-
-    <!-- Radiation Suit -->
-
-    <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_Radiation_Suit</defName>
-        <label>Radiations Suit</label>
-        <description>The radiation suit is a suit that protects its wearer from the harmful effects of radiation to a certain extent.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/RadiationSuit/FCP_Radiation_Suit</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <smeltable>false</smeltable>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <ArmorRating_Sharp>0.25</ArmorRating_Sharp>
-            <ArmorRating_Blunt>0.13</ArmorRating_Blunt>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <equippedStatOffsets>  
-            <ToxicResistance>0.30</ToxicResistance>  
-        </equippedStatOffsets>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/RadiationSuit/FCP_Radiation_Suit</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
-        </apparel>
-    </ThingDef>
-
-    <!-- Red Rocket Overalls-->
-
-    <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_Red_Rocket_Overalls</defName>
-        <label>Red Rocket Overalls</label>
-        <description>Overalls worn by the workers of the Red Rocket gas stations.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/RedRocketOveralls/FCP_Red_Rocket_Overalls</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <smeltable>false</smeltable>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/RedRocketOveralls/FCP_Red_Rocket_Overalls</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+            </tags>
         </apparel>
     </ThingDef>
 
@@ -1898,7 +1899,7 @@
         <label>Regulator Duster</label>
         <description>An outfit consisting of a black undershirt and a pair of gray canvas pants underneath a long, brown leather overcoat with the sleeves rolled up above the elbow.</description>
         <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/RegulatorDuster/FCP_Regulator_Duster</texPath>
+            <texPath>Things/Apparel/Wasteland_Apparel/RegulatorDuster/FCP_Regulator_Duster</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
@@ -1923,8 +1924,8 @@
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
         </statBases>
-        <equippedStatOffsets>   
-            <ShootingAccuracyPawn>3</ShootingAccuracyPawn>     <!-- Guns +5 -->       
+        <equippedStatOffsets>
+            <ShootingAccuracyPawn>3</ShootingAccuracyPawn>            <!-- Guns +5 -->
         </equippedStatOffsets>
         <costList>
             <Cloth>20</Cloth>
@@ -1937,99 +1938,13 @@
                 <li>Arms</li>
                 <li>Legs</li>
             </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/RegulatorDuster/FCP_Regulator_Duster</wornGraphicPath>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/RegulatorDuster/FCP_Regulator_Duster</wornGraphicPath>
             <layers>
-                <li>Middle</li>
                 <li>OnSkin</li>
             </layers>
-        </apparel>
-    </ThingDef>
-
-    <!-- Reinforced Combat Armor -->
-
-    <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_Reinforced_Combat_Armor</defName>
-        <label>Reinforced Combat Armor</label>
-        <description>A more advanced version of the standard combat armor.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/ReinforcedCombatArmor/FCP_Reinforced_Combat_Armor</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <smeltable>false</smeltable>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <ArmorRating_Sharp>1.04</ArmorRating_Sharp>
-            <ArmorRating_Blunt>0.52</ArmorRating_Blunt>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <equippedStatOffsets>  
-            <ToxicResistance>0.30</ToxicResistance>  
-        </equippedStatOffsets>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/ReinforcedCombatArmor/FCP_Reinforced_Combat_Armor</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
-        </apparel>
-    </ThingDef>
-
-    <!-- Reinforced Combat Armor II -->
-
-    <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_Reinforced_Combat_Armor_II</defName>
-        <label>Reinforced Combat Armor II</label>
-        <description>An even more advanced version of the reinforced combat armor, offering more protection.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/ReinforcedCombatArmorII/FCP_Reinforced_Combat_Armor_Mk_II</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <smeltable>false</smeltable>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <ArmorRating_Sharp>1.22</ArmorRating_Sharp>
-            <ArmorRating_Blunt>0.68</ArmorRating_Blunt>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <equippedStatOffsets>  
-            <ToxicResistance>0.30</ToxicResistance>  
-        </equippedStatOffsets>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/ReinforcedCombatArmorII/FCP_Reinforced_Combat_Armor_Mk_II</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+            </tags>
         </apparel>
     </ThingDef>
 
@@ -2040,7 +1955,7 @@
         <label>Settler Female Outfit</label>
         <description>An earth tone dress that comes down to the mid calves with a gray scarf wrapped around the neck.</description>
         <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/SettlerFemaleOutfit/FCP_Settler_Female_Outfit</texPath>
+            <texPath>Things/Apparel/Wasteland_Apparel/SettlerFemaleOutfit/FCP_Settler_Female_Outfit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
@@ -2077,12 +1992,14 @@
                 <li>Arms</li>
                 <li>Legs</li>
             </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/SettlerFemaleOutfit/FCP_Settler_Female_Outfit</wornGraphicPath>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/SettlerFemaleOutfit/FCP_Settler_Female_Outfit</wornGraphicPath>
             <layers>
-                <li>Middle</li>
                 <li>OnSkin</li>
             </layers>
             <gender>Female</gender>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+            </tags>
         </apparel>
     </ThingDef>
 
@@ -2093,7 +2010,7 @@
         <label>Settler Male Outfit</label>
         <description>an orange and brown plaid shirt with jean overalls. A handkerchief is wrapped around the neck.</description>
         <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/SettlerMaleOutfit/FCP_Settler_Male_Outfit</texPath>
+            <texPath>Things/Apparel/Wasteland_Apparel/SettlerMaleOutfit/FCP_Settler_Male_Outfit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
@@ -2131,12 +2048,14 @@
                 <li>Arms</li>
                 <li>Legs</li>
             </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/SettlerMaleOutfit/FCP_Settler_Male_Outfit</wornGraphicPath>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/SettlerMaleOutfit/FCP_Settler_Male_Outfit</wornGraphicPath>
             <layers>
-                <li>Middle</li>
                 <li>OnSkin</li>
             </layers>
             <gender>Male</gender>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+            </tags>
         </apparel>
     </ThingDef>
 
@@ -2147,7 +2066,7 @@
         <label>Sheriff Duster</label>
         <description>An outfit consisting of a black undershirt and a pair of gray canvas pants underneath a long, brown leather overcoat with the sleeves rolled up above the elbow. It sports a sheriff badge on the right breast.</description>
         <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/SheriffDuster/FCP_Sheriff_Duster</texPath>
+            <texPath>Things/Apparel/Wasteland_Apparel/SheriffDuster/FCP_Sheriff_Duster</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
@@ -2172,8 +2091,8 @@
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
         </statBases>
-        <equippedStatOffsets>   
-            <ShootingAccuracyPawn>3</ShootingAccuracyPawn>     <!-- Guns +5 -->       
+        <equippedStatOffsets>
+            <ShootingAccuracyPawn>3</ShootingAccuracyPawn>            <!-- Guns +5 -->
         </equippedStatOffsets>
         <costList>
             <Cloth>20</Cloth>
@@ -2186,22 +2105,198 @@
                 <li>Arms</li>
                 <li>Legs</li>
             </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/SheriffDuster/FCP_Sheriff_Duster</wornGraphicPath>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/SheriffDuster/FCP_Sheriff_Duster</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Surveyor Outfit -->
+
+    <ThingDef ParentName="ApparelMakeableBase">
+        <defName>FCP_Apparel_Surveyor_Outfit</defName>
+        <label>Surveyor Outfit</label>
+        <description>The surveyor outfit is a pocketed leather coat with brown cargo pants and dirty wingtip shoes, with a satchel and metal wire covering the right arm.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/SurveyorOutfit/FCP_Surveyor_Outfit</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <costList>
+            <Cloth>30</Cloth>
+        </costList>
+        <equippedStatOffsets>
+            <ShootingAccuracyPawn>5</ShootingAccuracyPawn>            <!-- PERCEPTION +1 -->
+            <MoveSpeed>0.30</MoveSpeed>            <!-- ENDURANCE +1-->
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/SurveyorOutfit/FCP_Surveyor_Outfit</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Wasteland Doctor Outfit -->
+
+    <ThingDef ParentName="ApparelMakeableBase">
+        <defName>FCP_Apparel_Wasteland_Doctor_Outfit</defName>
+        <label>Wasteland Doctor Outfit</label>
+        <description>The wasteland doctor outfit consist of a white t-shirt, a small brown satchel bag, and brown cargo pants with pouches attached to the belt.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/WastelandDoctorOutfit/FCP_Wasteland_Doctor_Outfit</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <ArmorRating_Sharp>0.13</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.07</ArmorRating_Blunt>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <costList>
+            <Cloth>30</Cloth>
+        </costList>
+        <equippedStatOffsets>
+            <MedicalQualityMax>0.10</MedicalQualityMax>            <!-- Medicine +5 -->
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/WastelandDoctorOutfit/FCP_Wasteland_Doctor_Outfit</wornGraphicPath>
             <layers>
                 <li>Middle</li>
                 <li>OnSkin</li>
             </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+            </tags>
         </apparel>
     </ThingDef>
 
-    <!-- Silver Shroud-->
+    <!-- Wasteland Wanderer Outfit -->
+
+    <ThingDef ParentName="ApparelMakeableBase">
+        <defName>FCP_Apparel_Wasteland_Wanderer_Outfit</defName>
+        <label>Wasteland Wanderer Outfit</label>
+        <description>Most wastelanders will wear this outfit. It consists of a tan zipped-up hoodie and cargo pants tucked into riding boots.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/WastelandWandererOutfit/FCP_Wasteland_Wanderer_Outfit</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <ArmorRating_Sharp>0.13</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.07</ArmorRating_Blunt>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <costList>
+            <Cloth>30</Cloth>
+        </costList>
+        <equippedStatOffsets>
+            <RangedCooldownFactor>0.05</RangedCooldownFactor>            <!-- AGILITY +1 -->
+            <MoveSpeed>0.30</MoveSpeed>            <!-- ENDURANCE +1-->
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/WastelandWandererOutfit/FCP_Wasteland_Wanderer_Outfit</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Wastelander_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!--___ Ghoul Apparel ___-->
+
+    <!-- Jason Bright -->
 
     <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_Silver_Shroud</defName>
-        <label>Silver Shroud Costume</label>
-        <description>A recreation of the costume worn by the comic book character, the Silver Shroud.</description>
+        <defName>FCP_Apparel_Jason_Bright</defName>
+        <label>Jason Bright Costume</label>
+        <description>Outfit worn by Jason Bright, it appears to resemble a weathered fancy gambler suit, without the tie.</description>
         <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/SilverShroud/FCP_Silver_Shroud_Costume</texPath>
+            <texPath>Things/Apparel/Wasteland_Apparel/JasonBright/FCP_Bright_Brotherhood_Leaders_Suit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
@@ -2213,16 +2308,15 @@
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
+            <ArmorRating_Sharp>0.07</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.04</ArmorRating_Blunt>
             <Mass>2</Mass>
-            <ArmorRating_Heat>0.15</ArmorRating_Heat>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
         </statBases>
-        <equippedStatOffsets>  
-            <ToxicResistance>0.15</ToxicResistance> 
-            <ShootingAccuracyPawn>5</ShootingAccuracyPawn>           <!-- PERCEPTION +1 -->
-            <RangedCooldownFactor>0.05</RangedCooldownFactor>           <!-- AGILITY +1 -->       
+        <equippedStatOffsets>
+            <ToxicResistance>0.40</ToxicResistance>
         </equippedStatOffsets>
         <apparel>
             <bodyPartGroups>
@@ -2231,11 +2325,278 @@
                 <li>Arms</li>
                 <li>Legs</li>
             </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/SilverShroud/FCP_Silver_Shroud_Costume</wornGraphicPath>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/JasonBright/FCP_Bright_Brotherhood_Leaders_Suit</wornGraphicPath>
             <layers>
-                <li>Middle</li>
                 <li>OnSkin</li>
             </layers>
+            <tags>
+                <li>FCP_Ghoul_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Bright Brotherhood Robe -->
+
+    <ThingDef ParentName="ApparelMakeableBase">
+        <defName>FCP_Apparel_Bright_Brotherhood_Robe</defName>
+        <label>Bright Brotherhood Robe</label>
+        <description>These are robes worn by Bright Follower ghouls. They are  slightly tattered and have a brownish-green color.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/BrightBrotherhoodRobe/FCP_Bright_Brotherhood_Robe</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <costList>
+            <Cloth>70</Cloth>
+        </costList>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/BrightBrotherhoodRobe/FCP_Bright_Brotherhood_Robe</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Ghoul_Apparel</li>
+                <li>FCP_Bright_Brotherhood</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!--___ Slave Apparel ___-->
+
+    <!-- Chained Prostitute Outfit -->
+
+    <ThingDef ParentName="ApparelMakeableBase">
+        <defName>FCP_Apparel_Chained_Prostitute_Outfit</defName>
+        <label>Chained Prostitute Outfit</label>
+        <description>It appears as bondage harness on the chest with multiple leather bracelets and armbands. The bottom consists of a pair of low-rise, black leather pants</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/ChainedProstituteOutfit/FCP_Chained_Prostitute_Outfit</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <costList>
+            <Leather_Plain>60</Leather_Plain>
+        </costList>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/ChainedProstituteOutfit/FCP_Chained_Prostitute_Outfit</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Slaves_New_Vegas_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Exposed Prostitute Outfit -->
+
+    <ThingDef ParentName="ApparelMakeableBase">
+        <defName>FCP_Apparel_Exposed_Prostitute_Outfit</defName>
+        <label>Exposed Prostitute Outfit</label>
+        <description>This outfit consists of black cowboy boots, black ripped tights worn under gray boxers, chains covering the wearer's chest which are connected to a spiked choker necklace, and a wrestling singlet.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/ExposedProstituteOutfit/FCP_Exposed_Prostitute_Outfit</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <costList>
+            <Leather_Plain>50</Leather_Plain>
+        </costList>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/ExposedProstituteOutfit/FCP_Exposed_Prostitute_Outfit</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Slaves_New_Vegas_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Prostitute Outfit Female -->
+
+    <ThingDef ParentName="ApparelMakeableBase">
+        <defName>FCP_Apparel_Prostitute_Outfit_Female</defName>
+        <label>Prostitute Outfit Female</label>
+        <description>This female outfit consists of a black leather crop-top with purple lacing down the sides of the sleeves and black leather lace-up short-shorts finished with a studded belt and spiked collar.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/ProstituteOutfitFemale/FCP_Prostitute_Outfit_Female</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <costList>
+            <Leather_Plain>35</Leather_Plain>
+        </costList>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/ProstituteOutfitFemale/FCP_Prostitute_Outfit_Female</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <gender>Female</gender>
+            <tags>
+                <li>FCP_Slaves_New_Vegas_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Prostitute Outfit Male -->
+
+    <ThingDef ParentName="ApparelMakeableBase">
+        <defName>FCP_Apparel_Prostitute_Outfit_Male</defName>
+        <label>Prostitute Outfit Male</label>
+        <description>This male outfit consists of a sheriff's vest complete with the badge, jean short-shorts and cowboy boots.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/ProstituteOutfitMale/FCP_Prostitute_Outfit_Male</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <techLevel>Industrial</techLevel>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <costList>
+            <Leather_Plain>35</Leather_Plain>
+        </costList>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/ProstituteOutfitMale/FCP_Prostitute_Outfit_Male</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <gender>Male</gender>
+            <tags>
+                <li>FCP_Slaves_New_Vegas_Apparel</li>
+            </tags>
         </apparel>
     </ThingDef>
 
@@ -2246,7 +2607,7 @@
         <label>Slave Rags</label>
         <description>Worn by slaves of the Legion, slave rags offer no protection from the elements and are composed of a torn dirty white tunic with a red "X" painted on the chest.</description>
         <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/SlaveRags/FCP_Slave_Rags</texPath>
+            <texPath>Things/Apparel/Wasteland_Apparel/SlaveRags/FCP_Slave_Rags</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
@@ -2281,262 +2642,13 @@
                 <li>Arms</li>
                 <li>Legs</li>
             </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/SlaveRags/FCP_Slave_Rags</wornGraphicPath>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/SlaveRags/FCP_Slave_Rags</wornGraphicPath>
             <layers>
-                <li>Middle</li>
                 <li>OnSkin</li>
             </layers>
-        </apparel>
-    </ThingDef>
-
-    <!-- Spring Pre War Dress -->
-
-    <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_Spring_Pre_War_Dress</defName>
-        <label>Spring Pre War Dress</label>
-        <description>A pink dress with red heels.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/SpringPreWarDress/FCP_Spring_Pre_War_Dress</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <smeltable>false</smeltable>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <equippedStatOffsets>  
-            <RangedCooldownFactor>0.05</RangedCooldownFactor>           <!-- AGILITY +1 -->       
-        </equippedStatOffsets>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/SpringPreWarDress/FCP_Spring_Pre_War_Dress</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
-            <gender>Female</gender>
-        </apparel>
-    </ThingDef>
-
-    <!-- Spring Pre War Shirt -->
-
-    <ThingDef ParentName="ApparelBase">
-        <defName>FCP_Apparel_Spring_Pre_War_Shirt</defName>
-        <label>Spring Pre War Shirt</label>
-        <description>A red plaid shirt and brown pants.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/SpringPreWarShirt/FCP_Spring_Pre_War_Shirt</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <smeltable>false</smeltable>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <equippedStatOffsets>  
-            <RangedCooldownFactor>0.05</RangedCooldownFactor>           <!-- AGILITY +1 -->       
-        </equippedStatOffsets>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/SpringPreWarShirt/FCP_Spring_Pre_War_Shirt</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
-            <gender>Male</gender>
-        </apparel>
-    </ThingDef>
-
-    <!-- Surveyor Outfit -->
-
-    <ThingDef ParentName="ApparelMakeableBase">
-        <defName>FCP_Apparel_Surveyor_Outfit</defName>
-        <label>Surveyor Outfit</label>
-        <description>The surveyor outfit is a pocketed leather coat with brown cargo pants and dirty wingtip shoes, with a satchel and metal wire covering the right arm.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/SurveyorOutfit/FCP_Surveyor_Outfit</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <recipeMaker Inherit= "false">
-            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
-            <skillRequirements>
-                <Crafting>4</Crafting>
-            </skillRequirements>
-            <recipeUsers>
-                <li>FCP_Production_Tailoring_Workbench</li>
-            </recipeUsers>
-        </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <costList>
-            <Cloth>30</Cloth>
-        </costList>
-        <equippedStatOffsets>  
-            <ShootingAccuracyPawn>5</ShootingAccuracyPawn>              <!-- PERCEPTION +1 -->   
-            <MoveSpeed>0.30</MoveSpeed>                                 <!-- ENDURANCE +1-->
-        </equippedStatOffsets>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/SurveyorOutfit/FCP_Surveyor_Outfit</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
-        </apparel>
-    </ThingDef>
-
-    <!-- Wasteland Doctor Outfit -->
-
-    <ThingDef ParentName="ApparelMakeableBase">
-        <defName>FCP_Apparel_Wasteland_Doctor_Outfit</defName>
-        <label>Wasteland Doctor Outfit</label>
-        <description>The wasteland doctor outfit consist of a white t-shirt, a small brown satchel bag, and brown cargo pants with pouches attached to the belt.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/WastelandDoctorOutfit/FCP_Wasteland_Doctor_Outfit</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <recipeMaker Inherit= "false">
-            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
-            <skillRequirements>
-                <Crafting>4</Crafting>
-            </skillRequirements>
-            <recipeUsers>
-                <li>FCP_Production_Tailoring_Workbench</li>
-            </recipeUsers>
-        </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <ArmorRating_Sharp>0.13</ArmorRating_Sharp>
-            <ArmorRating_Blunt>0.07</ArmorRating_Blunt>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <costList>
-            <Cloth>30</Cloth>
-        </costList>
-        <equippedStatOffsets>  
-            <MedicalQualityMax>0.10</MedicalQualityMax>           <!-- Medicine +5 -->   
-        </equippedStatOffsets>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/WastelandDoctorOutfit/FCP_Wasteland_Doctor_Outfit</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
-        </apparel>
-    </ThingDef>
-
-    <!-- Wasteland Wanderer Outfit -->
-
-    <ThingDef ParentName="ApparelMakeableBase">
-        <defName>FCP_Apparel_Wasteland_Wanderer_Outfit</defName>
-        <label>Wasteland Wanderer Outfit</label>
-        <description>Most wastelanders will wear this outfit. It consists of a tan zipped-up hoodie and cargo pants tucked into riding boots.</description>
-        <graphicData>
-            <texPath>Apparel/Wasteland_Apparel/WastelandWandererOutfit/FCP_Wasteland_Wanderer_Outfit</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <techLevel>Industrial</techLevel>
-        <recipeMaker Inherit= "false">
-            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
-            <skillRequirements>
-                <Crafting>4</Crafting>
-            </skillRequirements>
-            <recipeUsers>
-                <li>FCP_Production_Tailoring_Workbench</li>
-            </recipeUsers>
-        </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <ArmorRating_Sharp>0.13</ArmorRating_Sharp>
-            <ArmorRating_Blunt>0.07</ArmorRating_Blunt>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <costList>
-            <Cloth>30</Cloth>
-        </costList>
-        <equippedStatOffsets>  
-            <RangedCooldownFactor>0.05</RangedCooldownFactor>           <!-- AGILITY +1 -->   
-            <MoveSpeed>0.30</MoveSpeed>                                 <!-- ENDURANCE +1-->
-        </equippedStatOffsets>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Apparel/Wasteland_Apparel/WastelandWandererOutfit/FCP_Wasteland_Wanderer_Outfit</wornGraphicPath>
-            <layers>
-                <li>Middle</li>
-                <li>OnSkin</li>
-            </layers>
+            <tags>
+                <li>FCP_Slave_Apparel</li>
+            </tags>
         </apparel>
     </ThingDef>
 
