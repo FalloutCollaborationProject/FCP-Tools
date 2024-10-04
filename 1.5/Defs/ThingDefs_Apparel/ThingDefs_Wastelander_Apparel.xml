@@ -15,7 +15,6 @@
     <!-- Combat Armor Base -->
 
     <ThingDef Name="FCP_Apparel_Combat_Armor_Base" Abstract="True" ParentName="ApparelBase">
-        <techLevel>Industrial</techLevel>
         <smeltable>false</smeltable>
         <thingCategories>
             <li>ApparelArmor</li>
@@ -86,7 +85,6 @@
     <ThingDef ParentName="ApparelBase">
         <defName>FCP_Apparel_Combat_Armor_Light</defName>
         <description>Combat armor was issued within the United States Armed Forces during the Great War, this is the standard version of the armor</description>
-        <techLevel>Industrial</techLevel>
         <label>Combat Armor Light</label>
         <smeltable>false</smeltable>
         <graphicData>
@@ -129,7 +127,6 @@
     <ThingDef ParentName="ApparelBase">
         <defName>FCP_Apparel_Combat_Armor_Sturdy</defName>
         <description>Combat armor was issued within the United States Armed Forces during the Great War, this is the sturdy version of the armor</description>
-        <techLevel>Industrial</techLevel>
         <label>Combat Armor Sturdy</label>
         <smeltable>false</smeltable>
         <graphicData>
@@ -172,7 +169,6 @@
     <ThingDef ParentName="ApparelBase">
         <defName>FCP_Apparel_Combat_Armor_Heavy</defName>
         <description>Combat armor was issued within the United States Armed Forces during the Great War, this is the heavy version of the armor</description>
-        <techLevel>Industrial</techLevel>
         <label>Combat Armor Heavy</label>
         <smeltable>false</smeltable>
         <graphicData>
@@ -221,10 +217,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -269,10 +261,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -308,11 +296,22 @@
 
     <!--___ Apparel ___-->
 
+    <!--__ Apparel Base __-->
+
+    <!-- FCP Apparel Base -->
+
+    <ThingDef ParentName="ApparelBase" Name="FCP_Apparel_Base" Abstract="True">
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+    </ThingDef>
+
     <!--__ Pre-War Apparel __-->
 
     <!-- Military Fatigues -->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Military_Fatigues</defName>
         <label>Military Fatigues</label>
         <description>The military fatigues consist of a dirty set of pea-green fatigues with black boots.</description>
@@ -321,10 +320,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -358,7 +353,7 @@
 
     <!-- Pre-War Army Uniform -->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Army_Uniform</defName>
         <label>Pre-War Army Uniform</label>
         <description>.</description>
@@ -367,10 +362,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -400,7 +391,7 @@
 
     <!-- Pre-War Fancy Suit (Clean) -->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Benny_Pre_War_Fancy_Suit_Clean</defName>
         <label>Benny</label>
         <description>Benny's suit is a black and white buffalo plaid suit jacket worn with light grey dress pants, white dress shirt, and black tie</description>
@@ -409,10 +400,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -446,7 +433,7 @@
 
     <!-- Business Pre War -->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Business_Pre_War</defName>
         <label>Business Pre War</label>
         <description>A light beige suit with a blue tie.</description>
@@ -455,10 +442,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -491,7 +474,7 @@
 
     <!-- Spring Pre War Dress -->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Spring_Pre_War_Dress</defName>
         <label>Spring Pre War Dress</label>
         <description>A pink dress with red heels.</description>
@@ -501,10 +484,6 @@
             <drawSize>0.90</drawSize>
         </graphicData>
         <smeltable>false</smeltable>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -537,7 +516,7 @@
 
     <!-- Spring Pre War Shirt -->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Spring_Pre_War_Shirt</defName>
         <label>Spring Pre War Shirt</label>
         <description>A red plaid shirt and brown pants.</description>
@@ -547,10 +526,6 @@
             <drawSize>0.90</drawSize>
         </graphicData>
         <smeltable>false</smeltable>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -583,7 +558,7 @@
 
     <!-- Radiation Suit -->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Radiation_Suit</defName>
         <label>Radiations Suit</label>
         <description>The radiation suit is a suit that protects its wearer from the harmful effects of radiation to a certain extent.</description>
@@ -592,10 +567,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -630,7 +601,7 @@
 
     <!-- Red Rocket Overalls-->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Red_Rocket_Overalls</defName>
         <label>Red Rocket Overalls</label>
         <description>Overalls worn by the workers of the Red Rocket gas stations.</description>
@@ -639,10 +610,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -672,7 +639,7 @@
 
     <!-- Naughty Nightgown -->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Naughty_Nightgown</defName>
         <label>Naughty Nightgown</label>
         <description>A set of leopard print pajamas.</description>
@@ -681,10 +648,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -719,7 +682,7 @@
 
     <!-- Naughty Nightwear -->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Naughty_Nightwear</defName>
         <label>Naughty Nightwear</label>
         <description>A set of leopard print pajamas.</description>
@@ -728,10 +691,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -765,7 +724,7 @@
 
     <!-- Fancy Gambler Dress -->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Fancy_Gambler_Dress</defName>
         <label>Fancy Gambler Dress</label>
         <description>A worn brown dress with slingback high-heels.</description>
@@ -774,10 +733,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -808,7 +763,7 @@
 
     <!-- Fancy Gambler Suit -->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Fancy_Gambler_Suit</defName>
         <label>Fancy Gambler Suit</label>
         <description>A tan blazer with brown lapels and slacks, complete with a dark brown bow tie.</description>
@@ -817,10 +772,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -852,7 +803,7 @@
 
     <!-- Lab Coat Capital -->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Lab_Coat_Capital</defName>
         <label>Lab Coat Capital</label>
         <description>A clean white lab coat with a blue undershirt and a brown tie. It provides a bonus to Intelligence while worn.</description>
@@ -861,10 +812,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -898,7 +845,7 @@
 
     <!-- Lab Coat Commonwealth-->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Lab_Coat_Commonwealth</defName>
         <label>Lab Coat Commonwealth</label>
         <description>A lab coat with a dosimeter on the left breast and with a white undershirt and a black tie. It provides a bonus to Intelligence while worn</description>
@@ -907,10 +854,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -944,7 +887,7 @@
 
     <!-- Mistress Mistery -->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Mistress_Mystery</defName>
         <label>Mistress Mystery Costume</label>
         <description>The outfit worn by the Mistress of Mystery, one of the longest-running and most popular superhero characters in the Hubris Comics universe.</description>
@@ -953,10 +896,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -985,7 +924,7 @@
 
     <!-- Grognak Female -->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Grognak_Female</defName>
         <label>Grognak Female</label>
         <description>A loincloth with a leather made bra.</description>
@@ -994,10 +933,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -1033,7 +968,7 @@
 
     <!-- Grognak Male -->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Grognak_Male</defName>
         <label>Grognak Male</label>
         <description>A loincloth.</description>
@@ -1042,10 +977,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -1080,7 +1011,7 @@
 
     <!-- Inspector -->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_The_Inspector</defName>
         <label>The Inspector Costume</label>
         <description>A costume version of the outfit worn by The Inspector, a Hubris Comics superhero and member of The Unstoppables!</description>
@@ -1089,10 +1020,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -1121,7 +1048,7 @@
 
     <!-- Silver Shroud-->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Silver_Shroud</defName>
         <label>Silver Shroud Costume</label>
         <description>A recreation of the costume worn by the comic book character, the Silver Shroud.</description>
@@ -1130,10 +1057,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -1168,7 +1091,7 @@
 
     <!-- Manta Man -->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Manta_Man</defName>
         <label>Manta Man Costume</label>
         <description>An outfit stylized to resemble that of the Hubris Comics superhero Manta Man.</description>
@@ -1177,10 +1100,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -1211,7 +1130,7 @@
 
     <!-- Athletic Outfit -->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Athletic_Outfit</defName>
         <label>Athletic Outfit</label>
         <description>The athletic outfit appears as a tattered and stitched baseball uniform with boots and knee pads.</description>
@@ -1220,10 +1139,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -1261,7 +1176,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
         <recipeMaker Inherit= "false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
@@ -1271,9 +1185,6 @@
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
         </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <costList>
             <Leather_Plain>50</Leather_Plain>
         </costList>
@@ -1316,7 +1227,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
         <recipeMaker Inherit= "false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
@@ -1326,9 +1236,6 @@
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
         </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <costList>
             <Cloth>35</Cloth>
             <Leather_Plain>35</Leather_Plain>
@@ -1348,7 +1255,7 @@
                 <li>Arms</li>
                 <li>Legs</li>
             </bodyPartGroups>
-            <wornGraphicPath>Apparel/CaravaneerOutfit/FCP_Caravaneer_Outfit</wornGraphicPath>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/CaravaneerOutfit/FCP_Caravaneer_Outfit</wornGraphicPath>
             <layers>
                 <li>OnSkin</li>
             </layers>
@@ -1360,7 +1267,7 @@
 
     <!-- Field Hand Female Outfit -->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Field_Hand_Female_Outfit</defName>
         <label>Field Hand Female Outfit</label>
         <description>A red dress worn with a white apron and waterskins.</description>
@@ -1369,10 +1276,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -1402,7 +1305,7 @@
 
     <!-- Field Hand Male Outfit -->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Field_Hand_Male_Outfit</defName>
         <label>Field Hand Male Outfit</label>
         <description>A black long-sleeve shirt with suspenders, brown rolled-up pants complete with a red scarf and black gloves.</description>
@@ -1411,10 +1314,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -1453,7 +1352,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
         <recipeMaker Inherit= "false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
@@ -1463,9 +1361,6 @@
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
         </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <costList>
             <Cloth>35</Cloth>
         </costList>
@@ -1502,7 +1397,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
         <recipeMaker Inherit= "false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
@@ -1512,9 +1406,6 @@
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
         </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -1560,7 +1451,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
         <recipeMaker Inherit= "false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
@@ -1570,9 +1460,6 @@
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
         </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -1612,7 +1499,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
         <recipeMaker Inherit= "false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
@@ -1622,9 +1508,6 @@
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
         </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -1671,7 +1554,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
         <recipeMaker Inherit= "false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
@@ -1681,9 +1563,6 @@
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
         </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -1730,7 +1609,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
         <recipeMaker Inherit= "false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
@@ -1740,9 +1618,6 @@
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
         </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -1789,7 +1664,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
         <recipeMaker Inherit= "false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
@@ -1799,9 +1673,6 @@
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
         </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -1848,7 +1719,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
         <recipeMaker Inherit= "false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
@@ -1858,9 +1728,6 @@
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
         </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -1903,7 +1770,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
         <recipeMaker Inherit= "false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
@@ -1913,9 +1779,6 @@
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
         </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -1959,7 +1822,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
         <recipeMaker Inherit= "false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
@@ -1969,9 +1831,6 @@
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
         </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -2014,7 +1873,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
         <recipeMaker Inherit= "false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
@@ -2024,9 +1882,6 @@
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
         </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -2070,7 +1925,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
         <recipeMaker Inherit= "false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
@@ -2080,9 +1934,6 @@
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
         </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -2126,7 +1977,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
         <recipeMaker Inherit= "false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
@@ -2136,9 +1986,6 @@
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
         </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -2182,7 +2029,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
         <recipeMaker Inherit= "false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
@@ -2192,9 +2038,6 @@
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
         </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -2240,7 +2083,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
         <recipeMaker Inherit= "false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
@@ -2250,9 +2092,6 @@
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
         </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -2291,7 +2130,7 @@
 
     <!-- Jason Bright -->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Jason_Bright</defName>
         <label>Jason Bright Costume</label>
         <description>Outfit worn by Jason Bright, it appears to resemble a weathered fancy gambler suit, without the tie.</description>
@@ -2300,10 +2139,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -2346,7 +2181,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
         <recipeMaker Inherit= "false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
@@ -2356,9 +2190,6 @@
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
         </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <costList>
             <Cloth>70</Cloth>
         </costList>
@@ -2401,7 +2232,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
         <recipeMaker Inherit= "false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
@@ -2411,9 +2241,6 @@
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
         </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <costList>
             <Leather_Plain>60</Leather_Plain>
         </costList>
@@ -2453,7 +2280,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
         <recipeMaker Inherit= "false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
@@ -2463,9 +2289,6 @@
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
         </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <costList>
             <Leather_Plain>50</Leather_Plain>
         </costList>
@@ -2505,7 +2328,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
         <recipeMaker Inherit= "false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
@@ -2515,9 +2337,6 @@
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
         </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -2558,7 +2377,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
         <recipeMaker Inherit= "false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
@@ -2568,9 +2386,6 @@
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
         </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -2611,7 +2426,6 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <techLevel>Industrial</techLevel>
         <recipeMaker Inherit= "false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
@@ -2621,9 +2435,6 @@
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
         </recipeMaker>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
