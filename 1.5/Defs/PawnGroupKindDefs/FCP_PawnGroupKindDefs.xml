@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <PawnGroupKindDef>
+        <defName>FCP_PawnGroupKind_TaxCollector</defName>
+        <workerClass>PawnGroupKindWorker_Trader</workerClass>
+    </PawnGroupKindDef>
+
+</Defs>
