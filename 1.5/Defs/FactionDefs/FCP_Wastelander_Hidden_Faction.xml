@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Hidden Factions __________-->
+
+    <!--_____ Wastelanders _____-->
+
+    <FactionDef ParentName="FactionBase">
+        <defName>FCP_Faction_Hidden_Wastelanders</defName>
+        <pawnSingular>Wastelander</pawnSingular>
+        <pawnsPlural>Wastelanders</pawnsPlural>
+        <categoryTag>FCP_Wastelanders</categoryTag>
+        <requiredCountAtGameStart>1</requiredCountAtGameStart>
+        <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+        <configurationListOrderPriority>2000</configurationListOrderPriority>
+        <displayInFactionSelection>false</displayInFactionSelection>
+        <fixedName>Wastelanders</fixedName>
+        <factionIconPath>World/WorldObjects/Expanding/Sites/DownedRefugee</factionIconPath>
+        <techLevel>Spacer</techLevel>
+        <backstoryFilters>
+            <li>
+                <categories>
+                    <li>FCP_Wastelander</li>
+                    <li>FCP_Wastelander_Child</li>
+                </categories>
+            </li>
+        </backstoryFilters>
+        <hidden>true</hidden>
+        <rescueesCanJoin>true</rescueesCanJoin>
+        <autoFlee>false</autoFlee>
+        <requiredMemes>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Structure_Ideological</li>
+        </requiredMemes>
+        <disallowedMemes>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Nudism</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
+        </disallowedMemes>
+        <modExtensions Inherit="False">
+            <li Class="FCP.Factions.HiddenFactionCaravanExtension" />
+        </modExtensions>
+        <maxPawnCostPerTotalPointsCurve>
+            <points>
+                <li>(0,35)</li>
+                <li>(70, 50)</li>
+                <li>(700, 100)</li>
+                <li>(1300, 150)</li>
+                <li>(100000, 10000)</li>
+            </points>
+        </maxPawnCostPerTotalPointsCurve>
+        <pawnGroupMakers>
+
+            <!-- NCR Recon Squad -->
+
+            <li>
+                <!-- Distance fights, scout recon troopers -->
+                <kindDef>Combat</kindDef>
+                <disallowedStrategies>
+                    <li>ImmediateAttackSmart</li>
+                    <li>ImmediateAttack</li>
+                    <li>StageThenAttack</li>
+                    <li>EmergeFromWater</li>
+                    <li>Siege</li>
+                </disallowedStrategies>
+                <options>
+                    <FCP_NCR_Scout_Recon>6</FCP_NCR_Scout_Recon>
+                    <FCP_NCR_Officer>1</FCP_NCR_Officer>
+                    <FCP_NCR_President>1</FCP_NCR_President>
+                </options>
+            </li>
+
+            <li Class="FCP.Factions.GroupMakerWithTraderKind">
+                <kindDef>Trader</kindDef>
+                <traderKinds>
+                    <li>FCP_Caravan_Brahmin_Herder</li>
+                </traderKinds>
+                <traders>
+                    <FCP_NCR_Crimson_Caravan_Trader>1</FCP_NCR_Crimson_Caravan_Trader>
+                </traders>
+                <carriers>
+                    <FCP_Animal_Brahmin>6</FCP_Animal_Brahmin>
+                </carriers>
+                <guards>
+                    <FCP_NCR_Citizen>5</FCP_NCR_Citizen>
+                    <FCP_NCR_Ranger_Volunteer>1</FCP_NCR_Ranger_Volunteer>
+                    <FCP_NCR_President>1</FCP_NCR_President>
+                </guards>
+            </li>
+
+            <!-- NCRCF Prisoner Caravan -->
+
+            <li Class="FCP.Factions.GroupMakerWithTraderKind">
+                <kindDef>Trader</kindDef>
+                <traderKinds>
+                    <li>FCP_Caravan_NCRCF_Prisoner_Exchange</li>
+                </traderKinds>
+                <traders>
+                    <FCP_NCR_NCRCF_Warden>1</FCP_NCR_NCRCF_Warden>
+                </traders>
+                <carriers>
+                    <FCP_Animal_Brahmin>1</FCP_Animal_Brahmin>
+                </carriers>
+                <guards>
+                    <FCP_NCR_NCRCF_Guard>4</FCP_NCR_NCRCF_Guard>
+                    <FCP_NCR_President>1</FCP_NCR_President>
+                </guards>
+            </li>
+        </pawnGroupMakers>
+
+    </FactionDef>
+
+</Defs>

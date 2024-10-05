@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Lunchbox Lootbox __________-->
+
+    <!--_____ Lunchboxes _____-->
+
+    <!-- Lunchbox Dirty -->
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>FCP_Item_Collectors_Edition_Lunchbox_Dirty</defName>
+        <label>Dirty Vault-Tec Collectors Edition Lunchbox</label>
+        <description>A Vault-Tec collectors edition lunchbox. It's a little dirty, but still opens and may have something useful inside!</description>
+        <graphicData>
+            <texPath>Things/Items/LootBox/Vault_Tec_Lunch_Box/FCP_Vault_Tec_Lunch_Box_Dirty</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>.75</drawSize>
+        </graphicData>
+        <size>(1,1)</size>
+        <resourceReadoutPriority>Middle</resourceReadoutPriority>
+        <soundInteract>Metal_Drop</soundInteract>
+        <soundDrop>Metal_Drop</soundDrop>
+        <stackLimit>5</stackLimit>
+        <useHitPoints>true</useHitPoints>
+        <statBases>
+            <MarketValue>300</MarketValue>
+            <MaxHitPoints>100</MaxHitPoints>
+            <Mass>2</Mass>
+            <Flammability>0.2</Flammability>
+        </statBases>
+        <thingCategories>
+            <li>ItemsMisc</li>
+        </thingCategories>
+        <drawGUIOverlay>true</drawGUIOverlay>
+        <tradeability>Sellable</tradeability>
+        <techLevel>Industrial</techLevel>
+        <comps>
+            <li Class="CompProperties_Usable">
+                <useJob>UseItem</useJob>
+                <useLabel>Open {0}</useLabel>
+            </li>
+            <li Class="FCP.Core.CompProperties_UseEffectItemBox">
+                <numWeightedDrops>2</numWeightedDrops>
+                <guaranteedDrops>
+                    <li>
+                        <thingDef>FCP_Item_Collectors_Card_Common</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                </guaranteedDrops>
+                <weightedDrops>
+                    <li>
+                        <thingDef>FCP_Item_Collectors_Card_Rare</thingDef>
+                        <countRange>1</countRange>
+						<weight>0.3</weight>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Item_Collectors_Card_Common</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                </weightedDrops>
+            </li>
+            <li Class="CompProperties_UseEffectDestroySelf"/>
+        </comps>
+    </ThingDef>
+
+    <!-- Lunchbox Mint Condition -->
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>FCP_Item_Collectors_Edition_Lunchbox_Mint</defName>
+        <label>Mint Condition Vault-Tec Collectors Edition Lunchbox</label>
+        <description>A Vault-Tec collectors edition lunchbox. It's in Mint Condition, there's probably something valuable inside!</description>
+        <graphicData>
+            <texPath>Things/Items/LootBox/Vault_Tec_Lunch_Box/FCP_Vault_Tec_Lunch_Box_Mint_Condition</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>.75</drawSize>
+        </graphicData>
+        <size>(1,1)</size>
+        <resourceReadoutPriority>Middle</resourceReadoutPriority>
+        <soundInteract>Metal_Drop</soundInteract>
+        <soundDrop>Metal_Drop</soundDrop>
+        <stackLimit>1</stackLimit>
+        <useHitPoints>true</useHitPoints>
+        <statBases>
+            <MarketValue>100</MarketValue>
+            <MaxHitPoints>100</MaxHitPoints>
+            <Mass>2</Mass>
+            <Flammability>0.2</Flammability>
+        </statBases>
+        <thingCategories>
+            <li>ItemsMisc</li>
+        </thingCategories>
+        <drawGUIOverlay>false</drawGUIOverlay>
+        <tradeability>Sellable</tradeability>
+        <techLevel>Industrial</techLevel>
+        <comps>
+            <li Class="CompProperties_Usable">
+                <useJob>UseItem</useJob>
+                <useLabel>Open {0}</useLabel>
+            </li>
+            <li Class="CompProperties_UseEffectPlaySound">
+                <soundOnUsed>FCP_Interact_Lunchbox</soundOnUsed>
+            </li>
+            <li Class="FCP.Core.CompProperties_UseEffectItemBox">
+                <numWeightedDrops>2</numWeightedDrops>
+                <guaranteedDrops>
+                    <li>
+                        <thingDef>FCP_Item_Collectors_Card_Rare</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                </guaranteedDrops>
+                <weightedDrops>
+                    <li>
+                        <thingDef>FCP_Item_Collectors_Card_Common</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Item_Collectors_Card_Rare</thingDef>
+                        <countRange>1</countRange>
+						<weight>0.6</weight>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Item_Collectors_Card_Legendary</thingDef>
+                        <countRange>1</countRange>
+						<weight>0.1</weight>
+                    </li>
+                </weightedDrops>
+            </li>
+            <li Class="CompProperties_UseEffectDestroySelf"/>
+        </comps>
+    </ThingDef>
+
+    <!--_____ Collectors Cards _____-->
+
+    <!-- Common Collectors Card -->
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>FCP_Item_Collectors_Card_Common</defName>
+        <label>A common collectable trading card</label>
+        <description>A Vault-Tec collectors trading card. This is just a common one, but maybe it'll be worth something to someone.</description>
+        <graphicData>
+            <texPath>Things/Items/LootBox/Vault_Tec_Trading_Cards/FCP_Vault_Tec_Trading_Cards_Common</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+            <drawSize>.75</drawSize>
+        </graphicData>
+        <size>(1,1)</size>
+        <resourceReadoutPriority>Middle</resourceReadoutPriority>
+        <soundInteract>Metal_Drop</soundInteract>
+        <soundDrop>Metal_Drop</soundDrop>
+        <stackLimit>5</stackLimit>
+        <useHitPoints>true</useHitPoints>
+        <statBases>
+            <MarketValue>100</MarketValue>
+            <MaxHitPoints>100</MaxHitPoints>
+            <Mass>2</Mass>
+            <Flammability>0.2</Flammability>
+        </statBases>
+        <thingCategories>
+            <li>ItemsMisc</li>
+        </thingCategories>
+        <drawGUIOverlay>true</drawGUIOverlay>
+        <tradeability>Sellable</tradeability>
+        <techLevel>Industrial</techLevel>
+        <comps>
+            <li Class="CompProperties_Usable">
+                <useJob>UseItem</useJob>
+                <useLabel>Collect {0}</useLabel>
+            </li>
+            <li Class="CompProperties_UseEffectPlaySound">
+                <soundOnUsed>FCP_Card_Use</soundOnUsed>
+            </li>
+            <li Class="FCP.Core.CompProperties_UseEffectItemBox">
+                <numWeightedDrops>1</numWeightedDrops>
+                <guaranteedDrops>
+                </guaranteedDrops>
+                <weightedDrops>
+                    <li>
+                        <thingDef>FCP_Currency_Caps</thingDef>
+                        <countRange>10~50</countRange>
+						<weight>1</weight>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Food_Blamco_Original_Flavor</thingDef>
+                        <countRange>1</countRange>
+						<weight>0.9</weight>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Gun_Laser_Pistol</thingDef>
+                        <countRange>1</countRange>
+						<weight>0.5</weight>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Radiation_Suit</thingDef>
+                        <countRange>1</countRange>
+						<weight>0.5</weight>
+                    </li>
+                </weightedDrops>
+            </li>
+            <li Class="CompProperties_UseEffectDestroySelf"/>
+        </comps>
+    </ThingDef>
+
+    <!-- Rare Collectors Card -->
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>FCP_Item_Collectors_Card_Rare</defName>
+        <label>A rare collectable trading card</label>
+        <description>A Vault-Tec collectors trading card, this is a Rare one. Not the most valuable, but still an amazing find!</description>
+        <graphicData>
+            <texPath>Things/Items/LootBox/Vault_Tec_Trading_Cards/FCP_Vault_Tec_Trading_Cards_Rare</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+            <drawSize>.75</drawSize>
+        </graphicData>
+        <size>(1,1)</size>
+        <resourceReadoutPriority>Middle</resourceReadoutPriority>
+        <soundInteract>Metal_Drop</soundInteract>
+        <soundDrop>Metal_Drop</soundDrop>
+        <stackLimit>5</stackLimit>
+        <useHitPoints>true</useHitPoints>
+        <statBases>
+            <MarketValue>100</MarketValue>
+            <MaxHitPoints>100</MaxHitPoints>
+            <Mass>2</Mass>
+            <Flammability>0.2</Flammability>
+        </statBases>
+        <thingCategories>
+            <li>ItemsMisc</li>
+        </thingCategories>
+        <drawGUIOverlay>true</drawGUIOverlay>
+        <tradeability>Sellable</tradeability>
+        <techLevel>Industrial</techLevel>
+        <comps>
+            <li Class="CompProperties_Usable">
+                <useJob>UseItem</useJob>
+                <useLabel>Collect {0}</useLabel>
+            </li>
+            <li Class="FCP.Core.CompProperties_UseEffectItemBox">
+                <numWeightedDrops>1</numWeightedDrops>
+                <guaranteedDrops>
+                </guaranteedDrops>
+                <weightedDrops>
+                    <li>
+                        <thingDef>FCP_Currency_Caps</thingDef>
+                        <countRange>10~50</countRange>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Food_Blamco_Original_Flavor</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Gun_Laser_Pistol</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Radiation_Suit</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                </weightedDrops>
+            </li>
+            <li Class="CompProperties_UseEffectDestroySelf"/>
+        </comps>
+    </ThingDef>
+
+    <!-- Legendary Collectors Card -->
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>FCP_Item_Collectors_Card_Legendary</defName>
+        <label>A legendary collectable trading card</label>
+        <description>A Vault-Tec collectors trading card and this is a legendary one! This is a one of a kind piece, im sure its worth more than a few caps!</description>
+        <graphicData>
+            <texPath>Things/Items/LootBox/Vault_Tec_Trading_Cards/FCP_Vault_Tec_Trading_Cards_Legendary</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+            <drawSize>.75</drawSize>
+        </graphicData>
+        <size>(1,1)</size>
+        <resourceReadoutPriority>Middle</resourceReadoutPriority>
+        <soundInteract>Metal_Drop</soundInteract>
+        <soundDrop>Metal_Drop</soundDrop>
+        <stackLimit>5</stackLimit>
+        <useHitPoints>true</useHitPoints>
+        <statBases>
+            <MarketValue>100</MarketValue>
+            <MaxHitPoints>100</MaxHitPoints>
+            <Mass>2</Mass>
+            <Flammability>0.2</Flammability>
+        </statBases>
+        <thingCategories>
+            <li>ItemsMisc</li>
+        </thingCategories>
+        <drawGUIOverlay>true</drawGUIOverlay>
+        <tradeability>Sellable</tradeability>
+        <techLevel>Industrial</techLevel>
+        <comps>
+            <li Class="CompProperties_Usable">
+                <useJob>UseItem</useJob>
+                <useLabel>Collect {0}</useLabel>
+            </li>
+            <li Class="FCP.Core.CompProperties_UseEffectItemBox">
+                <numWeightedDrops>1</numWeightedDrops>
+                <guaranteedDrops>
+                </guaranteedDrops>
+                <weightedDrops>
+                    <li>
+                        <thingDef>FCP_Currency_Caps</thingDef>
+                        <countRange>10~50</countRange>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Food_Blamco_Original_Flavor</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Gun_Laser_Pistol</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Radiation_Suit</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                </weightedDrops>
+            </li>
+            <li Class="CompProperties_UseEffectDestroySelf"/>
+        </comps>
+    </ThingDef>
+
+</Defs>

@@ -37,7 +37,6 @@
                 <li>Middle</li>
             </layers>
             <tags>
-                <li>FCP_Wastelander_Apparel</li>
                 <li>FCP_Combat_Armors</li>
             </tags>
             <defaultOutfitTags>
@@ -76,12 +75,11 @@
         </apparel>
     </ThingDef>
 
-
     <!-- Combat Armor Light -->
 
     <ThingDef ParentName="ApparelBase">
         <defName>FCP_Apparel_Combat_Armor_Light</defName>
-        <description>Combat armor was issued within the United States Armed Forces during the Great War, this is the standard version of the armor</description>
+        <description>The combat armor was the standard-issue armor of the US army before the war. It is composed of armor plates made from defensive polymer attached to pieces of ballistic fibre. It offers more protection than metal armor, while being somewhat lighter. It is rare and expensive since few groups have the knowledge, and resources, to produce more and many suits are scavenged from pre-war military caches. While still rare, the light combat armor is the most available variant. It offers quite good protection while being lightweight.</description>
         <label>Combat Armor Light</label>
         <smeltable>false</smeltable>
         <graphicData>
@@ -123,7 +121,7 @@
 
     <ThingDef ParentName="ApparelBase">
         <defName>FCP_Apparel_Combat_Armor_Sturdy</defName>
-        <description>Combat armor was issued within the United States Armed Forces during the Great War, this is the sturdy version of the armor</description>
+        <description>The combat armor was the standard-issue armor of the US army before the war. It is composed of armor plates made from defensive polymer attached to pieces of ballistic fibre. It offers more protection than metal armor, while being somewhat lighter. It is rare and expensive since few groups have the knowledge, and resources, to produce more and many suits are scavenged from pre-war military caches. Medium combat armor provides great protection, albeit it is quite heavy. It’s best suited for warriors in the midst of battle.</description>
         <label>Combat Armor Sturdy</label>
         <smeltable>false</smeltable>
         <graphicData>
@@ -165,7 +163,7 @@
 
     <ThingDef ParentName="ApparelBase">
         <defName>FCP_Apparel_Combat_Armor_Heavy</defName>
-        <description>Combat armor was issued within the United States Armed Forces during the Great War, this is the heavy version of the armor</description>
+        <description>The combat armor was the standard-issue armor of the US army before the war. It is composed of armor plates made from defensive polymer attached to pieces of ballistic fibre. It offers more protection than metal armor, while being somewhat lighter. It is rare and expensive since few groups have the knowledge, and resources, to produce more and many suits are scavenged from pre-war military caches. Exotic and powerful, heavy combat armor offers superior protection against all kinds of damage. Obviously, it is very heavy, but only power armor guards its wearer better against the perils of the wasteland.</description>
         <label>Combat Armor Heavy</label>
         <smeltable>false</smeltable>
         <graphicData>
@@ -241,7 +239,6 @@
                 <li>OnSkin</li>
             </layers>
             <tags>
-                <li>FCP_Wastelander_Apparel</li>
                 <li>FCP_Combat_Armors</li>
             </tags>
         </apparel>
@@ -285,7 +282,6 @@
                 <li>OnSkin</li>
             </layers>
             <tags>
-                <li>FCP_Wastelander_Apparel</li>
                 <li>FCP_Combat_Armors</li>
             </tags>
         </apparel>
@@ -558,7 +554,7 @@
     <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Radiation_Suit</defName>
         <label>Radiations Suit</label>
-        <description>The radiation suit is a suit that protects its wearer from the harmful effects of radiation to a certain extent.</description>
+        <description>A yellow full body suit complete with a helmet. While it does provide a modicum of protection against common dangers, such as bullets, its main use to shield its wearer against the invisible, and almost omnipresent, danger of radiation. It is quite rare and expensive as few groups in the wasteland possess the knowledge to create these suits.</description>
         <graphicData>
             <texPath>Things/Apparel/Wasteland_Apparel/RadiationSuit/FCP_Radiation_Suit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -1131,7 +1127,7 @@
     <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Athletic_Outfit</defName>
         <label>Athletic Outfit</label>
-        <description>The athletic outfit appears as a tattered and stitched baseball uniform with boots and knee pads.</description>
+        <description>A tattered and stitched baseball uniform with boots and knee pads, as they were common before the war. On its belt are pouches for storage. It’s not exactly a real armor and provides only a little protection but better than nothing.</description>
         <graphicData>
             <texPath>Things/Apparel/Wasteland_Apparel/AthleticOutfit/FCP_Athletic_Outfit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -1168,7 +1164,7 @@
     <ThingDef ParentName="ApparelMakeableBase">
         <defName>FCP_Apparel_Brahmin_Skin_Outfit</defName>
         <label>Brahmin Skin Outfit</label>
-        <description>A basic outfit consisting of a white shirt and patched overalls with Y-shaped suspenders complete with boots.</description>
+        <description>A basic outfit consisting of a (more or less) white shirt and patched overalls with Y-shaped suspenders complete with boots. The overalls are made of brahmin skin and are a common sight on ranches, farmsteads, and other areas where brahmins are held as livestock. Pretty basic clothing, cheap and widely available, but not very protective.</description>
         <graphicData>
             <texPath>Things/Apparel/Wasteland_Apparel/BrahminSkinOutfit/FCP_Brahmin_Skin_Outfit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -1219,7 +1215,7 @@
     <ThingDef ParentName="ApparelMakeableBase">
         <defName>FCP_Apparel_Caravaneer_Outfit</defName>
         <label>Caravaneer Outfit</label>
-        <description>It consists of a dark brown shirt with orange and mustard-yellow stripes with a white satchel over the shoulder with the Wastelander logo on it. Around the neck is a red bandanna with black goggles.</description>
+        <description>Rugged and sturdy clothing, often worn by caravaneers and other travellers. It does not provide a whole lot of protection but does not weigh down its wearer and is relatively common.</description>
         <graphicData>
             <texPath>Things/Apparel/Wasteland_Apparel/CaravaneerOutfit/FCP_Caravaneer_Outfit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -1268,7 +1264,7 @@
     <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Field_Hand_Female_Outfit</defName>
         <label>Field Hand Female Outfit</label>
-        <description>A red dress worn with a white apron and waterskins.</description>
+        <description>Sturdy work clothes often worn by those settlers who make a living toiling in the fields. Lightweight and easy to make, this outfit is made to withstand the elements, not bullets (or claws and teeth).</description>
         <graphicData>
             <texPath>Things/Apparel/Wasteland_Apparel/FieldHandFemaleOutfit/FCP_Field_Hand_Female_Outfit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -1306,7 +1302,7 @@
     <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Field_Hand_Male_Outfit</defName>
         <label>Field Hand Male Outfit</label>
-        <description>A black long-sleeve shirt with suspenders, brown rolled-up pants complete with a red scarf and black gloves.</description>
+        <description>Sturdy work clothes often worn by those settlers who make a living toiling in the fields. Lightweight and easy to make, this outfit is made to withstand the elements, not bullets (or claws and teeth).</description>
         <graphicData>
             <texPath>Things/Apparel/Wasteland_Apparel/FieldHandMaleOutfit/FCP_Field_Hand_Male_Outfit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -1443,7 +1439,7 @@
     <ThingDef ParentName="ApparelMakeableBase">
         <defName>FCP_Apparel_Leather_Coat</defName>
         <label>Leather Coat</label>
-        <description>The leather coat consists of a long, ankle length leather coat, with gloves and boots which appear to be made from duct tape.</description>
+        <description>An ankle length coat, made from leather. It has a belt which is made from the seat belt of an airplane or a car. It’s mostly seen worn by settlers and other civilians. However, it’s clothing, not armour and does not protect well against bullets.</description>
         <graphicData>
             <texPath>Things/Apparel/Wasteland_Apparel/LeatherCoat/FCP_Leather_Coat</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -1491,7 +1487,7 @@
     <ThingDef ParentName="ApparelMakeableBase">
         <defName>FCP_Apparel_Merc_Adventurer_Outfit</defName>
         <label>Merc Adventurer Outfit</label>
-        <description>A large leather jacket with torn-off sleeves, a red sweater underneath, a brown bandolier, along with several watches.</description>
+        <description>An outfit composed of a leather jacket with torn-off sleeves, a red sweater underneath a pair of brown pants and sturdy boots. It’s often worn by roving people and is designed to guarantee unimpaired freedom of movement, while still providing more protection than regular clothing.</description>
         <graphicData>
             <texPath>Things/Apparel/Wasteland_Apparel/MercAdventurerOutfit/FCP_Merc_Adventurer_Outfit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -1651,12 +1647,12 @@
         </apparel>
     </ThingDef>
 
-    <!-- Merc Charmer Suit -->
+    <!-- Merc Cruiser Suit -->
 
     <ThingDef ParentName="ApparelMakeableBase">
         <defName>FCP_Apparel_Merc_Cruiser_Outfit</defName>
         <label>Merc Cruiser Outfit</label>
-        <description>A long leather jacket with the sleeves removed with a white T-shirt underneath.</description>
+        <description>A long leather jacket with the sleeves removed with a white t-shirt underneath, as well as some black pants and dark boots. Like other merc outfits, it provides less protection than full-on armor, but more than regular clothing and doesn’t weigh down its wearer much.</description>
         <graphicData>
             <texPath>Things/Apparel/Wasteland_Apparel/MercCruiserOutfit/FCP_Merc_Cruiser_Outfit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -1711,7 +1707,7 @@
     <ThingDef ParentName="ApparelMakeableBase">
         <defName>FCP_Apparel_Prospector_Outfit</defName>
         <label>Prospector Outfit</label>
-        <description>This outfit consists of denim overalls, a brown satchel, and a tan long sleeve shirt underneath.</description>
+        <description>This outfit consists of denim overalls, a brown satchel, and a long tan sleeve shirt underneath, as well as a pair of half boots. As its name implies, it’s most often worn by the prospectors rummaging through the ruins of the old world. As such it is designed to provide protection against dust storms and other hazards, not against bullets or beasts.</description>
         <graphicData>
             <texPath>Things/Apparel/Wasteland_Apparel/ProspectorOutfit/FCP_Prospector_Outfit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -1814,7 +1810,7 @@
     <ThingDef ParentName="ApparelMakeableBase">
         <defName>FCP_Apparel_Settler_Female_Outfit</defName>
         <label>Settler Female Outfit</label>
-        <description>An earth tone dress that comes down to the mid calves with a gray scarf wrapped around the neck.</description>
+        <description>An outfit often associated with the wild frontier; these robust clothes are often seen worn by those living further away from the last strongholds of civilisation. While they are sturdy, they are not exactly protective against bullets, knives, teeth, stingers, or claws.</description>
         <graphicData>
             <texPath>Things/Apparel/Wasteland_Apparel/SettlerFemaleOutfit/FCP_Settler_Female_Outfit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -1865,7 +1861,7 @@
     <ThingDef ParentName="ApparelMakeableBase">
         <defName>FCP_Apparel_Settler_Male_Outfit</defName>
         <label>Settler Male Outfit</label>
-        <description>an orange and brown plaid shirt with jean overalls. A handkerchief is wrapped around the neck.</description>
+        <description>An outfit often associated with the wild frontier; these robust clothes are often seen worn by those living further away from the last strongholds of civilisation. While they are sturdy, they are not exactly protective against bullets, knives, teeth, stingers, or claws.</description>
         <graphicData>
             <texPath>Things/Apparel/Wasteland_Apparel/SettlerMaleOutfit/FCP_Settler_Male_Outfit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -1969,7 +1965,7 @@
     <ThingDef ParentName="ApparelMakeableBase">
         <defName>FCP_Apparel_Surveyor_Outfit</defName>
         <label>Surveyor Outfit</label>
-        <description>The surveyor outfit is a pocketed leather coat with brown cargo pants and dirty wingtip shoes, with a satchel and metal wire covering the right arm.</description>
+        <description>A pocketed leather coat with brown cargo pants and dirty wingtip shoes, with a satchel and metal wire covering the right arm. This outfit is often worn by scouts who roam the vast wasteland to find suitable locations for new settlements. While this is certainly a highly dangerous task, these clothes provide little protection.</description>
         <graphicData>
             <texPath>Things/Apparel/Wasteland_Apparel/SurveyorOutfit/FCP_Surveyor_Outfit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -2021,7 +2017,7 @@
     <ThingDef ParentName="ApparelMakeableBase">
         <defName>FCP_Apparel_Wasteland_Doctor_Outfit</defName>
         <label>Wasteland Doctor Outfit</label>
-        <description>The wasteland doctor outfit consist of a white t-shirt, a small brown satchel bag, and brown cargo pants with pouches attached to the belt.</description>
+        <description>The wasteland doctor fatigues consist of a white t-shirt for males, usually bloodstained; a small brown satchel bag, and brown cargo pants with pouches attached to the belt, and boots. Its most often seen worn by doctors, or any people with some medical training, as real doctors a rarity in the wastes. These are work clothes and provide little protection.</description>
         <graphicData>
             <texPath>Things/Apparel/Wasteland_Apparel/WastelandDoctorOutfit/FCP_Wasteland_Doctor_Outfit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -2075,7 +2071,7 @@
     <ThingDef ParentName="ApparelMakeableBase">
         <defName>FCP_Apparel_Wasteland_Wanderer_Outfit</defName>
         <label>Wasteland Wanderer Outfit</label>
-        <description>Most wastelanders will wear this outfit. It consists of a tan zipped-up hoodie and cargo pants tucked into riding boots.</description>
+        <description>It consists of a tan zipped-up hoodie and cargo pants tucked into riding boots. Due to its low cost and wide avail, it is very common to find, but provides little to no protection from any real danger.</description>
         <graphicData>
             <texPath>Things/Apparel/Wasteland_Apparel/WastelandWandererOutfit/FCP_Wasteland_Wanderer_Outfit</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -2224,7 +2220,7 @@
     <ThingDef ParentName="ApparelMakeableBase">
         <defName>FCP_Apparel_Chained_Prostitute_Outfit</defName>
         <label>Chained Prostitute Outfit</label>
-        <description>It appears as bondage harness on the chest with multiple leather bracelets and armbands. The bottom consists of a pair of low-rise, black leather pants</description>
+        <description>It appears as bondage harness on the chest with multiple leather bracelets and armbands. The bottom consists of a pair of low-rise, black leather pants.</description>
         <graphicData>
             <texPath>Things/Apparel/Wasteland_Apparel/ChainedProstituteOutfit/FCP_Chained_Prostitute_Outfit</texPath>
             <graphicClass>Graphic_Single</graphicClass>

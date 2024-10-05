@@ -22,6 +22,7 @@
 		<thingCategories>
 			<li>ApparelArmor</li>
 		</thingCategories>
+		<tickerType>Normal</tickerType>
 		<statBases>
 			<MaxHitPoints>250</MaxHitPoints>
 			<WorkToMake>10200</WorkToMake>
@@ -34,7 +35,7 @@
 			<EquipDelay>1.2</EquipDelay>
 		</statBases>
 		<apparel>
-            <shellRenderedBehindHead>true</shellRenderedBehindHead>
+			<shellRenderedBehindHead>true</shellRenderedBehindHead>
 			<bodyPartGroups>
 				<li>Hands</li>
 				<li>Feet</li>

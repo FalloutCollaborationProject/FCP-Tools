@@ -38,6 +38,9 @@
             <layers>
                 <li>Overhead</li>
             </layers>
+            <tags>
+                <li>FCP_Combat_Armors</li>
+            </tags>
         </apparel>
     </ThingDef>
 
@@ -45,7 +48,7 @@
 
     <ThingDef ParentName="HatBase">
         <defName>FCP_Apparel_Combat_Armor_Helmet</defName>
-        <label>Combat Armor Helmet</label>
+        <label>Modular Combat Armor Helmet</label>
         <description>The combat armor helmet is the corresponding armor piece to the combat armor set. This model displays what is possibly a headlamp, attached to the left side above the brow line.</description>
         <techLevel>Industrial</techLevel>
         <graphicData>
@@ -71,6 +74,9 @@
             <layers>
                 <li>Overhead</li>
             </layers>
+            <tags>
+                <li>FCP_Combat_Armors</li>
+            </tags>
         </apparel>
     </ThingDef>
 
@@ -103,6 +109,9 @@
             <layers>
                 <li>Overhead</li>
             </layers>
+            <tags>
+                <li>FCP_Combat_Armors</li>
+            </tags>
         </apparel>
     </ThingDef>
 
@@ -135,6 +144,9 @@
             <layers>
                 <li>Overhead</li>
             </layers>
+            <tags>
+                <li>FCP_Combat_Armors</li>
+            </tags>
         </apparel>
     </ThingDef>
 
@@ -172,7 +184,7 @@
                 <li>Overhead</li>
             </layers>
             <tags>
-                <li>FCP_Wastelander_Apparel</li>
+                <li>FCP_Combat_Armors</li>
             </tags>
         </apparel>
     </ThingDef>
@@ -207,6 +219,9 @@
             <layers>
                 <li>Overhead</li>
             </layers>
+            <tags>
+                <li>FCP_Radiation_Apparel</li>
+            </tags>
         </apparel>
     </ThingDef>
 
@@ -250,6 +265,9 @@
             <layers>
                 <li>Overhead</li>
             </layers>
+            <tags>
+                <li>FCP_Wastelander_Sheriff</li>
+            </tags>
         </apparel>
     </ThingDef>
 
@@ -291,6 +309,9 @@
             <layers>
                 <li>Overhead</li>
             </layers>
+            <tags>
+                <li>FCP_Wastelander_Rangers_Rick</li>
+            </tags>
         </apparel>
     </ThingDef>
 
@@ -331,6 +352,9 @@
             <layers>
                 <li>Overhead</li>
             </layers>
+            <tags>
+                <li>FCP_Slave_Apparel</li>
+            </tags>
         </apparel>
     </ThingDef>
 
@@ -372,6 +396,9 @@
             <layers>
                 <li>Overhead</li>
             </layers>
+            <tags>
+                <li>FCP_Slave_Apparel</li>
+            </tags>
         </apparel>
     </ThingDef>
 
@@ -413,6 +440,9 @@
             <layers>
                 <li>Overhead</li>
             </layers>
+            <tags>
+                <li>FCP_Slave_Apparel</li>
+            </tags>
         </apparel>
     </ThingDef>
 
