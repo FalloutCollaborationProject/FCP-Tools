@@ -29,4 +29,13 @@
 			<thingDef>FCP_Currency_Caps</thingDef>
 		</value>
 	</Operation>
+
+	<!-- Add a honor value to silver -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Silver"]/statBases</xpath>
+		<value>
+			<RoyalFavorValue>0.0015</RoyalFavorValue>
+		</value>
+	</Operation>
+	
 </Patch>
