@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <Defs>
 
-    <!--__________ Wastelanders __________-->
+    <!--__________ Wastelander Clothing __________-->
 
-    <!--_____ Wastelander Clothing _____-->
+    <!--_____ Armor _____-->
 
-    <!--___ Armor ___-->
+    <!--___ Pre-War Armor ___-->
 
-    <!--__ Pre-War Armor __-->
-
-    <!--_ Combat Armor _-->
+    <!--__ Combat Armor __-->
 
     <!-- Combat Armor Base -->
 
@@ -294,9 +291,9 @@
         </apparel>
     </ThingDef>
 
-    <!--___ Apparel ___-->
+    <!--_____ Apparel _____-->
 
-    <!--__ Apparel Base __-->
+    <!--___ Apparel Base ___-->
 
     <!-- FCP Apparel Base -->
 
@@ -307,7 +304,7 @@
         </thingCategories>
     </ThingDef>
 
-    <!--__ Pre-War Apparel __-->
+    <!--___ Pre-War Apparel ___-->
 
     <!-- Military Fatigues -->
 
@@ -591,10 +588,11 @@
             <wornGraphicPath>Things/Apparel/Wasteland_Apparel/RadiationSuit/FCP_Radiation_Suit</wornGraphicPath>
             <layers>
                 <li>OnSkin</li>
+                <li>Middle</li>
+                <li>Shell</li>
             </layers>
             <tags>
-                <li>FCP_Wastelander_Apparel</li>
-                <li>FCP_Pre_War_Apparel</li>
+                <li>FCP_Radiation_Apparel</li>
             </tags>
         </apparel>
     </ThingDef>
@@ -1126,7 +1124,7 @@
         </apparel>
     </ThingDef>
 
-    <!--__ Wasteland Apparel __-->
+    <!--__ Wastelander Apparel __-->
 
     <!-- Athletic Outfit -->
 
