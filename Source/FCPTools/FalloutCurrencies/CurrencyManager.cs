@@ -33,11 +33,11 @@ public static class CurrencyManager
 
     public static bool TryGetCurrency(this ITrader trader, out ThingDef currency)
     {
-        if (TryGetCurrency(trader.Faction, out currency))
+        if (TryGetCurrency(trader.TraderKind, out currency))
         {
             return true;
         }
-        if (TryGetCurrency(trader.TraderKind, out currency))
+        if (TryGetCurrency(trader.Faction, out currency))
         {
             return true;
         }
