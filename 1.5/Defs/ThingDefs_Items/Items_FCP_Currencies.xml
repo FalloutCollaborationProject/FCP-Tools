@@ -20,6 +20,7 @@
 		<healthAffectsPrice>false</healthAffectsPrice>
 		<resourceReadoutAlwaysShow>true</resourceReadoutAlwaysShow>
 		<statBases>
+			<RoyalFavorValue>0.004</RoyalFavorValue>
 			<MarketValue>1</MarketValue>
 			<Mass>0.008</Mass>
 		</statBases>
