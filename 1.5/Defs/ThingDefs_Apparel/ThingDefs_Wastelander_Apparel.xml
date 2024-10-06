@@ -418,8 +418,7 @@
                 <li>OnSkin</li>
             </layers>
             <tags>
-                <li>FCP_Wastelander_Apparel</li>
-                <li>FCP_Pre_War_Apparel</li>
+                <li>FCP_Bennys_Apparel</li>
             </tags>
         </apparel>
     </ThingDef>
@@ -1800,7 +1799,7 @@
                 <li>OnSkin</li>
             </layers>
             <tags>
-                <li>FCP_Wastelander_Apparel</li>
+                <li>FCP_Wastelander_Apparel_Regulator</li>
             </tags>
         </apparel>
     </ThingDef>
@@ -1955,7 +1954,7 @@
                 <li>OnSkin</li>
             </layers>
             <tags>
-                <li>FCP_Wastelander_Apparel</li>
+                <li>FCP_Wastelander_Apparel_Sheriff</li>
             </tags>
         </apparel>
     </ThingDef>
