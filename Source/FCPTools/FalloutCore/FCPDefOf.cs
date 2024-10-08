@@ -1,6 +1,7 @@
 ﻿using RimWorld;
 using Verse;
 // ReSharper disable InconsistentNaming
+// ReSharper disable UnassignedField.Global
 
 namespace FCP.Core;
 
