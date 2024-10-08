@@ -3,6 +3,8 @@
 
     <!--__________ Sounds __________-->
 
+    <!--_____ Weapons _____-->
+
     <!-- Lasers -->
 
     <SoundDef>
@@ -48,6 +50,28 @@
             </li>
         </subSounds>
     </SoundDef>
+
+    <!--_____ Animals _____-->
+
+    <!-- Rad Raven Call -->
+
+    <SoundDef>
+        <defName>FCP_Rad_Raven_Call</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Animals/Rad_Raven/FCP_Rad_Raven_Call</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>20~35</volumeRange>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!--_____ Misc _____-->
 
     <!-- Game Start Line -->
 
