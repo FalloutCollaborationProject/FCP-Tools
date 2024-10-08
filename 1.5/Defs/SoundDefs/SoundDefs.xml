@@ -92,4 +92,24 @@
         </subSounds>
     </SoundDef>
 
+
+    <!-- Wild Wasteland -->
+
+    <SoundDef>
+        <defName>FCP_Sound_WildWasteland</defName>
+        <maxVoices>1</maxVoices>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <onCamera>True</onCamera>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>WildWasteland</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>100~100</volumeRange>
+            </li>
+        </subSounds>
+    </SoundDef>
+
 </Defs>
