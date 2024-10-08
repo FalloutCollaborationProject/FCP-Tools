@@ -477,7 +477,7 @@
             <renderTree>BirdThatCanFly</renderTree>
         </race>
         <tradeTags>
-            <li>FCP_Animal_Birds</li>
+            <li>FCP_Animal_FCP.Core.Birds</li>
         </tradeTags>
         <tools>
             <li>
@@ -526,7 +526,7 @@
                 <eggLayIntervalDays>15</eggLayIntervalDays>
                 <eggCountRange>1~3</eggCountRange>
             </li>
-            <li Class="FCP.Core.Birds">
+            <li Class="FCP.Core.Birds.CompProperties_FlyingPawn">
                 <flyWhenFleeing>true</flyWhenFleeing>
                 <flyWhenWanderingChance>0.5</flyWhenWanderingChance>
                 <flyWhenHunting>true</flyWhenHunting>
@@ -681,7 +681,7 @@
             <renderTree>BirdThatCanFly</renderTree>
         </race>
         <tradeTags>
-            <li>FCP_Animal_Birds</li>
+            <li>FCP_Animal_FCP.Core.Birds</li>
         </tradeTags>
         <tools>
             <li>
@@ -730,7 +730,7 @@
                 <eggLayIntervalDays>10</eggLayIntervalDays>
                 <eggCountRange>1~3</eggCountRange>
             </li>
-            <li Class="FCP.Core.Birds">
+            <li Class="FCP.Core.Birds.CompProperties_FlyingPawn">
                 <flyWhenFleeing>true</flyWhenFleeing>
                 <flyWhenWanderingChance>0.5</flyWhenWanderingChance>
                 <flyWhenHunting>true</flyWhenHunting>
