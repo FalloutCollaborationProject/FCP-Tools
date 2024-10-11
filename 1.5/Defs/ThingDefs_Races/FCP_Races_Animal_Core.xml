@@ -477,7 +477,7 @@
             <renderTree>BirdThatCanFly</renderTree>
         </race>
         <tradeTags>
-            <li>FCP_Animal_FCP.Core.Birds</li>
+            <li>FCP_Animal_Birds</li>
         </tradeTags>
         <tools>
             <li>
@@ -681,7 +681,7 @@
             <renderTree>BirdThatCanFly</renderTree>
         </race>
         <tradeTags>
-            <li>FCP_Animal_FCP.Core.Birds</li>
+            <li>FCP_Animal_Birds</li>
         </tradeTags>
         <tools>
             <li>
