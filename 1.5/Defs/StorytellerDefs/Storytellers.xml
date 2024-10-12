@@ -398,18 +398,18 @@
                 <lastName>Farnsworth</lastName>
                 <nickname>Ranger Rick</nickname>
                 <gender>Male</gender>
-                <biologicalAge>25</biologicalAge>
+                <biologicalAge>27</biologicalAge>
                 <!-- Requirements -->
-                <pawnKindDef>FCP_NCR_NCRCF_Inmate</pawnKindDef> <!-- just a test -->
+                <pawnKindDef>FCP_Unique_Ranger_Rick</pawnKindDef>
                 <forcedXenotypeDef>Baseliner</forcedXenotypeDef>
-                <onlyFixedPawnKindBackstories>false</onlyFixedPawnKindBackstories> <!-- you prob want this true -->
+                <onlyFixedPawnKindBackstories>false</onlyFixedPawnKindBackstories>
                 <!-- Factional -->
                 <originalFactionDef MayRequire="Rick.FCP.NCR">FCP_Faction_NCR</originalFactionDef>
                 <originalFactionTitle MayRequire="Rick.FCP.NCR">FCP_NCR_Ranger_Volunteer</originalFactionTitle>
                 <useOriginalFactionIdeo MayRequire="Rick.FCP.NCR">true</useOriginalFactionIdeo>
             </li>
         </modExtensions>
-    </StorytellerDef>
+    </StorytellerDef> 
 
     <!-- Vault Boy -->
 
