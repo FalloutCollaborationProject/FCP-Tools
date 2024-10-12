@@ -198,7 +198,7 @@
     <StorytellerDef ParentName="BaseStoryteller">
         <defName>FCP_Storyteller_Ranger_Rick</defName>
         <label>Ranger Rick</label>
-        <description>Not much is known about this smug ranger except that wherever he goes trouble is not far behind. The rangers' life isn't for everyone. It's a tough, wild, and challenging path that requires skill, grit and determination as well as a little bit of sheer dumb luck to survive. </description>
+        <description>Not much is known about this smug ranger except that wherever he goes trouble is not far behind. The rangers' life isn't for everyone. It's a tough, wild, and challenging path that requires skill, grit and determination as well as a little bit of sheer dumb luck to survive.</description>
         <portraitLarge>UI/HeroArt/Storytellers/FCP_Ranger_Rick</portraitLarge>
         <portraitTiny>UI/HeroArt/Storytellers/FCP_Ranger_Rick_Tiny</portraitTiny>
         <listOrder>10</listOrder>
@@ -380,7 +380,35 @@
                 <incident>StrangerInBlackJoin</incident>
                 <delayTicks>180</delayTicks>
             </li>
+            <!-- Storyteller Joiner -->
+            <li Class="StorytellerCompProperties_SingleOnceFixed">
+                <fireAfterDaysPassed>4</fireAfterDaysPassed>
+                <incident>FCP_GiveQuest_StorytellerJoiner</incident>
+                <minColonistCount>1</minColonistCount>
+                <allowedTargetTags>
+                    <li>World</li>
+                </allowedTargetTags>
+            </li>
         </comps>
+        <modExtensions>
+            <!-- Storyteller Joiner -->
+            <li Class="FCP.Core.StoryTellerIsJoinerExtension">
+                <!-- Bio -->
+                <firstName>Rick</firstName>
+                <lastName>Farnsworth</lastName>
+                <nickname>Ranger Rick</nickname>
+                <gender>Male</gender>
+                <biologicalAge>25</biologicalAge>
+                <!-- Requirements -->
+                <pawnKindDef>FCP_NCR_NCRCF_Inmate</pawnKindDef> <!-- just a test -->
+                <forcedXenotypeDef>Baseliner</forcedXenotypeDef>
+                <onlyFixedPawnKindBackstories>false</onlyFixedPawnKindBackstories> <!-- you prob want this true -->
+                <!-- Factional -->
+                <originalFactionDef MayRequire="Rick.FCP.NCR">FCP_Faction_NCR</originalFactionDef>
+                <originalFactionTitle MayRequire="Rick.FCP.NCR">FCP_NCR_Ranger_Volunteer</originalFactionTitle>
+                <useOriginalFactionIdeo MayRequire="Rick.FCP.NCR">true</useOriginalFactionIdeo>
+            </li>
+        </modExtensions>
     </StorytellerDef>
 
     <!-- Vault Boy -->

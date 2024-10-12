@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 	<FCP_MessagePermitLostOnPromotion>Due to {0_possessive} promotion to {1}, {0_labelShort} has lost {0_possessive} {2} permit</FCP_MessagePermitLostOnPromotion>
+
+	<!-- Storyteller Joiner -->
+	<FCP_LetterLabel_SpecialWandererJoins>Special Wanderer: {PAWN_nameDef}</FCP_LetterLabel_SpecialWandererJoins>
+	<FCP_Letter_SpecialWandererJoins>A {PAWN_title} named {PAWN_nameDef} has arrived and wants to join the colony.</FCP_Letter_SpecialWandererJoins>
 </LanguageData>
