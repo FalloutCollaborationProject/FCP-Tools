@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <IncidentDef ParentName="GiveQuestBase">
+        <defName>FCP_GiveQuest_StorytellerJoiner</defName>
+        <label>a story teller</label>
+        <questScriptDef>FCP_Quest_StorytellerJoins</questScriptDef>
+        <baseChance>0</baseChance> <!-- given by a special storyteller comp -->
+      </IncidentDef>
+
+      <QuestScriptDef>
+        <defName>FCP_Quest_StorytellerJoins</defName>
+        <autoAccept>true</autoAccept>
+        <defaultHidden>true</defaultHidden>
+        <isRootSpecial>true</isRootSpecial>
+        <successHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityFulfilled_WandererJoins</successHistoryEvent>
+        <failedOrExpiredHistoryEvent MayRequire="Ludeon.RimWorld.Ideology">CharityRefused_WandererJoins</failedOrExpiredHistoryEvent>
+        <questNameRules>
+          <rulesStrings>
+            <li>questName->A Wanderer named [pawn_nameIndef]</li>
+          </rulesStrings>
+        </questNameRules>
+        <questDescriptionRules>
+          <rulesStrings>
+            <li>questDescription-></li>
+          </rulesStrings>
+        </questDescriptionRules>
+        <root Class="FCP.Core.QuestNode_Root_StorytellerJoin"/>
+      </QuestScriptDef>
+
+      <LetterDef ParentName="CustomChoiceLetterBase">
+        <defName>FCP_Letter_AcceptStoryteller</defName>
+        <color>(41, 196, 80)</color>
+        <arriveSound>GameStartSting</arriveSound>
+        <letterClass>ChoiceLetter_AcceptJoiner</letterClass>
+      </LetterDef>
+
+</Defs>

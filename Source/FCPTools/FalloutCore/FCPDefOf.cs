@@ -15,6 +15,7 @@ public class FCPDefOf
     public static FactionDef FCP_Faction_NCR;
     
     public static PawnGroupKindDef FCP_PawnGroupKind_TaxCollector;
+    public static LetterDef FCP_Letter_AcceptStoryteller;
     
     static FCPDefOf()
     {
