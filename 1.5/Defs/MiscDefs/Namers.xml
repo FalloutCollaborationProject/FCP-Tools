@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Names __________-->
+
+    <!--_____ Western Names _____-->
+
+    <!-- Male -->
+
+    <RulePackDef>
+        <defName>FCP_Western_Namer_Male</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[FCP_Western_Names_Male] [FCP_Western_Names_Last]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>FCP_Western_Names_Male->Names/FCP_Western_Names_Male</li>
+                <li>FCP_Western_Names_Last->Names/FCP_Western_Names_Last</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!-- Female -->
+
+    <RulePackDef>
+        <defName>FCP_Western_Namer_Female</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[FCP_Western_Names_Female] [FCP_Western_Names_Last]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>FCP_Western_Names_Female->Names/FCP_Western_Names_Female</li>
+                <li>FCP_Western_Names_Last->Names/FCP_Western_Names_Last</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!--_____ Retro Names _____-->
+
+    <!-- Male -->
+
+    <RulePackDef>
+        <defName>FCP_Retro_Namer_Male</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[FCP_Retro_Names_Male] [FCP_Retro_Names_Last]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>FCP_Retro_Names_Male->Names/FCP_Retro_Names_Male</li>
+                <li>FCP_Retro_Names_Last->Names/FCP_Retro_Names_Last</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!-- Female -->
+
+    <RulePackDef>
+        <defName>FCP_Retro_Namer_Female</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[FCP_Retro_Names_Female] [FCP_Retro_Names_Last]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>FCP_Retro_Names_Female->Names/FCP_Retro_Names_Female</li>
+                <li>FCP_Retro_Names_Last->Names/FCP_Retro_Names_Last</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!--_____ Legion Names _____-->
+
+    <!-- Male -->
+
+    <RulePackDef>
+        <defName>FCP_Legion_Namer_Male</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[FCP_Legion_Names_Male] [FCP_Legion_Names_Last]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>FCP_Legion_Names_Male->Names/FCP_Legion_Names_Male</li>
+                <li>FCP_Legion_Names_Last->Names/FCP_Legion_Names_Last</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!-- Female -->
+
+    <RulePackDef>
+        <defName>FCP_Legion_Namer_Female</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[FCP_Legion_Names_Female] [FCP_Legion_Names_Last]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>FCP_Legion_Names_Female->Names/FCP_Legion_Names_Female</li>
+                <li>FCP_Legion_Names_Last->Names/FCP_Legion_Names_Last</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+</Defs>
