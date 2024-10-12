@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using JetBrains.Annotations;
+﻿using System.Linq;
+using System.Reflection;
+using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
 using RimWorld.QuestGen;
@@ -9,37 +8,6 @@ using UnityEngine;
 using Verse;
 
 namespace FCP.Core;
-
-[UsedImplicitly]
-[SuppressMessage("ReSharper", "FieldCanBeMadeReadOnly.Global")]
-public class StoryTellerIsJoinerExtension : DefModExtension
-{
-	// Forced Defs
-	public PawnKindDef pawnKindDef;
-	public XenotypeDef forcedXenotypeDef;
-
-	// Misc
-	public FactionDef originalFactionDef;
-	public RoyalTitleDef originalFactionTitle;
-	public bool useOriginalFactionIdeo = false;
-	public bool onlyFixedPawnKindBackstories = false;
-
-	// Characteristics
-	public string firstName;
-	public string lastName;
-	public string nickname;
-
-	public Gender? gender = null;
-	public float? biologicalAge = null;
-	public float? chronologicalAge = null;
-
-	public override IEnumerable<string> ConfigErrors()
-	{
-		if (originalFactionDef == null && (originalFactionTitle != null || useOriginalFactionIdeo))
-			yield return "originalFactionTitle or useOriginalFactionIdeo are set, but originalFactionDef isn't";
-	}
-}
-
 
 public class QuestNode_Root_StorytellerJoin : QuestNode_Root_WandererJoin
 {
@@ -122,7 +90,38 @@ public class QuestNode_Root_StorytellerJoin : QuestNode_Root_WandererJoin
 		{
 			pawn.Name = new NameTriple(extension.firstName ?? name.First, extension.nickname ?? name.Nick, extension.lastName ?? name.Last);
 		}
+
+		// Remove all permits, since tynan didn't check to see if they're actually valid.
+		if (pawn.royalty != null && pawn.royalty.AllTitlesForReading.Any())
+		{
+			pawn.royalty.AllFactionPermits.Clear();
+		}
+
+		if (extension.hairDef != null)
+		{
+			pawn.story.hairDef = extension.hairDef;
+		}
+		
+		if (extension.hairColor != null)
+		{
+			pawn.story.HairColor = (Color)extension.hairColor;
+		}
+
+		if (extension.beardDef != null)
+		{
+			pawn.style.beardDef = extension.beardDef;
+		}
+
+		if (extension.skinColorOverride != null)
+		{
+			pawn.story.skinColorOverride = extension.skinColorOverride;
+		}
+
+		pawn.Drawer?.renderer?.SetAllGraphicsDirty();
+
 	}
+
+	private static readonly FieldInfo PawnSkinColorBaseField = AccessTools.Field(typeof(Pawn), "skinColorBase");
 
 	protected override void AddSpawnPawnQuestParts(Quest quest, Map map, Pawn pawn)
 	{
@@ -158,9 +157,4 @@ public class QuestNode_Root_StorytellerJoin : QuestNode_Root_WandererJoin
 		Find.LetterStack.ReceiveLetter(choiceLetter);
 	}
 	
-	private static PawnGenerationRequest GetFallbackPawnRequest()
-	{
-		return new PawnGenerationRequest(PawnKindDefOf.Villager, null, PawnGenerationContext.NonPlayer, -1, forceGenerateNewPawn: true, allowDead: false, allowDowned: false, canGeneratePawnRelations: true, mustBeCapableOfViolence: false, 20f, forceAddFreeWarmLayerIfNeeded: false, allowGay: true, allowPregnant: true, allowFood: true, allowAddictions: true, inhabitant: false, certainlyBeenInCryptosleep: false, forceRedressWorldPawnIfFormerColonist: false, worldPawnFactionDoesntMatter: false, 0f, 0f, null, 1f, null, null, null, null, null, null, null, null, null, null, null, null, forceNoIdeo: false, forceNoBackstory: false, forbidAnyTitle: false, forceDead: false, null, null, null, null, null, 0f, DevelopmentalStage.Adult, null, null, null, forceRecruitable: true);
-	}
-
 }

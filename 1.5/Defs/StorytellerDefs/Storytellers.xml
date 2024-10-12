@@ -399,6 +399,11 @@
                 <nickname>Ranger Rick</nickname>
                 <gender>Male</gender>
                 <biologicalAge>25</biologicalAge>
+                <!-- Appearance -->
+                <hairDef>Burgundy</hairDef> <!-- changeme -->
+                <hairColor>(88, 60, 51)</hairColor>
+                <beardDef>NoBeard</beardDef>
+                <skinColorOverride>(239, 189, 163)</skinColorOverride>
                 <!-- Requirements -->
                 <pawnKindDef>FCP_NCR_NCRCF_Inmate</pawnKindDef> <!-- just a test -->
                 <forcedXenotypeDef>Baseliner</forcedXenotypeDef>
