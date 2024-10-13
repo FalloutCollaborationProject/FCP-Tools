@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Linq;
+using System.Reflection;
 using FCP.Core.Utils;
 using HarmonyLib;
 using RimWorld;
@@ -43,7 +44,7 @@ public class QuestNode_Root_StorytellerJoin : QuestNode_Root_WandererJoin
 			developmentalStages: DevelopmentalStage.Adult);
 
 		// Generate the Pawn
-		PawnGenerationDefinition[] definitions = [extension.faction, extension.appearance, extension.story];
+		var definitions = extension.GetDefinitions().ToArray();
 		var pawn = PawnGenerationUtils.GenerateWithDefinitions(request, definitions);
 		
 		if (!pawn.IsWorldPawn())

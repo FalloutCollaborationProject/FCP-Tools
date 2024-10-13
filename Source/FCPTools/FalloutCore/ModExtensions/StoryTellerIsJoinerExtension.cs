@@ -1,4 +1,5 @@
-﻿using FCP.Core.Utils;
+﻿using System.Collections.Generic;
+using FCP.Core.Utils;
 using JetBrains.Annotations;
 using RimWorld;
 using Verse;
@@ -24,5 +25,12 @@ public class StoryTellerIsJoinerExtension : DefModExtension
 
     // Name, Gender, Age
     public PawnStoryDefinition story;
+
+    public IEnumerable<PawnGenerationDefinition> GetDefinitions()
+    {
+        if (faction != null) yield return faction;
+        if (appearance != null) yield return appearance;
+        if (story != null) yield return story;
+    }
 }
 
