@@ -400,7 +400,7 @@
                 <gender>Male</gender>
                 <biologicalAge>27</biologicalAge>
                 <!-- Appearance -->
-                <hairDef>Burgundy</hairDef> <!-- changeme -->
+                <hairDef>FCP_Hair_Ranger_Rick</hairDef> <!-- changeme -->
                 <hairColor>(88, 60, 51)</hairColor>
                 <beardDef>NoBeard</beardDef>
                 <skinColorOverride>(239, 189, 163)</skinColorOverride>

@@ -38,6 +38,9 @@
         <modExtensions Inherit="False">
             <li Class="FCP.Factions.HiddenFactionCaravanExtension" />
         </modExtensions>
+        <caravanTraderKinds>
+            <li>FCP_Caravan_Brahmin_Herder</li>
+        </caravanTraderKinds>
         <maxPawnCostPerTotalPointsCurve>
             <points>
                 <li>(0,35)</li>
@@ -68,11 +71,8 @@
                 </options>
             </li>
 
-            <li Class="FCP.Factions.GroupMakerWithTraderKind">
+            <li>
                 <kindDef>Trader</kindDef>
-                <traderKinds>
-                    <li>FCP_Caravan_Brahmin_Herder</li>
-                </traderKinds>
                 <traders>
                     <FCP_NCR_Crimson_Caravan_Trader>1</FCP_NCR_Crimson_Caravan_Trader>
                 </traders>
@@ -81,27 +81,6 @@
                 </carriers>
                 <guards>
                     <FCP_NCR_Citizen>5</FCP_NCR_Citizen>
-                    <FCP_NCR_Ranger_Volunteer>1</FCP_NCR_Ranger_Volunteer>
-                    <FCP_NCR_President>1</FCP_NCR_President>
-                </guards>
-            </li>
-
-            <!-- NCRCF Prisoner Caravan -->
-
-            <li Class="FCP.Factions.GroupMakerWithTraderKind">
-                <kindDef>Trader</kindDef>
-                <traderKinds>
-                    <li>FCP_Caravan_NCRCF_Prisoner_Exchange</li>
-                </traderKinds>
-                <traders>
-                    <FCP_NCR_NCRCF_Warden>1</FCP_NCR_NCRCF_Warden>
-                </traders>
-                <carriers>
-                    <FCP_Animal_Brahmin>1</FCP_Animal_Brahmin>
-                </carriers>
-                <guards>
-                    <FCP_NCR_NCRCF_Guard>4</FCP_NCR_NCRCF_Guard>
-                    <FCP_NCR_President>1</FCP_NCR_President>
                 </guards>
             </li>
         </pawnGroupMakers>

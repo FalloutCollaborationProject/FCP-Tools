@@ -29,6 +29,9 @@
 		<chemicalAddictionChance>0</chemicalAddictionChance>
 		<invNutrition>2.7</invNutrition>
 		<invFoodDef>MealSurvivalPack</invFoodDef>
+        <apparelTags>
+            <li>FCP_Legion</li>
+        </apparelTags>
 	</PawnKindDef>
 
     <!--_____ Unique _____-->
@@ -50,7 +53,7 @@
         <apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
         <weaponMoney>9999</weaponMoney>
         <weaponTags>
-            <li>FCP_NCR_Ranger_Sequoia</li>
+            <li>FCP_Ranger_Rick</li>
         </weaponTags>
         <disallowedTraits>
             <li>Brawler</li>
