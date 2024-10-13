@@ -1,10 +1,9 @@
-﻿using System.Linq;
-using System.Reflection;
+﻿using System.Reflection;
+using FCP.Core.Utils;
 using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
 using RimWorld.QuestGen;
-using UnityEngine;
 using Verse;
 
 namespace FCP.Core;
@@ -36,46 +35,16 @@ public class QuestNode_Root_StorytellerJoin : QuestNode_Root_WandererJoin
 		var extension = Find.Storyteller.def.GetModExtension<StoryTellerIsJoinerExtension>();
 		var slate = QuestGen.slate;
 		
-		var request = new PawnGenerationRequest(extension.pawnKindDef ?? PawnKindDefOf.Colonist, Faction.OfPlayer,
+		var request = new PawnGenerationRequest(extension.pawnKindDef ?? PawnKindDefOf.Colonist,
 			forceGenerateNewPawn: true,
 			canGeneratePawnRelations: false,
-			fixedBiologicalAge: extension.biologicalAge,
-			fixedChronologicalAge: extension.chronologicalAge ?? extension.biologicalAge,
-			fixedGender: extension.gender,
 			onlyUseForcedBackstories: extension.onlyFixedPawnKindBackstories,
 			forcedXenotype: extension.forcedXenotypeDef ?? XenotypeDefOf.Baseliner,
 			developmentalStages: DevelopmentalStage.Adult);
 
-		// Factional Stuff
-		if (extension?.originalFactionDef != null)
-		{
-			var faction = Find.FactionManager.FirstFactionOfDef(extension.originalFactionDef);
-			if (faction != null)
-			{
-				request.Faction = faction;
-				
-				if (extension.useOriginalFactionIdeo)
-				{
-					request.FixedIdeo = faction.ideos.PrimaryIdeo;
-				}
-
-				if (extension.originalFactionTitle != null)
-				{
-					request.ForbidAnyTitle = false;
-					request.FixedTitle = extension.originalFactionTitle;
-				}
-			}
-			else
-			{
-				Log.Warning($"Couldn't find a faction of def {extension.originalFactionDef.defName}, despite it being defined for the storyteller pawn.");
-			}
-		}
-		
-		request.ValidateAndFix();
-		
-		// Generate the pawn
-		var pawn = PawnGenerator.GeneratePawn(request);
-		PostGeneratePawn(pawn, extension);
+		// Generate the Pawn
+		PawnGenerationDefinition[] definitions = [extension.faction, extension.appearance, extension.story];
+		var pawn = PawnGenerationUtils.GenerateWithDefinitions(request, definitions);
 		
 		if (!pawn.IsWorldPawn())
 		{
@@ -83,44 +52,7 @@ public class QuestNode_Root_StorytellerJoin : QuestNode_Root_WandererJoin
 		}
 		return pawn;
 	}
-
-	private static void PostGeneratePawn(Pawn pawn, StoryTellerIsJoinerExtension extension)
-	{
-		if (pawn.Name is NameTriple name)
-		{
-			pawn.Name = new NameTriple(extension.firstName ?? name.First, extension.nickname ?? name.Nick, extension.lastName ?? name.Last);
-		}
-
-		// Remove all permits, since tynan didn't check to see if they're actually valid.
-		if (pawn.royalty != null && pawn.royalty.AllTitlesForReading.Any())
-		{
-			pawn.royalty.AllFactionPermits.Clear();
-		}
-
-		if (extension.hairDef != null)
-		{
-			pawn.story.hairDef = extension.hairDef;
-		}
-		
-		if (extension.hairColor != null)
-		{
-			pawn.story.HairColor = (Color)extension.hairColor;
-		}
-
-		if (extension.beardDef != null)
-		{
-			pawn.style.beardDef = extension.beardDef;
-		}
-
-		if (extension.skinColorOverride != null)
-		{
-			pawn.story.skinColorOverride = extension.skinColorOverride;
-		}
-
-		pawn.Drawer?.renderer?.SetAllGraphicsDirty();
-
-	}
-
+	
 	private static readonly FieldInfo PawnSkinColorBaseField = AccessTools.Field(typeof(Pawn), "skinColorBase");
 
 	protected override void AddSpawnPawnQuestParts(Quest quest, Map map, Pawn pawn)

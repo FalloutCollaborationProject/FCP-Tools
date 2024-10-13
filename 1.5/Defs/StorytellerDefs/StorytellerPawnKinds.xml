@@ -86,7 +86,7 @@
         <backstoryFiltersOverride>
             <li>
                 <categoriesChildhood>
-                    <li>FCP_NCR_Child</li>
+                    <li>FCP_NCR_Child</li> <!-- this is a dependency on NCR, so you should probably change it -->
                 </categoriesChildhood>
                 <categoriesAdulthood>
                     <li>FCP_Ranger_Rick</li>

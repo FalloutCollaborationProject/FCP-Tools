@@ -1,14 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
+﻿using FCP.Core.Utils;
 using JetBrains.Annotations;
 using RimWorld;
-using UnityEngine;
 using Verse;
+// ReSharper disable UnassignedField.Global
 
 namespace FCP.Core;
 
 [UsedImplicitly]
-[SuppressMessage("ReSharper", "FieldCanBeMadeReadOnly.Global")]
 public class StoryTellerIsJoinerExtension : DefModExtension
 {
     // Forced Defs
@@ -16,32 +14,15 @@ public class StoryTellerIsJoinerExtension : DefModExtension
     public XenotypeDef forcedXenotypeDef;
 
     // Misc
-    public FactionDef originalFactionDef;
-    public RoyalTitleDef originalFactionTitle;
-    public bool useOriginalFactionIdeo = false;
-    public bool onlyFixedPawnKindBackstories = false;
-
-    // Appearance
-    public HairDef hairDef;
-    public BeardDef beardDef;
-    public TattooDef tattooHead;
-    public TattooDef tattooBody;
-    public Color? hairColor;
-    public Color? skinColorOverride;
+    public bool onlyFixedPawnKindBackstories;
     
-    // Characteristics
-    public string firstName;
-    public string lastName;
-    public string nickname;
+    // Faction
+    public PawnFactionDefinition faction;
+    
+    // Appearance
+    public PawnAppearanceDefinition appearance;
 
-    public Gender? gender = null;
-    public float? biologicalAge = null;
-    public float? chronologicalAge = null;
-
-    public override IEnumerable<string> ConfigErrors()
-    {
-        if (originalFactionDef == null && (originalFactionTitle != null || useOriginalFactionIdeo))
-            yield return "originalFactionTitle or useOriginalFactionIdeo are set, but originalFactionDef isn't";
-    }
+    // Name, Gender, Age
+    public PawnStoryDefinition story;
 }
 
