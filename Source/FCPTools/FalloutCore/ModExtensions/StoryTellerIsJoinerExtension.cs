@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using FCP.Core.Utils;
+using FCP.Core.PawnGen;
 using JetBrains.Annotations;
 using RimWorld;
 using Verse;

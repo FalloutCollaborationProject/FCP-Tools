@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using System.Reflection;
-using FCP.Core.Utils;
+using FCP.Core.PawnGen;
 using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;

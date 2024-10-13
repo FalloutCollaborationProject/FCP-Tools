@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Verse;
 
-namespace FCP.Core.Utils;
+namespace FCP.Core.PawnGen;
 
 public static class PawnGenerationUtils
 {

@@ -1,7 +1,6 @@
-﻿using JetBrains.Annotations;
-using Verse;
+﻿using Verse;
 
-namespace FCP.Core.Utils;
+namespace FCP.Core.PawnGen;
 
 public abstract class PawnGenerationDefinition
 {

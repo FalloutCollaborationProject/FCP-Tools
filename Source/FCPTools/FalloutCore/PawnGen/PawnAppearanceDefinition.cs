@@ -2,9 +2,10 @@
 using RimWorld;
 using UnityEngine;
 using Verse;
+
 // ReSharper disable UnassignedField.Global
 
-namespace FCP.Core.Utils;
+namespace FCP.Core.PawnGen;
 
 [UsedImplicitly]
 public class PawnAppearanceDefinition : PawnGenerationDefinition
