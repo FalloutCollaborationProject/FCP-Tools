@@ -5,9 +5,41 @@
 
     <!--_____ Factions _____-->
 
-    <!--___ Wastelanders___-->
+	<!--_____ Unique _____-->
 
-    <!--__ Adults __-->
+	<!-- Adult ___-->
+
+	<!-- Ranger Rick -->
+
+	<BackstoryDef>
+		<defName>FCP_Ranger_Rick</defName>
+		<identifier>FCP_Ranger_Rick</identifier>
+		<slot>Adulthood</slot>
+		<title>Wandering Ranger</title>
+		<titleShort>Wandering Ranger</titleShort>
+		<description>[PAWN_nameDef] was part of the elite fighting force that joined the NCR, the Desert Rangers. [PAWN_pronoun] excels in ranged combat and has quite a few other survival skills, owed to years of service in and around the wasteland. [PAWN_nameDef] hasn't always made the smartest choices, but always seems to talk [PAWN_possessive] way out of trouble. With a revolver and a smolder [PAWN_nameDef] wanders the wastes looking for the next settlement to help, and accidently bring into harms way...</description>
+		<skillGains>
+			<Shooting>9</Shooting>
+			<Melee>2</Melee>
+			<Intellectual>-2</Intellectual>
+			<Social>8</Social>
+			<Animals>2</Animals>
+			<Cooking>-4</Cooking>
+		</skillGains>
+		<workDisables>Cleaning</workDisables>
+		<requiredWorkTags>Violent</requiredWorkTags>
+		<spawnCategories>
+			<li>FCP_Ranger_Rick</li>
+		</spawnCategories>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<bodyTypeMale>Male</bodyTypeMale>
+        <possessions>
+        </possessions>
+	</BackstoryDef>
+
+    <!--____ Wastelanders ____-->
+
+    <!--___ Adults ___-->
 
     <!-- Wasteland Farmer -->
 

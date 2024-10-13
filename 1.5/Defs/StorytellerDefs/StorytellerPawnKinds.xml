@@ -3,37 +3,6 @@
 
     <!--__________ Pawnkinds __________-->
 
-    <!--_____ Base _____-->
-
-    <!--___ NCR Base ___-->
-
-    <PawnKindDef Name="FCP_NCRkindBase" Abstract="True">
-        <race>Human</race>
-        <defaultFactionType>FCP_Faction_NCR</defaultFactionType>
-        <maxGenerationAge>60</maxGenerationAge>
-        <chemicalAddictionChance>0</chemicalAddictionChance>
-        <invNutrition>2.7</invNutrition>
-        <invFoodDef>MealSurvivalPack</invFoodDef>
-        <disallowedTraits>
-            <li>Nudist</li>
-        </disallowedTraits>
-    </PawnKindDef>
-
-    <!--___ Legion Base ___-->
-
-	<PawnKindDef Name="FCP_LegionkindBase" Abstract="True">
-		<race>Human</race>
-		<fixedGender>Male</fixedGender>
-		<defaultFactionType>FCP_Caesars_Legion</defaultFactionType>
-		<maxGenerationAge>60</maxGenerationAge>
-		<chemicalAddictionChance>0</chemicalAddictionChance>
-		<invNutrition>2.7</invNutrition>
-		<invFoodDef>MealSurvivalPack</invFoodDef>
-        <apparelTags>
-            <li>FCP_Legion</li>
-        </apparelTags>
-	</PawnKindDef>
-
     <!--_____ Unique _____-->
 
     <!-- Ranger Rick -->
