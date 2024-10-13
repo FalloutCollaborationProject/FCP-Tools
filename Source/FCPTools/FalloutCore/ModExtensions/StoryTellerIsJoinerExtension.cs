@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using FCP.Core.PawnGen;
-using JetBrains.Annotations;
-using RimWorld;
-using Verse;
+﻿using FCP.Core.PawnGen;
+
 // ReSharper disable UnassignedField.Global
 
 namespace FCP.Core;

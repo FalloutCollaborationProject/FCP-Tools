@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using Verse;
-
-namespace FCP.Core.Birds;
+﻿namespace FCP.Core.Birds;
 
 public class CompProperties_FlyingPawn : CompProperties
 {

@@ -1,6 +1,4 @@
-﻿using Verse;
-
-namespace FCP.Core.PawnGen;
+﻿namespace FCP.Core.PawnGen;
 
 public abstract class PawnGenerationDefinition
 {
