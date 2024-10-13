@@ -75,7 +75,7 @@
                 <li>Overhead</li>
             </layers>
             <tags>
-                <li>FCP_Combat_Armors</li>
+                <li>FCP_Combat_Armor_Modular</li>
             </tags>
         </apparel>
     </ThingDef>
@@ -110,7 +110,7 @@
                 <li>Overhead</li>
             </layers>
             <tags>
-                <li>FCP_Combat_Armors</li>
+                <li>FCP_Combat_Armor_Reinforced</li>
             </tags>
         </apparel>
     </ThingDef>
@@ -145,7 +145,7 @@
                 <li>Overhead</li>
             </layers>
             <tags>
-                <li>FCP_Combat_Armors</li>
+                <li>FCP_Combat_Armor_Reinforced_MK_II</li>
             </tags>
         </apparel>
     </ThingDef>

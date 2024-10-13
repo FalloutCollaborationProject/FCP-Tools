@@ -3,11 +3,9 @@
 
     <!--__________ Backstories __________-->
 
-    <!--_____ Factions _____-->
+	<!--_____ Storytellers _____-->
 
-	<!--_____ Unique _____-->
-
-	<!-- Adult ___-->
+	<!--___ Adult ___-->
 
 	<!-- Ranger Rick -->
 
@@ -37,7 +35,65 @@
         </possessions>
 	</BackstoryDef>
 
+    <!--_____ Factions _____-->
+
     <!--____ Wastelanders ____-->
+
+    <!--___ Uniques ___-->
+
+    <!--__ Caravan Traders (Fallout 3) __-->
+
+    <!--_ Crow _-->
+
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Wastelander_Trader_Crow</defName>
+        <identifier>FCP_Wastelander_Trader_Crow</identifier>
+        <slot>Adulthood</slot>
+        <title>Armor and Apparel Trader</title>
+        <titleShort>Apparel Trader</titleShort>
+        <description>[PAWN_nameDef] makes [PAWN_possessive] living by selling apparel, clothing and armor to the people of the wastes. Having grown up and lived as a tribal before giving up the "loincloth" [PAWN_nameDef] speaks in a broken almost mystic version of enlgish. While [PAWN_pronoun] likes to thank the spirits, [PAWN_pronoun] knows that "a cold, hard skin of steel" is the most reliable option.</description>
+        <skillGains>
+            <Shooting>2</Shooting>
+            <Cooking>1</Cooking>
+            <Animals>3</Animals>
+            <Social>11</Social>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Wasteland_Trader_Crow</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions>
+        </possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Wastelander_Trader_Crow_Child</defName>
+        <identifier>FCP_Wastelander_Trader_Crow_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Crows' Childhood</title>
+        <titleShort>Crows' Childhood</titleShort>
+        <description>[PAWN_nameDef] was a born tribal of the Capitol Wasteland. Not much is known about [PAWN_nameDef] except a wild speculation that [PAWN_pronoun] is from Oasis. A small unassuming and quite curious settlement of near fanatical cultists.</description>
+        <skillGains>
+            <Medicine>2</Medicine>
+            <Plants>1</Plants>
+            <Animals>2</Animals>
+            <Social>1</Social>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Wasteland_Trader_Crow_Child</li>
+        </spawnCategories>
+        <possessions>
+        </possessions>
+    </BackstoryDef>
 
     <!--___ Adults ___-->
 

@@ -18,7 +18,7 @@
         </thingCategories>
         <statBases>
             <MaxHitPoints>250</MaxHitPoints>
-            <WorkToMake>9200</WorkToMake>
+            <MarketValue>250</MarketValue>
             <Mass>5.0</Mass>
             <ArmorRating_Sharp>0.90</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.45</ArmorRating_Blunt>
@@ -36,11 +36,8 @@
                 <li>OnSkin</li>
                 <li>Middle</li>
             </layers>
-            <tags>
-                <li>FCP_Combat_Armors</li>
-            </tags>
             <defaultOutfitTags>
-                <li>Soldier</li>
+                <li>FCP_Combat_Armors</li>
             </defaultOutfitTags>
         </apparel>
     </ThingDef>
@@ -57,6 +54,9 @@
         </graphicData>
         <apparel>
             <wornGraphicPath>Things/Apparel/Wasteland_Apparel/CombatArmor/FCP_Combat_Armor</wornGraphicPath>
+            <tags>
+                <li>FCP_Combat_Armors</li>
+            </tags>
         </apparel>
     </ThingDef>
 
@@ -72,6 +72,9 @@
         </graphicData>
         <apparel>
             <wornGraphicPath>Things/Apparel/Wasteland_Apparel/CombatArmor/FCP_Van_Graff_Combat_Armor</wornGraphicPath>
+            <tags>
+                <li>FCP_Combat_Armors_Van_Graff</li>
+            </tags>
         </apparel>
     </ThingDef>
 
@@ -111,8 +114,11 @@
                 <li>Shell</li>
                 <li>Middle</li>
             </layers>
+            <tags>
+                <li>FCP_Combat_Armor_Modular</li>
+            </tags>
             <defaultOutfitTags>
-                <li>Soldier</li>
+                <li>FCP_Combat_Armors</li>
             </defaultOutfitTags>
         </apparel>
     </ThingDef>
@@ -153,8 +159,11 @@
                 <li>Shell</li>
                 <li>Middle</li>
             </layers>
+            <tags>
+                <li>FCP_Combat_Armor_Modular</li>
+            </tags>
             <defaultOutfitTags>
-                <li>Soldier</li>
+                <li>FCP_Combat_Armors</li>
             </defaultOutfitTags>
         </apparel>
     </ThingDef>
@@ -195,8 +204,11 @@
                 <li>Shell</li>
                 <li>Middle</li>
             </layers>
+            <tags>
+                <li>FCP_Combat_Armor_Modular</li>
+            </tags>
             <defaultOutfitTags>
-                <li>Soldier</li>
+                <li>FCP_Combat_Armors</li>
             </defaultOutfitTags>
         </apparel>
     </ThingDef>
@@ -239,7 +251,7 @@
                 <li>OnSkin</li>
             </layers>
             <tags>
-                <li>FCP_Combat_Armors</li>
+                <li>FCP_Combat_Armor_Reinforced</li>
             </tags>
         </apparel>
     </ThingDef>
@@ -282,7 +294,7 @@
                 <li>OnSkin</li>
             </layers>
             <tags>
-                <li>FCP_Combat_Armors</li>
+                <li>FCP_Combat_Armor_Reinforced_MK_II</li>
             </tags>
         </apparel>
     </ThingDef>

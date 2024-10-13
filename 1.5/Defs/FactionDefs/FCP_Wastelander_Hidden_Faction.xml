@@ -52,35 +52,34 @@
         </maxPawnCostPerTotalPointsCurve>
         <pawnGroupMakers>
 
-            <!-- NCR Recon Squad -->
+            <!-- Wastelander -->
 
             <li>
                 <!-- Distance fights, scout recon troopers -->
                 <kindDef>Combat</kindDef>
                 <disallowedStrategies>
-                    <li>ImmediateAttackSmart</li>
-                    <li>ImmediateAttack</li>
-                    <li>StageThenAttack</li>
                     <li>EmergeFromWater</li>
-                    <li>Siege</li>
                 </disallowedStrategies>
                 <options>
-                    <FCP_NCR_Scout_Recon>6</FCP_NCR_Scout_Recon>
-                    <FCP_NCR_Officer>1</FCP_NCR_Officer>
-                    <FCP_NCR_President>1</FCP_NCR_President>
+                    <FCP_Armored_Wastelander_Combat_Armor>6</FCP_Armored_Wastelander_Combat_Armor>
+                    <FCP_Armored_Wastelander_Combat_Armor_Modular>4</FCP_Armored_Wastelander_Combat_Armor_Modular>
+                    <FCP_Armored_Wastelander_Combat_Armor_Reinforced>3</FCP_Armored_Wastelander_Combat_Armor_Reinforced>
+                    <FCP_Armored_Wastelander_Combat_Armor_Reinforced_MK_II>1</FCP_Armored_Wastelander_Combat_Armor_Reinforced_MK_II>
                 </options>
             </li>
 
-            <li>
+            <!-- Traders -->
+
+            <li Class="FCP.Factions.GroupMakerWithTraderKind">
                 <kindDef>Trader</kindDef>
                 <traders>
-                    <FCP_NCR_Crimson_Caravan_Trader>1</FCP_NCR_Crimson_Caravan_Trader>
+                    <FCP_Wastelander_Trader_Crow>1</FCP_Wastelander_Trader_Crow>
                 </traders>
                 <carriers>
                     <FCP_Animal_Brahmin>6</FCP_Animal_Brahmin>
                 </carriers>
                 <guards>
-                    <FCP_NCR_Citizen>5</FCP_NCR_Citizen>
+                    <FCP_Wastelander_Caravan_Guard>5</FCP_Wastelander_Caravan_Guard>
                 </guards>
             </li>
         </pawnGroupMakers>

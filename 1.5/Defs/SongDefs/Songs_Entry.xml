@@ -7,7 +7,7 @@
         <defName>EntrySong</defName>
         <playOnMap>false</playOnMap>
         <clipPath>Songs/Entry/FCP_Entry_Full</clipPath>
-        <volume>0.2</volume>
+        <volume>0.7</volume>
     </SongDef>
 
 </Defs>
