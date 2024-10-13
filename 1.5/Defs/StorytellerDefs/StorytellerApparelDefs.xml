@@ -13,7 +13,7 @@
         <techLevel>Industrial</techLevel>
         <label>Ranger Ricks' Uniform</label>
         <graphicData>
-            <texPath>Apparel/Things/Custom/Ranger_Rick/Uniform/FCP_Ranger_Rick_Uniform</texPath>
+            <texPath>Things/Apparel/Custom/Ranger_Rick/Uniform/FCP_Ranger_Rick_Uniform</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <thingCategories>
@@ -38,7 +38,7 @@
                 <li>Shoulders</li>
                 <li>Arms</li>
             </bodyPartGroups>
-            <wornGraphicPath>Apparel/Things/Custom/Ranger_Rick/Uniform/FCP_Ranger_Rick_Uniform</wornGraphicPath>
+            <wornGraphicPath>Things/Apparel/Custom/Ranger_Rick/Uniform/FCP_Ranger_Rick_Uniform</wornGraphicPath>
             <layers>
                 <li>OnSkin</li>
             </layers>
@@ -59,7 +59,7 @@
         <techLevel>Industrial</techLevel>
         <label>Ranger Ricks' Armor</label>
         <graphicData>
-            <texPath>Apparel/Things/Custom/Ranger_Rick/Armor/FCP_Ranger_Rick_Armor</texPath>
+            <texPath>Things/Apparel/Custom/Ranger_Rick/Armor/FCP_Ranger_Rick_Armor</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <thingCategories>
@@ -80,7 +80,7 @@
                 <li>Torso</li>
                 <li>Neck</li>
             </bodyPartGroups>
-            <wornGraphicPath>Apparel/Things/Custom/Ranger_Rick/Armor/FCP_Ranger_Rick_Armor</wornGraphicPath>
+            <wornGraphicPath>Things/Apparel/Custom/Ranger_Rick/Armor/FCP_Ranger_Rick_Armor</wornGraphicPath>
             <layers>
                 <li>Middle</li>
             </layers>
@@ -101,7 +101,7 @@
         <techLevel>Industrial</techLevel>
         <label>Ranger Ricks' Duster</label>
         <graphicData>
-            <texPath>Apparel/Things/Custom/Ranger_Rick/Duster/FCP_Ranger_Rick_Duster</texPath>
+            <texPath>Things/Apparel/Custom/Ranger_Rick/Duster/FCP_Ranger_Rick_Duster</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <thingCategories>
@@ -126,7 +126,7 @@
                 <li>Arms</li>
                 <li>Neck</li>
             </bodyPartGroups>
-            <wornGraphicPath>Apparel/Things/Custom/Ranger_Rick/Duster/FCP_Ranger_Rick_Duster</wornGraphicPath>
+            <wornGraphicPath>Things/Apparel/Custom/Ranger_Rick/Duster/FCP_Ranger_Rick_Duster</wornGraphicPath>
             <layers>
                 <li>Shell</li>
             </layers>
@@ -147,7 +147,7 @@
         <description>An enclosed military helmet with built-in low light optics and a gas mask worn by NCR Rangers. It offers better protection in comparison to the Trooper helmet but is significantly rarer. This version seems to have the enhanced low vis optics added in as well as a paint job. Theres a name written on the standard NCR item tag "Rick" as well as the words "FORGIVE ME MASHED" painted on the front of the helmet. Makes you wonder what happend to this Mashed person...</description>
         <techLevel>Industrial</techLevel>
         <graphicData>
-            <texPath>Apparel/Things/Custom/Ranger_Rick/Helmet/FCP_Ranger_Rick_Helmet</texPath>
+            <texPath>Things/Apparel/Custom/Ranger_Rick/Helmet/FCP_Ranger_Rick_Helmet</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <statBases>
@@ -168,7 +168,7 @@
             <bodyPartGroups>
                 <li>UpperHead</li>
             </bodyPartGroups>
-            <wornGraphicPath>Apparel/Things/Custom/Ranger_Rick/Helmet/FCP_Ranger_Rick_Helmet</wornGraphicPath>
+            <wornGraphicPath>Things/Apparel/Custom/Ranger_Rick/Helmet/FCP_Ranger_Rick_Helmet</wornGraphicPath>
             <layers>
                 <li>Overhead</li>
             </layers>
