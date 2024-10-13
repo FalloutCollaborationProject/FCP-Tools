@@ -1,6 +1,4 @@
 ﻿using HarmonyLib;
-using RimWorld;
-using Verse;
 
 namespace FCP.Core.Birds;
 

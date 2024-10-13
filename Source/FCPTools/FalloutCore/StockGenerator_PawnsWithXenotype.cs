@@ -1,9 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using RimWorld;
-using Verse;
-
-namespace FCP.Core;
+﻿namespace FCP.Core;
 
 public class StockGenerator_PawnsWithXenotype : StockGenerator_Slaves
 {

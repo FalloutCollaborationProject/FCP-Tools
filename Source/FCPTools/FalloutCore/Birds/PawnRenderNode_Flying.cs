@@ -1,6 +1,4 @@
-﻿using Verse;
-
-namespace FCP.Core.Birds;
+﻿namespace FCP.Core.Birds;
 
 public class PawnRenderNode_Flying : PawnRenderNode_AnimalPart
 {

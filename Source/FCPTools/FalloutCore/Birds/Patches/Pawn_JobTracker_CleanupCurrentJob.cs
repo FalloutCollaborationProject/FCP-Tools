@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using Verse;
 using Verse.AI;
 
 namespace FCP.Core.Birds;

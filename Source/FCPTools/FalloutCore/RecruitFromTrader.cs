@@ -1,6 +1,5 @@
 ﻿using HarmonyLib;
-using RimWorld;
-using Verse;
+
 // ReSharper disable FieldCanBeMadeReadOnly.Global
 // ReSharper disable ClassNeverInstantiated.Global
 

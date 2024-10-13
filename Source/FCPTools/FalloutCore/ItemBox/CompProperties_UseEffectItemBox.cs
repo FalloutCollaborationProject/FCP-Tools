@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using RimWorld;
-using Verse;
-
-namespace FCP.Core;
+﻿namespace FCP.Core;
 
 public class CompProperties_UseEffectItemBox : CompProperties_UseEffect
 {

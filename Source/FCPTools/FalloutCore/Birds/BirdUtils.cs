@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using HarmonyLib;
-using Verse;
+﻿using HarmonyLib;
 
 namespace FCP.Core.Birds;
 

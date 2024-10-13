@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using Verse;
-
-namespace FCP.Core.PawnGen;
+﻿namespace FCP.Core.PawnGen;
 
 public static class PawnGenerationUtils
 {
