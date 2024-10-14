@@ -1,24 +1,21 @@
-﻿
+﻿// ReSharper disable UnassignedField.Global
 
-// ReSharper disable UnassignedField.Global
-
-namespace FCP.Core.PawnGen;
-
-[UsedImplicitly]
-public class PawnFactionDefinition : PawnGenerationDefinition
+namespace FCP.Core
 {
-    public FactionDef factionDef;
-    public RoyalTitleDef title;
-    public bool useFactionalIdeo;
-
-    public override bool AppliesPreGeneration => true;
-    public override bool AppliesPostGeneration => title != null;
-
-    public override void ApplyToRequest(ref PawnGenerationRequest request)
+    [UsedImplicitly]
+    public class PawnFactionDefinition : PawnGenerationDefinition
     {
-        if (factionDef != null)
+        public FactionDef factionDef;
+        public RoyalTitleDef title;
+        public bool useFactionalIdeo;
+
+        public override bool AppliesPreGeneration => true;
+        public override bool AppliesPostGeneration => title != null;
+
+        public override void ApplyToRequest(ref PawnGenerationRequest request)
         {
-            var faction = Find.FactionManager.FirstFactionOfDef(factionDef);
+            if (factionDef == null) return;
+            Faction faction = Find.FactionManager.FirstFactionOfDef(factionDef);
 
             if (faction != null)
             {
@@ -28,13 +25,13 @@ public class PawnFactionDefinition : PawnGenerationDefinition
             }
             else
             {
-                Log.Warning("A PawnFactionDefinition had a defined factionDef, but no facction exists with that def");
+                FCPLog.Warning("[PawnFactionDefinition] had a defined factionDef, but no faction exists with that def");
             }
         }
-    }
 
-    public override void ApplyToPawn(Pawn pawn)
-    {
-        pawn.royalty?.AllFactionPermits?.Clear();
+        public override void ApplyToPawn(Pawn pawn)
+        {
+            pawn.royalty?.AllFactionPermits?.Clear();
+        }
     }
 }

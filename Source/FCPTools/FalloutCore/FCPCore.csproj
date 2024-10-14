@@ -19,4 +19,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Net.Http" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Ideology\" />
+  </ItemGroup>
 </Project>

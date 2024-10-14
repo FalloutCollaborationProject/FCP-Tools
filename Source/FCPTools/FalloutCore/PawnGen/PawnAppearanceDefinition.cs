@@ -2,54 +2,55 @@
 
 // ReSharper disable UnassignedField.Global
 
-namespace FCP.Core.PawnGen;
-
-[UsedImplicitly]
-public class PawnAppearanceDefinition : PawnGenerationDefinition
+namespace FCP.Core
 {
-    public HairDef hairDef;
-    public BeardDef beardDef;
-    public TattooDef faceTattooDef;
-    public TattooDef bodyTattooDef;
-    public Color? hairColor;
-    public Color? skinColorOverride;
-    public HeadTypeDef headTypeDef;
-    public BodyTypeDef bodyTypeDef;
-
-    public override bool AppliesPreGeneration => bodyTypeDef != null;
-    public override bool AppliesPostGeneration => true;
-
-    public override void ApplyToRequest(ref PawnGenerationRequest request)
+    [UsedImplicitly]
+    public class PawnAppearanceDefinition : PawnGenerationDefinition
     {
-        request.ForceBodyType = bodyTypeDef ?? request.ForceBodyType;
-    }
+        public HairDef hairDef;
+        public BeardDef beardDef;
+        public TattooDef faceTattooDef;
+        public TattooDef bodyTattooDef;
+        public Color? hairColor;
+        public Color? skinColorOverride;
+        public HeadTypeDef headTypeDef;
+        public BodyTypeDef bodyTypeDef;
 
-    public override void ApplyToPawn(Pawn pawn)
-    {
-        if (hairDef != null)
-            pawn.story.hairDef = hairDef;
+        public override bool AppliesPreGeneration => bodyTypeDef != null;
+        public override bool AppliesPostGeneration => true;
 
-        if (hairColor != null)
-            pawn.story.HairColor = (Color)hairColor;
+        public override void ApplyToRequest(ref PawnGenerationRequest request)
+        {
+            request.ForceBodyType = bodyTypeDef ?? request.ForceBodyType;
+        }
 
-        if (beardDef != null)
-            pawn.style.beardDef = beardDef;
+        public override void ApplyToPawn(Pawn pawn)
+        {
+            if (hairDef != null)
+                pawn.story.hairDef = hairDef;
 
-        if (skinColorOverride != null)
-            pawn.story.skinColorOverride = skinColorOverride;
+            if (hairColor != null)
+                pawn.story.HairColor = (Color)hairColor;
 
-        if (faceTattooDef != null)
-            pawn.style.FaceTattoo = faceTattooDef;
+            if (beardDef != null)
+                pawn.style.beardDef = beardDef;
+
+            if (skinColorOverride != null)
+                pawn.story.skinColorOverride = skinColorOverride;
+
+            if (faceTattooDef != null)
+                pawn.style.FaceTattoo = faceTattooDef;
         
-        if (bodyTattooDef != null)
-            pawn.style.BodyTattoo = bodyTattooDef;
+            if (bodyTattooDef != null)
+                pawn.style.BodyTattoo = bodyTattooDef;
 
-        if (headTypeDef != null)
-            pawn.story.headType = headTypeDef;
+            if (headTypeDef != null)
+                pawn.story.headType = headTypeDef;
 
-        if (bodyTypeDef != null)
-            pawn.story.bodyType = bodyTypeDef;
+            if (bodyTypeDef != null)
+                pawn.story.bodyType = bodyTypeDef;
         
-        pawn.Drawer?.renderer?.SetAllGraphicsDirty();
+            pawn.Drawer?.renderer?.SetAllGraphicsDirty();
+        }
     }
 }

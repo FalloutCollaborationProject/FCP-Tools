@@ -1,38 +1,33 @@
-﻿namespace FCP.Core.PawnGen;
-
-public static class PawnGenerationUtils
+﻿namespace FCP.Core
 {
-    public static Pawn GenerateWithDefinitions(PawnGenerationRequest request, params PawnGenerationDefinition[] definitions)
+    public static class PawnGenerationUtils
     {
-        ApplyRequestDefinitions(ref request, definitions);
-        
-        var pawn = PawnGenerator.GeneratePawn(request);
-        ApplyPawnDefinitions(pawn, definitions);
+        public static Pawn GenerateWithDefinitions(PawnGenerationRequest request, params PawnGenerationDefinition[] definitions)
+        {
+            ApplyRequestDefinitions(ref request, definitions);
+            Pawn pawn = PawnGenerator.GeneratePawn(request);
+            ApplyPawnDefinitions(pawn, definitions);
 
-        return pawn;
-    }
-    
-    public static void ApplyRequestDefinitions(ref PawnGenerationRequest request, IEnumerable<PawnGenerationDefinition> definitions)
-    {
-        foreach (var definition in definitions)
-        {
-            if (!definition.AppliesPreGeneration)
-                return;
-            
-            definition.ApplyToRequest(ref request);
+            return pawn;
         }
-        
-        request.ValidateAndFix();
-    }
     
-    public static void ApplyPawnDefinitions(Pawn pawn, IEnumerable<PawnGenerationDefinition> definitions)
-    {
-        foreach (var definition in definitions)
+        public static void ApplyRequestDefinitions(ref PawnGenerationRequest request, IEnumerable<PawnGenerationDefinition> definitions)
         {
-            if (!definition.AppliesPostGeneration)
-                return;
-            
-            definition.ApplyToPawn(pawn);
+            foreach (PawnGenerationDefinition definition in definitions)
+            {
+                if (!definition.AppliesPreGeneration) return;
+                definition.ApplyToRequest(ref request);
+            }
+            request.ValidateAndFix();
+        }
+    
+        public static void ApplyPawnDefinitions(Pawn pawn, IEnumerable<PawnGenerationDefinition> definitions)
+        {
+            foreach (PawnGenerationDefinition definition in definitions)
+            {
+                if (!definition.AppliesPostGeneration) return;
+                definition.ApplyToPawn(pawn);
+            }
         }
     }
 }

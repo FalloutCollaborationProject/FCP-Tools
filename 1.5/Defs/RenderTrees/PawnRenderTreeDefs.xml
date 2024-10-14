@@ -14,8 +14,8 @@
                 <li>
                     <debugLabel>Body</debugLabel>
                     <tagDef>Body</tagDef>
-                    <nodeClass>FCP.Core.Birds.PawnRenderNode_Flying</nodeClass>
-                    <workerClass>FCP.Core.Birds.PawnRenderNodeWorker_Flying</workerClass>
+                    <nodeClass>FCP.Core.PawnRenderNode_Flying</nodeClass>
+                    <workerClass>FCP.Core.PawnRenderNodeWorker_Flying</workerClass>
                     <useRottenColor>true</useRottenColor>
                     <children>
                         <li>

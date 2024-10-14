@@ -392,7 +392,7 @@
         </comps>
         <modExtensions>
             <!-- Storyteller Joiner -->
-            <li Class="FCP.Core.StoryTellerIsJoinerExtension">
+            <li Class="FCP.Core.ModExtension_StoryTellerIsJoiner">
                 <!-- Requirements -->
                 <pawnKindDef>FCP_Unique_Ranger_Rick</pawnKindDef>
                 <forcedXenotypeDef>Baseliner</forcedXenotypeDef>
