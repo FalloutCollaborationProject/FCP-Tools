@@ -27,7 +27,7 @@
     <PawnKindDef Name="FCP_LegionkindBase" Abstract="True">
         <race>Human</race>
         <fixedGender>Male</fixedGender>
-        <defaultFactionType>FCP_Caesars_Legion</defaultFactionType>
+        <defaultFactionType>FCP_Faction_Caesars_Legion</defaultFactionType>
         <maxGenerationAge>60</maxGenerationAge>
         <chemicalAddictionChance>0</chemicalAddictionChance>
         <invNutrition>2.7</invNutrition>
