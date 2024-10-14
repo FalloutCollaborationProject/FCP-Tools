@@ -55,7 +55,8 @@
         <backstoryFiltersOverride>
             <li>
                 <categoriesChildhood>
-                    <li>FCP_NCR_Child</li> <!-- this is a dependency on NCR, so you should probably change it -->
+                    <li MayRequire="Rick.FCP.NCR">FCP_NCR_Child</li>
+                    <li>FCP_Wastelander_Child</li>
                 </categoriesChildhood>
                 <categoriesAdulthood>
                     <li>FCP_Ranger_Rick</li>

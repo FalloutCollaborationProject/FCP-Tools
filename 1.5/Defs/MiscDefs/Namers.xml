@@ -19,6 +19,22 @@
         </rulePack>
     </RulePackDef>
 
+    <!--_____ Legion Settlement Names _____-->
+
+    <!-- Settlements -->
+
+    <RulePackDef>
+        <defName>FCP_Namer_Settlement_Legion</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[Legion_Settlements]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>Legion_Settlements->Settlement_Names/Legion/Legion_Settlements</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
     <!--__________ Pawn Names __________-->
 
     <!--_____ Western Names _____-->

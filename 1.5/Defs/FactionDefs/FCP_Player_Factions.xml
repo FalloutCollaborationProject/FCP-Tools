@@ -10,11 +10,11 @@
         <label>NCR Citizens</label>
         <description>A group of New California Republic citizens.</description>
         <isPlayer>true</isPlayer>
-        <basicMemberKind>Citizen</basicMemberKind>
+        <basicMemberKind>FCP_NCR_Citizen</basicMemberKind>
         <pawnSingular>Citizen</pawnSingular>
         <pawnsPlural>Citizens</pawnsPlural>
         <techLevel>Industrial</techLevel>
-        <factionNameMaker>FCP_Namer_NCR</factionNameMaker>
+        <factionNameMaker>NamerFactionOutlander</factionNameMaker>
         <settlementNameMaker>FCP_Namer_Settlement_NCR</settlementNameMaker>
         <allowedCultures>
             <li>FCP_Culture_NCR_Californian</li>

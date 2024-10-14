@@ -616,30 +616,40 @@
         <label>Radgull</label>
         <devNote>Radgull</devNote>
         <description>.</description>
+<<<<<<< Updated upstream
 		<modExtensions>
 			<li Class="FCP.Core.ModExtension_BiomeFeatureRequirements">
 				<requireCoast>True</requireCoast>
 			</li>
 		</modExtensions>
+=======
+        <modExtensions>
+            <li Class="FCP.Core.BiomeFeatureRequirements">
+                <requireCoast>True</requireCoast>
+            </li>
+        </modExtensions>
+>>>>>>> Stashed changes
         <statBases>
             <MoveSpeed>4</MoveSpeed>
             <MarketValue>100</MarketValue>
-            <ComfyTemperatureMin>-5</ComfyTemperatureMin>
+            <ComfyTemperatureMin>-20</ComfyTemperatureMin>
+            <ToxicEnvironmentResistance MayRequire="Ludeon.RimWorld.Biotech">1.0</ToxicEnvironmentResistance>
         </statBases>
         <race>
             <body>Bird</body>
-            <predator>true</predator>
+            <!-- <predator>true</predator> -->
+            <herdAnimal>true</herdAnimal>
             <baseBodySize>0.4</baseBodySize>
             <maxPreyBodySize>0.3</maxPreyBodySize>
             <baseHungerRate>0.15</baseHungerRate>
             <baseHealthScale>0.42</baseHealthScale>
-            <foodType>CarnivoreAnimal</foodType>
-            <wildness>0.7</wildness>
+            <foodType>OmnivoreRoughAnimal</foodType>
+            <wildness>0.90</wildness>
             <wildBiomes>
-                <TemperateForest>0.3</TemperateForest>
-                <BorealForest>0.2</BorealForest>
-                <AridShrubland>0.2</AridShrubland>
-                <Desert>0.1</Desert>
+                <TemperateForest>0.7</TemperateForest>
+                <BorealForest>0.3</BorealForest>
+                <AridShrubland>0.8</AridShrubland>
+                <Desert>0.3</Desert>
                 <TemperateSwamp>0.3</TemperateSwamp>
             </wildBiomes>
             <trainability>Intermediate</trainability>
@@ -732,10 +742,10 @@
             </li>
             <li Class="FCP.Core.CompProperties_FlyingPawn">
                 <flyWhenFleeing>true</flyWhenFleeing>
-                <flyWhenWanderingChance>0.5</flyWhenWanderingChance>
+                <flyWhenWanderingChance>0.85</flyWhenWanderingChance>
                 <flyWhenHunting>true</flyWhenHunting>
                 <soundOnFly>FCP_Radgull_Call</soundOnFly>
-                <flyingMoveSpeedMultiplier>5</flyingMoveSpeedMultiplier>
+                <flyingMoveSpeedMultiplier>4</flyingMoveSpeedMultiplier>
                 <flyingBodyGraphicData>
                     <li>
                         <texPath>Things/Pawn/Animal/Radgull/FCP_Radgull_flight</texPath>
@@ -770,8 +780,9 @@
         <defName>FCP_Animal_Radgull</defName>
         <label>Radgull</label>
         <race>FCP_Animal_Radgull</race>
-        <combatPower>40</combatPower>
-        <ecoSystemWeight>0.3</ecoSystemWeight>
+        <combatPower>30</combatPower>
+        <ecoSystemWeight>0.2</ecoSystemWeight>
+        <wildGroupSize>10~30</wildGroupSize>
         <lifeStages>
             <li>
                 <label>Radgull</label>

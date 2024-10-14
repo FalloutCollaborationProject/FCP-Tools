@@ -53,6 +53,8 @@
 
     <!--_____ Animals _____-->
 
+    <!--___ Rad_Ravens ___-->
+
     <!-- Rad Raven Call -->
 
     <SoundDef>
@@ -67,6 +69,26 @@
                     </li>
                 </grains>
                 <volumeRange>20~35</volumeRange>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!--___ Radgull ___-->
+
+    <!-- Radgull Call -->
+
+    <SoundDef>
+        <defName>FCP_Radgull_Call</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Animals/Radgull/FCP_Radgull_Call</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>80~100</volumeRange>
             </li>
         </subSounds>
     </SoundDef>
