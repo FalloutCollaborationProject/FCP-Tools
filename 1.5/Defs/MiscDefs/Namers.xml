@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <!--__________ Names __________-->
+    <!--__________ Settlement Names __________-->
+
+    <!--_____ NCR Settlement Names _____-->
+
+    <!-- Settlements -->
+
+    <RulePackDef>
+        <defName>FCP_Namer_Settlement_NCR</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[NCR_Settlements]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>NCR_Settlements->Settlement_Names/NCR/NCR_Settlements</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!--__________ Pawn Names __________-->
 
     <!--_____ Western Names _____-->
 

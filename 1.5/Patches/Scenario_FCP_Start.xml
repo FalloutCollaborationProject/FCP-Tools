@@ -11,7 +11,6 @@
             <li Class="ScenPart_GameStartDialog">
                 <def>GameStartDialog</def>
                 <text>In this World you have a choice, its been years since nuclear armageddon and the world is starting to rebuild. Will you dare to fight the new empires or grand powers that the old world has created in the new? Will you rewrite history, and become someone or something far greater than anyone before or after? Will you be a simple farmer trying to survive in the wastes, or become a raider hooked on chems ready for any death and dismemberment to come their way. The choice are endless and the consequences harsh...This world is yours. \n\n\n\n\n  "War… war never changes. Even here in the forgotten wastes of the world we still live in the great shadow of war. We toil, and work and build and for what? For it all to be thrown away for some grander future? Well I say no more, we are on the rim of society in this world, and on the brink of death every day. Its time to make a stand and not only survive, but thrive. We just need to remember that war... war never changes."\n\n -Colin Moriarty</text>
-                <closeSound>FCP_War_Never_Changes</closeSound>
             </li>
         </value>
     </Operation>
