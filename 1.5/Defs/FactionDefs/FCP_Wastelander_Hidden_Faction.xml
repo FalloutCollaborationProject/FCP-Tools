@@ -36,7 +36,7 @@
             <li MayRequire="Ludeon.RimWorld.Ideology">Blindsight</li>
         </disallowedMemes>
         <modExtensions Inherit="False">
-            <li Class="FCP.Factions.HiddenFactionCaravanExtension" />
+            <li Class="FCP.Core.ModExtension_HiddenFactionHasCaravans" />
         </modExtensions>
         <caravanTraderKinds>
             <li>FCP_Caravan_Brahmin_Herder</li>

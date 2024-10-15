@@ -1,17 +1,9 @@
-﻿using FCP.Core;
-
-namespace FCP.Factions;
-
-public class FactionTaxCollectorsExtension : DefModExtension
-{
-    public FactionDef factionDef;
-    public TraderKindDef traderKindDef;
-}
+﻿namespace FCP.Core;
 
 public class IncidentWorker_CaravanArrivalTaxCollector : IncidentWorker_TraderCaravanArrival
 {
     protected override PawnGroupKindDef PawnGroupKindDef => FCPDefOf.FCP_PawnGroupKind_TaxCollector;
-    private FactionTaxCollectorsExtension Extension => def.GetModExtension<FactionTaxCollectorsExtension>();
+    private ModExtension_FactionTaxCollectors Extension => def.GetModExtension<ModExtension_FactionTaxCollectors>();
 
     protected override bool TryResolveParmsGeneral(IncidentParms parms)
     {
