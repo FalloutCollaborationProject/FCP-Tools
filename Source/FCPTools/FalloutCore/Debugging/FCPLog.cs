@@ -1,25 +1,23 @@
-﻿using UnityEngine;
+﻿namespace FCP.Core;
 
-namespace FCP.Core;
-
-public class FCPLog
+public static class FCPLog
 {
-    private static readonly Color ErrorMsgCol = new (0.4f, 0.54902f, 1.0f);
-    private static readonly Color WarningMsgCol = new (0.70196f, 0.4f, 1.0f);
-    private static readonly Color MessageMsgCol = new (0.4f, 1.0f, 0.54902f);
-        
+    private const string ErrorPrefix = "<color=#7F66FF>[FCP Core] </color>";
+    private const string WarnPrefix = "<color=#B266FF>[FCP Core] </color>";
+    private const string MsgPrefix = "<color=##66ff7f>[FCP Core] </color>";
+    
     public static void Error(string msg)
     {
-        Log.Error("[FCP Core] ".Colorize(ErrorMsgCol) + msg);
+        Log.Error(ErrorPrefix + msg);
     }
 
     public static void Warning(string msg)
     {
-        Log.Warning("[FCP Core] ".Colorize(WarningMsgCol) + msg);
+        Log.Warning(WarnPrefix + msg);
     }
 
     public static void Message(string msg)
     {
-        Log.Message("[FCP Core] ".Colorize(MessageMsgCol) + msg);
+        Log.Message(MsgPrefix + msg);
     }
 }
