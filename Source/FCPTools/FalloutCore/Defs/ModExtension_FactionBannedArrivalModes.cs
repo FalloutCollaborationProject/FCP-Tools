@@ -1,9 +1,8 @@
 ﻿// ReSharper disable UnassignedField.Global
-namespace FCP.Core
+namespace FCP.Core;
+
+[UsedImplicitly]
+public class ModExtension_FactionBannedArrivalModes : DefModExtension
 {
-    [UsedImplicitly]
-    public class ModExtension_FactionBannedArrivalModes : DefModExtension
-    {
-        public List<PawnsArrivalModeDef> arrivalModes;
-    }
+    public List<PawnsArrivalModeDef> arrivalModes;
 }

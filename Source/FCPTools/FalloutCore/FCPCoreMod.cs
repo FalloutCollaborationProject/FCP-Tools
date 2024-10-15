@@ -1,10 +1,9 @@
-﻿namespace FCP.Core
+﻿namespace FCP.Core;
+
+public class FCPCoreMod : Mod
 {
-    public class FCPCoreMod : Mod
+    public FCPCoreMod(ModContentPack content) : base(content)
     {
-        public FCPCoreMod(ModContentPack content) : base(content)
-        {
-            FCPLog.Message($"Welcome ho...");
-        }
+        FCPLog.Message($"Welcome ho...");
     }
 }

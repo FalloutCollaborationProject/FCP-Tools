@@ -1,8 +1,7 @@
-﻿namespace FCP.Core
+﻿namespace FCP.Core;
+
+public class AttackDamageFactor
 {
-    public class AttackDamageFactor
-    {
-        public float damageMultiplier;
-        public float targetBodySize;
-    }
+    public float damageMultiplier;
+    public float targetBodySize;
 }

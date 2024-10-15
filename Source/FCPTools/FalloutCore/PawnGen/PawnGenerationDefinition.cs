@@ -1,16 +1,15 @@
-﻿namespace FCP.Core
+﻿namespace FCP.Core;
+
+public abstract class PawnGenerationDefinition
 {
-    public abstract class PawnGenerationDefinition
+    public abstract bool AppliesPreGeneration { get; }
+    public abstract bool AppliesPostGeneration { get; }
+
+    public virtual void ApplyToPawn(Pawn pawn)
     {
-        public abstract bool AppliesPreGeneration { get; }
-        public abstract bool AppliesPostGeneration { get; }
+    }
 
-        public virtual void ApplyToPawn(Pawn pawn)
-        {
-        }
-
-        public virtual void ApplyToRequest(ref PawnGenerationRequest request)
-        {
-        }
+    public virtual void ApplyToRequest(ref PawnGenerationRequest request)
+    {
     }
 }
