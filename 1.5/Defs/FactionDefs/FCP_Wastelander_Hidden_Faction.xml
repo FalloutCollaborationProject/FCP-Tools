@@ -70,7 +70,7 @@
 
             <!-- Traders -->
 
-            <li Class="FCP.Factions.GroupMakerWithTraderKind">
+            <li Class="FCP.Core.GroupMakerWithTraderKind">
                 <kindDef>Trader</kindDef>
                 <traders>
                     <FCP_Wastelander_Trader_Crow>1</FCP_Wastelander_Trader_Crow>

@@ -79,7 +79,7 @@ public static class Patches
 
         // Max Title for Permits
         harmony.Patch(original: AccessTools.Method(typeof(PermitsCardUtility), "DoLeftRect"),
-            new HarmonyMethod(typeof(Patches), nameof(PermitsCardUtility_LeftRect_Transpiler)));
+            transpiler: new HarmonyMethod(typeof(Patches), nameof(PermitsCardUtility_LeftRect_Transpiler)));
             
         harmony.Patch(original: AccessTools.Method(typeof(RoyalTitlePermitDef), "AvailableForPawn"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(RoyalTitlePermitDef_AvailableForPawn_Postfix)));
@@ -89,10 +89,10 @@ public static class Patches
         
         harmony.Patch(original: AccessTools.Method(typeof(RoyalTitleAwardWorker_Instant), "DoAward"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(RoyalTitleAwardWorker_DoAward_Postfix)));
-            
+
         // Forced TraderKindDef for PawnGroupMaker
-        harmony.Patch(original: AccessTools.Method(typeof(PawnGroupKindWorker_Trader), "GeneratePawns"),
-            new HarmonyMethod(typeof(Patches), nameof(PawnGroupKindWorker_Trader_GeneratePawns_Prefix)));
+        harmony.Patch(original: AccessTools.Method(typeof(PawnGroupKindWorker_Trader), "GeneratePawns", parameters: [typeof(PawnGroupMakerParms), typeof(PawnGroupMaker), typeof(List<Pawn>), typeof(bool)]),
+            prefix: new HarmonyMethod(typeof(Patches), nameof(PawnGroupKindWorker_Trader_GeneratePawns_Prefix)));
             
         // Faction Permanent Hostility
         harmony.Patch(original: AccessTools.Method(typeof(GoodwillSituationWorker_PermanentEnemy), "ArePermanentEnemies"),
