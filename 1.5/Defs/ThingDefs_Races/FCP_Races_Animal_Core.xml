@@ -616,19 +616,11 @@
         <label>Radgull</label>
         <devNote>Radgull</devNote>
         <description>.</description>
-<<<<<<< Updated upstream
 		<modExtensions>
 			<li Class="FCP.Core.ModExtension_BiomeFeatureRequirements">
 				<requireCoast>True</requireCoast>
 			</li>
 		</modExtensions>
-=======
-        <modExtensions>
-            <li Class="FCP.Core.BiomeFeatureRequirements">
-                <requireCoast>True</requireCoast>
-            </li>
-        </modExtensions>
->>>>>>> Stashed changes
         <statBases>
             <MoveSpeed>4</MoveSpeed>
             <MarketValue>100</MarketValue>
