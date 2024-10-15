@@ -1,11 +1,10 @@
-﻿using HarmonyLib;
-
-namespace FCP.Core;
-
-public class FCPCoreMod : Mod
+﻿namespace FCP.Core
 {
-    public FCPCoreMod(ModContentPack content) : base(content)
+    public class FCPCoreMod : Mod
     {
-        FCPLog.Message($"Welcome ho...");
+        public FCPCoreMod(ModContentPack content) : base(content)
+        {
+            FCPLog.Message($"Welcome ho...");
+        }
     }
 }
