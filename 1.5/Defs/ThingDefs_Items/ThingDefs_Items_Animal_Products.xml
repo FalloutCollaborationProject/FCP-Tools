@@ -14,7 +14,7 @@
         <label>Rad Raven Egg (unfert.)</label>
         <description>An unfertilized Rad Raven egg. It can be eaten raw, but it's much, much better cooked.</description>
         <graphicData>
-            <color>(198,162,42)</color>
+            <color>(42,162,198)</color>
         </graphicData>
         <statBases>
             <MarketValue>9.0</MarketValue>
@@ -31,7 +31,7 @@
         <description>A fertilized Rad Raven egg. If all goes well, it should hatch into a chick. It can be eaten raw, but it's much better cooked.</description>
         <possessionCount>1</possessionCount>
         <graphicData>
-            <color>(198,162,42)</color>
+            <color>(42,162,198)</color>
         </graphicData>
         <statBases>
             <MarketValue>11.0</MarketValue>
@@ -55,7 +55,7 @@
         <label>Radgull Egg (unfert.)</label>
         <description>An unfertilized Radgull egg. It can be eaten raw, but it's much, much better cooked.</description>
         <graphicData>
-            <color>(198,162,42)</color>
+            <color>(182,174,114)</color>
         </graphicData>
         <statBases>
             <MarketValue>4.0</MarketValue>
@@ -72,7 +72,7 @@
         <description>A fertilized Radgull egg. If all goes well, it should hatch into a chick. It can be eaten raw, but it's much better cooked.</description>
         <possessionCount>1</possessionCount>
         <graphicData>
-            <color>(198,162,42)</color>
+            <color>(182,174,114)</color>
         </graphicData>
         <statBases>
             <MarketValue>4.0</MarketValue>
@@ -83,6 +83,43 @@
             <li Class="CompProperties_Hatcher">
                 <hatcherDaystoHatch>2</hatcherDaystoHatch>
                 <hatcherPawn>FCP_Animal_Radgull</hatcherPawn>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <!--___ Rad Chicken ___-->
+
+    <!-- Unfertilized -->
+
+    <ThingDef ParentName="EggUnfertBase">
+        <defName>FCP_Egg_Rad_Chicken_Unfertilized</defName>
+        <label>Rad Chicken egg (unfert.)</label>
+        <description>An unfertilized Rad Chicken egg. It can be eaten raw, but it's much, much better cooked.</description>
+        <graphicData>
+            <color>(228,185,135)</color>
+        </graphicData>
+        <statBases>
+            <MarketValue>7.0</MarketValue>
+        </statBases>
+    </ThingDef>
+
+    <!-- Fertilized -->
+
+    <ThingDef ParentName="EggFertBase">
+        <defName>FCP_Egg_Rad_Chicken_Fertilized</defName>
+        <label>Rad Chicken egg (fert.)</label>
+        <description>A fertilized Rad Chicken egg. If all goes well, it should hatch into a chick. It can be eaten raw, but it's much better cooked.</description>
+        <possessionCount>1</possessionCount>
+        <graphicData>
+            <color>(245,245,245)</color>
+        </graphicData>
+        <statBases>
+            <MarketValue>7.0</MarketValue>
+        </statBases>
+        <comps>
+            <li Class="CompProperties_Hatcher">
+                <hatcherDaystoHatch>3.5</hatcherDaystoHatch>
+                <hatcherPawn>FCP_Animal_Rad_Chicken</hatcherPawn>
             </li>
         </comps>
     </ThingDef>

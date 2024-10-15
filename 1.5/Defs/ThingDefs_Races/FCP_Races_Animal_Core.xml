@@ -421,6 +421,7 @@
             <MoveSpeed>4</MoveSpeed>
             <MarketValue>100</MarketValue>
             <ComfyTemperatureMin>-5</ComfyTemperatureMin>
+            <ToxicEnvironmentResistance>0.9</ToxicEnvironmentResistance>
         </statBases>
         <race>
             <body>Bird</body>
