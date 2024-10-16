@@ -124,4 +124,28 @@
         </comps>
     </ThingDef>
 
+    <!--___ Brahmin ___-->
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>FCP_Item_Brahmin_Cow_Patty</defName>
+        <label>Brahmin Cow Patty</label>
+        <description>A pile of brahmin dung, while it smells of rotten plants and an old world sewer it may have its uses.</description>
+        <graphicData>
+            <texPath>Things/Items/AnimalProducts/FCP_Brahmin_Poop</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <useHitPoints>true</useHitPoints>
+        <statBases>
+            <MarketValue>55</MarketValue>
+            <MaxHitPoints>30</MaxHitPoints>
+            <Mass>1.</Mass>
+            <Flammability>0.6</Flammability>
+        </statBases>
+        <thingCategories>
+            <li>AnimalProductRaw</li>
+        </thingCategories>
+        <drawGUIOverlay>true</drawGUIOverlay>
+        <tradeability>Sellable</tradeability>
+    </ThingDef>
+
 </Defs>

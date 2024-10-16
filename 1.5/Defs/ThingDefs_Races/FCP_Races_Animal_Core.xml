@@ -27,7 +27,7 @@
                 <milkAmount>30</milkAmount>
             </li>
             <li Class="CompProperties_Spawner">
-                <thingToSpawn>FCP_Brahmin_Cow_Patty</thingToSpawn>
+                <thingToSpawn>FCP_Item_Brahmin_Cow_Patty</thingToSpawn>
                 <spawnCount>1</spawnCount>
                 <spawnIntervalRange>50000~60000</spawnIntervalRange>
             </li>
@@ -630,7 +630,6 @@
         </statBases>
         <race>
             <body>Bird</body>
-            <!-- <predator>true</predator> -->
             <herdAnimal>true</herdAnimal>
             <baseBodySize>0.4</baseBodySize>
             <maxPreyBodySize>0.3</maxPreyBodySize>
