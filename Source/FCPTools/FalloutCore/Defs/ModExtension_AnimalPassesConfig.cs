@@ -8,9 +8,6 @@ namespace FCP.Core;
 [UsedImplicitly, SuppressMessage("ReSharper", "UnassignedField.Global")]
 public class ModExtension_AnimalPassesConfig : DefModExtension
 {
-    public string letterLabel;
-    public string letterText;
-    
     public ThingDef animalThing;
     public PawnKindDef animalPawnKind;
 
