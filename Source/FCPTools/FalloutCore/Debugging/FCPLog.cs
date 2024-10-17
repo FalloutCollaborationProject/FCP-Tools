@@ -2,9 +2,9 @@
 
 public static class FCPLog
 {
-    private const string ErrorPrefix = "<color=#7F66FF>[FCP Core] </color>";
-    private const string WarnPrefix = "<color=#B266FF>[FCP Core] </color>";
-    private const string MsgPrefix = "<color=##66ff7f>[FCP Core] </color>";
+    private const string ErrorPrefix = "<color=#7F66FFFF>[FCP Core] </color>";
+    private const string WarnPrefix = "<color=#B266FFFF>[FCP Core] </color>";
+    private const string MsgPrefix = "<color=#66ff7fFF>[FCP Core] </color>";
     
     public static void Error(string msg)
     {
