@@ -23,4 +23,12 @@
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
 
+    <JobDef>
+        <defName>FCP_AICastAbilityAtTarget</defName>
+        <driverClass>FCP.Core.JobDriver_AICastAbilityAtTarget</driverClass>
+        <reportString>Casting ability at target.</reportString>
+        <casualInterruptible>false</casualInterruptible>
+        <collideWithPawns>true</collideWithPawns>
+    </JobDef>
+
 </Defs>

@@ -17,14 +17,14 @@ public static class FCPBenchmark
     /// <returns>Total Milliseconds over all loops</returns>
     public static double Profile(int iterations, Action func, out double average) {
         //Run at highest priority to minimize fluctuations caused by other processes/threads
-        var originalPrioClass = Process.GetCurrentProcess().PriorityClass;
-        var originalPrio = Thread.CurrentThread.Priority;
+        ProcessPriorityClass originalPrioClass = Process.GetCurrentProcess().PriorityClass;
+        ThreadPriority originalPrio = Thread.CurrentThread.Priority;
         Process.GetCurrentProcess().PriorityClass = ProcessPriorityClass.High;
         Thread.CurrentThread.Priority = ThreadPriority.Highest;
 
         // warm up 
         func();
-        var watch = new Stopwatch(); 
+        Stopwatch watch = new (); 
 
         // clean up
         GC.Collect();

@@ -259,6 +259,7 @@
         </comps>
         <race>
             <body>Bird</body>
+            <overrideShouldHaveAbilityTracker>true</overrideShouldHaveAbilityTracker>
             <baseHungerRate>0.14</baseHungerRate>
             <baseBodySize>0.3</baseBodySize>
             <baseHealthScale>0.35</baseHealthScale>
@@ -347,6 +348,9 @@
         <race>FCP_Animal_Rad_Chicken</race>
         <combatPower>30</combatPower>
         <ecoSystemWeight>0.30</ecoSystemWeight>
+        <abilities>
+            <li>FCP_RadChickenBurner</li>
+        </abilities>
         <lifeStages>
             <li>
                 <label>Rad Chick</label>

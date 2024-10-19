@@ -11,6 +11,7 @@ public class FCPDefOf
     
     public static PawnGroupKindDef FCP_PawnGroupKind_TaxCollector;
     public static LetterDef FCP_Letter_AcceptStoryteller;
+    public static JobDef FCP_AICastAbilityAtTarget;
     
     static FCPDefOf()
     {

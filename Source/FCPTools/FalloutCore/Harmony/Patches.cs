@@ -116,7 +116,7 @@ public static class Patches
     public static void WildAnimalSpawnerCommonalityOfAnimalNow_Postfix(PawnKindDef def, ref Map ___map,
         ref float __result)
     {
-        var extension = def.race.GetModExtension<ModExtension_BiomeFeatureRequirements>();
+        ModExtension_BiomeFeatureRequirements extension = def.race.GetModExtension<ModExtension_BiomeFeatureRequirements>();
 
         if (extension is null) return;
         bool hasNoCaves = extension.requireCaves && !Find.World.HasCaves(___map.Tile);
@@ -285,7 +285,7 @@ public static class Patches
     /// </summary>
     public static void IdeoGeneratorMakeFixedIdeo_Postfix(IdeoGenerationParms parms, Ideo __result)
     {
-        var extension = parms.forFaction?.GetModExtension<ModExtension_FixedIdeo>();
+        ModExtension_FixedIdeo extension = parms.forFaction?.GetModExtension<ModExtension_FixedIdeo>();
         extension?.CopyToIdeo(__result);
     }
 
@@ -294,7 +294,7 @@ public static class Patches
     /// </summary>
     public static bool IdeoFoundationRandomizeIcon_Prefix(IdeoFoundation __instance)
     {
-        var ideo = __instance.ideo;
+        Ideo ideo = __instance.ideo;
         return ideo.iconDef == null;
     }
 
@@ -303,14 +303,14 @@ public static class Patches
     /// </summary>
     public static void IdeoFoundationInitPrecepts_Postfix(IdeoGenerationParms parms, IdeoFoundation __instance)
     {
-        var extension = parms.forFaction?.GetModExtension<ModExtension_FixedIdeo>();
+        ModExtension_FixedIdeo extension = parms.forFaction?.GetModExtension<ModExtension_FixedIdeo>();
         if (extension == null) return;
 
-        foreach (var precept in __instance.ideo.PreceptsListForReading)
+        foreach (Precept precept in __instance.ideo.PreceptsListForReading)
         {
             if (precept is not Precept_Role preceptRole) continue;
 
-            var overrides = extension.roleOverrides
+            ModExtension_FixedIdeo.RoleOverride overrides = extension.roleOverrides
                 .FirstOrDefault(x => x.preceptDef == preceptRole.def);
 
             if (overrides == null) continue;
@@ -343,7 +343,7 @@ public static class Patches
         if (__result == false)
             return;
 
-        var extension = parms.faction?.def.GetModExtension<ModExtension_FactionBannedArrivalModes>();
+        ModExtension_FactionBannedArrivalModes extension = parms.faction?.def.GetModExtension<ModExtension_FactionBannedArrivalModes>();
         if (extension != null && extension.arrivalModes.NotNullAndContains(___def))
         {
             __result = false;
@@ -362,9 +362,9 @@ public static class Patches
         IEnumerable<CodeInstruction> instructions,
         ILGenerator generator)
     {
-        var factionGetHiddenMethod = typeof(Faction).PropertyGetter(nameof(Faction.Hidden));
+        MethodInfo factionGetHiddenMethod = typeof(Faction).PropertyGetter(nameof(Faction.Hidden));
 
-        var matcher = new CodeMatcher(instructions, generator)
+        CodeMatcher matcher = new CodeMatcher(instructions, generator)
             .End()
             .MatchStartBackwards( // Find the last return when the branch fails.
                 new CodeMatch(OpCodes.Ldc_I4_0),
@@ -378,7 +378,7 @@ public static class Patches
             .ThrowIfInvalid(
                 "FCPTools Transpiler was unable to find the use of Faction.get_Hidden in the CaravanMeeting Nested Method");
 
-        matcher.CreateLabelAt(matcher.Pos + 1, out var nextConditional)
+        matcher.CreateLabelAt(matcher.Pos + 1, out Label nextConditional)
             .InsertAndAdvance(
                 new CodeInstruction(OpCodes.Brfalse, nextConditional),
                 CodeInstruction.LoadArgument(1), // Load the Faction field
@@ -397,18 +397,18 @@ public static class Patches
     private static IEnumerable<CodeInstruction> IncidentWorker_NeutralGroup_FactionCanBeGroupSource_Transpiler(
         IEnumerable<CodeInstruction> instructions, ILGenerator generator)
     {
-        var factionGetHiddenMethod = typeof(Faction).PropertyGetter(nameof(Faction.Hidden));
+        MethodInfo factionGetHiddenMethod = typeof(Faction).PropertyGetter(nameof(Faction.Hidden));
 
-        var matcher = new CodeMatcher(instructions, generator)
+        CodeMatcher matcher = new CodeMatcher(instructions, generator)
             .MatchEndForward(
                 CodeMatch.Calls(factionGetHiddenMethod),
                 CodeMatch.Branches()
             )
             .ThrowIfInvalid("FCPTools : FactionCanBeGroupSource_Transpiler couldn't find a valid insertion point");
 
-        var failurePoint = matcher.Operand;
+        object failurePoint = matcher.Operand;
 
-        matcher.CreateLabelWithOffsets(1, out var nextCheckPoint)
+        matcher.CreateLabelWithOffsets(1, out Label nextCheckPoint)
             .SetAndAdvance(OpCodes.Brfalse, nextCheckPoint)
             .Insert(
                 CodeInstruction.LoadArgument(1), // Load Faction
@@ -432,10 +432,10 @@ public static class Patches
     {
         // Fields:
         // - PermitsCardUtility
-        var permitsCardUtilitySelectedPermitField = AccessTools.Field(typeof(PermitsCardUtility), "selectedPermit");
+        FieldInfo permitsCardUtilitySelectedPermitField = AccessTools.Field(typeof(PermitsCardUtility), "selectedPermit");
         // - RoyalTitlePermitDef
-        var permitDefMinTitleField = AccessTools.Field(typeof(RoyalTitlePermitDef), "minTitle");
-        var permitDefPrerequisiteField = AccessTools.Field(typeof(RoyalTitlePermitDef), "prerequisite");
+        FieldInfo permitDefMinTitleField = AccessTools.Field(typeof(RoyalTitlePermitDef), "minTitle");
+        FieldInfo permitDefPrerequisiteField = AccessTools.Field(typeof(RoyalTitlePermitDef), "prerequisite");
 
         // Transpiler Procedure:
         // 1 - Find the minTitle check and the branching point after
@@ -445,7 +445,7 @@ public static class Patches
         // 5 - Run the code and store the result
 
         // 1 - 3
-        var matcher = new CodeMatcher(instructions, generator)
+        CodeMatcher matcher = new CodeMatcher(instructions, generator)
             // 1
             .MatchEndForward(
                 CodeMatch.LoadsField(permitDefMinTitleField),
@@ -488,11 +488,11 @@ public static class Patches
     // Retrieves the Extension and if necessary, append the max title text.
     private static string PermitsCardUtility_Util_AppendMaxTitleStatus(string text, Pawn pawn)
     {
-        var permitExtension = PermitsCardUtility.selectedPermit.GetModExtension<MaxTitlePermitExtension>();
+        MaxTitlePermitExtension permitExtension = PermitsCardUtility.selectedPermit.GetModExtension<MaxTitlePermitExtension>();
         if (permitExtension?.maxTitle == null) return text;
             
-        var meetsMaxTitleRequirements = pawn.royalty.GetCurrentTitle(PermitsCardUtility.selectedFaction).seniority
-                                        <= permitExtension.maxTitle.seniority;
+        bool meetsMaxTitleRequirements = pawn.royalty.GetCurrentTitle(PermitsCardUtility.selectedFaction).seniority
+                                         <= permitExtension.maxTitle.seniority;
 
         return text + "\n" + "Maximum Title: " + permitExtension.maxTitle.GetLabelForBothGenders()
             .Colorize(meetsMaxTitleRequirements ? Color.white : ColorLibrary.RedReadable);
@@ -508,11 +508,11 @@ public static class Patches
         if (__result == false)
             return;
         
-        var permitExtension = __instance.GetModExtension<MaxTitlePermitExtension>();
+        MaxTitlePermitExtension permitExtension = __instance.GetModExtension<MaxTitlePermitExtension>();
         if (permitExtension == null) 
             return;
         
-        var currentTitle = pawn.royalty.GetCurrentTitle(faction);
+        RoyalTitleDef currentTitle = pawn.royalty.GetCurrentTitle(faction);
 
         if (currentTitle.seniority < __instance.minTitle.seniority ||
             currentTitle.seniority > permitExtension.maxTitle.seniority)
@@ -526,9 +526,9 @@ public static class Patches
     /// </summary>
     private static void RoyalTitleAwardWorker_DoAward_Postfix(Pawn pawn, Faction faction, RoyalTitleDef currentTitle, RoyalTitleDef newTitle)
     {
-        foreach (var permit in pawn.royalty.AllFactionPermits.ToList())
+        foreach (FactionPermit permit in pawn.royalty.AllFactionPermits.ToList())
         {
-            var permitExtension = permit.Permit.GetModExtension<MaxTitlePermitExtension>();
+            MaxTitlePermitExtension permitExtension = permit.Permit.GetModExtension<MaxTitlePermitExtension>();
 
             if (newTitle.seniority <= permitExtension?.maxTitle.seniority) continue;
             
@@ -566,8 +566,8 @@ public static class Patches
         if (__result == true)
             return;
         
-        var aExtension = a.def.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
-        var bExtension = a.def.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
+        ModExtension_FactionPermanentlyHostileTo aExtension = a.def.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
+        ModExtension_FactionPermanentlyHostileTo bExtension = a.def.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
 
         // Check if either are permanently hostile with each other, but if both are null just use the existing result (false)
         __result = aExtension?.FactionIsHostileTo(b.def) ??
@@ -583,7 +583,7 @@ public static class Patches
         if (__result == false)
             return;
 
-        var extension = __instance.def.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
+        ModExtension_FactionPermanentlyHostileTo extension = __instance.def.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
         if (extension == null)
             return;
 
@@ -598,7 +598,7 @@ public static class Patches
         if (__result == true)
             return;
 
-        var extension = __instance.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
+        ModExtension_FactionPermanentlyHostileTo extension = __instance.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
         __result = extension?.FactionIsHostileTo(otherFactionDef) ?? false;
     }
         
@@ -608,13 +608,12 @@ public static class Patches
     /// </summary>
     public static bool Faction_TryMakeInitialRelationsWith_GetInitialGoodwill_Prefix(Faction a, Faction b, ref int __result)
     {
-        var extension = a.def.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
+        ModExtension_FactionPermanentlyHostileTo extension = a.def.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
         if (extension == null || !extension.hostileFactionDefs.Contains(b.def)) return true;
             
         // They're hostile, so set to -100 and skip the original.
         __result = -100;
         return false;
-
     }
 
     #endregion
