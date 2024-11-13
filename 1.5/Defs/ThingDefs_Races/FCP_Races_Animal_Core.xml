@@ -580,7 +580,7 @@
 
     <!-- Vicious Dog -->
 
-    <PawnKindDef ParentName="AnimalKindBase">
+    <PawnKindDef Name="FCP_Animal_Vicious_Dog" ParentName="AnimalKindBase">
         <defName>FCP_Animal_Vicious_Dog</defName>
         <label>Vicious Dog</label>
         <race>FCP_Animal_Vicious_Dog</race>
@@ -637,106 +637,18 @@
 
     <!-- Guard Dog -->
 
-    <PawnKindDef ParentName="AnimalKindBase">
+    <PawnKindDef ParentName="FCP_Animal_Vicious_Dog">
         <defName>FCP_Animal_Vicious_Guard_Dog</defName>
         <label>Guard Dog</label>
         <race>FCP_Animal_Vicious_Guard_Dog</race>
-        <combatPower>45</combatPower>
-        <ecoSystemWeight>1</ecoSystemWeight>
-        <lifeStages>
-            <li>
-                <label>puppy</label>
-                <labelPlural>puppies</labelPlural>
-                <bodyGraphicData>
-                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Vicious_Dog</texPath>
-                    <drawSize>0.95</drawSize>
-                </bodyGraphicData>
-                <dessicatedBodyGraphicData>
-                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Dessicated_Vicious_Dog</texPath>
-                    <drawSize>0.95</drawSize>
-                </dessicatedBodyGraphicData>
-            </li>
-            <li>
-                <bodyGraphicData>
-                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Vicious_Dog</texPath>
-                    <drawSize>1.35</drawSize>
-                    <shadowData>
-                        <volume>(0.25, 0.3, 0.25)</volume>
-                        <offset>(0,0,-0.15)</offset>
-                    </shadowData>
-                </bodyGraphicData>
-                <dessicatedBodyGraphicData>
-                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Dessicated_Vicious_Dog</texPath>
-                    <drawSize>1.35</drawSize>
-                </dessicatedBodyGraphicData>
-            </li>
-            <li>
-                <bodyGraphicData>
-                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Vicious_Dog</texPath>
-                    <drawSize>1.6</drawSize>
-                    <shadowData>
-                        <volume>(0.3, 0.4, 0.3)</volume>
-                        <offset>(0,0,-0.15)</offset>
-                    </shadowData>
-                </bodyGraphicData>
-                <dessicatedBodyGraphicData>
-                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Dessicated_Vicious_Dog</texPath>
-                    <drawSize>1.6</drawSize>
-                </dessicatedBodyGraphicData>
-            </li>
-        </lifeStages>
     </PawnKindDef>
 
     <!-- NCR Guard Dog -->
 
-    <PawnKindDef ParentName="AnimalKindBase">
+    <PawnKindDef ParentName="FCP_Animal_Vicious_Dog">
         <defName>FCP_Animal_NCR_Guard_Dog</defName>
         <label>NCR Guard Dog</label>
         <race>FCP_Animal_NCR_Guard_Dog</race>
-        <combatPower>45</combatPower>
-        <ecoSystemWeight>1</ecoSystemWeight>
-        <lifeStages>
-            <li>
-                <label>puppy</label>
-                <labelPlural>puppies</labelPlural>
-                <bodyGraphicData>
-                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Dessicated_Vicious_Dog</texPath>
-                    <drawSize>0.95</drawSize>
-                </bodyGraphicData>
-                <dessicatedBodyGraphicData>
-                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Dessicated_Vicious_Dog</texPath>
-                    <drawSize>0.95</drawSize>
-                </dessicatedBodyGraphicData>
-            </li>
-            <li>
-                <bodyGraphicData>
-                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Vicious_Dog</texPath>
-                    <drawSize>1.35</drawSize>
-                    <shadowData>
-                        <volume>(0.25, 0.3, 0.25)</volume>
-                        <offset>(0,0,-0.15)</offset>
-                    </shadowData>
-                </bodyGraphicData>
-                <dessicatedBodyGraphicData>
-                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Dessicated_Vicious_Dog</texPath>
-                    <drawSize>1.35</drawSize>
-                </dessicatedBodyGraphicData>
-            </li>
-            <li>
-                <bodyGraphicData>
-                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Vicious_Dog</texPath>
-                    <drawSize>1.6</drawSize>
-                    <shadowData>
-                        <volume>(0.3, 0.4, 0.3)</volume>
-                        <offset>(0,0,-0.15)</offset>
-                    </shadowData>
-                </bodyGraphicData>
-                <dessicatedBodyGraphicData>
-                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Dessicated_Vicious_Dog</texPath>
-                    <drawSize>1.6</drawSize>
-                </dessicatedBodyGraphicData>
-            </li>
-        </lifeStages>
     </PawnKindDef>
 
     <!--___ German Shepherd Dog ___-->
