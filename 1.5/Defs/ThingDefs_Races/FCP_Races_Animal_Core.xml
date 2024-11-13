@@ -348,9 +348,6 @@
         <race>FCP_Animal_Rad_Chicken</race>
         <combatPower>30</combatPower>
         <ecoSystemWeight>0.30</ecoSystemWeight>
-        <abilities>
-            <li>FCP_RadChickenBurner</li>
-        </abilities>
         <lifeStages>
             <li>
                 <label>Rad Chick</label>
@@ -406,6 +403,535 @@
                     <texPath>Things/Pawn/Animal/Chicken/Dessicated_Chicken</texPath>
                     <drawSize>0.80</drawSize>
                 </femaleDessicatedBodyGraphicData>
+            </li>
+        </lifeStages>
+    </PawnKindDef>
+
+    <!--_____ Dogs _____-->
+
+    <!--___ Vicious Dog ___-->
+
+    <!--__ ThingDefs __-->
+
+    <!-- Vicious Dog Base -->
+
+    <ThingDef Abstract="True" ParentName="AnimalThingBase" Name="FCP_Animal_Vicious_Dog_Base">
+        <statBases>
+            <MoveSpeed>5.0</MoveSpeed>
+            <MarketValue>350</MarketValue>
+            <ComfyTemperatureMin>-30</ComfyTemperatureMin>
+            <ToxicEnvironmentResistance>0.9</ToxicEnvironmentResistance>
+        </statBases>
+        <tools>
+            <li>
+                <label>left claw</label>
+                <labelNoLocation>claw</labelNoLocation>
+                <capacities>
+                    <li>Scratch</li>
+                </capacities>
+                <power>9.0</power>
+                <cooldownTime>2</cooldownTime>
+                <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+            </li>
+            <li>
+                <label>right claw</label>
+                <labelNoLocation>claw</labelNoLocation>
+                <capacities>
+                    <li>Scratch</li>
+                </capacities>
+                <power>9.0</power>
+                <cooldownTime>2</cooldownTime>
+                <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+            </li>
+            <li>
+                <capacities>
+                    <li>Bite</li>
+                </capacities>
+                <power>15.0</power>
+                <cooldownTime>2.6</cooldownTime>
+                <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+                <chanceFactor>0.7</chanceFactor>
+            </li>
+            <li>
+                <label>head</label>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>6</power>
+                <cooldownTime>2</cooldownTime>
+                <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+                <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+                <chanceFactor>0.2</chanceFactor>
+            </li>
+        </tools>
+        <race>
+            <animalType>Canine</animalType>
+            <body>QuadrupedAnimalWithPawsAndTail</body>
+            <petness>1</petness>
+            <baseBodySize>0.75</baseBodySize>
+            <baseHungerRate>0.4</baseHungerRate>
+            <baseHealthScale>1.0</baseHealthScale>
+            <foodType>OmnivoreAnimal, OvivoreAnimal</foodType>
+            <leatherDef>Leather_Dog</leatherDef>
+            <gestationPeriodDays>10</gestationPeriodDays>
+            <nameOnTameChance>1</nameOnTameChance>
+            <trainability>Advanced</trainability>
+            <wildness>0.8</wildness>
+            <nuzzleMtbHours>12</nuzzleMtbHours>
+            <soundEating>PredatorSmall_Eat</soundEating>
+            <wildBiomes>
+                <TemperateForest>0.4</TemperateForest>
+                <AridShrubland>0.8</AridShrubland>
+                <Desert>0.3</Desert>
+                <ExtremeDesert>0.1</ExtremeDesert>
+                <TemperateSwamp>0.3</TemperateSwamp>
+            </wildBiomes>
+            <litterSizeCurve>
+                <points>
+                    <li>(0.5, 0)</li>
+                    <li>(1, 1)</li>
+                    <li>(2, 1.7)</li>
+                    <li>(3, 0.7)</li>
+                    <li>(3.5, 0)</li>
+                </points>
+            </litterSizeCurve>
+            <lifeExpectancy>12</lifeExpectancy>
+            <lifeStageAges>
+                <li>
+                    <def>AnimalBaby</def>
+                    <minAge>0</minAge>
+                </li>
+                <li>
+                    <def>AnimalJuvenile</def>
+                    <minAge>0.25</minAge>
+                </li>
+                <li>
+                    <def>AnimalAdult</def>
+                    <minAge>0.5</minAge>
+                    <soundWounded>FCP_Sound_Animal_Vicious_Dog_Injured</soundWounded>
+                    <soundDeath>FCP_Sound_Animal_Vicious_Dog_Death</soundDeath>
+                    <soundCall>FCP_Sound_Animal_Vicious_Dog_Bark</soundCall>
+                    <soundAngry>FCP_Sound_Animal_Vicious_Dog_Growl</soundAngry>
+                </li>
+            </lifeStageAges>
+            <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+            <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+            <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+            <headPosPerRotation>
+                <li>(0.0, 0, 0.24)</li>
+                <li>(0.28, 0, 0.14)</li>
+                <li>(0.0, 0, -0.03)</li>
+                <li>(-0.28, 0, 0.14)</li>
+            </headPosPerRotation>
+        </race>
+    </ThingDef>
+
+    <!-- Vicious Dog -->
+
+    <ThingDef ParentName="FCP_Animal_Vicious_Dog_Base">
+        <defName>FCP_Animal_Vicious_Dog</defName>
+        <label>Vicious Dog</label>
+        <description>Vicious dogs are a nearly hairless and apparently, partially ghoulified species of wasteland canine. Ruthless survivors of the wastes, these starving, irradiated mutts will attack anything that moves.</description>
+        <race>
+            <wildBiomes>
+                <TemperateForest>0.4</TemperateForest>
+                <AridShrubland>0.8</AridShrubland>
+                <Desert>0.3</Desert>
+                <ExtremeDesert>0.1</ExtremeDesert>
+                <TemperateSwamp>0.3</TemperateSwamp>
+            </wildBiomes>
+        </race>
+        <tradeTags>
+            <li>FCP_Animal_Dog</li>
+        </tradeTags>
+    </ThingDef>
+
+    <!-- Guard Dog -->
+
+    <ThingDef ParentName="FCP_Animal_Vicious_Dog_Base">
+        <defName>FCP_Animal_Vicious_Guard_Dog</defName>
+        <label>Vicious Dog</label>
+        <description>Vicious dogs are a nearly hairless and apparently, partially ghoulified species of wasteland canine. Ruthless survivors of the wastes, these starving, irradiated mutts will attack anything that moves. Some dogs have been domesticated, even charged with guarding its owner and all thier property this animal will do so to the best of its ability.</description>
+        <race>
+            <wildBiomes Inherit="False">
+            </wildBiomes>
+        </race>
+        <tradeTags>
+            <li>FCP_Animal_Guard_Dog</li>
+        </tradeTags>
+    </ThingDef>
+
+    <!-- NCR Guard Dog -->
+
+    <ThingDef ParentName="FCP_Animal_Vicious_Dog_Base">
+        <defName>FCP_Animal_NCR_Guard_Dog</defName>
+        <label>NCR Guard Dog</label>
+        <description>Some dogs have been domesticated, even charged with guarding its owner and all thier property this animal will do so to the best of its ability. While others have been specially bred to be a true battle buddy for the NCR. Tasked with defending troops from harm in the form of dangerous chems, explosives and enemy combatants themselves.</description>
+        <race>
+            <wildBiomes Inherit="False">
+            </wildBiomes>
+        </race>
+        <tradeTags>
+            <li>FCP_Animal_NCR_Guard_Dog</li>
+        </tradeTags>
+    </ThingDef>
+
+    <!--__ PawnKinds __-->
+
+    <!-- Vicious Dog -->
+
+    <PawnKindDef ParentName="AnimalKindBase">
+        <defName>FCP_Animal_Vicious_Dog</defName>
+        <label>Vicious Dog</label>
+        <race>FCP_Animal_Vicious_Dog</race>
+        <combatPower>45</combatPower>
+        <canArriveManhunter>true</canArriveManhunter>
+        <ecoSystemWeight>0.6</ecoSystemWeight>
+        <wildGroupSize>
+            <min>1</min>
+            <max>5</max>
+        </wildGroupSize>
+        <lifeStages>
+            <li>
+                <label>puppy</label>
+                <labelPlural>puppies</labelPlural>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Vicious_Dog</texPath>
+                    <drawSize>0.95</drawSize>
+                </bodyGraphicData>
+                <dessicatedBodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Dessicated_Vicious_Dog</texPath>
+                    <drawSize>0.95</drawSize>
+                </dessicatedBodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Vicious_Dog</texPath>
+                    <drawSize>1.35</drawSize>
+                    <shadowData>
+                        <volume>(0.25, 0.3, 0.25)</volume>
+                        <offset>(0,0,-0.15)</offset>
+                    </shadowData>
+                </bodyGraphicData>
+                <dessicatedBodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Dessicated_Vicious_Dog</texPath>
+                    <drawSize>1.35</drawSize>
+                </dessicatedBodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Vicious_Dog</texPath>
+                    <drawSize>1.6</drawSize>
+                    <shadowData>
+                        <volume>(0.3, 0.4, 0.3)</volume>
+                        <offset>(0,0,-0.15)</offset>
+                    </shadowData>
+                </bodyGraphicData>
+                <dessicatedBodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Dessicated_Vicious_Dog</texPath>
+                    <drawSize>1.6</drawSize>
+                </dessicatedBodyGraphicData>
+            </li>
+        </lifeStages>
+    </PawnKindDef>
+
+    <!-- Guard Dog -->
+
+    <PawnKindDef ParentName="AnimalKindBase">
+        <defName>FCP_Animal_Vicious_Guard_Dog</defName>
+        <label>Guard Dog</label>
+        <race>FCP_Animal_Vicious_Guard_Dog</race>
+        <combatPower>45</combatPower>
+        <ecoSystemWeight>1</ecoSystemWeight>
+        <lifeStages>
+            <li>
+                <label>puppy</label>
+                <labelPlural>puppies</labelPlural>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Vicious_Dog</texPath>
+                    <drawSize>0.95</drawSize>
+                </bodyGraphicData>
+                <dessicatedBodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Dessicated_Vicious_Dog</texPath>
+                    <drawSize>0.95</drawSize>
+                </dessicatedBodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Vicious_Dog</texPath>
+                    <drawSize>1.35</drawSize>
+                    <shadowData>
+                        <volume>(0.25, 0.3, 0.25)</volume>
+                        <offset>(0,0,-0.15)</offset>
+                    </shadowData>
+                </bodyGraphicData>
+                <dessicatedBodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Dessicated_Vicious_Dog</texPath>
+                    <drawSize>1.35</drawSize>
+                </dessicatedBodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Vicious_Dog</texPath>
+                    <drawSize>1.6</drawSize>
+                    <shadowData>
+                        <volume>(0.3, 0.4, 0.3)</volume>
+                        <offset>(0,0,-0.15)</offset>
+                    </shadowData>
+                </bodyGraphicData>
+                <dessicatedBodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Dessicated_Vicious_Dog</texPath>
+                    <drawSize>1.6</drawSize>
+                </dessicatedBodyGraphicData>
+            </li>
+        </lifeStages>
+    </PawnKindDef>
+
+    <!-- NCR Guard Dog -->
+
+    <PawnKindDef ParentName="AnimalKindBase">
+        <defName>FCP_Animal_NCR_Guard_Dog</defName>
+        <label>NCR Guard Dog</label>
+        <race>FCP_Animal_NCR_Guard_Dog</race>
+        <combatPower>45</combatPower>
+        <ecoSystemWeight>1</ecoSystemWeight>
+        <lifeStages>
+            <li>
+                <label>puppy</label>
+                <labelPlural>puppies</labelPlural>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Dessicated_Vicious_Dog</texPath>
+                    <drawSize>0.95</drawSize>
+                </bodyGraphicData>
+                <dessicatedBodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Dessicated_Vicious_Dog</texPath>
+                    <drawSize>0.95</drawSize>
+                </dessicatedBodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Vicious_Dog</texPath>
+                    <drawSize>1.35</drawSize>
+                    <shadowData>
+                        <volume>(0.25, 0.3, 0.25)</volume>
+                        <offset>(0,0,-0.15)</offset>
+                    </shadowData>
+                </bodyGraphicData>
+                <dessicatedBodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Dessicated_Vicious_Dog</texPath>
+                    <drawSize>1.35</drawSize>
+                </dessicatedBodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Vicious_Dog</texPath>
+                    <drawSize>1.6</drawSize>
+                    <shadowData>
+                        <volume>(0.3, 0.4, 0.3)</volume>
+                        <offset>(0,0,-0.15)</offset>
+                    </shadowData>
+                </bodyGraphicData>
+                <dessicatedBodyGraphicData>
+                    <texPath>Things/Pawn/Animal/Vicious_Dog/FCP_Dessicated_Vicious_Dog</texPath>
+                    <drawSize>1.6</drawSize>
+                </dessicatedBodyGraphicData>
+            </li>
+        </lifeStages>
+    </PawnKindDef>
+
+    <!--___ German Shepherd Dog ___-->
+
+    <!--__ ThingDefs __-->
+
+    <!-- German Shepherd Dog Base -->
+
+    <ThingDef Abstract="True" ParentName="AnimalThingBase" Name="FCP_Animal_German_Shepherd_Dog_Base">
+        <statBases>
+            <MoveSpeed>5.2</MoveSpeed>
+            <MarketValue>350</MarketValue>
+            <ComfyTemperatureMin>-35</ComfyTemperatureMin>
+            <ToxicEnvironmentResistance>0.75</ToxicEnvironmentResistance>
+        </statBases>
+        <tools>
+            <li>
+                <label>left claw</label>
+                <labelNoLocation>claw</labelNoLocation>
+                <capacities>
+                    <li>Scratch</li>
+                </capacities>
+                <power>9.0</power>
+                <cooldownTime>2</cooldownTime>
+                <linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+            </li>
+            <li>
+                <label>right claw</label>
+                <labelNoLocation>claw</labelNoLocation>
+                <capacities>
+                    <li>Scratch</li>
+                </capacities>
+                <power>9.0</power>
+                <cooldownTime>2</cooldownTime>
+                <linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+            </li>
+            <li>
+                <capacities>
+                    <li>Bite</li>
+                </capacities>
+                <power>17.0</power>
+                <cooldownTime>2.6</cooldownTime>
+                <linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+                <chanceFactor>0.7</chanceFactor>
+            </li>
+            <li>
+                <label>head</label>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>6</power>
+                <cooldownTime>2</cooldownTime>
+                <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+                <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+                <chanceFactor>0.2</chanceFactor>
+            </li>
+        </tools>
+        <race>
+            <animalType>Canine</animalType>
+            <body>QuadrupedAnimalWithPawsAndTail</body>
+            <petness>1</petness>
+            <baseBodySize>0.75</baseBodySize>
+            <baseHungerRate>0.4</baseHungerRate>
+            <baseHealthScale>1.0</baseHealthScale>
+            <foodType>OmnivoreAnimal, OvivoreAnimal</foodType>
+            <leatherDef>Leather_Dog</leatherDef>
+            <gestationPeriodDays>10</gestationPeriodDays>
+            <nameOnTameChance>1</nameOnTameChance>
+            <trainability>Advanced</trainability>
+            <wildness>0.8</wildness>
+            <nuzzleMtbHours>12</nuzzleMtbHours>
+            <soundEating>PredatorSmall_Eat</soundEating>
+            <wildBiomes>
+                <TemperateForest>0.9</TemperateForest>
+                <AridShrubland>0.2</AridShrubland>
+                <Desert>0.1</Desert>
+                <ExtremeDesert>0.1</ExtremeDesert>
+                <TemperateSwamp>0.5</TemperateSwamp>
+            </wildBiomes>
+            <litterSizeCurve>
+                <points>
+                    <li>(0.5, 0)</li>
+                    <li>(1, 1)</li>
+                    <li>(2, 1.7)</li>
+                    <li>(3, 0.7)</li>
+                    <li>(3.5, 0)</li>
+                </points>
+            </litterSizeCurve>
+            <lifeExpectancy>12</lifeExpectancy>
+            <lifeStageAges>
+                <li>
+                    <def>AnimalBaby</def>
+                    <minAge>0</minAge>
+                </li>
+                <li>
+                    <def>AnimalJuvenile</def>
+                    <minAge>0.25</minAge>
+                </li>
+                <li>
+                    <def>AnimalAdult</def>
+                    <minAge>0.5</minAge>
+                    <soundWounded>FCP_Sound_Animal_Vicious_Dog_Injured</soundWounded>
+                    <soundDeath>FCP_Sound_Animal_Vicious_Dog_Death</soundDeath>
+                    <soundCall>FCP_Sound_Animal_Vicious_Dog_Bark</soundCall>
+                    <soundAngry>FCP_Sound_Animal_Vicious_Dog_Growl</soundAngry>
+                </li>
+            </lifeStageAges>
+            <soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+            <soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+            <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+            <headPosPerRotation>
+                <li>(0.0, 0, 0.24)</li>
+                <li>(0.28, 0, 0.14)</li>
+                <li>(0.0, 0, -0.03)</li>
+                <li>(-0.28, 0, 0.14)</li>
+            </headPosPerRotation>
+        </race>
+    </ThingDef>
+
+    <!-- German Shepherd Dog -->
+
+    <ThingDef ParentName="FCP_Animal_German_Shepherd_Dog_Base">
+        <defName>FCP_Animal_German_Shepherd_Dog</defName>
+        <label>German Shepherd Dog</label>
+        <description>Some dogs are wild, plaguing the wastes and killing livestock, but tame versions are necessary for many struggling wastelanders. There are also rare cases of domestic breeds that act as companions towards their bipedal counterparts. Humans and super mutants are the only species known to truly tame and domesticate these canines.</description>
+        <tradeTags>
+            <li>FCP_Animal_Dog</li>
+        </tradeTags>
+    </ThingDef>
+
+    <!-- Minutemen Guard Dog -->
+
+    <ThingDef ParentName="FCP_Animal_German_Shepherd_Dog_Base">
+        <defName>FCP_Animal_Minutemen_Guard_Dog</defName>
+        <label>Minutemen Guard Dog</label>
+        <description>Some dogs are wild, plaguing the wastes and killing livestock, but tame versions are necessary for many struggling wastelanders. There are also rare cases of domestic breeds such as German SHepherds act as companions towards their bipedal counterparts. The Minutemen around the ruins of Boston in particular have used them as working and guard dogs for thier military.</description>
+        <race>
+            <wildBiomes Inherit="False">
+            </wildBiomes>
+        </race>
+        <tradeTags>
+            <li>FCP_Animal_Minutemen_Guard_Dog</li>
+        </tradeTags>
+    </ThingDef>
+
+    <!--__ PawnKinds __-->
+
+    <!-- German Shepherd Dog -->
+
+    <PawnKindDef ParentName="AnimalKindBase">
+        <defName>FCP_Animal_German_Shepherd_Dog</defName>
+        <label>German Shepherd Dog</label>
+        <race>FCP_Animal_German_Shepherd_Dog</race>
+        <combatPower>48</combatPower>
+        <ecoSystemWeight>1</ecoSystemWeight>
+        <lifeStages>
+            <li>
+                <label>puppy</label>
+                <labelPlural>puppies</labelPlural>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/German_Shepherd_Dog/FCP_German_Shepherd_Dog</texPath>
+                    <drawSize>0.95</drawSize>
+                </bodyGraphicData>
+                <dessicatedBodyGraphicData>
+                    <texPath>Things/Pawn/Animal/German_Shepherd_Dog/FCP_Dessicated_German_Shepherd_Dog</texPath>
+                    <drawSize>0.95</drawSize>
+                </dessicatedBodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/German_Shepherd_Dog/FCP_German_Shepherd_Dog</texPath>
+                    <drawSize>1.35</drawSize>
+                    <shadowData>
+                        <volume>(0.25, 0.3, 0.25)</volume>
+                        <offset>(0,0,-0.15)</offset>
+                    </shadowData>
+                </bodyGraphicData>
+                <dessicatedBodyGraphicData>
+                    <texPath>Things/Pawn/Animal/German_Shepherd_Dog/FCP_Dessicated_German_Shepherd_Dog</texPath>
+                    <drawSize>1.35</drawSize>
+                </dessicatedBodyGraphicData>
+            </li>
+            <li>
+                <bodyGraphicData>
+                    <texPath>Things/Pawn/Animal/German_Shepherd_Dog/FCP_German_Shepherd_Dog</texPath>
+                    <drawSize>1.6</drawSize>
+                    <shadowData>
+                        <volume>(0.3, 0.4, 0.3)</volume>
+                        <offset>(0,0,-0.15)</offset>
+                    </shadowData>
+                </bodyGraphicData>
+                <dessicatedBodyGraphicData>
+                    <texPath>Things/Pawn/Animal/German_Shepherd_Dog/FCP_Dessicated_German_Shepherd_Dog</texPath>
+                    <drawSize>1.6</drawSize>
+                </dessicatedBodyGraphicData>
             </li>
         </lifeStages>
     </PawnKindDef>
@@ -621,11 +1147,11 @@
         <label>Radgull</label>
         <devNote>Radgull</devNote>
         <description>.</description>
-		<modExtensions>
-			<li Class="FCP.Core.ModExtension_BiomeFeatureRequirements">
-				<requireCoast>True</requireCoast>
-			</li>
-		</modExtensions>
+        <modExtensions>
+            <li Class="FCP.Core.ModExtension_BiomeFeatureRequirements">
+                <requireCoast>True</requireCoast>
+            </li>
+        </modExtensions>
         <statBases>
             <MoveSpeed>4</MoveSpeed>
             <MarketValue>100</MarketValue>
@@ -641,13 +1167,13 @@
             <baseHealthScale>0.42</baseHealthScale>
             <foodType>OmnivoreRoughAnimal</foodType>
             <wildness>0.90</wildness>
-            <wildBiomes>
+            <!-- <wildBiomes>
                 <TemperateForest>0.7</TemperateForest>
                 <BorealForest>0.3</BorealForest>
                 <AridShrubland>0.8</AridShrubland>
                 <Desert>0.3</Desert>
                 <TemperateSwamp>0.3</TemperateSwamp>
-            </wildBiomes>
+            </wildBiomes> -->
             <trainability>Intermediate</trainability>
             <useMeatFrom>Chicken</useMeatFrom>
             <litterSizeCurve>
@@ -776,6 +1302,11 @@
         <defName>FCP_Animal_Radgull</defName>
         <label>Radgull</label>
         <race>FCP_Animal_Radgull</race>
+        <modExtensions>
+            <li Class="FCP.Core.ModExtension_BiomeFeatureRequirements">
+                <requireCoast>True</requireCoast>
+            </li>
+        </modExtensions>
         <combatPower>30</combatPower>
         <ecoSystemWeight>0.2</ecoSystemWeight>
         <wildGroupSize>10~30</wildGroupSize>

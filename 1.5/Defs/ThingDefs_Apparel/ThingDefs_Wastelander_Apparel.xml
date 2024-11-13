@@ -22,6 +22,7 @@
             <Mass>5.0</Mass>
             <ArmorRating_Sharp>0.90</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.30</ArmorRating_Heat>
             <Insulation_Cold>5</Insulation_Cold>
             <Insulation_Heat>3</Insulation_Heat>
             <EquipDelay>1.2</EquipDelay>
@@ -31,6 +32,8 @@
                 <li>Neck</li>
                 <li>Torso</li>
                 <li>Shoulders</li>
+                <li>Legs</li>
+                <li>Feet</li>
             </bodyPartGroups>
             <layers>
                 <li>OnSkin</li>

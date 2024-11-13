@@ -53,7 +53,81 @@
 
     <!--_____ Animals _____-->
 
-    <!--___ Rad_Ravens ___-->
+    <!--___ Vicious Dogs ___-->
+
+    <!-- Vicious Dog Injured -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Animal_Vicious_Dog_Injured</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Animals/Vicious_Dog/FCP_Sound_Animal_Vicious_Dog_Injured</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>20~35</volumeRange>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Vicious Dog Death -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Animal_Vicious_Dog_Death</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Animals/Vicious_Dog/FCP_Sound_Animal_Vicious_Dog_Death</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>20~35</volumeRange>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Vicious Dog Bark -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Animal_Vicious_Dog_Bark</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Animals/Vicious_Dog/FCP_Sound_Animal_Vicious_Dog_Bark</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>20~35</volumeRange>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Vicious Dog Growl -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Animal_Vicious_Dog_Growl</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Animals/Vicious_Dog/FCP_Sound_Animal_Vicious_Dog_Growl</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>20~35</volumeRange>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!--___ Rad Ravens ___-->
 
     <!-- Rad Raven Call -->
 

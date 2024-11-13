@@ -2,9 +2,9 @@
 <Defs>
 
     <AbilityDef>
-        <defName>FCP_RadChickenBurner</defName>
-        <label>rad chicken burner</label>
-        <description>rad lmao</description>
+        <defName>FCP_Ability_Burner</defName>
+        <label>Fire Breath</label>
+        <description>Firey breath</description>
         <iconPath>UI/Abilities/Burner</iconPath>
         <aiCanUse>true</aiCanUse>
         <ai_IsIncendiary>true</ai_IsIncendiary>
