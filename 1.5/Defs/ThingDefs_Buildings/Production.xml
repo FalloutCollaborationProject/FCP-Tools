@@ -444,7 +444,7 @@
         <graphicData>
             <texPath>Things/Building/Production/FCP_Cooking_Station_Fueled_Simple/FCP_Cooking_Station_Fueled_Simple</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(2,5)</drawSize>
+            <drawSize>(5,4)</drawSize>
             <damageData>
                 <cornerTL>Damage/Corner</cornerTL>
                 <cornerTR>Damage/Corner</cornerTR>
@@ -487,7 +487,7 @@
             <MaxHitPoints>180</MaxHitPoints>
             <Flammability>1.0</Flammability>
         </statBases>
-        <size>(2,5)</size>
+        <size>(2,3)</size>
         <designationCategory>Production</designationCategory>
         <passability>PassThroughOnly</passability>
         <pathCost>50</pathCost>
