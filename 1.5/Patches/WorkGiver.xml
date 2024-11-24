@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/WorkGiverDef[defName="DoBillsCook"]/fixedBillGiverDefs</xpath>
+        <value>
+          <li>FCP_Production_Cooking_Station_Fueled_Simple</li>
+          <li>FCP_Production_Cooking_Station_Fueled_Complex</li>
+          <li>FCP_Production_Cooking_Station_Electric</li>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/WorkGiverDef[defName="DoBillsFabricationBench"]/fixedBillGiverDefs</xpath>
+        <value>
+          <li>FCP_Production_Tool_Bench</li>
+          <li>FCP_Production_Fabrication_Workbench</li>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/WorkGiverDef[defName="DoBillsMachiningTable"]/fixedBillGiverDefs</xpath>
+        <value>
+          <li>FCP_Production_Armor_Workbench</li>
+          <li>FCP_Production_Ammo_Press</li>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/WorkGiverDef[defName="DoBillsMakeWeapons"]/fixedBillGiverDefs</xpath>
+        <value>
+          <li>FCP_Production_Complex_Weapons_Workbench</li>
+          <li>FCP_Production_Simple_Weapons_Workbench</li>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/WorkGiverDef[defName="DoBillsMakeApparel"]/fixedBillGiverDefs</xpath>
+        <value>
+          <li>FCP_Production_Tailoring_Workbench</li>
+        </value>
+      </Operation>
+
+      <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/WorkGiverDef[defName="DoBillsProduceDrugs"]/fixedBillGiverDefs</xpath>
+        <value>
+          <li>FCP_Production_Chemistry_Workbench</li>
+        </value>
+      </Operation>
+
+</Patch>
