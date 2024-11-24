@@ -68,7 +68,7 @@
                         <clipPath>Animals/Vicious_Dog/FCP_Sound_Animal_Vicious_Dog_Injured</clipPath>
                     </li>
                 </grains>
-                <volumeRange>20~35</volumeRange>
+                <volumeRange>10~15</volumeRange>
             </li>
         </subSounds>
     </SoundDef>
@@ -86,7 +86,7 @@
                         <clipPath>Animals/Vicious_Dog/FCP_Sound_Animal_Vicious_Dog_Death</clipPath>
                     </li>
                 </grains>
-                <volumeRange>20~35</volumeRange>
+                <volumeRange>10~15</volumeRange>
             </li>
         </subSounds>
     </SoundDef>
@@ -104,7 +104,7 @@
                         <clipPath>Animals/Vicious_Dog/FCP_Sound_Animal_Vicious_Dog_Bark</clipPath>
                     </li>
                 </grains>
-                <volumeRange>20~35</volumeRange>
+                <volumeRange>15~20</volumeRange>
             </li>
         </subSounds>
     </SoundDef>
@@ -122,7 +122,7 @@
                         <clipPath>Animals/Vicious_Dog/FCP_Sound_Animal_Vicious_Dog_Growl</clipPath>
                     </li>
                 </grains>
-                <volumeRange>20~35</volumeRange>
+                <volumeRange>10~15</volumeRange>
             </li>
         </subSounds>
     </SoundDef>

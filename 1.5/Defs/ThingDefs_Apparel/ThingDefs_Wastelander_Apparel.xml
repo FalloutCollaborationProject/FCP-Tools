@@ -402,7 +402,7 @@
     <ThingDef ParentName="FCP_Apparel_Base">
         <defName>FCP_Apparel_Benny_Pre_War_Fancy_Suit_Clean</defName>
         <label>Benny</label>
-        <description>Benny's suit is a black and white buffalo plaid suit jacket worn with light grey dress pants, white dress shirt, and black tie</description>
+        <description>Benny's suit is a black and white buffalo plaid suit jacket worn with light grey dress pants, white dress shirt, and black tie.</description>
         <graphicData>
             <texPath>Things/Apparel/Wasteland_Apparel/PreWarFancySuitClean/FCP_Pre_War_Fancy_Suit_Clean</texPath>
             <graphicClass>Graphic_Single</graphicClass>
@@ -434,6 +434,47 @@
             </layers>
             <tags>
                 <li>FCP_Bennys_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Mysterious Stranger -->
+
+    <ThingDef ParentName="FCP_Apparel_Base">
+        <defName>FCP_Apparel_Mysterious_Stranger_Outfit</defName>
+        <label>Mysterious Stranger</label>
+        <description>Mysterious Strangers outfit.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Custom/Mysterious_Stranger/Mysterious_Stranger_Outfit/FCP_Mysterious_Stranger</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <SocialImpact>0.15</SocialImpact>            <!-- Speech +5 -->
+            <TradePriceImprovement>0.15</TradePriceImprovement>            <!-- Barter +5 -->
+        </equippedStatOffsets>
+        <smeltable>false</smeltable>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Custom/Mysterious_Stranger/Mysterious_Stranger_Outfit/FCP_Mysterious_Stranger</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Mysterious_Stranger_Outfit</li>
             </tags>
         </apparel>
     </ThingDef>

@@ -83,7 +83,7 @@
         <baseCost>1000</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
-            <li>FCP_Tools_Experimental_Research</li>
+            <li>FCP_Tools_Spore_Creation</li>
         </prerequisites>
         <researchViewX>1</researchViewX>
         <researchViewY>5</researchViewY>

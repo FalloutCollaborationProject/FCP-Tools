@@ -467,7 +467,6 @@
         <race>
             <animalType>Canine</animalType>
             <body>QuadrupedAnimalWithPawsAndTail</body>
-            <petness>1</petness>
             <baseBodySize>0.75</baseBodySize>
             <baseHungerRate>0.4</baseHungerRate>
             <baseHealthScale>1.0</baseHealthScale>
@@ -553,26 +552,11 @@
         <label>Vicious Dog</label>
         <description>Vicious dogs are a nearly hairless and apparently, partially ghoulified species of wasteland canine. Ruthless survivors of the wastes, these starving, irradiated mutts will attack anything that moves. Some dogs have been domesticated, even charged with guarding its owner and all thier property this animal will do so to the best of its ability.</description>
         <race>
-            <wildBiomes Inherit="False">
-            </wildBiomes>
+            <petness>1</petness>
+            <wildBiomes Inherit="False" />
         </race>
         <tradeTags>
             <li>FCP_Animal_Guard_Dog</li>
-        </tradeTags>
-    </ThingDef>
-
-    <!-- NCR Guard Dog -->
-
-    <ThingDef ParentName="FCP_Animal_Vicious_Dog_Base">
-        <defName>FCP_Animal_NCR_Guard_Dog</defName>
-        <label>NCR Guard Dog</label>
-        <description>Some dogs have been domesticated, even charged with guarding its owner and all thier property this animal will do so to the best of its ability. While others have been specially bred to be a true battle buddy for the NCR. Tasked with defending troops from harm in the form of dangerous chems, explosives and enemy combatants themselves.</description>
-        <race>
-            <wildBiomes Inherit="False">
-            </wildBiomes>
-        </race>
-        <tradeTags>
-            <li>FCP_Animal_NCR_Guard_Dog</li>
         </tradeTags>
     </ThingDef>
 
@@ -633,6 +617,11 @@
                 </dessicatedBodyGraphicData>
             </li>
         </lifeStages>
+        <startingHediffs>
+            <li>
+                <def>FCP_Hediff_Spawn_Hostile_Animal</def>
+            </li>
+        </startingHediffs>
     </PawnKindDef>
 
     <!-- Guard Dog -->
@@ -641,15 +630,17 @@
         <defName>FCP_Animal_Vicious_Guard_Dog</defName>
         <label>Guard Dog</label>
         <race>FCP_Animal_Vicious_Guard_Dog</race>
+        <startingHediffs Inherit="False" />
     </PawnKindDef>
 
     <!-- NCR Guard Dog -->
 
-    <PawnKindDef ParentName="FCP_Animal_Vicious_Dog">
+    <!-- <PawnKindDef ParentName="FCP_Animal_Vicious_Dog">
         <defName>FCP_Animal_NCR_Guard_Dog</defName>
         <label>NCR Guard Dog</label>
         <race>FCP_Animal_NCR_Guard_Dog</race>
-    </PawnKindDef>
+        <startingHediffs Inherit="False" />
+    </PawnKindDef> -->
 
     <!--___ German Shepherd Dog ___-->
 
@@ -786,8 +777,7 @@
         <label>Minutemen Guard Dog</label>
         <description>Some dogs are wild, plaguing the wastes and killing livestock, but tame versions are necessary for many struggling wastelanders. There are also rare cases of domestic breeds such as German SHepherds act as companions towards their bipedal counterparts. The Minutemen around the ruins of Boston in particular have used them as working and guard dogs for thier military.</description>
         <race>
-            <wildBiomes Inherit="False">
-            </wildBiomes>
+            <wildBiomes Inherit="False" />
         </race>
         <tradeTags>
             <li>FCP_Animal_Minutemen_Guard_Dog</li>
@@ -798,7 +788,7 @@
 
     <!-- German Shepherd Dog -->
 
-    <PawnKindDef ParentName="AnimalKindBase">
+    <PawnKindDef Name="FCP_Animal_German_Shepherd_Dog" ParentName="AnimalKindBase">
         <defName>FCP_Animal_German_Shepherd_Dog</defName>
         <label>German Shepherd Dog</label>
         <race>FCP_Animal_German_Shepherd_Dog</race>
@@ -848,7 +838,15 @@
         </lifeStages>
     </PawnKindDef>
 
-    <!--_____ Wild Animals _____-->
+    <!-- Minutemen Guard Dog -->
+
+    <PawnKindDef ParentName="FCP_Animal_German_Shepherd_Dog">
+        <defName>FCP_Animal_Minutemen_Guard_Dog</defName>
+        <label>Minutemen Guard Dog</label>
+        <race>FCP_Animal_Minutemen_Guard_Dog</race>
+    </PawnKindDef>
+
+    <!--_____ Birds _____-->
 
     <!--___ Rad Raven ___-->
 

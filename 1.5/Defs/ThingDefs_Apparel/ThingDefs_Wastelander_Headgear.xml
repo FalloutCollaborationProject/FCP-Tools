@@ -225,6 +225,50 @@
         </apparel>
     </ThingDef>
 
+    <!-- Mysterious Stranger Hat -->
+
+    <ThingDef ParentName="HatMakeableBase">
+        <defName>FCP_Apparel_Mysterious_Stranger_Hat</defName>
+        <label>Sheriff Hat</label>
+        <description>Mysterious Strangers hat.</description>
+        <techLevel>Industrial</techLevel>
+        <graphicData>
+            <texPath>Things/Apparel/Custom/Mysterious_Stranger/Mysterious_Stranger_Hat/FCP_Mysterious_Stranger_Hat</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <recipeMaker>
+            <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>2</Crafting>
+            </skillRequirements>
+        </recipeMaker>
+        <costList>
+            <Leather_Plain>15</Leather_Plain>
+        </costList>
+        <statBases>
+            <WorkToMake>3000</WorkToMake>
+            <MaxHitPoints>80</MaxHitPoints>
+            <Mass>0.8</Mass>
+            <Insulation_Heat>2</Insulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <ShootingAccuracyPawn>0.05</ShootingAccuracyPawn>            <!-- PERCEPTION +1 -->
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>UpperHead</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Custom/Mysterious_Stranger/Mysterious_Stranger_Hat/FCP_Mysterious_Stranger_Hat</wornGraphicPath>
+            <layers>
+                <li>Overhead</li>
+            </layers>
+            <tags>
+                <li>FCP_Mysterious_Stranger_Outfit</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
     <!--___ Wastelander Apparel ___-->
 
     <!-- Sheriff Hat -->

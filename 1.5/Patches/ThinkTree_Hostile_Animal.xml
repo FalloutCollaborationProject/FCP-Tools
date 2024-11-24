@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <!-- Add to animal think tree -->
+
+	<Operation Class="PatchOperationInsert">
+		<xpath>Defs/ThinkTreeDef[defName="Animal"]/thinkRoot/subNodes/li[treeDef="MentalStateCritical"]</xpath>
+		<value>
+			<li Class="ThinkNode_Subtree">
+				<treeDef>FCP_Mental_State_Hostile_Animal_Think_Tree</treeDef>
+			</li>
+		</value>
+	</Operation>
+
+</Patch>

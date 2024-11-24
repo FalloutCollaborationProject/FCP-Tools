@@ -22,7 +22,8 @@
         <backstoryFiltersOverride>
             <li>
                 <categoriesChildhood>
-                    <li>FCP_Unique_Mysterious_Stranger_Child</li>
+                    <li MayRequire="Rick.FCP.NCR">FCP_NCR_Child</li>
+                    <li>FCP_Wastelander_Child</li>
                 </categoriesChildhood>
                 <categoriesAdulthood>
                     <li>FCP_Unique_Mysterious_Stranger</li>
@@ -49,8 +50,8 @@
             <li>FCP_Gun_Mysterious_Revolver</li>
         </weaponTags>
         <apparelRequired>
-            <li></li>
-            <li></li>
+            <li>FCP_Apparel_Mysterious_Stranger_Outfit</li>
+            <li>FCP_Apparel_Mysterious_Stranger_Hat</li>
         </apparelRequired>
         <ignoreIdeoApparelColors>true</ignoreIdeoApparelColors>
         <initialWillRange>0~0</initialWillRange>

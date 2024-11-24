@@ -3,6 +3,36 @@
 
     <!--__________ Backstories __________-->
 
+	<!--_____ Unique _____-->
+
+	<!-- Mysterious Stranger -->
+
+	<BackstoryDef>
+		<defName>FCP_Mysterious_Stranger</defName>
+		<identifier>FCP_Mysterious_Stranger</identifier>
+		<slot>Adulthood</slot>
+		<title>Mysterious Stranger</title>
+		<titleShort>Mysterious Stranger</titleShort>
+		<description>You have a Guardian Angel, but with a deadly hand-cannon instead of wings. Meet the Mysterious Stranger, an odd and eldritch entity said to appear and aid you in combat before you draw your dying breath.</description>
+		<skillGains>
+			<Shooting>9</Shooting>
+			<Melee>2</Melee>
+			<Intellectual>-2</Intellectual>
+			<Social>8</Social>
+			<Animals>2</Animals>
+			<Cooking>-4</Cooking>
+		</skillGains>
+		<workDisables>Cleaning</workDisables>
+		<requiredWorkTags>Violent</requiredWorkTags>
+		<spawnCategories>
+			<li>FCP_Unique_Mysterious_Stranger</li>
+		</spawnCategories>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<bodyTypeMale>Male</bodyTypeMale>
+        <possessions>
+        </possessions>
+	</BackstoryDef>
+
 	<!--_____ Storytellers _____-->
 
 	<!--___ Adult ___-->

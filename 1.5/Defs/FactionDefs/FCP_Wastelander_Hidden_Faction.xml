@@ -83,7 +83,17 @@
                 </guards>
             </li>
         </pawnGroupMakers>
-
+        <modExtensions Inherit="False">
+            <!-- Make them unable to use drop pods -->
+            <li Class="FCP.Core.ModExtension_FactionBannedArrivalModes">
+                <arrivalModes>
+                    <li>EdgeDrop</li>
+                    <li>EdgeDropGroups</li>
+                    <li>CenterDrop</li>
+                    <li>RandomDrop</li>
+                </arrivalModes>
+            </li>
+        </modExtensions>
     </FactionDef>
 
 </Defs>

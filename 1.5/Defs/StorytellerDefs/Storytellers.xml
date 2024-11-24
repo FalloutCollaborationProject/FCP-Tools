@@ -377,7 +377,7 @@
             </li>
             <!-- Triggered -->
             <li Class="StorytellerCompProperties_Triggered">
-                <incident>StrangerInBlackJoin</incident>
+                <incident>FCP_Mysterious_Stranger</incident>
                 <delayTicks>180</delayTicks>
             </li>
             <!-- Storyteller Joiner -->
