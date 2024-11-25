@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>FCP_Quest_BuildingLocation</defName>
+    <rootSelectionWeight>1.0</rootSelectionWeight>
+    <rootMinPoints>0</rootMinPoints>
+    <defaultChallengeRating>1</defaultChallengeRating>
+    <expireDaysRange>4~8</expireDaysRange>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->The [facility]</li>
+        <li>facility->Facility</li>
+        <li>facility->Outpost</li>
+        <li>facility->Complex</li>
+        <li>facility->Installation</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->[asker_nameFull], [asker_faction_leaderTitle] of [asker_faction_name], has sent us a message.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+          <parms>
+            <pointsFactorTwoStar>1.5</pointsFactorTwoStar>
+            <pointsFactorThreeStar>2</pointsFactorThreeStar>
+          </parms>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_AdjustPointsForDistantFight</def>
+        </li>
+        <li Class="QuestNode_GetMap" />
+        <li Class="QuestNode_GetSiteTile">
+          <storeAs>siteTile</storeAs>
+          <preferCloserTiles>true</preferCloserTiles>
+        </li>
+        <li Class="FCP_RadiantQuests.QuestNode_GetLeaderOfFaction">
+          <storeAs>asker</storeAs>
+          <!--<factionDef>FCP_Faction_BoS_Outcasts</factionDef>-->
+          <factionDef>Empire</factionDef>
+        </li>
+        <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
+          <storeAs>enemyFaction</storeAs>
+          <factionDefs>
+            <li>PirateWaster</li>
+          </factionDefs>
+        </li>
+        <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+          <storeAs>sitePartDefs</storeAs>
+          <storeFactionAs>siteFaction</storeFactionAs>
+          <sitePartsTags>
+            <li>
+              <tag>FCP_Site_Facility</tag>
+            </li>
+          </sitePartsTags>
+        </li>
+        
+        <li Class="QuestNode_GetDefaultSitePartsParams">
+          <tile>$siteTile</tile>
+          <faction>$siteFaction</faction>
+          <sitePartDefs>$sitePartDefs</sitePartDefs>
+          <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_GenerateSite</def>
+          <parms>
+            <sitePartsParams>$sitePartsParams</sitePartsParams>
+          </parms>
+        </li>
+
+        <li Class="QuestNode_SpawnWorldObjects">
+          <worldObjects>$site</worldObjects>
+        </li>
+        <li Class="QuestNode_WorldObjectTimeout">
+          <worldObject>$site</worldObject>
+          <isQuestTimeout>true</isQuestTimeout>
+          <delayTicks>$(randInt(12,28)*60000)</delayTicks>
+          <inSignalDisable>site.MapGenerated</inSignalDisable>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Letter">
+                <label>Quest expired: [resolvedQuestName]</label>
+                <text>.</text>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Fail</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <li Class="QuestNode_NoWorldObject">
+          <worldObject>$site</worldObject>
+          <node Class="QuestNode_End">
+          </node>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+</Defs>
