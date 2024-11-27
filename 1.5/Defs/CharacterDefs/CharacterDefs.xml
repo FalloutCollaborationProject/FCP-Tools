@@ -2,7 +2,7 @@
 <Defs>
 
     <FCP.Core.CharacterDef>
-        <defName>FCP_Character_RangerRick</defName>
+        <defName>FCP_Character_Ranger_Rick</defName>
         <pawnKind>FCP_Unique_Ranger_Rick</pawnKind>
         <xenotype>Baseliner</xenotype>
 
