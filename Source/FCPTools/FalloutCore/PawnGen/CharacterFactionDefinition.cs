@@ -3,7 +3,7 @@
 namespace FCP.Core;
 
 [UsedImplicitly]
-public class PawnFactionDefinition : PawnGenerationDefinition
+public class CharacterFactionDefinition : CharacterBaseDefinition
 {
     public FactionDef factionDef;
     public RoyalTitleDef title;
@@ -25,7 +25,7 @@ public class PawnFactionDefinition : PawnGenerationDefinition
         }
         else
         {
-            FCPLog.Warning("[PawnFactionDefinition] had a defined factionDef, but no faction exists with that def");
+            FCPLog.Warning("CharacterFactionDefinition had a defined factionDef, but no faction exists with that def");
         }
     }
 

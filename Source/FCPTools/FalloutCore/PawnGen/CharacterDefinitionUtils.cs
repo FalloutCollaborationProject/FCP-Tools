@@ -1,8 +1,8 @@
 ﻿namespace FCP.Core;
 
-public static class PawnGenerationUtils
+public static class CharacterDefinitionUtils
 {
-    public static Pawn GenerateWithDefinitions(PawnGenerationRequest request, params PawnGenerationDefinition[] definitions)
+    public static Pawn GenerateWithDefinitions(PawnGenerationRequest request, List<CharacterBaseDefinition> definitions)
     {
         ApplyRequestDefinitions(ref request, definitions);
         Pawn pawn = PawnGenerator.GeneratePawn(request);
@@ -11,9 +11,9 @@ public static class PawnGenerationUtils
         return pawn;
     }
     
-    public static void ApplyRequestDefinitions(ref PawnGenerationRequest request, IEnumerable<PawnGenerationDefinition> definitions)
+    public static void ApplyRequestDefinitions(ref PawnGenerationRequest request, List<CharacterBaseDefinition> definitions)
     {
-        foreach (PawnGenerationDefinition definition in definitions)
+        foreach (CharacterBaseDefinition definition in definitions)
         {
             if (!definition.AppliesPreGeneration) return;
             definition.ApplyToRequest(ref request);
@@ -21,9 +21,9 @@ public static class PawnGenerationUtils
         request.ValidateAndFix();
     }
     
-    public static void ApplyPawnDefinitions(Pawn pawn, IEnumerable<PawnGenerationDefinition> definitions)
+    public static void ApplyPawnDefinitions(Pawn pawn, List<CharacterBaseDefinition> definitions)
     {
-        foreach (PawnGenerationDefinition definition in definitions)
+        foreach (CharacterBaseDefinition definition in definitions)
         {
             if (!definition.AppliesPostGeneration) return;
             definition.ApplyToPawn(pawn);

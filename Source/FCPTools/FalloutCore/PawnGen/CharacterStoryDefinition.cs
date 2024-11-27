@@ -3,7 +3,7 @@
 namespace FCP.Core;
 
 [UsedImplicitly]
-public class PawnStoryDefinition : PawnGenerationDefinition
+public class CharacterStoryDefinition : CharacterBaseDefinition
 {
     public string firstName;
     public string lastName;

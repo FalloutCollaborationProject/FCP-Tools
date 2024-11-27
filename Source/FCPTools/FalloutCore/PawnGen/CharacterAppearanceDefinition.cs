@@ -5,7 +5,7 @@
 namespace FCP.Core;
 
 [UsedImplicitly]
-public class PawnAppearanceDefinition : PawnGenerationDefinition
+public class CharacterAppearanceDefinition : CharacterBaseDefinition
 {
     public HairDef hairDef;
     public BeardDef beardDef;

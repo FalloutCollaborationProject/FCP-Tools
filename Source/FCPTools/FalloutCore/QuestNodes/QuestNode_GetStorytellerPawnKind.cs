@@ -1,18 +1,15 @@
-﻿using System.Reflection;
-using HarmonyLib;
-using RimWorld.Planet;
+﻿using RimWorld.Planet;
 using RimWorld.QuestGen;
 
 namespace FCP.Core;
 
 public class QuestNode_Root_StorytellerJoin : QuestNode_Root_WandererJoin
 {
-	private static readonly FieldInfo PawnSkinColorBaseField = AccessTools.Field(typeof(Pawn), "skinColorBase");
 	private const int TimeoutTicks = 30000;
 
 	private string signalAccept;
 	private string signalReject;
-
+	
 	protected override bool TestRunInt(Slate slate)
 	{
 		return Find.Storyteller.def.HasModExtension<ModExtension_StoryTellerIsJoiner>();
@@ -30,20 +27,9 @@ public class QuestNode_Root_StorytellerJoin : QuestNode_Root_WandererJoin
 
 	public override Pawn GeneratePawn()
 	{
-		ModExtension_StoryTellerIsJoiner extension = Find.Storyteller.def.GetModExtension<ModExtension_StoryTellerIsJoiner>();
-		Slate slate = QuestGen.slate;
-			
-		PawnGenerationRequest request = new (extension.pawnKindDef ?? PawnKindDefOf.Colonist,
-			forceGenerateNewPawn: true,
-			canGeneratePawnRelations: false,
-			onlyUseForcedBackstories: extension.onlyFixedPawnKindBackstories,
-			forcedXenotype: extension.forcedXenotypeDef ?? XenotypeDefOf.Baseliner,
-			developmentalStages: DevelopmentalStage.Adult);
-
-		// Generate the Pawn
-		PawnGenerationDefinition[] definitions = extension.GetDefinitions().ToArray();
-		Pawn pawn = PawnGenerationUtils.GenerateWithDefinitions(request, definitions);
-			
+		var extension = Find.Storyteller.def.GetModExtension<ModExtension_StoryTellerIsJoiner>();
+		Pawn pawn = UniqueCharactersTracker.Instance.GetOrGenPawn(extension.characterDef);
+		
 		if (!pawn.IsWorldPawn())
 		{
 			Find.WorldPawns.PassToWorld(pawn);
@@ -76,7 +62,7 @@ public class QuestNode_Root_StorytellerJoin : QuestNode_Root_WandererJoin
 		TaggedString letterText = "FCP_Letter_SpecialWandererJoins".Translate(pawn.Named("PAWN")).AdjustedFor(pawn);
 		letterText += $"\n\n{Find.Storyteller.def.description}";
 			
-		ChoiceLetter_AcceptJoiner choiceLetter = (ChoiceLetter_AcceptJoiner)LetterMaker.MakeLetter(letterTitle, letterText, FCPDefOf.FCP_Letter_AcceptStoryteller);
+		var choiceLetter = (ChoiceLetter_AcceptJoiner)LetterMaker.MakeLetter(letterTitle, letterText, FCPDefOf.FCP_Letter_AcceptStoryteller);
 		choiceLetter.signalAccept = signalAccept;
 		choiceLetter.signalReject = signalReject;
 		choiceLetter.quest = quest;

@@ -393,33 +393,7 @@
         <modExtensions>
             <!-- Storyteller Joiner -->
             <li Class="FCP.Core.ModExtension_StoryTellerIsJoiner">
-                <!-- Requirements -->
-                <pawnKindDef>FCP_Unique_Ranger_Rick</pawnKindDef>
-                <forcedXenotypeDef>Baseliner</forcedXenotypeDef>
-                <onlyFixedPawnKindBackstories>false</onlyFixedPawnKindBackstories>
-                <!-- Bio -->
-                <story>
-                    <firstName>Rick</firstName>
-                    <lastName>Farnsworth</lastName>
-                    <nickname>Ranger Rick</nickname>
-                    <gender>Male</gender>
-                    <age>27</age>
-                </story>
-                <!-- Appearance -->
-                <appearance>
-                    <hairColor>(88, 60, 51)</hairColor>
-                    <hairDef>FCP_Hair_Ranger_Rick</hairDef>
-                    <beardDef>NoBeard</beardDef>
-                    <skinColorOverride>(239, 189, 163)</skinColorOverride>
-                    <headTypeDef>Male_AverageNormal</headTypeDef>
-                    <bodyTypeDef>Male</bodyTypeDef>
-                </appearance>
-                <!-- Factional -->
-                <faction>
-                    <factionDef MayRequire="Rick.FCP.NCR">FCP_Faction_NCR</factionDef>
-                    <title MayRequire="Rick.FCP.NCR">FCP_NCR_Ranger_Volunteer</title>
-                    <useFactionalIdeo MayRequire="Rick.FCP.NCR">true</useFactionalIdeo>
-                </faction>
+                <characterDef>FCP_Character_RangerRick</characterDef>
             </li>
         </modExtensions>
     </StorytellerDef> 

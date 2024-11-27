@@ -1,6 +1,6 @@
 ﻿namespace FCP.Core;
 
-public abstract class PawnGenerationDefinition
+public abstract class CharacterBaseDefinition
 {
     public abstract bool AppliesPreGeneration { get; }
     public abstract bool AppliesPostGeneration { get; }
