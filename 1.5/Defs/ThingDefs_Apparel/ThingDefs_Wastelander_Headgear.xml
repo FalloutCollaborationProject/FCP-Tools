@@ -193,8 +193,8 @@
 
     <ThingDef ParentName="HatBase">
         <defName>FCP_Apparel_Radiations_Suit_Helmet</defName>
-        <label>Radiation Suit</label>
-        <description>The Radiation Suit helmet is the corresponding  piece to the Radiation Suit set. It features a vibrant yellow finish in order to better visualize the potential danger that this suit faces.</description>
+        <label>Combat Armor Helmet</label>
+        <description>The combat armor helmet is the corresponding armor piece to the combat armor set. This model displays what is possibly a headlamp, attached to the left side above the brow line.</description>
         <techLevel>Industrial</techLevel>
         <graphicData>
             <texPath>Things/Apparel/Wasteland_Apparel/RadiationSuit/FCP_Radiation_Suit_Helmet</texPath>
@@ -229,7 +229,7 @@
 
     <ThingDef ParentName="HatMakeableBase">
         <defName>FCP_Apparel_Mysterious_Stranger_Hat</defName>
-        <label>Mysterious Stranger Hat</label>
+        <label>Sheriff Hat</label>
         <description>Mysterious Strangers hat.</description>
         <techLevel>Industrial</techLevel>
         <graphicData>
