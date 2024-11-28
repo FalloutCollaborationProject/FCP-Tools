@@ -106,6 +106,10 @@ public static class Patches
             
         harmony.Patch(original: typeof(Faction).GetDeclaredMethods().First(mi => mi.Name.Contains("GetInitialGoodwill")),
             prefix: new HarmonyMethod(typeof(Patches), nameof(Faction_TryMakeInitialRelationsWith_GetInitialGoodwill_Prefix)));
+        
+        // Unique Characters
+        harmony.Patch(original: AccessTools.Method(typeof(Faction), nameof(Faction.TryGenerateNewLeader)),
+            prefix: new HarmonyMethod(typeof(Patches), nameof(Faction_TryGenerateNewLeader_Prefix)));
     }
 
     #region Biome Feature Requirements
@@ -614,6 +618,51 @@ public static class Patches
         // They're hostile, so set to -100 and skip the original.
         __result = -100;
         return false;
+    }
+
+    #endregion
+
+    #region Unique Characters
+
+    /// <summary>
+    /// Patch to leader generation to create a new leader.
+    /// </summary>
+    public static bool Faction_TryGenerateNewLeader_Prefix(Faction __instance, ref bool __result)
+    {
+        var extension = __instance.def.GetModExtension<ModExtension_FactionUniqueLeader>();
+        if (extension == null) return true; // No need to do anything
+        
+        var tracker = UniqueCharactersTracker.Instance;
+        foreach (CharacterDef charDef in extension.characterDefs)
+        {
+            // Existing characters are exempt, and usually in this case they'll also be dead.
+            if (tracker.CharacterPawnExists(charDef))
+            {
+                continue;
+            }
+
+            // Generate the pawn
+            Pawn leader = tracker.GetOrGenPawn(charDef,
+                requestParams: new PawnGenerationRequest(charDef.pawnKind, faction: __instance, fixedIdeo: __instance.ideos.PrimaryIdeo));
+
+            if (leader.RaceProps.IsFlesh)
+            {
+                leader.relations.everSeenByPlayer = true;
+            }
+            if (!Find.WorldPawns.Contains(leader))
+            {
+                Find.WorldPawns.PassToWorld(leader, PawnDiscardDecideMode.KeepForever);
+            }
+            
+            __instance.leader = leader;
+
+            // Skip the original
+            __result = true;
+            return false;
+        }
+
+        // Probably ran out of characters, so back to random ones
+        return true;
     }
 
     #endregion

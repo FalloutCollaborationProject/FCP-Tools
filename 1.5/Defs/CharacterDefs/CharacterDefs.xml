@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <FCP.Core.CharacterDef>
+        <defName>FCP_Character_Ranger_Rick</defName>
+        <pawnKind>FCP_Unique_Ranger_Rick</pawnKind>
+        <xenotype>Baseliner</xenotype>
+
+        <definitions>
+            <!-- Bio -->
+            <li Class="FCP.Core.CharacterStoryDefinition">
+                <firstName>Rick</firstName>
+                <lastName>Farnsworth</lastName>
+                <nickname>Ranger Rick</nickname>
+                <gender>Male</gender>
+                <age>27</age>
+            </li>
+            <!-- Appearance -->
+            <li Class="FCP.Core.CharacterAppearanceDefinition">
+                <hairColor>(88, 60, 51)</hairColor>
+                <hairDef>FCP_Hair_Ranger_Rick</hairDef>
+                <beardDef>NoBeard</beardDef>
+                <skinColorOverride>(239, 189, 163)</skinColorOverride>
+                <headTypeDef>Male_AverageNormal</headTypeDef>
+                <bodyTypeDef>Male</bodyTypeDef>
+            </li>
+            <!-- Factional -->
+            <li Class="FCP.Core.CharacterFactionDefinition" MayRequire="Rick.FCP.NCR">
+                <factionDef>FCP_Faction_NCR</factionDef>
+                <title>FCP_NCR_Ranger_Volunteer</title>
+                <useFactionalIdeo>true</useFactionalIdeo>
+            </li>
+        </definitions>
+    </FCP.Core.CharacterDef>
+
+</Defs>

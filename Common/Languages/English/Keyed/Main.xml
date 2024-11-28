@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <ME_MusicExpanded>Music Expanded</ME_MusicExpanded>
+  <!-- Setings -->
+  <ME_Theme>Theme</ME_Theme>
+  <ME_ThemeDescription>Theme</ME_ThemeDescription>
+  <ME_SelectTheme>Select Theme</ME_SelectTheme>
+  <ME_ShowNowPlaying>Show Now Playing</ME_ShowNowPlaying>
+  <ME_ShowNowPlayingDescription>When on, a message will appear with the title of the currently selected track.</ME_ShowNowPlayingDescription>
+  <ME_VanillaMusicUpdate>Vanilla Music Update</ME_VanillaMusicUpdate>
+  <ME_VanillaMusicUpdateDescription>When on, RimWorld will play music periodically, rather than constantly.</ME_VanillaMusicUpdateDescription>
+  <ME_SelectSounds>Select Sounds</ME_SelectSounds>
+  <ME_SelectSoundsDescription>This theme will be used for sounds when possible. Any sounds not replaced will use vanilla sounds.</ME_SelectSoundsDescription>
+  <!-- Gameplay -->
+  <ME_NowPlaying>Now Playing: {0}</ME_NowPlaying>
+  <!-- Vanilla Theme -->
+  <ME_Vanilla_Label>Music Expanded: Vanilla</ME_Vanilla_Label>
+  <ME_Vanilla_Description>All vanilla SongDefs implemented with the features of MusicExpanded!</ME_Vanilla_Description>
+</LanguageData>
