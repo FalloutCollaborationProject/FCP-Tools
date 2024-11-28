@@ -55,7 +55,7 @@
         <backstoryFiltersOverride>
             <li>
                 <categoriesChildhood>
-                    <li MayRequire="Rick.FCP.NCR">FCP_NCR_Child</li>
+                    <li MayRequire="Rick.FCP.NCR.Beta">FCP_NCR_Child</li>
                     <li>FCP_Wastelander_Child</li>
                 </categoriesChildhood>
                 <categoriesAdulthood>

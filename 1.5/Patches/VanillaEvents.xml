@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <!-- Battle Cues -->
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/IncidentDef[
+            defName="RaidEnemy" 
+            or defName="Infestation"
+            or defName="Ambush"
+            or defName="ManhunterAmbush"
+            or defName="DeepDrillInfestation"
+            or defName="ManhunterPack"
+            or defName="AnimalInsanityMass"
+            or defName="MechCluster"
+            or defName="AnimalInsanitySingle"
+        ]</xpath>
+        <value>
+            <li Class="MusicExpanded.ModExtension.PlayCue">
+                <playBattleTrack>true</playBattleTrack>
+            </li>
+        </value>
+    </Operation>
+</Patch>
