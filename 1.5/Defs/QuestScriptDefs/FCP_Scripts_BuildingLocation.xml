@@ -46,10 +46,11 @@
         <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
           <storeAs>enemyFaction</storeAs>
           <factionDefs>
-            <li>PirateWaster</li>
+            <li>Empire</li>
           </factionDefs>
         </li>
-        <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+        <li Class="FCP_RadiantQuests.QuestNode_GetSitePartDefsByTagsAndFaction">
+          <factionToUse>$enemyFaction</factionToUse>
           <storeAs>sitePartDefs</storeAs>
           <storeFactionAs>siteFaction</storeFactionAs>
           <sitePartsTags>

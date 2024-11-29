@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>FCP_Quest_SettlementRaidDefense</defName>
+    <rootSelectionWeight>1.0</rootSelectionWeight>
+    <rootMinPoints>0</rootMinPoints>
+    <defaultChallengeRating>1</defaultChallengeRating>
+    <canGiveRoyalFavor>true</canGiveRoyalFavor>
+    <expireDaysRange>4~8</expireDaysRange>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->Saving [settlement]</li>
+        <li>settlement->a settlement</li>
+        <li>settlement->an outpost</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->[asker_nameFull], [asker_faction_leaderTitle] of [asker_faction_name], has sent us a message. One of their settlements will be raided soon and they request your assistance in dealing with the raiders.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="FCP_RadiantQuests.QuestNode_GetLeaderOfFaction">
+          <storeAs>asker</storeAs>
+          <!--The faction def that issues the quest-->
+          <factionDef>OutlanderCivil</factionDef>
+        </li>
+        <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
+          <storeAs>enemyFaction</storeAs>
+          <!--The faction def that will raid-->
+          <factionDefs>
+            <li>PirateWaster</li>
+          </factionDefs>
+        </li>
+        <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
+          <storeAs>settlementFaction</storeAs>
+          <!--The faction def that will be raided-->
+          <factionDefs>
+            <li>OutlanderCivil</li>
+          </factionDefs>
+        </li>
+
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+          <parms>
+            <pointsFactorTwoStar>1.5</pointsFactorTwoStar>
+            <pointsFactorThreeStar>2</pointsFactorThreeStar>
+          </parms>
+        </li>
+
+        <li Class="QuestNode_SubScript">
+          <def>Util_AdjustPointsForDistantFight</def>
+        </li>
+
+        <li Class="QuestNode_GetMap" />
+        <li Class="QuestNode_GetSiteTile">
+          <storeAs>siteTile</storeAs>
+          <preferCloserTiles>true</preferCloserTiles>
+        </li>
+
+
+
+        <li Class="FCP_RadiantQuests.QuestNode_GetSitePartDefsByTagsAndFaction">
+          <factionToUse>$settlementFaction</factionToUse>
+          <storeAs>sitePartDefs</storeAs>
+          <storeFactionAs>siteFaction</storeFactionAs>
+          <sitePartsTags>
+            <li>
+              <tag>FCP_Site_SettlementRaidInProgress</tag>
+            </li>
+          </sitePartsTags>
+        </li>
+
+
+        <li Class="QuestNode_GetDefaultSitePartsParams">
+          <tile>$siteTile</tile>
+          <faction>$siteFaction</faction>
+          <sitePartDefs>$sitePartDefs</sitePartDefs>
+          <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+        </li>
+        
+
+        <li Class="QuestNode_SubScript">
+          <def>Util_GenerateSite</def>
+          <parms>
+            <sitePartsParams>$sitePartsParams</sitePartsParams>
+          </parms>
+        </li>
+
+        <li Class="QuestNode_SpawnWorldObjects">
+          <worldObjects>$site</worldObjects>
+        </li>
+
+        <li Class="QuestNode_Signal">
+          <inSignal>site.MapGenerated</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Set">
+                <name>pointsForSettlers</name>
+                <value>$($points * 0.5)</value>
+              </li>
+              <li Class="FCP_RadiantQuests.QuestNode_GeneratePawns">
+                <storeAs>settlers</storeAs>
+                <faction>$siteFaction</faction>
+                <pawnGroupKind>Peaceful</pawnGroupKind>
+                <pointsToUse>$pointsForSettlers</pointsToUse>
+              </li>
+              <li Class="FCP_RadiantQuests.QuestNode_GeneratePawns">
+                <storeAs>raiders</storeAs>
+                <faction>$enemyFaction</faction>
+                <pawnGroupKind>Combat</pawnGroupKind>
+                <pointsToUse>$points</pointsToUse>
+              </li>
+
+              <li Class="FCP_RadiantQuests.QuestNode_SpawnSettlers">
+                <inSignal>site.MapGenerated</inSignal>
+                <pawns>$settlers</pawns>
+                <radius>20</radius>
+              </li>
+              
+              
+              
+              <li Class="QuestNode_GetRandomInRangeFloat">
+                <storeAs>chanceForInstant</storeAs>
+                <range>0~1</range>
+              </li>
+              <li Class="QuestNode_GreaterOrEqual">
+                <value1>$chanceForInstance</value1>
+                <!--If value1 >= value2, spawn raid instantly, otherwise with delay-->
+                <value2>0.75</value2>
+
+                <node Class="QuestNode_Sequence">
+                  <nodes>
+
+                    <li Class="FCP_RadiantQuests.QuestNode_SpawnRaiders">
+                      <inSignal>site.MapGenerated</inSignal>
+                      <spawnOnEdge>false</spawnOnEdge>
+                      <pawns>$raiders</pawns>
+                      <radius>20</radius>
+                    </li>
+                    <li Class="QuestNode_Letter">
+                      <label TKey="LetterLabelSettlerAidRaidInProgress">The raiders are already here!</label>
+                      <text TKey="LetterTextSettlerAidRaidInProgress">The raiders have already engaged the settlers you were asked to protect!</text>
+                      <letterDef>ThreatBig</letterDef>
+                      <lookTargets>$raiders</lookTargets>
+                      <filterDeadPawnsFromLookTargets>true</filterDeadPawnsFromLookTargets>
+                    </li>
+                  </nodes>
+                </node>
+                <elseNode Class="QuestNode_Delay">
+                  <!--1 - 12 hours delay-->
+                  <delayTicks>$(randInt(2500,30000))</delayTicks>
+                  <node Class="QuestNode_Sequence">
+                    <nodes>
+
+                      <li Class="FCP_RadiantQuests.QuestNode_SpawnRaiders">
+                        <spawnOnEdge>true</spawnOnEdge>
+                        <pawns>$raiders</pawns>
+                        <radius>20</radius>
+                      </li>
+                      <li Class="QuestNode_Letter">
+                        <label TKey="LetterLabelSettlerAidRaidDelayed">The raiders are here!</label>
+                        <text TKey="LetterTextSettlerAidRaidDelayed">The raiders have arrived!</text>
+                        <letterDef>ThreatBig</letterDef>
+                        <lookTargets>$raiders</lookTargets>
+                        <filterDeadPawnsFromLookTargets>true</filterDeadPawnsFromLookTargets>
+                      </li>
+                    </nodes>
+                  </node>
+                </elseNode>
+              </li>
+              <li Class="QuestNode_Delay">
+                <delayTicks>60000</delayTicks>
+                <isQuestTimeout>true</isQuestTimeout>
+                <node Class="QuestNode_Sequence">
+                  <nodes>
+                    <li Class="QuestNode_AnyPawnAlive">
+                      <pawns>$settlers</pawns>
+                      <node Class="QuestNode_Sequence">
+                        <nodes>
+
+                          <li Class="QuestNode_Letter">
+                            <label TKey="LetterLabelSettlerAidEndSuccess">The settlers survived</label>
+                            <text TKey="LetterTextSettlerAidEndSuccess">The settlers you were assigned to protect have survived the onslaught, you have completed your mission.</text>
+                            <letterDef>PositiveEvent</letterDef>
+                            <lookTargets>$settlers</lookTargets>
+                            <filterDeadPawnsFromLookTargets>true</filterDeadPawnsFromLookTargets>
+                          </li>
+                          <li Class="QuestNode_End">
+                            <outcome>Success</outcome>
+                          </li>
+                        </nodes>
+                      </node>
+                    </li>
+                    <li Class="QuestNode_Letter">
+                      <label TKey="LetterLabelSettlerAidEndFailure">The settlers perished</label>
+                      <letterDef>NegativeEvent</letterDef>
+                      <text TKey="LetterTextSettlerAidEndFailure">The settlers you were assigned to protect have perished, you have failed your mission.</text>
+                    </li>
+                    <li Class="QuestNode_End">
+                      <outcome>Fail</outcome>
+                      <goodwillChangeAmount>-5</goodwillChangeAmount>
+                      <goodwillChangeFactionOf>$asker</goodwillChangeFactionOf>
+                      <!--<goodwillChangeReason>QuestPawnLost</goodwillChangeReason> Needs to be settlement lost-->
+                    </li>
+                  </nodes>
+
+                </node>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <li Class="QuestNode_WorldObjectTimeout">
+          <worldObject>$site</worldObject>
+          <isQuestTimeout>true</isQuestTimeout>
+          <delayTicks>$(randInt(12,28)*60000)</delayTicks>
+          <inSignalDisable>site.MapGenerated</inSignalDisable>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Letter">
+                <label TKey="LetterLabelSettlerAidExpired">Quest expired: [resolvedQuestName]</label>
+                <text TKey="LetterTextSettlerAidExpired">The settlement has been raided. The quest [resolvedQuestName] has expired.</text>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Fail</outcome>
+                <goodwillChangeAmount>-5</goodwillChangeAmount>
+                <goodwillChangeFactionOf>$asker</goodwillChangeFactionOf>
+                <!--<goodwillChangeReason>QuestPawnLost</goodwillChangeReason> Needs to be settlement lost-->
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <li Class="QuestNode_Signal">
+          <inSignal>site.Destroyed</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Letter">
+                <label TKey="LetterLabelSettlerAidFailedLeft">Quest failed: [resolvedQuestName]</label>
+                <text TKey="LetterTextSettlerAidFailedLeft">You left the settlement, it has been raided.</text>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Fail</outcome>
+                <goodwillChangeAmount>-5</goodwillChangeAmount>
+                <goodwillChangeFactionOf>$asker</goodwillChangeFactionOf>
+                <!--<goodwillChangeReason>QuestPawnLost</goodwillChangeReason> Needs to be settlement lost-->
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

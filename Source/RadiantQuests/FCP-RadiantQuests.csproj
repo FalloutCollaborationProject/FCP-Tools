@@ -58,12 +58,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GenStep_SettlementScaleable.cs" />
     <Compile Include="GenStep_SpawnBuilding.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuestNode_GeneratePawns.cs" />
     <Compile Include="QuestNode_GetFactionFromList.cs" />
     <Compile Include="QuestNode_GetLeaderOfFaction.cs" />
-    <Compile Include="QuestNode_SpawnBuilding.cs" />
+    <Compile Include="QuestNode_GetSitePartDefsByTagsAndFaction.cs" />
+    <Compile Include="QuestNode_RaidSimplified.cs" />
+    <Compile Include="QuestNode_SpawnRaiders.cs" />
+    <Compile Include="QuestNode_SpawnSettlers.cs" />
+    <Compile Include="QuestPart_SetValue.cs" />
+    <Compile Include="QuestPart_SpawnRaiders.cs" />
+    <Compile Include="QuestPart_SpawnSettlers.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

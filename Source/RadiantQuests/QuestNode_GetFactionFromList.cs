@@ -17,11 +17,11 @@ namespace FCP_RadiantQuests
         [NoTranslate]
         public SlateRef<string> storeAs;
 
-        public SlateRef<IEnumerable<string>> factionDefs;
+        public SlateRef<IEnumerable<FactionDef>> factionDefs;
 
         protected override bool TestRunInt(Slate slate)
         {
-            if (Find.FactionManager.GetFactions().Any(c => factionDefs.GetValue(slate).Any(x => x == c.def.defName)))
+            if (Find.FactionManager.GetFactions().Any(c => factionDefs.GetValue(slate).Any(x => x.defName == c.def.defName)))
             {
                 Log.Message("factions exist");
                 SetVars(slate);
@@ -38,7 +38,7 @@ namespace FCP_RadiantQuests
 
         private void SetVars(Slate slate)
         {
-            Find.FactionManager.GetFactions().Where(c => factionDefs.GetValue(slate).Any(x => x == c.def.defName)).TryRandomElement(out Faction faction);
+            Find.FactionManager.GetFactions().Where(c => factionDefs.GetValue(slate).Any(x => x.defName == c.def.defName)).TryRandomElement(out Faction faction);
             Log.Message(faction.def.label);
             slate.Set(storeAs.GetValue(slate), faction);
         }
