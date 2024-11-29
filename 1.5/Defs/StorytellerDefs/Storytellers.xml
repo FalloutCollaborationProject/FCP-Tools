@@ -394,7 +394,7 @@
             <!-- Storyteller Joiner -->
             <li Class="FCP.Core.ModExtension_StoryTellerIsJoiner">
                 <!-- Requirements -->
-                <pawnKindDef>FCP_Unique_Ranger_Rick</pawnKindDef>
+                <pawnKindDef>FCP_Character_Ranger_Rick</pawnKindDef>
                 <forcedXenotypeDef>Baseliner</forcedXenotypeDef>
                 <onlyFixedPawnKindBackstories>false</onlyFixedPawnKindBackstories>
                 <!-- Bio -->
