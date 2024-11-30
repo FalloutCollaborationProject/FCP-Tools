@@ -54,6 +54,8 @@
           <def>Util_AdjustPointsForDistantFight</def>
         </li>
 
+
+
         <li Class="QuestNode_GetMap" />
         <li Class="QuestNode_GetSiteTile">
           <storeAs>siteTile</storeAs>
@@ -80,7 +82,27 @@
           <sitePartDefs>$sitePartDefs</sitePartDefs>
           <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
         </li>
-        
+
+        <li Class="QuestNode_GetSiteThreatPoints">
+          <storeAs>sitePoints</storeAs>
+          <sitePartsParams>$sitePartsParams</sitePartsParams>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_GetDefaultRewardValueFromPoints</def>
+          <parms>
+            <!-- Use the actual threat points generated (some site parts define a minimum threshold) -->
+            <points>$sitePoints</points>
+          </parms>
+        </li>
+
+        <!-- Inflate reward value. Since we're basing the reward value on the threat points generated, we need to do this
+             even though the threat points was deflated from the input points already. -->
+        <li Class="QuestNode_Multiply">
+          <value1>$rewardValue</value1>
+          <value2>1.75</value2>
+          <storeAs>rewardValue</storeAs>
+        </li>
+
 
         <li Class="QuestNode_SubScript">
           <def>Util_GenerateSite</def>
@@ -119,9 +141,9 @@
                 <pawns>$settlers</pawns>
                 <radius>20</radius>
               </li>
-              
-              
-              
+
+
+
               <li Class="QuestNode_GetRandomInRangeFloat">
                 <storeAs>chanceForInstant</storeAs>
                 <range>0~1</range>
@@ -180,13 +202,22 @@
                       <pawns>$settlers</pawns>
                       <node Class="QuestNode_Sequence">
                         <nodes>
-
-                          <li Class="QuestNode_Letter">
-                            <label TKey="LetterLabelSettlerAidEndSuccess">The settlers survived</label>
-                            <text TKey="LetterTextSettlerAidEndSuccess">The settlers you were assigned to protect have survived the onslaught, you have completed your mission.</text>
-                            <letterDef>PositiveEvent</letterDef>
-                            <lookTargets>$settlers</lookTargets>
-                            <filterDeadPawnsFromLookTargets>true</filterDeadPawnsFromLookTargets>
+                          <li Class="QuestNode_GiveRewards">
+                            <parms>
+                              <allowGoodwill>true</allowGoodwill>
+                              <allowRoyalFavor>true</allowRoyalFavor>
+                              <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+                            </parms>
+                            <addCampLootReward>false</addCampLootReward>
+                            <customLetterLabel TKey="LetterLabelPaymentArrived">The settlers survived</customLetterLabel>
+                            <customLetterText TKey="LetterTextPaymentArrived">The settlers you were assigned to protect have survived the onslaught, you have completed your mission.</customLetterText>
+                            <nodeIfChosenPawnSignalUsed Class="QuestNode_Letter">
+                              <letterDef>ChoosePawn</letterDef>
+                              <label TKey="LetterLabelFavorReceiver">[asker_faction_royalFavorLabel]</label>
+                              <text TKey="LetterTextFavorReceiver">These colonists participated in the victory for the quest [resolvedQuestName]. [asker_definite] wants to know who should receive the [royalFavorReward_amount] [asker_faction_royalFavorLabel] for this service.</text>
+                              <useColonistsOnMap>$site</useColonistsOnMap>
+                              <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+                            </nodeIfChosenPawnSignalUsed>
                           </li>
                           <li Class="QuestNode_End">
                             <outcome>Success</outcome>

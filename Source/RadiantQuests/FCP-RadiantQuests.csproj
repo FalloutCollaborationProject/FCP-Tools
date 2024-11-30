@@ -66,10 +66,8 @@
     <Compile Include="QuestNode_GetFactionFromList.cs" />
     <Compile Include="QuestNode_GetLeaderOfFaction.cs" />
     <Compile Include="QuestNode_GetSitePartDefsByTagsAndFaction.cs" />
-    <Compile Include="QuestNode_RaidSimplified.cs" />
     <Compile Include="QuestNode_SpawnRaiders.cs" />
     <Compile Include="QuestNode_SpawnSettlers.cs" />
-    <Compile Include="QuestPart_SetValue.cs" />
     <Compile Include="QuestPart_SpawnRaiders.cs" />
     <Compile Include="QuestPart_SpawnSettlers.cs" />
   </ItemGroup>
