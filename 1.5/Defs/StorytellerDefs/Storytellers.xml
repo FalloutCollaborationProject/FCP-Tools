@@ -393,7 +393,7 @@
         <modExtensions>
             <!-- Storyteller Joiner -->
             <li Class="FCP.Core.ModExtension_StoryTellerIsJoiner">
-                <characterDef>FCP_Character_RangerRick</characterDef>
+                <characterDef>FCP_Character_Ranger_Rick</characterDef>
             </li>
         </modExtensions>
     </StorytellerDef> 
