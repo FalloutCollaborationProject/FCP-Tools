@@ -23,6 +23,14 @@ public static class CharacterRoleUtils
         return new List<CharacterDefWithRole<TRole>>();
     }
     
+    /// <summary>
+    /// Return a list of all role types in the registry.
+    /// </summary>
+    public static IReadOnlyList<Type> GetAllRoleTypes()
+    {
+        return RoleRegistry.Keys.ToList(); 
+    }
+    
     static CharacterRoleUtils()
     {
         foreach (CharacterDef characterDef in DefDatabase<CharacterDef>.AllDefsListForReading)
