@@ -14,7 +14,7 @@ public class CharacterFactionDefinition : CharacterBaseDefinition
 
     public override void ApplyToRequest(ref PawnGenerationRequest request)
     {
-        if (factionDef == null) return;
+        /*if (factionDef == null) return;
         Faction faction = Find.FactionManager.FirstFactionOfDef(factionDef);
 
         if (faction != null)
@@ -26,11 +26,11 @@ public class CharacterFactionDefinition : CharacterBaseDefinition
         else
         {
             FCPLog.Warning("CharacterFactionDefinition had a defined factionDef, but no faction exists with that def");
-        }
+        }*/
     }
 
     public override void ApplyToPawn(Pawn pawn)
     {
-        pawn.royalty?.AllFactionPermits?.Clear();
+        // pawn.royalty?.AllFactionPermits?.Clear();
     }
 }

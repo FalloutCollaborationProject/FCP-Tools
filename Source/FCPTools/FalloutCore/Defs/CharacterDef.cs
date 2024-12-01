@@ -6,5 +6,7 @@ public class CharacterDef : Def
 {
     public PawnKindDef pawnKind;
     public XenotypeDef xenotype;
-    public List<CharacterBaseDefinition> definitions;
+    public FactionDef faction;
+    [UsedImplicitly] public List<CharacterBaseDefinition> definitions = [];
+    [UsedImplicitly] public List<CharacterRole> roles = [];
 }
