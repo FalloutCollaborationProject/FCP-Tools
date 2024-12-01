@@ -1,7 +1,9 @@
 ﻿using HarmonyLib;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -13,6 +15,7 @@ namespace FalloutCore
     {
         public bool shouldHideBody;
         public bool shouldHideHead;
+        public BodyTypeDef displayBodyType;
     }
 
     [StaticConstructorOnStartup]
@@ -20,7 +23,7 @@ namespace FalloutCore
     {
         static HarmonyInit()
         {
-            new Harmony("FalloutCore.Mod").PatchAll();
+            new Harmony("FalloutCore.ApparelExtension").PatchAll();
         }
 
         private static Dictionary<ThingDef, ApparelExtension> cachedExtensions = new Dictionary<ThingDef, ApparelExtension>();
@@ -51,74 +54,106 @@ namespace FalloutCore
         }
     }
 
-    [HarmonyPatch(typeof(PawnGraphicSet), "MatsBodyBaseAt")]
-    public static class PawnGraphicSet_MatsBodyBaseAt_Test_Patch
+    [HarmonyPatch(typeof(PawnRenderNodeWorker), "AppendDrawRequests")]
+    public static class PawnRenderNodeWorker_AppendDrawRequests_Patch
     {
-        [HarmonyPostfix, HarmonyPriority(Priority.Last)]
-        public static void Postfix(PawnGraphicSet __instance, ref List<Material> __result)
+        public static bool Prefix(PawnRenderNode node, PawnDrawParms parms, List<PawnGraphicDrawRequest> requests)
         {
-            Pawn pawn = __instance.pawn;
-            if (!pawn.RaceProps.Humanlike)
+            if ((node is PawnRenderNode_Head || node.parent is PawnRenderNode_Head) && parms.pawn.apparel.AnyApparel)
             {
-                return;
-            }
-            if (pawn.apparel.AnyApparel)
-            {
-                if (pawn.apparel.WornApparel.Any(x => x.def.ShouldHideBody()))
+                foreach (var apparel in parms.pawn.apparel.WornApparel)
                 {
-                    for (int i = 0; i < __result.Count; i++)
+                    if (apparel.def.ShouldHideHead())
                     {
-                        __result[i] = BaseContent.ClearMat;
+                        requests.Add(new PawnGraphicDrawRequest(node)); // adds an empty draw request to not draw head
+                        return false;
                     }
                 }
             }
-        }
-    }
-
-    [HarmonyPatch(typeof(PawnRenderer), "DrawHeadHair")]
-    public static class DrawHeadHair_Patch
-    {
-        public static bool Prefix(Pawn ___pawn, Vector3 rootLoc, Vector3 headOffset, float angle, Rot4 bodyFacing, Rot4 headFacing, RotDrawMode bodyDrawType, PawnRenderFlags flags)
-        {
-            Pawn pawn = ___pawn;
-            if (pawn.apparel.AnyApparel)
+            if ((node is PawnRenderNode_Body || node.parent is PawnRenderNode_Body) && parms.pawn.apparel.AnyApparel)
             {
-                if (pawn.apparel.WornApparel.Any(x => x.def.ShouldHideHead()))
+                foreach (var apparel in parms.pawn.apparel.WornApparel)
                 {
-                    return false;
+                    if (apparel.def.ShouldHideBody())
+                    {
+                        requests.Add(new PawnGraphicDrawRequest(node)); // adds an empty draw request to not draw body
+                        return false;
+                    }
                 }
             }
             return true;
         }
     }
 
-    [HarmonyPatch(typeof(PawnGraphicSet), "HairMatAt")]
-    public static class PawnGraphicSet_HairMatAt_Patch
+    [HarmonyPatch(typeof(PawnRenderNodeWorker_Apparel_Head), "CanDrawNow")]
+    public static class PawnRenderNodeWorker_Apparel_Head_CanDrawNow_Patch
     {
-        public static void Postfix(PawnGraphicSet __instance, ref Material __result, Rot4 facing, bool portrait = false, bool cached = false)
+        public static void Prefix(PawnDrawParms parms, out bool __state)
         {
-            Pawn pawn = __instance.pawn;
-            if (pawn.apparel.AnyApparel && !portrait)
+            __state = Prefs.HatsOnlyOnMap;
+            if (parms.pawn.apparel.AnyApparel)
             {
-                if (pawn.apparel.WornApparel.Any(x => x.def.ShouldHideHead()))
+                var headgear = parms.pawn.apparel.WornApparel
+                    .FirstOrDefault(x => x.def.ShouldHideHead());
+                if (headgear != null)
                 {
-                    __result = BaseContent.ClearMat;
+                    Prefs.HatsOnlyOnMap = false;
                 }
             }
         }
+
+        public static void Postfix(bool __state)
+        {
+            Prefs.HatsOnlyOnMap = __state;
+        }
     }
 
-    [HarmonyPatch(typeof(PawnGraphicSet), "HeadMatAt")]
-    public static class PawnGraphicSet_HeadMatAt_Patch
+    [HarmonyPatch(typeof(PawnRenderNodeWorker_Apparel_Head), "HeadgearVisible")]
+    public static class PawnRenderNodeWorker_Apparel_Head_HeadgearVisible_Patch
     {
-        public static void Postfix(PawnGraphicSet __instance, ref Material __result, Rot4 facing, RotDrawMode bodyCondition = RotDrawMode.Fresh, bool stump = false, bool portrait = false, bool allowOverride = true)
+        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> codeInstructions)
         {
-            Pawn pawn = __instance.pawn;
-            if (pawn.apparel.AnyApparel && !portrait)
+            var get_HatsOnlyOnMap = AccessTools.PropertyGetter(typeof(Prefs), nameof(Prefs.HatsOnlyOnMap));
+            foreach (var codeInstruction in codeInstructions)
             {
-                if (pawn.apparel.WornApparel.Any(x => x.def.ShouldHideHead()))
+                yield return codeInstruction;
+                if (codeInstruction.Calls(get_HatsOnlyOnMap))
                 {
-                    __result = BaseContent.ClearMat;
+                    yield return new CodeInstruction(OpCodes.Ldarg_0);
+                    yield return new CodeInstruction(OpCodes.Call,
+                        AccessTools.Method(typeof(PawnRenderNodeWorker_Apparel_Head_HeadgearVisible_Patch),
+                        "TryOverrideHatsOnlyOnMap"));
+                }
+            }
+        }
+
+        public static bool TryOverrideHatsOnlyOnMap(bool result, PawnDrawParms parms)
+        {
+            if (result is true && parms.pawn.apparel.AnyApparel)
+            {
+                var headgear = parms.pawn.apparel.WornApparel
+                    .FirstOrDefault(x => x.def.ShouldHideHead());
+                if (headgear != null)
+                {
+                    return false;
+                }
+            }
+            return result;
+        }
+    }
+
+    [HarmonyPatch(typeof(ApparelGraphicRecordGetter), "TryGetGraphicApparel")]
+    public static class ApparelGraphicRecordGetter_TryGetGraphicApparel_Patch
+    {
+        public static void Prefix(Apparel apparel, ref BodyTypeDef bodyType)
+        {
+            var pawn = apparel.Wearer;
+            if (pawn != null)
+            {
+                var extension = apparel.def.GetModExtension<ApparelExtension>();
+                if (extension != null && extension.displayBodyType != null)
+                {
+                    bodyType = extension.displayBodyType;
                 }
             }
         }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FalloutCore\\1.3\\Source\\ApparelExtension\\ApparelExtension.csproj": {}
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\Source\\ApparelExtension\\ApparelExtension.csproj": {}
   },
   "projects": {
-    "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FalloutCore\\1.3\\Source\\ApparelExtension\\ApparelExtension.csproj": {
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\Source\\ApparelExtension\\ApparelExtension.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FalloutCore\\1.3\\Source\\ApparelExtension\\ApparelExtension.csproj",
+        "projectUniqueName": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\Source\\ApparelExtension\\ApparelExtension.csproj",
         "projectName": "ApparelExtension",
-        "projectPath": "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FalloutCore\\1.3\\Source\\ApparelExtension\\ApparelExtension.csproj",
+        "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\Source\\ApparelExtension\\ApparelExtension.csproj",
         "packagesPath": "C:\\Users\\Vova\\.nuget\\packages\\",
-        "outputPath": "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FalloutCore\\1.3\\Source\\ApparelExtension\\obj\\",
+        "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\Source\\ApparelExtension\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
@@ -29,6 +29,11 @@
           "net472": {
             "projectReferences": {}
           }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -36,17 +41,30 @@
           "dependencies": {
             "Krafs.Rimworld.Ref": {
               "target": "Package",
-              "version": "[1.3.3146-beta, )"
+              "version": "[1.5.*-*, )"
+            },
+            "Krafs.Rimworld.Ref": {
+              "target": "Package",
+              "version": "[1.5.*-*, )"
             },
             "Lib.Harmony": {
+              "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "target": "Package",
-              "version": "[2.1.1, )"
+              "version": "[2.3.*, )"
+            },
+            "Lib.Harmony": {
+              "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "target": "Package",
+              "version": "[2.3.*, )"
             }
           }
         }
       },
       "runtimes": {
         "win": {
+          "#import": []
+        },
+        "win-arm64": {
           "#import": []
         },
         "win-x64": {
