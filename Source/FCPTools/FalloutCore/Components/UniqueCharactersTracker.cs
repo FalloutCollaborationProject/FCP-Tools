@@ -78,8 +78,8 @@ public class UniqueCharactersTracker : WorldComponent
         character.pawn = PawnGenerator.GeneratePawn(request);
         CharacterDefinitionUtils.ApplyPawnDefinitions(character.pawn, charDef.definitions);
 
-        // Set the pawn to be ignored by the World Pawn GC
-        Find.World.worldPawns.ForcefullyKeptPawns.Add(character.pawn);
+        // Set the pawn to be ignored by the World Pawn GC and pass it to the world so it has somewhere to be saved.
+        Find.WorldPawns.PassToWorld(character.pawn, PawnDiscardDecideMode.KeepForever);
         
         return character.pawn;
     }
