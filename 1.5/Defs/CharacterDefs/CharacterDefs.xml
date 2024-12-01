@@ -28,9 +28,8 @@
                 <bodyTypeDef>Male</bodyTypeDef>
             </li>
             <!-- Factional -->
-            <li Class="FCP.Core.CharacterFactionDefinition" MayRequire="Rick.FCP.NCR">
+            <li Class="FCP.Core.CharacterTitleDefinition" MayRequire="Rick.FCP.NCR">
                 <title>FCP_NCR_Ranger_Volunteer</title>
-                <useFactionalIdeo>true</useFactionalIdeo>
             </li>
         </definitions>
     </FCP.Core.CharacterDef>
