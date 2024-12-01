@@ -156,6 +156,7 @@ namespace FalloutCore
                     if (extension != null && extension.displayBodyType != null)
                     {
                         bodyType = extension.displayBodyType;
+                        break;
                     }
                 }
             }
