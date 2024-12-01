@@ -1,4 +1,6 @@
-﻿using RimWorld.Planet;
+﻿using System.Reflection;
+using HarmonyLib;
+using RimWorld.Planet;
 
 namespace FCP.Core;
 
@@ -47,7 +49,7 @@ public class UniqueCharactersTracker : WorldComponent
         return TryGetPawnCharacter(pawn, out _);
     }
 
-    public Pawn GetOrGenPawn(CharacterDef charDef, PawnGenerationRequest? requestParams = null)
+    public Pawn GetOrGenPawn(CharacterDef charDef, PawnGenerationRequest? requestParams = null, Faction forcedFaction = null)
     {
         // If the character entry doesn't exist make one, if it does and has a pawn, return that.
         UniqueCharacter character = characters.Find(chr => chr.def == charDef);
@@ -68,6 +70,7 @@ public class UniqueCharactersTracker : WorldComponent
         // Create a new request if one wasn't provided, also ensure it's valid.
         PawnGenerationRequest request = requestParams ?? new PawnGenerationRequest(charDef.pawnKind);
         request.KindDef ??= charDef.pawnKind;
+        request.Faction ??= Find.FactionManager.FirstFactionOfDef(charDef.faction);
         request.ForceGenerateNewPawn = true;
         
         // Generate the pawn.
@@ -85,6 +88,7 @@ public class UniqueCharactersTracker : WorldComponent
     {
         base.FinalizeInit();
         Instance = this;
+
     }
 
     public override void ExposeData()

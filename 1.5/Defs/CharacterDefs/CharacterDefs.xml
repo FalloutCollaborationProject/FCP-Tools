@@ -5,7 +5,10 @@
         <defName>FCP_Character_Ranger_Rick</defName>
         <pawnKind>FCP_Unique_Ranger_Rick</pawnKind>
         <xenotype>Baseliner</xenotype>
+        <faction MayRequire="Rick.FCP.NCR">FCP_Faction_NCR</faction>
+        <roles>
 
+        </roles>
         <definitions>
             <!-- Bio -->
             <li Class="FCP.Core.CharacterStoryDefinition">
@@ -25,10 +28,8 @@
                 <bodyTypeDef>Male</bodyTypeDef>
             </li>
             <!-- Factional -->
-            <li Class="FCP.Core.CharacterFactionDefinition" MayRequire="Rick.FCP.NCR">
-                <factionDef>FCP_Faction_NCR</factionDef>
+            <li Class="FCP.Core.CharacterTitleDefinition" MayRequire="Rick.FCP.NCR">
                 <title>FCP_NCR_Ranger_Volunteer</title>
-                <useFactionalIdeo>true</useFactionalIdeo>
             </li>
         </definitions>
     </FCP.Core.CharacterDef>
