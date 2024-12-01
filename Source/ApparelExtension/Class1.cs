@@ -150,10 +150,13 @@ namespace FalloutCore
             var pawn = apparel.Wearer;
             if (pawn != null)
             {
-                var extension = apparel.def.GetModExtension<ApparelExtension>();
-                if (extension != null && extension.displayBodyType != null)
+                foreach (var apparel2 in pawn.apparel.WornApparel)
                 {
-                    bodyType = extension.displayBodyType;
+                    var extension = apparel2.def.GetModExtension<ApparelExtension>();
+                    if (extension != null && extension.displayBodyType != null)
+                    {
+                        bodyType = extension.displayBodyType;
+                    }
                 }
             }
         }
