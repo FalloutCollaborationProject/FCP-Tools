@@ -27,7 +27,8 @@ public class StockGenerator_PawnsWithXenotype : StockGenerator_Slaves
 		for (int i = 0; i < generateCount; i++)
 		{
 			var pawnRequest = new PawnGenerationRequest(slaveKindDef ?? PawnKindDefOf.Slave, faction, 
-				PawnGenerationContext.NonPlayer, forTile, forceAddFreeWarmLayerIfNeeded: !trader.orbital,
+				tile: forTile, 
+				forceAddFreeWarmLayerIfNeeded: !trader.orbital, 
 				forcedXenotype: xenotypeDef ?? XenotypeDefOf.Baseliner);
 
 			yield return PawnGenerator.GeneratePawn(pawnRequest);
