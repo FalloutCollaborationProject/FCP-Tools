@@ -4,7 +4,7 @@ public class StockGenerator_PawnsWithXenotype : StockGenerator_Slaves
 {
 	private bool respectPopulationIntent = true;
 	public bool ignoreIdeoRequirements = false;
-	public XenotypeDef xenotypeDef = XenotypeDefOf.Baseliner;
+	public XenotypeDef xenotypeDef;
     	
 	public override IEnumerable<Thing> GenerateThings(int forTile, Faction faction = null)
 	{
@@ -26,25 +26,9 @@ public class StockGenerator_PawnsWithXenotype : StockGenerator_Slaves
 		int generateCount = countRange.RandomInRange;
 		for (int i = 0; i < generateCount; i++)
 		{
-			PawnGenerationRequest pawnRequest = new (slaveKindDef ?? PawnKindDefOf.Slave, faction, PawnGenerationContext.NonPlayer, forTile, 
-				forceGenerateNewPawn: false, 
-				allowDead: false, 
-				allowDowned: false, 
-				canGeneratePawnRelations: true, 
-				mustBeCapableOfViolence: false, 
-				colonistRelationChanceFactor: 1f,
-				forceAddFreeWarmLayerIfNeeded: !trader.orbital,
-				allowGay: true,
-				allowPregnant: false,
-				allowFood: true,
-				allowAddictions: true,
-				inhabitant: false,
-				certainlyBeenInCryptosleep: false,
-				forceRedressWorldPawnIfFormerColonist: false,
-				worldPawnFactionDoesntMatter: false)
-			{
-				ForcedXenotype = xenotypeDef
-			};
+			var pawnRequest = new PawnGenerationRequest(slaveKindDef ?? PawnKindDefOf.Slave, faction, 
+				PawnGenerationContext.NonPlayer, forTile, forceAddFreeWarmLayerIfNeeded: !trader.orbital,
+				forcedXenotype: xenotypeDef ?? XenotypeDefOf.Baseliner);
 
 			yield return PawnGenerator.GeneratePawn(pawnRequest);
 		}
