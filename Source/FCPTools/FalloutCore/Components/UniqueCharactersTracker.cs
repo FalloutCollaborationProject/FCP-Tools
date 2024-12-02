@@ -35,53 +35,77 @@ public class UniqueCharactersTracker : WorldComponent
         return character != null && character.PawnExists() && !character.pawn.Dead;
     }
     
-    /// <summary>
-    /// Try find a matching UniqueCharacter for a given pawn
-    /// </summary>
-    public bool TryGetPawnCharacter(Pawn pawn, out UniqueCharacter character)
+    // Try find a matching UniqueCharacter for a given pawn
+    public bool IsUniquePawn(Pawn pawn, out UniqueCharacter character)
     {
         character = characters.Find(chr => chr.pawn == pawn);
         return character != null;
     }
     
-    public bool IsUniquePawn(Pawn pawn)
-    {
-        return TryGetPawnCharacter(pawn, out _);
-    }
+    public bool IsUniquePawn(Pawn pawn) => IsUniquePawn(pawn, out _);
 
-    public Pawn GetOrGenPawn(CharacterDef charDef, PawnGenerationRequest? requestParams = null, Faction forcedFaction = null)
+    /// <summary>
+    /// Get an existing UniqueCharacter for the given CharacterDef, or create a new one if it doesn't exist.
+    /// </summary>
+    private UniqueCharacter GetOrCreateUniqueCharacter(CharacterDef charDef)
     {
-        // If the character entry doesn't exist make one, if it does and has a pawn, return that.
         UniqueCharacter character = characters.Find(chr => chr.def == charDef);
-        
+
+        // If it doesn't exist, create a new entry and add it to the tracker
         if (character == null)
         {
             character = new UniqueCharacter(charDef);
             characters.Add(character);
         }
-        else if (character.PawnExists())
+
+        return character;
+    }
+
+    /// <summary>
+    /// Get an existing pawn or generate a new one for the given CharacterDef.
+    /// </summary>
+    public Pawn GetOrGenPawn(CharacterDef charDef, PawnGenerationRequest? requestParams = null, Faction forcedFaction = null)
+    {
+        // Create a new, or get an existing unique character from the tracker
+        UniqueCharacter character = GetOrCreateUniqueCharacter(charDef);
+        
+        if (character.PawnExists())
         {
             return character.pawn;
         }
-
-        // Time to generate one then.
-        FCPLog.Message($"Generating Unique Pawn: {charDef.defName}");
         
-        // Create a new request if one wasn't provided, also ensure it's valid.
-        PawnGenerationRequest request = requestParams ?? new PawnGenerationRequest(charDef.pawnKind);
-        request.KindDef ??= charDef.pawnKind;
-        request.Faction ??= Find.FactionManager.FirstFactionOfDef(charDef.faction);
-        request.ForceGenerateNewPawn = true;
-        
-        // Generate the pawn.
-        CharacterDefinitionUtils.ApplyRequestDefinitions(ref request, charDef.definitions);
-        character.pawn = PawnGenerator.GeneratePawn(request);
-        CharacterDefinitionUtils.ApplyPawnDefinitions(character.pawn, charDef.definitions);
+        character.pawn = GenerateUniquePawn(charDef, requestParams, forcedFaction);
 
-        // Set the pawn to be ignored by the World Pawn GC and pass it to the world so it has somewhere to be saved.
+        // Makes sure the pawn is saved somewhere and immune from GC.
         Find.WorldPawns.PassToWorld(character.pawn, PawnDiscardDecideMode.KeepForever);
-        
+
         return character.pawn;
+    }
+    
+    /// <summary>
+    /// Generate a new pawn for the given CharacterDef.
+    /// </summary>
+    private static Pawn GenerateUniquePawn(CharacterDef charDef, PawnGenerationRequest? requestParams = null, 
+        Faction forcedFaction = null)
+    {
+        FCPLog.Message($"Generating Unique Pawn: {charDef.defName}");
+        PawnGenerationRequest request = requestParams ?? new PawnGenerationRequest(charDef.pawnKind);
+
+        // Defaults
+        request.KindDef ??= charDef.pawnKind;
+        request.Faction ??= forcedFaction ?? Find.FactionManager.FirstFactionOfDef(charDef.faction);
+        request.ForceGenerateNewPawn = true;
+
+        // Apply any custom definitions or modifications to the generation request
+        CharacterDefinitionUtils.ApplyRequestDefinitions(ref request, charDef.definitions);
+
+        // Actually Generate the pawn
+        Pawn pawn = PawnGenerator.GeneratePawn(request);
+
+        // Post generation definitions to the actual Pawn
+        CharacterDefinitionUtils.ApplyPawnDefinitions(pawn, charDef.definitions);
+
+        return pawn;
     }
     
     public override void FinalizeInit()
