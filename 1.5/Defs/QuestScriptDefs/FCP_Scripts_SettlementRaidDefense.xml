@@ -4,7 +4,7 @@
   <QuestScriptDef>
     <defName>FCP_Quest_SettlementRaidDefense</defName>
     <rootSelectionWeight>1.0</rootSelectionWeight>
-    <rootMinPoints>0</rootMinPoints>
+    <rootMinPoints>50</rootMinPoints>
     <defaultChallengeRating>1</defaultChallengeRating>
     <canGiveRoyalFavor>true</canGiveRoyalFavor>
     <expireDaysRange>4~8</expireDaysRange>
@@ -149,7 +149,7 @@
                 <range>0~1</range>
               </li>
               <li Class="QuestNode_GreaterOrEqual">
-                <value1>$chanceForInstance</value1>
+                <value1>$chanceForInstant</value1>
                 <!--If value1 >= value2, spawn raid instantly, otherwise with delay-->
                 <value2>0.75</value2>
 

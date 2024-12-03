@@ -98,6 +98,7 @@ namespace FCP_RadiantQuests
             Scribe_Values.Look(ref cell, "cell");
 
         }
+        
         private bool TryFindWalkInSpot(Map map, out IntVec3 spawnSpot)
         {
             if (CellFinder.TryFindRandomEdgeCellWith((IntVec3 c) => !c.Fogged(map) && map.reachability.CanReachColony(c), map, CellFinder.EdgeRoadChance_Neutral, out spawnSpot))

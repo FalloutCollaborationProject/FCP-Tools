@@ -8,12 +8,14 @@ using Verse;
 
 namespace FCP_RadiantQuests
 {
-/*    public class Mod : Verse.Mod
+    [StaticConstructorOnStartup]
+    public static class HarmonyStarter
     {
-        public Mod(ModContentPack content) : base(content)
+        static HarmonyStarter()
         {
-            Harmony harmony = new Harmony(content.PackageId);
+            Log.Message("Harmony starter started");
+            Harmony harmony = new Harmony("FCP.RadiantQuests");
             harmony.PatchAll();
         }
-    }*/
+    }
 }

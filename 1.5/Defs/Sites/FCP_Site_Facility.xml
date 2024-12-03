@@ -28,6 +28,7 @@
     <order>450</order>
     <genStep Class="GenStep_Outpost">
       <generateLoot>false</generateLoot>
+      <pawnGroupKindDef>Combat</pawnGroupKindDef>
     </genStep>
   </GenStepDef>
 
