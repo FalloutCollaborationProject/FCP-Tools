@@ -64,7 +64,9 @@ public class UniqueCharactersTracker : WorldComponent
     /// <summary>
     /// Get an existing pawn or generate a new one for the given CharacterDef.
     /// </summary>
-    public Pawn GetOrGenPawn(CharacterDef charDef, PawnGenerationRequest? requestParams = null, Faction forcedFaction = null)
+    public Pawn GetOrGenPawn(CharacterDef charDef, 
+        PawnGenerationRequest? baseParams = null,
+        Func<PawnGenerationRequest, PawnGenerationRequest> modifyGenRequest = null)
     {
         // Create a new, or get an existing unique character from the tracker
         UniqueCharacter character = GetOrCreateUniqueCharacter(charDef);
@@ -74,7 +76,7 @@ public class UniqueCharactersTracker : WorldComponent
             return character.pawn;
         }
         
-        character.pawn = GenerateUniquePawn(charDef, requestParams, forcedFaction);
+        character.pawn = GenerateUniquePawn(charDef, baseParams, modifyGenRequest);
 
         // Makes sure the pawn is saved somewhere and immune from GC.
         Find.WorldPawns.PassToWorld(character.pawn, PawnDiscardDecideMode.KeepForever);
@@ -85,19 +87,22 @@ public class UniqueCharactersTracker : WorldComponent
     /// <summary>
     /// Generate a new pawn for the given CharacterDef.
     /// </summary>
-    private static Pawn GenerateUniquePawn(CharacterDef charDef, PawnGenerationRequest? requestParams = null, 
-        Faction forcedFaction = null)
+    private static Pawn GenerateUniquePawn(CharacterDef charDef, 
+        PawnGenerationRequest? baseParams = null,
+        Func<PawnGenerationRequest, PawnGenerationRequest> modifyGenRequest = null)
     {
+        
         FCPLog.Message($"Generating Unique Pawn: {charDef.defName}");
-        PawnGenerationRequest request = requestParams ?? new PawnGenerationRequest(charDef.pawnKind);
+        PawnGenerationRequest request = baseParams ?? new PawnGenerationRequest(charDef.pawnKind);
 
         // Defaults
         request.KindDef ??= charDef.pawnKind;
-        request.Faction ??= forcedFaction ?? Find.FactionManager.FirstFactionOfDef(charDef.faction);
+        request.Faction ??= Find.FactionManager.FirstFactionOfDef(charDef.faction); // May be null for initial faction leaders.
         request.ForceGenerateNewPawn = true;
 
         // Apply any custom definitions or modifications to the generation request
         CharacterDefinitionUtils.ApplyRequestDefinitions(ref request, charDef.definitions);
+        request = modifyGenRequest?.Invoke(request) ?? request;
 
         // Actually Generate the pawn
         Pawn pawn = PawnGenerator.GeneratePawn(request);
