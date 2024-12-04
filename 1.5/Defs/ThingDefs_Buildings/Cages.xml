@@ -83,6 +83,10 @@
       <li Class="FCP_RadiantQuests.CompProperties_AnimalCage">
         <maxBodySize>1.5</maxBodySize>
         <minBodySize>0.1</minBodySize>
+        <!--Int-->
+        <ticksForCaptureChance>600</ticksForCaptureChance>
+        <!--0-1-->
+        <captureChance>1</captureChance>
         <animalsThatGetCaught>
           <!--Animal kind defs-->
           <li>Lynx</li>

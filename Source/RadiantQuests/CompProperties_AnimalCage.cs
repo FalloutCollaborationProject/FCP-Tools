@@ -12,6 +12,8 @@ namespace FCP_RadiantQuests
     {
         public float maxBodySize = 1f;
         public float minBodySize = 0f;
+        public int ticksForCaptureChance = 60000;
+        public float captureChance = 0.5f; 
         public List<PawnKindDef> animalsThatGetCaught = new List<PawnKindDef>();
         public CompProperties_AnimalCage()
         {

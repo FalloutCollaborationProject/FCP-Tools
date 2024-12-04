@@ -105,7 +105,7 @@ namespace FCP_RadiantQuests
                 ConsumeFuel(ConsumptionRatePerTick);
             }
 
-            if (ShouldCapture && parent.IsHashIntervalTick(captureTicks) && Occupant == null && Fuel != 0)
+            if (ShouldCapture && parent.IsHashIntervalTick(Props.ticksForCaptureChance) && Occupant == null && Fuel != 0 && Rand.Chance(Props.captureChance))
             {
                 CaptureAnimal();
             }
