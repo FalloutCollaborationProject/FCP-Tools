@@ -7,7 +7,9 @@
         <xenotype>Baseliner</xenotype>
         <faction MayRequire="Rick.FCP.NCR">FCP_Faction_NCR</faction>
         <roles>
-
+            <li Class="FCP.Core.CharacterRole_StorytellerJoiner">
+                <storytellerDef>FCP_Storyteller_Ranger_Rick</storytellerDef>
+            </li>
         </roles>
         <definitions>
             <!-- Bio -->

@@ -380,22 +380,7 @@
                 <incident>FCP_Mysterious_Stranger</incident>
                 <delayTicks>180</delayTicks>
             </li>
-            <!-- Storyteller Joiner -->
-            <li Class="StorytellerCompProperties_SingleOnceFixed">
-                <fireAfterDaysPassed>4</fireAfterDaysPassed>
-                <incident>FCP_GiveQuest_StorytellerJoiner</incident>
-                <minColonistCount>1</minColonistCount>
-                <allowedTargetTags>
-                    <li>World</li>
-                </allowedTargetTags>
-            </li>
         </comps>
-        <modExtensions>
-            <!-- Storyteller Joiner -->
-            <li Class="FCP.Core.ModExtension_StoryTellerIsJoiner">
-                <characterDef>FCP_Character_Ranger_Rick</characterDef>
-            </li>
-        </modExtensions>
     </StorytellerDef> 
 
     <!-- Vault Boy -->

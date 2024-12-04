@@ -3,16 +3,25 @@ using RimWorld.QuestGen;
 
 namespace FCP.Core;
 
+[StaticConstructorOnStartup]
 public class QuestNode_Root_StorytellerJoin : QuestNode_Root_WandererJoin
 {
 	private const int TimeoutTicks = 30000;
 
 	private string signalAccept;
 	private string signalReject;
+
+	public static IReadOnlyList<CharacterDefWithRole<CharacterRole_StorytellerJoiner>> storytellerCharacters;
+
+	static QuestNode_Root_StorytellerJoin()
+	{
+		storytellerCharacters = CharacterRoleUtils.GetAllWithRole<CharacterRole_StorytellerJoiner>();
+	}
 	
 	protected override bool TestRunInt(Slate slate)
 	{
-		return Find.Storyteller.def.HasModExtension<ModExtension_StoryTellerIsJoiner>();
+		StorytellerDef storyteller = Find.Storyteller.def;
+		return storytellerCharacters.Any(defWithRole => defWithRole.role.storytellerDef == storyteller);
 	}
 
 	protected override void RunInt()
@@ -27,13 +36,11 @@ public class QuestNode_Root_StorytellerJoin : QuestNode_Root_WandererJoin
 
 	public override Pawn GeneratePawn()
 	{
-		var extension = Find.Storyteller.def.GetModExtension<ModExtension_StoryTellerIsJoiner>();
-		Pawn pawn = UniqueCharactersTracker.Instance.GetOrGenPawn(extension.characterDef);
+		var storyteller = storytellerCharacters.First(withRole => withRole.role.storytellerDef == Find.Storyteller.def); 
 		
-		if (!pawn.IsWorldPawn())
-		{
-			Find.WorldPawns.PassToWorld(pawn);
-		}
+		Pawn pawn = UniqueCharactersTracker.Instance.GetOrGenPawn(storyteller.characterDef);
+		storyteller.role.ApplyRole(pawn);
+
 		return pawn;
 	}
 
