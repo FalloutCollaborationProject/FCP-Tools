@@ -40,6 +40,9 @@
       <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="PipeSystem">
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\2023507013\1.5\Assemblies\PipeSystem.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -58,10 +61,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnimalCageUtility.cs" />
+    <Compile Include="CompAnimalCage.cs" />
+    <Compile Include="CompProperties_AnimalCage.cs" />
+    <Compile Include="DefOfs.cs" />
     <Compile Include="GenStep_PawnRescue.cs" />
     <Compile Include="GenStep_SettlementScaleable.cs" />
     <Compile Include="GenStep_SpawnBuilding.cs" />
+    <Compile Include="HarmonyPatches\AnimalCagePatch.cs" />
     <Compile Include="HarmonyPatches\PawnRescuePatches.cs" />
+    <Compile Include="JobDriver_CarryAnimalToCage.cs" />
+    <Compile Include="JobDriver_RefuelAnimalCage.cs" />
+    <Compile Include="JobDriver_RefuelAnimalCage_Atomic.cs" />
+    <Compile Include="JobDriver_ReleaseAnimalFromCage.cs" />
+    <Compile Include="JobDriver_TransferAnimalBetweenCages.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="PawnRescueUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,13 +83,12 @@
     <Compile Include="QuestNode_GetLeaderOfFaction.cs" />
     <Compile Include="QuestNode_GetPawnKind.cs" />
     <Compile Include="QuestNode_GetSitePartDefsByTagsAndFaction.cs" />
-    <Compile Include="QuestNode_SetJoinPawnUponRescue.cs" />
     <Compile Include="QuestNode_SpawnRaiders.cs" />
     <Compile Include="QuestNode_SpawnSettlers.cs" />
-    <Compile Include="QuestPart_SetJoinPawnUponRescue.cs" />
     <Compile Include="QuestPart_SpawnRaiders.cs" />
     <Compile Include="QuestPart_SpawnSettlers.cs" />
     <Compile Include="SitePartWorker_PawnRescue.cs" />
+    <Compile Include="WorkGiver_AnimalCageRefuel.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

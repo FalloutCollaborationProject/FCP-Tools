@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Cages __________-->
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>FCP_AnimalCage_Placeholder</defName>
+    <label>animal cage</label>
+    <description>Its a cage sir</description>
+    <thingClass>Building</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <graphicData>
+      <texPath>Things/Building/Production/MechGestatorStandard</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,2)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <blockWind>true</blockWind>
+    <fillPercent>1.0</fillPercent>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>4000</WorkToBuild>
+      <Flammability>1.0</Flammability>
+      <Mass>50</Mass>
+    </statBases>
+    <containedPawnsSelectable>true</containedPawnsSelectable>
+    <tickerType>Normal</tickerType>
+    <canOverlapZones>false</canOverlapZones>
+    <size>(3,2)</size>
+    <interactionCellOffset>(0,0,2)</interactionCellOffset>
+    <hasInteractionCell>true</hasInteractionCell>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+      <haulToContainerDuration>120</haulToContainerDuration>
+      <uninstallWork>1800</uninstallWork>
+      <fixedStorageSettings>
+        <filter>
+          <categories>
+            <li>Foods</li>
+          </categories>
+          <specialFiltersToDisallow>
+            <li>AllowPlantFood</li>
+          </specialFiltersToDisallow>
+          <disallowedThingDefs>
+            <li>Hay</li>
+          </disallowedThingDefs>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <filter>
+          <categories>
+            <li>Foods</li>
+          </categories>
+          <disallowedCategories>
+            <li>EggsFertilized</li>
+            <li>FoodMeals</li>
+          </disallowedCategories>
+          <disallowedThingDefs>
+            <li>InsectJelly</li>
+            <li>Chocolate</li>
+            <li>HemogenPack</li>
+          </disallowedThingDefs>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <costList>
+      <Steel>180</Steel>
+      <Gold>30</Gold>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+
+    <inspectorTabs>
+      <li>ITab_BiosculpterNutritionStorage</li>
+    </inspectorTabs>
+    <designationCategory>Misc</designationCategory>
+    <comps>
+      <li MayRequire="VanillaExpanded.VNutrientE" Class="PipeSystem.CompProperties_Resource">
+        <pipeNet>VNPE_NutrientPasteNet</pipeNet>
+      </li>
+      <li Class="FCP_RadiantQuests.CompProperties_AnimalCage">
+        <maxBodySize>1.5</maxBodySize>
+        <minBodySize>0.1</minBodySize>
+        <animalsThatGetCaught>
+          <!--Animal kind defs-->
+          <li>Lynx</li>
+          <li>Husky</li>
+          <li>Panther</li>
+          <li>Deer</li>
+        </animalsThatGetCaught>
+        <fuelConsumptionRate>18.0</fuelConsumptionRate>
+        <fuelCapacity>50.0</fuelCapacity>
+        <fuelFilter>
+          <categories>
+            <li>Foods</li>
+          </categories>
+        </fuelFilter>
+      </li>
+    </comps>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <constructEffect>ConstructMetal</constructEffect>
+    <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+  </ThingDef>
+
+
+</Defs>

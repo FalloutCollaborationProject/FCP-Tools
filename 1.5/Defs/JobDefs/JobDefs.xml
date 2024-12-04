@@ -1,34 +1,64 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <!--__________ Job Defs __________-->
+  <!--__________ Job Defs __________-->
 
-    <!--_____ Power Armor Job Defs _____-->
+  <!--_____ Power Armor Job Defs _____-->
 
-    <!-- Refuel Power Armor -->
+  <!-- Refuel Power Armor -->
 
-    <JobDef>
-        <defName>RR_RefuelPowerArmor</defName>
-        <driverClass>RangerRick_PowerArmor.JobDriver_RefuelPowerArmor</driverClass>
-        <reportString>Refueling TargetA.</reportString>
-        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
-    </JobDef>
+  <JobDef>
+    <defName>RR_RefuelPowerArmor</defName>
+    <driverClass>RangerRick_PowerArmor.JobDriver_RefuelPowerArmor</driverClass>
+    <reportString>Refueling TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
 
-    <!-- Power Armor Training Trait -->
+  <!-- Power Armor Training Trait -->
 
-    <JobDef>
-        <defName>RR_TrainTrait</defName>
-        <driverClass>RangerRick_PowerArmor.JobDriver_TrainTrait</driverClass>
-        <reportString>Training at TargetA.</reportString>
-        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
-    </JobDef>
+  <JobDef>
+    <defName>RR_TrainTrait</defName>
+    <driverClass>RangerRick_PowerArmor.JobDriver_TrainTrait</driverClass>
+    <reportString>Training at TargetA.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
 
-    <JobDef>
-        <defName>FCP_AICastAbilityAtTarget</defName>
-        <driverClass>FCP.Core.JobDriver_AICastAbilityAtTarget</driverClass>
-        <reportString>Casting ability at target.</reportString>
-        <casualInterruptible>false</casualInterruptible>
-        <collideWithPawns>true</collideWithPawns>
-    </JobDef>
+  <JobDef>
+    <defName>FCP_AICastAbilityAtTarget</defName>
+    <driverClass>FCP.Core.JobDriver_AICastAbilityAtTarget</driverClass>
+    <reportString>Casting ability at target.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <collideWithPawns>true</collideWithPawns>
+  </JobDef>
+
+  <JobDef>
+    <defName>FCP_ReleaseAnimalFromCage</defName>
+    <driverClass>FCP_RadiantQuests.JobDriver_ReleaseAnimalFromCage</driverClass>
+    <reportString>Releasing animal from cage.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>FCP_CarryAnimalToCage</defName>
+    <driverClass>FCP_RadiantQuests.JobDriver_CarryAnimalToCage</driverClass>
+    <reportString>Bringing animal to cage.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>FCP_TransferAnimalBetweenCages</defName>
+    <driverClass>FCP_RadiantQuests.JobDriver_TransferAnimalBetweenCages</driverClass>
+    <reportString>Transferring animal to another cage.</reportString>
+  </JobDef>
+  
+  <JobDef>
+    <defName>FCP_RefuelAnimalCage</defName>
+    <driverClass>FCP_RadiantQuests.JobDriver_RefuelAnimalCage</driverClass>
+    <reportString>refueling cage.</reportString>
+  </JobDef>
+
+  <JobDef>
+    <defName>FCP_RefuelAnimalCage_Atomic</defName>
+    <driverClass>FCP_RadiantQuests.JobDriver_RefuelAnimalCage_Atomic</driverClass>
+    <reportString>refueling cage.</reportString>
+  </JobDef>
 
 </Defs>
