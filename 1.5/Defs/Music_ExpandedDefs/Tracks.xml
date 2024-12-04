@@ -1,159 +1,194 @@
 <Defs>
+
+    <!--__________ Music Expanded Wasteland __________-->
+
+    <!-- Fallout Tracks -->
+
     <MusicExpanded.TrackDef>
         <label>Wasteland - A Stillness</label>
         <defName>ME_WasteLand_AStillness</defName>
         <clipPath>MusicExpanded/Wasteland/Rim Wasteland - A Stillness</clipPath>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Wasteland - Asphyxiation</label>
         <defName>ME_WasteLand_Asphyxiation</defName>
         <clipPath>MusicExpanded/Wasteland/Rim Wasteland - Asphyxiation</clipPath>
     </MusicExpanded.TrackDef>
-    <MusicExpanded.TrackDef>
+
+    <MusicExpanded.TrackDef MayRequire="Rick.FCP.NCR">
         <label>Wasteland - Just Us JME N ReducedReds</label>
         <defName>ME_WasteLand_JustUS</defName>
         <clipPath>MusicExpanded/Wasteland/Rim Wasteland - Just Us (JME N ReducedReds)</clipPath>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Wasteland - Scraps N Metal</label>
         <defName>ME_WasteLand_ScrapsNMetal</defName>
         <clipPath>MusicExpanded/Wasteland/Rim Wasteland - Scraps N Metal</clipPath>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Wasteland - Searching the Wreck (Feat. User 404)</label>
         <defName>ME_WasteLand_SearchingtheWreck</defName>
         <clipPath>MusicExpanded/Wasteland/Rim Wasteland - Searching the Wreck (Feat. User 404)</clipPath>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Wasteland - We'll Die Here</label>
         <defName>ME_WasteLand_WellDieHere</defName>
         <clipPath>MusicExpanded/Wasteland/Rim Wasteland - We'll Die Here</clipPath>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Wasteland - (Fallout)Hope</label>
         <defName>ME_WasteLand_Hope</defName>
         <clipPath>MusicExpanded/Wasteland/Rim Wasteland (Fallout)  - Hope</clipPath>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Wasteland - (Fallout)The Road</label>
         <defName>ME_WasteLand_TheRoad</defName>
         <clipPath>MusicExpanded/Wasteland/Rim Wasteland (Fallout)  - The Road</clipPath>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Wasteland - (Fallout)A Boy and His Dog</label>
         <defName>ME_WasteLand_ABoyandHisDog</defName>
         <clipPath>MusicExpanded/Wasteland/Rim Wasteland (Fallout) - A Boy and His Dog</clipPath>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Wasteland - (Fallout)A Quiet Moment In The Rain</label>
         <defName>ME_WasteLand_AQuietMomentInTheRain</defName>
         <clipPath>MusicExpanded/Wasteland/Rim Wasteland (Fallout) - A Quiet Moment In The Rain</clipPath>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Wasteland - (Fallout)Ancient Citadel</label>
         <defName>ME_WasteLand_AncientCitadel</defName>
         <clipPath>MusicExpanded/Wasteland/Rim Wasteland (Fallout) - Ancient Citadel</clipPath>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Wasteland - (Fallout)Crash Landed</label>
         <defName>ME_WasteLand_CrashLanded</defName>
         <clipPath>MusicExpanded/Wasteland/Rim Wasteland (Fallout) - Crash Landed</clipPath>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Wasteland - (Fallout)Drifting But Where</label>
         <defName>ME_WasteLand_DriftingButWhere</defName>
         <clipPath>MusicExpanded/Wasteland/Rim Wasteland (Fallout) - Drifting But Where</clipPath>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Wasteland - (Fallout)Lost Vault</label>
         <defName>ME_WasteLand_LostVault</defName>
         <clipPath>MusicExpanded/Wasteland/Rim Wasteland (Fallout) - Lost Vault</clipPath>
         <cue>MainMenu</cue>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Wasteland - (Fallout)Nothing But Dirt</label>
         <defName>ME_WasteLand_NothingButDirt</defName>
         <clipPath>MusicExpanded/Wasteland/Rim Wasteland (Fallout) - Nothing But Dirt</clipPath>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Wasteland - (Fallout)Radioactive Gestalt</label>
         <defName>ME_WasteLand_RadioactiveGestalt</defName>
         <clipPath>MusicExpanded/Wasteland/Rim Wasteland (Fallout) - Radioactive Gestalt</clipPath>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Wasteland - (Fallout)Survive</label>
         <defName>ME_WasteLand_Survive</defName>
         <clipPath>MusicExpanded/Wasteland/Rim Wasteland (Fallout) - Survive</clipPath>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Wasteland - (Fallout)Township</label>
         <defName>ME_WasteLand_Township</defName>
         <clipPath>MusicExpanded/Wasteland/Rim Wasteland (Fallout) - Township</clipPath>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Wasteland - (Fallout)Waiting</label>
         <defName>ME_WasteLand_Waiting</defName>
         <clipPath>MusicExpanded/Wasteland/Rim Wasteland (Fallout) - Waiting</clipPath>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Wasteland - (Fallout)What Day Is It</label>
         <defName>ME_WasteLand_WhatDayIsIt</defName>
         <clipPath>MusicExpanded/Wasteland/Rim Wasteland (Fallout) - What Day Is It</clipPath>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Rim_Wasteland - Annihilation Feat User 404</label>
         <defName>ME_WasteLand_Annihilation_Feat_User_404</defName>
         <clipPath>MusicExpanded/Wasteland/Rim_Wasteland - Annihilation Feat User 404</clipPath>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Rim_Wasteland - No One Left to Miss Feat User 404</label>
         <defName>ME_WasteLand_Annihilation_No_One_Left_to_Miss_Feat_User_404</defName>
         <clipPath>MusicExpanded/Wasteland/Rim_Wasteland - No One Left to Miss Feat User 404</clipPath>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Rim_Wasteland - Weed Through the Cracks</label>
         <defName>ME_WasteLand_Weed_Through_the_Cracks</defName>
         <clipPath>MusicExpanded/Wasteland/Rim_Wasteland - Weed Through the Cracks</clipPath>
     </MusicExpanded.TrackDef>
+    
     <MusicExpanded.TrackDef>
         <label>Rim_Wasteland - You Are Less Alone Than You Think</label>
         <defName>ME_WasteLand_You_Are_Less_Alone_Than_You_Think</defName>
         <clipPath>MusicExpanded/Wasteland/Rim_Wasteland - You Are Less Alone Than You Think</clipPath>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Wasteland - (Fallout)Small Battle</label>
         <defName>ME_WasteLand_SmallBattle</defName>
         <clipPath>MusicExpanded/Wasteland/Rim Wasteland (Fallout)  - Small Battle</clipPath>
         <cue>BattleSmall</cue>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Wasteland - Fallout Small Battle Oncoming Storm</label>
         <defName>ME_WasteLand_OncomingStorm</defName>
         <clipPath>MusicExpanded/Wasteland/Rim Wasteland (Fallout) - [Small Battle]Oncoming Storm</clipPath>
         <cue>BattleSmall</cue>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Wasteland - Medium Battle</label>
         <defName>ME_WasteLand_MediumBattle</defName>
         <clipPath>MusicExpanded/Wasteland/Rim Wasteland - Medium Battle</clipPath>
         <cue>BattleMedium</cue>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Wasteland - Fallout Large Battle</label>
         <defName>ME_WasteLand_LargeBattle</defName>
         <clipPath>MusicExpanded/Wasteland/Rim Wasteland (Fallout)  - Large Battle</clipPath>
         <cue>BattleLarge</cue>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Wasteland - Legendary Battle</label>
         <defName>ME_WasteLand_LegendaryBattle</defName>
         <clipPath>MusicExpanded/Wasteland/Rim Wasteland - Legendary Battle</clipPath>
         <cue>BattleLegendary</cue>
     </MusicExpanded.TrackDef>
+
     <MusicExpanded.TrackDef>
         <label>Rim_Wasteland - Credits</label>
         <defName>ME_WasteLand_Credits</defName>
         <clipPath>MusicExpanded/Wasteland/Rim_Wasteland - Credits</clipPath>
         <cue>Credits</cue>
     </MusicExpanded.TrackDef>
+    
 </Defs>
