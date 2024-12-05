@@ -4,6 +4,7 @@
 - RickGrymes / Ranger Rick - Project Lead / XML
 - Canonov, Taranchuk, Scurvyez - C# Work
 - Zeitloser, Erin, Mlie - Flying Pawn code from Birds Beyond
+- khamenman For the Armor Rack code
 - DanDman, IcingWithCheesecake, Krazy4Games, RickGrymes / Ranger Rick - Art
 
 ## Notice
