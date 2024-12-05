@@ -110,6 +110,10 @@ public static class Patches
         // Unique Characters
         harmony.Patch(original: AccessTools.Method(typeof(Faction), nameof(Faction.TryGenerateNewLeader)),
             prefix: new HarmonyMethod(typeof(Patches), nameof(Faction_TryGenerateNewLeader_Prefix)));
+
+        // Weapon Sprite Adjustment
+        harmony.Patch(original: AccessTools.Method(typeof(PawnRenderUtility), nameof(PawnRenderUtility.DrawEquipmentAndApparelExtras)),
+            prefix: new HarmonyMethod(typeof(Patches), nameof(WeaponDrawPosPatch)));
     }
 
     #region Biome Feature Requirements
@@ -656,6 +660,55 @@ public static class Patches
 
         // Probably ran out of characters, so back to random ones
         return true;
+    }
+
+    #endregion
+
+    #region Weapon Sprite Adjustment
+
+    static void WeaponDrawPosPatch(Pawn pawn, ref Vector3 drawPos, Rot4 facing, PawnRenderFlags flags)
+    {
+        if (pawn.equipment?.Primary != null)
+        {
+            CompPositionAttributes comp = pawn.equipment?.Primary.TryGetComp<CompPositionAttributes>();
+            if (comp != null)
+            {
+                Vector2 offset = Vector2.zero;
+                Vector2 absolute = Vector2.zero;
+
+                Stance_Busy stance_Busy = pawn.stances?.curStance as Stance_Busy;
+                if (!flags.HasFlag(PawnRenderFlags.NeverAimWeapon) && stance_Busy != null && !stance_Busy.neverAimWeapon && stance_Busy.focusTarg.IsValid)
+                {
+                    offset = comp.Props.DraftedDrawOffset;
+                    absolute = comp.Props.DraftedDrawOffsetAbsolute;
+                }
+                else if (PawnRenderUtility.CarryWeaponOpenly(pawn))
+                {
+                    offset = comp.Props.HeldDrawOffset;
+                    absolute = comp.Props.HeldDrawOffsetAbsolute;
+                }
+
+                switch (facing.AsInt)
+                {
+                    case 0: //north
+                    case 2: //south
+                        break;
+                    case 1: //east
+                        float tmp = offset.y;
+                        offset.y = -offset.x;
+                        offset.x = -tmp;
+                        break;
+                    case 3: //west
+                        float tmp1 = offset.y;
+                        offset.y = -offset.x;
+                        offset.x = tmp1;
+                        break;
+                }
+
+                drawPos += offset.ToVector3() + absolute.ToVector3();
+            }
+        }
+
     }
 
     #endregion
