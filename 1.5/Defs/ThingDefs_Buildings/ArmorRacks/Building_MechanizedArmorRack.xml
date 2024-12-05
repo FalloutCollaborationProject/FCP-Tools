@@ -31,7 +31,9 @@
         </stuffCategories>
         <defaultPlacingRot>South</defaultPlacingRot>
         <researchPrerequisites>
-            <li>ArmorRacks_MechanizedArmorRackResearch</li>
+            <li>FCP_Tools_Wasteland_Storage</li>
+            <li>FCP_Tools_Complex_Furniture</li>
+            <li>FCP_Tools_Wasteland_Electronics</li>            
         </researchPrerequisites>
         <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
         <comps>
