@@ -56,7 +56,7 @@ namespace FCP_RadiantQuests
                 Log.Message(__instance.OtherPawn.NameFullColored);
                 Log.Message(__instance.pawn.NameFullColored);
                 Log.Message(__instance.OtherPawn.mindState.WillJoinColonyIfRescued);
-                if (__instance.OtherPawn.mindState.WillJoinColonyIfRescued || PawnRescueUtility.pawnWillJoin)
+                if (__instance.OtherPawn.mindState.WillJoinColonyIfRescued || PawnRescueUtility.prisonersWillingJoin.Contains(__instance.OtherPawn))
                 {
                     Log.Message("Joining colony");
                     InteractionWorker_RecruitAttempt.DoRecruit(__instance.pawn, __instance.OtherPawn, useAudiovisualEffects: false);
@@ -66,7 +66,7 @@ namespace FCP_RadiantQuests
                         __instance.OtherPawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.RescuedMeByOfferingHelp, __instance.pawn);
                     }
                     Find.LetterStack.ReceiveLetter("LetterLabelRescueQuestFinished".Translate(), "LetterRescueQuestFinished".Translate(__instance.OtherPawn.Named("PAWN")).AdjustedFor(__instance.OtherPawn).CapitalizeFirst(), LetterDefOf.PositiveEvent, __instance.OtherPawn);
-                    PawnRescueUtility.pawnWillJoin = false;
+                    PawnRescueUtility.prisonersWillingJoin.Remove(__instance.OtherPawn);
                     QuestUtility.SendQuestTargetSignals(__instance.OtherPawn.questTags, "RescuedFromPrison", __instance.OtherPawn.Named("SUBJECT"));
                 }
                 else

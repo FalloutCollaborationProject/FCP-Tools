@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse.AI;
 using Verse;
+using RimWorld;
 
 namespace FCP_RadiantQuests
 {
@@ -27,9 +28,16 @@ namespace FCP_RadiantQuests
             Toil enter = ToilMaker.MakeToil("MakeNewToils");
             enter.initAction = delegate
             {
+                if (PawnRescueUtility.prisonersWillingJoin.Contains(Cage.Occupant))
+                {
+                    InteractionWorker_RecruitAttempt.DoRecruit(pawn, Cage.Occupant, useAudiovisualEffects: false);
+                    PawnRescueUtility.prisonersWillingJoin.Remove(Cage.Occupant);
+
+                }
                 Cage.EjectContents(Map);
             };
             enter.defaultCompleteMode = ToilCompleteMode.Instant;
+
             yield return enter;
         }
 

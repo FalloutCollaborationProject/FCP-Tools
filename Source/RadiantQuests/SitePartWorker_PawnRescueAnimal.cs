@@ -13,7 +13,7 @@ using UnityEngine;
 
 namespace FCP_RadiantQuests
 {
-    public class SitePartWorker_PawnRescue : SitePartWorker
+    public class SitePartWorker_PawnRescueAnimal : SitePartWorker
     {
         public override void Notify_GeneratedByQuestGen(SitePart part, Slate slate, List<Rule> outExtraDescriptionRules, Dictionary<string, string> outExtraDescriptionConstants)
         {
@@ -21,7 +21,7 @@ namespace FCP_RadiantQuests
             int enemiesCount = GetEnemiesCount(part.site, part.parms);
             outExtraDescriptionRules.Add(new Rule_String("enemiesCount", enemiesCount.ToString()));
             outExtraDescriptionRules.Add(new Rule_String("enemiesLabel", GetEnemiesLabel(part.site, enemiesCount)));
-            Pawn pawn = PawnRescueUtility.GeneratePrisoner(part.site.Tile, slate.Get<PawnKindDef>("prisonerPawnKind", PawnKindDefOf.Slave), slate.Get<Faction>("prisonerFaction"));
+            Pawn pawn = PawnRescueUtility.GeneratePrisonerAnimal(part.site.Tile, slate.Get<PawnKindDef>("prisonerPawnKind", PawnKindDefOf.Slave), slate.Get<Faction>("prisonerFaction"));
             Log.Message(slate.Get<float>("chanceToJoin"));
             Log.Message(slate.Get<float>("chanceToJoinVal"));
             if (slate.Get<float>("chanceToJoin") >= slate.Get<float>("chanceToJoinVal"))
@@ -29,8 +29,9 @@ namespace FCP_RadiantQuests
                 Log.Message("Pawn will join");
                 PawnRescueUtility.prisonersWillingJoin.Add(pawn);
             }
-            part.things = new ThingOwner<Pawn>(part, oneStackOnly: true);
+            part.things = new ThingOwner<Thing>(part, false);
             part.things.TryAdd(pawn);
+            part.things.TryAdd(ThingMaker.MakeThing(slate.Get<ThingDef>("cageDef")), false);
             PawnRelationUtility.Notify_PawnsSeenByPlayer(Gen.YieldSingle(pawn), out var pawnRelationsInfo, informEvenIfSeenBefore: true, writeSeenPawnsNames: false);
             string output = (pawnRelationsInfo.NullOrEmpty() ? "" : ((string)("\n\n" + "PawnHasTheseRelationshipsWithColonists".Translate(pawn.LabelShort, pawn) + "\n\n" + pawnRelationsInfo)));
             slate.Set("prisoner", pawn);

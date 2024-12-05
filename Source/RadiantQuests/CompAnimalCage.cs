@@ -339,8 +339,11 @@ namespace FCP_RadiantQuests
 
                 }
             }
+            QuestUtility.SendQuestTargetSignals(Occupant.questTags, "ReleasedFromCage", Occupant.Named("SUBJECT"));
             innerContainer.TryDropAll(parent.InteractionCell, map, ThingPlaceMode.Near);
             contentsKnown = true;
+           
+
         }
 
         public void EjectAndKillContents(Map map)
