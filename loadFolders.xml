@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<loadFolders>
+	<v1.5>
+		<li>/</li>
+    <li>Common</li>
+    <li>1.5</li>
+		<li IfModActive="vanillaexpanded.vnutriente">1.5/Compatibilities/VNPE</li>
+	</v1.5>
+</loadFolders>

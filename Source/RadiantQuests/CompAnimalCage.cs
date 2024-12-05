@@ -18,8 +18,6 @@ namespace FCP_RadiantQuests
 
         protected bool contentsKnown;
 
-        public CompResource compResourceNutrientPaste;
-
         public Job queuedEnterJob;
 
         public Pawn queuedPawn;
@@ -44,8 +42,6 @@ namespace FCP_RadiantQuests
         public int starvingCounter = 0;
 
         public const int starvingMaxTicks = 175000;
-
-        public CompFlickable flickComp;
 
         public ThingOwner innerContainer;
 
@@ -82,15 +78,6 @@ namespace FCP_RadiantQuests
         public override void Initialize(CompProperties props)
         {
             base.Initialize(props);
-            flickComp = parent.GetComp<CompFlickable>();
-            foreach (CompResource comp in parent.GetComps<CompResource>())
-            {
-
-                if (ModLister.HasActiveModWithName("Vanilla Nutrient Paste Expanded") && ((comp == null) ? null : ((Def)(object)comp.Props?.pipeNet)?.defName) == "VNPE_NutrientPasteNet")
-                {
-                    compResourceNutrientPaste = comp;
-                }
-            }
             allowedNutritionSettings = new StorageSettings(this);
             if (parent.def.building.defaultStorageSettings != null)
             {
@@ -100,7 +87,7 @@ namespace FCP_RadiantQuests
 
         public override void CompTick()
         {
-            if (!base.Props.consumeFuelOnlyWhenUsed && (flickComp == null || flickComp.SwitchIsOn) && Occupant != null)
+            if (!base.Props.consumeFuelOnlyWhenUsed && Occupant != null)
             {
                 ConsumeFuel(ConsumptionRatePerTick);
             }
@@ -129,12 +116,11 @@ namespace FCP_RadiantQuests
                     EjectAndKillContents(parent.Map);
                 }
             }
-            if (parent.IsHashIntervalTick(600) && compResourceNutrientPaste != null && compResourceNutrientPaste.PipeNet.Stored > 1f && base.FuelPercentOfMax < 0.5f)
-            {
-                compResourceNutrientPaste.PipeNet.DrawAmongStorage(1f, compResourceNutrientPaste.PipeNet.storages);
-                Refuel(18f);
-            }
+
+
+            
         }
+
 
         public StorageSettings GetStoreSettings()
         {
