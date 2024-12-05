@@ -110,6 +110,10 @@ public static class Patches
         // Unique Characters
         harmony.Patch(original: AccessTools.Method(typeof(Faction), nameof(Faction.TryGenerateNewLeader)),
             prefix: new HarmonyMethod(typeof(Patches), nameof(Faction_TryGenerateNewLeader_Prefix)));
+
+        // Weapon Sprite Adjustment
+        harmony.Patch(original: AccessTools.Method(typeof(PawnRenderUtility), nameof(PawnRenderUtility.DrawEquipmentAndApparelExtras)),
+            prefix: new HarmonyMethod(typeof(Patches), nameof(WeaponDrawPosPatch)));
     }
 
     #region Biome Feature Requirements
@@ -629,40 +633,82 @@ public static class Patches
     /// </summary>
     public static bool Faction_TryGenerateNewLeader_Prefix(Faction __instance, ref bool __result)
     {
-        var extension = __instance.def.GetModExtension<ModExtension_FactionUniqueLeader>();
-        if (extension == null) return true; // No need to do anything
-        
         var tracker = UniqueCharactersTracker.Instance;
-        foreach (CharacterDef charDef in extension.characterDefs)
+
+        var leaderDefs = CharacterRoleUtils.GetAllWithRole<CharacterRole_FactionLeader>()
+            .Where(charWithRole => charWithRole.characterDef.faction == __instance.def)
+            .OrderByDescending(charWithRole => charWithRole.role.seniority);
+        
+        foreach (CharacterDefWithRole<CharacterRole_FactionLeader> charWithRole in leaderDefs)
         {
-            // Existing characters are exempt, and usually in this case they'll also be dead.
-            if (tracker.CharacterPawnExists(charDef))
-            {
-                continue;
-            }
-
-            // Generate the pawn
-            Pawn leader = tracker.GetOrGenPawn(charDef,
-                requestParams: new PawnGenerationRequest(charDef.pawnKind, faction: __instance, fixedIdeo: __instance.ideos.PrimaryIdeo));
-
-            if (leader.RaceProps.IsFlesh)
-            {
-                leader.relations.everSeenByPlayer = true;
-            }
-            if (!Find.WorldPawns.Contains(leader))
-            {
-                Find.WorldPawns.PassToWorld(leader, PawnDiscardDecideMode.KeepForever);
-            }
+            // Get an existing or generate pawn
+            var request = new PawnGenerationRequest(charWithRole.characterDef.pawnKind, __instance); // required since we can't get it from faction manager on the other side.
+            Pawn leader = tracker.GetOrGenPawn(charWithRole.characterDef, request);
             
-            __instance.leader = leader;
-
-            // Skip the original
+            if (leader.Faction != __instance)
+                continue; // They were likely recruited somehow.
+            
+            if (!charWithRole.role.PawnIsValid(leader))
+                continue;
+            
+            charWithRole.role.ApplyRole(leader);
+            
+            // Skip the original method
             __result = true;
             return false;
         }
 
         // Probably ran out of characters, so back to random ones
         return true;
+    }
+
+    #endregion
+
+    #region Weapon Sprite Adjustment
+
+    static void WeaponDrawPosPatch(Pawn pawn, ref Vector3 drawPos, Rot4 facing, PawnRenderFlags flags)
+    {
+        if (pawn.equipment?.Primary != null)
+        {
+            CompPositionAttributes comp = pawn.equipment?.Primary.TryGetComp<CompPositionAttributes>();
+            if (comp != null)
+            {
+                Vector2 offset = Vector2.zero;
+                Vector2 absolute = Vector2.zero;
+
+                Stance_Busy stance_Busy = pawn.stances?.curStance as Stance_Busy;
+                if (!flags.HasFlag(PawnRenderFlags.NeverAimWeapon) && stance_Busy != null && !stance_Busy.neverAimWeapon && stance_Busy.focusTarg.IsValid)
+                {
+                    offset = comp.Props.DraftedDrawOffset;
+                    absolute = comp.Props.DraftedDrawOffsetAbsolute;
+                }
+                else if (PawnRenderUtility.CarryWeaponOpenly(pawn))
+                {
+                    offset = comp.Props.HeldDrawOffset;
+                    absolute = comp.Props.HeldDrawOffsetAbsolute;
+                }
+
+                switch (facing.AsInt)
+                {
+                    case 0: //north
+                    case 2: //south
+                        break;
+                    case 1: //east
+                        float tmp = offset.y;
+                        offset.y = -offset.x;
+                        offset.x = -tmp;
+                        break;
+                    case 3: //west
+                        float tmp1 = offset.y;
+                        offset.y = -offset.x;
+                        offset.x = tmp1;
+                        break;
+                }
+
+                drawPos += offset.ToVector3() + absolute.ToVector3();
+            }
+        }
+
     }
 
     #endregion
