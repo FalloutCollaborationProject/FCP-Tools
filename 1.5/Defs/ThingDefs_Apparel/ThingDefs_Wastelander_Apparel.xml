@@ -306,6 +306,15 @@
 
     <!--___ Apparel Base ___-->
 
+    <!-- FCP Apparel Makeable Base -->
+
+    <ThingDef Name="FCP_Apparel_Makeable_Base" Abstract="True" ParentName="ApparelMakeableBase">
+        <techLevel>Industrial</techLevel>
+        <thingCategories>
+            <li>Apparel</li>
+        </thingCategories>
+    </ThingDef>
+
     <!-- FCP Apparel Base -->
 
     <ThingDef ParentName="ApparelBase" Name="FCP_Apparel_Base" Abstract="True">
@@ -1216,7 +1225,7 @@
 
     <!-- Brahmin Skin Outfit -->
 
-    <ThingDef ParentName="ApparelMakeableBase">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Brahmin_Skin_Outfit</defName>
         <label>Brahmin Skin Outfit</label>
         <description>A basic outfit consisting of a (more or less) white shirt and patched overalls with Y-shaped suspenders complete with boots. The overalls are made of brahmin skin and are a common sight on ranches, farmsteads, and other areas where brahmins are held as livestock. Pretty basic clothing, cheap and widely available, but not very protective.</description>
@@ -1267,7 +1276,7 @@
 
     <!-- Caravaneer Outfit -->
 
-    <ThingDef ParentName="ApparelMakeableBase">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Caravaneer_Outfit</defName>
         <label>Caravaneer Outfit</label>
         <description>Rugged and sturdy clothing, often worn by caravaneers and other travellers. It does not provide a whole lot of protection but does not weigh down its wearer and is relatively common.</description>
@@ -1392,7 +1401,7 @@
 
     <!-- Gas Ranger -->
 
-    <ThingDef ParentName="ApparelMakeableBase">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Gas_Ranger</defName>
         <label>Gas Ranger Outfit</label>
         <description>Outfit invented by Rick, i don't know how to describe it, i'll ask him maybe</description>
@@ -1437,7 +1446,7 @@
 
     <!-- Lab Coat Followers -->
 
-    <ThingDef ParentName="ApparelMakeableBase">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Lab_Coat_Followers</defName>
         <label>Followers Lab Coat</label>
         <description>A lab coat worn by the followers of the apocalypse. It provides a bonus to science and medicine while worn.</description>
@@ -1491,7 +1500,7 @@
 
     <!-- Leather Coat -->
 
-    <ThingDef ParentName="ApparelMakeableBase">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Leather_Coat</defName>
         <label>Leather Coat</label>
         <description>An ankle length coat, made from leather. It has a belt which is made from the seat belt of an airplane or a car. It’s mostly seen worn by settlers and other civilians. However, it’s clothing, not armour and does not protect well against bullets.</description>
@@ -1539,7 +1548,7 @@
 
     <!-- Merc Adventurer Outfit -->
 
-    <ThingDef ParentName="ApparelMakeableBase">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Merc_Adventurer_Outfit</defName>
         <label>Merc Adventurer Outfit</label>
         <description>An outfit composed of a leather jacket with torn-off sleeves, a red sweater underneath a pair of brown pants and sturdy boots. It’s often worn by roving people and is designed to guarantee unimpaired freedom of movement, while still providing more protection than regular clothing.</description>
@@ -1594,7 +1603,7 @@
 
     <!-- Merc Charmer Dress -->
 
-    <ThingDef ParentName="ApparelMakeableBase">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Merc_Charmer_Dress</defName>
         <label>Merc Charmer Dress</label>
         <description>A gray-blue suit top with a matching mini-skirt and ripped black fishnet tights.</description>
@@ -1649,7 +1658,7 @@
 
     <!-- Merc Charmer Suit -->
 
-    <ThingDef ParentName="ApparelMakeableBase">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Merc_Charmer_Suit</defName>
         <label>Merc Charmer Suit</label>
         <description>A faded teal suit jacket and pants with a gray shirt underneath, as well as a strange collar that protects the neck.</description>
@@ -1704,7 +1713,7 @@
 
     <!-- Merc Cruiser Suit -->
 
-    <ThingDef ParentName="ApparelMakeableBase">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Merc_Cruiser_Outfit</defName>
         <label>Merc Cruiser Outfit</label>
         <description>A long leather jacket with the sleeves removed with a white t-shirt underneath, as well as some black pants and dark boots. Like other merc outfits, it provides less protection than full-on armor, but more than regular clothing and doesn’t weigh down its wearer much.</description>
@@ -1759,7 +1768,7 @@
 
     <!-- Prospector Outfit -->
 
-    <ThingDef ParentName="ApparelMakeableBase">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Prospector_Outfit</defName>
         <label>Prospector Outfit</label>
         <description>This outfit consists of denim overalls, a brown satchel, and a long tan sleeve shirt underneath, as well as a pair of half boots. As its name implies, it’s most often worn by the prospectors rummaging through the ruins of the old world. As such it is designed to provide protection against dust storms and other hazards, not against bullets or beasts.</description>
@@ -1810,7 +1819,7 @@
 
     <!-- Regulator Duster -->
 
-    <ThingDef ParentName="ApparelMakeableBase">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Regulator_Duster</defName>
         <label>Regulator Duster</label>
         <description>An outfit consisting of a black undershirt and a pair of gray canvas pants underneath a long, brown leather overcoat with the sleeves rolled up above the elbow.</description>
@@ -1862,7 +1871,7 @@
 
     <!-- Settler Female Outfit-->
 
-    <ThingDef ParentName="ApparelMakeableBase">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Settler_Female_Outfit</defName>
         <label>Settler Female Outfit</label>
         <description>An outfit often associated with the wild frontier; these robust clothes are often seen worn by those living further away from the last strongholds of civilisation. While they are sturdy, they are not exactly protective against bullets, knives, teeth, stingers, or claws.</description>
@@ -1913,7 +1922,7 @@
 
     <!-- Settler Male Outfit-->
 
-    <ThingDef ParentName="ApparelMakeableBase">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Settler_Male_Outfit</defName>
         <label>Settler Male Outfit</label>
         <description>An outfit often associated with the wild frontier; these robust clothes are often seen worn by those living further away from the last strongholds of civilisation. While they are sturdy, they are not exactly protective against bullets, knives, teeth, stingers, or claws.</description>
@@ -1965,7 +1974,7 @@
 
     <!-- Sheriff Duster -->
 
-    <ThingDef ParentName="ApparelMakeableBase">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Sheriff_Duster</defName>
         <label>Sheriff Duster</label>
         <description>An outfit consisting of a black undershirt and a pair of gray canvas pants underneath a long, brown leather overcoat with the sleeves rolled up above the elbow. It sports a sheriff badge on the right breast.</description>
@@ -2017,7 +2026,7 @@
 
     <!-- Surveyor Outfit -->
 
-    <ThingDef ParentName="ApparelMakeableBase">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Surveyor_Outfit</defName>
         <label>Surveyor Outfit</label>
         <description>A pocketed leather coat with brown cargo pants and dirty wingtip shoes, with a satchel and metal wire covering the right arm. This outfit is often worn by scouts who roam the vast wasteland to find suitable locations for new settlements. While this is certainly a highly dangerous task, these clothes provide little protection.</description>
@@ -2069,7 +2078,7 @@
 
     <!-- Wasteland Doctor Outfit -->
 
-    <ThingDef ParentName="ApparelMakeableBase">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Wasteland_Doctor_Outfit</defName>
         <label>Wasteland Doctor Outfit</label>
         <description>The wasteland doctor fatigues consist of a white t-shirt for males, usually bloodstained; a small brown satchel bag, and brown cargo pants with pouches attached to the belt, and boots. Its most often seen worn by doctors, or any people with some medical training, as real doctors a rarity in the wastes. These are work clothes and provide little protection.</description>
@@ -2123,7 +2132,7 @@
 
     <!-- Wasteland Wanderer Outfit -->
 
-    <ThingDef ParentName="ApparelMakeableBase">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Wasteland_Wanderer_Outfit</defName>
         <label>Wasteland Wanderer Outfit</label>
         <description>It consists of a tan zipped-up hoodie and cargo pants tucked into riding boots. Due to its low cost and wide avail, it is very common to find, but provides little to no protection from any real danger.</description>
@@ -2221,7 +2230,7 @@
 
     <!-- Bright Brotherhood Robe -->
 
-    <ThingDef ParentName="ApparelMakeableBase">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Bright_Brotherhood_Robe</defName>
         <label>Bright Brotherhood Robe</label>
         <description>These are robes worn by Bright Follower ghouls. They are  slightly tattered and have a brownish-green color.</description>
@@ -2272,7 +2281,7 @@
 
     <!-- Chained Prostitute Outfit -->
 
-    <ThingDef ParentName="ApparelMakeableBase">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Chained_Prostitute_Outfit</defName>
         <label>Chained Prostitute Outfit</label>
         <description>It appears as bondage harness on the chest with multiple leather bracelets and armbands. The bottom consists of a pair of low-rise, black leather pants.</description>
@@ -2320,7 +2329,7 @@
 
     <!-- Exposed Prostitute Outfit -->
 
-    <ThingDef ParentName="ApparelMakeableBase">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Exposed_Prostitute_Outfit</defName>
         <label>Exposed Prostitute Outfit</label>
         <description>This outfit consists of black cowboy boots, black ripped tights worn under gray boxers, chains covering the wearer's chest which are connected to a spiked choker necklace, and a wrestling singlet.</description>
@@ -2368,7 +2377,7 @@
 
     <!-- Prostitute Outfit Female -->
 
-    <ThingDef ParentName="ApparelMakeableBase">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Prostitute_Outfit_Female</defName>
         <label>Prostitute Outfit Female</label>
         <description>This female outfit consists of a black leather crop-top with purple lacing down the sides of the sleeves and black leather lace-up short-shorts finished with a studded belt and spiked collar.</description>
@@ -2417,7 +2426,7 @@
 
     <!-- Prostitute Outfit Male -->
 
-    <ThingDef ParentName="ApparelMakeableBase">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Prostitute_Outfit_Male</defName>
         <label>Prostitute Outfit Male</label>
         <description>This male outfit consists of a sheriff's vest complete with the badge, jean short-shorts and cowboy boots.</description>
@@ -2466,7 +2475,7 @@
 
     <!-- Slave Rags -->
 
-    <ThingDef ParentName="ApparelMakeableBase">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Slave_Rags</defName>
         <label>Slave Rags</label>
         <description>Worn by slaves of the Legion, slave rags offer no protection from the elements and are composed of a torn dirty white tunic with a red "X" painted on the chest.</description>

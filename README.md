@@ -2,9 +2,11 @@
 
 ## Acknowledgements
 - RickGrymes / Ranger Rick - Project Lead / XML
-- Canonov, Taranchuk, Scurvyez - C# Work
+- Canonov, Taranchuk, SirMashedPotato, Scurvyez, Nalzurin, Nimrag-b - C# Work
 - Zeitloser, Erin, Mlie - Flying Pawn code from Birds Beyond
+- khamenman For the Armor Rack code
 - DanDman, IcingWithCheesecake, Krazy4Games, RickGrymes / Ranger Rick - Art
+- Penumbra, RickGrymes / Ranger Rick - Writing
 
 ## Notice
 - Portions of the materials used to create this content/mod are trademarks and/or copyrighted works of Ludeon Studios Inc. All rights reserved by Ludeon. This content/mod is not official and is not endorsed by Ludeon.

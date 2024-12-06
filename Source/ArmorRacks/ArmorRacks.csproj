@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{09C5A336-C484-4405-AC0F-2BFFE805BC2C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ArmorRacks</RootNamespace>
+    <AssemblyName>ArmorRacks</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>../../v1.5/Assemblies\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>../../v1.5/Assemblies\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp, Version=1.5.8890.16364, Culture=neutral, PublicKeyToken=null">
+      <HintPath>D:\Steam Games\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>D:\Steam Games\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>D:\Steam Games\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>D:\Steam Games\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>D:\Steam Games\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>D:\Steam Games\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArmorRacks.cs" />
+    <Compile Include="Commands\ArmorRackUseCommand.cs" />
+    <Compile Include="DefOfs\JobDefOf.cs" />
+    <Compile Include="Drawers\MechanizedArmorRackContentsDrawer.cs" />
+    <Compile Include="ITabs\ITab_ArmorRackStorage.cs" />
+    <Compile Include="Jobs\JobDriver_BaseRackJob.cs" />
+    <Compile Include="Jobs\JobDriver_TransferToRack.cs" />
+    <Compile Include="Jobs\JobDriver_WearRack.cs" />
+    <Compile Include="Jobs\JobDriver_WearRackBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Drawers\ArmorRackContentsDrawer.cs" />
+    <Compile Include="ThingComps\ArmorRackComp.cs" />
+    <Compile Include="ThingComps\ArmorRackUseCommandComp.cs" />
+    <Compile Include="ThingComps\CompAssignableToPawn_ArmorRacks.cs" />
+    <Compile Include="Things\ArmorRack.cs" />
+    <Compile Include="Things\MechanizedArmorRack.cs" />
+    <Compile Include="Things\MendingArmorRack.cs" />
+    <Compile Include="Utils\ArmorRackJobUtil.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <MySourceFiles Include="c:\Users\Kirill\RiderProjects\ArmorRacks\**\*.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="..\..\v1.1\Assemblies">
+      <Link>ArmorRacks\v1.1\Assemblies</Link>
+    </Folder>
+    <Folder Include="..\..\v1.2\Assemblies">
+      <Link>ArmorRacks\v1.2\Assemblies</Link>
+    </Folder>
+    <Folder Include="..\..\v1.4\Assemblies">
+      <Link>ArmorRacks\v1.4\Assemblies</Link>
+    </Folder>
+  </ItemGroup>
+  <!--  <Target Name="CopyFiles" AfterTargets="Build">-->
+  <!--    <Copy SourceFiles="@(MySourceFiles)" DestinationFiles="@(MySourceFiles->'C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\ArmorRacks\%(RecursiveDir)%(Filename)%(Extension)')" />-->
+  <!--  </Target>-->
+  <!--  <Target Name="LaunchRimworld" AfterTargets="CopyFiles">-->
+  <!--    <Exec Command="$(PowerShellExe) -NonInteractive -executionpolicy Unrestricted -command &quot;&amp; { Start-Process -FilePath 'C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64.exe' -Args '-quicktest' } &quot;" />-->
+  <!--  </Target>-->
+</Project>
