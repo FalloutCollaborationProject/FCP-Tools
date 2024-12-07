@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SitePartDef>
+    <defName>FCP_Site_Facility</defName>
+    <label>facility</label>
+    <description>A facility.</description>
+    <siteTexture>World/WorldObjects/Sites/Outpost</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Outpost</expandingIconTexture>
+    <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>true</showFactionInInspectString>
+    <requiresFaction>true</requiresFaction>
+    <approachOrderString>Approach {0}</approachOrderString>
+    <approachingReportString>Approaching {0}</approachingReportString>
+    <arrivedLetter>Arrived to the settlement.</arrivedLetter>
+    <arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <minThreatPoints>0</minThreatPoints>
+    <considerEnteringAsAttack>False</considerEnteringAsAttack>
+    <tags Inherit="False">
+      <li>FCP_Site_Facility</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>FCP_Site_Facility</defName>
+    <linkWithSite>FCP_Site_Facility</linkWithSite>
+    <order>450</order>
+    <genStep Class="GenStep_Outpost">
+      <generateLoot>false</generateLoot>
+      <pawnGroupKindDef>Combat</pawnGroupKindDef>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>FCP_FacilityPower</defName>
+    <linkWithSite>FCP_Site_Facility</linkWithSite>
+    <order>451</order>
+    <genStep Class="GenStep_Power"/>
+  </GenStepDef>
+  <GenStepDef>
+    <defName>FCP_FacilityBuilding</defName>
+    <linkWithSite>FCP_Site_Facility</linkWithSite>
+    <order>452</order>
+    <genStep Class="FCP_RadiantQuests.GenStep_SpawnBuildingInRoom">
+      <buildingDef>FCP_Power_Armor_VR_Pod</buildingDef>
+    </genStep>
+  </GenStepDef>
+</Defs>

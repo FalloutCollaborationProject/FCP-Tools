@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <FCP_ReleaseAnimalFromCage>Release {0}</FCP_ReleaseAnimalFromCage>
+  <FCP_CarryAnimalToCage>Carry {0} to cage</FCP_CarryAnimalToCage>
+  <FCP_ShouldCaptureCommand>Will this cage capture wild animals.</FCP_ShouldCaptureCommand>
+  <FCP_ShouldCaptureTrue>Will capture wild animals.</FCP_ShouldCaptureTrue>
+  <FCP_ShouldCaptureFalse>Will not capture wild animals.</FCP_ShouldCaptureFalse>
+  <FCP_CageAnimalCapturedLabel>Animal captured!</FCP_CageAnimalCapturedLabel>
+  <FCP_CageAnimalCapturedText>You have captured {0} in your cage.</FCP_CageAnimalCapturedText>
+  <FCP_ChooseAnimalCage>Choose new cage</FCP_ChooseAnimalCage>
+  <FCP_SelectThisCage>Select this cage.</FCP_SelectThisCage>
+  <FCP_TransferAnimalBetweenCages>Transfer {0} to another cage.</FCP_TransferAnimalBetweenCages>
+</LanguageData>
