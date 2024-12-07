@@ -16,7 +16,7 @@
         <displayInFactionSelection>false</displayInFactionSelection>
         <fixedName>Wastelanders</fixedName>
         <factionIconPath>World/WorldObjects/Expanding/Sites/DownedRefugee</factionIconPath>
-        <techLevel>Spacer</techLevel>
+        <techLevel>Industrial</techLevel>
         <backstoryFilters>
             <li>
                 <categories>
