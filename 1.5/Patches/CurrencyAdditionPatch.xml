@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
+
+	<!-- Currency patch -->
+
 	<!--
 		- Automatically adds the mod extension to every faction that DOESN'T already have the mod extensions
 		- If a faction already has the mod extension, they'll keep using whatever currency is already defined
 		- HOWEVER make sure you use <modExtensions Inherit="False"> if inheriting from a non-abstract faction def, otherwise they will use the currency from that def instead
 	-->
+
 	<Operation Class="PatchOperationAddModExtension">
 		<xpath>Defs/FactionDef[not(modExtensions/li[@Class="FCP.Currencies.CurrencyReplacement"])]</xpath>
 		<value>
