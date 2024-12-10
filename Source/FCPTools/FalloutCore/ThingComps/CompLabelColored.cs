@@ -27,9 +27,9 @@ namespace FCP.Core
                 case Rarity.Common:
                     return Color.white;
                 case Rarity.Rare:
-                    return new Color(0, 102, 255);
+                    return new Color(58, 43, 255);
                 case Rarity.Unique:
-                    return new Color(255, 255, 51);
+                    return new Color(255, 247, 115);
 
                 default:
                     return Color.white;
