@@ -10,14 +10,20 @@ namespace FCP.Core
     public class CompLabelColored : ThingComp
     {
         CompProperties_LabelColored Props => (CompProperties_LabelColored)props;
-        public override string TransformLabel(string label)
-        {
-            return label.Colorize(GetRarityColor(Props.rarity));
-        }
+        //public override string TransformLabel(string label)
+        //{
+        //    Log.Message("colourizing " + Props.rarity.ToString() + GetRarityColor(Props.rarity));
+        //    return  label + "test".Colorize(GetRarityColor(Props.rarity));
+        //}
 
-        public override string CompTipStringExtra()
+        //public override string CompTipStringExtra()
+        //{
+        //    return GetRarityName(Props.rarity);
+        //}
+
+        public Color GetRarityColor()
         {
-            return GetRarityName(Props.rarity);
+            return GetRarityColor(Props.rarity);
         }
 
         static Color GetRarityColor(Rarity rarity)
@@ -25,16 +31,24 @@ namespace FCP.Core
             switch (rarity)
             {
                 case Rarity.Common:
-                    return Color.white;
+                    return Common;
                 case Rarity.Rare:
-                    return new Color(58, 43, 255);
+                    return Rare;
                 case Rarity.Unique:
-                    return new Color(255, 247, 115);
+                    return Unique;
 
                 default:
                     return Color.white;
             }
         }
+
+
+        public static Color Common => new Color(1f, 1f, 1f, 1f);
+
+        public static Color Rare => new Color(0.23f, 0.17f, 1f, 1f);
+
+        public static Color Unique => new Color(1f, 0.97f, 0.45f, 1f);
+
 
         static string GetRarityName(Rarity rarity)
         {

@@ -7,6 +7,6 @@
 	<FCP_Letter_SpecialWandererJoins>A pawn {PAWN_title} named {PAWN_nameDef} has arrived and wants to join the colony.</FCP_Letter_SpecialWandererJoins>
 	
 	<FCP_RarityCommon>Common</FCP_RarityCommon>
-	<FCP_RarityCommon>Rare</FCP_RarityCommon>
-	<FCP_RarityCommon>Unique</FCP_RarityCommon>
+	<FCP_RarityRare>Rare</FCP_RarityRare>
+	<FCP_RarityUnique>Unique</FCP_RarityUnique>
 </LanguageData>
