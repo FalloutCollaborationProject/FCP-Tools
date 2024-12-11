@@ -49,6 +49,11 @@
                 <li>FCP_Ranger_Rick</li>
             </defaultOutfitTags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Unique</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Ranger Ricks' Armor -->
@@ -91,6 +96,11 @@
                 <li>FCP_Ranger_Rick</li>
             </defaultOutfitTags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Unique</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Ranger Ricks' Duster -->
@@ -137,6 +147,11 @@
                 <li>FCP_Ranger_Rick</li>
             </defaultOutfitTags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Unique</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Ranger Ricks' Helmet -->
@@ -179,6 +194,11 @@
                 <li>FCP_Ranger_Rick</li>
             </defaultOutfitTags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Unique</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
 </Defs>

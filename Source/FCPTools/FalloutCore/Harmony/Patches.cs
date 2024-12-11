@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Reflection.Emit;
 using FCP.Factions;
 using HarmonyLib;
+using RimWorld;
 using RimWorld.Planet;
 using UnityEngine;
 using Verse.AI;
@@ -114,6 +115,10 @@ public static class Patches
         // Weapon Sprite Adjustment
         harmony.Patch(original: AccessTools.Method(typeof(PawnRenderUtility), nameof(PawnRenderUtility.DrawEquipmentAndApparelExtras)),
             prefix: new HarmonyMethod(typeof(Patches), nameof(WeaponDrawPosPatch)));
+
+        //Rarity Label
+        harmony.Patch(original: AccessTools.Method(typeof(InspectPaneUtility), nameof(InspectPaneUtility.AdjustedLabelFor)),
+            postfix: new HarmonyMethod(typeof(Patches), nameof(RarityLabelPatch)));
     }
 
     #region Biome Feature Requirements
@@ -707,6 +712,33 @@ public static class Patches
 
                 drawPos += offset.ToVector3() + absolute.ToVector3();
             }
+        }
+
+    }
+
+    #endregion
+
+    #region RarityLabelPatch
+
+    static void RarityLabelPatch(List<object> selected, ref string __result)
+    {
+        Thing primary = null;
+
+        for (int index = 0; index < selected.Count; ++index)
+        {
+            if (selected[index] is Thing outerThing)
+            {
+                primary = outerThing.GetInnerIfMinified();
+                break;
+            }
+
+        }
+
+        if (primary == null) { return; }
+
+        if (primary.TryGetComp<CompLabelColored>(out CompLabelColored comp))
+        {
+            __result = __result.Colorize(comp.GetRarityColor());
         }
 
     }
