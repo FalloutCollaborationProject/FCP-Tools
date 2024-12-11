@@ -633,15 +633,6 @@
         <startingHediffs Inherit="False" />
     </PawnKindDef>
 
-    <!-- NCR Guard Dog -->
-
-    <!-- <PawnKindDef ParentName="FCP_Animal_Vicious_Dog">
-        <defName>FCP_Animal_NCR_Guard_Dog</defName>
-        <label>NCR Guard Dog</label>
-        <race>FCP_Animal_NCR_Guard_Dog</race>
-        <startingHediffs Inherit="False" />
-    </PawnKindDef> -->
-
     <!--___ German Shepherd Dog ___-->
 
     <!--__ ThingDefs __-->
