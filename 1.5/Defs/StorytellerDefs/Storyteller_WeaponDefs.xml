@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!--__________ Unique Weapons __________-->
+
+    <!--_____ Ranger Rick _____-->
+
+    <!-- Ranger Ricks "Big Iron" Revolver -->
+
+    <ThingDef ParentName="BaseGun">
+        <defName>FCP_Gun_Ranger_Ricks_Big_Iron_Revolver</defName>
+        <label>"Big Iron"</label>
+        <description>.</description>
+        <graphicData>
+            <texPath>Weapons/Custom/Ranger_Rick/FCP_Ranger_Ricks_Revolver_Big_Iron</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <uiIconScale>1.4</uiIconScale>
+        <soundInteract>Interact_Revolver</soundInteract>
+        <thingSetMakerTags>
+            <li>RewardStandardQualitySuper</li>
+        </thingSetMakerTags>
+        <statBases>
+            <MarketValue>5000</MarketValue>
+            <Mass>2.5</Mass>
+            <AccuracyTouch>0.75</AccuracyTouch>
+            <AccuracyShort>0.75</AccuracyShort>
+            <AccuracyMedium>0.85</AccuracyMedium>
+            <AccuracyLong>0.80</AccuracyLong>
+            <RangedWeapon_Cooldown>1.7</RangedWeapon_Cooldown>
+        </statBases>
+        <smeltable>false</smeltable>
+        <weaponTags>
+            <li>FCP_Ranger_Rick</li>
+        </weaponTags>
+        <verbs>
+            <li>
+                <verbClass>Verb_Shoot</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <defaultProjectile>FCP_Bullet_Ranger_Ricks_Big_Iron_Revolver</defaultProjectile>
+                <warmupTime>0.5</warmupTime>
+                <range>35</range>
+                <soundCast>Shot_Revolver</soundCast>
+                <soundCastTail>GunTail_Light</soundCastTail>
+                <muzzleFlashScale>10</muzzleFlashScale>
+            </li>
+        </verbs>
+        <tools>
+            <li>
+                <label>grip</label>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>11</power>
+                <cooldownTime>1.6</cooldownTime>
+            </li>
+            <li>
+                <label>barrel</label>
+                <capacities>
+                    <li>Blunt</li>
+                    <li>Poke</li>
+                </capacities>
+                <power>12</power>
+                <cooldownTime>1.6</cooldownTime>
+            </li>
+        </tools>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Unique</rarity>
+            </li>
+        </comps>
+    </ThingDef>
+
+</Defs>
