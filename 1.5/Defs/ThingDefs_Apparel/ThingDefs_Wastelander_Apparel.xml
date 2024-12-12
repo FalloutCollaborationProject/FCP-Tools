@@ -14,6 +14,7 @@
     <!-- Combat Armor Light -->
 
     <ThingDef Name="FCP_Apparel_Combat_Armor_Light_Base_Craftable" ParentName="ApparelMakeableBase" Abstract="True">
+        <smeltable>false</smeltable>
         <thingCategories>
             <li>ApparelArmor</li>
         </thingCategories>
