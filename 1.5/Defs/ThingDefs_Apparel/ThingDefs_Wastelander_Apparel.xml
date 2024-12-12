@@ -9,6 +9,45 @@
 
     <!--__ Combat Armor __-->
 
+    <!-- Combat Armor Base Modular Craftable -->
+
+    <!-- Combat Armor Light -->
+
+    <ThingDef Name="FCP_Apparel_Combat_Armor_Light_Base_Craftable" ParentName="ApparelMakeableBase" Abstract="True">
+        <thingCategories>
+            <li>ApparelArmor</li>
+        </thingCategories>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>2</Crafting>
+            </skillRequirements>
+            <recipeUsers>
+                <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <FCP_Apparel_Combat_Armor_Light>1</FCP_Apparel_Combat_Armor_Light>
+        </costList>
+        <statBases>
+            <MaxHitPoints>250</MaxHitPoints>
+            <WorkToMake>9200</WorkToMake>
+            <Mass>5.0</Mass>
+            <ArmorRating_Sharp>0.40</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.20</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.30</ArmorRating_Heat>
+            <Insulation_Cold>5</Insulation_Cold>
+            <Insulation_Heat>3</Insulation_Heat>
+            <EquipDelay>1.2</EquipDelay>
+        </statBases>
+        <apparel>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/CombatArmorLight/FCP_Combat_Armor_Chestpiece_Modular_Light</wornGraphicPath>
+            <defaultOutfitTags>
+                <li>FCP_Combat_Armors</li>
+            </defaultOutfitTags>
+        </apparel>
+    </ThingDef>
+    
     <!-- Combat Armor Base -->
 
     <ThingDef Name="FCP_Apparel_Combat_Armor_Base" Abstract="True" ParentName="ApparelBase">
