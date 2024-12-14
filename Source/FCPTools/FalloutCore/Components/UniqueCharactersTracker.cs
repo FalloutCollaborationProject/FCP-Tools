@@ -14,33 +14,33 @@ public class UniqueCharactersTracker : WorldComponent
     {
         Instance = this;
     }
-    
+
     /// <summary>
     /// Check for a UniqueCharacter entry in the tracker and if the entry has a non destroyed/discarded pawn.
     /// </summary>
-    public bool CharacterPawnExists(CharacterDef charDef)
+    public bool CharacterPawnExists(CharacterDef charDef, bool aliveOnly = false)
     {
         UniqueCharacter character = characters.Find(chr => chr.def == charDef);
-        return character != null && character.PawnExists();
+        return character != null && character.PawnExists() && (!aliveOnly || !character.pawn.Dead);
+    }
+
+    /// <summary>
+    /// Check for a UniqueCharacter entry in the tracker and if the entry has a non destroyed/discarded living world pawn.
+    /// </summary>
+    public bool CharacterWorldPawnAvailable(CharacterDef charDef)
+    {
+        UniqueCharacter character = characters.Find(chr => chr.def == charDef);
+        return character.PawnAvailableInWorld();
     }
     
     /// <summary>
-    /// Check for a UniqueCharacter entry in the tracker and if the entry has a non destroyed/discarded living pawn.
+    /// Try find a matching UniqueCharacter for a given pawn
     /// </summary>
-    public bool CharacterPawnExistsAlive(CharacterDef charDef)
-    {
-        UniqueCharacter character = characters.Find(chr => chr.def == charDef);
-        return character != null && character.PawnExists() && !character.pawn.Dead;
-    }
-    
-    // Try find a matching UniqueCharacter for a given pawn
     public bool IsUniquePawn(Pawn pawn, out UniqueCharacter character)
     {
         character = characters.Find(chr => chr.pawn == pawn);
         return character != null;
     }
-    
-    public bool IsUniquePawn(Pawn pawn) => IsUniquePawn(pawn, out _);
 
     /// <summary>
     /// Get an existing UniqueCharacter for the given CharacterDef, or create a new one if it doesn't exist.

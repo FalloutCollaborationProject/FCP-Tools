@@ -1,4 +1,6 @@
-﻿namespace FCP.Core;
+﻿using RimWorld.Planet;
+
+namespace FCP.Core;
 
 public class UniqueCharacter : IExposable
 {
@@ -9,7 +11,7 @@ public class UniqueCharacter : IExposable
     {
         this.def = def;
     }
-    
+
     /// <summary>
     /// Check that a pawn is not null and not destroyed
     /// </summary>
@@ -19,10 +21,16 @@ public class UniqueCharacter : IExposable
         return !pawn.Discarded;
     }
 
+    
+    public bool PawnAvailableInWorld()
+    {
+        return pawn != null && !pawn.Dead && pawn.IsWorldPawn();
+    }
+
 
     public void ExposeData()
     {
         Scribe_Defs.Look(ref def, "def");
         Scribe_References.Look(ref pawn, "pawn");
-    }   
+    }
 }
