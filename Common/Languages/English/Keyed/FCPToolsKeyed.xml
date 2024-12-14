@@ -9,4 +9,6 @@
 	<FCP_RarityCommon>Common</FCP_RarityCommon>
 	<FCP_RarityRare>Rare</FCP_RarityRare>
 	<FCP_RarityUnique>Unique</FCP_RarityUnique>
+	
+	<FCP_MechDetonate>Detonate</FCP_MechDetonate>
 </LanguageData>
