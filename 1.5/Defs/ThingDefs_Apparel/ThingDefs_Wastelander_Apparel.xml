@@ -42,13 +42,21 @@
             <EquipDelay>1.2</EquipDelay>
         </statBases>
         <apparel>
-            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/CombatArmorLight/FCP_Combat_Armor_Chestpiece_Modular_Light</wornGraphicPath>
+            <bodyPartGroups>
+                <li>Neck</li>
+                <li>Torso</li>
+                <li>Shoulders</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Shell</li>
+                <li>Middle</li>
+            </layers>
             <defaultOutfitTags>
                 <li>FCP_Combat_Armors</li>
             </defaultOutfitTags>
         </apparel>
     </ThingDef>
-    
+
     <!-- Combat Armor Base -->
 
     <ThingDef Name="FCP_Apparel_Combat_Armor_Base" Abstract="True" ParentName="ApparelBase">
