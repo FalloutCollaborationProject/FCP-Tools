@@ -815,12 +815,12 @@ public static class Patches
         {
             thing.SetForbidden(false);
         }
-        pawn.jobs.TryTakeOrderedJob(JobMaker.MakeJob(JobDefOf.TakeInventory, (LocalTargetInfo)thing));
-
         Job job = JobMaker.MakeJob(JobDefOf.TakeCountToInventory, (LocalTargetInfo)thing);
+        
         job.count = count;
         pawn.jobs.TryTakeOrderedJob(job);
     }
 
-        #endregion
+    #endregion
+
 }
