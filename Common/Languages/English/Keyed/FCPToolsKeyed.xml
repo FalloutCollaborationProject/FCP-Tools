@@ -11,4 +11,11 @@
 	<FCP_RarityUnique>Unique</FCP_RarityUnique>
 	
 	<FCP_MechDetonate>Detonate</FCP_MechDetonate>
+
+	<FCP_CannotPickUp>Cannot pick up {0}</FCP_CannotPickUp>
+	<FCP_PickUp>Pick up {0}</FCP_PickUp>
+	<FCP_PickUpMax>Pick up max</FCP_PickUpMax>
+	<FCP_PickUpOne>Pick up one {0}</FCP_PickUpOne>
+	<FCP_TooHeavy>Too Heavy</FCP_TooHeavy>
+
 </LanguageData>
