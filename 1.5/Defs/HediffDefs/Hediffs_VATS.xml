@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  <HediffDef>
+    <defName>FCP_VATS_VatsLink</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>V.A.T.S. Neural Link</label>
+    <description>A neurally linked targeting computer which provides the pawn with the RimTech Assisisted Targeting System.</description>
+    <defaultInstallPart>Head</defaultInstallPart>
+    <comps>
+      <li Class="HediffCompProperties_GiveAbility">
+        <abilityDefs>
+          <li>FC_VATS_Attack</li>
+        </abilityDefs>
+      </li>
+    </comps>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+  </HediffDef>
+</Defs>

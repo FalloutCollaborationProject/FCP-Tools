@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Defs>
+    <ShaderTypeDef>
+        <defName>FCP_ZoomShader</defName>
+        <shaderPath>Assets/Shaders/ZoomShader.shader</shaderPath>
+        <modExtensions>
+            <li Class="FCP.Core.ModExtension_Shader" />
+        </modExtensions>
+    </ShaderTypeDef>
+</Defs>
