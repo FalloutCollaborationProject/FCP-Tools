@@ -195,7 +195,7 @@
 
     <!-- Ranger Rick -->
 
-    <StorytellerDef ParentName="BaseStoryteller">
+    <StorytellerDef MayRequire="Rick.FCP.NCR" ParentName="BaseStoryteller">
         <defName>FCP_Storyteller_Ranger_Rick</defName>
         <label>Ranger Rick</label>
         <description>Not much is known about this smug ranger except that wherever he goes trouble is not far behind. The rangers' life isn't for everyone. It's a tough, wild, and challenging path that requires skill, grit and determination as well as a little bit of sheer dumb luck to survive.</description>

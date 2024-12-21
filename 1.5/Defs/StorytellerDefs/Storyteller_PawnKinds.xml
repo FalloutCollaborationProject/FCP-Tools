@@ -7,7 +7,7 @@
 
     <!-- Ranger Rick -->
 
-    <PawnKindDef ParentName="FCP_NCRkindBase">
+    <PawnKindDef MayRequire="Rick.FCP.NCR" ParentName="FCP_NCRkindBase">
         <defName>FCP_Unique_Ranger_Rick</defName>
         <label>Ranger Rick</label>
         <combatPower>120</combatPower>
