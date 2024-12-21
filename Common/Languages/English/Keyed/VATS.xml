@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+    <FCP_VATS_Settings_Category>R.A.T.S.</FCP_VATS_Settings_Category>
+    <FCP_VATS_Settings_EnableSlowDownTime>Enable time slowdown</FCP_VATS_Settings_EnableSlowDownTime>
+    <FCP_VATS_Settings_EnableZoom>Enable the zoom shader</FCP_VATS_Settings_EnableZoom>
+    <FCP_VATS_Settings_ZoomTimeout>How many ticks after creation until we force remove the zoom (in case of bugs): {0} ticks</FCP_VATS_Settings_ZoomTimeout>
+    <FCP_VATS_Settings_CooldownTicks>How many ticks the VATS cooldown is: {0} ticks</FCP_VATS_Settings_CooldownTicks>
+    <FCP_VATS_Settings_BodyPartMultipliers>Accuracy multipliers for various body parts.</FCP_VATS_Settings_BodyPartMultipliers>
+    <FCP_VATS_Settings_Gain_Per_Level>Accuracy Gain Per Level Multiplier [{0}].</FCP_VATS_Settings_Gain_Per_Level>
+    <FCP_VATS_Settings_Gain_Per_Level_Mouseover>Values less than 1 exponentially scale to zero gain per level. Values greater than 1 exponentially scale to infinity.</FCP_VATS_Settings_Gain_Per_Level_Mouseover>
+    <FCP_VATS_Settings_FlatHitChanceBoost>Flat boost to aiming with VATS [{0}].</FCP_VATS_Settings_FlatHitChanceBoost>
+    <FCP_VATS_Settings_FlatHitChanceBoost_Mouseover>Adds a flat boost to aiming, as the calculation for hit chance at lower levels is very not fun.</FCP_VATS_Settings_FlatHitChanceBoost_Mouseover>
+    <FCP_VATS_Settings_ClampingFactor>Clamping Factor for accuracy scaling [{0}]</FCP_VATS_Settings_ClampingFactor>
+    <FCP_VATS_Settings_ClampingFactor_Mouseover>Clamps the max accuracy boost, and scales appropriately</FCP_VATS_Settings_ClampingFactor_Mouseover>
+    <FCP_VATS_Settings_Reset>Reset</FCP_VATS_Settings_Reset>
+    <FCP_VATS_LegendaryStats>Legendary effects:</FCP_VATS_LegendaryStats>
+    
+    <FCP_VATS_MessageReceivedDamageFromHediff>{PAWN_labelShort} has a crippled {1}.</FCP_VATS_MessageReceivedDamageFromHediff>
+</LanguageData>

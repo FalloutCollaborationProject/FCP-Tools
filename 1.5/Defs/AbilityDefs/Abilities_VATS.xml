@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Defs>
+    <AbilityDef>
+        <defName>FC_VATS_Attack</defName>
+        <label>V.A.T.S.</label>
+        <description>Attack with V.A.T.S.</description>
+        <aiCanUse>false</aiCanUse>
+        <iconPath>UI/FCP_VATS_Logo_Small</iconPath>
+        <gizmoClass>FCP.Core.VATS.Command_VATS</gizmoClass>
+        <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+        <targetRequired>True</targetRequired>
+        <hotKey>Misc12</hotKey>
+        <hostile>true</hostile>
+        <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+        <cooldownTicksRange>600</cooldownTicksRange>
+        <verbProperties>
+            <verbClass>FCP.Core.VATS.Verb_AbilityVATS</verbClass>
+            <onlyManualCast>true</onlyManualCast>
+            <defaultCooldownTime>30</defaultCooldownTime>
+            <minRange>0</minRange>
+            <surpriseAttack>
+                <extraMeleeDamages>
+                    <li>
+                        <def>Stun</def>
+                        <amount>20</amount>
+                    </li>
+                </extraMeleeDamages>
+            </surpriseAttack>
+            <targetParams>
+                <canTargetLocations>false</canTargetLocations>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetAnimals>true</canTargetAnimals>
+                <canTargetMechs>true</canTargetMechs>
+                <canTargetMutants>true</canTargetMutants>
+                <canTargetPlants>false</canTargetPlants>
+                <canTargetBuildings>false</canTargetBuildings>
+                <canTargetCorpses>false</canTargetCorpses>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityRequiresCapacity">
+                <capacity>Manipulation</capacity>
+            </li>
+        </comps>
+    </AbilityDef>
+</Defs>

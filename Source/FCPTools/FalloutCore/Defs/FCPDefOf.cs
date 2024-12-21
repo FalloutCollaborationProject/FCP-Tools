@@ -13,6 +13,13 @@ public class FCPDefOf
     public static LetterDef FCP_Letter_AcceptStoryteller;
     public static JobDef FCP_AICastAbilityAtTarget;
     
+    public static JobDef FCP_VATS_AttackHybrid;
+    public static ThingDef FCP_VATS_Zoomer;
+    public static StatCategoryDef FCP_LegendaryEffectStats;
+    public static EffecterDef FCP_VATSLegendaryEffect_Explosive_Explosion;
+
+    public static LegendaryEffectDef FCP_VATSLegendaryEffect_Rapid;
+    
     static FCPDefOf()
     {
         DefOfHelper.EnsureInitializedInCtor(typeof(FCPDefOf));

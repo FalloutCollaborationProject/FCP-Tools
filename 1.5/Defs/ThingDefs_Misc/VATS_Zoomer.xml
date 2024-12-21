@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_VATS_Zoomer</defName>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+        <thingClass>FCP.Core.VATS.Thing_Zoomer</thingClass>
+        <label>vats</label>
+        <graphicData>
+            <texPath>Things/VATS_Blank</texPath>
+            <graphicClass>FCP.Core.VATS.Graphic_Zoomer</graphicClass>
+            <drawSize>(10,10)</drawSize>
+        </graphicData>
+    </ThingDef>
+</Defs>
