@@ -8,7 +8,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Honey_Mesquite_Sowing</defName>
         <label>Honey Mesquite Sowing</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the cultivation and sowing of Honey Mesquite trees.</description>
         <baseCost>200</baseCost>
         <techLevel>Neolithic</techLevel>
         <prerequisites>
@@ -25,7 +25,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Basic_Agriculture</defName>
         <label>Basic Agriculture</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the cultivation and farming of various mushroom species.</description>
         <baseCost>100</baseCost>
         <techLevel>Neolithic</techLevel>
         <researchViewX>1</researchViewX>
@@ -36,7 +36,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Mushroom_Farming</defName>
         <label>Mushroom Farming</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the creation and cultivation of spores for advanced agricultural purposes.</description>
         <baseCost>200</baseCost>
         <techLevel>Neolithic</techLevel>
         <prerequisites>
@@ -50,7 +50,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_BrocXander_Refinement</defName>
         <label>Broc Flower and Xander Root Refinement</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the development and implementation of a spore carrier program for enhanced fungal growth and distribution.</description>
         <baseCost>250</baseCost>
         <techLevel>Neolithic</techLevel>
         <prerequisites>
@@ -64,7 +64,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Spore_Creation</defName>
         <label>Spore Creation</label>
-        <description>DESCRIPTION</description>
+        <description>Research into advanced methods and technologies for producing high-quality food efficiently.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -79,7 +79,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Spore_Carrier_Program</defName>
         <label>Spore Carrier Program</label>
-        <description>DESCRIPTION</description>
+        <description>Research into advanced methods for spore distribution and carrier systems.</description>
         <baseCost>1000</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -95,7 +95,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Advanced_Agriculture</defName>
         <label>Advanced Agriculture</label>
-        <description>DESCRIPTION</description>
+        <description>Research into advanced techniques for improving agricultural productivity and crop yields.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -109,7 +109,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Lab_Grown_Produce</defName>
         <label>Lab Grown Produce</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for growing produce in a controlled lab environment.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -125,7 +125,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Advanced_Food_Production</defName>
         <label>Advanced Food Production</label>
-        <description>DESCRIPTION</description>
+        <description>Research into advanced techniques for food production and preservation.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -139,8 +139,8 @@
 
     <ResearchProjectDef>
         <defName>FCP_Tools_Culinary_Creation</defName>
-        <label>Food Production</label>
-        <description>DESCRIPTION</description>
+        <label>Culinary Creation</label>
+        <description>Research into advanced culinary techniques and recipes for creating high-quality meals.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -155,7 +155,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Nuka_Cola_Manufacturing</defName>
         <label>Nuka Cola Manufacturing</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the production and crafting of various types of Nuka Cola beverages.</description>
         <baseCost>1000</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -172,7 +172,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_T45_Paint_Jobs</defName>
         <label>T-45 Paint Jobs</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the application and enhancement of power armor technology for improved combat effectiveness.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -186,7 +186,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_T51_Paint_Jobs</defName>
         <label>T-51 Paint Jobs</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the maintenance and upkeep of T-45 Power Armor for optimal performance.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -200,7 +200,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_T60_Paint_Jobs</defName>
         <label>T-60 Paint Jobs</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the maintenance and upkeep of T-60 Power Armor for optimal performance.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -216,7 +216,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Food_Production</defName>
         <label>Food Production</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for efficient food production and preservation.</description>
         <baseCost>500</baseCost>
         <techLevel>Neolithic</techLevel>
         <prerequisites>
@@ -231,7 +231,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Apparel_Production</defName>
         <label>Apparel Production</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for producing various types of apparel.</description>
         <baseCost>500</baseCost>
         <techLevel>Medieval</techLevel>
         <prerequisites>
@@ -245,7 +245,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Armor_Production</defName>
         <label>Armor Production</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for producing various types of armor.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -259,7 +259,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Power_Armor_Applications</defName>
         <label>Power Armor Applications</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for utilizing power armor in various applications.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -273,7 +273,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Basic_Power_Armor</defName>
         <label>Basic Power Armor</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for producing basic power armor.</description>
         <baseCost>1000</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -287,7 +287,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_T45_Power_Armor_Maintenance</defName>
         <label>T-45 Power Armor Maintenance</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for maintaining T-45 Power Armor.</description>
         <baseCost>2000</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -302,7 +302,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_T51_Power_Armor_Maintenance</defName>
         <label>T-51 Power Armor Maintenance</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for maintaining T-51 Power Armor.</description>
         <baseCost>2000</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -316,7 +316,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_T60_Power_Armor_Maintenance</defName>
         <label>T-60 Power Armor Maintenance</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for maintaining T-60 Power Armor.</description>
         <baseCost>2000</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -330,7 +330,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_X_Power_Armor_Maintenance</defName>
         <label>X-Series Power Armor Maintenance</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for maintaining X-Series Power Armor.</description>
         <baseCost>2000</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -346,7 +346,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Power_Armor_Training</defName>
         <label>Power Armor Training</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for training individuals to use power armor effectively.</description>
         <baseCost>1000</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -360,7 +360,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Makeshift_Laser_Weapons</defName>
         <label>Makeshift Laser Weapons</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for producing makeshift laser weapons.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -374,7 +374,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Laser_Weapon_Manufacturing</defName>
         <label>Laser Weapon Manufacturing</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for manufacturing laser weapons.</description>
         <baseCost>1000</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -390,7 +390,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Crafting_Stations</defName>
         <label>Crafting Stations</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the creation and use of complex furniture for enhanced living conditions and comfort.</description>
         <baseCost>250</baseCost>
         <techLevel>Neolithic</techLevel>
         <prerequisites>
@@ -404,7 +404,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Gunsmithing</defName>
         <label>Gunsmithing</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the creation and use of furnishings suitable for the harsh conditions of the wasteland.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -418,7 +418,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Advanced_Gunsmithing</defName>
         <label>Advanced Gunsmithing</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the development and implementation of lighting solutions suitable for the wasteland environment.</description>
         <baseCost>750</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -434,7 +434,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Makeshift_Weapons</defName>
         <label>Makeshift Weapons</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the development and construction of fabricated walls and security systems for enhanced protection.</description>
         <baseCost>500</baseCost>
         <techLevel>Neolithic</techLevel>
         <prerequisites>
@@ -448,7 +448,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Basic_Weapons_Manufacturing</defName>
         <label>Basic Weapon Manufacturing</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the development and use of advanced medical equipment for improved healthcare and treatment.</description>
         <baseCost>750</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -462,7 +462,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Advanced_Weapons_Manufacturing</defName>
         <label>Advanced Weapon Manufacturing</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the development and implementation of security measures suitable for the wasteland environment.</description>
         <baseCost>1000</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -477,7 +477,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Energy_Based_Weaponry</defName>
         <label>Energy Based Weaponry</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the development and manufacturing of energy-based weapons for advanced combat capabilities.</description>
         <baseCost>1000</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -491,7 +491,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Plasma_Weapons_Manufacturing</defName>
         <label>Plasma Weapon Manufacturing</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the development and implementation of automated defense systems for enhanced security.</description>
         <baseCost>2000</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -507,7 +507,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Ammo_Workbench</defName>
         <label>Ammo Workbench</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the development and implementation of energy-based defensive systems for enhanced security.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -523,7 +523,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Chem_Production</defName>
         <label>Chem Production</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for producing various types of chems.</description>
         <baseCost>250</baseCost>
         <techLevel>Neolithic</techLevel>
         <prerequisites>
@@ -537,7 +537,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Medicinal_Drugs</defName>
         <label>Medicinal Drugs</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the development and production of medicinal drugs for treating various ailments.</description>
         <baseCost>250</baseCost>
         <techLevel>Neolithic</techLevel>
         <prerequisites>
@@ -551,7 +551,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Healing_Powder</defName>
         <label>Healing Powder</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the creation and use of healing powder for medical purposes.</description>
         <baseCost>500</baseCost>
         <techLevel>Neolithic</techLevel>
         <prerequisites>
@@ -566,7 +566,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_MedEx_Production</defName>
         <label>Med-Ex Production</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for producing Med-Ex.</description>
         <baseCost>1000</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -581,7 +581,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Stimpak_Production</defName>
         <label>Stimpak Production</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for producing Stimpaks.</description>
         <baseCost>1500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -597,7 +597,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Jet_Production</defName>
         <label>Jet Production</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for producing Jet.</description>
         <baseCost>500</baseCost>
         <techLevel>Neolithic</techLevel>
         <prerequisites>
@@ -611,7 +611,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Psycho_Production</defName>
         <label>Psycho Production</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for producing Psycho.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -625,7 +625,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Mentat_Production</defName>
         <label>Mentat Production</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for producing Mentats.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -639,7 +639,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Buffout_Production</defName>
         <label>Buffout Production</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for producing Buffout.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -653,7 +653,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_RadEx_Production</defName>
         <label>Rad-Ex Production</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for producing Rad-Ex.</description>
         <baseCost>1000</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -670,7 +670,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Chem_Combinations</defName>
         <label>Chem Combinations</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for combining various types of chems.</description>
         <baseCost>1000</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -687,7 +687,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_RadAway_Manufacturing</defName>
         <label>Rad-Away Manufacturing</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for producing Rad-Away.</description>
         <baseCost>1500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -704,7 +704,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Wasteland_Beds</defName>
         <label>Wasteland Beds</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for producing beds suitable for the wasteland.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -719,7 +719,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Wasteland_Power_Generation</defName>
         <label>Wasteland Power Generation</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for generating power in the wasteland.</description>
         <baseCost>1000</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -733,7 +733,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Radiation_King_Electronics</defName>
         <label>Radiation King Electronics</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for developing and maintaining Radiation King electronics.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -750,7 +750,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Wasteland_Storage</defName>
         <label>Wasteland Storage</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the creation and use of storage solutions suitable for the harsh conditions of the wasteland.</description>
         <baseCost>250</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -763,8 +763,8 @@
 
     <ResearchProjectDef>
         <defName>FCP_Tools_Wasteland_Power_Supply</defName>
-        <label>Wasteland Storage</label>
-        <description>DESCRIPTION</description>
+        <label>Wasteland Power Supply</label>
+        <description>Research into the techniques and methods for supplying power in the wasteland.</description>
         <baseCost>250</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -778,8 +778,8 @@
 
     <ResearchProjectDef>
         <defName>FCP_Tools_Wasteland_Wind_Turbines</defName>
-        <label>Wasteland Storage</label>
-        <description>DESCRIPTION</description>
+        <label>Wasteland Wind Turbines</label>
+        <description>Research into the techniques and methods for developing wind turbines in the wasteland.</description>
         <baseCost>1000</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -795,7 +795,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Basic_Furniture</defName>
         <label>Basic Furniture</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the creation and use of basic furniture for improved living conditions.</description>
         <baseCost>500</baseCost>
         <techLevel>Neolithic</techLevel>
         <researchViewX>12</researchViewX>
@@ -806,7 +806,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Sleeping_Bags</defName>
         <label>Wasteland Sleeping Bags</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for producing sleeping bags suitable for the wasteland.</description>
         <baseCost>250</baseCost>
         <techLevel>Neolithic</techLevel>
         <prerequisites>
@@ -820,7 +820,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Complex_Furniture</defName>
         <label>Complex Furniture</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for producing complex furniture.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -834,7 +834,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Wasteland_Electronics</defName>
         <label>Wasteland Electronics</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for producing electronics suitable for the wasteland.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -850,7 +850,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Wasteland_Furnishings</defName>
         <label>Wasteland Furnishings</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for producing furnishings suitable for the wasteland.</description>
         <baseCost>500</baseCost>
         <techLevel>Neolithic</techLevel>
         <prerequisites>
@@ -864,7 +864,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Wasteland_Lighting</defName>
         <label>Wasteland Lighting</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for producing lighting solutions suitable for the wasteland.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -878,7 +878,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Radiation_Radios</defName>
         <label>Radiation Radios</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the development and maintenance of Radiation Radios for improved communication and entertainment in the wasteland.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -894,7 +894,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Makeshift_Fortifications</defName>
         <label>Makeshift Fortifications</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for producing makeshift fortifications.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -908,7 +908,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Fabricated_Walls_And_Security</defName>
         <label>Fabricated Walls and Security</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for producing fabricated walls and security systems.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -924,7 +924,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Bunker_Living</defName>
         <label>Bunker Living</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for living in bunkers.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -939,7 +939,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Advanced_Medical_Equipment</defName>
         <label>Advanced Medical Equipment</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for producing advanced medical equipment.</description>
         <baseCost>1000</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -955,7 +955,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Auto_Doc</defName>
         <label>Auto Doc</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for producing Auto Docs.</description>
         <baseCost>2000</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -972,7 +972,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Wasteland_Security</defName>
         <label>Wasteland Security</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for providing security in the wasteland.</description>
         <baseCost>250</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -986,7 +986,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Correctional_Security</defName>
         <label>Correctional Security</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for providing correctional security.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -1002,7 +1002,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Automated_Defenses</defName>
         <label>Automated Defenses</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for producing automated defenses.</description>
         <baseCost>250</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -1018,7 +1018,7 @@
     <ResearchProjectDef>
         <defName>FCP_Tools_Energy_Weapon_Defenses</defName>
         <label>Energy Weapon Defenses</label>
-        <description>DESCRIPTION</description>
+        <description>Research into the techniques and methods for producing energy weapon defenses.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
