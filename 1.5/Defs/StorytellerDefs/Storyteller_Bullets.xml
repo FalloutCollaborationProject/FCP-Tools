@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!--_____ Revolvers _____-->
+
+    <!-- Ranger Ricks "Big Iron" Bullet -->
+
+    <ThingDef MayRequire="Rick.FCP.NCR" ParentName="BaseBullet">
+        <defName>FCP_Bullet_Ranger_Ricks_Big_Iron_Revolver</defName>
+        <label>Ranger Ricks "Big Iron" Bullet</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>24</damageAmountBase>
+            <stoppingPower>6</stoppingPower>
+            <speed>78</speed>
+        </projectile>
+    </ThingDef>
+
+</Defs>

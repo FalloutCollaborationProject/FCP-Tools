@@ -958,9 +958,9 @@
         <defName>FCP_Wastelander_Enclave_Patriot</defName>
         <identifier>FCP_Wastelander_Enclave_Patriot</identifier>
         <slot>Adulthood</slot>
-        <title>Roadside Merchant</title>
-        <titleShort>Roadside Merchant</titleShort>
-        <description>Instead of taking the risk of traveling through the wasteland with [PAWN_possessive] wares, [PAWN_nameDef] decided it would be much safer to put up a roadside shop to deal with incoming caravans and travellers. [PAWN_pronoun] managed to get by, but was always wary of raiders, since [PAWN_possessive] business depended on safe roads to travel on.</description>
+        <title>Enclave Patriot</title>
+        <titleShort>Enclave Patriot</titleShort>
+        <description>[PAWN_nameDef] was a loyal member of the Enclave, a remnant of the pre-war United States government. [PAWN_pronoun] believed in the Enclave's mission to restore America to its former glory, even if it meant using ruthless methods. [PAWN_pronoun] was trained in advanced combat and technology, making [PAWN_objective] a formidable opponent in the wasteland.</description>
         <skillGains>
             <Construction>2</Construction>
             <Mining>5</Mining>
@@ -2247,7 +2247,7 @@
         <description>[PAWN_nameDef] was born on the very frontier of human civilisation, such as it is. Thanks to its remoteness, the region was relatively free of radiation and the absence of larger settlements or trade routes made it unpopular for raiders. However, this also meant that everything had to be built from scratch, since there were little to no ruins to scavenge.</description>
         <skillGains>
             <Construction>4</Construction>
-            <Cooking>23</Cooking>
+            <Cooking>3</Cooking>
             <Plants>2</Plants>
             <Crafting>2</Crafting>
             <Social>-4</Social>

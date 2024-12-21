@@ -5,6 +5,23 @@
 
     <!--_____ Base _____-->
 
+    <!--___ Vault-Tec Base ___-->
+
+    <PawnKindDef Name="FCP_Vault_TeckindBase" Abstract="True">
+        <race>Human</race>
+        <defaultFactionType>FCP_Faction_Vault_Tec</defaultFactionType>
+        <maxGenerationAge>60</maxGenerationAge>
+        <chemicalAddictionChance>0</chemicalAddictionChance>
+        <invNutrition>2.7</invNutrition>
+        <invFoodDef>MealSurvivalPack</invFoodDef>
+        <disallowedTraits>
+            <li>Nudist</li>
+        </disallowedTraits>
+        <apparelTags>
+            <li>FCP_Vault_Tec</li>
+        </apparelTags>
+    </PawnKindDef>
+
     <!--___ NCR Base ___-->
 
     <PawnKindDef Name="FCP_NCRkindBase" Abstract="True">

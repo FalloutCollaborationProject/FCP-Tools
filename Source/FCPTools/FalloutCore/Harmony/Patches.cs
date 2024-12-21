@@ -2,9 +2,12 @@
 using System.Reflection.Emit;
 using FCP.Factions;
 using HarmonyLib;
+using RimWorld;
 using RimWorld.Planet;
 using UnityEngine;
+using Verse;
 using Verse.AI;
+using Verse.AI.Group;
 
 namespace FCP.Core;
 
@@ -117,6 +120,10 @@ public static class Patches
         //Rarity Label
         harmony.Patch(original: AccessTools.Method(typeof(InspectPaneUtility), nameof(InspectPaneUtility.AdjustedLabelFor)),
             postfix: new HarmonyMethod(typeof(Patches), nameof(RarityLabelPatch)));
+
+        //Pick Up
+        harmony.Patch(original: AccessTools.Method(typeof(FloatMenuMakerMap), "AddHumanlikeOrders"),
+            postfix: new HarmonyMethod(typeof(Patches), nameof(AddHumanLikeOrders_PickUp)));
     }
 
     #region Biome Feature Requirements
@@ -742,4 +749,78 @@ public static class Patches
     }
 
     #endregion
+
+    #region Pick Up Items
+
+    static void AddHumanLikeOrders_PickUp(Vector3 clickPos, Pawn pawn, List<FloatMenuOption> opts)
+    {
+
+        IntVec3 clickCell = IntVec3.FromVector3(clickPos);
+        foreach (Thing thing in pawn.Map.thingGrid.ThingsAt(clickCell))
+        {
+            
+            if (thing.def.EverHaulable)
+            {
+
+                float mass = thing.GetStatValue(StatDefOf.Mass);
+
+
+                //pick up one
+                if (pawn.CanReach((LocalTargetInfo)thing, PathEndMode.ClosestTouch, Danger.Deadly) && !thing.IsBurning() && (MassUtility.FreeSpace(pawn) > mass))
+                {
+                    FloatMenuOption floatMenuOption1 = FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption((string)"FCP_PickUpOne".Translate((NamedArgument)thing.LabelShort, (NamedArgument)thing), (Action)(() =>
+                    {
+                        DoPickUp(pawn, thing, 1);
+                    }),
+                    MenuOptionPriority.High), pawn, (LocalTargetInfo)thing);
+                    opts.Add(floatMenuOption1);
+
+
+
+                    //pick up all
+                    FloatMenuOption floatMenuOption =
+                        pawn.CanReach((LocalTargetInfo)thing, PathEndMode.ClosestTouch, Danger.Deadly) ?
+                        (!thing.IsBurning() ?
+                        ((MassUtility.FreeSpace(pawn) > mass * thing.stackCount) ?
+                        FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption((string)"FCP_PickUp".Translate((NamedArgument)thing.LabelShort, (NamedArgument)thing), (Action)(() =>
+                        {
+
+                            DoPickUp(pawn, thing, thing.stackCount);
+                        }),
+                        MenuOptionPriority.High), pawn, (LocalTargetInfo)thing) :
+                        FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption((string)("FCP_PickUpMax".Translate((NamedArgument)thing.LabelShort, (NamedArgument)thing)), (Action)(() =>
+                        {
+                            int max = Mathf.FloorToInt(MassUtility.FreeSpace(pawn)/mass);
+                            DoPickUp(pawn, thing, max);
+                        }),
+                        MenuOptionPriority.High), pawn, (LocalTargetInfo)thing)) :
+                        new FloatMenuOption((string)("FCP_CannotPickUp".Translate((NamedArgument)thing.LabelShort, (NamedArgument)thing) + ": " + "Burning".Translate()), (Action)null)) :
+                        new FloatMenuOption((string)("FCP_CannotPickUp".Translate((NamedArgument)thing.LabelShort, (NamedArgument)thing) + ": " + "NoPath".Translate().CapitalizeFirst()), (Action)null);
+                    opts.Add(floatMenuOption);
+                }
+                else
+                {
+                    opts.Add(new FloatMenuOption((string)("FCP_CannotPickUp".Translate((NamedArgument)thing.Label, (NamedArgument)thing) + ": " + "FCP_TooHeavy".Translate()), (Action)null));
+                }
+
+            }
+
+            
+        }
+    }
+
+    static void DoPickUp(Pawn pawn, Thing thing, int count)
+    {
+        if (thing.HasComp<CompForbiddable>())
+        {
+            thing.SetForbidden(false);
+        }
+        Job job = JobMaker.MakeJob(JobDefOf.TakeCountToInventory, (LocalTargetInfo)thing);
+        
+        job.count = count;
+        pawn.jobs.TryTakeOrderedJob(job);
+    }
+
+    #endregion
+
 }

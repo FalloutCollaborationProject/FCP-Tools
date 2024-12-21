@@ -6,4 +6,6 @@ public class ModExtension_BiomeFeatureRequirements : DefModExtension
     public bool requireCoast = false;
     public bool requireCaves = false;
     public bool requireHills = false;
+
+
 }

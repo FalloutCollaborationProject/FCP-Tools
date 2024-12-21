@@ -7,7 +7,7 @@
 
     <!-- Ranger Rick Outfit-->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef MayRequire="Rick.FCP.NCR" ParentName="ApparelBase">
         <defName>FCP_Apparel_Ranger_Ricks_Uniform</defName>
         <description>A set of clothes made from tough materials such as leathers. Seems as though this one is stronger and tougher than standard uniforms. The standard pants have also been replaced by a pair of worn blue jeans and the shirt has been dyed. The name Rick has also been scribbled on the standard NCR item tag on the inside of the shirt.</description>
         <techLevel>Industrial</techLevel>
@@ -58,7 +58,7 @@
 
     <!-- Ranger Ricks' Armor -->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef MayRequire="Rick.FCP.NCR" ParentName="ApparelBase">
         <defName>FCP_Apparel_Ranger_Ricks_Armor</defName>
         <description>A combat vest composed of the chestplate of a combat armor. It’s often worn by the rangers and offers formidable protection. Its biggest drawback is that it only covers the torso, leaving the appendages unprotected. This set appears to have been customized with extra padding, and a heat resistant coating on the chestpiece. You can also make out a fant name scratched onto the neckpiece normally where unit designations go. "Ranger Rick"</description>
         <techLevel>Industrial</techLevel>
@@ -105,7 +105,7 @@
 
     <!-- Ranger Ricks' Duster -->
 
-    <ThingDef ParentName="ApparelBase">
+    <ThingDef MayRequire="Rick.FCP.NCR" ParentName="ApparelBase">
         <defName>FCP_Apparel_Ranger_Ricks_Duster</defName>
         <description>A duster often worn by the rangers. It’s main use is to protect the wearer against the sun and temperatures of the Mojave Desert, but it’s thick enough to provide additional protection in a firefight as well. This one looks a bit rougher than most, having seen a lot of action. The colors are also different from those of the NCR Veterans, it has a darker brown color. It also has the badge of the Desert Rangers still pinned on the chest. A relic of a bygone era. On the inside of the duster someone has hurridly written "Rick".</description>
         <techLevel>Industrial</techLevel>
@@ -156,7 +156,7 @@
 
     <!-- Ranger Ricks' Helmet -->
 
-    <ThingDef ParentName="HatBase">
+    <ThingDef MayRequire="Rick.FCP.NCR" ParentName="HatBase">
         <defName>FCP_Apparel_Ranger_Ricks_Helmet</defName>
         <label>Ranger Ricks' Helmet</label>
         <description>An enclosed military helmet with built-in low light optics and a gas mask worn by NCR Rangers. It offers better protection in comparison to the Trooper helmet but is significantly rarer. This version seems to have the enhanced low vis optics added in as well as a paint job. Theres a name written on the standard NCR item tag "Rick" as well as the words "FORGIVE ME MASHED" painted on the front of the helmet. Makes you wonder what happend to this Mashed person...</description>
