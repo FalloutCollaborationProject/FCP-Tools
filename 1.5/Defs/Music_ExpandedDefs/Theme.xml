@@ -1,4 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Defs>
+
+    <!--__________ Music Expanded Themes __________-->
+
+    <!-- Themes -->
+
     <MusicExpanded.ThemeDef>
         <defName>ME_Wasteland</defName>
         <label>Music Expanded: Wasteland</label>
@@ -43,4 +49,5 @@
             <li>ME_WasteLand_Credits</li>
         </tracks>
     </MusicExpanded.ThemeDef>
+
 </Defs>
