@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+
+    <!--__________ V.A.T.S. Misc __________-->
+
+    <!-- V.A.T.S. Zoom Effect -->
+
     <ThingDef ParentName="BaseBullet">
         <defName>FCP_VATS_Zoomer</defName>
         <altitudeLayer>MoteOverhead</altitudeLayer>
@@ -11,4 +16,5 @@
             <drawSize>(10,10)</drawSize>
         </graphicData>
     </ThingDef>
+
 </Defs>
