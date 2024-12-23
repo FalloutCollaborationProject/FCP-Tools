@@ -1,47 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Defs>
+
+    <!--__________ Music Expanded SoundDefs __________-->
+
+    <!-- Wasteland Scenario Begin -->
+
     <SoundDef>
-        <defName>ME_Wasteland_Scenario_Begin</defName>
-        <modExtensions><li Class="MusicExpanded.ModExtension.ReplacesSounds"><sounds><li>GameStartSting</li></sounds></li></modExtensions>
+        <defName>FCP_Wasteland_Scenario_Begin</defName>
+        <modExtensions>
+            <li Class="MusicExpanded.ModExtension.ReplacesSounds">
+                <sounds>
+                    <li>GameStartSting</li>
+                </sounds>
+            </li>
+        </modExtensions>
         <subSounds>
             <li>
-                <onCamera>True</onCamera>      
+                <onCamera>True</onCamera>
                 <grains>
                     <li Class="AudioGrain_Clip">
-                        <clipPath>MusicExpanded/Wasteland/Wasteland - Scenario Begin</clipPath>
+                        <clipPath>MusicExpanded/Wasteland/Wasteland_Scenario_Begin</clipPath>
                     </li>
-                </grains>      
+                </grains>
                 <volumeRange>100~100</volumeRange>
             </li>
         </subSounds>
     </SoundDef>
+
+    <!-- Wasteland Quest Complete -->
+
     <SoundDef>
-        <defName>ME_Wasteland_Quest_Complete</defName>
-        <modExtensions><li Class="MusicExpanded.ModExtension.ReplacesSounds"><sounds><li>Quest_Succeded</li></sounds></li></modExtensions>
+        <defName>FCP_Wasteland_Quest_Complete</defName>
+        <modExtensions>
+            <li Class="MusicExpanded.ModExtension.ReplacesSounds">
+                <sounds>
+                    <li>Quest_Succeded</li>
+                </sounds>
+            </li>
+        </modExtensions>
         <subSounds>
             <li>
-                <onCamera>True</onCamera>      
+                <onCamera>True</onCamera>
                 <grains>
                     <li Class="AudioGrain_Clip">
-                        <clipPath>MusicExpanded/Wasteland/Wasteland - Quest Complete</clipPath>
+                        <clipPath>MusicExpanded/Wasteland/Wasteland_Quest_Complete</clipPath>
                     </li>
-                </grains>      
+                </grains>
                 <volumeRange>100~100</volumeRange>
             </li>
         </subSounds>
     </SoundDef>
+
+    <!-- Wasteland Invasion Alert -->
+
     <SoundDef>
-        <defName>ME_Wasteland_Invasion_Alert</defName>
-        <modExtensions><li Class="MusicExpanded.ModExtension.ReplacesSounds"><sounds><li>LetterArrive_BadUrgentBig</li></sounds></li></modExtensions>
+        <defName>FCP_Wasteland_Invasion_Alert</defName>
+        <modExtensions>
+            <li Class="MusicExpanded.ModExtension.ReplacesSounds">
+                <sounds>
+                    <li>LetterArrive_BadUrgentBig</li>
+                </sounds>
+            </li>
+        </modExtensions>
         <subSounds>
             <li>
-                <onCamera>True</onCamera>      
+                <onCamera>True</onCamera>
                 <grains>
                     <li Class="AudioGrain_Clip">
                         <clipPath>MusicExpanded/Wasteland/Wasteland_Invasion_Alert</clipPath>
                     </li>
-                </grains>      
+                </grains>
                 <volumeRange>100~100</volumeRange>
             </li>
         </subSounds>
     </SoundDef>
+
 </Defs>
