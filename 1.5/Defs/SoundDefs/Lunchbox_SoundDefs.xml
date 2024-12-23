@@ -8,7 +8,7 @@
     <!-- Interact -->
 
     <SoundDef>
-        <defName>FCP_Interact_Lunchbox</defName>
+        <defName>FCP_Sound_Interact_Lunchbox</defName>
         <context>MapOnly</context>
         <maxSimultaneous>1</maxSimultaneous>
         <subSounds>
@@ -30,7 +30,7 @@
     <!-- Interact -->
 
     <SoundDef>
-        <defName>FCP_Card_Use</defName>
+        <defName>FCP_Sound_Card_Use</defName>
         <context>MapOnly</context>
         <maxSimultaneous>1</maxSimultaneous>
         <subSounds>
