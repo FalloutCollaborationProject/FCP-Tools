@@ -8,11 +8,11 @@
     <ThingDef ParentName="BuildingBase">
         <defName>FCP_Power_Armor_VR_Pod</defName>
         <label>Power Armor Simulation VR Pod</label>
-        <description>.</description>
+        <description>A virtual reality pod designed for power armor training simulations, enhancing the user's combat skills and proficiency with power armor.</description>
         <rotatable>false</rotatable>
         <graphicData>
             <texPath>Things/Building/Power_Armor/Simulation_Pod/FCP_Simulation_Pod</texPath>
-            <graphicClass>Graphic_Multi</graphicClass>
+            <graphicClass>Graphic_Single</graphicClass>
             <drawSize>(3, 3)</drawSize>
             <damageData>
                 <rect>(0,0,3,1.8)</rect>
@@ -52,7 +52,7 @@
                 <basePowerConsumption>200</basePowerConsumption>
             </li>
             <li Class="CompProperties_Flickable"/>
-            <li Class="CompProperties_Breakdownable"/>
+            <li Class="CompProperties_BiosculpterPod"/>
             <li Class="RangerRick_PowerArmor.CompProperties_Trainer">
                 <givesTrait>FCP_Power_Armor_Trained</givesTrait>
                 <trainDuration>5000</trainDuration>

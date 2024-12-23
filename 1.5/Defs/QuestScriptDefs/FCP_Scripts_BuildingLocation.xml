@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 
+    <!--__________ Quests __________-->
+
+    <!-- Building Quests -->
+
     <QuestScriptDef>
-        <defName>FCP_Quest_BuildingLocation</defName>
+        <defName>FCP_Quest_Power_Armor_Building_Location</defName>
         <rootSelectionWeight>1.0</rootSelectionWeight>
         <rootMinPoints>0</rootMinPoints>
         <defaultChallengeRating>1</defaultChallengeRating>
         <expireDaysRange>4~8</expireDaysRange>
         <questNameRules>
             <rulesStrings>
-                <li>questName->The [facility]</li>
+                <li>facility->[Facility]</li>
                 <li>facility->Facility</li>
                 <li>facility->Outpost</li>
                 <li>facility->Complex</li>
@@ -18,7 +22,7 @@
         </questNameRules>
         <questDescriptionRules>
             <rulesStrings>
-                <li>questDescription->[asker_nameFull], [asker_faction_leaderTitle] of [asker_faction_name], has sent us a message.</li>
+                <li>questDescription->[asker_faction_name], has sent us a message. They seem to be having issues trying to get a pre-war piece of technology online.</li>
             </rulesStrings>
         </questDescriptionRules>
         <root Class="QuestNode_Sequence">
@@ -59,7 +63,6 @@
                         </li>
                     </sitePartsTags>
                 </li>
-
                 <li Class="QuestNode_GetDefaultSitePartsParams">
                     <tile>$siteTile</tile>
                     <faction>$siteFaction</faction>
@@ -72,7 +75,6 @@
                         <sitePartsParams>$sitePartsParams</sitePartsParams>
                     </parms>
                 </li>
-
                 <li Class="QuestNode_SpawnWorldObjects">
                     <worldObjects>$site</worldObjects>
                 </li>
@@ -93,7 +95,6 @@
                         </nodes>
                     </node>
                 </li>
-
                 <li Class="QuestNode_NoWorldObject">
                     <worldObject>$site</worldObject>
                     <node Class="QuestNode_End">

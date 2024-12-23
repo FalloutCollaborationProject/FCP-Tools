@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <Defs>
+
     <StatCategoryDef>
         <defName>FCP_LegendaryEffectStats</defName>
         <label>Legendary effects applied when equipped</label>
@@ -437,7 +437,6 @@
         </statFactors>
     </FCP.Core.LegendaryEffectDef>    
     
-    <!-- -->
     <!-- <FCP.Core.LegendaryEffectDef> -->
     <!--     <defName>FCP_VATSLegendaryEffect_Sharp</defName> -->
     <!--     <label>Sharp</label> -->
@@ -458,8 +457,7 @@
     <!--     <IsForMelee>false</IsForMelee> -->
     <!--     <IsForApparel>false</IsForApparel> -->
     <!-- </FCP.Core.LegendaryEffectDef> -->
-    <!--      -->
-    <!--      -->
+
     <!-- <FCP.Core.LegendaryEffectDef> -->
     <!--     <defName>FCP_VATSLegendaryEffect_TwoShot</defName> -->
     <!--     <label>Two Shot</label> -->
@@ -468,5 +466,5 @@
     <!--     <IsForMelee>true</IsForMelee> -->
     <!--     <IsForApparel>false</IsForApparel> -->
     <!-- </FCP.Core.LegendaryEffectDef> -->
-    <!--      -->
+
 </Defs>

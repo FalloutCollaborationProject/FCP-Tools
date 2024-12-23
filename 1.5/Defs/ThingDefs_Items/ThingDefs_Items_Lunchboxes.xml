@@ -506,10 +506,6 @@
                         <countRange>1</countRange>
                     </li>
                     <li>
-                        <thingDef>FCP_Gun_Laser_Pistol</thingDef>
-                        <countRange>1</countRange>
-                    </li>
-                    <li>
                         <thingDef>FCP_Apparel_Radiation_Suit</thingDef>
                         <countRange>1</countRange>
                     </li>
