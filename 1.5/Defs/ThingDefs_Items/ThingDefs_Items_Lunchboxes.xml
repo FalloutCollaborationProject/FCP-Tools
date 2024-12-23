@@ -98,7 +98,7 @@
                 <useLabel>Open {0}</useLabel>
             </li>
             <li Class="CompProperties_UseEffectPlaySound">
-                <soundOnUsed>FCP_Interact_Lunchbox</soundOnUsed>
+                <soundOnUsed>FCP_Sound_Interact_Lunchbox</soundOnUsed>
             </li>
             <li Class="FCP.Core.CompProperties_UseEffectItemBox">
                 <numWeightedDrops>2</numWeightedDrops>
@@ -166,7 +166,7 @@
                 <useLabel>Collect {0}</useLabel>
             </li>
             <li Class="CompProperties_UseEffectPlaySound">
-                <soundOnUsed>FCP_Card_Use</soundOnUsed>
+                <soundOnUsed>FCP_Sound_Card_Use</soundOnUsed>
             </li>
             <li Class="FCP.Core.CompProperties_UseEffectItemBox">
                 <numWeightedDrops>1</numWeightedDrops>
