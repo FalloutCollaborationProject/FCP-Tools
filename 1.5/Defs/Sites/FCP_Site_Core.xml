@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Sites __________-->
+
+    <!-- Facility Site -->
+
+    <SitePartDef>
+        <defName>FCP_Site_Facility</defName>
+        <label>facility</label>
+        <description>A facility.</description>
+        <siteTexture>World/WorldObjects/Sites/Outpost</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Expanding/Sites/Outpost</expandingIconTexture>
+        <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+        <showFactionInInspectString>true</showFactionInInspectString>
+        <requiresFaction>true</requiresFaction>
+        <approachOrderString>Approach {0}</approachOrderString>
+        <approachingReportString>Approaching {0}</approachingReportString>
+        <arrivedLetter>Arrived to the settlement.</arrivedLetter>
+        <arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+        <wantsThreatPoints>true</wantsThreatPoints>
+        <minThreatPoints>0</minThreatPoints>
+        <considerEnteringAsAttack>False</considerEnteringAsAttack>
+        <tags Inherit="False">
+            <li>FCP_Site_Facility</li>
+        </tags>
+    </SitePartDef>
+    <GenStepDef>
+        <defName>FCP_Site_Facility</defName>
+        <linkWithSite>FCP_Site_Facility</linkWithSite>
+        <order>450</order>
+        <genStep Class="GenStep_Outpost">
+            <generateLoot>false</generateLoot>
+            <pawnGroupKindDef>Combat</pawnGroupKindDef>
+        </genStep>
+    </GenStepDef>
+    <GenStepDef>
+        <defName>FCP_FacilityPower</defName>
+        <linkWithSite>FCP_Site_Facility</linkWithSite>
+        <order>451</order>
+        <genStep Class="GenStep_Power"/>
+    </GenStepDef>
+    <GenStepDef>
+        <defName>FCP_FacilityBuilding</defName>
+        <linkWithSite>FCP_Site_Facility</linkWithSite>
+        <order>452</order>
+        <genStep Class="FCP_RadiantQuests.GenStep_SpawnBuildingInRoom">
+            <buildingDef>FCP_Power_Armor_VR_Pod</buildingDef>
+        </genStep>
+    </GenStepDef>
+
+    <!-- Prisoner Camp -->
+
+    <SitePartDef>
+        <defName>FCP_Site_PawnRescue</defName>
+        <label>prisoner camp</label>
+        <description>A prisoner being held by enemies.</description>
+        <workerClass>FCP_RadiantQuests.SitePartWorker_PawnRescue</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Expanding/Sites/Prisoner</expandingIconTexture>
+        <forceExitAndRemoveMapCountdownDurationDays>6</forceExitAndRemoveMapCountdownDurationDays>
+        <requiresFaction>true</requiresFaction>
+        <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+        <tags>
+            <li>FCP_Site_PawnRescue</li>
+        </tags>
+    </SitePartDef>
+    <GenStepDef>
+        <defName>FCP_Site_PawnRescue_Outpost</defName>
+        <linkWithSite>FCP_Site_PawnRescue</linkWithSite>
+        <order>450</order>
+        <genStep Class="GenStep_Outpost">
+            <pawnGroupKindDef>Combat</pawnGroupKindDef>
+        </genStep>
+    </GenStepDef>
+    <GenStepDef>
+        <defName>FCP_Site_PawnRescue_OutpostPower</defName>
+        <linkWithSite>FCP_Site_PawnRescue</linkWithSite>
+        <order>451</order>
+        <genStep Class="GenStep_Power"/>
+    </GenStepDef>
+    <GenStepDef>
+        <defName>FCP_Site_PawnRescue_PawnPrisoner</defName>
+        <linkWithSite>FCP_Site_PawnRescue</linkWithSite>
+        <order>460</order>
+        <genStep Class="FCP_RadiantQuests.GenStep_PawnRescue">
+            <count>1</count>
+            <nearMapCenter>true</nearMapCenter>
+        </genStep>
+    </GenStepDef>
+
+    <!-- Animal Cage Camp -->
+
+    <SitePartDef>
+        <defName>FCP_Site_PawnRescueAnimal</defName>
+        <label>Animal Cage Camp</label>
+        <description>A camp where animals are held in cages.</description>
+        <workerClass>FCP_RadiantQuests.SitePartWorker_PawnRescueAnimal</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Expanding/Sites/Prisoner</expandingIconTexture>
+        <forceExitAndRemoveMapCountdownDurationDays>6</forceExitAndRemoveMapCountdownDurationDays>
+        <requiresFaction>true</requiresFaction>
+        <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+        <tags>
+            <li>FCP_Site_PawnRescueAnimal</li>
+        </tags>
+    </SitePartDef>
+    <GenStepDef>
+        <defName>FCP_Site_PawnRescueAnimal_Outpost</defName>
+        <linkWithSite>FCP_Site_PawnRescueAnimal</linkWithSite>
+        <order>450</order>
+        <genStep Class="GenStep_Outpost">
+            <pawnGroupKindDef>Combat</pawnGroupKindDef>
+        </genStep>
+    </GenStepDef>
+    <GenStepDef>
+        <defName>FCP_Site_PawnRescueAnimal_OutpostPower</defName>
+        <linkWithSite>FCP_Site_PawnRescueAnimal</linkWithSite>
+        <order>451</order>
+        <genStep Class="GenStep_Power"/>
+    </GenStepDef>
+    <GenStepDef>
+        <defName>FCP_Site_PawnRescueAnimal_PawnPrisoner</defName>
+        <linkWithSite>FCP_Site_PawnRescueAnimal</linkWithSite>
+        <order>460</order>
+        <genStep Class="FCP_RadiantQuests.GenStep_PawnRescueAnimal"/>
+    </GenStepDef>
+
+    <!-- Settlement Defense -->
+
+    <SitePartDef>
+        <defName>FCP_Site_SettlementRaidInProgress</defName>
+        <label>settlement</label>
+        <description>A settlement currently under raid.</description>
+        <siteTexture>World/WorldObjects/Sites/Outpost</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Expanding/Sites/Outpost</expandingIconTexture>
+        <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
+        <showFactionInInspectString>true</showFactionInInspectString>
+        <requiresFaction>true</requiresFaction>
+        <approachOrderString>Approach {0}</approachOrderString>
+        <approachingReportString>Approaching {0}</approachingReportString>
+        <arrivedLetter>Arrived to the settlement.</arrivedLetter>
+        <arrivedLetterDef>PositiveEvent</arrivedLetterDef>
+        <wantsThreatPoints>true</wantsThreatPoints>
+        <minThreatPoints>300</minThreatPoints>
+        <considerEnteringAsAttack>False</considerEnteringAsAttack>
+        <tags>
+            <li>FCP_Site_SettlementRaidInProgress</li>
+        </tags>
+    </SitePartDef>
+    <GenStepDef>
+        <defName>FCP_Site_SettlementRaidInProgress_Settlement</defName>
+        <linkWithSite>FCP_Site_SettlementRaidInProgress</linkWithSite>
+        <order>450</order>
+        <genStep Class="FCP_RadiantQuests.GenStep_SettlementScaleable">
+            <settlementSizeMin>15</settlementSizeMin>
+            <settlementSizeMax>20</settlementSizeMax>
+            <generateLoot>false</generateLoot>
+            <count>1</count>
+            <nearMapCenter>true</nearMapCenter>
+            <generatePawns>false</generatePawns>
+            <clearBuildingFaction>true</clearBuildingFaction>
+        </genStep>
+    </GenStepDef>
+    <GenStepDef>
+        <defName>FCP_Site_SettlementRaidInProgress_SettlementPower</defName>
+        <linkWithSite>FCP_Site_SettlementRaidInProgress</linkWithSite>
+        <order>451</order>
+        <genStep Class="GenStep_Power"/>
+    </GenStepDef>
+
+</Defs>
