@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+
+    <!--__________ Work Givers __________-->
+
+    <!--_____ Quests _____-->
+
+    <!-- Refuel Cages -->
+
 	<WorkGiverDef>
 		<defName>FCP_RefuelCages</defName>
 		<label>refueling cages</label>
@@ -13,4 +20,5 @@
 		</requiredCapacities>
 		 <prioritizeSustains>true</prioritizeSustains>
 	</WorkGiverDef>
+
 </Defs>
