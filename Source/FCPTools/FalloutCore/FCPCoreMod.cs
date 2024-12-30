@@ -3,12 +3,13 @@ using UnityEngine;
 
 namespace FCP.Core;
 
+[UsedImplicitly]
 public class FCPCoreMod : Mod
 {
     public static FCPCoreMod mod;
-    
-    public static FCP_Settings Settings;
-    
+
+    public static FCP_Settings Settings { get; private set; }
+
     public FCPCoreMod(ModContentPack content) : base(content)
     {
         mod = this;
@@ -28,7 +29,7 @@ public class FCPCoreMod : Mod
         return "FCP_Settings_Category".Translate();
     }
 
-    public AssetBundle bundleInt;
+    private AssetBundle bundleInt;
 
     public AssetBundle MainBundle
     {
@@ -36,21 +37,22 @@ public class FCPCoreMod : Mod
         {
             if(bundleInt != null) return bundleInt;
 
-            string text = "";
+            string platform = "";
+            
             if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
             {
-                text = "StandaloneOSX";
+                platform = "StandaloneOSX";
             }
             else if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                text = "StandaloneWindows64";
+                platform = "StandaloneWindows64";
             }
             else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             {
-                text = "StandaloneLinux64";
+                platform = "StandaloneLinux64";
             }
 
-            string bundlePath = Path.Combine(Content.RootDir, $@"FCP-UnityAssets\Materials\{text}\fcpshaders");
+            string bundlePath = Path.Combine(Content.RootDir, $@"AssetBundles\{platform}\fcpshaders");
             Log.Message("Bundle Path: " + bundlePath);
 
             AssetBundle bundle = AssetBundle.LoadFromFile(bundlePath);
