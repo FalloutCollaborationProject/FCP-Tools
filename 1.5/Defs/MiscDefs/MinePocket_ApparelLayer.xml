@@ -1,0 +1,7 @@
+<Defs>
+    <ApparelLayerDef>
+        <defName>MinePocket_ApparelLayer</defName>
+        <label>pocket</label>
+        <drawOrder>320</drawOrder>
+      </ApparelLayerDef>
+</Defs>
