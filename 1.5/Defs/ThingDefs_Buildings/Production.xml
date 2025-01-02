@@ -59,7 +59,7 @@
             <li>PlaceWorker_PreventInteractionSpotOverlap</li>
         </placeWorkers>
         <researchPrerequisites>
-            <li>FCP_Tools_Ammo_Workbench</li>
+            <li>FCP_Research_Ammo_Workbench</li>
         </researchPrerequisites>
     </ThingDef>
 
@@ -131,7 +131,7 @@
             <li>PlaceWorker_PreventInteractionSpotOverlap</li>
         </placeWorkers>
         <researchPrerequisites>
-            <li>FCP_Tools_Armor_Production</li>
+            <li>FCP_Research_Armor_Production</li>
         </researchPrerequisites>
     </ThingDef>
 
@@ -191,7 +191,7 @@
             <li>PlaceWorker_PreventInteractionSpotOverlap</li>
         </placeWorkers>
         <researchPrerequisites>
-            <li>FCP_Tools_Chem_Production</li>
+            <li>FCP_Research_Chem_Production</li>
         </researchPrerequisites>
     </ThingDef>
 
@@ -251,7 +251,7 @@
             <li>PlaceWorker_PreventInteractionSpotOverlap</li>
         </placeWorkers>
         <researchPrerequisites>
-            <li>FCP_Tools_Advanced_Gunsmithing</li>
+            <li>FCP_Research_Advanced_Gunsmithing</li>
         </researchPrerequisites>
     </ThingDef>
 
@@ -339,7 +339,7 @@
             <li>PlaceWorker_PreventInteractionSpotOverlap</li>
         </placeWorkers>
         <researchPrerequisites>
-            <li>FCP_Tools_Advanced_Food_Production</li>
+            <li>FCP_Research_Advanced_Food_Production</li>
         </researchPrerequisites>
     </ThingDef>
 
@@ -430,7 +430,7 @@
             <li>PlaceWorker_PreventInteractionSpotOverlap</li>
         </placeWorkers>
         <researchPrerequisites>
-            <li>FCP_Tools_Food_Production</li>
+            <li>FCP_Research_Food_Production</li>
         </researchPrerequisites>
     </ThingDef>
 
@@ -521,7 +521,7 @@
             <li>PlaceWorker_PreventInteractionSpotOverlap</li>
         </placeWorkers>
         <researchPrerequisites>
-            <li>FCP_Tools_Food_Production</li>
+            <li>FCP_Research_Food_Production</li>
         </researchPrerequisites>
     </ThingDef>
 
@@ -599,7 +599,7 @@
             <li>PlaceWorker_PreventInteractionSpotOverlap</li>
         </placeWorkers>
         <researchPrerequisites>
-            <li>FCP_Tools_Crafting_Stations</li>
+            <li>FCP_Research_Crafting_Stations</li>
         </researchPrerequisites>
     </ThingDef>
 
@@ -661,7 +661,7 @@
             <li>PlaceWorker_PreventInteractionSpotOverlap</li>
         </placeWorkers>
         <researchPrerequisites>
-            <li>FCP_Tools_Crafting_Stations</li>
+            <li>FCP_Research_Crafting_Stations</li>
         </researchPrerequisites>
     </ThingDef>
 
@@ -724,7 +724,7 @@
             <li>PlaceWorker_PreventInteractionSpotOverlap</li>
         </placeWorkers>
         <researchPrerequisites>
-            <li>FCP_Tools_Gunsmithing</li>
+            <li>FCP_Research_Gunsmithing</li>
         </researchPrerequisites>
     </ThingDef>
 
@@ -787,7 +787,7 @@
             <li>PlaceWorker_PreventInteractionSpotOverlap</li>
         </placeWorkers>
         <researchPrerequisites>
-            <li>FCP_Tools_Apparel_Production</li>
+            <li>FCP_Research_Apparel_Production</li>
         </researchPrerequisites>
     </ThingDef>
 
@@ -849,7 +849,7 @@
             <li>PlaceWorker_PreventInteractionSpotOverlap</li>
         </placeWorkers>
         <researchPrerequisites>
-            <li>FCP_Tools_Crafting_Stations</li>
+            <li>FCP_Research_Crafting_Stations</li>
         </researchPrerequisites>
     </ThingDef>
 

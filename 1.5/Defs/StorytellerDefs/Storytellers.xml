@@ -390,7 +390,7 @@
                 </allowedTargetTags>
             </li>
         </comps>
-        <modExtensions>
+        <modExtensions MayRequire="Rick.FCP.NCR">
             <!-- Storyteller Joiner -->
             <li Class="FCP.Core.ModExtension_StoryTellerIsJoiner">
                 <characterDef>FCP_Character_Ranger_Rick</characterDef>
