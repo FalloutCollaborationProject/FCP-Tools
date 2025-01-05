@@ -5,8 +5,8 @@
     <description>placeholder.</description>
     <possessionCount>0</possessionCount>
     <graphicData>
-      <texPath>Things/Item/Resource/Neutroamine</texPath> <!-- obviously change this xd-->
-      <graphicClass>Graphic_StackCount</graphicClass>
+      <texPath>Weapons/Mines/FCP_Frag_Mine</texPath> <!-- obviously change this xd-->
+      <graphicClass>Graphic_Single</graphicClass>
       <drawSize>0.90</drawSize>
     </graphicData>
     <stackLimit>20</stackLimit>

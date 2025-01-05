@@ -7,6 +7,7 @@
 
     <FactionDef ParentName="FactionBase">
         <defName>FCP_Faction_Hidden_Wastelanders</defName>
+        <label>wastelanders</label>
         <pawnSingular>Wastelander</pawnSingular>
         <pawnsPlural>Wastelanders</pawnsPlural>
         <categoryTag>FCP_Wastelanders</categoryTag>
