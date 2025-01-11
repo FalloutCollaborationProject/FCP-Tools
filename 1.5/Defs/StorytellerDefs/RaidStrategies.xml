@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RaidStrategyDef>
+    <defName>FCP_VertibirdAttack</defName>
+    <workerClass>RaidStrategyWorker_ImmediateAttack</workerClass>
+    <selectionWeightPerPointsCurve>
+      <points>
+        <li>(0, 0)</li>
+      </points>
+    </selectionWeightPerPointsCurve>
+    <selectionWeightCurvesPerFaction>
+
+    </selectionWeightCurvesPerFaction>
+    <pointsFactorCurve>
+      <points>
+        <li>0, 1</li>
+      </points>
+    </pointsFactorCurve>
+    <arriveModes>
+      <li>FCP_VertibirdAttack</li>
+    </arriveModes>
+    <letterLabelEnemy>Raid</letterLabelEnemy>
+    <arrivalTextEnemy>They are attacking immediately.</arrivalTextEnemy>
+    <letterLabelFriendly>Friendlies</letterLabelFriendly>
+    <arrivalTextFriendly>They are moving in to help you immediately.</arrivalTextFriendly>
+  </RaidStrategyDef>
+  
+  <PawnsArrivalModeDef>
+    <defName>FCP_VertibirdAttack</defName>
+    <workerClass>FCP_Shuttles.PawnsArrivalModeWorker_VertibirdAttack</workerClass>
+    <selectionWeightCurve>
+      <points>
+        <li>(100, 0)</li>
+        <li>(300, 0.2)</li>
+        <li>(700, 0.5)</li>
+      </points>
+    </selectionWeightCurve>
+    <pointsFactorCurve>
+      <points>
+        <li>0, 0.9</li>
+      </points>
+    </pointsFactorCurve>
+    <minTechLevel>Industrial</minTechLevel>
+    <textEnemy>Several separate groups of {0} from {1} have arrived in vertibirds nearby.</textEnemy>
+    <textFriendly>Several separate groups of friendly {0} from {1} have arrived in vertibirds nearby.</textFriendly>
+    <textWillArrive>Several separate groups of {0_pawnsPluralDef} will arrive in vertibirds.</textWillArrive>
+  </PawnsArrivalModeDef>
+
+</Defs>
