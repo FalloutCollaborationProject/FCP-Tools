@@ -121,7 +121,6 @@
       <shaderType>CutoutFlying</shaderType>
       <drawSize>(6,6)</drawSize>
     </graphicData>
-	<drawerType>MapMeshAndRealTime</drawerType>
     <skyfaller>
       <movementType>Decelerate</movementType>
       <shadow>Things/Skyfaller/SkyfallerShadowRectangle</shadow>
