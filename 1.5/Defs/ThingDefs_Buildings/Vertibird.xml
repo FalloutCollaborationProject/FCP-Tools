@@ -80,7 +80,7 @@
 						<graphicClass>Graphic_Single</graphicClass>
 						<drawSize>(6,6)</drawSize>
 					</bladeGraphic>
-					<positionOffset>(-1, 0, -1)</positionOffset>
+					<positionOffset>(0, 0, -1)</positionOffset>
 					<spinRate>0.5</spinRate>
 				</li>
 				<li>
@@ -89,7 +89,7 @@
 						<graphicClass>Graphic_Single</graphicClass>
 						<drawSize>(6,6)</drawSize>
 					</bladeGraphic>
-					<positionOffset>(1, 0, 1)</positionOffset>
+					<positionOffset>(0, 0, 1)</positionOffset>
 					<spinRate>0.5</spinRate>
 				</li>
 			</bladeGraphicsData>
@@ -137,8 +137,8 @@
 						<graphicClass>Graphic_Single</graphicClass>
 						<drawSize>(6,6)</drawSize>
 					</bladeGraphic>
-					<positionOffset>(-1, 0, -1)</positionOffset>
-					<spinRate>0.5</spinRate>
+					<positionOffset>(1.15, 0, -1.7)</positionOffset>
+					<spinRate>5</spinRate>
 				</li>
 				<li>
 					<bladeGraphic>
@@ -146,8 +146,8 @@
 						<graphicClass>Graphic_Single</graphicClass>
 						<drawSize>(6,6)</drawSize>
 					</bladeGraphic>
-					<positionOffset>(1, 0, 1)</positionOffset>
-					<spinRate>0.5</spinRate>
+					<positionOffset>(0.5, 0, 1.5)</positionOffset>
+					<spinRate>5</spinRate>
 				</li>
 			</bladeGraphicsData>
 		</li>

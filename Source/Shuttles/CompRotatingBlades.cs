@@ -22,6 +22,7 @@ namespace FCP_Shuttles
 		}
 	}
 
+	[HotSwappable]
 	public class CompRotatingBlades : ThingComp
 	{
 		private List<float> rotationRates = new List<float>();
@@ -82,13 +83,9 @@ namespace FCP_Shuttles
 
 		private void DrawRotatingBlade(Vector3 drawLoc, float rotationRate, BladeGraphicData graphicData)
 		{
-			float angle = rotationRate;
-			Vector3 bladePos = drawLoc + graphicData.positionOffset.RotatedBy(angle);
-			bladePos.y += 10;
-			Log.Message("bladePos: " + bladePos + " - " + graphicData.bladeGraphic.Graphic);
-			Matrix4x4 matrix = default(Matrix4x4);
-			matrix.SetTRS(bladePos, Quaternion.identity, graphicData.bladeGraphic.drawSize);
-			Graphics.DrawMesh(MeshPool.plane10, matrix, graphicData.bladeGraphic.Graphic.MatSingle, 0);
+			Vector3 bladePos = drawLoc + graphicData.positionOffset;
+			bladePos.y += 1;
+			graphicData.bladeGraphic.Graphic.Draw(bladePos, Rot4.South, this.parent, rotationRate);
 		}
 	}
 }
