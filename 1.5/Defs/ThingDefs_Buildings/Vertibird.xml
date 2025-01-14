@@ -72,7 +72,29 @@
         <pawnLoadedSound>Shuttle_PawnLoaded</pawnLoadedSound>
         <pawnExitSound>Shuttle_PawnExit</pawnExitSound>
       </li>
-    </comps>
+		<li Class="FCP_Shuttles.CompProperties_RotatingBlades">
+			<bladeGraphicsData>
+				<li>
+					<bladeGraphic>
+						<texPath>Things/Vehicles/FCP_Vertibird_Light_Propeller</texPath>
+						<graphicClass>Graphic_Single</graphicClass>
+						<drawSize>(6,6)</drawSize>
+					</bladeGraphic>
+					<positionOffset>(-1, 0, -1)</positionOffset>
+					<spinRate>0.5</spinRate>
+				</li>
+				<li>
+					<bladeGraphic>
+						<texPath>Things/Vehicles/FCP_Vertibird_Light_Propeller</texPath>
+						<graphicClass>Graphic_Single</graphicClass>
+						<drawSize>(6,6)</drawSize>
+					</bladeGraphic>
+					<positionOffset>(1, 0, 1)</positionOffset>
+					<spinRate>0.5</spinRate>
+				</li>
+			</bladeGraphicsData>
+		</li>
+	</comps>
   </ThingDef>
 
   <WorldObjectDef>
@@ -99,12 +121,37 @@
       <shaderType>CutoutFlying</shaderType>
       <drawSize>(6,6)</drawSize>
     </graphicData>
+	<drawerType>MapMeshAndRealTime</drawerType>
     <skyfaller>
       <movementType>Decelerate</movementType>
       <shadow>Things/Skyfaller/SkyfallerShadowRectangle</shadow>
       <shadowSize>(5.5,3.5)</shadowSize>
       <motesPerCell>1</motesPerCell>
     </skyfaller>
+	<comps>
+		<li Class="FCP_Shuttles.CompProperties_RotatingBlades">
+			<bladeGraphicsData>
+				<li>
+					<bladeGraphic>
+						<texPath>Things/Vehicles/FCP_Vertibird_Light_Propeller</texPath>
+						<graphicClass>Graphic_Single</graphicClass>
+						<drawSize>(6,6)</drawSize>
+					</bladeGraphic>
+					<positionOffset>(-1, 0, -1)</positionOffset>
+					<spinRate>0.5</spinRate>
+				</li>
+				<li>
+					<bladeGraphic>
+						<texPath>Things/Vehicles/FCP_Vertibird_Light_Propeller</texPath>
+						<graphicClass>Graphic_Single</graphicClass>
+						<drawSize>(6,6)</drawSize>
+					</bladeGraphic>
+					<positionOffset>(1, 0, 1)</positionOffset>
+					<spinRate>0.5</spinRate>
+				</li>
+			</bladeGraphicsData>
+		</li>
+	</comps>
   </ThingDef>
   
   <ThingDef ParentName="FCP_VertibirdSkyfallerBase">
