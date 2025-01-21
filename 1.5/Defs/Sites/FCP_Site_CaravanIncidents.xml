@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <SitePartDef>
+    <defName>FCP_Site_CaravanIncident_CrashSite_A_Test</defName>
+    <label>crash site</label>
+    <description>A crash site.</description>
+    <siteTexture>World/WorldObjects/Sites/Outpost</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Outpost</expandingIconTexture>
+    <applyFactionColorToSiteTexture>false</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>true</showFactionInInspectString>
+    <requiresFaction>false</requiresFaction>
+    <approachOrderString>Approach {0}</approachOrderString>
+    <approachingReportString>Approaching {0}</approachingReportString>
+    <arrivedLetter>Arrived to the crash site.</arrivedLetter>
+    <arrivedLetterDef>NeutralEvent</arrivedLetterDef>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <minThreatPoints>0</minThreatPoints>
+    <considerEnteringAsAttack>False</considerEnteringAsAttack>
+    <tags Inherit="False">
+      <li>FCP_Site_CaravanIncident_CrashSite_A_Test</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>FCP_CrashSite</defName>
+    <linkWithSite>FCP_Site_CaravanIncident_CrashSite_A_Test</linkWithSite>
+    <order>452</order>
+    <genStep Class="FCP_CaravanIncidents.GenStep_CrashSite">
+      <factionDef>FCP_Faction_Hidden_Wastelanders</factionDef>
+      <buildingDef>FCP_Power_Armor_VR_Pod</buildingDef>
+      <passengersMin>3</passengersMin>
+      <passengersMax>6</passengersMax>
+      <!--Customize which pawnkind spawns in the crash-->
+      <passengerPawnKinds>
+        <li>
+          <pawnKindDef>Drifter</pawnKindDef>
+          <!--Weighted chances-->
+          <weightedChance>1</weightedChance>
+        </li>
+      </passengerPawnKinds>
+      <!--How far from the crashed shuttle the corpses spawn-->
+      <radius>1</radius>
+      <!--Each <li> in lootable means that every passenger will contain a random loot from the table, <repeat> is the amount of loot repeats e.g. 2 means each passenger spawns with 2 items from the table-->
+      <lootTables>
+        <li>
+          <chance>1.0</chance>
+          <repeat>3</repeat>
+
+          <table>
+            <li>
+              <itemDef>ComponentIndustrial</itemDef>
+              <amountMin>1</amountMin>
+              <amountMax>5</amountMax>
+              <weightedChance>1</weightedChance>
+            </li>
+          </table>
+
+        </li>
+      </lootTables>
+
+    </genStep>
+  </GenStepDef>
+</Defs>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- =============================== Shuttle Crash Site =============================== -->
+
+  <IncidentDef>
+    <defName>FCP_CrashSite</defName>
+    <label>crash site</label>
+    <category>Misc</category>
+    <targetTags>
+      <li>Caravan</li>
+      <li>Map_TempIncident</li>
+    </targetTags>
+    <workerClass>FCP_CaravanIncidents.IncidentWorker_ShuttleCrash</workerClass>
+    <pointsScaleable>true</pointsScaleable>
+    <minRefireDays>0.17</minRefireDays>
+    <tale>CaravanAmbushedByHumanlike</tale>
+    <mtbDaysByBiome>
+      <TemperateForest>20</TemperateForest>
+      <BorealForest>20</BorealForest>
+      <TropicalRainforest>20</TropicalRainforest>
+      <AridShrubland>20</AridShrubland>
+      <Desert>30</Desert>
+      <Tundra>30</Tundra>
+      <TropicalSwamp>30</TropicalSwamp>
+      <TemperateSwamp>30</TemperateSwamp>
+      <ColdBog>35</ColdBog>
+      <ExtremeDesert>35</ExtremeDesert>
+      <IceSheet>40</IceSheet>
+      <SeaIce>60</SeaIce>
+    </mtbDaysByBiome>
+  </IncidentDef>
+  
+  <WorldObjectDef>
+    <defName>Ambush</defName>
+    <label>ambush</label>
+    <description>An ongoing ambush battle.</description>
+    <worldObjectClass>CaravansBattlefield</worldObjectClass>
+    <texture>World/WorldObjects/Ambush</texture>
+    <expandingIcon>true</expandingIcon>
+    <expandingIconTexture>World/WorldObjects/Expanding/Ambush</expandingIconTexture>
+    <expandingIconPriority>80</expandingIconPriority>
+    <expandMore>true</expandMore>
+    <blockExitGridUntilBattleIsWon>true</blockExitGridUntilBattleIsWon>
+    <isTempIncidentMapOwner>true</isTempIncidentMapOwner>
+    <IncidentTargetTags>
+      <li>Map_TempIncident</li>
+    </IncidentTargetTags>
+    <comps>
+      <li Class="WorldObjectCompProperties_FormCaravan" />
+      <li Class="WorldObjectCompProperties_TimedDetectionRaids" />
+    </comps>
+  </WorldObjectDef>
+
+  
+</Defs>
