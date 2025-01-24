@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <FactionDef ParentName="FactionBase">
+    <defName>FCP_Faction_Shuttle</defName>
+    <label>shuttle passengers</label>
+    <permanentEnemy>true</permanentEnemy>
+    <pawnSingular>passenger</pawnSingular>
+    <pawnsPlural>passengers</pawnsPlural>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>2001</configurationListOrderPriority>
+    <displayInFactionSelection>false</displayInFactionSelection>
+    <fixedName>Passenger</fixedName>
+    <factionIconPath>World/WorldObjects/Expanding/Sites/DownedRefugee</factionIconPath>
+    <techLevel>Industrial</techLevel>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>Offworld</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <hidden>true</hidden>
+    <rescueesCanJoin>true</rescueesCanJoin>
+    <autoFlee>false</autoFlee>
+    <apparelStuffFilter>
+      <thingDefs>
+        <li>Cloth</li>
+        <li>Leather_Plain</li>
+        <li>Steel</li>
+      </thingDefs>
+    </apparelStuffFilter>
+  </FactionDef>
+
+</Defs>

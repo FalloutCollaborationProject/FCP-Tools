@@ -31,9 +31,9 @@ namespace FCP_CaravanIncidents
     }
     public class CaravanIncidents_Settings : ModSettings
     {
-        public static int shuttleCrashWeightA = 10000;
+        public static int shuttleCrashWeightA = 1;
         public static int shuttleCrashWeightB = 2;
-        public static int shuttleCrashWeightC = 1;
+        public static int shuttleCrashWeightC = 500;
 
         public static int shuttleWeightsTotal => shuttleCrashWeightA + shuttleCrashWeightB + shuttleCrashWeightC;
         public static int[] cumulativeWeightsShuttleCrash => new int[] { shuttleCrashWeightA, shuttleCrashWeightA + shuttleCrashWeightB, shuttleCrashWeightA + shuttleCrashWeightB + shuttleCrashWeightC};

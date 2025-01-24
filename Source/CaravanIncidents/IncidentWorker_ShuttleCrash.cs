@@ -39,7 +39,18 @@ namespace FCP_CaravanIncidents
             }
             if (num < CaravanIncidents_Settings.cumulativeWeightsShuttleCrash[2])
             {
-                //C
+                DiaNode diaNode = new DiaNode("FCPShuttleCrashVariantC".Translate());
+                DiaOption diaOption = new DiaOption("OK".Translate());
+                diaOption.action = delegate
+                {
+                    QuestScriptDef def = DefDatabase<QuestScriptDef>.AllDefs.Where(c => c.defName.Contains("FCP_Quest_CaravanIncident_C")).RandomElement();
+                    Quest quest = IncidentUtility.GenerateCaravanQuest(def, parms.points, (Caravan)parms.target);
+
+
+                };
+                diaOption.resolveTree = true;
+                diaNode.options.Add(diaOption);
+                Find.WindowStack.Add(new Dialog_NodeTree(diaNode, true, false));
             }
         }
 

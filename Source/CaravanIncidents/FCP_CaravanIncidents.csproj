@@ -58,7 +58,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GenStep_CrashSite.cs" />
+    <Compile Include="GenStep_CrashSiteAlive.cs" />
+    <Compile Include="GenStep_CrashSiteDead.cs" />
     <Compile Include="IncidentUtility.cs" />
     <Compile Include="IncidentWorker_MultiPartBase.cs" />
     <Compile Include="IncidentWorker_ShuttleCrash.cs" />

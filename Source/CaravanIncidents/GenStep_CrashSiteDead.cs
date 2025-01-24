@@ -31,7 +31,7 @@ namespace FCP_CaravanIncidents
         public int chance;
 
     }
-    public class GenStep_CrashSite : GenStep
+    public class GenStep_CrashSiteDead : GenStep
     {
         public int radius;
         public ThingDef buildingDef;
@@ -45,14 +45,14 @@ namespace FCP_CaravanIncidents
         private int maxTries = 30;  
         public override void Generate(Map map, GenStepParams parms)
         {
-            Log.Message(radius);
+/*            Log.Message(radius);
             Log.Message(buildingDef.defName);
             Log.Message(passengersMin);
             Log.Message(passengersMax);
             Log.Message(lootTables.Count);
             Log.Message(passengerPawnKinds.Count);
             Log.Message(factionDef.defName);
-
+*/
             Building building = (Building)ThingMaker.MakeThing(buildingDef);
             IntVec3 intVec = IntVec3.Invalid;
             for (int j = 0; j < maxTries; j++)
@@ -67,6 +67,7 @@ namespace FCP_CaravanIncidents
             if (!intVec.InBounds(map))
             {
                 Log.Error("Could not find appropriate region");
+                return;
             }
             GenPlace.TryPlaceThing(building, intVec, map, ThingPlaceMode.Near, rot: Rot4.East);
 
@@ -92,7 +93,7 @@ namespace FCP_CaravanIncidents
                 Log.Message(factionDef);
                 Pawn pawn = PawnGenerator.GeneratePawn(pawnKind, Find.FactionManager.FirstFactionOfDef(factionDef));
                 FillPassengerWithLoot(pawn);
-                HealthUtility.SimulateKilled(pawn, DamageDefOf.Cut);
+                HealthUtility.SimulateKilled(pawn, DamageDefOf.Crush);
                 Corpse corpse = pawn.Corpse;
                 corpse.Age = Find.TickManager.TicksGame + Rand.Range(1080000000, 1260000000);
                 CompRottable compRottable = corpse.TryGetComp<CompRottable>();
