@@ -21,7 +21,7 @@ public static class Patches
         // Biome Feature Requirements
         harmony.Patch(original: AccessTools.Method(typeof(WildAnimalSpawner), "CommonalityOfAnimalNow"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(WildAnimalSpawnerCommonalityOfAnimalNow_Postfix)));
-            
+
         // Non Slaves in Traders
         harmony.Patch(original: AccessTools.Method(typeof(TraderCaravanUtility), "GetTraderCaravanRole"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(TraderCaravanUtilityGetTraderCaravanRole_Postfix)));
@@ -31,11 +31,11 @@ public static class Patches
 
         harmony.Patch(original: AccessTools.Method(typeof(Pawn), "PreTraded"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(PawnPreTraded_Postfix)));
-            
+
         // Flying Pawns
         harmony.Patch(original: AccessTools.Method(typeof(DamageWorker_AddInjury), "ApplyDamageToPart"),
             prefix: new HarmonyMethod(typeof(Patches), nameof(DamageWorker_AddInjuryApplyDamageToPart_Prefix)));
-            
+
         harmony.Patch(original: AccessTools.Method(typeof(JobGiver_AIDefendPawn), "FindAttackTarget"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(JobGiver_AIDefendPawnFindAttackTarget_Postfix)));
 
@@ -47,17 +47,17 @@ public static class Patches
 
         harmony.Patch(original: AccessTools.Method(typeof(Pawn_JobTracker), nameof(Pawn_JobTracker.StartJob)),
             postfix: new HarmonyMethod(typeof(Patches), nameof(Pawn_JobTrackerStartJob_Postfix)));
-            
+
         harmony.Patch(original: AccessTools.PropertyGetter(typeof(ShotReport), nameof(ShotReport.AimOnTargetChance_StandardTarget)),
             postfix: new HarmonyMethod(typeof(Patches), nameof(ShotReportAimOnTargetChance_StandardTarget_Postfix)));
 
         harmony.Patch(original: AccessTools.Method(typeof(StatExtension), nameof(StatExtension.GetStatValue)),
             postfix: new HarmonyMethod(typeof(Patches), nameof(StatExtensionGetStatValue_Postfix)));
-            
+
         // Faction Fixed Ideology
         harmony.Patch(original: AccessTools.Method(typeof(IdeoGenerator), "MakeFixedIdeo"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(IdeoGeneratorMakeFixedIdeo_Postfix)));
-            
+
         harmony.Patch(original: AccessTools.Method(typeof(IdeoFoundation), "RandomizeIcon"),
             prefix: new HarmonyMethod(typeof(Patches), nameof(IdeoFoundationRandomizeIcon_Prefix)));
 
@@ -67,12 +67,12 @@ public static class Patches
         // Banned Arrival Modes
         harmony.Patch(original: AccessTools.Method(typeof(PawnsArrivalModeWorker), "CanUseWith"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(PawnsArrivalModeWorkerCanUseWith_Postfix)));
-            
+
         // Hidden Faction Traders
         harmony.Patch(
             original: typeof(IncidentWorker_CaravanMeeting).GetNestedTypes(AccessTools.all)
                 .SelectMany(AccessTools.GetDeclaredMethods)
-                .First(mi => mi.ReturnType == typeof(bool) && 
+                .First(mi => mi.ReturnType == typeof(bool) &&
                              mi.GetParameters().ContainsAny(pi => pi.ParameterType == typeof(Faction))),
             transpiler: new HarmonyMethod(typeof(Patches), nameof(IncidentWorker_CaravanMeetingTryFindFaction_Linq_Transpiler)));
 
@@ -82,20 +82,20 @@ public static class Patches
         // Max Title for Permits
         harmony.Patch(original: AccessTools.Method(typeof(PermitsCardUtility), "DoLeftRect"),
             transpiler: new HarmonyMethod(typeof(Patches), nameof(PermitsCardUtility_LeftRect_Transpiler)));
-            
+
         harmony.Patch(original: AccessTools.Method(typeof(RoyalTitlePermitDef), "AvailableForPawn"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(RoyalTitlePermitDef_AvailableForPawn_Postfix)));
-            
+
         harmony.Patch(original: AccessTools.Method(typeof(RoyalTitleAwardWorker), "DoAward"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(RoyalTitleAwardWorker_DoAward_Postfix)));
-        
+
         harmony.Patch(original: AccessTools.Method(typeof(RoyalTitleAwardWorker_Instant), "DoAward"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(RoyalTitleAwardWorker_DoAward_Postfix)));
 
         // Forced TraderKindDef for PawnGroupMaker
         harmony.Patch(original: AccessTools.Method(typeof(PawnGroupKindWorker_Trader), "GeneratePawns", parameters: [typeof(PawnGroupMakerParms), typeof(PawnGroupMaker), typeof(List<Pawn>), typeof(bool)]),
             prefix: new HarmonyMethod(typeof(Patches), nameof(PawnGroupKindWorker_Trader_GeneratePawns_Prefix)));
-            
+
         // Faction Permanent Hostility
         harmony.Patch(original: AccessTools.Method(typeof(GoodwillSituationWorker_PermanentEnemy), "ArePermanentEnemies"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(GoodwillSituationWorker_PermanentEnemy_ArePermanentEnemies_Postfix)));
@@ -105,10 +105,10 @@ public static class Patches
 
         harmony.Patch(original: AccessTools.Method(typeof(FactionDef), "PermanentlyHostileTo"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(FactionDef_PermanentlyHostileTo_Postfix)));
-            
+
         harmony.Patch(original: typeof(Faction).GetDeclaredMethods().First(mi => mi.Name.Contains("GetInitialGoodwill")),
             prefix: new HarmonyMethod(typeof(Patches), nameof(Faction_TryMakeInitialRelationsWith_GetInitialGoodwill_Prefix)));
-        
+
         // Unique Characters
         harmony.Patch(original: AccessTools.Method(typeof(Faction), nameof(Faction.TryGenerateNewLeader)),
             prefix: new HarmonyMethod(typeof(Patches), nameof(Faction_TryGenerateNewLeader_Prefix)));
@@ -124,6 +124,47 @@ public static class Patches
         //Pick Up
         harmony.Patch(original: AccessTools.Method(typeof(FloatMenuMakerMap), "AddHumanlikeOrders"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(AddHumanLikeOrders_PickUp)));
+
+        //Gooification
+
+        harmony.Patch(original: AccessTools.Method(typeof(Pawn), "Kill"),
+        prefix: new HarmonyMethod(typeof(Patches), nameof(Pawn_Kill_Patch)));
+
+        //ThingWithComps_GetFloatMenuOptions_Patch
+
+        harmony.Patch(original: AccessTools.Method(typeof(ThingWithComps), "GetFloatMenuOptions"),
+        postfix: new HarmonyMethod(typeof(Patches), nameof(ThingWithComps_GetFloatMenuOptions_Patch)));
+
+        //CompRefuelable_ShouldAutoRefuelNowIgnoringFuelPct_Patch
+
+        harmony.Patch(original: AccessTools.Method(typeof(Pawn), "Kill"),
+        prefix: new HarmonyMethod(typeof(Patches), nameof(CompRefuelable_ShouldAutoRefuelNowIgnoringFuelPct_Patch)));
+
+        // ApparelGraphicRecordGetter_TryGetGraphicApparel_Patch
+
+        harmony.Patch(original: AccessTools.Method(typeof(ApparelGraphicRecordGetter), "TryGetGraphicApparel"),
+        prefix: new HarmonyMethod(typeof(Patches), nameof(ApparelGraphicRecordGetter_TryGetGraphicApparel_Patch)));
+
+        //PawnRenderNodeWorker_Apparel_Head_CanDrawNow_Patch
+
+        harmony.Patch(original: AccessTools.Method(typeof(PawnRenderNodeWorker_Apparel_Head), "CanDrawNow"),
+        prefix: new HarmonyMethod(typeof(Patches), nameof(PawnRenderNodeWorker_Apparel_Head_CanDrawNow_PatchPrefix)),
+        postfix: new HarmonyMethod(typeof(Patches), nameof(PawnRenderNodeWorker_Apparel_Head_CanDrawNow_PatchPostfix)));
+
+        //PawnRenderNodeWorker_Apparel_Head_HeadgearVisible_Patch
+
+        harmony.Patch(original: AccessTools.Method(typeof(PawnRenderNodeWorker_Apparel_Head), "HeadgearVisible"),
+        transpiler: new HarmonyMethod(typeof(Patches), nameof(PawnRenderNodeWorker_Apparel_Head_HeadgearVisible_Patch)));
+
+        //PawnRenderNodeWorker_AppendDrawRequests_Patch
+
+        harmony.Patch(original: AccessTools.Method(typeof(PawnRenderNodeWorker), "AppendDrawRequests"),
+        prefix: new HarmonyMethod(typeof(Patches), nameof(PawnRenderNodeWorker_AppendDrawRequests_Patch)));
+
+        harmony.Patch(original: AccessTools.Method(typeof(JobGiver_Reload), "TryGiveJob"),
+        postfix: new HarmonyMethod(typeof(JobGiver_Reload_TryGiveJob_Patch), nameof(JobGiver_Reload_TryGiveJob_Patch.Postfix)));
+
+
     }
 
     #region Biome Feature Requirements
@@ -441,7 +482,7 @@ public static class Patches
     #endregion
 
     #region Max Title for Permits
-        
+
     /// <summary>
     /// Lists the max title requirement of a given permitdef if one exists in the UI, using MaxTitlePermitExtension
     /// </summary>
@@ -494,7 +535,7 @@ public static class Patches
                 // 4
                 CodeInstruction.LoadLocal(textIndex), // text Field
                 CodeInstruction.LoadArgument(1), // Pawn
-                // 5
+                                                 // 5
                 CodeInstruction.Call(typeof(Patches), nameof(PermitsCardUtility_Util_AppendMaxTitleStatus)),
                 CodeInstruction.StoreLocal(textIndex)
             );
@@ -508,7 +549,7 @@ public static class Patches
     {
         MaxTitlePermitExtension permitExtension = PermitsCardUtility.selectedPermit.GetModExtension<MaxTitlePermitExtension>();
         if (permitExtension?.maxTitle == null) return text;
-            
+
         bool meetsMaxTitleRequirements = pawn.royalty.GetCurrentTitle(PermitsCardUtility.selectedFaction).seniority
                                          <= permitExtension.maxTitle.seniority;
 
@@ -516,8 +557,8 @@ public static class Patches
             .Colorize(meetsMaxTitleRequirements ? Color.white : ColorLibrary.RedReadable);
 
     }
-        
-        
+
+
     /// <summary>
     /// Makes a PermitDef unavailable if the current title exceed's the def's MaxTitlePermitExtension max
     /// </summary>
@@ -525,11 +566,11 @@ public static class Patches
     {
         if (__result == false)
             return;
-        
+
         MaxTitlePermitExtension permitExtension = __instance.GetModExtension<MaxTitlePermitExtension>();
-        if (permitExtension == null) 
+        if (permitExtension == null)
             return;
-        
+
         RoyalTitleDef currentTitle = pawn.royalty.GetCurrentTitle(faction);
 
         if (currentTitle.seniority < __instance.minTitle.seniority ||
@@ -538,7 +579,7 @@ public static class Patches
             __result = false;
         }
     }
-    
+
     /// <summary>
     /// Remove permits that are no longer valid due to a new title exceeding the permit's MaxTitlePermitExtension's max
     /// </summary>
@@ -549,7 +590,7 @@ public static class Patches
             MaxTitlePermitExtension permitExtension = permit.Permit.GetModExtension<MaxTitlePermitExtension>();
 
             if (newTitle.seniority <= permitExtension?.maxTitle.seniority) continue;
-            
+
             Messages.Message("FCP_MessagePermitLostOnPromotion".Translate(pawn, currentTitle.GetLabelFor(pawn), permit.Permit),
                 MessageTypeDefOf.NeutralEvent);
             pawn.royalty.AllFactionPermits.Remove(permit);
@@ -567,32 +608,32 @@ public static class Patches
             FCPLog.Warning("A GroupMakerWithTraderKind was defined without any traderKindDefs assigned");
             return;
         }
-        
+
         parms.traderKind = groupMakerWithTrader.traderKinds.RandomElement();
     }
 
     #endregion
 
     #region Faction Permanent Hostility
-        
+
     /// <summary>
     /// Patch to change the ArePermanentEnemies result to true if they are permanent enemies because of the extension.
     /// </summary>
-    public static void GoodwillSituationWorker_PermanentEnemy_ArePermanentEnemies_Postfix(Faction a, Faction b, 
+    public static void GoodwillSituationWorker_PermanentEnemy_ArePermanentEnemies_Postfix(Faction a, Faction b,
         ref bool __result)
     {
         if (__result == true)
             return;
-        
+
         ModExtension_FactionPermanentlyHostileTo aExtension = a.def.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
         ModExtension_FactionPermanentlyHostileTo bExtension = a.def.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
 
         // Check if either are permanently hostile with each other, but if both are null just use the existing result (false)
         __result = aExtension?.FactionIsHostileTo(b.def) ??
-                   bExtension?.FactionIsHostileTo(a.def) ?? 
+                   bExtension?.FactionIsHostileTo(a.def) ??
                    __result;
     }
-    
+
     /// <summary>
     /// Patch so that they are unable to change goodwill after the start of the game.
     /// </summary>
@@ -607,7 +648,7 @@ public static class Patches
 
         __result = !extension.FactionIsHostileTo(other.def);
     }
-    
+
     /// <summary>
     /// I think this is used in some quests to check if two factions are permanently hostile
     /// </summary>
@@ -619,7 +660,7 @@ public static class Patches
         ModExtension_FactionPermanentlyHostileTo extension = __instance.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
         __result = extension?.FactionIsHostileTo(otherFactionDef) ?? false;
     }
-        
+
     /// <summary>
     /// Patches the initial goodwill which is run on faction generation or reset
     /// to return -100 if they have this extension and are in the list.
@@ -628,7 +669,7 @@ public static class Patches
     {
         ModExtension_FactionPermanentlyHostileTo extension = a.def.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
         if (extension == null || !extension.hostileFactionDefs.Contains(b.def)) return true;
-            
+
         // They're hostile, so set to -100 and skip the original.
         __result = -100;
         return false;
@@ -648,21 +689,21 @@ public static class Patches
         var leaderDefs = CharacterRoleUtils.GetAllWithRole<CharacterRole_FactionLeader>()
             .Where(charWithRole => charWithRole.characterDef.faction == __instance.def)
             .OrderByDescending(charWithRole => charWithRole.role.seniority);
-        
+
         foreach (CharacterDefWithRole<CharacterRole_FactionLeader> charWithRole in leaderDefs)
         {
             // Get an existing or generate pawn
             var request = new PawnGenerationRequest(charWithRole.characterDef.pawnKind, __instance); // required since we can't get it from faction manager on the other side.
             Pawn leader = tracker.GetOrGenPawn(charWithRole.characterDef, request);
-            
+
             if (leader.Faction != __instance)
                 continue; // They were likely recruited somehow.
-            
+
             if (!charWithRole.role.PawnIsValid(leader))
                 continue;
-            
+
             charWithRole.role.ApplyRole(leader);
-            
+
             // Skip the original method
             __result = true;
             return false;
@@ -758,7 +799,7 @@ public static class Patches
         IntVec3 clickCell = IntVec3.FromVector3(clickPos);
         foreach (Thing thing in pawn.Map.thingGrid.ThingsAt(clickCell))
         {
-            
+
             if (thing.def.EverHaulable)
             {
 
@@ -790,7 +831,7 @@ public static class Patches
                         MenuOptionPriority.High), pawn, (LocalTargetInfo)thing) :
                         FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption((string)("FCP_PickUpMax".Translate((NamedArgument)thing.LabelShort, (NamedArgument)thing)), (Action)(() =>
                         {
-                            int max = Mathf.FloorToInt(MassUtility.FreeSpace(pawn)/mass);
+                            int max = Mathf.FloorToInt(MassUtility.FreeSpace(pawn) / mass);
                             DoPickUp(pawn, thing, max);
                         }),
                         MenuOptionPriority.High), pawn, (LocalTargetInfo)thing)) :
@@ -805,7 +846,7 @@ public static class Patches
 
             }
 
-            
+
         }
     }
 
@@ -816,11 +857,178 @@ public static class Patches
             thing.SetForbidden(false);
         }
         Job job = JobMaker.MakeJob(JobDefOf.TakeCountToInventory, (LocalTargetInfo)thing);
-        
+
         job.count = count;
         pawn.jobs.TryTakeOrderedJob(job);
     }
 
     #endregion
 
+    #region Pawn Kill Patch
+
+    public static void Pawn_Kill_Patch(
+      Pawn __instance,
+      DamageInfo? dinfo,
+      Hediff exactCulprit,
+      out List<Thing> __state)
+    {
+        __state = (List<Thing>)null;
+        DamageInfo damageInfo;
+        if (!dinfo.HasValue && DamageWithFilth.curDinfo.TryGetValue((Thing)__instance, out damageInfo))
+            dinfo = new DamageInfo?(damageInfo);
+        if (!dinfo.HasValue)
+            return;
+        ThingDef weapon = dinfo.Value.Weapon;
+        if (weapon != null)
+        {
+            DeathEffectModExtension modExtension = weapon.GetModExtension<DeathEffectModExtension>();
+            if (modExtension != null && dinfo.Value.Def?.Worker is DamageWithFilth worker && Rand.Chance(modExtension.effectChance))
+            {
+                __state = new List<Thing>();
+                Pawn pawn = __instance;
+                GenSpawn.Spawn(ThingMaker.MakeThing(ThingDef.Named(worker.FilthToSpawn)), pawn.Position, pawn.Map);
+                IntVec3 positionHeld = pawn.PositionHeld;
+                __state.AddRange((IEnumerable<Thing>)(pawn.equipment?.AllEquipmentListForReading ?? new List<ThingWithComps>()));
+                __state.AddRange((IEnumerable<Thing>)(pawn.apparel?.WornApparel ?? new List<Apparel>()));
+                List<Thing> thingList = __state;
+                Pawn_InventoryTracker inventory = pawn.inventory;
+                List<Thing> collection = (inventory != null ? inventory.innerContainer.ToList<Thing>() : (List<Thing>)null) ?? new List<Thing>();
+                thingList.AddRange((IEnumerable<Thing>)collection);
+            }
+        }
+    }
+
+    #endregion
+
+    #region Get Float Menu Options Power Armor
+
+    public static IEnumerable<FloatMenuOption> ThingWithComps_GetFloatMenuOptions_Patch(
+      IEnumerable<FloatMenuOption> __result,
+      ThingWithComps __instance,
+      Pawn selPawn)
+    {
+        foreach (FloatMenuOption floatMenuOption in __result)
+            yield return floatMenuOption;
+        Pawn pawn = __instance as Pawn;
+        if (pawn != null && pawn.RaceProps.Humanlike && pawn.Faction == selPawn.Faction)
+        {
+            foreach (Apparel t in pawn.apparel.WornApparel)
+            {
+                if (t.GetComp<CompPowerArmor>() != null && JobGiver_Reload_TryGiveJob_Patch.CanRefuel(selPawn, t, true))
+                {
+                    Job job = JobGiver_Reload_TryGiveJob_Patch.RefuelJob(pawn, t, pawn);
+                    yield return new FloatMenuOption((string)"PrioritizeGeneric".Translate((NamedArgument)(RR_DefOf.Refuel.Worker as WorkGiver_Scanner).PostProcessedGerund(job), (NamedArgument)t.Label).CapitalizeFirst(), () => selPawn.jobs.TryTakeOrderedJob(job));
+                }
+            }
+        }
+    }
+
+    #endregion
+
+
+    #region CompRefuelable_ShouldAutoRefuelNowIgnoringFuelPct_Patch
+    public static bool CompRefuelable_ShouldAutoRefuelNowIgnoringFuelPct_Patch(CompRefuelable __instance, ref bool __result)
+    {
+        if (__instance.parent.Spawned || __instance.parent.GetComp<CompPowerArmor>() == null)
+            return true;
+        __result = !__instance.parent.IsBurning();
+        return false;
+    }
+
+    #endregion
+
+    #region ApparelGraphicRecordGetter_TryGetGraphicApparel_Patch
+
+    public static void ApparelGraphicRecordGetter_TryGetGraphicApparel_Patch(Apparel apparel, ref BodyTypeDef bodyType)
+    {
+        Pawn wearer = apparel.Wearer;
+        if (wearer == null)
+            return;
+        foreach (Thing thing in wearer.apparel.WornApparel)
+        {
+            ApparelExtensionDefModExtension modExtension = thing.def.GetModExtension<ApparelExtensionDefModExtension>();
+            if (modExtension != null && modExtension.displayBodyType != null)
+            {
+                bodyType = modExtension.displayBodyType;
+                break;
+            }
+        }
+    }
+
+    #endregion
+
+    #region PawnRenderNodeWorker_Apparel_Head_CanDrawNow_PatchPrefix
+    public static void PawnRenderNodeWorker_Apparel_Head_CanDrawNow_PatchPrefix(PawnDrawParms parms, out bool __state)
+    {
+        __state = Prefs.HatsOnlyOnMap;
+        if (!parms.pawn.apparel.AnyApparel || parms.pawn.apparel.WornApparel.FirstOrDefault(x => x.def.ShouldHideHead()) == null)
+            return;
+        Prefs.HatsOnlyOnMap = false;
+    }
+
+    public static void PawnRenderNodeWorker_Apparel_Head_CanDrawNow_PatchPostfix(bool __state) => Prefs.HatsOnlyOnMap = __state;
+
+
+    #endregion
+
+
+    #region PawnRenderNodeWorker_Apparel_Head_HeadgearVisible_Patch
+
+    public static IEnumerable<CodeInstruction> PawnRenderNodeWorker_Apparel_Head_HeadgearVisible_Patch(
+        IEnumerable<CodeInstruction> codeInstructions)
+    {
+        MethodInfo get_HatsOnlyOnMap = AccessTools.PropertyGetter(typeof(Prefs), "HatsOnlyOnMap");
+        foreach (CodeInstruction codeInstruction in codeInstructions)
+        {
+            yield return codeInstruction;
+            if (codeInstruction.Calls(get_HatsOnlyOnMap))
+            {
+                yield return new CodeInstruction(OpCodes.Ldarg_0, null);
+                yield return new CodeInstruction(OpCodes.Call, AccessTools.Method(typeof(Patches), nameof(TryOverrideHatsOnlyOnMap), null, null));
+            }
+        }
+    }
+
+    public static bool TryOverrideHatsOnlyOnMap(bool result, PawnDrawParms parms)
+    {
+        return (!result || !parms.pawn.apparel.AnyApparel || parms.pawn.apparel.WornApparel.FirstOrDefault(x => x.def.ShouldHideHead()) == null) && result;
+    }
+
+    #endregion
+
+    #region PawnRenderNodeWorker_AppendDrawRequests_Patch
+
+
+    public static bool PawnRenderNodeWorker_AppendDrawRequests_Patch(
+        PawnRenderNode node,
+        PawnDrawParms parms,
+        List<PawnGraphicDrawRequest> requests)
+    {
+        if ((node is PawnRenderNode_Head || node.parent is PawnRenderNode_Head) && parms.pawn.apparel.AnyApparel)
+        {
+            foreach (Thing thing in parms.pawn.apparel.WornApparel)
+            {
+                if (thing.def.ShouldHideHead())
+                {
+                    requests.Add(new PawnGraphicDrawRequest(node));
+                    return false;
+                }
+            }
+        }
+        if ((node is PawnRenderNode_Body || node.parent is PawnRenderNode_Body) && parms.pawn.apparel.AnyApparel)
+        {
+            foreach (Thing thing in parms.pawn.apparel.WornApparel)
+            {
+                if (thing.def.ShouldHideBody())
+                {
+                    requests.Add(new PawnGraphicDrawRequest(node));
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
+
+    #endregion
 }

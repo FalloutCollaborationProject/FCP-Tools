@@ -127,6 +127,11 @@ public class FCP_Settings : ModSettings
         }
     }
 
+    void TENT_DoWindowContents(Rect wrect)
+    {
+
+    }
+
     public override void ExposeData()
     {
         if (Scribe.mode == LoadSaveMode.ResolvingCrossRefs)

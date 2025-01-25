@@ -1,0 +1,66 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: RangerRick_PowerArmor.JobDriver_RefuelPowerArmor
+// Assembly: RangerRick_PowerArmor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 2F9A23E8-63EA-4090-93FB-DECA3711786E
+// Assembly location: C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\FCP-Tools\1.5\Assemblies\RangerRick_PowerArmor.dll
+
+using RimWorld;
+using System;
+using System.Collections.Generic;
+using Verse;
+using Verse.AI;
+
+#nullable disable
+namespace FCP.Core
+{
+    public class JobDriver_RefuelPowerArmor : JobDriver
+    {
+        private const TargetIndex RefuelableInd = TargetIndex.A;
+
+        private const TargetIndex FuelInd = TargetIndex.B;
+
+        public const int RefuelingDuration = 240;
+
+        protected Thing Refuelable => job.GetTarget(TargetIndex.A).Thing;
+
+        protected CompRefuelable RefuelableComp => Refuelable.TryGetComp<CompRefuelable>();
+
+        protected Thing Fuel => job.GetTarget(TargetIndex.B).Thing;
+
+        public override bool TryMakePreToilReservations(bool errorOnFailed)
+        {
+            if (pawn.Reserve(Refuelable, job, 1, -1, null, errorOnFailed))
+            {
+                return pawn.Reserve(Fuel, job, 1, -1, null, errorOnFailed);
+            }
+
+            return false;
+        }
+
+        protected override IEnumerable<Toil> MakeNewToils()
+        {
+            this.FailOnDespawnedNullOrForbidden(TargetIndex.C);
+            AddEndCondition(() => (!RefuelableComp.IsFull) ? JobCondition.Ongoing : JobCondition.Succeeded);
+            AddFailCondition(() => !job.playerForced && !RefuelableComp.ShouldAutoRefuelNowIgnoringFuelPct);
+            AddFailCondition(() => !RefuelableComp.allowAutoRefuel && !job.playerForced);
+            yield return Toils_General.DoAtomic(delegate
+            {
+                job.count = RefuelableComp.GetFuelCountToFullyRefuel();
+            });
+            Toil reserveFuel = Toils_Reserve.Reserve(TargetIndex.B);
+            yield return reserveFuel;
+            yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.ClosestTouch).FailOnDespawnedNullOrForbidden(TargetIndex.B).FailOnSomeonePhysicallyInteracting(TargetIndex.B);
+            yield return Toils_Haul.StartCarryThing(TargetIndex.B, putRemainderInQueue: false, subtractNumTakenFromJobCount: true).FailOnDestroyedNullOrForbidden(TargetIndex.B);
+            yield return Toils_Haul.CheckForGetOpportunityDuplicate(reserveFuel, TargetIndex.B, TargetIndex.None, takeFromValidStorage: true);
+            if (pawn != base.TargetPawnC)
+            {
+                yield return Toils_Goto.GotoThing(TargetIndex.C, PathEndMode.Touch);
+            }
+
+            yield return Toils_General.Wait(240).FailOnDestroyedNullOrForbidden(TargetIndex.B).FailOnDestroyedNullOrForbidden(TargetIndex.C)
+                .FailOnCannotTouch(TargetIndex.C, PathEndMode.Touch)
+                .WithProgressBarToilDelay(TargetIndex.C);
+            yield return Toils_Refuel.FinalizeRefueling(TargetIndex.A, TargetIndex.B);
+        }
+    }
+}
