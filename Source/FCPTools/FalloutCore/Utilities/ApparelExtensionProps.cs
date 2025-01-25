@@ -14,23 +14,23 @@ namespace FCP.Core
     [StaticConstructorOnStartup]
     public static class ApparelExtensionProps
     {
-        private static Dictionary<ThingDef, ApparelExtensionDefModExtension> cachedExtensions = new Dictionary<ThingDef, ApparelExtensionDefModExtension>();
+        private static Dictionary<ThingDef, ApparelExtension> cachedExtensions = new Dictionary<ThingDef, ApparelExtension>();
 
         //static HarmonyInit() => new Harmony("FalloutCore.ApparelExtension").PatchAll();
 
         public static bool ShouldHideBody(this ThingDef def)
         {
-            ApparelExtensionDefModExtension modExtension;
+            ApparelExtension modExtension;
             if (!cachedExtensions.TryGetValue(def, out modExtension))
-                cachedExtensions[def] = modExtension = def.GetModExtension<ApparelExtensionDefModExtension>();
+                cachedExtensions[def] = modExtension = def.GetModExtension<ApparelExtension>();
             return modExtension != null && modExtension.shouldHideBody;
         }
 
         public static bool ShouldHideHead(this ThingDef def)
         {
-            ApparelExtensionDefModExtension modExtension;
+            ApparelExtension modExtension;
             if (!cachedExtensions.TryGetValue(def, out modExtension))
-                cachedExtensions[def] = modExtension = def.GetModExtension<ApparelExtensionDefModExtension>();
+                cachedExtensions[def] = modExtension = def.GetModExtension<ApparelExtension>();
             return modExtension != null && modExtension.shouldHideHead;
         }
     }

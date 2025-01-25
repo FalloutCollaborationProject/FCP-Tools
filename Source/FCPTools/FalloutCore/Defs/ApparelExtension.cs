@@ -10,7 +10,7 @@ using Verse;
 #nullable disable
 namespace FCP.Core
 {
-    public class ApparelExtensionDefModExtension : DefModExtension
+    public class ApparelExtension : DefModExtension
     {
         public bool shouldHideBody;
         public bool shouldHideHead;

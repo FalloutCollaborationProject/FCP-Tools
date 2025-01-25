@@ -7,7 +7,7 @@
 
     <DamageDef Name="BurnLaser">
         <defName>laserburn</defName>
-        <workerClass>FalloutCore.LaserBurn</workerClass>
+        <workerClass>FCP.Core.LaserBurn</workerClass>
         <label>laser burn</label>
         <hasForcefulImpact>false</hasForcefulImpact>
         <makesBlood>false</makesBlood>

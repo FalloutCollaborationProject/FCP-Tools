@@ -53,7 +53,7 @@
             </li>
             <li Class="CompProperties_Flickable"/>
             <li Class="CompProperties_Breakdownable"/>
-            <li Class="RangerRick_PowerArmor.CompProperties_Trainer">
+            <li Class="FCP.Core.CompProperties_Trainer">
                 <givesTrait>FCP_Power_Armor_Trained</givesTrait>
                 <trainDuration>5000</trainDuration>
             </li>

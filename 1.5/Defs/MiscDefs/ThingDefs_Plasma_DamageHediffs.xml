@@ -7,7 +7,7 @@
 
     <DamageDef Name="BurnPlasma">
         <defName>Plasmaburn</defName>
-        <workerClass>FalloutCore.PlasmaBurn</workerClass>
+        <workerClass>FCP.Core.PlasmaBurn</workerClass>
         <label>plasma burn</label>
         <hasForcefulImpact>false</hasForcefulImpact>
         <makesBlood>false</makesBlood>

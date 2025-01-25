@@ -946,7 +946,7 @@ public static class Patches
             return;
         foreach (Thing thing in wearer.apparel.WornApparel)
         {
-            ApparelExtensionDefModExtension modExtension = thing.def.GetModExtension<ApparelExtensionDefModExtension>();
+            ApparelExtension modExtension = thing.def.GetModExtension<ApparelExtension>();
             if (modExtension != null && modExtension.displayBodyType != null)
             {
                 bodyType = modExtension.displayBodyType;
