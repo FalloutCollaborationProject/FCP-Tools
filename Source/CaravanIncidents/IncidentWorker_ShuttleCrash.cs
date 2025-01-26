@@ -16,10 +16,10 @@ namespace FCP_CaravanIncidents
         {
             int num = Rand.Range(1, CaravanIncidents_Settings.shuttleWeightsTotal);
             Log.Message(num);
-            Log.Message(DefDatabase<QuestScriptDef>.AllDefs.Where(c => c.defName.Contains("FCP_Quest_CaravanIncident_A")).Count());
-
+          
             if (num < CaravanIncidents_Settings.cumulativeWeightsShuttleCrash[0])
             {
+                Log.Message(1);
                 DiaNode diaNode = new DiaNode("FCPShuttleCrashVariantA".Translate());
                 DiaOption diaOption = new DiaOption("OK".Translate());
                 diaOption.action = delegate
@@ -33,12 +33,27 @@ namespace FCP_CaravanIncidents
                 diaNode.options.Add(diaOption);
                 Find.WindowStack.Add(new Dialog_NodeTree(diaNode, true, false));
             }
+            else
             if (num < CaravanIncidents_Settings.cumulativeWeightsShuttleCrash[1])
             {
-                //B
+                Log.Message(2);
+                DiaNode diaNode = new DiaNode("FCPShuttleCrashVariantB".Translate());
+                DiaOption diaOption = new DiaOption("OK".Translate());
+                diaOption.action = delegate
+                {
+                    QuestScriptDef def = DefDatabase<QuestScriptDef>.AllDefs.Where(c => c.defName.Contains("FCP_Quest_CaravanIncident_B")).RandomElement();
+                    Quest quest = IncidentUtility.GenerateCaravanQuest(def, parms.points, (Caravan)parms.target);
+
+
+                };
+                diaOption.resolveTree = true;
+                diaNode.options.Add(diaOption);
+                Find.WindowStack.Add(new Dialog_NodeTree(diaNode, true, false));
             }
+            else
             if (num < CaravanIncidents_Settings.cumulativeWeightsShuttleCrash[2])
             {
+                Log.Message(3);
                 DiaNode diaNode = new DiaNode("FCPShuttleCrashVariantC".Translate());
                 DiaOption diaOption = new DiaOption("OK".Translate());
                 diaOption.action = delegate

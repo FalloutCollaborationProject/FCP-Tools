@@ -3,5 +3,6 @@
   <FCPShuttleCrashIntroText>Carried by the wind, the metallic harshness of a smoke plume draws your caravan to a shattered shuttle, its components scattered around its scorched landing zone. The still-burning electrical fire is testament to the remains’s freshness.</FCPShuttleCrashIntroText>
   <FCPShuttleCrashIntroTitle>Crashed shuttle</FCPShuttleCrashIntroTitle>
   <FCPShuttleCrashVariantA>Judging by the state of its occupants, its final descent was fatal, leaving behind its passengers’ possessions. Though undoubtedly damaged, they will be of more use to you than the uncaring wilderness.</FCPShuttleCrashVariantA>
-  <FCPShuttleCrashVariantC>In trying times, men willingly become beasts. Such is the fate of the shuttle’s survivors, whose desperation is as palpable as a storm front. No amount of negotiation will stop them from stripping the flesh off your caravan.</FCPShuttleCrashVariantC>
+  <FCPShuttleCrashVariantB>But you are not the first to find it- another group has claimed the wreckage, watching your every move. I have only one word of advice for your caravan: the judge of the wilderness is the end of a firearm.</FCPShuttleCrashVariantB>  
+<FCPShuttleCrashVariantC>In trying times, men willingly become beasts. Such is the fate of the shuttle’s survivors, whose desperation is as palpable as a storm front. No amount of negotiation will stop them from stripping the flesh off your caravan.</FCPShuttleCrashVariantC>
 </LanguageData>
