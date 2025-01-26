@@ -12,11 +12,24 @@ namespace FCP_CaravanIncidents
 {
     public class IncidentWorker_ShuttleCrash : IncidentWorker_MultiPartBase
     {
+
+        protected override bool CanFireNowSub(IncidentParms parms)
+        {
+            if (!base.CanFireNowSub(parms))
+            {
+                return false;
+            }
+            if (!CaravanIncidents_Settings.enableShuttleCrash)
+            {
+                return false;
+            }
+            return true;
+        }
         public override void ActionApproach(Caravan caravan, IncidentParms parms)
         {
             int num = Rand.Range(1, CaravanIncidents_Settings.shuttleWeightsTotal);
             Log.Message(num);
-          
+
             if (num < CaravanIncidents_Settings.cumulativeWeightsShuttleCrash[0])
             {
                 Log.Message(1);
@@ -26,8 +39,8 @@ namespace FCP_CaravanIncidents
                 {
                     QuestScriptDef def = DefDatabase<QuestScriptDef>.AllDefs.Where(c => c.defName.Contains("FCP_Quest_CaravanIncident_A")).RandomElement();
                     Quest quest = IncidentUtility.GenerateCaravanQuest(def, parms.points, (Caravan)parms.target);
-                    
-                    
+
+
                 };
                 diaOption.resolveTree = true;
                 diaNode.options.Add(diaOption);

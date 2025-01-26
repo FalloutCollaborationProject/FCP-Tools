@@ -13,8 +13,8 @@
     </targetTags>
     <workerClass>FCP_CaravanIncidents.IncidentWorker_ShuttleCrash</workerClass>
     <pointsScaleable>true</pointsScaleable>
-    <minRefireDays>0.17</minRefireDays>
-    <tale>CaravanAmbushedByHumanlike</tale>
+    <baseChance>2</baseChance>
+    <minRefireDays>5</minRefireDays>
     <mtbDaysByBiome>
       <TemperateForest>20</TemperateForest>
       <BorealForest>20</BorealForest>
@@ -31,26 +31,6 @@
     </mtbDaysByBiome>
   </IncidentDef>
   
-  <WorldObjectDef>
-    <defName>Ambush</defName>
-    <label>ambush</label>
-    <description>An ongoing ambush battle.</description>
-    <worldObjectClass>CaravansBattlefield</worldObjectClass>
-    <texture>World/WorldObjects/Ambush</texture>
-    <expandingIcon>true</expandingIcon>
-    <expandingIconTexture>World/WorldObjects/Expanding/Ambush</expandingIconTexture>
-    <expandingIconPriority>80</expandingIconPriority>
-    <expandMore>true</expandMore>
-    <blockExitGridUntilBattleIsWon>true</blockExitGridUntilBattleIsWon>
-    <isTempIncidentMapOwner>true</isTempIncidentMapOwner>
-    <IncidentTargetTags>
-      <li>Map_TempIncident</li>
-    </IncidentTargetTags>
-    <comps>
-      <li Class="WorldObjectCompProperties_FormCaravan" />
-      <li Class="WorldObjectCompProperties_TimedDetectionRaids" />
-    </comps>
-  </WorldObjectDef>
 
   
 </Defs>

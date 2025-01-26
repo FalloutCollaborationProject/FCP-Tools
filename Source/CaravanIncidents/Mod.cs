@@ -31,6 +31,7 @@ namespace FCP_CaravanIncidents
     }
     public class CaravanIncidents_Settings : ModSettings
     {
+        public static bool enableShuttleCrash = true;
         public static int shuttleCrashWeightA = 1;
         private string _shuttleCrashWeightA;
         public static int shuttleCrashWeightB = 500;
@@ -59,6 +60,8 @@ namespace FCP_CaravanIncidents
 
             }
 
+            listing_Standard.CheckboxLabeled("FCP_CaravanIncident_Settings_ShuttleCrash_Enable".Translate(), ref enableShuttleCrash);
+
             listing_Standard.Label("FCP_CaravanIncident_Settings_ShuttleCrash_VariantA".Translate());
             listing_Standard.TextFieldNumeric(ref shuttleCrashWeightA, ref _shuttleCrashWeightA, 0, 250);
 
@@ -74,6 +77,12 @@ namespace FCP_CaravanIncidents
         public override void ExposeData()
         {
             base.ExposeData();
+            Scribe_Values.Look(ref enableShuttleCrash, "enableShuttleCrash", true);
+            Scribe_Values.Look(ref shuttleCrashWeightA, "shuttleCrashWeightA", 1);
+            Scribe_Values.Look(ref shuttleCrashWeightB, "shuttleCrashWeightB", 1);
+            Scribe_Values.Look(ref shuttleCrashWeightC, "shuttleCrashWeightC", 1);
+
+
         }
     }
 }

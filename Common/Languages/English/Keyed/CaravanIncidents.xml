@@ -9,5 +9,5 @@
   <FCP_CaravanIncident_Settings_ShuttleCrash_VariantA>Chance for variant A to appear (Dead passengers).</FCP_CaravanIncident_Settings_ShuttleCrash_VariantA>
   <FCP_CaravanIncident_Settings_ShuttleCrash_VariantB>Chance for variant B to appear (Scavengers).</FCP_CaravanIncident_Settings_ShuttleCrash_VariantB>
   <FCP_CaravanIncident_Settings_ShuttleCrash_VariantC>Chance for variant C to appear (Living passengers).</FCP_CaravanIncident_Settings_ShuttleCrash_VariantC>
-
+  <FCP_CaravanIncident_Settings_ShuttleCrash_Enable>Enable shuttle crash incident?</FCP_CaravanIncident_Settings_ShuttleCrash_Enable>
 </LanguageData>
