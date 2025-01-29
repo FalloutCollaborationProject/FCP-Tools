@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <!-- Base-->
+  <!--
+  <QuestScriptDef Name="ActiveSkirmishBase" Abstract="True">
+    <autoAccept>true</autoAccept>
+    <defaultHidden>true</defaultHidden>
+    <isRootSpecial>true</isRootSpecial>
+    <rootSelectionWeight>0</rootSelectionWeight>
+    <questNameRules>
+      <rulesStrings>
+        <li>questDescription->active skirmish</li>
+       
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->active skirmish</li>
+      
+      </rulesStrings>
+    </questDescriptionRules>
+  </QuestScriptDef>
+  -->
+  <!--__________ Active Skirmish __________-->
+
+  <!-- Variant A-->
+<!--
+  <QuestScriptDef ParentName="ActiveSkirmishBase">
+    <defName>FCP_Quest_ActiveSkirmish_A_0</defName>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>Util_AdjustPointsForDistantFight</def>
+        </li>
+        <li Class="FCP_CaravanIncidents.QuestNode_GetCaravanTile">
+          <storeAs>caravanTile</storeAs>
+        </li>
+        <li Class="FCP_CaravanIncidents.QuestNode_GetRandomNeighborTile">
+          <tile>$caravanTile</tile>
+          <storeAs>siteTile</storeAs>
+        </li>
+        <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
+          <storeAs>enemyFaction</storeAs>
+          <factionDefs>
+            <li>Empire</li>
+          </factionDefs>
+        </li>
+        <li Class="FCP_RadiantQuests.QuestNode_GetSitePartDefsByTagsAndFaction">
+          <factionToUse>$enemyFaction</factionToUse>
+          <storeAs>sitePartDefs</storeAs>
+          <storeFactionAs>siteFaction</storeFactionAs>
+          <sitePartsTags>
+            <li>
+              <tag>FCP_Site_CaravanIncident_ActiveSkirmish_A_Test</tag>
+            </li>
+          </sitePartsTags>
+        </li>
+        <li Class="QuestNode_GetDefaultSitePartsParams">
+          <tile>$siteTile</tile>
+          <faction>$siteFaction</faction>
+          <sitePartDefs>$sitePartDefs</sitePartDefs>
+          <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+        </li>
+        <li Class="QuestNode_SubScript">
+          <def>Util_GenerateSite</def>
+          <parms>
+            <sitePartsParams>$sitePartsParams</sitePartsParams>
+          </parms>
+        </li>
+        <li Class="QuestNode_SpawnWorldObjects">
+          <worldObjects>$site</worldObjects>
+          <tile>$siteTile</tile>
+        </li>
+        <li Class="FCP_CaravanIncidents.QuestNode_EnterCaravanIntoMap">
+          <tile>$siteTile</tile>
+        </li>
+        <li Class="QuestNode_NoWorldObject">
+          <worldObject>$site</worldObject>
+          <node Class="QuestNode_End">
+          </node>
+        </li>
+      </nodes>
+    </root>
+  </QuestScriptDef>
+  -->
+  
+
+</Defs>

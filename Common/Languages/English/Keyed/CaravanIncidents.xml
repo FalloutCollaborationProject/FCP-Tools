@@ -6,8 +6,21 @@
   <FCPShuttleCrashVariantB>But you are not the first to find it- another group has claimed the wreckage, watching your every move. I have only one word of advice for your caravan: the judge of the wilderness is the end of a firearm.</FCPShuttleCrashVariantB>
   <FCPShuttleCrashVariantC>In trying times, men willingly become beasts. Such is the fate of the shuttle’s survivors, whose desperation is as palpable as a storm front. No amount of negotiation will stop them from stripping the flesh off your caravan.</FCPShuttleCrashVariantC>
   <FCP_CaravanIncident_Settings_ShuttleCrash_Label>Shuttle Crash</FCP_CaravanIncident_Settings_ShuttleCrash_Label>
+  <FCP_CaravanIncident_Settings_ShuttleCrash_Enable>Enable shuttle crash incident?</FCP_CaravanIncident_Settings_ShuttleCrash_Enable>
   <FCP_CaravanIncident_Settings_ShuttleCrash_VariantA>Chance for variant A to appear (Dead passengers).</FCP_CaravanIncident_Settings_ShuttleCrash_VariantA>
   <FCP_CaravanIncident_Settings_ShuttleCrash_VariantB>Chance for variant B to appear (Scavengers).</FCP_CaravanIncident_Settings_ShuttleCrash_VariantB>
   <FCP_CaravanIncident_Settings_ShuttleCrash_VariantC>Chance for variant C to appear (Living passengers).</FCP_CaravanIncident_Settings_ShuttleCrash_VariantC>
-  <FCP_CaravanIncident_Settings_ShuttleCrash_Enable>Enable shuttle crash incident?</FCP_CaravanIncident_Settings_ShuttleCrash_Enable>
+  <FCP_CaravanIncident_Settings_ActiveSkirmish_Label>Active Skirmish</FCP_CaravanIncident_Settings_ActiveSkirmish_Label>
+  <FCP_CaravanIncident_Settings_ActiveSkirmish_Enable>Enable active skirmish incident?</FCP_CaravanIncident_Settings_ActiveSkirmish_Enable>
+  <FCP_CaravanIncident_Settings_ActiveSkirmish_VariantA>Chance for variant A to appear (Siege vs Raid).</FCP_CaravanIncident_Settings_ActiveSkirmish_VariantA>
+  <FCP_CaravanIncident_Settings_ActiveSkirmish_VariantB>Chance for variant B to appear (Siege vs Siege).</FCP_CaravanIncident_Settings_ActiveSkirmish_VariantB>
+  <FCP_CaravanIncident_Settings_ActiveSkirmish_VariantC>Chance for variant C to appear (Outpost raid/siege).</FCP_CaravanIncident_Settings_ActiveSkirmish_VariantC>
+  <FCP_CaravanIncident_Settings_ShadyTraders_Label>Shady Traders</FCP_CaravanIncident_Settings_ShadyTraders_Label>
+  <FCP_CaravanIncident_Settings_ShadyTraders_Enable>Enable shady traders incident?</FCP_CaravanIncident_Settings_ShadyTraders_Enable>
+  <FCP_Incidents_ShadyTradersLabel>Shady Traders</FCP_Incidents_ShadyTradersLabel>
+  <FCP_Incidents_ShadyTradersDesc>Trade is built on a degree of trust- trust in words, deeds, intentions- but the wilderness has a distinct dearth of certainty. Such is the foundation of your chance meeting with a trade caravan. The traders betray nothing about themselves: no faction signifiers, no obvious intentions, not even their final destination.\n\nYour instincts are sounding alarms. Time will tell if it’s foresight or paranoia.</FCP_Incidents_ShadyTradersDesc>
+  <FCP_Incidents_ShadyTradersAmbushLabel>Ambush!</FCP_Incidents_ShadyTradersAmbushLabel>
+  <FCP_Incidents_ShadyTradersAmbushDesc>Not long after parting ways, the trader shoots a flare into the sky and you see figures appearing from a hillside.\nIts an ambush, prepare to fight!</FCP_Incidents_ShadyTradersAmbushDesc>
+  <FCP_Incidents_ShadyTradersAttackDesc>As you prepare to take whats yours by force, the trader shoots a flare into the sky and you see figures appearing from a hillside.\nIts an ambush, Prepare to fight!</FCP_Incidents_ShadyTradersAttackDesc>
+  <FCP_CaravanIncident_Settings_ShadyTraders_AmbushChance>Caravan ambush chance</FCP_CaravanIncident_Settings_ShadyTraders_AmbushChance>
 </LanguageData>

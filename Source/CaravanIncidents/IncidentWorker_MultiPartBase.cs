@@ -36,7 +36,7 @@ namespace FCP_CaravanIncidents
             };
             diaOption.resolveTree = true;
             diaNode.options.Add(diaOption);
-            DiaOption diaOption2 = new DiaOption("Ignore".Translate());
+            DiaOption diaOption2 = new DiaOption("CaravanMeeting_MoveOn".Translate());
             diaOption2.action = delegate
             {
                 ActionIgnore(caravan, parms);

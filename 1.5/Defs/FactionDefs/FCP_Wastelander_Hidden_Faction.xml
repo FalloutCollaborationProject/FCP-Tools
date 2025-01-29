@@ -38,6 +38,8 @@
         </disallowedMemes>
         <caravanTraderKinds>
             <!-- <li>FCP_Caravan_Brahmin_Herder</li> -->
+          <!--Added for testing shady trader incident-->
+          <li>FCP_Scavenger_Trader</li>
         </caravanTraderKinds>
         <maxPawnCostPerTotalPointsCurve>
             <points>

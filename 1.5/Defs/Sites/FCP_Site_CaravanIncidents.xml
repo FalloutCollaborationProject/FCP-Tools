@@ -188,4 +188,38 @@
 
     </genStep>
   </GenStepDef>
+
+  <!--Active Skirmish-->
+
+  <!--Siege Raid-->
+
+<!--
+  <SitePartDef>
+    <defName>FCP_Site_CaravanIncident_ActiveSkirmish_SiegeRaid_Test</defName>
+    <label>active skirmish</label>
+    <description>An active skirmish.</description>
+    <siteTexture>World/WorldObjects/Sites/Outpost</siteTexture>
+    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Outpost</expandingIconTexture>
+    <applyFactionColorToSiteTexture>false</applyFactionColorToSiteTexture>
+    <showFactionInInspectString>false</showFactionInInspectString>
+    <requiresFaction>false</requiresFaction>
+    <approachOrderString>Approach {0}</approachOrderString>
+    <approachingReportString>Approaching {0}</approachingReportString>
+    <wantsThreatPoints>true</wantsThreatPoints>
+    <minThreatPoints>0</minThreatPoints>
+    <considerEnteringAsAttack>False</considerEnteringAsAttack>
+    <tags Inherit="False">
+      <li>FCP_Site_CaravanIncident_ActiveSkirmish_SiegeRaid_Test</li>
+    </tags>
+  </SitePartDef>
+
+  <GenStepDef>
+    <defName>FCP_Site_CaravanIncident_ActiveSkirmish_SiegeRaid_Test_Step</defName>
+    <linkWithSite>FCP_Site_CaravanIncident_ActiveSkirmish_SiegeRaid_Test</linkWithSite>
+    <order>452</order>
+    <genStep Class="FCP_CaravanIncidents.GenStep_ActiveSkirmishSiegeRaid">
+      <siegeFactionDef>FCP_Faction_Shuttle</siegeFactionDef>
+      <raidFactionDef>PirateWaster</raidFactionDef>
+    </genStep>
+  </GenStepDef>-->
 </Defs>

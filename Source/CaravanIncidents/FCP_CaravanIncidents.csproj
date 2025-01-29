@@ -40,6 +40,10 @@
       <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="FCP_Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\1.5\Assemblies\FCP_Core.dll</HintPath>
+    </Reference>
     <Reference Include="PipeSystem">
       <HintPath>..\..\..\..\..\..\workshop\content\294100\2023507013\1.5\Assemblies\PipeSystem.dll</HintPath>
     </Reference>
@@ -58,11 +62,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dialog_TradePostAction.cs" />
+    <Compile Include="GenStep_ActiveSkirmishSiegeRaid.cs" />
     <Compile Include="GenStep_CrashSiteScavengers.cs" />
     <Compile Include="GenStep_CrashSiteAlive.cs" />
     <Compile Include="GenStep_CrashSiteDead.cs" />
+    <Compile Include="IncidentDefExtension.cs" />
     <Compile Include="IncidentUtility.cs" />
+    <Compile Include="IncidentWorker_ShadyTraders.cs" />
     <Compile Include="IncidentWorker_MultiPartBase.cs" />
+    <Compile Include="IncidentWorker_ActiveSkirmish.cs" />
     <Compile Include="IncidentWorker_ShuttleCrash.cs" />
     <Compile Include="Mod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
