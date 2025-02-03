@@ -1,0 +1,22 @@
+<Defs>
+    <HediffDef>
+        <defName>FCP_Hediff_ToxHeal</defName>
+        <label>sterilized</label>
+        <description>placeholder.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(0.9, 1.0, 0.35)</defaultLabelColor>
+        <initialSeverity>1</initialSeverity>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>7500~7500</disappearsAfterTicks>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <statFactors>
+                    <InjuryHealingFactor>1.5</InjuryHealingFactor>
+                </statFactors>
+            </li>
+        </stages>
+    </HediffDef>
+</Defs>
