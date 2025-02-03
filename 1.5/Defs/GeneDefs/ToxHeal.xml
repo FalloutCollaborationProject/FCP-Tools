@@ -1,0 +1,54 @@
+<Defs>
+    <GeneDef>
+        <defName>FCP_Gene_ToxHeal</defName>
+        <label>tox heal</label>
+        <description>placeholder.</description>
+        <iconPath>UI/Icons/Genes/Gene_PollutionRush</iconPath>
+        <displayCategory>Miscellaneous</displayCategory>
+        <displayOrderInCategory>500</displayOrderInCategory>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>-1</biostatMet>
+        <modExtensions>
+            <li Class="FCP_Ghoul.ChanceGene_ModExtension">
+                <chance>0.2</chance>
+                <gene1>FCP_Gene_ToxSpawn</gene1>
+                <gene2>FCP_Gene_Glow</gene2>
+            </li>
+        </modExtensions>
+    </GeneDef>
+
+    <GeneDef>
+        <defName>FCP_Gene_ToxSpawn</defName>
+        <label>tox spawn</label>
+        <description>placeholder.</description>
+        <geneClass>FCP_Ghoul.EmitToxGene</geneClass>
+        <iconPath>UI/Icons/Genes/Gene_PollutionRush</iconPath>
+        <displayCategory>Miscellaneous</displayCategory>
+        <displayOrderInCategory>500</displayOrderInCategory>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>-1</biostatMet>
+    </GeneDef>
+
+    <GeneDef>
+        <defName>FCP_Gene_Glow</defName>
+        <label>glow</label>
+        <description>placeholder.</description>
+        <geneClass>FCP_Ghoul.ChanceGene</geneClass>
+        <iconPath>UI/Icons/Genes/Gene_PollutionRush</iconPath>
+        <displayCategory>Miscellaneous</displayCategory>
+        <displayOrderInCategory>500</displayOrderInCategory>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>-1</biostatMet>
+        <renderNodeProperties>
+            <li>
+                <nodeClass>FCP_Ghoul.PawnRenderNode_Shiny</nodeClass>
+                <overlayLayer>Body</overlayLayer>
+				<rotDrawMode>Fresh</rotDrawMode>
+                <shaderTypeDef>MoteGlow</shaderTypeDef>
+				<baseLayer>5</baseLayer>
+            </li>
+        </renderNodeProperties>
+
+        
+    </GeneDef>
+</Defs>

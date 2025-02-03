@@ -1,0 +1,39 @@
+<Defs>
+  <GeneDef ParentName="GeneBodyBase">
+    <defName>FCP_Gene_FeralFur</defName>
+    <label>feral ghoul body</label>
+    <geneClass>FCP_Ghoul.Gene_FeralBody</geneClass>
+    <description>Carriers can have average-shaped bodies. A person can have more than one body type gene; one body type will be chosen among those that are allowed.</description>
+    <iconPath>UI/Icons/Genes/Gene_BodyStandard</iconPath>
+    <displayOrderInCategory>0</displayOrderInCategory>
+    <biostatCpx>1</biostatCpx>
+    <selectionWeight>0</selectionWeight>
+    <exclusionTags>
+      <li>Bodies</li>
+      <li>Body</li>
+    </exclusionTags>
+    <fur>FCP_FeralFur</fur>
+    <skinIsHairColor>false</skinIsHairColor>
+    <tattoosVisible>false</tattoosVisible>
+    <iconColor>(157, 188, 200)</iconColor>
+		<!--<skinColorOverride>(157, 188, 200)</skinColorOverride>  important -->
+    <renderNodeProperties>
+      <li>
+        <nodeClass>FCP_Ghoul.PawnRenderNode_CustomColor</nodeClass>
+        <workerClass>PawnRenderNodeWorker_Fur</workerClass>
+        <baseLayer>5</baseLayer>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <colorType>Skin</colorType>
+        <parentTagDef>Body</parentTagDef>
+      </li>
+    </renderNodeProperties>
+    <modExtensions>
+    <li Class="FCP_Ghoul.ToxBomb_ModExtension">
+      <radius>0.9</radius>
+      <rate>200</rate>
+
+    </li>
+    </modExtensions>
+  </GeneDef>
+
+</Defs>

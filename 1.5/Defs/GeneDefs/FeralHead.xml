@@ -1,0 +1,48 @@
+<Defs>
+<GeneDef>
+    <defName>FCP_Gene_FeralHead</defName>
+    <label>feral Ghoul Head</label>
+    <labelShortAdj>ghoulheaded</labelShortAdj>
+    <description>placeholder.</description>
+    <geneClass>FCP_Ghoul.FeralHead_Gene</geneClass>
+    <biostatCpx>1</biostatCpx> <!-- placeholder -->
+    <biostatMet>-1</biostatMet> <!-- placeholder -->
+    <displayCategory>Miscellaneous</displayCategory>
+    <displayOrderInCategory>400</displayOrderInCategory>
+    <iconPath>UI/Icons/Genes/Gene_Furskin</iconPath> <!-- placeholder -->
+    <iconColor>(0.75, 0.75, 0.75)</iconColor><!-- placeholder -->
+    <forcedHeadTypes>
+      <li>FCP_HeadType_Feral_Male</li>
+      <li>FCP_HeadType_Feral_Female</li>
+    </forcedHeadTypes>
+    <skinIsHairColor>false</skinIsHairColor>
+    <tattoosVisible>false</tattoosVisible>
+    <renderNodeProperties>
+      <li>
+        <nodeClass>FCP_Ghoul.PawnRenderNode_CustomColorForHead</nodeClass>
+        <!--<nodeClass>PawnRenderNode_Fur</nodeClass>-->
+        <workerClass>PawnRenderNodeWorker_Head</workerClass>
+        <baseLayer>5</baseLayer>
+        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+        <colorType>Skin</colorType>
+        <parentTagDef>Body</parentTagDef>
+      </li>
+    </renderNodeProperties>
+    <hairTagFilter>
+      <whitelist>true</whitelist>
+      <tags>
+        <li>Bald</li>
+      </tags>
+    </hairTagFilter>
+    <beardTagFilter>
+      <whitelist>true</whitelist>
+      <tags>
+      </tags>
+    </beardTagFilter>
+    <exclusionTags>
+      <li>HairStyle</li>
+      <li>Fur</li>
+      <li>BeardStyle</li>
+    </exclusionTags>
+  </GeneDef>
+</Defs>

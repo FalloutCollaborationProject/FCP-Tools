@@ -1,0 +1,132 @@
+<Defs>
+    <GeneDef ParentName="GeneSkinColorOverride">
+        <defName>FCP_Skin_A</defName>
+        <label>skin A</label>
+        <labelShortAdj>skin A</labelShortAdj>
+        <description>Carriers of this gene produce a pigment that turns their skin a.</description>
+        <randomBrightnessFactor>0</randomBrightnessFactor>
+        <skinColorOverride>(0.9,1,0.7)</skinColorOverride>
+        <displayOrderInCategory>99</displayOrderInCategory>
+        <symbolPack>
+            <prefixSymbols>
+                <li>
+                    <symbol>something</symbol>
+                </li>
+            </prefixSymbols>
+            <suffixSymbols>
+                <li>
+                    <symbol>something</symbol>
+                </li>
+            </suffixSymbols>
+        </symbolPack>
+    </GeneDef>
+    <GeneDef ParentName="GeneSkinColorOverride">
+        <defName>FCP_Skin_B</defName>
+        <label>skin B</label>
+        <labelShortAdj>skin B</labelShortAdj>
+        <description>Carriers of this gene produce a pigment that turns their skin a.</description>
+        <randomBrightnessFactor>0</randomBrightnessFactor>
+        <skinColorOverride>(1,0.9,0.8)</skinColorOverride>
+        <displayOrderInCategory>99</displayOrderInCategory>
+        <symbolPack>
+            <prefixSymbols>
+                <li>
+                    <symbol>something</symbol>
+                </li>
+            </prefixSymbols>
+            <suffixSymbols>
+                <li>
+                    <symbol>something</symbol>
+                </li>
+            </suffixSymbols>
+        </symbolPack>
+    </GeneDef>
+
+    <GeneDef ParentName="GeneSkinColorOverride">
+        <defName>FCP_Skin_C</defName>
+        <label>skin C</label>
+        <labelShortAdj>skin C</labelShortAdj>
+        <description>Carriers of this gene produce a pigment that turns their skin a.</description>
+        <randomBrightnessFactor>0</randomBrightnessFactor>
+        <skinColorOverride>(1,0.9,0.7)</skinColorOverride>
+        <displayOrderInCategory>99</displayOrderInCategory>
+        <symbolPack>
+            <prefixSymbols>
+                <li>
+                    <symbol>something</symbol>
+                </li>
+            </prefixSymbols>
+            <suffixSymbols>
+                <li>
+                    <symbol>something</symbol>
+                </li>
+            </suffixSymbols>
+        </symbolPack>
+    </GeneDef>
+
+    <GeneDef ParentName="GeneSkinColorOverride">
+        <defName>FCP_Skin_D</defName>
+        <label>skin D</label>
+        <labelShortAdj>skin D</labelShortAdj>
+        <description>Carriers of this gene produce a pigment that turns their skin a.</description>
+        <randomBrightnessFactor>0</randomBrightnessFactor>
+        <skinColorOverride>(0.7,0.6,0.5)</skinColorOverride>
+        <displayOrderInCategory>99</displayOrderInCategory>
+        <symbolPack>
+            <prefixSymbols>
+                <li>
+                    <symbol>something</symbol>
+                </li>
+            </prefixSymbols>
+            <suffixSymbols>
+                <li>
+                    <symbol>something</symbol>
+                </li>
+            </suffixSymbols>
+        </symbolPack>
+    </GeneDef>
+
+    <GeneDef ParentName="GeneSkinColorOverride">
+        <defName>FCP_Skin_E</defName>
+        <label>skin E</label>
+        <labelShortAdj>skin E</labelShortAdj>
+        <description>Carriers of this gene produce a pigment that turns their skin a.</description>
+        <randomBrightnessFactor>0</randomBrightnessFactor>
+        <skinColorOverride>(0.7,0.6,0.4)</skinColorOverride>
+        <displayOrderInCategory>99</displayOrderInCategory>
+        <symbolPack>
+            <prefixSymbols>
+                <li>
+                    <symbol>something</symbol>
+                </li>
+            </prefixSymbols>
+            <suffixSymbols>
+                <li>
+                    <symbol>something</symbol>
+                </li>
+            </suffixSymbols>
+        </symbolPack>
+    </GeneDef>
+
+    <GeneDef ParentName="GeneSkinColorOverride">
+        <defName>FCP_Skin_Feral</defName>
+        <label>feral</label>
+        <labelShortAdj>skin B</labelShortAdj>
+        <description>Carriers of this gene produce a pigment that turns their skin a.</description>
+        <randomBrightnessFactor>0</randomBrightnessFactor>
+        <skinColorOverride>(1,0.9,0.8,0.001)</skinColorOverride>
+        <displayOrderInCategory>99</displayOrderInCategory>
+        <symbolPack>
+            <prefixSymbols>
+                <li>
+                    <symbol>something</symbol>
+                </li>
+            </prefixSymbols>
+            <suffixSymbols>
+                <li>
+                    <symbol>something</symbol>
+                </li>
+            </suffixSymbols>
+        </symbolPack>
+    </GeneDef>
+</Defs>

@@ -1,0 +1,21 @@
+<Defs>
+  <GeneDef>
+    <defName>FCP_Gene_Ferality</defName>
+    <label>ferality</label>
+    <description>da.</description>
+    <geneClass>FCP_Ghoul.Gene_Ferality</geneClass>
+    <iconPath>UI/Icons/Genes/Gene_Deathrest</iconPath>
+    <biostatMet>2</biostatMet>
+    <minAgeActive>3</minAgeActive>
+    <modExtensions>
+      <li Class="FCP_Ghoul.FeralityGene_ModExtension">
+        <rate>20</rate>
+        <amountReduced>20</amountReduced>
+        <drugs>
+          <li>GoJuice</li>
+        </drugs>
+        <dropApparelChance>0.99</dropApparelChance>
+      </li>
+    </modExtensions>
+  </GeneDef>
+</Defs>
