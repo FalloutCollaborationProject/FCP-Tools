@@ -1,0 +1,96 @@
+<Defs>
+    <!-- Heavy -->
+    <HeadTypeDef Name="FCP_HeadTypeAverageNormal" Abstract="True">
+        <hairMeshSize>(1.5, 1.5)</hairMeshSize>
+        <beardMeshSize>(1.7, 1.5)</beardMeshSize>
+        <randomChosen>false</randomChosen>
+        <selectionWeight>99999</selectionWeight>
+        <requiredGenes>
+            <li>FCP_Gene_Head</li>
+        </requiredGenes>
+        <eyeOffsetEastWest>(0.16, 0, 0.17)</eyeOffsetEastWest>
+    </HeadTypeDef>
+
+    <HeadTypeDef ParentName="FCP_HeadTypeAverageNormal">
+        <defName>FCP_HeadType_AverageNormal_Male</defName>
+        <gender>Male</gender>
+        <graphicPath>FCP_Ghoul/Heads/Male_Ghoul_Average_Normal</graphicPath>
+    </HeadTypeDef>
+
+    <HeadTypeDef ParentName="FCP_HeadTypeAverageNormal">
+        <defName>FCP_HeadType_AverageNormal_Female</defName>
+        <gender>Female</gender>
+        <graphicPath>FCP_Ghoul/Heads/Female_Ghoul_Average_Normal</graphicPath>
+    </HeadTypeDef>
+
+    <!-- -->
+
+    <HeadTypeDef ParentName="FCP_HeadTypeAverageNormal">
+        <defName>FCP_HeadType_AveragePointy_Male</defName>
+        <gender>Male</gender>
+        <graphicPath>FCP_Ghoul/Heads/Male_Ghoul_Average_Pointy</graphicPath>
+    </HeadTypeDef>
+
+    <HeadTypeDef ParentName="FCP_HeadTypeAverageNormal">
+        <defName>FCP_HeadType_AveragePointy_Female</defName>
+        <gender>Female</gender>
+        <graphicPath>FCP_Ghoul/Heads/Female_Ghoul_Average_Pointy</graphicPath>
+    </HeadTypeDef>
+
+    <!-- -->
+
+    <HeadTypeDef ParentName="FCP_HeadTypeAverageNormal">
+        <defName>FCP_HeadType_AverageWide_Male</defName>
+        <gender>Male</gender>
+        <graphicPath>FCP_Ghoul/Heads/Male_Ghoul_Average_Wide</graphicPath>
+    </HeadTypeDef>
+
+    <HeadTypeDef ParentName="FCP_HeadTypeAverageNormal">
+        <defName>FCP_HeadType_AverageWide_Female</defName>
+        <gender>Female</gender>
+        <graphicPath>FCP_Ghoul/Heads/Female_Ghoul_Average_Wide</graphicPath>
+    </HeadTypeDef>
+
+    <!-- -->
+
+    <HeadTypeDef ParentName="FCP_HeadTypeAverageNormal">
+        <defName>FCP_HeadType_NarrowNormal_Male</defName>
+        <gender>Male</gender>
+        <graphicPath>FCP_Ghoul/Heads/Male_Ghoul_Narrow_Normal</graphicPath>
+    </HeadTypeDef>
+
+    <HeadTypeDef ParentName="FCP_HeadTypeAverageNormal">
+        <defName>FCP_HeadType_NarrowNormal_Female</defName>
+        <gender>Female</gender>
+        <graphicPath>FCP_Ghoul/Heads/Female_Ghoul_Narrow_Normal</graphicPath>
+    </HeadTypeDef>
+
+    <!-- -->
+
+    <HeadTypeDef ParentName="FCP_HeadTypeAverageNormal">
+        <defName>FCP_HeadType_NarrowPointy_Male</defName>
+        <gender>Male</gender>
+        <graphicPath>FCP_Ghoul/Heads/Male_Ghoul_Narrow_Pointy</graphicPath>
+    </HeadTypeDef>
+
+    <HeadTypeDef ParentName="FCP_HeadTypeAverageNormal">
+        <defName>FCP_HeadType_NarrowPointy_Female</defName>
+        <gender>Female</gender>
+        <graphicPath>FCP_Ghoul/Heads/Female_Ghoul_Narrow_Pointy</graphicPath>
+    </HeadTypeDef>
+    <!-- -->
+    <HeadTypeDef ParentName="FCP_HeadTypeAverageNormal">
+        <defName>FCP_HeadType_NarrowWide_Male</defName>
+        <gender>Male</gender>
+        <graphicPath>FCP_Ghoul/Heads/Male_Ghoul_Narrow_Wide</graphicPath>
+    </HeadTypeDef>
+
+    <HeadTypeDef ParentName="FCP_HeadTypeAverageNormal">
+        <defName>FCP_HeadType_NarrowWide_Female</defName>
+        <gender>Female</gender>
+        <graphicPath>FCP_Ghoul/Heads/Female_Ghoul_Narrow_Wide</graphicPath>
+    </HeadTypeDef>
+    <!-- -->
+
+    
+</Defs>
