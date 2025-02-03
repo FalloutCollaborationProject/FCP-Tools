@@ -1,0 +1,13 @@
+<Defs>
+    <FurDef>
+		<defName>FCP_FeralFur</defName>
+		<noGraphic>true</noGraphic>
+		<bodyTypeGraphicPaths>
+			<Male>FCP_Ghoul/Feral/Bodies/Naked_Male</Male>
+			<Female>FCP_Ghoul/Feral/Bodies/Naked_Male</Female>
+			<Hulk>FCP_Ghoul/Feral/Bodies/Naked_Male</Hulk>
+			<Thin>FCP_Ghoul/Feral/Bodies/Naked_Male</Thin>
+			<Fat>FCP_Ghoul/Feral/Bodies/Naked_Male</Fat>
+		</bodyTypeGraphicPaths>
+	</FurDef>
+</Defs>
