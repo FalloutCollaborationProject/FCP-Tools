@@ -1,8 +1,10 @@
-﻿namespace FCP.Core.Hediffs;
-
-public class HediffCompProperties_CripplePart : HediffCompProperties
+﻿namespace FCP.Core.Hediffs
 {
-    public DamageDef damageDef;
-
-    public HediffCompProperties_CripplePart() => compClass = typeof(HediffComp_CripplePart);
+    public class HediffCompProperties_CripplePart : HediffCompProperties
+    {
+        public DamageDef damageDef;
+    
+        public HediffCompProperties_CripplePart() => 
+            compClass = typeof(HediffComp_CripplePart);
+    }
 }

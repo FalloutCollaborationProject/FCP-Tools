@@ -5,7 +5,7 @@ namespace FCP.Core.VATS;
 [StaticConstructorOnStartup]
 public class Dialog_VATS(Verb_AbilityVATS verb, LocalTargetInfo target, IWindowDrawing customWindowDrawing = null) : Window(customWindowDrawing)
 {
-    private readonly Color ButtonTextColour = new Color(0.357f, 0.825f, 0.278f);
+    private readonly Color ButtonTextColour = new (0.357f, 0.825f, 0.278f);
 
     private readonly Texture2D Logo = ContentFinder<Texture2D>.Get("UI/FCP_VATS_Logo_Small");
 
@@ -14,8 +14,8 @@ public class Dialog_VATS(Verb_AbilityVATS verb, LocalTargetInfo target, IWindowD
 
     public Dictionary<string, float> MultiplierLookup => FCPCoreMod.Settings.MultiplierLookup;
 
-    public override Vector2 InitialSize => new Vector2(845f, 740f);
-    protected virtual Vector2 ButtonSize => new Vector2(200f, 40f);
+    public override Vector2 InitialSize => new(845f, 740f);
+    protected virtual Vector2 ButtonSize => new(200f, 40f);
     public virtual TaggedString OkButtonLabel => "OK".Translate();
 
     public virtual TaggedString CancelButtonLabel => "CancelButton".Translate();
@@ -46,7 +46,7 @@ public class Dialog_VATS(Verb_AbilityVATS verb, LocalTargetInfo target, IWindowD
 
         float pawnMultiplier = 1 + Mathf.Clamp01(0.02f * verb.CasterPawn.skills.GetSkill(SkillDefOf.Shooting).Level);
 
-        float esitmatedHitChance = shotReport.TotalEstimatedHitChance;
+        float estimatedHitChance = shotReport.TotalEstimatedHitChance;
 
         using (new ProfilerBlock(nameof(DoVATS)))
         {
@@ -55,7 +55,8 @@ public class Dialog_VATS(Verb_AbilityVATS verb, LocalTargetInfo target, IWindowD
                 // Fetch the list of parts to show in the UI
                 List<BodyPartRecord> parts = target
                     .Pawn.health.hediffSet.GetNotMissingParts()
-                    .Where(p => p.def == target.Pawn.def.race.body.corePart.def || p.parent?.def == target.Pawn.def.race.body.corePart.def)
+                    .Where(p => p.def == target.Pawn.def.race.body.corePart.def || 
+                                p.parent?.def == target.Pawn.def.race.body.corePart.def)
                     .Where(p => p.coverageAbs > 0.0)
                     .ToList();
 
@@ -85,13 +86,15 @@ public class Dialog_VATS(Verb_AbilityVATS verb, LocalTargetInfo target, IWindowD
 
                 for (int i = 0; i < partCount; i++)
                 {
-                    RectDivider rectDivider;
-                    rectDivider = i <= partCount / 2 ? colLeft.NewRow(45f, marginOverride: 5f) : colRight.NewRow(45f, marginOverride: 5f);
+                    RectDivider rectDivider = i <= partCount / 2 
+                        ? colLeft.NewRow(45f, marginOverride: 5f) 
+                        : colRight.NewRow(45f, marginOverride: 5f);
 
-                    float partAccuracy = Mathf.Clamp01(esitmatedHitChance * pawnMultiplier * GetPartMultiplier(parts[i].def));
+                    float partAccuracy = Mathf.Clamp01(estimatedHitChance * pawnMultiplier * GetPartMultiplier(parts[i].def));
                     int partAccuracyPct = Mathf.CeilToInt(partAccuracy * 100);
 
-                    if (!Widgets.ButtonText(rectDivider, $"{parts[i].LabelCap} [{partAccuracyPct}%]", false, true, ButtonTextColour))
+                    if (!Widgets.ButtonText(rectDivider, $"{parts[i].LabelCap} [{partAccuracyPct}%]", 
+                            false, true, ButtonTextColour))
                     {
                         continue;
                     }
@@ -119,7 +122,7 @@ public class Dialog_VATS(Verb_AbilityVATS verb, LocalTargetInfo target, IWindowD
     {
         using (TextBlock.Default())
         {
-            RectDivider layout1 = new RectDivider(inRect, 145235235);
+            RectDivider layout1 = new(inRect, 145235235);
             layout1.NewRow(0.0f, VerticalJustification.Bottom, 1f);
             layout1.NewRow(0.0f);
             DoVATS(ref layout1);

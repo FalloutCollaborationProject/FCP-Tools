@@ -113,7 +113,7 @@
         <defName>MinePocket_Mine</defName>
         <label>mine</label>
         <thingClass>Building_TrapExplosive</thingClass>
-        <designationCategory Inherit="False"></designationCategory>        <!-- important to not be able to be built normally-->
+        <designationCategory Inherit="False"/>        <!-- important to not be able to be built normally-->
         <description>placeholder.</description>
         <graphicData>
             <texPath>Weapons/Mines/FCP_Frag_Mine</texPath>

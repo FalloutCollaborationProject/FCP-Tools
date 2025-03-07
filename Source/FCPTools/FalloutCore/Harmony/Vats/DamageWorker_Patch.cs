@@ -54,9 +54,10 @@ public static class DamageWorker_Patch
         {
             foreach (
                 Apparel apparel in pawn
-                    .apparel.WornApparel.Where(app => app.TryGetQuality(out QualityCategory qual) && qual == QualityCategory.Legendary)
-                    .Where(LegendaryEffectGameTracker.HasEffect)
-            )
+                    .apparel.WornApparel
+                    .Where(app => app
+                        .TryGetQuality(out QualityCategory qual) && qual == QualityCategory.Legendary)
+                    .Where(LegendaryEffectGameTracker.HasEffect))
             {
                 foreach (LegendaryEffectDef effectDef in LegendaryEffectGameTracker.EffectsDict[apparel])
                 {

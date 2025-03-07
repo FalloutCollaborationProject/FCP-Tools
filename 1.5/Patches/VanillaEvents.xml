@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
+    <!--
+        PUT THIS IN A LOADFOLDER OR WRAP IN A PATCHOPERTIONFINDMOD,
+        OTHERWISE YOU WILL GET ERRORS IF MUSICEXPANDED IS NOT LOADED!
+     -->
+
     <!-- Battle Cues -->
     <Operation Class="PatchOperationAddModExtension">
         <xpath>/Defs/IncidentDef[

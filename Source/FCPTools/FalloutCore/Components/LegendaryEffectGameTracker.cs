@@ -5,9 +5,12 @@ namespace FCP.Core;
 
 public class LegendaryEffectGameTracker : GameComponent
 {
-    public LegendaryEffectGameTracker(Game game) { }
-
-    public static Dictionary<Thing, List<LegendaryEffectDef>> EffectsDict = new Dictionary<Thing, List<LegendaryEffectDef>>();
+    public static Dictionary<Thing, List<LegendaryEffectDef>> EffectsDict = new();
+    
+    public LegendaryEffectGameTracker(Game game)
+    {
+        
+    }
 
     public override void ExposeData()
     {
@@ -41,17 +44,17 @@ public class LegendaryEffectGameTracker : GameComponent
         }
 
         if (!EffectsDict.TryGetValue(thing, out var effects))
-            effects = new List<LegendaryEffectDef>();
+            effects = [];
 
         effects.Add(effect);
 
         EffectsDict.SetOrAdd(thing, effects);
     }
 
-    public static void ClearEffectsFor(Thing thing)
+    private static void ClearEffectsFor(Thing thing)
     {
         if (!EffectsDict.TryGetValue(thing, out var effects))
-            effects = new List<LegendaryEffectDef>();
+            effects = [];
 
         effects.Clear();
 
@@ -80,11 +83,9 @@ public class LegendaryEffectGameTracker : GameComponent
     public static string GetEffectDescription(Thing thing)
     {
         if (!HasEffect(thing))
-        {
             return null;
-        }
 
-        StringBuilder body = new StringBuilder();
+        StringBuilder body = new();
         foreach (LegendaryEffectDef effect in EffectsDict[thing])
         {
             body.AppendLine($" - {effect.LabelCap} - {effect.description}");
@@ -106,6 +107,7 @@ public class LegendaryEffectGameTracker : GameComponent
         List<LegendaryEffectDef> AllDefs = DefDatabase<LegendaryEffectDef>.AllDefsListForReading;
         List<FloatMenuOption> options = [];
         IEnumerable<LegendaryEffectDef> validEffects;
+        
         if (thing.def.IsApparel)
         {
             validEffects = AllDefs.Where(def => def.IsForApparel);
@@ -155,13 +157,17 @@ public class LegendaryEffectGameTracker : GameComponent
         {
             foreach (Apparel apparel in pawn.apparel.UnlockedApparel)
             {
-                output.AddRange(GetEffectsFor(apparel).Select(eff => new ThingAndEffect { thing = apparel, effect = eff }));
+                output.AddRange(GetEffectsFor(apparel)
+                    .Select(eff => 
+                        new ThingAndEffect { thing = apparel, effect = eff }));
             }
         }
 
-        if (pawn.equipment != null && pawn.equipment.Primary != null)
+        if (pawn.equipment is { Primary: not null })
         {
-            output.AddRange(GetEffectsFor(pawn.equipment.Primary).Select(eff => new ThingAndEffect { thing = pawn.equipment.Primary, effect = eff }));
+            output.AddRange(GetEffectsFor(pawn.equipment.Primary)
+                .Select(eff => 
+                    new ThingAndEffect { thing = pawn.equipment.Primary, effect = eff }));
         }
 
         return output;

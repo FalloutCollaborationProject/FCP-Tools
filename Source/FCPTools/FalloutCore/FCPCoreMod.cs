@@ -6,7 +6,6 @@ namespace FCP.Core;
 public class FCPCoreMod : Mod
 {
     public static FCPCoreMod mod;
-    
     public static FCP_Settings Settings;
     
     public FCPCoreMod(ModContentPack content) : base(content)

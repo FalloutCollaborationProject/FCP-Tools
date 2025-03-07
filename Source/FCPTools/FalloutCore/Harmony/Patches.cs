@@ -17,57 +17,57 @@ public static class Patches
     static Patches()
     {
         Harmony harmony = new("FCP.Core.Patches"); // PatchesUwU ~ Steve
-
+        
         // Biome Feature Requirements
         harmony.Patch(original: AccessTools.Method(typeof(WildAnimalSpawner), "CommonalityOfAnimalNow"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(WildAnimalSpawnerCommonalityOfAnimalNow_Postfix)));
-            
+        
         // Non Slaves in Traders
         harmony.Patch(original: AccessTools.Method(typeof(TraderCaravanUtility), "GetTraderCaravanRole"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(TraderCaravanUtilityGetTraderCaravanRole_Postfix)));
-
+        
         harmony.Patch(original: AccessTools.Method(typeof(Pawn_GuestTracker), "RandomizeJoinStatus"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(Pawn_GuestTrackerRandomizeJoinStatus_Postfix)));
-
+        
         harmony.Patch(original: AccessTools.Method(typeof(Pawn), "PreTraded"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(PawnPreTraded_Postfix)));
-            
+        
         // Flying Pawns
         harmony.Patch(original: AccessTools.Method(typeof(DamageWorker_AddInjury), "ApplyDamageToPart"),
             prefix: new HarmonyMethod(typeof(Patches), nameof(DamageWorker_AddInjuryApplyDamageToPart_Prefix)));
-            
+        
         harmony.Patch(original: AccessTools.Method(typeof(JobGiver_AIDefendPawn), "FindAttackTarget"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(JobGiver_AIDefendPawnFindAttackTarget_Postfix)));
-
+        
         harmony.Patch(original: AccessTools.Method(typeof(Pawn_JobTracker), "CleanupCurrentJob"),
             prefix: new HarmonyMethod(typeof(Patches), nameof(Pawn_JobTrackerCleanupCurrentJob_Prefix)));
-
+        
         harmony.Patch(original: AccessTools.Method(typeof(Verb_MeleeAttack), "GetDodgeChance"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(Verb_MeleeAttackGetDodgeChance_Postfix)));
-
+        
         harmony.Patch(original: AccessTools.Method(typeof(Pawn_JobTracker), nameof(Pawn_JobTracker.StartJob)),
             postfix: new HarmonyMethod(typeof(Patches), nameof(Pawn_JobTrackerStartJob_Postfix)));
-            
+        
         harmony.Patch(original: AccessTools.PropertyGetter(typeof(ShotReport), nameof(ShotReport.AimOnTargetChance_StandardTarget)),
             postfix: new HarmonyMethod(typeof(Patches), nameof(ShotReportAimOnTargetChance_StandardTarget_Postfix)));
-
+        
         harmony.Patch(original: AccessTools.Method(typeof(StatExtension), nameof(StatExtension.GetStatValue)),
             postfix: new HarmonyMethod(typeof(Patches), nameof(StatExtensionGetStatValue_Postfix)));
-            
+        
         // Faction Fixed Ideology
         harmony.Patch(original: AccessTools.Method(typeof(IdeoGenerator), "MakeFixedIdeo"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(IdeoGeneratorMakeFixedIdeo_Postfix)));
-            
+        
         harmony.Patch(original: AccessTools.Method(typeof(IdeoFoundation), "RandomizeIcon"),
             prefix: new HarmonyMethod(typeof(Patches), nameof(IdeoFoundationRandomizeIcon_Prefix)));
-
+        
         harmony.Patch(original: AccessTools.Method(typeof(IdeoFoundation), "InitPrecepts"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(IdeoFoundationInitPrecepts_Postfix)));
-
+        
         // Banned Arrival Modes
         harmony.Patch(original: AccessTools.Method(typeof(PawnsArrivalModeWorker), "CanUseWith"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(PawnsArrivalModeWorkerCanUseWith_Postfix)));
-            
+        
         // Hidden Faction Traders
         harmony.Patch(
             original: typeof(IncidentWorker_CaravanMeeting).GetNestedTypes(AccessTools.all)
@@ -75,52 +75,52 @@ public static class Patches
                 .First(mi => mi.ReturnType == typeof(bool) && 
                              mi.GetParameters().ContainsAny(pi => pi.ParameterType == typeof(Faction))),
             transpiler: new HarmonyMethod(typeof(Patches), nameof(IncidentWorker_CaravanMeetingTryFindFaction_Linq_Transpiler)));
-
+        
         harmony.Patch(original: AccessTools.Method(typeof(IncidentWorker_NeutralGroup), "FactionCanBeGroupSource"),
             transpiler: new HarmonyMethod(typeof(Patches), nameof(IncidentWorker_NeutralGroup_FactionCanBeGroupSource_Transpiler)));
-
+        
         // Max Title for Permits
         harmony.Patch(original: AccessTools.Method(typeof(PermitsCardUtility), "DoLeftRect"),
             transpiler: new HarmonyMethod(typeof(Patches), nameof(PermitsCardUtility_LeftRect_Transpiler)));
-            
+        
         harmony.Patch(original: AccessTools.Method(typeof(RoyalTitlePermitDef), "AvailableForPawn"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(RoyalTitlePermitDef_AvailableForPawn_Postfix)));
-            
+        
         harmony.Patch(original: AccessTools.Method(typeof(RoyalTitleAwardWorker), "DoAward"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(RoyalTitleAwardWorker_DoAward_Postfix)));
         
         harmony.Patch(original: AccessTools.Method(typeof(RoyalTitleAwardWorker_Instant), "DoAward"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(RoyalTitleAwardWorker_DoAward_Postfix)));
-
+        
         // Forced TraderKindDef for PawnGroupMaker
         harmony.Patch(original: AccessTools.Method(typeof(PawnGroupKindWorker_Trader), "GeneratePawns", parameters: [typeof(PawnGroupMakerParms), typeof(PawnGroupMaker), typeof(List<Pawn>), typeof(bool)]),
             prefix: new HarmonyMethod(typeof(Patches), nameof(PawnGroupKindWorker_Trader_GeneratePawns_Prefix)));
-            
+        
         // Faction Permanent Hostility
         harmony.Patch(original: AccessTools.Method(typeof(GoodwillSituationWorker_PermanentEnemy), "ArePermanentEnemies"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(GoodwillSituationWorker_PermanentEnemy_ArePermanentEnemies_Postfix)));
-
+        
         harmony.Patch(original: AccessTools.Method(typeof(Faction), "CanChangeGoodwillFor"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(Faction_CanChangeGoodwillFor_Postfix)));
-
+        
         harmony.Patch(original: AccessTools.Method(typeof(FactionDef), "PermanentlyHostileTo"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(FactionDef_PermanentlyHostileTo_Postfix)));
-            
+        
         harmony.Patch(original: typeof(Faction).GetDeclaredMethods().First(mi => mi.Name.Contains("GetInitialGoodwill")),
             prefix: new HarmonyMethod(typeof(Patches), nameof(Faction_TryMakeInitialRelationsWith_GetInitialGoodwill_Prefix)));
         
         // Unique Characters
         harmony.Patch(original: AccessTools.Method(typeof(Faction), nameof(Faction.TryGenerateNewLeader)),
             prefix: new HarmonyMethod(typeof(Patches), nameof(Faction_TryGenerateNewLeader_Prefix)));
-
+        
         // Weapon Sprite Adjustment
         harmony.Patch(original: AccessTools.Method(typeof(PawnRenderUtility), nameof(PawnRenderUtility.DrawEquipmentAndApparelExtras)),
             prefix: new HarmonyMethod(typeof(Patches), nameof(WeaponDrawPosPatch)));
-
+        
         //Rarity Label
         harmony.Patch(original: AccessTools.Method(typeof(InspectPaneUtility), nameof(InspectPaneUtility.AdjustedLabelFor)),
             postfix: new HarmonyMethod(typeof(Patches), nameof(RarityLabelPatch)));
-
+        
         //Pick Up
         harmony.Patch(original: AccessTools.Method(typeof(FloatMenuMakerMap), "AddHumanlikeOrders"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(AddHumanLikeOrders_PickUp)));

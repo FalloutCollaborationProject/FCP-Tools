@@ -5,18 +5,17 @@ namespace FCP.Core;
 [UsedImplicitly]
 public class UniqueCharactersTracker : WorldComponent
 {
-    
     public static UniqueCharactersTracker Instance { get; private set; }
-
-    private List<UniqueCharacter> characters = new List<UniqueCharacter>();
-
+    
+    private List<UniqueCharacter> characters = [];
+    
     public UniqueCharactersTracker(World world) : base(world)
     {
         Instance = this;
     }
     
     /// <summary>
-    /// Check for a UniqueCharacter entry in the tracker and if the entry has a non destroyed/discarded pawn.
+    /// Check for a UniqueCharacter entry in the tracker and if the entry has a non-destroyed/discarded pawn.
     /// </summary>
     public bool CharacterPawnExists(CharacterDef charDef)
     {
@@ -34,7 +33,7 @@ public class UniqueCharactersTracker : WorldComponent
     }
     
     /// <summary>
-    /// Try find a matching UniqueCharacter for a given pawn
+    /// Try to find a matching UniqueCharacter for a given pawn
     /// </summary>
     public bool TryGetPawnCharacter(Pawn pawn, out UniqueCharacter character)
     {
@@ -88,10 +87,9 @@ public class UniqueCharactersTracker : WorldComponent
         Instance = this;
 
     }
-
+    
     public override void ExposeData()
     {
         Scribe_Collections.Look(ref characters, "character", lookMode: LookMode.Deep, saveDestroyedThings: true);
     }
-    
 }
