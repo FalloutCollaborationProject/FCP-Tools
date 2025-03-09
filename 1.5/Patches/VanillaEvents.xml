@@ -17,7 +17,7 @@
             or defName="AnimalInsanityMass"
             or defName="MechCluster"
             or defName="AnimalInsanitySingle"
-        ]</xpath>
+        </xpath>
         <value>
             <li Class="MusicExpanded.ModExtension.PlayCue">
                 <playBattleTrack>true</playBattleTrack>
