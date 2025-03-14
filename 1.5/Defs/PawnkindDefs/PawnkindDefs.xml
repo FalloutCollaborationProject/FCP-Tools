@@ -32,6 +32,7 @@
         <invNutrition>2.7</invNutrition>
         <invFoodDef>MealSurvivalPack</invFoodDef>
         <disallowedTraits>
+            <li>Cannibal</li>
             <li>Nudist</li>
         </disallowedTraits>
         <apparelTags>
@@ -49,9 +50,24 @@
         <chemicalAddictionChance>0</chemicalAddictionChance>
         <invNutrition>2.7</invNutrition>
         <invFoodDef>MealSurvivalPack</invFoodDef>
+        <disallowedTraits>
+            <li>Transhumanist</li>
+            <li>Asexual</li>
+            <li>Bisexual</li>
+            <li>Gay</li>
+            <li>DrugDesire</li>
+            <li>Nudist</li>
+        </disallowedTraits>
         <apparelTags>
             <li>FCP_Legion</li>
         </apparelTags>
+        <backstoryFiltersOverride>
+            <li>
+                <categoriesChildhood>
+                    <li>FCP_Legion_Child</li>
+                </categoriesChildhood>
+            </li>
+        </backstoryFiltersOverride>
     </PawnKindDef>
 
     <!--___ Wastelander Base ___-->
