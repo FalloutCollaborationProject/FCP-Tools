@@ -183,7 +183,7 @@
     <!-- V.A.T.S. Enhanced -->
 
     <FCP.Core.LegendaryEffectDef>
-        <defName>FCP_VATSLegendaryEffect_RATSEnhanced</defName>
+        <defName>FCP_VATSLegendaryEffect_VATSEnhanced</defName>
         <label>V.A.T.S. Enhanced</label>
         <description>33% faster R.A.T.S. cooldown</description>
         <IsForWeapon>true</IsForWeapon>
