@@ -1169,4 +1169,103 @@
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
+    <!--__________ FCP Pre-War Research __________-->
+
+    <!--_____ Column 0 _____-->
+
+    <!--__Tech Print Base__-->
+
+    <ResearchProjectDef Name="PreWarResearchBase" Abstract="true">
+        <techprintCount>1</techprintCount>
+        <techprintCommonality>1</techprintCommonality>
+        <tab>FCP_Pre-War_Research</tab>
+        <baseCost>500</baseCost>
+        <techLevel>Industrial</techLevel>
+        <heldByFactionCategoryTags>
+            <li>FCP_Faction_Hidden_Wastelander_Techprint_Traders</li>
+        </heldByFactionCategoryTags>
+    </ResearchProjectDef>
+
+    <!-- Businesswear -->
+
+    <ResearchProjectDef ParentName="PreWarResearchBase">
+        <defName>FCP_Research_BusinessWear</defName>
+        <label>Pre-War Businesswear</label>
+        <description>PLACEHOLDER.</description>
+        <researchViewX>0</researchViewX>
+        <researchViewY>1</researchViewY>
+    </ResearchProjectDef>
+
+    <!-- Costumes -->
+
+    <ResearchProjectDef ParentName="PreWarResearchBase">
+        <defName>FCP_Research_Costumes</defName>
+        <label>Pre-War Costumes</label>
+        <description>PLACEHOLDER.</description>
+        <researchViewX>0</researchViewX>
+        <researchViewY>2</researchViewY>
+    </ResearchProjectDef>
+
+    <!-- Casual Wear -->
+
+    <ResearchProjectDef ParentName="PreWarResearchBase">
+        <defName>FCP_Research_CasualWear</defName>
+        <label>Pre-War Casual Wear</label>
+        <description>PLACEHOLDER.</description>
+        <researchViewX>0</researchViewX>
+        <researchViewY>3</researchViewY>
+    </ResearchProjectDef>
+
+    <!-- Pre War Military Uniforms -->
+
+    <ResearchProjectDef ParentName="PreWarResearchBase">
+        <defName>FCP_Research_MilitaryUniforms</defName>
+        <label>Pre-War Military Uniforms</label>
+        <description>PLACEHOLDER.</description>
+        <researchViewX>0</researchViewX>
+        <researchViewY>4</researchViewY>
+    </ResearchProjectDef>
+
+    <!--____ Column 1 ____-->
+
+    <!-- Combat Armor Standard -->
+
+    <ResearchProjectDef ParentName="PreWarResearchBase">
+        <defName>FCP_Research_CombatArmorStandard</defName>
+        <label>Combat Armor Standard</label>
+        <description>PLACEHOLDER.</description>
+        <researchViewX>1</researchViewX>
+        <researchViewY>1</researchViewY>
+    </ResearchProjectDef>
+
+    <!-- Combat Armor Light -->
+
+    <ResearchProjectDef ParentName="PreWarResearchBase">
+        <defName>FCP_Research_CombatArmorLight</defName>
+        <label>Combat Armor Light</label>
+        <description>PLACEHOLDER.</description>
+        <researchViewX>1</researchViewX>
+        <researchViewY>2</researchViewY>
+    </ResearchProjectDef>
+
+    <!-- Combat Armor Medium -->
+
+    <ResearchProjectDef ParentName="PreWarResearchBase">
+        <defName>FCP_Research_CombatArmorMedium</defName>
+        <label>Combat Armor Medium</label>
+        <description>PLACEHOLDER.</description>
+        <researchViewX>1</researchViewX>
+        <researchViewY>3</researchViewY>
+    </ResearchProjectDef>
+
+    <!-- Combat Armor Heavy -->
+
+    <ResearchProjectDef ParentName="PreWarResearchBase">
+        <defName>FCP_Research_CombatArmorHeavy</defName>
+        <label>Combat Armor Heavy</label>
+        <description>PLACEHOLDER.</description>
+        <researchViewX>1</researchViewX>
+        <researchViewY>4</researchViewY>
+    </ResearchProjectDef>
+
 </Defs>
