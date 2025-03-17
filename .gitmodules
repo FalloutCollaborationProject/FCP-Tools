@@ -1,0 +1,3 @@
+[submodule "FCP-UnityAssets"]
+	path = FCP-UnityAssets
+	url = https://github.com/FalloutCollaborationProject/FCP-UnityAssets.git

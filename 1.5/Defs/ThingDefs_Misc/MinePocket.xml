@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+    <ThingDef ParentName="ApparelNoQualityBase">
+        <defName>MinePocket</defName>
+        <label>mine pocket</label>
+        <description>placeholder.</description>
+        <techLevel>Industrial</techLevel>
+        <comps>
+            <li Class="CompProperties_ApparelReloadable">
+                <maxCharges>3</maxCharges>
+                <ammoDef>MinePocket_Charge</ammoDef>                <!-- Change into any def you want-->
+                <ammoCountToRefill>3</ammoCountToRefill>                <!-- Important for reloading -->
+                <baseReloadTicks>60</baseReloadTicks>
+                <soundReload>Standard_Reload</soundReload>
+                <hotKey>Misc4</hotKey>
+                <chargeNoun>mines</chargeNoun>
+                <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+            </li>
+        </comps>
+        <verbs>
+            <li>
+                <label>place mine</label>
+                <verbClass>MinePocket.Verb_ShootMine</verbClass>                <!-- Do not change-->
+                <hasStandardCommand>true</hasStandardCommand>
+                <onlyManualCast>True</onlyManualCast>
+                <burstShotCount>1</burstShotCount>
+                <range>3</range>
+                <warmupTime>0.3</warmupTime>
+                <noiseRadius>1</noiseRadius>
+                <ai_IsBuildingDestroyer>false</ai_IsBuildingDestroyer>
+                <soundCast>ThrowMolotovCocktail</soundCast>                <!-- Sound when casting-->
+                <drawHighlightWithLineOfSight>true</drawHighlightWithLineOfSight>
+                <targetable>true</targetable>
+                <targetParams>
+                    <canTargetPawns>false</canTargetPawns>
+                    <canTargetBuildings>false</canTargetBuildings>
+                    <canTargetLocations>true</canTargetLocations>
+                </targetParams>
+                <defaultProjectile>Projectile_MinePocket</defaultProjectile>                <!-- Projectile to be used (not the actual mine) -->
+                <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+            </li>
+        </verbs>
+        <recipeMaker>
+            <unfinishedThingDef>UnfinishedPack</unfinishedThingDef>
+            <recipeUsers>
+                <li>CraftingSpot</li>                <!-- To be changed -->
+            </recipeUsers>
+            <useIngredientsForColor>false</useIngredientsForColor>
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <workSkill>Crafting</workSkill>
+            <effectWorking>Smith</effectWorking>
+            <soundWorking>Recipe_Smith</soundWorking>
+            <skillRequirements>
+                <Crafting>6</Crafting>
+            </skillRequirements>
+        </recipeMaker>
+        <costList>
+            <Steel>50</Steel>
+        </costList>
+        <graphicData>
+            <texPath>Things/Item/Equipment/WeaponRanged/Grenades</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <tickerType>Normal</tickerType>
+        <statBases>
+            <WorkToMake>500</WorkToMake>
+            <Mass>1</Mass>
+            <Flammability>1</Flammability>
+            <EquipDelay>1</EquipDelay>
+        </statBases>
+        <thingCategories>
+            <li>ApparelUtility</li>
+        </thingCategories>
+        <generateAllowChance>0.15</generateAllowChance>
+        <apparel>            <!-- If it's going to use a visible apparel outfit, this part will need additional changes, 
+    otherwise you can leave it as it is -->
+            <countsAsClothingForNudity>false</countsAsClothingForNudity>
+            <careIfWornByCorpse>false</careIfWornByCorpse>
+            <careIfDamaged>false</careIfDamaged>
+            <wearPerDay>0</wearPerDay>
+            <bodyPartGroups>
+                <li>Waist</li>
+            </bodyPartGroups>
+            <layers>
+                <li>MinePocket_ApparelLayer</li>
+            </layers>
+            <tags>
+                <li>BeltDefense</li>
+            </tags>
+            <developmentalStageFilter>Child, Adult</developmentalStageFilter>
+        </apparel>
+        <modExtensions>
+
+        </modExtensions>
+    </ThingDef>
+
+
+    <ThingDef ParentName="BaseFragGrenadeProjectile">        <!-- just the projectile that spawns the mine-->
+        <defName>Projectile_MinePocket</defName>
+        <label>flying mine</label>
+        <thingClass>MinePocket.Projectile_SpawnMine</thingClass>        <!-- important -->
+        <projectile>
+            <tryAdjacentFreeSpaces>true</tryAdjacentFreeSpaces>
+            <explosionRadius>0.9</explosionRadius >
+            <spawnsThingDef>MinePocket_Mine</spawnsThingDef>            <!-- important -->
+        </projectile>
+    </ThingDef>
+
+
+    <ThingDef ParentName="TrapIEDBase">
+        <defName>MinePocket_Mine</defName>
+        <label>mine</label>
+        <thingClass>Building_TrapExplosive</thingClass>
+        <designationCategory Inherit="False"/>        <!-- important to not be able to be built normally-->
+        <description>placeholder.</description>
+        <graphicData>
+            <texPath>Weapons/Mines/FCP_Frag_Mine</texPath>
+        </graphicData>
+        <designationHotKey>Misc7</designationHotKey>
+        <comps>
+            <li>
+                <compClass>MinePocket.CompDefuse</compClass>
+            </li>
+            <li Class="CompProperties_Explosive">                <!-- explosive properties-->
+                <explosiveRadius>3.9</explosiveRadius>
+                <explosiveDamageType>Bomb</explosiveDamageType>
+                <startWickHitPointsPercent>0.2</startWickHitPointsPercent>
+                <wickTicks>15</wickTicks>
+                <startWickOnDamageTaken>
+                    <li>Bullet</li>
+                    <li>Arrow</li>
+                    <li>ArrowHighVelocity</li>
+                </startWickOnDamageTaken>
+            </li>
+        </comps>
+        <specialDisplayRadius>3.9</specialDisplayRadius>
+        <modExtensions>
+            <li Class="MinePocket.MinePocketDefExtension">                <!-- super important -->
+                <defToSpawnAfterDefuse>MinePocket_Charge</defToSpawnAfterDefuse>
+                <countToSpawn>1</countToSpawn>
+            </li>
+        </modExtensions>
+    </ThingDef>
+</Defs>

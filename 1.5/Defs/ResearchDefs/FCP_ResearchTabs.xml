@@ -3,9 +3,25 @@
 
     <!--__________ FCP Research Tabs __________-->
 
+    <!-- Core Research -->
+
     <ResearchTabDef>
         <defName>FCP_Research</defName>
         <label>FCP Research</label>
+    </ResearchTabDef>
+
+    <!-- Factional Research -->
+
+    <ResearchTabDef>
+        <defName>FCP_Faction_Research</defName>
+        <label>FCP Faction Research</label>
+    </ResearchTabDef>
+
+    <!-- Factional Research -->
+
+    <ResearchTabDef>
+        <defName>FCP_Pre-War_Research</defName>
+        <label>FCP Pre War Research</label>
     </ResearchTabDef>
 
 </Defs>

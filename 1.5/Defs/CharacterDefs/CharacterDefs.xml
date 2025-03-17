@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-    <FCP.Core.CharacterDef>
+    <FCP.Core.CharacterDef MayRequire="Rick.FCP.NCR">
         <defName>FCP_Character_Ranger_Rick</defName>
         <pawnKind>FCP_Unique_Ranger_Rick</pawnKind>
         <xenotype>Baseliner</xenotype>

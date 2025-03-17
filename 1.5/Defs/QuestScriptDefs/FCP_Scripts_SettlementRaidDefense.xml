@@ -41,7 +41,6 @@
                         <li>OutlanderCivil</li>
                     </factionDefs>
                 </li>
-
                 <li Class="QuestNode_SubScript">
                     <def>Util_RandomizePointsChallengeRating</def>
                     <parms>
@@ -85,7 +84,6 @@
                         <points>$sitePoints</points>
                     </parms>
                 </li>
-
                 <!-- Inflate reward value. Since we're basing the reward value on the threat points generated, we need to do this
              even though the threat points was deflated from the input points already. -->
                 <li Class="QuestNode_Multiply">
@@ -93,19 +91,15 @@
                     <value2>1.75</value2>
                     <storeAs>rewardValue</storeAs>
                 </li>
-
-
                 <li Class="QuestNode_SubScript">
                     <def>Util_GenerateSite</def>
                     <parms>
                         <sitePartsParams>$sitePartsParams</sitePartsParams>
                     </parms>
                 </li>
-
                 <li Class="QuestNode_SpawnWorldObjects">
                     <worldObjects>$site</worldObjects>
                 </li>
-
                 <li Class="QuestNode_Signal">
                     <inSignal>site.MapGenerated</inSignal>
                     <node Class="QuestNode_Sequence">
@@ -126,15 +120,11 @@
                                 <pawnGroupKind>Combat</pawnGroupKind>
                                 <pointsToUse>$points</pointsToUse>
                             </li>
-
                             <li Class="FCP_RadiantQuests.QuestNode_SpawnSettlers">
                                 <inSignal>site.MapGenerated</inSignal>
                                 <pawns>$settlers</pawns>
                                 <radius>20</radius>
                             </li>
-
-
-
                             <li Class="QuestNode_GetRandomInRangeFloat">
                                 <storeAs>chanceForInstant</storeAs>
                                 <range>0~1</range>
@@ -143,10 +133,8 @@
                                 <value1>$chanceForInstant</value1>
                                 <!--If value1 >= value2, spawn raid instantly, otherwise with delay-->
                                 <value2>0.75</value2>
-
                                 <node Class="QuestNode_Sequence">
                                     <nodes>
-
                                         <li Class="FCP_RadiantQuests.QuestNode_SpawnRaiders">
                                             <inSignal>site.MapGenerated</inSignal>
                                             <spawnOnEdge>false</spawnOnEdge>
@@ -167,7 +155,6 @@
                                     <delayTicks>$(randInt(2500,30000))</delayTicks>
                                     <node Class="QuestNode_Sequence">
                                         <nodes>
-
                                             <li Class="FCP_RadiantQuests.QuestNode_SpawnRaiders">
                                                 <spawnOnEdge>true</spawnOnEdge>
                                                 <pawns>$raiders</pawns>
@@ -228,13 +215,11 @@
                                             <!--<goodwillChangeReason>QuestPawnLost</goodwillChangeReason> Needs to be settlement lost-->
                                         </li>
                                     </nodes>
-
                                 </node>
                             </li>
                         </nodes>
                     </node>
                 </li>
-
                 <li Class="QuestNode_WorldObjectTimeout">
                     <worldObject>$site</worldObject>
                     <isQuestTimeout>true</isQuestTimeout>
@@ -255,7 +240,6 @@
                         </nodes>
                     </node>
                 </li>
-
                 <li Class="QuestNode_Signal">
                     <inSignal>site.Destroyed</inSignal>
                     <node Class="QuestNode_Sequence">
@@ -273,7 +257,6 @@
                         </nodes>
                     </node>
                 </li>
-
             </nodes>
         </root>
     </QuestScriptDef>

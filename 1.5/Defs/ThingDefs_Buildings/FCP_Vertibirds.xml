@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Vertibirds __________-->
+
+    <!--_____ Transport ship defs _____-->
+
+    <!-- Standard Vertibird -->
+
+    <TransportShipDef>
+        <defName>FCP_Vertibird</defName>
+        <label>vertibird</label>
+        <shipThing>FCP_Vertibird</shipThing>
+        <arrivingSkyfaller>FCP_VertibirdIncoming</arrivingSkyfaller>
+        <leavingSkyfaller>FCP_VertibirdLeaving</leavingSkyfaller>
+        <worldObject>FCP_TravelingVertibird</worldObject>
+        <maxLaunchDistance>70</maxLaunchDistance>
+    </TransportShipDef>
+
+    <!--_____ Building ThingDefs _____-->
+
+    <!-- Standard Vertibird -->
+
+    <ThingDef ParentName="BuildingBase">
+        <defName>FCP_Vertibird</defName>
+        <label>vertibird</label>
+        <description>Vertibird is a designation for a series of vertical take-off and landing (VTOL) aircraft. These multipurpose tiltrotor aircraft were developed by the United States military and rapidly became a primary gunship and transport aircraft.</description>
+        <altitudeLayer>Building</altitudeLayer>
+        <pathCost>50</pathCost>
+        <blockWind>true</blockWind>
+        <passability>Impassable</passability>
+        <fillPercent>1.0</fillPercent>
+        <size>(10,8)</size>
+        <drawHighlight>true</drawHighlight>
+        <highlightColor>(0.56, 0.62, 0.9)</highlightColor>
+        <graphicData>
+            <texPath>Things/Vehicles/FCP_Light_Vertibird_east</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(8,8)</drawSize>
+            <shadowData>
+                <volume>(4.1, 1.0, 1.8)</volume>
+                <offset>(0, 0, -0.1)</offset>
+            </shadowData>
+        </graphicData>
+        <statBases>
+            <MaxHitPoints>1000</MaxHitPoints>
+            <Flammability>1</Flammability>
+        </statBases>
+        <tickerType>Normal</tickerType>
+        <canOverlapZones>true</canOverlapZones>
+        <killedLeavings>
+            <Plasteel>50</Plasteel>
+            <Uranium>50</Uranium>
+            <ChunkSlagSteel>4</ChunkSlagSteel>
+            <ComponentIndustrial>4</ComponentIndustrial>
+        </killedLeavings>
+        <rotatable>false</rotatable>
+        <selectable>true</selectable>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+        <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+        <preventSkyfallersLandingOn>true</preventSkyfallersLandingOn>
+        <drawerType>RealtimeOnly</drawerType>
+        <repairEffect>ConstructMetal</repairEffect>
+        <forceDebugSpawnable>true</forceDebugSpawnable>
+        <uiIconScale>1.4</uiIconScale>
+        <building>
+            <claimable>false</claimable>
+            <soundAmbient>ShuttleIdle_Ambience</soundAmbient>
+            <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+        </building>
+        <inspectorTabs>
+            <li>ITab_ContentsTransporter</li>
+        </inspectorTabs>
+        <comps>
+            <li Class="CompProperties_Shuttle" />
+            <li Class="CompProperties_Transporter">
+                <massCapacity>1000</massCapacity>
+                <max1PerGroup>true</max1PerGroup>
+                <canChangeAssignedThingsAfterStarting>true</canChangeAssignedThingsAfterStarting>
+                <showOverallStats>false</showOverallStats>
+                <pawnLoadedSound>Shuttle_PawnLoaded</pawnLoadedSound>
+                <pawnExitSound>Shuttle_PawnExit</pawnExitSound>
+            </li>
+            <li Class="FCP_Shuttles.CompProperties_RotatingBlades">
+                <bladeGraphicsData>
+                    <li>
+                        <bladeGraphic>
+                            <texPath>Things/Vehicles/FCP_Vertibird_Light_Propeller</texPath>
+                            <graphicClass>Graphic_Single</graphicClass>
+                            <drawSize>(6,6)</drawSize>
+                        </bladeGraphic>
+                        <positionOffset>(1, 0, -2.5)</positionOffset>
+                        <spinRate>1.5</spinRate>
+                    </li>
+                    <li>
+                        <bladeGraphic>
+                            <texPath>Things/Vehicles/FCP_Vertibird_Light_Propeller</texPath>
+                            <graphicClass>Graphic_Single</graphicClass>
+                            <drawSize>(6,6)</drawSize>
+                        </bladeGraphic>
+                        <positionOffset>(1, 0, 3.7)</positionOffset>
+                        <spinRate>1.5</spinRate>
+                    </li>
+                </bladeGraphicsData>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <!--_____ WorldObjectDefs _____-->
+
+    <!-- Standard Vertibird -->
+
+    <WorldObjectDef>
+        <defName>FCP_TravelingVertibird</defName>
+        <label>vertibird</label>
+        <description>A vertibird in flight.</description>
+        <worldObjectClass>TravelingTransportPods</worldObjectClass>
+        <texture>World/WorldObjects/Caravan</texture>
+        <useDynamicDrawer>true</useDynamicDrawer>
+        <expandingIcon>true</expandingIcon>
+        <expandingIconTexture>Things/Vehicles/FCP_Light_Vertibird_east</expandingIconTexture>
+        <expandingIconPriority>60</expandingIconPriority>
+        <expandMore>true</expandMore>
+        <expandingIconDrawSize>1.6</expandingIconDrawSize>
+        <allowCaravanIncidentsWhichGenerateMap>true</allowCaravanIncidentsWhichGenerateMap>
+        <rotateGraphicWhenTraveling>true</rotateGraphicWhenTraveling>
+    </WorldObjectDef>
+
+    <!--_____ Skyfaller Defs _____-->
+
+    <!--___ Skyfaller Def Base ___-->
+
+    <!-- Standard Vertibird -->
+
+    <ThingDef Name="FCP_VertibirdSkyfallerBase" ParentName="SkyfallerBase" Abstract="True">
+        <size>(10,8)</size>
+        <graphicData>
+            <texPath>Things/Vehicles/FCP_Light_Vertibird_east</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutFlying</shaderType>
+            <drawSize>(8,8)</drawSize>
+        </graphicData>
+        <skyfaller>
+            <movementType>Decelerate</movementType>
+            <shadow>Things/Skyfaller/SkyfallerShadowRectangle</shadow>
+            <shadowSize>(5.5,3.5)</shadowSize>
+            <motesPerCell>1</motesPerCell>
+        </skyfaller>
+        <comps>
+            <li Class="FCP_Shuttles.CompProperties_RotatingBlades">
+                <bladeGraphicsData>
+                    <li>
+                        <bladeGraphic>
+                            <texPath>Things/Vehicles/FCP_Vertibird_Light_Propeller</texPath>
+                            <graphicClass>Graphic_Single</graphicClass>
+                            <drawSize>(6,6)</drawSize>
+                        </bladeGraphic>
+                        <positionOffset>(1, 0, -2.5)</positionOffset>
+                        <spinRate>5</spinRate>
+                    </li>
+                    <li>
+                        <bladeGraphic>
+                            <texPath>Things/Vehicles/FCP_Vertibird_Light_Propeller</texPath>
+                            <graphicClass>Graphic_Single</graphicClass>
+                            <drawSize>(6,6)</drawSize>
+                        </bladeGraphic>
+                        <positionOffset>(1, 0, 3.7)</positionOffset>
+                        <spinRate>5</spinRate>
+                    </li>
+                </bladeGraphicsData>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <!--___ Skyfaller Def ___-->
+
+    <!--__ Standard Vertibird __-->
+
+    <!-- Standard Vertibird Incoming -->
+
+    <ThingDef ParentName="FCP_VertibirdSkyfallerBase">
+        <defName>FCP_VertibirdIncoming</defName>
+        <label>vertibird (incoming)</label>
+        <thingClass>ShuttleIncoming</thingClass>
+        <skyfaller>
+            <anticipationSound>Shuttle_Landing</anticipationSound>
+            <anticipationSoundTicks>250</anticipationSoundTicks>
+            <ticksToImpactRange>200~250</ticksToImpactRange>
+            <angleCurve>
+                <points>
+                    <li>(0,-60)</li>
+                    <li>(1,-90)</li>
+                </points>
+            </angleCurve>
+            <rotationCurve>
+                <points>
+                    <li>(0,30)</li>
+                    <li>(0.5,5)</li>
+                    <li>(0.9,-5)</li>
+                    <li>(0.95,0)</li>
+                </points>
+            </rotationCurve>
+            <zPositionCurve>
+                <points>
+                    <li>(0.95,2.5)</li>
+                    <li>(1,0)</li>
+                </points>
+            </zPositionCurve>
+            <speedCurve>
+                <points>
+                    <li>(0.6,0.6)</li>
+                    <li>(0.95,0.1)</li>
+                </points>
+            </speedCurve>
+        </skyfaller>
+    </ThingDef>
+
+    <!--__ Standard Vertibird __-->
+
+    <!-- Standard Vertibird Leaving -->
+
+    <ThingDef ParentName="FCP_VertibirdSkyfallerBase">
+        <defName>FCP_VertibirdLeaving</defName>
+        <label>vertibird (leaving)</label>
+        <thingClass>FlyShipLeaving</thingClass>
+        <skyfaller>
+            <reversed>true</reversed>
+            <anticipationSound>Shuttle_Leaving</anticipationSound>
+            <anticipationSoundTicks>-10</anticipationSoundTicks>
+            <ticksToImpactRange>-40~-15</ticksToImpactRange>
+            <moteSpawnTime>0.05</moteSpawnTime>
+            <shadow>Things/Skyfaller/SkyfallerShadowRectangle</shadow>
+            <shadowSize>(5.5,3.5)</shadowSize>
+            <motesPerCell>1</motesPerCell>
+            <angleCurve>
+                <points>
+                    <li>(0,90)</li>
+                    <li>(1,70)</li>
+                </points>
+            </angleCurve>
+            <rotationCurve>
+                <points>
+                    <li>(0,0)</li>
+                    <li>(0.15,10)</li>
+                    <li>(0.5,-5)</li>
+                </points>
+            </rotationCurve>
+            <zPositionCurve>
+                <points>
+                    <li>(0,0)</li>
+                    <li>(0.08,2)</li>
+                </points>
+            </zPositionCurve>
+            <speedCurve>
+                <points>
+                    <li>(0,0.2)</li>
+                    <li>(0.4,0.7)</li>
+                </points>
+            </speedCurve>
+        </skyfaller>
+    </ThingDef>
+
+</Defs>

@@ -6,5 +6,6 @@
     <li>Common</li>
     <li>1.5</li>
 		<li IfModActive="vanillaexpanded.vnutriente">1.5/Compatibilities/VNPE</li>
+		<!-- <li IfModActive="zal.mef">LoadFolders/MusicExpanded</li> -->
 	</v1.5>
 </loadFolders>

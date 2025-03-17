@@ -25,7 +25,7 @@
             <li>Woody</li>
         </stuffCategories>
         <researchPrerequisites>
-            <li>FCP_Tools_Wasteland_Storage</li>
+            <li>FCP_Research_Wasteland_Storage</li>
         </researchPrerequisites>
     </ThingDef>
 </Defs>

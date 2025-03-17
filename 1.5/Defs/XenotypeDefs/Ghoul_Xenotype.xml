@@ -1,0 +1,25 @@
+<Defs>
+
+    <XenotypeDef>
+		<defName>FCP_Xenotype</defName>
+		<label>ghoul</label>
+		<description>placeholder.</description>
+		<descriptionShort>placeholder.</descriptionShort>
+		<iconPath>UI/Icons/Xenotypes/Dirtmole</iconPath>
+		<inheritable>false</inheritable>
+		<genes>
+			<li>Sterile</li>
+			<li>Beard_NoBeardOnly</li>
+            <li>FCP_Gene_Fur</li>
+            <li>FCP_Gene_Head</li>
+			<li>ToxicEnvironmentResistance_Total</li>
+			<li>FCP_Gene_ToxHeal</li>
+			<li>FCP_Gene_Ferality</li>
+			<li>FCP_Skin_E</li>
+			<li>FCP_Skin_A</li>
+			<li>FCP_Skin_B</li>
+			<li>FCP_Skin_C</li>
+			<li>FCP_Skin_D</li>
+		</genes>
+	</XenotypeDef>
+</Defs>

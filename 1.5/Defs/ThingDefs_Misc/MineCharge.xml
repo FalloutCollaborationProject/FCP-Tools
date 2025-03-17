@@ -1,0 +1,26 @@
+<Defs>
+<ThingDef ParentName="ResourceBase">
+    <defName>MinePocket_Charge</defName> <!--this is the resource/ammo to reload the mine pocket-->
+    <label>mine charge</label>
+    <description>placeholder.</description>
+    <possessionCount>0</possessionCount>
+    <graphicData>
+      <texPath>Weapons/Mines/FCP_Frag_Mine</texPath> <!-- obviously change this xd-->
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.90</drawSize>
+    </graphicData>
+    <stackLimit>20</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <MarketValue>3</MarketValue>
+      <Mass>0.02</Mass>
+      <Flammability>0.2</Flammability>
+      <DeteriorationRate>1.0</DeteriorationRate>
+    </statBases>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    
+  </ThingDef>
+</Defs>

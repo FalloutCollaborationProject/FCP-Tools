@@ -62,11 +62,11 @@
 				<hediffOnEmptyFuel>FCP_Power_Armor_Empty_Fusion_Core</hediffOnEmptyFuel>
 			</li>
 			<li Class="CompProperties_Refuelable">
-				<fuelCapacity>100</fuelCapacity>
+				<fuelCapacity>1</fuelCapacity>
 				<fuelConsumptionRate>100</fuelConsumptionRate>
-				<fuelLabel>Power armor fuel</fuelLabel>
-				<fuelGizmoLabel>Power armor fuel</fuelGizmoLabel>
-				<outOfFuelMessage>Needs new fuel</outOfFuelMessage>
+				<fuelLabel>Fusion Core</fuelLabel>
+				<fuelGizmoLabel>Fusion Core</fuelGizmoLabel>
+				<outOfFuelMessage>Needs Fusion Core</outOfFuelMessage>
 				<showFuelGizmo>true</showFuelGizmo>
 				<fuelFilter>
 					<thingDefs>

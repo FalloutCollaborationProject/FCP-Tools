@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!--__________ Core Hediffs __________-->
+
+    <!-- V.A.T.S. -->
+
+    <HediffDef>
+        <defName>FCP_VATS_VatsLink</defName>
+        <hediffClass>HediffWithComps</hediffClass>
+        <label>V.A.T.S. Neural Link</label>
+        <description>A neurally linked targeting computer which provides the pawn with the RimTech Assisisted Targeting System.</description>
+        <defaultInstallPart>Head</defaultInstallPart>
+        <comps>
+            <li Class="HediffCompProperties_GiveAbility">
+                <abilityDefs>
+                    <li>FC_VATS_Attack</li>
+                </abilityDefs>
+            </li>
+        </comps>
+        <addedPartProps>
+            <solid>true</solid>
+        </addedPartProps>
+    </HediffDef>
+
+    <!-- Power Armor Empty Fuel -->
+
+    <HediffDef ParentName="DiseaseBase">
+        <defName>FCP_Power_Armor_Empty_Fusion_Core</defName>
+        <label>Power Armor (Empty Fusion Core)</label>
+        <description>Your power armor is out of fusion cores!</description>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <postFactor>0.1</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <postFactor>0.1</postFactor>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+
+</Defs>

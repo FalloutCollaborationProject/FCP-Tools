@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 
+    <!--__________ Tax Collectors __________-->
+
+    <!-- PawnGroupKinds -->
+
     <PawnGroupKindDef>
         <defName>FCP_PawnGroupKind_TaxCollector</defName>
         <workerClass>PawnGroupKindWorker_Trader</workerClass>
     </PawnGroupKindDef>
+
+    <!-- Incidents -->
 
     <IncidentDef Name="FCP_CaravanArrivalTaxCollectorBase" Abstract="True">
         <label>tax collector caravan arrival</label>

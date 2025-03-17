@@ -64,6 +64,19 @@
         <thingCategories>
             <li>ApparelArmor</li>
         </thingCategories>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_CombatArmorStandard</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <statBases>
             <MaxHitPoints>250</MaxHitPoints>
             <MarketValue>250</MarketValue>
@@ -140,6 +153,19 @@
             <texPath>Things/Apparel/Wasteland_Apparel/CombatArmorLight/FCP_Combat_Armor_Chestpiece_Modular_Light</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_CombatArmorLight</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <thingCategories>
             <li>ApparelArmor</li>
         </thingCategories>
@@ -185,6 +211,19 @@
             <texPath>Things/Apparel/Wasteland_Apparel/CombatArmorSturdy/FCP_Combat_Armor_Chestpiece_Modular_Sturdy</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_CombatArmorMedium</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <thingCategories>
             <li>ApparelArmor</li>
         </thingCategories>
@@ -230,6 +269,19 @@
             <texPath>Things/Apparel/Wasteland_Apparel/CombatArmorHeavy/FCP_Combat_Armor_Chestpiece_Modular_Heavy</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_CombatArmorHeavy</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <thingCategories>
             <li>ApparelArmor</li>
         </thingCategories>
@@ -275,6 +327,19 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_CombatArmorMedium</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -318,6 +383,19 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_CombatArmorHeavy</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -376,7 +454,7 @@
 
     <!-- Military Fatigues -->
 
-    <ThingDef ParentName="FCP_Apparel_Base">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Military_Fatigues</defName>
         <label>Military Fatigues</label>
         <description>The military fatigues consist of a dirty set of pea-green fatigues with black boots.</description>
@@ -386,6 +464,19 @@
             <drawSize>0.90</drawSize>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_MilitaryUniforms</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -455,7 +546,7 @@
     
     <!-- Pre-War Army Uniform -->
 
-    <ThingDef ParentName="FCP_Apparel_Base">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Army_Uniform</defName>
         <label>Pre-War Army Uniform</label>
         <description>.</description>
@@ -473,6 +564,19 @@
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
         </statBases>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_MilitaryUniforms</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <apparel>
             <bodyPartGroups>
                 <li>Torso</li>
@@ -493,7 +597,7 @@
 
     <!-- Pre-War Fancy Suit (Clean) -->
 
-    <ThingDef ParentName="FCP_Apparel_Base">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Benny_Pre_War_Fancy_Suit_Clean</defName>
         <label>Benny</label>
         <description>Benny's suit is a black and white buffalo plaid suit jacket worn with light grey dress pants, white dress shirt, and black tie.</description>
@@ -502,6 +606,19 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_BusinessWear</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -534,7 +651,7 @@
 
     <!-- Mysterious Stranger -->
 
-    <ThingDef ParentName="FCP_Apparel_Base">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Mysterious_Stranger_Outfit</defName>
         <label>Mysterious Stranger</label>
         <description>Mysterious Strangers outfit.</description>
@@ -543,6 +660,19 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_BusinessWear</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -575,7 +705,7 @@
 
     <!-- Business Pre War -->
 
-    <ThingDef ParentName="FCP_Apparel_Base">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Business_Pre_War</defName>
         <label>Business Pre War</label>
         <description>A light beige suit with a blue tie.</description>
@@ -585,6 +715,19 @@
             <drawSize>0.90</drawSize>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_BusinessWear</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -616,7 +759,7 @@
 
     <!-- Spring Pre War Dress -->
 
-    <ThingDef ParentName="FCP_Apparel_Base">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Spring_Pre_War_Dress</defName>
         <label>Spring Pre War Dress</label>
         <description>A pink dress with red heels.</description>
@@ -626,6 +769,19 @@
             <drawSize>0.90</drawSize>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_CasualWear</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -658,7 +814,7 @@
 
     <!-- Spring Pre War Shirt -->
 
-    <ThingDef ParentName="FCP_Apparel_Base">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Spring_Pre_War_Shirt</defName>
         <label>Spring Pre War Shirt</label>
         <description>A red plaid shirt and brown pants.</description>
@@ -668,6 +824,19 @@
             <drawSize>0.90</drawSize>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_CasualWear</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -700,7 +869,7 @@
 
     <!-- Radiation Suit -->
 
-    <ThingDef ParentName="FCP_Apparel_Base">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Radiation_Suit</defName>
         <label>Radiations Suit</label>
         <description>A yellow full body suit complete with a helmet. While it does provide a modicum of protection against common dangers, such as bullets, its main use to shield its wearer against the invisible, and almost omnipresent, danger of radiation. It is quite rare and expensive as few groups in the wasteland possess the knowledge to create these suits.</description>
@@ -710,6 +879,19 @@
             <drawSize>0.90</drawSize>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_MilitaryUniforms</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -744,7 +926,7 @@
 
     <!-- Red Rocket Overalls-->
 
-    <ThingDef ParentName="FCP_Apparel_Base">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Red_Rocket_Overalls</defName>
         <label>Red Rocket Overalls</label>
         <description>Overalls worn by the workers of the Red Rocket gas stations.</description>
@@ -754,6 +936,19 @@
             <drawSize>0.90</drawSize>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_CasualWear</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -782,7 +977,7 @@
 
     <!-- Naughty Nightgown -->
 
-    <ThingDef ParentName="FCP_Apparel_Base">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Naughty_Nightgown</defName>
         <label>Naughty Nightgown</label>
         <description>A set of leopard print pajamas.</description>
@@ -792,6 +987,19 @@
             <drawSize>0.90</drawSize>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_CasualWear</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -825,7 +1033,7 @@
 
     <!-- Naughty Nightwear -->
 
-    <ThingDef ParentName="FCP_Apparel_Base">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Naughty_Nightwear</defName>
         <label>Naughty Nightwear</label>
         <description>A set of leopard print pajamas.</description>
@@ -835,6 +1043,19 @@
             <drawSize>0.90</drawSize>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_CasualWear</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -867,7 +1088,7 @@
 
     <!-- Fancy Gambler Dress -->
 
-    <ThingDef ParentName="FCP_Apparel_Base">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Fancy_Gambler_Dress</defName>
         <label>Fancy Gambler Dress</label>
         <description>A worn brown dress with slingback high-heels.</description>
@@ -877,6 +1098,19 @@
             <drawSize>0.90</drawSize>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_CasualWear</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -906,7 +1140,7 @@
 
     <!-- Fancy Gambler Suit -->
 
-    <ThingDef ParentName="FCP_Apparel_Base">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Fancy_Gambler_Suit</defName>
         <label>Fancy Gambler Suit</label>
         <description>A tan blazer with brown lapels and slacks, complete with a dark brown bow tie.</description>
@@ -916,6 +1150,19 @@
             <drawSize>0.90</drawSize>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_BusinessWear</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -946,7 +1193,7 @@
 
     <!-- Lab Coat Capital -->
 
-    <ThingDef ParentName="FCP_Apparel_Base">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Lab_Coat_Capital</defName>
         <label>Lab Coat Capital</label>
         <description>A clean white lab coat with a blue undershirt and a brown tie. It provides a bonus to Intelligence while worn.</description>
@@ -956,6 +1203,19 @@
             <drawSize>0.90</drawSize>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_BusinessWear</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -988,7 +1248,7 @@
 
     <!-- Lab Coat Commonwealth-->
 
-    <ThingDef ParentName="FCP_Apparel_Base">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Lab_Coat_Commonwealth</defName>
         <label>Lab Coat Commonwealth</label>
         <description>A lab coat with a dosimeter on the left breast and with a white undershirt and a black tie. It provides a bonus to Intelligence while worn</description>
@@ -998,6 +1258,19 @@
             <drawSize>0.90</drawSize>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_BusinessWear</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -1030,7 +1303,7 @@
 
     <!-- Mistress Mistery -->
 
-    <ThingDef ParentName="FCP_Apparel_Base">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Mistress_Mystery</defName>
         <label>Mistress Mystery Costume</label>
         <description>The outfit worn by the Mistress of Mystery, one of the longest-running and most popular superhero characters in the Hubris Comics universe.</description>
@@ -1040,6 +1313,19 @@
             <drawSize>0.90</drawSize>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_Costumes</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -1067,7 +1353,7 @@
 
     <!-- Grognak Female -->
 
-    <ThingDef ParentName="FCP_Apparel_Base">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Grognak_Female</defName>
         <label>Grognak Female</label>
         <description>A loincloth with a leather made bra.</description>
@@ -1077,6 +1363,19 @@
             <drawSize>0.90</drawSize>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_Costumes</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -1111,7 +1410,7 @@
 
     <!-- Grognak Male -->
 
-    <ThingDef ParentName="FCP_Apparel_Base">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Grognak_Male</defName>
         <label>Grognak Male</label>
         <description>A loincloth.</description>
@@ -1121,6 +1420,19 @@
             <drawSize>0.90</drawSize>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_Costumes</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -1154,7 +1466,7 @@
 
     <!-- Inspector -->
 
-    <ThingDef ParentName="FCP_Apparel_Base">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_The_Inspector</defName>
         <label>The Inspector Costume</label>
         <description>A costume version of the outfit worn by The Inspector, a Hubris Comics superhero and member of The Unstoppables!</description>
@@ -1164,6 +1476,19 @@
             <drawSize>0.90</drawSize>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_Costumes</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -1191,7 +1516,7 @@
 
     <!-- Silver Shroud-->
 
-    <ThingDef ParentName="FCP_Apparel_Base">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Silver_Shroud</defName>
         <label>Silver Shroud Costume</label>
         <description>A recreation of the costume worn by the comic book character, the Silver Shroud.</description>
@@ -1201,6 +1526,19 @@
             <drawSize>0.90</drawSize>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_Costumes</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -1234,7 +1572,7 @@
 
     <!-- Manta Man -->
 
-    <ThingDef ParentName="FCP_Apparel_Base">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Manta_Man</defName>
         <label>Manta Man Costume</label>
         <description>An outfit stylized to resemble that of the Hubris Comics superhero Manta Man.</description>
@@ -1244,6 +1582,19 @@
             <drawSize>0.90</drawSize>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_Costumes</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -1273,7 +1624,7 @@
 
     <!-- Athletic Outfit -->
 
-    <ThingDef ParentName="FCP_Apparel_Base">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Athletic_Outfit</defName>
         <label>Athletic Outfit</label>
         <description>A tattered and stitched baseball uniform with boots and knee pads, as they were common before the war. On its belt are pouches for storage. It’s not exactly a real armor and provides only a little protection but better than nothing.</description>
@@ -1291,6 +1642,19 @@
             <EquipDelay>3</EquipDelay>
         </statBases>
         <smeltable>false</smeltable>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_CasualWear</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <apparel>
             <bodyPartGroups>
                 <li>Torso</li>
@@ -1410,7 +1774,7 @@
 
     <!-- Field Hand Female Outfit -->
 
-    <ThingDef ParentName="FCP_Apparel_Base">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Field_Hand_Female_Outfit</defName>
         <label>Field Hand Female Outfit</label>
         <description>Sturdy work clothes often worn by those settlers who make a living toiling in the fields. Lightweight and easy to make, this outfit is made to withstand the elements, not bullets (or claws and teeth).</description>
@@ -1420,6 +1784,19 @@
             <drawSize>0.90</drawSize>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_CasualWear</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
@@ -1448,7 +1825,7 @@
 
     <!-- Field Hand Male Outfit -->
 
-    <ThingDef ParentName="FCP_Apparel_Base">
+    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Field_Hand_Male_Outfit</defName>
         <label>Field Hand Male Outfit</label>
         <description>Sturdy work clothes often worn by those settlers who make a living toiling in the fields. Lightweight and easy to make, this outfit is made to withstand the elements, not bullets (or claws and teeth).</description>
@@ -1458,6 +1835,19 @@
             <drawSize>0.90</drawSize>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker Inherit= "false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+        <researchPrerequisite>FCP_Research_CasualWear</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
+        </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>

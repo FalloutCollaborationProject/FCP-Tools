@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!--__________ Legendary Effects __________-->
+
+    <!--_____ Stat Categories _____-->
+
+    <!-- Legendary effects applied when equipped -->
+
+    <StatCategoryDef>
+        <defName>FCP_LegendaryEffectStats</defName>
+        <label>Legendary effects applied when equipped</label>
+        <displayOrder>71</displayOrder>
+    </StatCategoryDef>
+
+    <!-- Legendary Effects: -->
+
+    <StatCategoryDef>
+        <defName>FCP_VATSLegendaryEffect_StatCat</defName>
+        <label>Legendary Effects:</label>
+        <displayOrder>72</displayOrder>
+    </StatCategoryDef>
+
+    <!--_____ Legendary Effect Defs _____-->
+
+    <!-- Assassin's -->
+
+    <FCP.Core.LegendaryEffectDef>
+        <defName>FCP_VATSLegendaryEffect_Assassins</defName>
+        <label>Assassin's</label>
+        <description>Does 50% more damage against humans</description>
+        <workerClass>FCP.Core.LegendaryEffectWorkers.AssassinsWorker</workerClass>
+        <IsForWeapon>true</IsForWeapon>
+        <IsForMelee>true</IsForMelee>
+        <IsForApparel>false</IsForApparel>
+    </FCP.Core.LegendaryEffectDef>
+
+    <!-- Bloodied -->
+
+    <FCP.Core.LegendaryEffectDef>
+        <defName>FCP_VATSLegendaryEffect_Bloodied</defName>
+        <label>Bloodied</label>
+        <description>Does more damage the lower the character's health</description>
+        <workerClass>FCP.Core.LegendaryEffectWorkers.BloodiedWorker</workerClass>
+        <IsForWeapon>true</IsForWeapon>
+        <IsForMelee>true</IsForMelee>
+        <IsForApparel>false</IsForApparel>
+    </FCP.Core.LegendaryEffectDef>
+
+    <!-- Crippling -->
+
+    <FCP.Core.LegendaryEffectDef>
+        <defName>FCP_VATSLegendaryEffect_Crippling</defName>
+        <label>Crippling</label>
+        <description>Does more limb damage</description>
+        <workerClass>FCP.Core.LegendaryEffectWorkers.CripplingWorker</workerClass>
+        <hediffToApply>FCP_VATSCrippledHediff</hediffToApply>
+        <IsForWeapon>true</IsForWeapon>
+        <IsForMelee>false</IsForMelee>
+        <IsForApparel>false</IsForApparel>
+    </FCP.Core.LegendaryEffectDef>
+
+    <!-- Explosive -->
+
+    <FCP.Core.LegendaryEffectDef>
+        <defName>FCP_VATSLegendaryEffect_Explosive</defName>
+        <label>Explosive</label>
+        <description>Bullets explode on impact</description>
+        <workerClass>FCP.Core.LegendaryEffectWorkers.ExplosiveWorker</workerClass>
+        <IsForWeapon>true</IsForWeapon>
+        <IsForMelee>false</IsForMelee>
+        <IsForApparel>false</IsForApparel>
+    </FCP.Core.LegendaryEffectDef>
+
+    <!-- Incendiary -->
+
+    <FCP.Core.LegendaryEffectDef>
+        <defName>FCP_VATSLegendaryEffect_Incendiary</defName>
+        <label>Incendiary</label>
+        <description>Sets target on fire</description>
+        <workerClass>FCP.Core.LegendaryEffectWorkers.IncendiaryWorker</workerClass>
+        <IsForWeapon>true</IsForWeapon>
+        <IsForMelee>false</IsForMelee>
+        <IsForApparel>false</IsForApparel>
+    </FCP.Core.LegendaryEffectDef>
+
+    <!-- Instigating -->
+
+    <FCP.Core.LegendaryEffectDef>
+        <defName>FCP_VATSLegendaryEffect_Instigating</defName>
+        <label>Instigating</label>
+        <description>Double damage if the target is full health</description>
+        <workerClass>FCP.Core.LegendaryEffectWorkers.InstigatingWorker</workerClass>
+        <IsForWeapon>true</IsForWeapon>
+        <IsForMelee>true</IsForMelee>
+        <IsForApparel>false</IsForApparel>
+    </FCP.Core.LegendaryEffectDef>
+
+    <!-- Junkie's -->
+
+    <FCP.Core.LegendaryEffectDef>
+        <defName>FCP_VATSLegendaryEffect_Junkies</defName>
+        <label>Junkie's</label>
+        <description>Does 15% more damage for each addiction the user has</description>
+        <workerClass>FCP.Core.LegendaryEffectWorkers.JunkiesWorker</workerClass>
+        <IsForWeapon>true</IsForWeapon>
+        <IsForMelee>true</IsForMelee>
+        <IsForApparel>false</IsForApparel>
+    </FCP.Core.LegendaryEffectDef>
+
+    <!-- Powerful -->
+
+    <FCP.Core.LegendaryEffectDef>
+        <defName>FCP_VATSLegendaryEffect_Powerful</defName>
+        <label>Powerful</label>
+        <description>Provides 25% more damage</description>
+        <workerClass>FCP.Core.LegendaryEffectWorkers.PowerfulWorker</workerClass>
+        <IsForWeapon>true</IsForWeapon>
+        <IsForMelee>true</IsForMelee>
+        <IsForApparel>false</IsForApparel>
+    </FCP.Core.LegendaryEffectDef>
+
+    <!-- Rapid -->
+
+    <FCP.Core.LegendaryEffectDef>
+        <defName>FCP_VATSLegendaryEffect_Rapid</defName>
+        <label>Rapid</label>
+        <description>Boosts firing rate</description>
+        <IsForWeapon>true</IsForWeapon>
+        <IsForApparel>false</IsForApparel>
+    </FCP.Core.LegendaryEffectDef>
+
+    <!-- Enraging -->
+
+    <FCP.Core.LegendaryEffectDef>
+        <defName>FCP_VATSLegendaryEffect_Enraging</defName>
+        <label>Enraging</label>
+        <description>R.A.T.S. hits cause target to frenzy</description>
+        <workerClass>FCP.Core.LegendaryEffectWorkers.EnragingWorker</workerClass>
+        <IsForWeapon>true</IsForWeapon>
+        <IsForMelee>false</IsForMelee>
+        <IsForApparel>false</IsForApparel>
+    </FCP.Core.LegendaryEffectDef>
+
+    <!-- Kneecapper -->
+
+    <FCP.Core.LegendaryEffectDef>
+        <defName>FCP_VATSLegendaryEffect_Kneecapper</defName>
+        <label>Kneecapper</label>
+        <description>20% chance to cripple all of the target's legs.</description>
+        <workerClass>FCP.Core.LegendaryEffectWorkers.KneeCapperWorker</workerClass>
+        <hediffToApply>FCP_VATSCrippledHediff</hediffToApply>
+        <IsForWeapon>true</IsForWeapon>
+        <IsForMelee>true</IsForMelee>
+        <IsForApparel>false</IsForApparel>
+    </FCP.Core.LegendaryEffectDef>
+
+    <!-- Poisoner's -->
+
+    <FCP.Core.LegendaryEffectDef>
+        <defName>FCP_VATSLegendaryEffect_Poisoners</defName>
+        <label>Poisoner's</label>
+        <description>Target is poisoned for 10 seconds (3 points poison damage per second).</description>
+        <hediffToApply>FCP_VATSPoisoning</hediffToApply>
+        <IsForWeapon>true</IsForWeapon>
+        <IsForMelee>true</IsForMelee>
+        <IsForApparel>false</IsForApparel>
+    </FCP.Core.LegendaryEffectDef>
+
+    <!-- Staggering -->
+
+    <FCP.Core.LegendaryEffectDef>
+        <defName>FCP_VATSLegendaryEffect_Staggering</defName>
+        <label>Staggering</label>
+        <description>Chance to stagger on hit</description>
+        <IsForWeapon>true</IsForWeapon>
+        <IsForMelee>true</IsForMelee>
+        <IsForApparel>false</IsForApparel>
+        <Stuns>true</Stuns>
+        <StunDuration>600</StunDuration>
+    </FCP.Core.LegendaryEffectDef>
+
+    <!-- V.A.T.S. Enhanced -->
+
+    <FCP.Core.LegendaryEffectDef>
+        <defName>FCP_VATSLegendaryEffect_VATSEnhanced</defName>
+        <label>V.A.T.S. Enhanced</label>
+        <description>33% faster R.A.T.S. cooldown</description>
+        <IsForWeapon>true</IsForWeapon>
+        <IsForMelee>true</IsForMelee>
+        <IsForApparel>false</IsForApparel>
+        <VATS_Multiplier>0.66</VATS_Multiplier>
+    </FCP.Core.LegendaryEffectDef>
+
+    <!-- Powered -->
+
+    <FCP.Core.LegendaryEffectDef>
+        <defName>FCP_VATSLegendaryEffect_Powered</defName>
+        <label>Powered</label>
+        <description>25% faster R.A.T.S. cooldown</description>
+        <IsForWeapon>false</IsForWeapon>
+        <IsForMelee>false</IsForMelee>
+        <IsForApparel>true</IsForApparel>
+        <VATS_Multiplier>0.75</VATS_Multiplier>
+    </FCP.Core.LegendaryEffectDef>
+
+    <!-- Sprinters -->
+
+    <FCP.Core.LegendaryEffectDef>
+        <defName>FCP_VATSLegendaryEffect_Sprinters</defName>
+        <label>Sprinters</label>
+        <description>Increases movement speed by 10%.</description>
+        <IsForWeapon>false</IsForWeapon>
+        <IsForMelee>false</IsForMelee>
+        <IsForApparel>true</IsForApparel>
+        <statFactors>
+            <MoveSpeed>1.1</MoveSpeed>
+        </statFactors>
+    </FCP.Core.LegendaryEffectDef>
+
+    <!-- Stable -->
+
+    <FCP.Core.LegendaryEffectDef>
+        <defName>FCP_VATSLegendaryEffect_Stable</defName>
+        <label>Stable</label>
+        <description>Decreases risk of mental breaks by 50%.</description>
+        <IsForWeapon>false</IsForWeapon>
+        <IsForMelee>false</IsForMelee>
+        <IsForApparel>true</IsForApparel>
+        <statFactors>
+            <MentalBreakThreshold>0.5</MentalBreakThreshold>
+        </statFactors>
+    </FCP.Core.LegendaryEffectDef>
+
+    <!-- Psychically Sensitive -->
+
+    <FCP.Core.LegendaryEffectDef>
+        <defName>FCP_VATSLegendaryEffect_Psy</defName>
+        <label>Psychically Sensitive</label>
+        <description>Boosts Psychic Sensitivity by 30%.</description>
+        <IsForWeapon>false</IsForWeapon>
+        <IsForMelee>false</IsForMelee>
+        <IsForApparel>true</IsForApparel>
+        <statFactors>
+            <PsychicSensitivity>1.3</PsychicSensitivity>
+        </statFactors>
+    </FCP.Core.LegendaryEffectDef>
+
+    <!-- Smart -->
+
+    <FCP.Core.LegendaryEffectDef>
+        <defName>FCP_VATSLegendaryEffect_Smart</defName>
+        <label>Smart</label>
+        <description>Boosts global learning factor by 25%..</description>
+        <IsForWeapon>false</IsForWeapon>
+        <IsForMelee>false</IsForMelee>
+        <IsForApparel>true</IsForApparel>
+        <statFactors>
+            <GlobalLearningFactor>1.25</GlobalLearningFactor>
+        </statFactors>
+    </FCP.Core.LegendaryEffectDef>
+
+    <!-- Healing -->
+
+    <FCP.Core.LegendaryEffectDef>
+        <defName>FCP_VATSLegendaryEffect_Healing</defName>
+        <label>Healing</label>
+        <description>Boosts injury healing factor by 25%..</description>
+        <IsForWeapon>false</IsForWeapon>
+        <IsForMelee>false</IsForMelee>
+        <IsForApparel>true</IsForApparel>
+        <statFactors>
+            <InjuryHealingFactor>1.25</InjuryHealingFactor>
+        </statFactors>
+    </FCP.Core.LegendaryEffectDef>
+
+    <!-- Pocketed -->
+
+    <FCP.Core.LegendaryEffectDef>
+        <defName>FCP_VATSLegendaryEffect_Pocketed</defName>
+        <label>Pocketed</label>
+        <description>Boosts carying capacity by 25%..</description>
+        <IsForWeapon>false</IsForWeapon>
+        <IsForMelee>false</IsForMelee>
+        <IsForApparel>true</IsForApparel>
+        <statFactors>
+            <CarryingCapacity>1.25</CarryingCapacity>
+        </statFactors>
+    </FCP.Core.LegendaryEffectDef>
+
+    <!-- Armourer's -->
+
+    <FCP.Core.LegendaryEffectDef>
+        <defName>FCP_VATSLegendaryEffect_Armourers</defName>
+        <label>Armourer's</label>
+        <description>Boosts armour rating by 25%..</description>
+        <IsForWeapon>false</IsForWeapon>
+        <IsForMelee>false</IsForMelee>
+        <IsForApparel>true</IsForApparel>
+        <statFactors>
+            <ArmorRating_Sharp>1.25</ArmorRating_Sharp>
+            <ArmorRating_Blunt>1.25</ArmorRating_Blunt>
+            <ArmorRating_Heat>1.25</ArmorRating_Heat>
+        </statFactors>
+    </FCP.Core.LegendaryEffectDef>
+
+    <!-- Insulated -->
+
+    <FCP.Core.LegendaryEffectDef>
+        <defName>FCP_VATSLegendaryEffect_Insulated</defName>
+        <label>Insulated</label>
+        <description>Boosts insulation rating by 25%..</description>
+        <IsForWeapon>false</IsForWeapon>
+        <IsForMelee>false</IsForMelee>
+        <IsForApparel>true</IsForApparel>
+        <statFactors>
+            <Insulation_Cold>1.25</Insulation_Cold>
+            <Insulation_Heat>1.25</Insulation_Heat>
+        </statFactors>
+    </FCP.Core.LegendaryEffectDef>
+
+    <!--_____ Damage Defs _____-->
+
+    <!-- Crippled -->
+
+    <DamageDef>
+        <defName>FCP_VATSCrippled</defName>
+        <label>crippled</label>
+        <workerClass>DamageWorker_AddInjury</workerClass>
+        <externalViolence>true</externalViolence>
+        <deathMessage>{0} has been killed by a crippling injury.</deathMessage>
+        <hediffSkin>Cut</hediffSkin>
+        <hediffSolid>Crack</hediffSolid>
+        <harmsHealth>false</harmsHealth>
+        <makesBlood>false</makesBlood>
+        <canInterruptJobs>false</canInterruptJobs>
+        <execution>false</execution>
+        <buildingDamageFactor>0</buildingDamageFactor>
+        <plantDamageFactor>0</plantDamageFactor>
+        <corpseDamageFactor>0</corpseDamageFactor>
+        <hasForcefulImpact>true</hasForcefulImpact>
+        <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+        <impactSoundType>Blunt</impactSoundType>
+        <armorCategory>Blunt</armorCategory>
+        <overkillPctToDestroyPart>1.0</overkillPctToDestroyPart>
+    </DamageDef>
+
+    <!--_____ Hediff Defs _____-->
+
+    <!-- Poisoned -->
+
+    <HediffDef ParentName="DiseaseBase">
+        <defName>FCP_VATSPoisoning</defName>
+        <label>poisoned</label>
+        <description>Poisoned by a legendary effect.</description>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <initialSeverity>1</initialSeverity>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-2.5</severityPerDay>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <label>recovering</label>
+                <vomitMtbDays>1</vomitMtbDays>
+                <painOffset>0.2</painOffset>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <postFactor>0.6</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <postFactor>0.8</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <postFactor>0.9</postFactor>
+                    </li>
+                    <li>
+                        <capacity>BloodFiltration</capacity>
+                        <postFactor>0.95</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Eating</capacity>
+                        <postFactor>0.5</postFactor>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <label>major</label>
+                <minSeverity>0.2</minSeverity>
+                <vomitMtbDays>2</vomitMtbDays>
+                <painOffset>0.4</painOffset>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <postFactor>0.5</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <postFactor>0.5</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <postFactor>0.8</postFactor>
+                    </li>
+                    <li>
+                        <capacity>BloodFiltration</capacity>
+                        <postFactor>0.85</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Talking</capacity>
+                        <postFactor>0.8</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Eating</capacity>
+                        <postFactor>0.3</postFactor>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <label>initial</label>
+                <minSeverity>0.8</minSeverity>
+                <vomitMtbDays>4</vomitMtbDays>
+                <painOffset>0.2</painOffset>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <postFactor>0.6</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <postFactor>0.8</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <postFactor>0.9</postFactor>
+                    </li>
+                    <li>
+                        <capacity>BloodFiltration</capacity>
+                        <postFactor>0.95</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Eating</capacity>
+                        <postFactor>0.5</postFactor>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!-- Crippled -->
+
+    <HediffDef ParentName="InjuryBase">
+        <defName>FCP_VATSCrippledHediff</defName>
+        <label>crippled</label>
+        <labelNoun>crippled</labelNoun>
+        <description>Crippled.</description>
+        <comps>
+            <li Class="HediffCompProperties_TendDuration">
+                <labelTendedWell>bandaged</labelTendedWell>
+                <labelTendedWellInner>sutured</labelTendedWellInner>
+                <labelSolidTendedWell>set</labelSolidTendedWell>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <label>crippled</label>
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <setMax>0</setMax>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+        <injuryProps>
+            <painPerSeverity>0.0125</painPerSeverity>
+            <averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+            <bleedRate>0.00</bleedRate>
+            <canMerge>false</canMerge>
+            <destroyedLabel>Cut off</destroyedLabel>
+            <destroyedOutLabel>Cut out</destroyedOutLabel>
+        </injuryProps>
+    </HediffDef>
+
+    <!--_____ Effecter Defs _____-->
+
+    <!-- Explosion Effecter -->
+
+    <EffecterDef>
+        <defName>FCP_VATSLegendaryEffect_Explosive_Explosion</defName>
+        <children>
+            <li>
+                <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+                <moteDef>Mote_GiantExplosion</moteDef>
+                <scale>0.2~0.2</scale>
+            </li>
+            <li>
+                <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+                <moteDef>Mote_GiantExplosionInner</moteDef>
+                <scale>1~1</scale>
+            </li>
+        </children>
+    </EffecterDef>
+
+
+    <!-- <FCP.Core.LegendaryEffectDef> -->
+    <!--     <defName>FCP_VATSLegendaryEffect_Sharp</defName> -->
+    <!--     <label>Sharp</label> -->
+    <!--     <description>Increases movement speed by 10%.</description> -->
+    <!--     <IsForWeapon>false</IsForWeapon> -->
+    <!--     <IsForMelee>false</IsForMelee> -->
+    <!--     <IsForApparel>true</IsForApparel> -->
+    <!--     <statFactors> -->
+    <!--         <MoveSpeed>1.1</MoveSpeed> -->
+    <!--     </statFactors> -->
+    <!-- </FCP.Core.LegendaryEffectDef> -->
+
+    <!-- <FCP.Core.LegendaryEffectDef> -->
+    <!--     <defName>FCP_VATSLegendaryEffect_Nimble</defName> -->
+    <!--     <label>Nimble</label> -->
+    <!--     <description>Provides 75% faster movement while aiming </description> -->
+    <!--     <IsForWeapon>true</IsForWeapon> -->
+    <!--     <IsForMelee>false</IsForMelee> -->
+    <!--     <IsForApparel>false</IsForApparel> -->
+    <!-- </FCP.Core.LegendaryEffectDef> -->
+
+    <!-- <FCP.Core.LegendaryEffectDef> -->
+    <!--     <defName>FCP_VATSLegendaryEffect_TwoShot</defName> -->
+    <!--     <label>Two Shot</label> -->
+    <!--     <description>Fires an additional projectile</description> -->
+    <!--     <IsForWeapon>true</IsForWeapon> -->
+    <!--     <IsForMelee>true</IsForMelee> -->
+    <!--     <IsForApparel>false</IsForApparel> -->
+    <!-- </FCP.Core.LegendaryEffectDef> -->
+
+</Defs>
