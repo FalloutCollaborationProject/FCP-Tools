@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+    <!--__________ Vertibirds __________-->
+
+    <!--_____ Transport ship defs _____-->
+
+    <!-- Standard Vertibird -->
+
     <TransportShipDef>
         <defName>FCP_Vertibird</defName>
         <label>vertibird</label>
@@ -11,11 +17,14 @@
         <maxLaunchDistance>70</maxLaunchDistance>
     </TransportShipDef>
 
+    <!--_____ Building ThingDefs _____-->
+
+    <!-- Standard Vertibird -->
 
     <ThingDef ParentName="BuildingBase">
         <defName>FCP_Vertibird</defName>
         <label>vertibird</label>
-        <description>A vertibird designed for transit between surface and orbit, or between moons of a planetary system.</description>
+        <description>Vertibird is a designation for a series of vertical take-off and landing (VTOL) aircraft. These multipurpose tiltrotor aircraft were developed by the United States military and rapidly became a primary gunship and transport aircraft.</description>
         <altitudeLayer>Building</altitudeLayer>
         <pathCost>50</pathCost>
         <blockWind>true</blockWind>
@@ -97,6 +106,10 @@
         </comps>
     </ThingDef>
 
+    <!--_____ WorldObjectDefs _____-->
+
+    <!-- Standard Vertibird -->
+
     <WorldObjectDef>
         <defName>FCP_TravelingVertibird</defName>
         <label>vertibird</label>
@@ -112,6 +125,12 @@
         <allowCaravanIncidentsWhichGenerateMap>true</allowCaravanIncidentsWhichGenerateMap>
         <rotateGraphicWhenTraveling>true</rotateGraphicWhenTraveling>
     </WorldObjectDef>
+
+    <!--_____ Skyfaller Defs _____-->
+
+    <!--___ Skyfaller Def Base ___-->
+
+    <!-- Standard Vertibird -->
 
     <ThingDef Name="FCP_VertibirdSkyfallerBase" ParentName="SkyfallerBase" Abstract="True">
         <size>(10,8)</size>
@@ -153,6 +172,12 @@
         </comps>
     </ThingDef>
 
+    <!--___ Skyfaller Def ___-->
+
+    <!--__ Standard Vertibird __-->
+
+    <!-- Standard Vertibird Incoming -->
+
     <ThingDef ParentName="FCP_VertibirdSkyfallerBase">
         <defName>FCP_VertibirdIncoming</defName>
         <label>vertibird (incoming)</label>
@@ -189,6 +214,10 @@
             </speedCurve>
         </skyfaller>
     </ThingDef>
+
+    <!--__ Standard Vertibird __-->
+
+    <!-- Standard Vertibird Leaving -->
 
     <ThingDef ParentName="FCP_VertibirdSkyfallerBase">
         <defName>FCP_VertibirdLeaving</defName>
@@ -230,4 +259,5 @@
             </speedCurve>
         </skyfaller>
     </ThingDef>
+
 </Defs>
