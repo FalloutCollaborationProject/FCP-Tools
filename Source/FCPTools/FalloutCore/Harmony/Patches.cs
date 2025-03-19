@@ -16,8 +16,7 @@ public static class Patches
 {
     static Patches()
     {
-        Harmony harmony = new("FCP.Core.Patches"); // PatchesUwU ~ Steve
-        
+        var harmony = FCPCoreMod.harmony;
         // Biome Feature Requirements
         harmony.Patch(original: AccessTools.Method(typeof(WildAnimalSpawner), "CommonalityOfAnimalNow"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(WildAnimalSpawnerCommonalityOfAnimalNow_Postfix)));

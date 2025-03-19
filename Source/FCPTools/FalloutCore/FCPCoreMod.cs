@@ -1,4 +1,5 @@
 ﻿using System.Runtime.InteropServices;
+using HarmonyLib;
 using UnityEngine;
 
 namespace FCP.Core;
@@ -7,9 +8,11 @@ public class FCPCoreMod : Mod
 {
     public static FCPCoreMod mod;
     public static FCP_Settings Settings;
-    
+    public static Harmony harmony;
     public FCPCoreMod(ModContentPack content) : base(content)
     {
+        harmony = new("FCP.Core.Patches"); // PatchesUwU ~ Steve
+        harmony.PatchAll();
         mod = this;
         Settings = GetSettings<FCP_Settings>();
         FCPLog.Message("Welcome home...");

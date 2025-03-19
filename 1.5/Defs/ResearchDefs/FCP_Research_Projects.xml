@@ -1184,6 +1184,14 @@
         <heldByFactionCategoryTags>
             <li>FCP_Faction_Hidden_Wastelander_Techprint_Traders</li>
         </heldByFactionCategoryTags>
+        <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+                <baseLabel>FCP_TechprintLabel</baseLabel>
+                <baseDescription>FCP_TechprintDesc</baseDescription>
+				<texPath>Things/Item/Equipment/WeaponMelee/Mace</texPath>
+				<requiredBench>SimpleResearchBench</requiredBench>
+            </li>
+        </modExtensions>
     </ResearchProjectDef>
 
     <!-- Businesswear -->
