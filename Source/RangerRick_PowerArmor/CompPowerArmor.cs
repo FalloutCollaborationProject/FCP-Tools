@@ -39,11 +39,11 @@ namespace RangerRick_PowerArmor
 
         public bool HasRequiredApparel(Pawn pawn)
         {
-            return pawn.apparel.WornApparel.Any(y => Props.requiredApparels.Contains(y.def));
+            return Props.requiredApparels is null || pawn.apparel.WornApparel.Any(y => Props.requiredApparels.Contains(y.def));
         }
         public bool HasRequiredTrait(Pawn pawn)
         {
-            return pawn.story.traits.GetTrait(Props.requiredTrait) != null;
+            return Props.requiredTrait is null || pawn.story.traits.GetTrait(Props.requiredTrait) != null;
         }
 
         public override void CompTick()
