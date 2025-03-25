@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <IncidentDef>
+        <defName>FCP_MercenaryArrival</defName>
+        <label>mercenary group arrival</label>
+        <category>FactionArrival</category>
+        <targetTags>
+            <li>Map_PlayerHome</li>
+        </targetTags>
+        <workerClass>FCP.Core.IncidentWorker_MercenaryArrival</workerClass>
+        <letterLabel>Mercenaries Arrived</letterLabel>
+        <letterText>A group of mercenaries from {FACTION_name} has arrived nearby. They seem willing to offer their services, for a price.</letterText>
+        <letterDef>NeutralEvent</letterDef>
+        <baseChance>1.5</baseChance>
+        <minRefireDays>15</minRefireDays>
+        <minThreatPoints>100</minThreatPoints>
+        <allowedBiomes>
+            <li>TemperateForest</li>
+            <li>BorealForest</li>
+            <li>TropicalRainforest</li>
+            <li>AridShrubland</li>
+            <li>Desert</li>
+            <li>Tundra</li>
+        </allowedBiomes>
+    </IncidentDef>
+
+</Defs>

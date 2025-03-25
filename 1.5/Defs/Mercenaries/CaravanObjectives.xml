@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <FCP.Core.CaravanObjectiveDef>
+        <defName>FCP_Objective_Items</defName>
+        <label>Item acquisition</label>
+        <description>Send mercenaries to acquire valuable items.</description>
+        <tradeTags>
+            <li>TechPrints</li>
+            <li>Luxury</li>
+            <li>HiTech</li>
+        </tradeTags>
+        <successRate>0.85</successRate>        <!-- Example success rate -->
+    </FCP.Core.CaravanObjectiveDef>
+
+    <FCP.Core.CaravanObjectiveDef>
+        <defName>FCP_Objective_Prisoners</defName>
+        <label>Prisoner capture</label>
+        <description>Send mercenaries to capture valuable prisoners.</description>
+        <prisonerPawnKinds>
+            <li>Slave</li>
+            <li>Villager</li>
+            <li>SpaceRefugee</li>
+        </prisonerPawnKinds>
+        <successRate>0.65</successRate>        <!-- Example success rate -->
+    </FCP.Core.CaravanObjectiveDef>
+
+</Defs>

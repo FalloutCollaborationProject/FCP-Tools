@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <DutyDef>
+        <defName>FCP_HuntInRadius</defName>
+        <hook>HighPriority</hook>
+        <thinkNode Class="ThinkNode_Priority">
+            <subNodes>
+                <li Class="FCP.Core.JobGiver_HuntInRadius" />
+                <li Class="JobGiver_AIDefendPoint">
+                    <targetAcquireRadius>35</targetAcquireRadius>
+                    <targetKeepRadius>40</targetKeepRadius>
+                </li>
+            </subNodes>
+        </thinkNode>
+    </DutyDef>
+
+    <DutyDef>
+        <defName>FCP_ForageInRadius</defName>
+        <hook>MediumPriority</hook>
+        <thinkNode Class="ThinkNode_Priority">
+            <subNodes>
+                <li Class="FCP.Core.JobGiver_ForageInRadius" />
+                <li Class="JobGiver_AIDefendPoint">
+                    <targetAcquireRadius>35</targetAcquireRadius>
+                    <targetKeepRadius>40</targetKeepRadius>
+                </li>
+            </subNodes>
+        </thinkNode>
+    </DutyDef>
+
+    <DutyDef>
+        <defName>FCP_CookAtCampfire</defName>
+        <hook>MediumPriority</hook>
+        <thinkNode Class="ThinkNode_Priority">
+            <subNodes>
+                <li Class="FCP.Core.JobGiver_CookAtCampfire" />
+                <li Class="JobGiver_AIDefendPoint">
+                    <targetAcquireRadius>35</targetAcquireRadius>
+                    <targetKeepRadius>40</targetKeepRadius>
+                </li>
+            </subNodes>
+        </thinkNode>
+    </DutyDef>
+
+</Defs>
