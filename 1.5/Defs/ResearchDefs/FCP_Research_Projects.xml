@@ -1175,7 +1175,9 @@
 
     <!--__Tech Print Base__-->
 
-    <ResearchProjectDef Name="PreWarResearchBase" Abstract="true">
+    <!-- Civilian Tech Prints -->
+
+    <ResearchProjectDef Name="FCP_Pre_War_Civilian_Research_Base" Abstract="true">
         <techprintCount>1</techprintCount>
         <techprintCommonality>1</techprintCommonality>
         <tab>FCP_Pre-War_Research</tab>
@@ -1186,9 +1188,30 @@
         </heldByFactionCategoryTags>
         <modExtensions>
             <li Class="FCP.Core.TechprintExtension">
-                <baseLabel>FCP_TechprintLabel</baseLabel>
-                <baseDescription>FCP_TechprintDesc</baseDescription>
-				<texPath>Things/Item/Equipment/WeaponMelee/Mace</texPath>
+                <baseLabel>FCP_Techprint_Label</baseLabel>
+                <baseDescription>FCP_Techprint_Desc</baseDescription>
+				<texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Orange</texPath>
+				<requiredBench>SimpleResearchBench</requiredBench>
+            </li>
+        </modExtensions>
+    </ResearchProjectDef>
+
+    <!-- Military Tech Prints -->
+
+    <ResearchProjectDef Name="FCP_Pre_War_Military_Research_Base" Abstract="true">
+        <techprintCount>1</techprintCount>
+        <techprintCommonality>1</techprintCommonality>
+        <tab>FCP_Pre-War_Research</tab>
+        <baseCost>500</baseCost>
+        <techLevel>Industrial</techLevel>
+        <heldByFactionCategoryTags>
+            <li>FCP_Faction_Hidden_Wastelander_Techprint_Traders</li>
+        </heldByFactionCategoryTags>
+        <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+                <baseLabel>FCP_Techprint_Label</baseLabel>
+                <baseDescription>FCP_Techprint_Desc</baseDescription>
+				<texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Mil</texPath>
 				<requiredBench>SimpleResearchBench</requiredBench>
             </li>
         </modExtensions>
@@ -1196,9 +1219,9 @@
 
     <!-- Businesswear -->
 
-    <ResearchProjectDef ParentName="PreWarResearchBase">
+    <ResearchProjectDef ParentName="FCP_Pre_War_Civilian_Research_Base">
         <defName>FCP_Research_BusinessWear</defName>
-        <label>Pre-War Businesswear</label>
+        <label>Holotape File: Pre-War Businesswear</label>
         <description>PLACEHOLDER.</description>
         <researchViewX>0</researchViewX>
         <researchViewY>1</researchViewY>
@@ -1206,9 +1229,9 @@
 
     <!-- Costumes -->
 
-    <ResearchProjectDef ParentName="PreWarResearchBase">
+    <ResearchProjectDef ParentName="FCP_Pre_War_Civilian_Research_Base">
         <defName>FCP_Research_Costumes</defName>
-        <label>Pre-War Costumes</label>
+        <label>Holotape File: Pre-War Costumes</label>
         <description>PLACEHOLDER.</description>
         <researchViewX>0</researchViewX>
         <researchViewY>2</researchViewY>
@@ -1216,9 +1239,9 @@
 
     <!-- Casual Wear -->
 
-    <ResearchProjectDef ParentName="PreWarResearchBase">
+    <ResearchProjectDef ParentName="FCP_Pre_War_Civilian_Research_Base">
         <defName>FCP_Research_CasualWear</defName>
-        <label>Pre-War Casual Wear</label>
+        <label>Holotape File: Pre-War Casual Wear</label>
         <description>PLACEHOLDER.</description>
         <researchViewX>0</researchViewX>
         <researchViewY>3</researchViewY>
@@ -1226,9 +1249,9 @@
 
     <!-- Pre War Military Uniforms -->
 
-    <ResearchProjectDef ParentName="PreWarResearchBase">
+    <ResearchProjectDef ParentName="FCP_Pre_War_Military_Research_Base">
         <defName>FCP_Research_MilitaryUniforms</defName>
-        <label>Pre-War Military Uniforms</label>
+        <label>Holotape File: Pre-War Military Uniforms</label>
         <description>PLACEHOLDER.</description>
         <researchViewX>0</researchViewX>
         <researchViewY>4</researchViewY>
@@ -1238,9 +1261,9 @@
 
     <!-- Combat Armor Standard -->
 
-    <ResearchProjectDef ParentName="PreWarResearchBase">
+    <ResearchProjectDef ParentName="FCP_Pre_War_Military_Research_Base">
         <defName>FCP_Research_CombatArmorStandard</defName>
-        <label>Combat Armor Standard</label>
+        <label>Holotape File: Combat Armor Standard</label>
         <description>PLACEHOLDER.</description>
         <researchViewX>1</researchViewX>
         <researchViewY>1</researchViewY>
@@ -1248,9 +1271,9 @@
 
     <!-- Combat Armor Light -->
 
-    <ResearchProjectDef ParentName="PreWarResearchBase">
+    <ResearchProjectDef ParentName="FCP_Pre_War_Military_Research_Base">
         <defName>FCP_Research_CombatArmorLight</defName>
-        <label>Combat Armor Light</label>
+        <label>Holotape File: Combat Armor Light</label>
         <description>PLACEHOLDER.</description>
         <researchViewX>1</researchViewX>
         <researchViewY>2</researchViewY>
@@ -1258,9 +1281,9 @@
 
     <!-- Combat Armor Medium -->
 
-    <ResearchProjectDef ParentName="PreWarResearchBase">
+    <ResearchProjectDef ParentName="FCP_Pre_War_Military_Research_Base">
         <defName>FCP_Research_CombatArmorMedium</defName>
-        <label>Combat Armor Medium</label>
+        <label>Holotape File: Combat Armor Medium</label>
         <description>PLACEHOLDER.</description>
         <researchViewX>1</researchViewX>
         <researchViewY>3</researchViewY>
@@ -1268,9 +1291,9 @@
 
     <!-- Combat Armor Heavy -->
 
-    <ResearchProjectDef ParentName="PreWarResearchBase">
+    <ResearchProjectDef ParentName="FCP_Pre_War_Military_Research_Base">
         <defName>FCP_Research_CombatArmorHeavy</defName>
-        <label>Combat Armor Heavy</label>
+        <label>Holotape File: Combat Armor Heavy</label>
         <description>PLACEHOLDER.</description>
         <researchViewX>1</researchViewX>
         <researchViewY>4</researchViewY>

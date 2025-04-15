@@ -65,6 +65,28 @@
         </possessions>
     </BackstoryDef>
 
+    <!-- Crystal Sparkle -->
+
+    <BackstoryDef>
+        <defName>FCP_Crystal_Sparkle</defName>
+        <title>Crystal Sparkle</title>
+        <titleShort>Crystal Sparkle</titleShort>
+        <description>Crystal Sparkle was born in pre-war China and immigrated to America with dreams of becoming a doctor. She was studying medicine and performing as an amateur magician when the Great War began, and the bombs turned her world to ash. Exposed to extreme radiation, she became a glowing one, her body forever changed but her mind intact. Despite her ghoulified state, Crystal dedicated herself to helping others in the wasteland, using her medical knowledge and sleight-of-hand tricks to bring hope and wonder to those in need. She met Ranger Rick after patching him up from a deadly ambush, and the two have been inseparable ever since. Her glowing aura is both a beacon of hope and a danger in the unforgiving wasteland.</description>
+        <skillGains>
+            <Medicine>8</Medicine>
+            <Social>-7</Social>
+            <Intellectual>7</Intellectual>
+            <Artistic>4</Artistic>
+        </skillGains>
+        <workDisables>Violent</workDisables>
+        <requiredWorkTags>Caring</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Crystal_Sparkle</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+    </BackstoryDef>
+
     <!--_____ Factions _____-->
 
     <!--____ Wastelanders ____-->

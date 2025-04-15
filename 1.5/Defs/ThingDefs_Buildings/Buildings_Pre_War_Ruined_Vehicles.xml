@@ -41,12 +41,12 @@
         <graphicData>
             <texPath>Things/Building/Ruins/PreWarArmyVertibirdDestroyed/FCP_Pre_War_Army_Vertibird_Destroyed</texPath>
             <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>(15,9)</drawSize>
+            <drawSize>(8,8)</drawSize>
             <shadowData>
                 <volume>(0.8, 0.7, 3.4)</volume>
             </shadowData>
         </graphicData>
-        <size>(15,9)</size>
+        <size>(10,8)</size>
         <fillPercent>0.5</fillPercent>
         <passability>PassThroughOnly</passability>
         <pathCost>50</pathCost>

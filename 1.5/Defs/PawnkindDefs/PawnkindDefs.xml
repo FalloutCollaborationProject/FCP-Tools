@@ -74,6 +74,13 @@
 
     <PawnKindDef Name="FCP_WastelanderkindBase" Abstract="True">
         <race>Human</race>
+        <xenotypeSet>
+            <xenotypeChances>
+                <Baseliner>0.8</Baseliner>
+                <FCP_Xenotype MayRequire="Rick.FCP.Ghouls">0.2</FCP_Xenotype>
+            </xenotypeChances>
+        </xenotypeSet>
+        <useFactionXenotypes>false</useFactionXenotypes>
         <defaultFactionType>FCP_Faction_Hidden_Wastelanders</defaultFactionType>
         <maxGenerationAge>60</maxGenerationAge>
         <chemicalAddictionChance>0</chemicalAddictionChance>

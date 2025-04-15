@@ -55,9 +55,15 @@
 		<tradeTags>
 			<li>FCP_Power_Armor_Basic</li>
 		</tradeTags>
+		<building />
 		<comps>
 			<li Class="RangerRick_PowerArmor.CompProperties_ApparelDependency"></li>
 			<li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
+				<workDisables>
+					<li>Construction</li>
+				</workDisables>
+				<canSleep>False</canSleep>
+				<ignoresLegs>True</ignoresLegs>
 				<requiredTrait>FCP_Power_Armor_Trained</requiredTrait>
 				<hediffOnEmptyFuel>FCP_Power_Armor_Empty_Fusion_Core</hediffOnEmptyFuel>
 			</li>
@@ -77,12 +83,12 @@
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
 		</comps>
-        <modExtensions>
-            <li Class="FalloutCore.ApparelExtension">
-                <shouldHideBody>True</shouldHideBody>
-                <displayBodyType>Hulk</displayBodyType>
-            </li>
-        </modExtensions>
+		<modExtensions>
+			<li Class="FalloutCore.ApparelExtension">
+				<shouldHideBody>True</shouldHideBody>
+				<displayBodyType>Hulk</displayBodyType>
+			</li>
+		</modExtensions>
 	</ThingDef>
 
 </Defs>
