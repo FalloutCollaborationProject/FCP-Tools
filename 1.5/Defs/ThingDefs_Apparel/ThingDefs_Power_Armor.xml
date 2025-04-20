@@ -27,8 +27,8 @@
 			<MaxHitPoints>250</MaxHitPoints>
 			<WorkToMake>10200</WorkToMake>
 			<Mass>6.0</Mass>
-			<ArmorRating_Sharp>1.08</ArmorRating_Sharp>
-			<ArmorRating_Blunt>0.88</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.40</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.40</ArmorRating_Blunt>
 			<ArmorRating_Heat>0.40</ArmorRating_Heat>
 			<Insulation_Cold>3</Insulation_Cold>
 			<Insulation_Heat>3</Insulation_Heat>
