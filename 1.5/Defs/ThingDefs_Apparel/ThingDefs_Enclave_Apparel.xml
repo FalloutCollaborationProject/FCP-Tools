@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+
+<Defs>
+
+    <!--_ Enclave Apparel _-->
+
+    <!-- Scientist Outfit -->
+
+    <ThingDef ParentName="FCP_Apparel_Base">
+        <defName>FCP_Apparel_Enclave_Scientist_Outfit</defName>
+        <label>Enclave Scientist Outfit</label>
+        <description>A suit commonly worn by the Enclave’s scientists, especially when working in the hazardous wasteland. It’s a fully enclosed white suit with special polymers woven into it and a helmet with an orange visor made from plexiglass. It comes with a built-in computer system and various scientific instruments to support all manners of intellectual pursuits.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Enclave_Apparel/Scientist_Outfit/FCP_Enclave_Scientist_Outfit</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <smeltable>false</smeltable>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <ArmorRating_Sharp>0.18</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.09</ArmorRating_Blunt>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <HackingSpeed>0.10</HackingSpeed>            <!-- Science +5 -->
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Enclave_Apparel/Scientist_Outfit/FCP_Enclave_Scientist_Outfit</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Enclave_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Scientist Boots-->
+
+    <ThingDef ParentName="FCP_Apparel_Base">
+        <defName>FCP_Apparel_Enclave_Scientist_Boots</defName>
+        <label>Enclave Scientist Boots</label>
+        <description>PLACEHOLDER</description>
+        <graphicData>
+            <texPath>Things/Apparel/Enclave_Apparel/Boots/FCP_Enclave_Scientist_Boots</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <smeltable>false</smeltable>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>Feet</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Enclave_Apparel/Boots/FCP_Enclave_Scientist_Boots</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Enclave_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Scientist Gloves -->
+
+    <ThingDef ParentName="FCP_Apparel_Base">
+        <defName>FCP_Apparel_Enclave_Scientist_Glove</defName>
+        <label>Enclave Scientist Gloves</label>
+        <description>PLACEHOLDER</description>
+        <graphicData>
+            <texPath>Things/Apparel/Enclave_Apparel/Gloves/FCP_Enclave_Scientist_Gloves</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <smeltable>false</smeltable>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>Hands</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Enclave_Apparel/Gloves/FCP_Enclave_Scientist_Gloves</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Enclave_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Officers Coat -->
+
+    <ThingDef ParentName="FCP_Apparel_Base">
+        <defName>FCP_Apparel_Enclave_Officer_Coat</defName>
+        <label>Enclave Officer Coat</label>
+        <description>PLACEHOLDER</description>
+        <graphicData>
+            <texPath>Things/Apparel/Enclave_Apparel/Officers_Coat/FCP_Enclave_Officer_Coat</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <smeltable>false</smeltable>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <ArmorRating_Sharp>0.65</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.32</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.20</ArmorRating_Heat>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <HackingSpeed>0.10</HackingSpeed>            <!-- Science +5 -->
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Enclave_Apparel/Officers_Coat/FCP_Enclave_Officer_Coat</wornGraphicPath>
+            <layers>
+                <li>Shell</li>
+            </layers>
+            <tags>
+                <li>FCP_Enclave_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Trooper Uniform -->
+
+    <ThingDef ParentName="FCP_Apparel_Base">
+        <defName>FCP_Apparel_Enclave_Trooper_Uniform</defName>
+        <label>Enclave Trooper Uniform</label>
+        <description>A jet-black uniform with a tan jacket and pants that are worn over it. The outer layer is made of a sturdy material designed to withstand the harsh conditions of the wasteland. The uniform comes with a pair of knee-high boots, black gloves, and a utility belt. It does protect well against the elements, less so against bullets.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Enclave_Apparel/Trooper_Uniform/FCP_Enclave_Trooper_Uniform</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <smeltable>false</smeltable>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <ArmorRating_Sharp>0.06</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.03</ArmorRating_Blunt>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <HackingSpeed>0.10</HackingSpeed>            <!-- Science +5 -->
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Enclave_Apparel/Trooper_Uniform/FCP_Enclave_Trooper_Uniform</wornGraphicPath>
+            <layers>
+                <li>OnSkin</li>
+            </layers>
+            <tags>
+                <li>FCP_Enclave_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Enclave Combat Armor-->
+
+    <ThingDef ParentName="FCP_Apparel_Base">
+        <defName>FCP_Apparel_Enclave_Combat_Armor</defName>
+        <label>Enclave Trooper Uniform</label>
+        <description>PLACEHOLDER</description>
+        <graphicData>
+            <texPath>Things/Apparel/Enclave_Armor/Enclave_Combat_Armor/FCP_Enclave_Combat_Armor</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+            <drawSize>0.90</drawSize>
+        </graphicData>
+        <smeltable>false</smeltable>
+        <statBases>
+            <MaxHitPoints>120</MaxHitPoints>
+            <WorkToMake>6000</WorkToMake>
+            <ArmorRating_Sharp>0.06</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.03</ArmorRating_Blunt>
+            <Mass>2</Mass>
+            <Insulation_Cold>3.0</Insulation_Cold>
+            <Insulation_Heat>2.3</Insulation_Heat>
+            <EquipDelay>3</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>Torso</li>
+                <li>Shoulders</li>
+                <li>Arms</li>
+                <li>Legs</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Enclave_Armor/Enclave_Combat_Armor/FCP_Enclave_Combat_Armor</wornGraphicPath>
+            <layers>
+                <li>Shell</li>
+            </layers>
+            <tags>
+                <li>FCP_Enclave_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+
+</Defs>

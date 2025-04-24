@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Defs>
+
+    <!-- _Enclave Headgear_ -->
+
+    <!-- Enclave Officer Cap -->
+
+    <ThingDef ParentName="HatBase">
+        <defName>FCP_Apparel_Enclave_Officer_Cap</defName>
+        <label>Enclave Officer Cap</label>
+        <description>PLACEHOLDER</description>
+        <techLevel>Industrial</techLevel>
+        <graphicData>
+            <texPath>Things/Apparel/Enclave_Headgear/Officers/FCP_Enclave_Officer_Cap</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <smeltable>false</smeltable>
+        <statBases>
+            <WorkToMake>3000</WorkToMake>
+            <MaxHitPoints>80</MaxHitPoints>
+            <Mass>0.8</Mass>
+            <ArmorRating_Sharp>0.13</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.07</ArmorRating_Blunt>
+            <Insulation_Heat>2</Insulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>UpperHead</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Enclave_Headgear/Officers/FCP_Enclave_Officer_Cap</wornGraphicPath>
+            <layers>
+                <li>Overhead</li>
+            </layers>
+        </apparel>
+    </ThingDef>
+
+    <!-- Scientist Helmet -->
+
+    <ThingDef ParentName="HatBase">
+        <defName>FCP_Apparel_Enclave_Scientist_Helmet</defName>
+        <label>Enclave Scientist Helmet</label>
+        <description>PLACEHOLDER</description>
+        <techLevel>Industrial</techLevel>
+        <graphicData>
+            <texPath>Things/Apparel/Enclave_Headgear/Scientists/FCP_Scientist_Helmet</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <smeltable>false</smeltable>
+        <statBases>
+            <WorkToMake>3000</WorkToMake>
+            <MaxHitPoints>80</MaxHitPoints>
+            <Mass>0.8</Mass>
+            <Insulation_Heat>2</Insulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>UpperHead</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Enclave_Headgear/Scientists/FCP_Scientist_Helmet</wornGraphicPath>
+            <layers>
+                <li>Overhead</li>
+            </layers>
+        </apparel>
+    </ThingDef>
+
+    <!-- Trooper Cap -->
+
+    <ThingDef ParentName="HatBase">
+        <defName>FCP_Apparel_Enclave_Trooper_Cap</defName>
+        <label>Enclave Trooper Cap</label>
+        <description>PLACEHOLDER</description>
+        <techLevel>Industrial</techLevel>
+        <graphicData>
+            <texPath>Things/Apparel/Enclave_Headgear/Troopers/FCP_Enclave_Trooper_Cap</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <smeltable>false</smeltable>
+        <statBases>
+            <WorkToMake>3000</WorkToMake>
+            <MaxHitPoints>80</MaxHitPoints>
+            <ArmorRating_Sharp>0.13</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.07</ArmorRating_Blunt>
+            <Mass>0.8</Mass>
+            <Insulation_Heat>2</Insulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>UpperHead</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Enclave_Headgear/Troopers/FCP_Enclave_Trooper_Cap</wornGraphicPath>
+            <layers>
+                <li>Overhead</li>
+            </layers>
+        </apparel>
+    </ThingDef>
+
+</Defs>
