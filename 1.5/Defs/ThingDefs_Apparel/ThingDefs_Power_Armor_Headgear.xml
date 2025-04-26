@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-
 <Defs>
 
-<!--__Power Armor Helmets__-->
+    <!--__Power Armor Helmets__-->
 
-<!-- T45 Helmet -->
+    <!-- T45 Helmet -->
 
     <ThingDef ParentName="HatBase">
         <defName>FCP_Apparel_Power_Armor_T45_Helmet</defName>
@@ -30,6 +28,7 @@
         <apparel>
             <bodyPartGroups>
                 <li>UpperHead</li>
+                <li>FullHead</li>
             </bodyPartGroups>
             <wornGraphicPath>Things/Apparel/Power_Armor_Headgear/T45_Helmet/FCP_T45_Power_Armor_Helmet</wornGraphicPath>
             <layers>
@@ -37,20 +36,19 @@
             </layers>
         </apparel>
         <comps>
-			<li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
-				<requiredApparels>
-					<li>FCP_Apparel_Power_Armor_Frame</li>
-				</requiredApparels>
-				<workDisables>
-					<li>Construction</li>
-				</workDisables>
-				<canSleep>False</canSleep>
-				<requiredTrait>FCP_Power_Armor_Trained</requiredTrait>
-			</li>
-		</comps>
+            <li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
+                <requiredApparels>
+                    <li>FCP_Apparel_Power_Armor_Frame</li>
+                </requiredApparels>
+                <workDisables>
+                    <li>Construction</li>
+                </workDisables>
+                <canSleep>False</canSleep>
+            </li>
+        </comps>
     </ThingDef>
 
-<!-- T51 Helmet -->
+    <!-- T51 Helmet -->
 
     <ThingDef ParentName="HatBase">
         <defName>FCP_Apparel_Power_Armor_T51_Helmet</defName>
@@ -82,21 +80,19 @@
             </layers>
         </apparel>
         <comps>
-			<li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
-				<requiredApparels>
-					<li>FCP_Apparel_Power_Armor_Frame</li>
-				</requiredApparels>
-				<workDisables>
-					<li>Construction</li>
-				</workDisables>
-				<canSleep>False</canSleep>
-				<requiredTrait>FCP_Power_Armor_Trained</requiredTrait>
-				<hediffOnEmptyFuel>FCP_Power_Armor_Empty_Fusion_Core</hediffOnEmptyFuel>
-			</li>
-		</comps>
+            <li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
+                <requiredApparels>
+                    <li>FCP_Apparel_Power_Armor_Frame</li>
+                </requiredApparels>
+                <workDisables>
+                    <li>Construction</li>
+                </workDisables>
+                <canSleep>False</canSleep>
+            </li>
+        </comps>
     </ThingDef>
 
-<!-- T60 Helmet -->
+    <!-- T60 Helmet -->
 
     <ThingDef ParentName="HatBase">
         <defName>FCP_Apparel_Power_Armor_T60_Helmet</defName>
@@ -128,20 +124,19 @@
             </layers>
         </apparel>
         <comps>
-			<li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
-				<requiredApparels>
-					<li>FCP_Apparel_Power_Armor_Frame</li>
-				</requiredApparels>
-				<workDisables>
-					<li>Construction</li>
-				</workDisables>
-				<canSleep>False</canSleep>
-				<requiredTrait>FCP_Power_Armor_Trained</requiredTrait>
-			</li>
-		</comps>
+            <li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
+                <requiredApparels>
+                    <li>FCP_Apparel_Power_Armor_Frame</li>
+                </requiredApparels>
+                <workDisables>
+                    <li>Construction</li>
+                </workDisables>
+                <canSleep>False</canSleep>
+            </li>
+        </comps>
     </ThingDef>
 
-<!-- X01 Helmet -->
+    <!-- X01 Helmet -->
 
     <ThingDef ParentName="HatBase">
         <defName>FCP_Apparel_Power_Armor_X01_Helmet</defName>
@@ -173,18 +168,16 @@
             </layers>
         </apparel>
         <comps>
-			<li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
-				<requiredApparels>
-					<li>FCP_Apparel_Power_Armor_Frame</li>
-				</requiredApparels>
-				<workDisables>
-					<li>Construction</li>
-				</workDisables>
-				<canSleep>False</canSleep>
-				<requiredTrait>FCP_Power_Armor_Trained</requiredTrait>
-			</li>
-		</comps>
+            <li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
+                <requiredApparels>
+                    <li>FCP_Apparel_Power_Armor_Frame</li>
+                </requiredApparels>
+                <workDisables>
+                    <li>Construction</li>
+                </workDisables>
+                <canSleep>False</canSleep>
+            </li>
+        </comps>
     </ThingDef>
-
 
 </Defs>

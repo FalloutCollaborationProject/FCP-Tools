@@ -115,7 +115,7 @@
 			<MaxHitPoints>250</MaxHitPoints>
 			<WorkToMake>10200</WorkToMake>
 			<Mass>6.0</Mass>
-			<ArmorRating_Sharp>1.20</ArmorRating_Sharp>
+			<ArmorRating_Sharp>1.45</ArmorRating_Sharp>
 			<ArmorRating_Blunt>1.20</ArmorRating_Blunt>
 			<ArmorRating_Heat>0.80</ArmorRating_Heat>
 			<Insulation_Cold>3</Insulation_Cold>
@@ -127,6 +127,12 @@
 			<bodyPartGroups>
 				<li>Hands</li>
 				<li>Feet</li>
+				<li>Neck</li>
+				<li>Legs</li>
+				<li>Arms</li>
+				<li>Torso</li>
+				<li>Waist</li>
+				<li>Shoulders</li>
 			</bodyPartGroups>
 			<wornGraphicPath>Things/Apparel/Power_Armors/T45/FCP_T45_Power_Armor</wornGraphicPath>
 			<layers>
@@ -139,6 +145,7 @@
 				<li>Worker</li>
 			</defaultOutfitTags>
 			<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+			<useDeflectMetalEffect>true</useDeflectMetalEffect>
 		</apparel>
 		<tradeTags>
 			<li>FCP_Power_Armor_Basic</li>
@@ -153,302 +160,227 @@
 					<li>Construction</li>
 				</workDisables>
 				<canSleep>False</canSleep>
-				<ignoresLegs>True</ignoresLegs>
-				<requiredTrait>FCP_Power_Armor_Trained</requiredTrait>
-				<hediffOnEmptyFuel>FCP_Power_Armor_Empty_Fusion_Core</hediffOnEmptyFuel>
-			</li>
-			<li Class="CompProperties_Refuelable">
-				<fuelCapacity>1</fuelCapacity>
-				<fuelConsumptionRate>100</fuelConsumptionRate>
-				<fuelLabel>Fusion Core</fuelLabel>
-				<fuelGizmoLabel>Fusion Core</fuelGizmoLabel>
-				<outOfFuelMessage>Needs Fusion Core</outOfFuelMessage>
-				<showFuelGizmo>true</showFuelGizmo>
-				<fuelFilter>
-					<thingDefs>
-						<li>Chemfuel</li>
-					</thingDefs>
-				</fuelFilter>
-				<initialFuelPercent>1</initialFuelPercent>
-				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
 		</comps>
-		<modExtensions>
-			<li Class="FalloutCore.ApparelExtension">
-				<shouldHideBody>True</shouldHideBody>
-				<displayBodyType>Hulk</displayBodyType>
-			</li>
-		</modExtensions>
 	</ThingDef>
 
-		<!-- Power Armor T51 -->
+	<!-- Power Armor T51 -->
 
-		<ThingDef ParentName="ApparelBase">
-			<defName>FCP_Apparel_Power_Armor_T51Armor</defName>
-			<label>Power Armor T51</label>
-			<description>PLACEHOLDER</description>
-			<smeltable>false</smeltable>
-			<thingSetMakerTags>
-			  <li>RewardStandardMidFreq</li>
-			</thingSetMakerTags>
-			<possessionCount>1</possessionCount>
-			<graphicData>
-			  <texPath>Things/Apparel/Power_Armors/T51/FCP_T51_Power_Armor_Hulk_south</texPath>
-			  <graphicClass>Graphic_Single</graphicClass>
-			  <drawSize>1</drawSize>
-			</graphicData>
-			<thingCategories>
-			  <li>ApparelArmor</li>
-			</thingCategories>
-			<tickerType>Normal</tickerType>
-			<statBases>
-			  <MaxHitPoints>250</MaxHitPoints>
-			  <WorkToMake>10200</WorkToMake>
-			  <Mass>6.0</Mass>
-			  <ArmorRating_Sharp>1.50</ArmorRating_Sharp>
-			  <ArmorRating_Blunt>1.50</ArmorRating_Blunt>
-			  <ArmorRating_Heat>1.00</ArmorRating_Heat>
-			  <Insulation_Cold>3</Insulation_Cold>
-			  <Insulation_Heat>3</Insulation_Heat>
-			  <EquipDelay>1.2</EquipDelay>
-			</statBases>
-			<apparel>
-			  <shellRenderedBehindHead>true</shellRenderedBehindHead>
-			  <bodyPartGroups>
+	<ThingDef ParentName="ApparelBase">
+		<defName>FCP_Apparel_Power_Armor_T51Armor</defName>
+		<label>Power Armor T51</label>
+		<description>PLACEHOLDER</description>
+		<smeltable>false</smeltable>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<possessionCount>1</possessionCount>
+		<graphicData>
+			<texPath>Things/Apparel/Power_Armors/T51/FCP_T51_Power_Armor_Hulk_south</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1</drawSize>
+		</graphicData>
+		<thingCategories>
+			<li>ApparelArmor</li>
+		</thingCategories>
+		<tickerType>Normal</tickerType>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToMake>10200</WorkToMake>
+			<Mass>6.0</Mass>
+			<ArmorRating_Sharp>1.50</ArmorRating_Sharp>
+			<ArmorRating_Blunt>1.50</ArmorRating_Blunt>
+			<ArmorRating_Heat>1.00</ArmorRating_Heat>
+			<Insulation_Cold>3</Insulation_Cold>
+			<Insulation_Heat>3</Insulation_Heat>
+			<EquipDelay>1.2</EquipDelay>
+		</statBases>
+		<apparel>
+			<shellRenderedBehindHead>true</shellRenderedBehindHead>
+			<bodyPartGroups>
 				<li>Hands</li>
 				<li>Feet</li>
-			  </bodyPartGroups>
-			  <wornGraphicPath>Things/Apparel/Power_Armors/T51/FCP_T51_Power_Armor</wornGraphicPath>
-			  <layers>
+				<li>Neck</li>
+				<li>Legs</li>
+				<li>Arms</li>
+				<li>Torso</li>
+				<li>Waist</li>
+				<li>Shoulders</li>
+			</bodyPartGroups>
+			<wornGraphicPath>Things/Apparel/Power_Armors/T51/FCP_T51_Power_Armor</wornGraphicPath>
+			<layers>
 				<li>Shell</li>
-			  </layers>
-			  <tags>
+			</layers>
+			<tags>
 				<li>FCP_Power_Armor</li>
-			  </tags>
-			  <defaultOutfitTags>
+			</tags>
+			<defaultOutfitTags>
 				<li>Worker</li>
-			  </defaultOutfitTags>
-			  <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
-			</apparel>
-			<tradeTags>
-			  <li>FCP_Power_Armor_Basic</li>
-			</tradeTags>
-			<building />
-			<comps>
-			  <li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
+			</defaultOutfitTags>
+			<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+			<useDeflectMetalEffect>true</useDeflectMetalEffect>
+		</apparel>
+		<tradeTags>
+			<li>FCP_Power_Armor_Basic</li>
+		</tradeTags>
+		<building />
+		<comps>
+			<li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
 				<requiredApparels>
 					<li>FCP_Apparel_Power_Armor_Frame</li>
 				</requiredApparels>
 				<workDisables>
-				  <li>Construction</li>
+					<li>Construction</li>
 				</workDisables>
 				<canSleep>False</canSleep>
-				<ignoresLegs>True</ignoresLegs>
-				<requiredTrait>FCP_Power_Armor_Trained</requiredTrait>
-				<hediffOnEmptyFuel>FCP_Power_Armor_Empty_Fusion_Core</hediffOnEmptyFuel>
-			  </li>
-			  <li Class="CompProperties_Refuelable">
-				<fuelCapacity>1</fuelCapacity>
-				<fuelConsumptionRate>100</fuelConsumptionRate>
-				<fuelLabel>Fusion Core</fuelLabel>
-				<fuelGizmoLabel>Fusion Core</fuelGizmoLabel>
-				<outOfFuelMessage>Needs Fusion Core</outOfFuelMessage>
-				<showFuelGizmo>true</showFuelGizmo>
-				<fuelFilter>
-					<thingDefs>
-						<li>Chemfuel</li>
-					</thingDefs>
-				</fuelFilter>
-				<initialFuelPercent>1</initialFuelPercent>
-				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
-			</comps>
-			<modExtensions>
-				<li Class="FalloutCore.ApparelExtension">
-					<shouldHideBody>True</shouldHideBody>
-					<displayBodyType>Hulk</displayBodyType>
-				</li>
-			</modExtensions>
-		  </ThingDef>
-		
-		  <!-- Power Armor T60 -->
-		
-		  <ThingDef ParentName="ApparelBase">
-			<defName>FCP_Apparel_Power_Armor_T60Armor</defName>
-			<label>Power Armor T60</label>
-			<description>PLACEHOLDER</description>
-			<smeltable>false</smeltable>
-			<thingSetMakerTags>
-			  <li>RewardStandardMidFreq</li>
-			</thingSetMakerTags>
-			<possessionCount>1</possessionCount>
-			<graphicData>
-			  <texPath>Things/Apparel/Power_Armors/T60/FCP_T60_Power_Armor_Hulk_south</texPath>
-			  <graphicClass>Graphic_Single</graphicClass>
-			  <drawSize>1</drawSize>
-			</graphicData>
-			<thingCategories>
-			  <li>ApparelArmor</li>
-			</thingCategories>
-			<tickerType>Normal</tickerType>
-			<statBases>
-			  <MaxHitPoints>250</MaxHitPoints>
-			  <WorkToMake>10200</WorkToMake>
-			  <Mass>6.0</Mass>
-			  <ArmorRating_Sharp>2.00</ArmorRating_Sharp>
-			  <ArmorRating_Blunt>2.00</ArmorRating_Blunt>
-			  <ArmorRating_Heat>1.30</ArmorRating_Heat>
-			  <Insulation_Cold>3</Insulation_Cold>
-			  <Insulation_Heat>3</Insulation_Heat>
-			  <EquipDelay>1.2</EquipDelay>
-			</statBases>
-			<apparel>
-			  <shellRenderedBehindHead>true</shellRenderedBehindHead>
-			  <bodyPartGroups>
+		</comps>
+	</ThingDef>
+
+	<!-- Power Armor T60 -->
+
+	<ThingDef ParentName="ApparelBase">
+		<defName>FCP_Apparel_Power_Armor_T60Armor</defName>
+		<label>Power Armor T60</label>
+		<description>PLACEHOLDER</description>
+		<smeltable>false</smeltable>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<possessionCount>1</possessionCount>
+		<graphicData>
+			<texPath>Things/Apparel/Power_Armors/T60/FCP_T60_Power_Armor_Hulk_south</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1</drawSize>
+		</graphicData>
+		<thingCategories>
+			<li>ApparelArmor</li>
+		</thingCategories>
+		<tickerType>Normal</tickerType>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToMake>10200</WorkToMake>
+			<Mass>6.0</Mass>
+			<ArmorRating_Sharp>2.00</ArmorRating_Sharp>
+			<ArmorRating_Blunt>2.00</ArmorRating_Blunt>
+			<ArmorRating_Heat>1.30</ArmorRating_Heat>
+			<Insulation_Cold>3</Insulation_Cold>
+			<Insulation_Heat>3</Insulation_Heat>
+			<EquipDelay>1.2</EquipDelay>
+		</statBases>
+		<apparel>
+			<shellRenderedBehindHead>true</shellRenderedBehindHead>
+			<bodyPartGroups>
 				<li>Hands</li>
 				<li>Feet</li>
-			  </bodyPartGroups>
-			  <wornGraphicPath>Things/Apparel/Power_Armors/T60/FCP_T60_Power_Armor</wornGraphicPath>
-			  <layers>
+				<li>Neck</li>
+				<li>Legs</li>
+				<li>Arms</li>
+				<li>Torso</li>
+				<li>Waist</li>
+				<li>Shoulders</li>
+			</bodyPartGroups>
+			<wornGraphicPath>Things/Apparel/Power_Armors/T60/FCP_T60_Power_Armor</wornGraphicPath>
+			<layers>
 				<li>Shell</li>
-			  </layers>
-			  <tags>
+			</layers>
+			<tags>
 				<li>FCP_Power_Armor</li>
-			  </tags>
-			  <defaultOutfitTags>
+			</tags>
+			<defaultOutfitTags>
 				<li>Worker</li>
-			  </defaultOutfitTags>
-			  <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
-			</apparel>
-			<tradeTags>
-			  <li>FCP_Power_Armor_Basic</li>
-			</tradeTags>
-			<building />
-			<comps>
-			  <li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
+			</defaultOutfitTags>
+			<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+			<useDeflectMetalEffect>true</useDeflectMetalEffect>
+		</apparel>
+		<tradeTags>
+			<li>FCP_Power_Armor_Basic</li>
+		</tradeTags>
+		<building />
+		<comps>
+			<li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
 				<requiredApparels>
 					<li>FCP_Apparel_Power_Armor_Frame</li>
 				</requiredApparels>
 				<workDisables>
-				  <li>Construction</li>
+					<li>Construction</li>
 				</workDisables>
 				<canSleep>False</canSleep>
-				<ignoresLegs>True</ignoresLegs>
-				<requiredTrait>FCP_Power_Armor_Trained</requiredTrait>
-				<hediffOnEmptyFuel>FCP_Power_Armor_Empty_Fusion_Core</hediffOnEmptyFuel>
-			  </li>
-			  <li Class="CompProperties_Refuelable">
-				<fuelCapacity>1</fuelCapacity>
-				<fuelConsumptionRate>100</fuelConsumptionRate>
-				<fuelLabel>Fusion Core</fuelLabel>
-				<fuelGizmoLabel>Fusion Core</fuelGizmoLabel>
-				<outOfFuelMessage>Needs Fusion Core</outOfFuelMessage>
-				<showFuelGizmo>true</showFuelGizmo>
-				<fuelFilter>
-					<thingDefs>
-						<li>Chemfuel</li>
-					</thingDefs>
-				</fuelFilter>
-				<initialFuelPercent>1</initialFuelPercent>
-				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
-			</comps>
-			<modExtensions>
-				<li Class="FalloutCore.ApparelExtension">
-					<shouldHideBody>True</shouldHideBody>
-					<displayBodyType>Hulk</displayBodyType>
-				</li>
-			</modExtensions>
-		  </ThingDef>
-		
-		  <!-- Power Armor X01 -->
-		
-		  <ThingDef ParentName="ApparelBase">
-			<defName>FCP_Apparel_Power_Armor_X01Armor</defName>
-			<label>Power Armor X01</label>
-			<description>PLACEHOLDER</description>
-			<smeltable>false</smeltable>
-			<thingSetMakerTags>
-			  <li>RewardStandardMidFreq</li>
-			</thingSetMakerTags>
-			<possessionCount>1</possessionCount>
-			<graphicData>
-			  <texPath>Things/Apparel/Power_Armors/X01/FCP_X01_Power_Armor_Hulk_south</texPath>
-			  <graphicClass>Graphic_Single</graphicClass>
-			  <drawSize>1</drawSize>
-			</graphicData>
-			<thingCategories>
-			  <li>ApparelArmor</li>
-			</thingCategories>
-			<tickerType>Normal</tickerType>
-			<statBases>
-			  <MaxHitPoints>250</MaxHitPoints>
-			  <WorkToMake>10200</WorkToMake>
-			  <Mass>6.0</Mass>
-			  <ArmorRating_Sharp>1.45</ArmorRating_Sharp>
-			  <ArmorRating_Blunt>1.45</ArmorRating_Blunt>
-			  <ArmorRating_Heat>1.90</ArmorRating_Heat>
-			  <Insulation_Cold>3</Insulation_Cold>
-			  <Insulation_Heat>3</Insulation_Heat>
-			  <EquipDelay>1.2</EquipDelay>
-			</statBases>
-			<apparel>
-			  <shellRenderedBehindHead>true</shellRenderedBehindHead>
-			  <bodyPartGroups>
+		</comps>
+	</ThingDef>
+
+	<!-- Power Armor X01 -->
+
+	<ThingDef ParentName="ApparelBase">
+		<defName>FCP_Apparel_Power_Armor_X01Armor</defName>
+		<label>Power Armor X01</label>
+		<description>PLACEHOLDER</description>
+		<smeltable>false</smeltable>
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<possessionCount>1</possessionCount>
+		<graphicData>
+			<texPath>Things/Apparel/Power_Armors/X01/FCP_X01_Power_Armor_Hulk_south</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1</drawSize>
+		</graphicData>
+		<thingCategories>
+			<li>ApparelArmor</li>
+		</thingCategories>
+		<tickerType>Normal</tickerType>
+		<statBases>
+			<MaxHitPoints>250</MaxHitPoints>
+			<WorkToMake>10200</WorkToMake>
+			<Mass>6.0</Mass>
+			<ArmorRating_Sharp>1.45</ArmorRating_Sharp>
+			<ArmorRating_Blunt>1.45</ArmorRating_Blunt>
+			<ArmorRating_Heat>1.90</ArmorRating_Heat>
+			<Insulation_Cold>3</Insulation_Cold>
+			<Insulation_Heat>3</Insulation_Heat>
+			<EquipDelay>1.2</EquipDelay>
+		</statBases>
+		<apparel>
+			<shellRenderedBehindHead>true</shellRenderedBehindHead>
+			<bodyPartGroups>
 				<li>Hands</li>
 				<li>Feet</li>
-			  </bodyPartGroups>
-			  <wornGraphicPath>Things/Apparel/Power_Armors/X01/FCP_X01_Power_Armor</wornGraphicPath>
-			  <layers>
+				<li>Neck</li>
+				<li>Legs</li>
+				<li>Arms</li>
+				<li>Torso</li>
+				<li>Waist</li>
+				<li>Shoulders</li>
+			</bodyPartGroups>
+			<wornGraphicPath>Things/Apparel/Power_Armors/X01/FCP_X01_Power_Armor</wornGraphicPath>
+			<layers>
 				<li>Shell</li>
-			  </layers>
-			  <tags>
+			</layers>
+			<tags>
 				<li>FCP_Power_Armor</li>
-			  </tags>
-			  <defaultOutfitTags>
+			</tags>
+			<defaultOutfitTags>
 				<li>Worker</li>
-			  </defaultOutfitTags>
-			  <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
-			</apparel>
-			<tradeTags>
-			  <li>FCP_Power_Armor_Basic</li>
-			</tradeTags>
-			<building />
-			<comps>
-			  <li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
+			</defaultOutfitTags>
+			<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+			<useDeflectMetalEffect>true</useDeflectMetalEffect>
+		</apparel>
+		<tradeTags>
+			<li>FCP_Power_Armor_Basic</li>
+		</tradeTags>
+		<building />
+		<comps>
+			<li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
 				<requiredApparels>
 					<li>FCP_Apparel_Power_Armor_Frame</li>
 				</requiredApparels>
 				<workDisables>
-				  <li>Construction</li>
+					<li>Construction</li>
 				</workDisables>
 				<canSleep>False</canSleep>
-				<ignoresLegs>True</ignoresLegs>
-				<requiredTrait>FCP_Power_Armor_Trained</requiredTrait>
-				<hediffOnEmptyFuel>FCP_Power_Armor_Empty_Fusion_Core</hediffOnEmptyFuel>
-			  </li>
-			  <li Class="CompProperties_Refuelable">
-				<fuelCapacity>1</fuelCapacity>
-				<fuelConsumptionRate>100</fuelConsumptionRate>
-				<fuelLabel>Fusion Core</fuelLabel>
-				<fuelGizmoLabel>Fusion Core</fuelGizmoLabel>
-				<outOfFuelMessage>Needs Fusion Core</outOfFuelMessage>
-				<showFuelGizmo>true</showFuelGizmo>
-				<fuelFilter>
-					<thingDefs>
-						<li>Chemfuel</li>
-					</thingDefs>
-				</fuelFilter>
-				<initialFuelPercent>1</initialFuelPercent>
-				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
-			</comps>
-			<modExtensions>
-				<li Class="FalloutCore.ApparelExtension">
-					<shouldHideBody>True</shouldHideBody>
-					<displayBodyType>Hulk</displayBodyType>
-				</li>
-			</modExtensions>
-		  </ThingDef>
+		</comps>
+	</ThingDef>
 
 </Defs>
