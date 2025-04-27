@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 
-    <!--__Power Armor Helmets__-->
+    <!--__________ Power Armor Helmets __________-->
 
-    <!-- T45 Helmet -->
+    <!--_____ T-45 _____-->
+
+    <!-- T-45 Power Armor Helmet -->
 
     <ThingDef ParentName="HatBase">
         <defName>FCP_Apparel_Power_Armor_T45_Helmet</defName>
-        <label>T45 Helmet</label>
-        <description>PLACEHOLDER</description>
+        <label>T-45 Power Armor Helmet</label>
+        <description>An early model of power armor helmet, the T45 offers solid protection against most threats. Its bulky design is a testament to pre-war engineering, providing reliable defense at the cost of some comfort and mobility.</description>
         <techLevel>Industrial</techLevel>
         <graphicData>
             <texPath>Things/Apparel/Power_Armor_Headgear/T45_Helmet/FCP_T45_Power_Armor_Helmet_south</texPath>
@@ -23,17 +25,26 @@
             <ArmorRating_Blunt>1.00</ArmorRating_Blunt>
             <ArmorRating_Heat>0.80</ArmorRating_Heat>
             <Insulation_Heat>2</Insulation_Heat>
-            <EquipDelay>1.5</EquipDelay>
+            <EquipDelay>3</EquipDelay>
         </statBases>
+        <equippedStatOffsets>
+            <ToxicEnvironmentResistance>0.8</ToxicEnvironmentResistance>            <!-- Good, but not perfect -->
+            <MoveSpeed>0.97</MoveSpeed>            <!-- Bulky -->
+            <AimingDelayFactor>-0.01</AimingDelayFactor>
+            <SocialImpact>-0.05</SocialImpact>
+        </equippedStatOffsets>
         <apparel>
             <bodyPartGroups>
                 <li>UpperHead</li>
+                <li>FullHead</li>
                 <li>FullHead</li>
             </bodyPartGroups>
             <wornGraphicPath>Things/Apparel/Power_Armor_Headgear/T45_Helmet/FCP_T45_Power_Armor_Helmet</wornGraphicPath>
             <layers>
                 <li>Overhead</li>
             </layers>
+            <useDeflectMetalEffect>true</useDeflectMetalEffect>
+            <developmentalStageFilter>Adult</developmentalStageFilter>
         </apparel>
         <comps>
             <li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
@@ -48,12 +59,14 @@
         </comps>
     </ThingDef>
 
-    <!-- T51 Helmet -->
+	<!--_____ T-51 _____-->
+
+    <!-- T-51 Power Armor Helmet -->
 
     <ThingDef ParentName="HatBase">
         <defName>FCP_Apparel_Power_Armor_T51_Helmet</defName>
-        <label>T51 Helmet</label>
-        <description>PLACEHOLDER</description>
+        <label>T-51 Power Armor Helmet</label>
+        <description>The T51 helmet is a refined evolution of power armor technology, offering superior protection and improved ergonomics over earlier models. Favored for its balance of defense and comfort.</description>
         <techLevel>Industrial</techLevel>
         <graphicData>
             <texPath>Things/Apparel/Power_Armor_Headgear/T51_Helmet/FCP_T51_Power_Armor_Helmet_south</texPath>
@@ -68,16 +81,25 @@
             <ArmorRating_Blunt>1.30</ArmorRating_Blunt>
             <ArmorRating_Heat>1.00</ArmorRating_Heat>
             <Insulation_Heat>2</Insulation_Heat>
-            <EquipDelay>1.5</EquipDelay>
+            <EquipDelay>2.5</EquipDelay>
         </statBases>
+        <equippedStatOffsets>
+            <ToxicEnvironmentResistance>0.9</ToxicEnvironmentResistance>
+            <MoveSpeed>0.98</MoveSpeed>
+            <AimingDelayFactor>-0.02</AimingDelayFactor>
+            <SocialImpact>-0.03</SocialImpact>
+        </equippedStatOffsets>
         <apparel>
             <bodyPartGroups>
                 <li>UpperHead</li>
+                <li>FullHead</li>
             </bodyPartGroups>
             <wornGraphicPath>Things/Apparel/Power_Armor_Headgear/T51_Helmet/FCP_T51_Power_Armor_Helmet</wornGraphicPath>
             <layers>
                 <li>Overhead</li>
             </layers>
+            <useDeflectMetalEffect>true</useDeflectMetalEffect>
+            <developmentalStageFilter>Adult</developmentalStageFilter>
         </apparel>
         <comps>
             <li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
@@ -92,12 +114,14 @@
         </comps>
     </ThingDef>
 
-    <!-- T60 Helmet -->
+	<!--_____ T-60 _____-->
+
+    <!-- T-60 Power Armor Helmet -->
 
     <ThingDef ParentName="HatBase">
         <defName>FCP_Apparel_Power_Armor_T60_Helmet</defName>
-        <label>T60 Helmet</label>
-        <description>PLACEHOLDER</description>
+        <label>T-60 Power Armor Helmet</label>
+        <description>The T60 helmet represents advanced power armor development, featuring enhanced armor plating and improved environmental sealing. Designed for frontline combat in hazardous conditions.</description>
         <techLevel>Industrial</techLevel>
         <graphicData>
             <texPath>Things/Apparel/Power_Armor_Headgear/T60_Helmet/FCP_T60_Power_Armor_Helmet_south</texPath>
@@ -112,16 +136,25 @@
             <ArmorRating_Blunt>1.60</ArmorRating_Blunt>
             <ArmorRating_Heat>1.20</ArmorRating_Heat>
             <Insulation_Heat>2</Insulation_Heat>
-            <EquipDelay>1.5</EquipDelay>
+            <EquipDelay>2</EquipDelay>
         </statBases>
+        <equippedStatOffsets>
+            <ToxicEnvironmentResistance>0.95</ToxicEnvironmentResistance>
+            <MoveSpeed>0.99</MoveSpeed>
+            <AimingDelayFactor>-0.03</AimingDelayFactor>
+            <SocialImpact>-0.01</SocialImpact>
+        </equippedStatOffsets>
         <apparel>
             <bodyPartGroups>
                 <li>UpperHead</li>
+                <li>FullHead</li>
             </bodyPartGroups>
             <wornGraphicPath>Things/Apparel/Power_Armor_Headgear/T60_Helmet/FCP_T60_Power_Armor_Helmet</wornGraphicPath>
             <layers>
                 <li>Overhead</li>
             </layers>
+            <useDeflectMetalEffect>true</useDeflectMetalEffect>
+            <developmentalStageFilter>Adult</developmentalStageFilter>
         </apparel>
         <comps>
             <li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
@@ -136,12 +169,14 @@
         </comps>
     </ThingDef>
 
-    <!-- X01 Helmet -->
+	<!--_____ X-01 _____-->
+
+    <!-- X01 Power Armor Helmet -->
 
     <ThingDef ParentName="HatBase">
         <defName>FCP_Apparel_Power_Armor_X01_Helmet</defName>
-        <label>X01 Helmet</label>
-        <description>PLACEHOLDER</description>
+        <label>X-01 Power Armor Helmet</label>
+        <description>The X01 helmet is the pinnacle of power armor headgear, boasting cutting-edge materials and maximum protection. Its intimidating design and advanced systems make it a rare and valuable asset.</description>
         <techLevel>Industrial</techLevel>
         <graphicData>
             <texPath>Things/Apparel/Power_Armor_Headgear/X01_Helmet/FCP_X01_Power_Armor_Helmet_south</texPath>
@@ -156,16 +191,25 @@
             <ArmorRating_Blunt>1.45</ArmorRating_Blunt>
             <ArmorRating_Heat>1.70</ArmorRating_Heat>
             <Insulation_Heat>2</Insulation_Heat>
-            <EquipDelay>1.5</EquipDelay>
+            <EquipDelay>2</EquipDelay>
         </statBases>
+        <equippedStatOffsets>
+            <ToxicEnvironmentResistance>1.0</ToxicEnvironmentResistance>            <!-- Perfect gas mask -->
+            <MoveSpeed>1.00</MoveSpeed>            <!-- No penalty -->
+            <AimingDelayFactor>-0.04</AimingDelayFactor>
+            <SocialImpact>0.05</SocialImpact>            <!-- Awe-inspiring -->
+        </equippedStatOffsets>
         <apparel>
             <bodyPartGroups>
                 <li>UpperHead</li>
+                <li>FullHead</li>
             </bodyPartGroups>
             <wornGraphicPath>Things/Apparel/Power_Armor_Headgear/X01_Helmet/FCP_X01_Power_Armor_Helmet</wornGraphicPath>
             <layers>
                 <li>Overhead</li>
             </layers>
+            <useDeflectMetalEffect>true</useDeflectMetalEffect>
+            <developmentalStageFilter>Adult</developmentalStageFilter>
         </apparel>
         <comps>
             <li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">

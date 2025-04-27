@@ -84,7 +84,7 @@
                 <li>Waist</li>
             </bodyPartGroups>
             <layers>
-                <li>MinePocket_ApparelLayer</li>
+                <li>FCP_Apparel_Layer_Mine_Pocket</li>
             </layers>
             <tags>
                 <li>BeltDefense</li>

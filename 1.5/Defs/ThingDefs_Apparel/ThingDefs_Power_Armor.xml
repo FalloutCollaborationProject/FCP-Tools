@@ -3,6 +3,8 @@
 
 	<!--__________ Power Armor - Basic __________-->
 
+	<!--_____ Frames _____-->
+
 	<!-- Power Armor Frame -->
 
 	<ThingDef ParentName="ApparelBase">
@@ -27,22 +29,27 @@
 			<MaxHitPoints>250</MaxHitPoints>
 			<WorkToMake>10200</WorkToMake>
 			<Mass>6.0</Mass>
-			<ArmorRating_Sharp>0.40</ArmorRating_Sharp>
-			<ArmorRating_Blunt>0.40</ArmorRating_Blunt>
-			<ArmorRating_Heat>0.40</ArmorRating_Heat>
-			<Insulation_Cold>3</Insulation_Cold>
-			<Insulation_Heat>3</Insulation_Heat>
-			<EquipDelay>1.2</EquipDelay>
+			<ArmorRating_Sharp>0.30</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.30</ArmorRating_Blunt>
+			<ArmorRating_Heat>0.30</ArmorRating_Heat>
+			<Insulation_Cold>0</Insulation_Cold>
+			<Insulation_Heat>0</Insulation_Heat>
+			<EquipDelay>3.5</EquipDelay>
 		</statBases>
 		<apparel>
 			<shellRenderedBehindHead>true</shellRenderedBehindHead>
 			<bodyPartGroups>
 				<li>Hands</li>
+				<li>Legs</li>
+				<li>Arms</li>
+				<li>Torso</li>
+				<li>Waist</li>
+				<li>Shoulders</li>
 				<li>Feet</li>
 			</bodyPartGroups>
 			<wornGraphicPath>Things/Apparel/Power_Armors/Power_Armor_Frame/FCP_Power_Armor_Frame</wornGraphicPath>
 			<layers>
-				<li>Middle</li>
+				<li>FCP_Apparel_Layer_Power_Armor_Frame</li>
 			</layers>
 			<tags>
 				<li>FCP_Power_Armor</li>
@@ -51,13 +58,15 @@
 				<li>Worker</li>
 			</defaultOutfitTags>
 			<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+			<useDeflectMetalEffect>true</useDeflectMetalEffect>
+			<developmentalStageFilter>Adult</developmentalStageFilter>
 		</apparel>
 		<tradeTags>
 			<li>FCP_Power_Armor_Basic</li>
 		</tradeTags>
 		<building />
 		<comps>
-			<li Class="RangerRick_PowerArmor.CompProperties_ApparelDependency"></li>
+			<li Class="RangerRick_PowerArmor.CompProperties_ApparelDependency" />
 			<li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
 				<workDisables>
 					<li>Construction</li>
@@ -69,7 +78,7 @@
 			</li>
 			<li Class="CompProperties_Refuelable">
 				<fuelCapacity>1</fuelCapacity>
-				<fuelConsumptionRate>100</fuelConsumptionRate>
+				<fuelConsumptionRate>1</fuelConsumptionRate>
 				<fuelLabel>Fusion Core</fuelLabel>
 				<fuelGizmoLabel>Fusion Core</fuelGizmoLabel>
 				<outOfFuelMessage>Needs Fusion Core</outOfFuelMessage>
@@ -91,12 +100,14 @@
 		</modExtensions>
 	</ThingDef>
 
-	<!-- Power Armor T45 -->
+	<!--_____ T-45 _____-->
+
+	<!-- T-45 Power Armor -->
 
 	<ThingDef ParentName="ApparelBase">
 		<defName>FCP_Apparel_Power_Armor_T45Armor</defName>
-		<label>Power Armor T45</label>
-		<description>PLACEHOLDER</description>
+		<label>T-45 Power Armor</label>
+		<description>The T-45 was the first power armor model deployed in the field, offering soldiers unprecedented protection and strength. Though now considered outdated, its heavy plating and servo-assisted joints still provide formidable defense and enhanced mobility to any wastelander lucky enough to find a working suit.</description>
 		<smeltable>false</smeltable>
 		<thingSetMakerTags>
 			<li>RewardStandardMidFreq</li>
@@ -122,6 +133,12 @@
 			<Insulation_Heat>3</Insulation_Heat>
 			<EquipDelay>1.2</EquipDelay>
 		</statBases>
+		<equippedStatOffsets>
+			<MoveSpeed>0.06</MoveSpeed>
+			<AimingDelayFactor>-0.02</AimingDelayFactor>
+			<ToxicEnvironmentResistance>0.7</ToxicEnvironmentResistance>
+			<SocialImpact>-0.05</SocialImpact>
+		</equippedStatOffsets>
 		<apparel>
 			<shellRenderedBehindHead>true</shellRenderedBehindHead>
 			<bodyPartGroups>
@@ -146,6 +163,7 @@
 			</defaultOutfitTags>
 			<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
 			<useDeflectMetalEffect>true</useDeflectMetalEffect>
+			<developmentalStageFilter>Adult</developmentalStageFilter>
 		</apparel>
 		<tradeTags>
 			<li>FCP_Power_Armor_Basic</li>
@@ -160,16 +178,21 @@
 					<li>Construction</li>
 				</workDisables>
 				<canSleep>False</canSleep>
+				<ignoresLegs />
+				<requiredTrait />
+				<hediffOnEmptyFuel />
 			</li>
 		</comps>
 	</ThingDef>
 
-	<!-- Power Armor T51 -->
+	<!--_____ T-51 _____-->
+
+	<!-- T-51 Power Armor -->
 
 	<ThingDef ParentName="ApparelBase">
 		<defName>FCP_Apparel_Power_Armor_T51Armor</defName>
-		<label>Power Armor T51</label>
-		<description>PLACEHOLDER</description>
+		<label>T-51 Power Armor</label>
+		<description>The T-51 is a legendary pre-war power armor, renowned for its superior protection and advanced design. Its titanium composite shell and improved servos make it lighter and more durable than earlier models, granting its wearer unmatched resilience and strength on the battlefield.</description>
 		<smeltable>false</smeltable>
 		<thingSetMakerTags>
 			<li>RewardStandardMidFreq</li>
@@ -195,6 +218,12 @@
 			<Insulation_Heat>3</Insulation_Heat>
 			<EquipDelay>1.2</EquipDelay>
 		</statBases>
+		<equippedStatOffsets>
+			<MoveSpeed>0.08</MoveSpeed>
+			<AimingDelayFactor>-0.03</AimingDelayFactor>
+			<ToxicEnvironmentResistance>0.8</ToxicEnvironmentResistance>
+			<SocialImpact>-0.03</SocialImpact>
+		</equippedStatOffsets>
 		<apparel>
 			<shellRenderedBehindHead>true</shellRenderedBehindHead>
 			<bodyPartGroups>
@@ -219,6 +248,7 @@
 			</defaultOutfitTags>
 			<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
 			<useDeflectMetalEffect>true</useDeflectMetalEffect>
+			<developmentalStageFilter>Adult</developmentalStageFilter>
 		</apparel>
 		<tradeTags>
 			<li>FCP_Power_Armor_Basic</li>
@@ -233,16 +263,21 @@
 					<li>Construction</li>
 				</workDisables>
 				<canSleep>False</canSleep>
+				<ignoresLegs />
+				<requiredTrait />
+				<hediffOnEmptyFuel />
 			</li>
 		</comps>
 	</ThingDef>
 
-	<!-- Power Armor T60 -->
+	<!--_____ T-60 _____-->
+
+	<!-- T-60 Power Armor -->
 
 	<ThingDef ParentName="ApparelBase">
 		<defName>FCP_Apparel_Power_Armor_T60Armor</defName>
-		<label>Power Armor T60</label>
-		<description>PLACEHOLDER</description>
+		<label>T-60 Power Armor</label>
+		<description>The T-60 represents the pinnacle of pre-war military engineering, combining the best features of earlier models with enhanced armor and reliability. Favored by the Brotherhood of Steel, the T-60 offers exceptional protection, advanced environmental sealing, and a menacing presence on any battlefield.</description>
 		<smeltable>false</smeltable>
 		<thingSetMakerTags>
 			<li>RewardStandardMidFreq</li>
@@ -268,6 +303,12 @@
 			<Insulation_Heat>3</Insulation_Heat>
 			<EquipDelay>1.2</EquipDelay>
 		</statBases>
+		<equippedStatOffsets>
+			<MoveSpeed>0.10</MoveSpeed>
+			<AimingDelayFactor>-0.04</AimingDelayFactor>
+			<ToxicEnvironmentResistance>0.9</ToxicEnvironmentResistance>
+			<SocialImpact>0.00</SocialImpact>
+		</equippedStatOffsets>
 		<apparel>
 			<shellRenderedBehindHead>true</shellRenderedBehindHead>
 			<bodyPartGroups>
@@ -292,6 +333,7 @@
 			</defaultOutfitTags>
 			<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
 			<useDeflectMetalEffect>true</useDeflectMetalEffect>
+			<developmentalStageFilter>Adult</developmentalStageFilter>
 		</apparel>
 		<tradeTags>
 			<li>FCP_Power_Armor_Basic</li>
@@ -306,16 +348,21 @@
 					<li>Construction</li>
 				</workDisables>
 				<canSleep>False</canSleep>
+				<ignoresLegs />
+				<requiredTrait />
+				<hediffOnEmptyFuel />
 			</li>
 		</comps>
 	</ThingDef>
 
-	<!-- Power Armor X01 -->
+	<!--_____ X-01 _____-->
+
+	<!-- X-01 Power Armor -->
 
 	<ThingDef ParentName="ApparelBase">
 		<defName>FCP_Apparel_Power_Armor_X01Armor</defName>
-		<label>Power Armor X01</label>
-		<description>PLACEHOLDER</description>
+		<label>X-01 Power Armor</label>
+		<description>The X-01 is the most advanced power armor ever developed before the Great War, shrouded in secrecy and rarely seen outside top-secret military installations. Its cutting-edge materials and systems provide unmatched protection, strength, and intimidation, making it the ultimate prize for any wasteland survivor.</description>
 		<smeltable>false</smeltable>
 		<thingSetMakerTags>
 			<li>RewardStandardMidFreq</li>
@@ -334,13 +381,19 @@
 			<MaxHitPoints>250</MaxHitPoints>
 			<WorkToMake>10200</WorkToMake>
 			<Mass>6.0</Mass>
-			<ArmorRating_Sharp>1.45</ArmorRating_Sharp>
-			<ArmorRating_Blunt>1.45</ArmorRating_Blunt>
-			<ArmorRating_Heat>1.90</ArmorRating_Heat>
-			<Insulation_Cold>3</Insulation_Cold>
-			<Insulation_Heat>3</Insulation_Heat>
-			<EquipDelay>1.2</EquipDelay>
+			<ArmorRating_Sharp>2.0</ArmorRating_Sharp>
+			<ArmorRating_Blunt>2.0</ArmorRating_Blunt>
+			<ArmorRating_Heat>2.2</ArmorRating_Heat>
+			<Insulation_Cold>4</Insulation_Cold>
+			<Insulation_Heat>4</Insulation_Heat>
+			<EquipDelay>1.0</EquipDelay>
 		</statBases>
+		<equippedStatOffsets>
+			<MoveSpeed>0.12</MoveSpeed>
+			<AimingDelayFactor>-0.05</AimingDelayFactor>
+			<ToxicEnvironmentResistance>1.0</ToxicEnvironmentResistance>
+			<SocialImpact>0.10</SocialImpact>
+		</equippedStatOffsets>
 		<apparel>
 			<shellRenderedBehindHead>true</shellRenderedBehindHead>
 			<bodyPartGroups>
@@ -365,6 +418,7 @@
 			</defaultOutfitTags>
 			<canBeDesiredForIdeo>false</canBeDesiredForIdeo>
 			<useDeflectMetalEffect>true</useDeflectMetalEffect>
+			<developmentalStageFilter>Adult</developmentalStageFilter>
 		</apparel>
 		<tradeTags>
 			<li>FCP_Power_Armor_Basic</li>
@@ -379,6 +433,9 @@
 					<li>Construction</li>
 				</workDisables>
 				<canSleep>False</canSleep>
+				<ignoresLegs />
+				<requiredTrait />
+				<hediffOnEmptyFuel />
 			</li>
 		</comps>
 	</ThingDef>
