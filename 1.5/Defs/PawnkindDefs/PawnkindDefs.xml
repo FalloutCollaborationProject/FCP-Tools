@@ -22,6 +22,23 @@
         </apparelTags>
     </PawnKindDef>
 
+    <!--___ Enclave Base ___-->
+
+    <PawnKindDef Name="FCP_EncalvekindBase" Abstract="True">
+        <race>Human</race>
+        <defaultFactionType>FCP_Faction_Encalve</defaultFactionType>
+        <maxGenerationAge>60</maxGenerationAge>
+        <chemicalAddictionChance>0</chemicalAddictionChance>
+        <invNutrition>2.7</invNutrition>
+        <invFoodDef>MealSurvivalPack</invFoodDef>
+        <disallowedTraits>
+            <li>Nudist</li>
+        </disallowedTraits>
+        <apparelTags>
+            <li>FCP_Enclave</li>
+        </apparelTags>
+    </PawnKindDef>
+
     <!--___ NCR Base ___-->
 
     <PawnKindDef Name="FCP_NCRkindBase" Abstract="True">
