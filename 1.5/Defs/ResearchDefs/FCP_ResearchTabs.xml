@@ -17,10 +17,10 @@
         <label>FCP Faction Research</label>
     </ResearchTabDef>
 
-    <!-- Factional Research -->
+    <!-- Pre-War Research -->
 
     <ResearchTabDef>
-        <defName>FCP_Pre-War_Research</defName>
+        <defName>FCP_Pre_War_Research</defName>
         <label>FCP Pre War Research</label>
     </ResearchTabDef>
 
