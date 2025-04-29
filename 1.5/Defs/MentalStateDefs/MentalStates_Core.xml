@@ -1,5 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-    <MentalStateDef ParentName="BaseMentalState">
+
+    <!--_________ Mental States _________-->
+
+    <!--_____ Ghouls _____-->
+
+    <!-- Ghoul Feral Mental State -->
+
+    <MentalStateDef ParentName="BaseMentalState" MayRequire="Rick.FCP.Ghouls">
         <defName>FCP_MentalState_PermanentBerserk</defName>
         <stateClass>FCP_Ghoul.MentalState_Feral</stateClass>
         <label>feral</label>
@@ -27,4 +35,5 @@
         <stateEffecter>Berserk</stateEffecter>
         <tale>MentalStateBerserk</tale>
     </MentalStateDef>
+
 </Defs>
