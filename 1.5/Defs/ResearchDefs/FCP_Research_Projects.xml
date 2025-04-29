@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+    <!--__________ FCP VATS Research __________-->
+
+    <!-- V.A.T.S. Research -->
+
+    <ResearchProjectDef>
+        <defName>FCP_VATS</defName>
+        <label>V.A.T.S.</label>
+        <description>Vault-tech Assisted Targeting System</description>
+        <baseCost>2000</baseCost>
+        <techLevel>Industrial</techLevel>
+        <prerequisites>
+            <li>AdvancedFabrication</li>
+            <li>Gunlink</li>
+        </prerequisites>
+        <requiredResearchFacilities>
+            <li>MultiAnalyzer</li>
+        </requiredResearchFacilities>
+        <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+        <researchViewX>17.00</researchViewX>
+        <researchViewY>5.4</researchViewY>
+    </ResearchProjectDef>
+
     <!--__________ FCP Tools Research __________-->
 
     <!--_____ Column 0 _____-->
