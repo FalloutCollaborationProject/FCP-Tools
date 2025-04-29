@@ -34,11 +34,11 @@
                 <capMods>
                     <li>
                         <capacity>Moving</capacity>
-                        <postFactor>0.1</postFactor>
+                        <postFactor>-0.8</postFactor>
                     </li>
                     <li>
                         <capacity>Manipulation</capacity>
-                        <postFactor>0.1</postFactor>
+                        <postFactor>-0.5</postFactor>
                     </li>
                 </capMods>
             </li>
