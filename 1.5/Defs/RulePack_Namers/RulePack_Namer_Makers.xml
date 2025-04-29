@@ -3,6 +3,38 @@
 
     <!--__________ Settlement Names __________-->
 
+    <!--_____ Wasteland Settlement Names _____-->
+
+    <!-- Settlements -->
+
+    <RulePackDef>
+        <defName>FCP_Namer_Settlement_Wastelanders</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[Wastelander_Settlements]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>Wastelander_Settlements->Settlement_Names/Wastelander/Wastelander_Settlements</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!--_____ Raider Settlement Names _____-->
+
+    <!-- Settlements -->
+
+    <RulePackDef>
+        <defName>FCP_Namer_Settlement_Raiders</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[Raider_Settlements]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>Raider_Settlements->Settlement_Names/Raiders/Raider_Settlements</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
     <!--_____ NCR Settlement Names _____-->
 
     <!-- Settlements -->
@@ -31,6 +63,72 @@
             </rulesStrings>
             <rulesFiles>
                 <li>Legion_Settlements->Settlement_Names/Legion/Legion_Settlements</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!--_____ Enclave Settlement Names _____-->
+
+    <!-- Settlements -->
+
+    <RulePackDef>
+        <defName>FCP_Namer_Settlement_Enclave</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[Enclave_Settlements]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>Enclave_Settlements->Settlement_Names/Enclave/Enclave_Settlements</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!--_____ Brotherhood of Steel Settlement Names _____-->
+
+    <!--__ Outcast Remnants __-->
+
+    <!-- Settlements -->
+
+    <RulePackDef>
+        <defName>FCP_Namer_Settlement_BoS</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[Outcasts_Settlements]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>Enclave_Settlements->Settlement_Names/BoS/Outcasts_Settlements</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!--__ Lyons Pride Remnants __-->
+
+    <!-- Settlements -->
+
+    <RulePackDef>
+        <defName>FCP_Namer_Settlement_BoS</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[Lyons_Pride_Settlements]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>Enclave_Settlements->Settlement_Names/BoS/Lyons_Pride_Settlements</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!--__ Main BoS __-->
+
+    <!-- Settlements -->
+
+    <RulePackDef>
+        <defName>FCP_Namer_Settlement_BoS</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[BoS_Settlements]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>Enclave_Settlements->Settlement_Names/BoS/BoS_Settlements</li>
             </rulesFiles>
         </rulePack>
     </RulePackDef>
