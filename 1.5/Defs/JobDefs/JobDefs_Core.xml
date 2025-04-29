@@ -112,4 +112,16 @@
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
 
+    <!--_____ Mine Pocket _____-->
+
+    <!-- Defuse Mine -->
+
+    <JobDef>
+        <defName>MinePocket_Job</defName>
+        <driverClass>MinePocket.MinePocketJob</driverClass>
+        <reportString>defusing mine.</reportString>
+        <suspendable>false</suspendable>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+      </JobDef>
+
 </Defs>
