@@ -3,7 +3,9 @@
 
     <!--__________ Hidden Factions __________-->
 
-    <!--_____ Wastelander Techprint Traders _____-->
+    <!--_____ Wastelander Misc Factions _____-->
+
+    <!-- Wastelander Techprint Traders Hidden Faction -->
 
     <FactionDef ParentName="FactionBase">
         <defName>FCP_Faction_Hidden_Wastelander_Techprint_Traders</defName>
@@ -53,7 +55,7 @@
             <!-- Wastelander -->
 
             <li>
-                <!-- Distance fights, scout recon troopers -->
+                <!-- Distance fights -->
                 <kindDef>Combat</kindDef>
                 <disallowedStrategies>
                     <li>EmergeFromWater</li>
@@ -95,7 +97,7 @@
         </modExtensions>
     </FactionDef>
 
-    <!--_____ Wastelanders _____-->
+    <!-- Wastelander Hidden Faction -->
 
     <FactionDef ParentName="FactionBase">
         <defName>FCP_Faction_Hidden_Wastelanders</defName>
