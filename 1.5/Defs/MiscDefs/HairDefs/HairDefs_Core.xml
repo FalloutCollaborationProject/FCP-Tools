@@ -20,4 +20,30 @@
         </styleTags>
     </HairDef>
 
+    <!-- Vault Boy -->
+
+    <HairDef>
+        <defName>FCP_Hair_Vault_Boy</defName>
+        <label>Vault Boy</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Custom/Vault_Boy/FCP_Hair_Vault_Boy</texPath>
+        <category>Urban</category>
+        <styleTags>
+            <li>FCP_Vault_Boy</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Vault Girl -->
+
+    <HairDef>
+        <defName>FCP_Hair_Vault_Girl</defName>
+        <label>Vault Girl</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Custom/Vault_Girl/FCP_Hair_Vault_Girl</texPath>
+        <category>Urban</category>
+        <styleTags>
+            <li>FCP_Vault_Girl</li>
+        </styleTags>
+    </HairDef>
+
 </Defs>
