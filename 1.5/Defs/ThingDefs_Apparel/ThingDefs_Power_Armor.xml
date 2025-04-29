@@ -88,6 +88,7 @@
 						<li>Chemfuel</li>
 					</thingDefs>
 				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 				<initialFuelPercent>1</initialFuelPercent>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
@@ -360,7 +361,7 @@
 	<!-- X-01 Power Armor -->
 
 	<ThingDef ParentName="ApparelBase">
-		<defName>FCP_Apparel_Power_Armor_X01Armor</defName>
+		<defName>FCP_Apparel_X01_Power_Armor</defName>
 		<label>X-01 Power Armor</label>
 		<description>The X-01 is the most advanced power armor ever developed before the Great War, shrouded in secrecy and rarely seen outside top-secret military installations. Its cutting-edge materials and systems provide unmatched protection, strength, and intimidation, making it the ultimate prize for any wasteland survivor.</description>
 		<smeltable>false</smeltable>
