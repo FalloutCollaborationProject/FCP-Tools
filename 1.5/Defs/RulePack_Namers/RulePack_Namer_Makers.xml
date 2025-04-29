@@ -37,6 +37,8 @@
 
     <!--_____ NCR Settlement Names _____-->
 
+    <!--__ New California Republic __-->
+
     <!-- Settlements -->
 
     <RulePackDef>
@@ -47,6 +49,38 @@
             </rulesStrings>
             <rulesFiles>
                 <li>NCR_Settlements->Settlement_Names/NCR/NCR_Settlements</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!--__ New California Republic Deserters __-->
+
+    <!-- Settlements -->
+
+    <RulePackDef>
+        <defName>FCP_Namer_Settlement_NCR_Deserters</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[NCR_Deserters_Settlements]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>NCR_Deserters_Settlements->Settlement_Names/NCR/NCR_Deserters_Settlements</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!--_____ Desert Rangers Settlement Names _____-->
+
+    <!-- Settlements -->
+
+    <RulePackDef>
+        <defName>FCP_Namer_Settlement_Desert_Rangers</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[Desert_Rangers_Settlements]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>Desert_Rangers_Settlements->Settlement_Names/Desert_Rangers/Desert_Rangers_Settlements</li>
             </rulesFiles>
         </rulePack>
     </RulePackDef>
@@ -63,6 +97,70 @@
             </rulesStrings>
             <rulesFiles>
                 <li>Legion_Settlements->Settlement_Names/Legion/Legion_Settlements</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!--_____ Great Khan Settlement Names _____-->
+
+    <!-- Settlements -->
+
+    <RulePackDef>
+        <defName>FCP_Namer_Settlement_Great_Khan</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[Great_Khan_Settlements]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>Great_Khan_Settlements->Settlement_Names/Great_Khan/Great_Khan_Settlements</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!--_____ Minutemen Settlement Names _____-->
+
+    <!-- Settlements -->
+
+    <RulePackDef>
+        <defName>FCP_Namer_Settlement_Minutemen</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[Minutemen_Settlements]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>Minutemen_Settlements->Settlement_Names/Minutemen/Minutemen_Settlements</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!--_____ Railroad Settlement Names _____-->
+
+    <!-- Settlements -->
+
+    <RulePackDef>
+        <defName>FCP_Namer_Settlement_Railroad</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[Railroad_Settlements]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>Railroad_Settlements->Settlement_Names/Railroad/Railroad_Settlements</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!--_____ Children of Atom Settlement Names _____-->
+
+    <!-- Settlements -->
+
+    <RulePackDef>
+        <defName>FCP_Namer_Settlement_CoA</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[CoA_Settlements]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>CoA_Settlements->Settlement_Names/CoA/CoA_Settlements</li>
             </rulesFiles>
         </rulePack>
     </RulePackDef>
