@@ -81,7 +81,7 @@
         <backstoryFiltersOverride>
             <li>
                 <categoriesChildhood>
-                    <li>FCP_Legion_Child</li>
+                    <li>FCP_Backstory_Legion_Child</li>
                 </categoriesChildhood>
             </li>
         </backstoryFiltersOverride>
@@ -112,10 +112,10 @@
         <backstoryFiltersOverride>
             <li>
                 <categoriesChildhood>
-                    <li>FCP_Wastelander_Child</li>
+                    <li>FCP_Backstory_Wastelander_Child</li>
                 </categoriesChildhood>
                 <categoriesAdulthood>
-                    <li>FCP_Wastelander</li>
+                    <li>FCP_Backstory_Wastelander</li>
                 </categoriesAdulthood>
             </li>
         </backstoryFiltersOverride>
@@ -128,7 +128,7 @@
     <!-- Crow (Armor)-->
 
     <PawnKindDef ParentName="FCP_WastelanderkindBase">
-        <defName>FCP_Wastelander_Trader_Crow</defName>
+        <defName>FCP_Pawnkind_Wastelander_Trader_Crow</defName>
         <label>Apparel and Armor Trader</label>
         <trader>true</trader>
         <combatPower>30</combatPower>
@@ -140,10 +140,10 @@
         <backstoryFiltersOverride Inherit="False">
             <li>
                 <categoriesChildhood>
-                    <li>FCP_Wasteland_Trader_Crow_Child</li>
+                    <li>FCP_Backstory_Wasteland_Trader_Crow_Child</li>
                 </categoriesChildhood>
                 <categoriesAdulthood>
-                    <li>FCP_Wasteland_Trader_Crow</li>
+                    <li>FCP_Backstory_Wasteland_Trader_Crow</li>
                 </categoriesAdulthood>
             </li>
         </backstoryFiltersOverride>
@@ -153,7 +153,7 @@
     <!-- Caravan Guard -->
 
     <PawnKindDef ParentName="FCP_WastelanderkindBase">
-        <defName>FCP_Wastelander_Caravan_Guard</defName>
+        <defName>FCP_Pawnkind_Wastelander_Caravan_Guard</defName>
         <label>Caravan Guard</label>
         <combatPower>85</combatPower>
         <itemQuality>Poor</itemQuality>
@@ -182,10 +182,10 @@
         <backstoryFiltersOverride Inherit="False">
             <li>
                 <categoriesChildhood>
-                    <li>FCP_Wastelander_Child</li>
+                    <li>FCP_Backstory_Wastelander_Child</li>
                 </categoriesChildhood>
                 <categoriesAdulthood >
-                    <li>FCP_Wastelander_Caravan_Guard</li>
+                    <li>FCP_Backstory_Wastelander_Caravan_Guard</li>
                 </categoriesAdulthood>
             </li>
         </backstoryFiltersOverride>
@@ -197,7 +197,7 @@
     <!-- Wastelander -->
 
     <PawnKindDef ParentName="FCP_WastelanderkindBase">
-        <defName>FCP_Wastelander_Citizen</defName>
+        <defName>FCP_Pawnkind_Wastelander_Citizen</defName>
         <label>Wastelander</label>
         <combatPower>30</combatPower>
         <itemQuality>Poor</itemQuality>
@@ -221,10 +221,10 @@
         <backstoryFiltersOverride>
             <li>
                 <categoriesChildhood>
-                    <li>FCP_Wastelander_Child</li>
+                    <li>FCP_Backstory_Wastelander_Child</li>
                 </categoriesChildhood>
                 <categoriesAdulthood>
-                    <li>FCP_Wastelander</li>
+                    <li>FCP_Backstory_Wastelander</li>
                 </categoriesAdulthood>
             </li>
         </backstoryFiltersOverride>
@@ -235,7 +235,7 @@
     <!-- Combat Armor -->
 
     <PawnKindDef ParentName="FCP_WastelanderkindBase">
-        <defName>FCP_Armored_Wastelander_Combat_Armor</defName>
+        <defName>FCP_Pawnkind_Armored_Wastelander_Combat_Armor</defName>
         <label>Wastelander</label>
         <combatPower>50</combatPower>
         <itemQuality>Poor</itemQuality>
@@ -262,10 +262,10 @@
         <backstoryFiltersOverride>
             <li>
                 <categoriesChildhood>
-                    <li>FCP_Wastelander_Child</li>
+                    <li>FCP_Backstory_Wastelander_Child</li>
                 </categoriesChildhood>
                 <categoriesAdulthood>
-                    <li>FCP_Wastelander</li>
+                    <li>FCP_Backstory_Wastelander</li>
                 </categoriesAdulthood>
             </li>
         </backstoryFiltersOverride>
@@ -275,7 +275,7 @@
     <!-- Modular Combat Armor -->
 
     <PawnKindDef ParentName="FCP_WastelanderkindBase">
-        <defName>FCP_Armored_Wastelander_Combat_Armor_Modular</defName>
+        <defName>FCP_Pawnkind_Armored_Wastelander_Combat_Armor_Modular</defName>
         <label>Wastelander</label>
         <combatPower>55</combatPower>
         <itemQuality>Poor</itemQuality>
@@ -305,7 +305,7 @@
     <!-- Reinforced Combat Armor -->
 
     <PawnKindDef ParentName="FCP_WastelanderkindBase">
-        <defName>FCP_Armored_Wastelander_Combat_Armor_Reinforced</defName>
+        <defName>FCP_Pawnkind_Armored_Wastelander_Combat_Armor_Reinforced</defName>
         <label>Wastelander</label>
         <combatPower>58</combatPower>
         <itemQuality>Poor</itemQuality>
@@ -335,7 +335,7 @@
     <!-- Reinforced Combat Armor MKII -->
 
     <PawnKindDef ParentName="FCP_WastelanderkindBase">
-        <defName>FCP_Armored_Wastelander_Combat_Armor_Reinforced_MK_II</defName>
+        <defName>FCP_Pawnkind_Armored_Wastelander_Combat_Armor_Reinforced_MK_II</defName>
         <label>Wastelander</label>
         <combatPower>60</combatPower>
         <itemQuality>Poor</itemQuality>
