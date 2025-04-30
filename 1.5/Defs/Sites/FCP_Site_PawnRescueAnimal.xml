@@ -1,42 +1,46 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  
-  <SitePartDef>
-    <defName>FCP_Site_PawnRescueAnimal</defName>
-    <label>prisoner camp</label>
-    <description>A prisoner being held by enemies.</description>
-    <workerClass>FCP_RadiantQuests.SitePartWorker_PawnRescueAnimal</workerClass>
-    <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
-    <expandingIconTexture>World/WorldObjects/Expanding/Sites/Prisoner</expandingIconTexture>
-    <forceExitAndRemoveMapCountdownDurationDays>6</forceExitAndRemoveMapCountdownDurationDays>
-    <requiresFaction>true</requiresFaction>
-    <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
-    <tags>
-      <li>FCP_Site_PawnRescueAnimal</li>
-    </tags>
-  </SitePartDef>
 
+    <!--__________ Site Defs __________-->
 
-  <GenStepDef>
-    <defName>FCP_Site_PawnRescueAnimal_Outpost</defName>
-    <linkWithSite>FCP_Site_PawnRescueAnimal</linkWithSite>
-    <order>450</order>
-    <genStep Class="GenStep_Outpost">
-      <pawnGroupKindDef>Combat</pawnGroupKindDef>
-    </genStep>
-  </GenStepDef>
+    <!-- Site Animal Rescue -->
 
-  <GenStepDef>
-    <defName>FCP_Site_PawnRescueAnimal_OutpostPower</defName>
-    <linkWithSite>FCP_Site_PawnRescueAnimal</linkWithSite>
-    <order>451</order>
-    <genStep Class="GenStep_Power"/>
-  </GenStepDef>
-  <GenStepDef>
-    <defName>FCP_Site_PawnRescueAnimal_PawnPrisoner</defName>
-    <linkWithSite>FCP_Site_PawnRescueAnimal</linkWithSite>
-    <order>460</order>
-    <genStep Class="FCP_RadiantQuests.GenStep_PawnRescueAnimal"/>
-  </GenStepDef>
+    <SitePartDef>
+        <defName>FCP_Site_PawnRescueAnimal</defName>
+        <label>prisoner camp</label>
+        <description>A prisoner being held by enemies.</description>
+        <workerClass>FCP_RadiantQuests.SitePartWorker_PawnRescueAnimal</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>World/WorldObjects/Expanding/Sites/Prisoner</expandingIconTexture>
+        <forceExitAndRemoveMapCountdownDurationDays>6</forceExitAndRemoveMapCountdownDurationDays>
+        <requiresFaction>true</requiresFaction>
+        <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+        <tags>
+            <li>FCP_Site_PawnRescueAnimal</li>
+        </tags>
+    </SitePartDef>
+
+    <GenStepDef>
+        <defName>FCP_Site_PawnRescueAnimal_Outpost</defName>
+        <linkWithSite>FCP_Site_PawnRescueAnimal</linkWithSite>
+        <order>450</order>
+        <genStep Class="GenStep_Outpost">
+            <pawnGroupKindDef>Combat</pawnGroupKindDef>
+        </genStep>
+    </GenStepDef>
+
+    <GenStepDef>
+        <defName>FCP_Site_PawnRescueAnimal_OutpostPower</defName>
+        <linkWithSite>FCP_Site_PawnRescueAnimal</linkWithSite>
+        <order>451</order>
+        <genStep Class="GenStep_Power"/>
+    </GenStepDef>
+
+    <GenStepDef>
+        <defName>FCP_Site_PawnRescueAnimal_PawnPrisoner</defName>
+        <linkWithSite>FCP_Site_PawnRescueAnimal</linkWithSite>
+        <order>460</order>
+        <genStep Class="FCP_RadiantQuests.GenStep_PawnRescueAnimal"/>
+    </GenStepDef>
 
 </Defs>
