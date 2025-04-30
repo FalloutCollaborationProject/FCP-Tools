@@ -52,7 +52,7 @@
     <!-- Lasers -->
 
     <SoundDef>
-        <defName>Shot_Laser</defName>
+        <defName>FCP_Sound_Shot_Laser</defName>
         <context>MapOnly</context>
         <eventNames />
         <maxSimultaneous>1</maxSimultaneous>
@@ -75,7 +75,7 @@
     <!-- Plasma -->
 
     <SoundDef>
-        <defName>Shot_Plasma</defName>
+        <defName>FCP_Sound_Shot_Plasma</defName>
         <context>MapOnly</context>
         <eventNames />
         <maxSimultaneous>1</maxSimultaneous>
@@ -176,7 +176,7 @@
     <!-- Rad Raven Call -->
 
     <SoundDef>
-        <defName>FCP_Rad_Raven_Call</defName>
+        <defName>FCP_Sound_Animal_Rad_Raven_Call</defName>
         <context>MapOnly</context>
         <maxSimultaneous>1</maxSimultaneous>
         <subSounds>
@@ -196,7 +196,7 @@
     <!-- Radgull Call -->
 
     <SoundDef>
-        <defName>FCP_Radgull_Call</defName>
+        <defName>FCP_Sound_Animal_Radgull_Call</defName>
         <context>MapOnly</context>
         <maxSimultaneous>1</maxSimultaneous>
         <subSounds>
@@ -216,7 +216,7 @@
     <!-- Game Start Line -->
 
     <SoundDef>
-        <defName>FCP_War_Never_Changes</defName>
+        <defName>FCP_Sound_War_Never_Changes</defName>
         <maxVoices>1</maxVoices>
         <maxSimultaneous>1</maxSimultaneous>
         <subSounds>
