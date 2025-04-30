@@ -329,4 +329,100 @@
         </rulePack>
     </RulePackDef>
 
+    <!--_____ Children of Atom Names _____-->
+
+    <!-- Male -->
+
+    <RulePackDef>
+        <defName>FCP_CoA_Namer_Male</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[FCP_CoA_Names_Male] [FCP_CoA_Names_Last]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>FCP_CoA_Names_Male->Names/FCP_CoA_Names_Male</li>
+                <li>FCP_CoA_Names_Last->Names/FCP_CoA_Names_Last</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!-- Female -->
+
+    <RulePackDef>
+        <defName>FCP_CoA_Namer_Female</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[FCP_CoA_Names_Female] [FCP_CoA_Names_Last]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>FCP_CoA_Names_Female->Names/FCP_CoA_Names_Female</li>
+                <li>FCP_CoA_Names_Last->Names/FCP_CoA_Names_Last</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!--_____ Great Khans Names _____-->
+
+    <!-- Male -->
+
+    <RulePackDef>
+        <defName>FCP_Great_Khan_Namer_Male</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[FCP_Great_Khan_Names_Male] [FCP_Great_Khan_Names_Last]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>FCP_Great_Khan_Names_Male->Names/FCP_Great_Khan_Names_Male</li>
+                <li>FCP_Great_Khan_Names_Last->Names/FCP_Great_Khan_Names_Last</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!-- Female -->
+
+    <RulePackDef>
+        <defName>FCP_Great_Khan_Namer_Female</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[FCP_Great_Khan_Names_Female] [FCP_Great_Khan_Names_Last]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>FCP_Great_Khan_Names_Female->Names/FCP_Great_Khan_Names_Female</li>
+                <li>FCP_Great_Khan_Names_Last->Names/FCP_Great_Khan_Names_Last</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!--_____ Raider Names _____-->
+
+    <!-- Male -->
+
+    <RulePackDef>
+        <defName>FCP_Raider_Namer_Male</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[FCP_Raider_Names_Male] [FCP_Raider_Names_Last]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>FCP_Raider_Names_Male->Names/FCP_Raider_Names_Male</li>
+                <li>FCP_Raider_Names_Last->Names/FCP_Raider_Names_Last</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!-- Female -->
+
+    <RulePackDef>
+        <defName>FCP_Raider_Namer_Female</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[FCP_Raider_Names_Female] [FCP_Raider_Names_Last]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>FCP_Raider_Names_Female->Names/FCP_Raider_Names_Female</li>
+                <li>FCP_Raider_Names_Last->Names/FCP_Raider_Names_Last</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
 </Defs>
