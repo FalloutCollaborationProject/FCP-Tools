@@ -26,7 +26,7 @@
     <!-- Power Armor Empty Fuel -->
 
     <HediffDef ParentName="DiseaseBase">
-        <defName>FCP_Power_Armor_Empty_Fusion_Core</defName>
+        <defName>FCP_Hediff_Power_Armor_Empty_Fusion_Core</defName>
         <label>Power Armor (Empty Fusion Core)</label>
         <description>Your power armor is out of fusion cores!</description>
         <stages>
