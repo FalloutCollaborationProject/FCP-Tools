@@ -3,6 +3,50 @@
 
     <!--__________ Sounds __________-->
 
+    <!--_____ Lunchbox _____-->
+
+    <!-- Interact -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Interact_Lunchbox</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Folder">
+                        <clipFolderPath>Item/FCP_Interact_Lunchbox</clipFolderPath>
+                    </li>
+                </grains>
+                <volumeRange>45</volumeRange>
+                <pitchRange>1</pitchRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+    
+    <!--_____ Cards _____-->
+
+    <!-- Interact -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Card_Use</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Folder">
+                        <clipFolderPath>Item/FCP_Card_Use</clipFolderPath>
+                    </li>
+                </grains>
+                <volumeRange>5</volumeRange>
+                <pitchRange>1</pitchRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+    
     <!--_____ Weapons _____-->
 
     <!-- Lasers -->
