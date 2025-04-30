@@ -23,8 +23,8 @@
         <backstoryFilters>
             <li>
                 <categories>
-                    <li>FCP_Wastelander</li>
-                    <li>FCP_Wastelander_Child</li>
+                    <li>FCP_Backstory_Wastelander</li>
+                    <li>FCP_Backstory_Wastelander_Child</li>
                 </categories>
             </li>
         </backstoryFilters>
@@ -61,10 +61,10 @@
                     <li>EmergeFromWater</li>
                 </disallowedStrategies>
                 <options>
-                    <FCP_Armored_Wastelander_Combat_Armor>6</FCP_Armored_Wastelander_Combat_Armor>
-                    <FCP_Armored_Wastelander_Combat_Armor_Modular>4</FCP_Armored_Wastelander_Combat_Armor_Modular>
-                    <FCP_Armored_Wastelander_Combat_Armor_Reinforced>3</FCP_Armored_Wastelander_Combat_Armor_Reinforced>
-                    <FCP_Armored_Wastelander_Combat_Armor_Reinforced_MK_II>1</FCP_Armored_Wastelander_Combat_Armor_Reinforced_MK_II>
+                    <FCP_Pawnkind_Armored_Wastelander_Combat_Armor>6</FCP_Pawnkind_Armored_Wastelander_Combat_Armor>
+                    <FCP_Pawnkind_Armored_Wastelander_Combat_Armor_Modular>4</FCP_Pawnkind_Armored_Wastelander_Combat_Armor_Modular>
+                    <FCP_Pawnkind_Armored_Wastelander_Combat_Armor_Reinforced>3</FCP_Pawnkind_Armored_Wastelander_Combat_Armor_Reinforced>
+                    <FCP_Pawnkind_Armored_Wastelander_Combat_Armor_Reinforced_MK_II>1</FCP_Pawnkind_Armored_Wastelander_Combat_Armor_Reinforced_MK_II>
                 </options>
             </li>
 
@@ -73,13 +73,13 @@
             <li Class="FCP.Core.GroupMakerWithTraderKind">
                 <kindDef>Trader</kindDef>
                 <traders>
-                    <FCP_Wastelander_Trader_Crow>1</FCP_Wastelander_Trader_Crow>
+                    <FCP_Pawnkind_Wastelander_Trader_Crow>1</FCP_Pawnkind_Wastelander_Trader_Crow>
                 </traders>
                 <carriers>
                     <FCP_Animal_Brahmin>6</FCP_Animal_Brahmin>
                 </carriers>
                 <guards>
-                    <FCP_Wastelander_Caravan_Guard>5</FCP_Wastelander_Caravan_Guard>
+                    <FCP_Pawnkind_Wastelander_Caravan_Guard>5</FCP_Pawnkind_Wastelander_Caravan_Guard>
                 </guards>
             </li>
         </pawnGroupMakers>
@@ -115,8 +115,8 @@
         <backstoryFilters>
             <li>
                 <categories>
-                    <li>FCP_Wastelander</li>
-                    <li>FCP_Wastelander_Child</li>
+                    <li>FCP_Backstory_Wastelander</li>
+                    <li>FCP_Backstory_Wastelander_Child</li>
                 </categories>
             </li>
         </backstoryFilters>
@@ -153,10 +153,10 @@
                     <li>EmergeFromWater</li>
                 </disallowedStrategies>
                 <options>
-                    <FCP_Armored_Wastelander_Combat_Armor>6</FCP_Armored_Wastelander_Combat_Armor>
-                    <FCP_Armored_Wastelander_Combat_Armor_Modular>4</FCP_Armored_Wastelander_Combat_Armor_Modular>
-                    <FCP_Armored_Wastelander_Combat_Armor_Reinforced>3</FCP_Armored_Wastelander_Combat_Armor_Reinforced>
-                    <FCP_Armored_Wastelander_Combat_Armor_Reinforced_MK_II>1</FCP_Armored_Wastelander_Combat_Armor_Reinforced_MK_II>
+                    <FCP_Pawnkind_Armored_Wastelander_Combat_Armor>6</FCP_Pawnkind_Armored_Wastelander_Combat_Armor>
+                    <FCP_Pawnkind_Armored_Wastelander_Combat_Armor_Modular>4</FCP_Pawnkind_Armored_Wastelander_Combat_Armor_Modular>
+                    <FCP_Pawnkind_Armored_Wastelander_Combat_Armor_Reinforced>3</FCP_Pawnkind_Armored_Wastelander_Combat_Armor_Reinforced>
+                    <FCP_Pawnkind_Armored_Wastelander_Combat_Armor_Reinforced_MK_II>1</FCP_Pawnkind_Armored_Wastelander_Combat_Armor_Reinforced_MK_II>
                 </options>
             </li>
 
@@ -165,13 +165,13 @@
             <li Class="FCP.Core.GroupMakerWithTraderKind">
                 <kindDef>Trader</kindDef>
                 <traders>
-                    <FCP_Wastelander_Trader_Crow>1</FCP_Wastelander_Trader_Crow>
+                    <FCP_Pawnkind_Wastelander_Trader_Crow>1</FCP_Pawnkind_Wastelander_Trader_Crow>
                 </traders>
                 <carriers>
                     <FCP_Animal_Brahmin>6</FCP_Animal_Brahmin>
                 </carriers>
                 <guards>
-                    <FCP_Wastelander_Caravan_Guard>5</FCP_Wastelander_Caravan_Guard>
+                    <FCP_Pawnkind_Wastelander_Caravan_Guard>5</FCP_Pawnkind_Wastelander_Caravan_Guard>
                 </guards>
             </li>
         </pawnGroupMakers>
