@@ -22,16 +22,16 @@
         <backstoryFilters>
             <li>
                 <categories>
-                    <li>FCP_NCR_Citizen</li>
-                    <li>FCP_Wastelander</li>
-                    <li>FCP_NCR_Ranger</li>
-                    <li>FCP_NCR_Trooper</li>
-                    <li>FCP_NCR_Ambassador</li>
-                    <li>FCP_NCR_Caravaneer</li>
-                    <li>FCP_NCRCF_Inmate</li>
-                    <li>FCP_NCR_Recon_Trooper</li>
-                    <li>FCP_NCR_Child</li>
-                    <li>FCP_Wastelander_Child</li>
+                    <li>FCP_Backstory_NCR_Citizen</li>
+                    <li>FCP_Backstory_Wastelander</li>
+                    <li>FCP_Backstory_NCR_Ranger</li>
+                    <li>FCP_Backstory_NCR_Trooper</li>
+                    <li>FCP_Backstory_NCR_Ambassador</li>
+                    <li>FCP_Backstory_NCR_Caravaneer</li>
+                    <li>FCP_Backstory_NCRCF_Inmate</li>
+                    <li>FCP_Backstory_NCR_Recon_Trooper</li>
+                    <li>FCP_Backstory_NCR_Child</li>
+                    <li>FCP_Backstory_Wastelander_Child</li>
                 </categories>
             </li>
         </backstoryFilters>
