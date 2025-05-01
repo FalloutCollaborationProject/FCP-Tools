@@ -18,7 +18,7 @@
         </degreeDatas>
     </TraitDef>
 
-    <!-- Toughness -->
+    <!-- Tough -->
 
     <TraitDef>
         <defName>FCP_Trait_Tough</defName>
@@ -27,9 +27,11 @@
             <li>
                 <label>Tough</label>
                 <description>{PAWN_nameDef} is exceptionally tough, taking less damage from all sources.</description>
-                <statFactors>
-                    <IncomingDamageMultiplier>0.85</IncomingDamageMultiplier>
-                </statFactors>
+                <statOffsets>
+                    <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+                    <ArmorRating_Heat>0.10</ArmorRating_Heat>
+                </statOffsets>
             </li>
         </degreeDatas>
     </TraitDef>
@@ -42,10 +44,9 @@
         <degreeDatas>
             <li>
                 <label>Fast Metabolism</label>
-                <description>{PAWN_nameDef} heals wounds faster, but is more susceptible to toxins.</description>
+                <description>{PAWN_nameDef} heals wounds faster.</description>
                 <statOffsets>
                     <ImmunityGainSpeed>0.20</ImmunityGainSpeed>
-                    <ToxicEnvironmentResistance>0.15</ToxicEnvironmentResistance>
                 </statOffsets>
             </li>
         </degreeDatas>
@@ -68,7 +69,7 @@
     </TraitDef>
 
     <!-- Heavy Handed -->
-    
+
     <TraitDef>
         <defName>FCP_Trait_Heavy_Handed</defName>
         <commonality>1</commonality>
@@ -77,7 +78,7 @@
                 <label>Heavy Handed</label>
                 <description>{PAWN_nameDef} hits harder in melee combat, but is less precise.</description>
                 <statOffsets>
-                    <MeleeDamage>0.20</MeleeDamage>
+                    <MeleeDPS>0.20</MeleeDPS>
                     <MeleeHitChance>-0.10</MeleeHitChance>
                 </statOffsets>
             </li>
@@ -95,39 +96,6 @@
                 <description>{PAWN_nameDef} draws and aims weapons faster than most.</description>
                 <statOffsets>
                     <AimingDelayFactor>-0.15</AimingDelayFactor>
-                </statOffsets>
-            </li>
-        </degreeDatas>
-    </TraitDef>
-
-    <!-- Chem Resistant -->
-
-    <TraitDef>
-        <defName>FCP_Trait_Chem_Resistant</defName>
-        <commonality>1</commonality>
-        <degreeDatas>
-            <li>
-                <label>Chem Resistant</label>
-                <description>{PAWN_nameDef} is less likely to suffer from chemical addictions.</description>
-                <statOffsets>
-                    <DrugAddictionChance>-0.25</DrugAddictionChance>
-                </statOffsets>
-            </li>
-        </degreeDatas>
-    </TraitDef>
-
-    <!-- Chem Reliant -->
-
-    <TraitDef>
-        <defName>FCP_Trait_Chem_Reliant</defName>
-        <commonality>1</commonality>
-        <degreeDatas>
-            <li>
-                <label>Chem Reliant</label>
-                <description>{PAWN_nameDef} is more likely to become addicted to chems, but gains stronger effects.</description>
-                <statOffsets>
-                    <DrugAddictionChance>0.25</DrugAddictionChance>
-                    <DrugEffectMultiplier>0.15</DrugEffectMultiplier>
                 </statOffsets>
             </li>
         </degreeDatas>
@@ -160,7 +128,7 @@
                 <label>Bloody Mess</label>
                 <description>{PAWN_nameDef} causes more violent deaths and destruction in combat.</description>
                 <statOffsets>
-                    <MeleeDamage>0.10</MeleeDamage>
+                    <MeleeDPS>0.10</MeleeDPS>
                     <ShootingAccuracyPawn>0.05</ShootingAccuracyPawn>
                 </statOffsets>
             </li>
@@ -168,17 +136,16 @@
     </TraitDef>
 
     <!-- Lead Belly -->
-    
+
     <TraitDef>
         <defName>FCP_Trait_Lead_Belly</defName>
         <commonality>1</commonality>
         <degreeDatas>
             <li>
                 <label>Lead Belly</label>
-                <description>{PAWN_nameDef} is resistant to food poisoning and radiation from food.</description>
+                <description>{PAWN_nameDef} is resistant to food poisoning.</description>
                 <statOffsets>
                     <FoodPoisonChance>-0.25</FoodPoisonChance>
-                    <ToxicEnvironmentResistance>-0.10</ToxicEnvironmentResistance>
                 </statOffsets>
             </li>
         </degreeDatas>
@@ -260,14 +227,13 @@
                 <description>{PAWN_nameDef} is naturally good with animals and less likely to be attacked by them.</description>
                 <statOffsets>
                     <AnimalGatherYield>0.15</AnimalGatherYield>
-                    <AnimalTamingChance>0.10</AnimalTamingChance>
                 </statOffsets>
             </li>
         </degreeDatas>
     </TraitDef>
 
     <!-- Commando -->
-    
+
     <TraitDef>
         <defName>FCP_Trait_Commando</defName>
         <commonality>1</commonality>
@@ -341,9 +307,9 @@
         <degreeDatas>
             <li>
                 <label>Rad Resistant</label>
-                <description>{PAWN_nameDef} is less affected by radiation and toxins.</description>
+                <description>{PAWN_nameDef} is less affected by toxins.</description>
                 <statOffsets>
-                    <ToxicEnvironmentResistance>-0.20</ToxicEnvironmentResistance>
+                    <ToxicResistance>0.20</ToxicResistance>
                 </statOffsets>
             </li>
         </degreeDatas>

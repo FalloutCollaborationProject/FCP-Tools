@@ -188,7 +188,7 @@
     <!-- Settlements -->
 
     <RulePackDef>
-        <defName>FCP_Namer_Settlement_BoS</defName>
+        <defName>FCP_Namer_Settlement_Outcasts</defName>
         <rulePack>
             <rulesStrings>
                 <li>name->[Outcasts_Settlements]</li>
@@ -204,7 +204,7 @@
     <!-- Settlements -->
 
     <RulePackDef>
-        <defName>FCP_Namer_Settlement_BoS</defName>
+        <defName>FCP_Namer_Settlement_Lyons_Pride</defName>
         <rulePack>
             <rulesStrings>
                 <li>name->[Lyons_Pride_Settlements]</li>

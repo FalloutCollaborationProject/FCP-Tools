@@ -10,7 +10,7 @@
         <label>NCR Citizens</label>
         <description>A group of New California Republic citizens.</description>
         <isPlayer>true</isPlayer>
-        <basicMemberKind>FCP_NCR_Citizen</basicMemberKind>
+        <basicMemberKind>FCP_Pawnkind_NCR_Citizen</basicMemberKind>
         <pawnSingular>Citizen</pawnSingular>
         <pawnsPlural>Citizens</pawnsPlural>
         <techLevel>Industrial</techLevel>

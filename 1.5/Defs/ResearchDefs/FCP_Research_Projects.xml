@@ -1202,7 +1202,7 @@
     <ResearchProjectDef Name="FCP_Pre_War_Civilian_Research_Base" Abstract="true">
         <techprintCount>1</techprintCount>
         <techprintCommonality>1</techprintCommonality>
-        <tab>FCP_Pre-War_Research</tab>
+        <tab>FCP_Pre_War_Research</tab>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <heldByFactionCategoryTags>

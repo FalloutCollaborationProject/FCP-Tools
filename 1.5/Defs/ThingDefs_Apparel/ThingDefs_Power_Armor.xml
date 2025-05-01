@@ -73,7 +73,7 @@
 				</workDisables>
 				<canSleep>False</canSleep>
 				<ignoresLegs>True</ignoresLegs>
-				<requiredTrait>FCP_Power_Armor_Trained</requiredTrait>
+				<requiredTrait>FCP_Trait_Power_Armor_Trained</requiredTrait>
 				<hediffOnEmptyFuel>FCP_Hediff_Power_Armor_Empty_Fusion_Core</hediffOnEmptyFuel>
 			</li>
 			<li Class="CompProperties_Refuelable">
