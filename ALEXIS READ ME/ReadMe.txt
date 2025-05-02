@@ -1,1 +1,0 @@
-The assembly should remain within this file, however all references to xml should be in the FCP-Ghouls repo. All C# remains in tools
