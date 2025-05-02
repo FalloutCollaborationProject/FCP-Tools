@@ -34,7 +34,7 @@
             </li>
             <!-- Factional -->
             <li Class="FCP.Core.CharacterTitleDefinition" MayRequire="Rick.FCP.NCR">
-                <title>FCP_NCR_Ranger_Volunteer</title>
+                <title>FCP_Title_NCR_Ranger_Volunteer</title>
             </li>
         </definitions>
     </FCP.Core.CharacterDef>
