@@ -94,7 +94,7 @@
         <xenotypeSet>
             <xenotypeChances>
                 <Baseliner>0.8</Baseliner>
-                <FCP_Xenotype MayRequire="Rick.FCP.Ghouls">0.2</FCP_Xenotype>
+                <FCP_Xenotype_Ghoul MayRequire="Rick.FCP.Ghouls">0.2</FCP_Xenotype_Ghoul>
             </xenotypeChances>
         </xenotypeSet>
         <useFactionXenotypes>false</useFactionXenotypes>
