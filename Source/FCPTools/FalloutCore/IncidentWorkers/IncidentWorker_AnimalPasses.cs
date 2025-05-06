@@ -11,7 +11,7 @@ namespace FCP.Core
         private ModExtension_AnimalPassesConfig Config => 
             def.GetModExtension<ModExtension_AnimalPassesConfig>();
         
-        protected override bool CanFireNowSub(IncidentParms parms)
+        public override bool CanFireNowSub(IncidentParms parms)
         {
             Map map = (Map)parms.target;
             
@@ -33,7 +33,7 @@ namespace FCP.Core
                    TryFindEntryCell(map, out _);
         }
         
-        protected override bool TryExecuteWorker(IncidentParms parms)
+        public override bool TryExecuteWorker(IncidentParms parms)
         {
             Map map = (Map)parms.target;
             

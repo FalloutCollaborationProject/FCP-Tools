@@ -8,7 +8,7 @@ namespace FCP.Core
         private const float maxEnemySearchDist = 9999f;
         private const float maxTravelRadius = 9999f;
 
-        protected override Job TryGiveJob(Pawn pawn)
+        public override Job TryGiveJob(Pawn pawn)
         {
             if (!IsValidPawnForReaction(pawn)) 
                 return null;
