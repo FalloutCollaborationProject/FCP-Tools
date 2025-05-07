@@ -871,32 +871,6 @@
         </possessions>
     </BackstoryDef>
 
-    <!-- Post-war Undertaker -->
-
-    <BackstoryDef>
-        <defName>FCP_Backstory_Wastelander_Post_war_Undertaker</defName>
-        <identifier>FCP_Backstory_Wastelander_Post_war_Undertaker</identifier>
-        <slot>Adulthood</slot>
-        <title>Post-war Undertaker</title>
-        <titleShort>Post-war Undertaker</titleShort>
-        <description>Life in the wasteland was often brutal, arduous and short. Some of the larger settlements employed an undertaker. [PAWN_nameDef] was one of those undertakers and [PAWN_possessive] job was to dig graves and bury those whose lives were claimed by raiders, radiation, mutated beasts and, occasionally, old age.</description>
-        <skillGains>
-            <Construction>4</Construction>
-            <Mining>4</Mining>
-            <Medicine>2</Medicine>
-            <Social>-4</Social>
-        </skillGains>
-        <workDisables>None</workDisables>
-        <requiredWorkTags>None</requiredWorkTags>
-        <spawnCategories>
-            <li>FCP_Backstory_Ghoul</li>
-        </spawnCategories>
-        <bodyTypeFemale>Female</bodyTypeFemale>
-        <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
-    </BackstoryDef>
-
     <!-- Water Purifier Worker -->
 
     <BackstoryDef>
@@ -1109,33 +1083,6 @@
         </possessions>
     </BackstoryDef>
 
-    <!-- Post-war Bodyguard -->
-
-    <BackstoryDef>
-        <defName>FCP_Backstory_Wastelander_Post_war_Bodyguard</defName>
-        <identifier>FCP_Backstory_Wastelander_Post_war_Bodyguard</identifier>
-        <slot>Adulthood</slot>
-        <title>Post-war Bodyguard</title>
-        <titleShort>Post-war Bodyguard</titleShort>
-        <description>[PAWN_nameDef] made a living by protecting affluent customers from the dangers of the wasteland. [PAWN_pronoun] protected wealthy caravaners, important officials from everything and everyone that would harm them, as long as they paid of course. While it may have been less lethal than working as a mercenary, it was still dangerous and [PAWN_nameDef] had the scars to prove it.</description>
-        <skillGains>
-            <Shooting>3</Shooting>
-            <Melee>4</Melee>
-            <Crafting>2</Crafting>
-            <Medicine>2</Medicine>
-        </skillGains>
-        <workDisables>None</workDisables>
-        <requiredWorkTags>None</requiredWorkTags>
-        <spawnCategories>
-            <li>FCP_Backstory_Wastelander</li>
-            <li>FCP_Ghoul</li>
-        </spawnCategories>
-        <bodyTypeFemale>Female</bodyTypeFemale>
-        <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
-    </BackstoryDef>
-
     <!-- Wasteland Mayor -->
 
     <BackstoryDef>
@@ -1213,32 +1160,6 @@
         <bodyTypeGlobal>Thin</bodyTypeGlobal>
         <bodyTypeFemale>Thin</bodyTypeFemale>
         <bodyTypeMale>Thin</bodyTypeMale>
-        <possessions>
-        </possessions>
-    </BackstoryDef>
-
-    <!-- Pre-war Gourmet -->
-
-    <BackstoryDef>
-        <defName>FCP_Backstory_Wastelander_Pre_war_Gourmet</defName>
-        <identifier>FCP_Backstory_Wastelander_Pre_war_Gourmet</identifier>
-        <slot>Adulthood</slot>
-        <title>Pre-war Gourmet</title>
-        <titleShort>Pre-war Gourmet</titleShort>
-        <description>Just the thought of eating radroaches or molerats made [PAWN_nameDef] shiver with disgust. [PAWN_pronoun] was what some called an old-world gourmet and preferred to dine on ancient rations of canned meat, mac and cheese and Salisbury steak. While most members of [PAWN_possessive] community only shook their heads at [PAWN_possessive] behaviour, none could argue that [PAWN_pronoun] was indeed a good cook.</description>
-        <skillGains>
-            <Cooking>5</Cooking>
-            <Artistic>5</Artistic>
-            <Social>4</Social>
-        </skillGains>
-        <workDisables>PlantWork, Animals</workDisables>
-        <requiredWorkTags>None</requiredWorkTags>
-        <spawnCategories>
-            <li>FCP_Backstory_Ghoul</li>
-        </spawnCategories>
-        <bodyTypeGlobal>Fat</bodyTypeGlobal>
-        <bodyTypeFemale>Fat</bodyTypeFemale>
-        <bodyTypeMale>Fat</bodyTypeMale>
         <possessions>
         </possessions>
     </BackstoryDef>
