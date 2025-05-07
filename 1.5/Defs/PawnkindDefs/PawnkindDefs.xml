@@ -121,6 +121,38 @@
         </backstoryFiltersOverride>
     </PawnKindDef>
 
+    <!--___ Ghoul Base ___-->
+
+    <PawnKindDef Name="FCP_WastelanderkindBase" Abstract="True">
+        <race>Human</race>
+        <xenotypeSet>
+            <xenotypeChances>
+                <FCP_Xenotype_Ghoul MayRequire="Rick.FCP.Ghouls">1</FCP_Xenotype_Ghoul>
+            </xenotypeChances>
+        </xenotypeSet>
+        <useFactionXenotypes>false</useFactionXenotypes>
+        <maxGenerationAge>60</maxGenerationAge>
+        <chemicalAddictionChance>0.25</chemicalAddictionChance>
+        <invNutrition>2.7</invNutrition>
+        <invFoodDef>MealSurvivalPack</invFoodDef>
+        <disallowedTraits>
+            <li>Nudist</li>
+        </disallowedTraits>
+        <apparelTags>
+            <li>FCP_Wastelander_Apparel</li>
+        </apparelTags>
+        <backstoryFiltersOverride>
+            <li>
+                <categoriesChildhood>
+                    <li>FCP_Backstory_Wastelander_Child</li>
+                </categoriesChildhood>
+                <categoriesAdulthood>
+                    <li>FCP_Backstory_Ghoul</li>
+                </categoriesAdulthood>
+            </li>
+        </backstoryFiltersOverride>
+    </PawnKindDef>
+    
     <!--_____ Wastelanders _____-->
 
     <!--___ Traders ___-->
