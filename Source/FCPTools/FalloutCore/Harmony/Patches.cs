@@ -100,6 +100,10 @@ public static class Patches
         harmony.Patch(original: AccessTools.Method(typeof(PawnGroupKindWorker_Trader), "GenerateTrader", parameters: [typeof(PawnGroupMakerParms), typeof(PawnGroupMaker), typeof(TraderKindDef)]),
             prefix: new HarmonyMethod(typeof(Patches), nameof(PawnGroupKindWorker_Trader_GenerateTrader_Prefix)));
         
+        // Forced TraderKindDef for PawnGroupMaker
+        harmony.Patch(original: AccessTools.Method(typeof(PawnGroupKindWorker_Normal), "GeneratePawns", parameters: [typeof(PawnGroupMakerParms), typeof(PawnGroupMaker), typeof(List<Pawn>), typeof(bool)]),
+            postfix: new HarmonyMethod(typeof(Patches), nameof(PawnGroupKindWorker_Normal_GeneratePawns_Postfix)));
+        
         // Faction Permanent Hostility
         harmony.Patch(original: AccessTools.Method(typeof(GoodwillSituationWorker_PermanentEnemy), "ArePermanentEnemies"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(GoodwillSituationWorker_PermanentEnemy_ArePermanentEnemies_Postfix)));
@@ -590,7 +594,7 @@ public static class Patches
         {
             var index = Rand.Range(0, list.Count);
             var characterCustom = list[index];
-            if (!uniqueCharTracker.CharacterPawnExistsDead(characterCustom))
+            if (!uniqueCharTracker.CharacterPawnDead(characterCustom) && !uniqueCharTracker.CharacterPawnSpawned(characterCustom))
             {
                 customPawn = uniqueCharTracker.GetOrGenPawn(characterCustom, null, faction);
                 break;
@@ -605,6 +609,39 @@ public static class Patches
         // Skip the original method
         __result = customPawn;
         return false;
+    }
+
+    #endregion
+    
+    #region Add Custom Character to PawnGroupKindWorkers
+
+    public static void PawnGroupKindWorker_Normal_GeneratePawns_Postfix(PawnGroupMakerParms parms, PawnGroupMaker groupMaker, ref List<Pawn> outPawns)
+    {
+        if (groupMaker is not GroupMakerWithCustomChar groupMakerWithCustomChar) return;
+        if (groupMakerWithCustomChar.characterDefs.Empty())
+        {
+            FCPLog.Warning("A GroupMakerWithCustomChar was defined without any characterDefs assigned");
+            return;
+        }
+        var list = groupMakerWithCustomChar.characterDefs.ToList();
+        var uniqueCharTracker = UniqueCharactersTracker.Instance;
+        Pawn customPawn = null;
+        var faction = parms.faction;
+        while (list.Count > 0)
+        {
+            var index = Rand.Range(0, list.Count);
+            var characterCustom = list[index];
+            if (!uniqueCharTracker.CharacterPawnDead(characterCustom) &&
+                !uniqueCharTracker.CharacterPawnSpawned(characterCustom))
+            {
+
+                customPawn = uniqueCharTracker.GetOrGenPawn(characterCustom, null, faction);
+                break;
+            }
+            list.RemoveAt(index);
+        }
+        if (customPawn == null) return;
+        outPawns.Add(customPawn);
     }
 
     #endregion
