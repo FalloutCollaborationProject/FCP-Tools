@@ -42,6 +42,15 @@ public class UniqueCharactersTracker : WorldComponent
     }
     
     /// <summary>
+    /// Check for a UniqueCharacter entry in the tracker and if the entry has a non destroyed/discarded dead pawn.
+    /// </summary>
+    public bool CharacterPawnSpawned(CharacterDef charDef)
+    {
+        UniqueCharacter character = characters.Find(chr => chr.def == charDef);
+        return character != null && character.PawnExists() && character.pawn.Spawned;
+    }
+    
+    /// <summary>
     /// Try to find a matching UniqueCharacter for a given pawn
     /// </summary>
     public bool TryGetPawnCharacter(Pawn pawn, out UniqueCharacter character)
