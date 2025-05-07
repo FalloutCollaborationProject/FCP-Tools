@@ -10,12 +10,12 @@ public class QuestNode_Root_StorytellerJoin : QuestNode_Root_WandererJoin
 	private string signalAccept;
 	private string signalReject;
 	
-	protected override bool TestRunInt(Slate slate)
+	public override bool TestRunInt(Slate slate)
 	{
 		return Find.Storyteller.def.HasModExtension<ModExtension_StoryTellerIsJoiner>();
 	}
 
-	protected override void RunInt()
+	public override void RunInt()
 	{
 		base.RunInt();
 		Quest quest = QuestGen.quest;
@@ -37,7 +37,7 @@ public class QuestNode_Root_StorytellerJoin : QuestNode_Root_WandererJoin
 		return pawn;
 	}
 
-	protected override void AddSpawnPawnQuestParts(Quest quest, Map map, Pawn pawn)
+	public override void AddSpawnPawnQuestParts(Quest quest, Map map, Pawn pawn)
 	{
 		signalAccept = QuestGenUtility.HardcodedSignalWithQuestID("Accept");
 		signalReject = QuestGenUtility.HardcodedSignalWithQuestID("Reject");

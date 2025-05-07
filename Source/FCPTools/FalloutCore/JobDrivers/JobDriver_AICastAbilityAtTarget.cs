@@ -13,7 +13,7 @@ namespace FCP.Core
             return true;
         }
         
-        protected override IEnumerable<Toil> MakeNewToils()
+        public override IEnumerable<Toil> MakeNewToils()
         {
             if (job.ability == null || job.verbToUse == null) 
                 yield break;

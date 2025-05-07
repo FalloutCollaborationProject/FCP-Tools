@@ -6,4 +6,5 @@ namespace FCP.Core;
 public class GroupMakerWithTraderKind : PawnGroupMaker
 {
     public List<TraderKindDef> traderKinds = [];
+    public List<CharacterDef> characterDefs = [];
 }

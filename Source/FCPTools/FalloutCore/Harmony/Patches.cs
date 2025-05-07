@@ -8,6 +8,7 @@ using UnityEngine;
 using Verse;
 using Verse.AI;
 using Verse.AI.Group;
+using Verse;
 
 namespace FCP.Core;
 
@@ -94,6 +95,10 @@ public static class Patches
         // Forced TraderKindDef for PawnGroupMaker
         harmony.Patch(original: AccessTools.Method(typeof(PawnGroupKindWorker_Trader), "GeneratePawns", parameters: [typeof(PawnGroupMakerParms), typeof(PawnGroupMaker), typeof(List<Pawn>), typeof(bool)]),
             prefix: new HarmonyMethod(typeof(Patches), nameof(PawnGroupKindWorker_Trader_GeneratePawns_Prefix)));
+        
+        // Forced TraderKindDef for PawnGroupMaker
+        harmony.Patch(original: AccessTools.Method(typeof(PawnGroupKindWorker_Trader), "GenerateTrader", parameters: [typeof(PawnGroupMakerParms), typeof(PawnGroupMaker), typeof(TraderKindDef)]),
+            prefix: new HarmonyMethod(typeof(Patches), nameof(PawnGroupKindWorker_Trader_GenerateTrader_Prefix)));
         
         // Faction Permanent Hostility
         harmony.Patch(original: AccessTools.Method(typeof(GoodwillSituationWorker_PermanentEnemy), "ArePermanentEnemies"),
@@ -568,6 +573,38 @@ public static class Patches
         }
         
         parms.traderKind = groupMakerWithTrader.traderKinds.RandomElement();
+    }
+
+    #endregion
+    
+    #region Custom NPC Traders
+
+    public static bool PawnGroupKindWorker_Trader_GenerateTrader_Prefix(ref Pawn __result, PawnGroupMakerParms parms, PawnGroupMaker groupMaker, TraderKindDef traderKind)
+    {
+        if (groupMaker is not GroupMakerWithTraderKind groupMakerWithTrader || groupMakerWithTrader.characterDefs.Empty()) return true;
+        var list = groupMakerWithTrader.characterDefs;
+        var uniqueCharTracker = UniqueCharactersTracker.Instance;
+        Pawn customPawn = null;
+        var faction = parms.faction;
+        while (list.Count > 0)
+        {
+            var index = Rand.Range(0, list.Count);
+            var characterCustom = list[index];
+            if (!uniqueCharTracker.CharacterPawnExistsDead(characterCustom))
+            {
+                customPawn = uniqueCharTracker.GetOrGenPawn(characterCustom, null, faction);
+                break;
+            } 
+            list.RemoveAt(index);
+        }
+        if (customPawn == null) return true;
+        customPawn.mindState.wantsToTradeWithColony = true;
+        PawnComponentsUtility.AddAndRemoveDynamicComponents(customPawn, true);
+        customPawn.trader.traderKind = traderKind;
+        parms.points -= customPawn.kindDef.combatPower;
+        // Skip the original method
+        __result = customPawn;
+        return false;
     }
 
     #endregion
