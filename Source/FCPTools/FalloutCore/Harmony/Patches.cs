@@ -582,7 +582,7 @@ public static class Patches
     public static bool PawnGroupKindWorker_Trader_GenerateTrader_Prefix(ref Pawn __result, PawnGroupMakerParms parms, PawnGroupMaker groupMaker, TraderKindDef traderKind)
     {
         if (groupMaker is not GroupMakerWithTraderKind groupMakerWithTrader || groupMakerWithTrader.characterDefs.Empty()) return true;
-        var list = groupMakerWithTrader.characterDefs;
+        var list = groupMakerWithTrader.characterDefs.ToList();
         var uniqueCharTracker = UniqueCharactersTracker.Instance;
         Pawn customPawn = null;
         var faction = parms.faction;
