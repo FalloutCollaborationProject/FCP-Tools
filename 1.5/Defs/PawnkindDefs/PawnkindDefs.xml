@@ -152,6 +152,38 @@
             </li>
         </backstoryFiltersOverride>
     </PawnKindDef>
+
+    <!--___ Glowing One Base ___-->
+
+    <PawnKindDef Name="FCP_Glowing_OnekindBase" Abstract="True">
+        <race>Human</race>
+        <xenotypeSet>
+            <xenotypeChances>
+                <FCP_Xenotype_Glowing_One MayRequire="Rick.FCP.Ghouls">1</FCP_Xenotype_Glowing_One>
+            </xenotypeChances>
+        </xenotypeSet>
+        <useFactionXenotypes>false</useFactionXenotypes>
+        <maxGenerationAge>60</maxGenerationAge>
+        <chemicalAddictionChance>0.25</chemicalAddictionChance>
+        <invNutrition>2.7</invNutrition>
+        <invFoodDef>MealSurvivalPack</invFoodDef>
+        <disallowedTraits>
+            <li>Nudist</li>
+        </disallowedTraits>
+        <apparelTags>
+            <li>FCP_Wastelander_Apparel</li>
+        </apparelTags>
+        <backstoryFiltersOverride>
+            <li>
+                <categoriesChildhood>
+                    <li>FCP_Backstory_Wastelander_Child</li>
+                </categoriesChildhood>
+                <categoriesAdulthood>
+                    <li>FCP_Backstory_Ghoul</li>
+                </categoriesAdulthood>
+            </li>
+        </backstoryFiltersOverride>
+    </PawnKindDef>
     
     <!--_____ Wastelanders _____-->
 
