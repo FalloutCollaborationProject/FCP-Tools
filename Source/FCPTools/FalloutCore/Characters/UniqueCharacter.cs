@@ -5,6 +5,7 @@ public class UniqueCharacter : IExposable
     public CharacterDef def;
     public Pawn pawn;
 
+    public UniqueCharacter() { }
     public UniqueCharacter(CharacterDef def)
     {
         this.def = def;

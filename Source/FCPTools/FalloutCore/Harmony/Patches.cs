@@ -594,7 +594,7 @@ public static class Patches
         {
             var index = Rand.Range(0, list.Count);
             var characterCustom = list[index];
-            if (!uniqueCharTracker.CharacterPawnExistsDead(characterCustom) && !uniqueCharTracker.CharacterPawnSpawned(characterCustom))
+            if (!uniqueCharTracker.CharacterPawnDead(characterCustom) && !uniqueCharTracker.CharacterPawnSpawned(characterCustom))
             {
                 customPawn = uniqueCharTracker.GetOrGenPawn(characterCustom, null, faction);
                 break;
@@ -631,11 +631,13 @@ public static class Patches
         {
             var index = Rand.Range(0, list.Count);
             var characterCustom = list[index];
-            if (!uniqueCharTracker.CharacterPawnExistsDead(characterCustom) && !uniqueCharTracker.CharacterPawnSpawned(characterCustom))
+            if (!uniqueCharTracker.CharacterPawnDead(characterCustom) &&
+                !uniqueCharTracker.CharacterPawnSpawned(characterCustom))
             {
+
                 customPawn = uniqueCharTracker.GetOrGenPawn(characterCustom, null, faction);
                 break;
-            } 
+            }
             list.RemoveAt(index);
         }
         if (customPawn == null) return;

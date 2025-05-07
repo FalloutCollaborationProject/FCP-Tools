@@ -35,10 +35,15 @@ public class UniqueCharactersTracker : WorldComponent
     /// <summary>
     /// Check for a UniqueCharacter entry in the tracker and if the entry has a non destroyed/discarded dead pawn.
     /// </summary>
-    public bool CharacterPawnExistsDead(CharacterDef charDef)
+    public bool CharacterPawnDead(CharacterDef charDef)
     {
-        UniqueCharacter character = characters.Find(chr => chr.def == charDef);
-        return character != null && character.PawnExists() && character.pawn.Dead;
+        for (int i = 0; i < characters.Count; i++)
+        {
+            if (characters[i].def != charDef) continue;
+            var character = characters[i];
+            return character.pawn == null || character.pawn is { Dead: true };
+        }
+        return true;
     }
     
     /// <summary>
@@ -46,8 +51,13 @@ public class UniqueCharactersTracker : WorldComponent
     /// </summary>
     public bool CharacterPawnSpawned(CharacterDef charDef)
     {
-        UniqueCharacter character = characters.Find(chr => chr.def == charDef);
-        return character != null && character.PawnExists() && character.pawn.Spawned;
+        for (int i = 0; i < characters.Count; i++)
+        {
+            if (characters[i].def != charDef) continue;
+            var character = characters[i];
+            return character != null && character.PawnExists() && character.pawn.Spawned;
+        }
+        return false;
     }
     
     /// <summary>
