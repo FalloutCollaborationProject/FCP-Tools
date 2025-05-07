@@ -597,16 +597,13 @@ public static class Patches
             } 
             list.RemoveAt(index);
         }
-        var kind = groupMaker.traders.RandomElementByWeight((PawnGenOption x) => x.selectionWeight).kind;
-        var context = PawnGenerationContext.NonPlayer;
-        var ideo = parms.ideo;
-        var pawn = customPawn ?? PawnGenerator.GeneratePawn(new PawnGenerationRequest(kind, faction, context, parms.tile, false, false, false, true, false, 1f, false, true, false, true, true, parms.inhabitants, false, false, false, 0f, 0f, null, 1f, null, null, null, null, null, null, null, null, null, null, null, ideo, false, false, false, false, null, null, null, null, null, 0f, DevelopmentalStage.Adult, null, null, null, false, false, false, -1, 0, false));
-        pawn.mindState.wantsToTradeWithColony = true;
-        PawnComponentsUtility.AddAndRemoveDynamicComponents(pawn, true);
-        pawn.trader.traderKind = traderKind;
-        parms.points -= pawn.kindDef.combatPower;
+        if (customPawn == null) return true;
+        customPawn.mindState.wantsToTradeWithColony = true;
+        PawnComponentsUtility.AddAndRemoveDynamicComponents(customPawn, true);
+        customPawn.trader.traderKind = traderKind;
+        parms.points -= customPawn.kindDef.combatPower;
         // Skip the original method
-        __result = pawn;
+        __result = customPawn;
         return false;
     }
 
