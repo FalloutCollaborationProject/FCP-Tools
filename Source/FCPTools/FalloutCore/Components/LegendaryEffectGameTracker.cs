@@ -40,12 +40,12 @@ public class LegendaryEffectGameTracker : GameComponent
 
         if (_effectsKeys == null || _effectsValues == null)
         {
-            FCPLog.Error("FCP.Tools: Failed to load EffectsDict: keys or values were null.");
+            FCPLog.Error("Legendary Effect Tracker - Failed to load EffectsDict: keys or values were null.");
             return;
         }
         if (_effectsValues.Count != _effectsKeys.Count)
         {
-            FCPLog.Error("FCP.Tools: Failed to load EffectsDict: Key/Value count mismatched.");
+            FCPLog.Error("Legendary Effect Tracker - Failed to load EffectsDict: Key/Value count mismatched.");
             return;
         }
         for (int i = 0; i < _effectsKeys.Count; i++)
