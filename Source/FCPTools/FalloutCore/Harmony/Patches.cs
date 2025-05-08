@@ -2,13 +2,9 @@
 using System.Reflection.Emit;
 using FCP.Factions;
 using HarmonyLib;
-using RimWorld;
 using RimWorld.Planet;
 using UnityEngine;
-using Verse;
 using Verse.AI;
-using Verse.AI.Group;
-using Verse;
 
 namespace FCP.Core;
 
@@ -417,7 +413,7 @@ public static class Patches
     }
 
     /// <summary>
-    /// Allow hidden factions with the ModExtension_HiddenFactionHasCaravans extensino
+    /// Allow hidden factions with the ModExtension_HiddenFactionHasCaravans extension
     /// to be chosen for random trader groups
     /// </summary>
     private static IEnumerable<CodeInstruction> IncidentWorker_NeutralGroup_FactionCanBeGroupSource_Transpiler(
@@ -527,7 +523,7 @@ public static class Patches
         
         
     /// <summary>
-    /// Makes a PermitDef unavailable if the current title exceed's the def's MaxTitlePermitExtension max
+    /// Makes a PermitDef unavailable if the current title exceeds the def's MaxTitlePermitExtension max
     /// </summary>
     private static void RoyalTitlePermitDef_AvailableForPawn_Postfix(ref bool __result, RoyalTitlePermitDef __instance, Pawn pawn, Faction faction)
     {
@@ -586,6 +582,7 @@ public static class Patches
     public static bool PawnGroupKindWorker_Trader_GenerateTrader_Prefix(ref Pawn __result, PawnGroupMakerParms parms, PawnGroupMaker groupMaker, TraderKindDef traderKind)
     {
         if (groupMaker is not GroupMakerWithTraderKind groupMakerWithTrader || groupMakerWithTrader.characterDefs.Empty()) return true;
+        if (!Rand.Chance(groupMakerWithTrader.characterChance)) return true;
         var list = groupMakerWithTrader.characterDefs.ToList();
         var uniqueCharTracker = UniqueCharactersTracker.Instance;
         Pawn customPawn = null;
@@ -623,6 +620,7 @@ public static class Patches
             FCPLog.Warning("A GroupMakerWithCustomChar was defined without any characterDefs assigned");
             return;
         }
+        if (!Rand.Chance(groupMakerWithCustomChar.characterChance)) return;
         var list = groupMakerWithCustomChar.characterDefs.ToList();
         var uniqueCharTracker = UniqueCharactersTracker.Instance;
         Pawn customPawn = null;
@@ -654,8 +652,7 @@ public static class Patches
     public static void GoodwillSituationWorker_PermanentEnemy_ArePermanentEnemies_Postfix(Faction a, Faction b, 
         ref bool __result)
     {
-        if (__result == true)
-            return;
+        if (__result) return;
         
         ModExtension_FactionPermanentlyHostileTo aExtension = a.def.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
         ModExtension_FactionPermanentlyHostileTo bExtension = a.def.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
@@ -686,8 +683,7 @@ public static class Patches
     /// </summary>
     public static void FactionDef_PermanentlyHostileTo_Postfix(FactionDef otherFactionDef, FactionDef __instance, ref bool __result)
     {
-        if (__result == true)
-            return;
+        if (__result) return;
 
         ModExtension_FactionPermanentlyHostileTo extension = __instance.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
         __result = extension?.FactionIsHostileTo(otherFactionDef) ?? false;
