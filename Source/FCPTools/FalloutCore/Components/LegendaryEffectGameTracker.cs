@@ -1,12 +1,12 @@
 ﻿using System.Text;
 using System.Text.RegularExpressions;
-
 namespace FCP.Core;
 
 public class LegendaryEffectGameTracker : GameComponent
 {
     public static Dictionary<Thing, List<LegendaryEffectDef>> EffectsDict = new();
-    
+    private static List<Thing> _effectsKeys;
+    private static List<List<LegendaryEffectDef>> _effectsValues;
     public LegendaryEffectGameTracker(Game game)
     {
         
@@ -15,7 +15,43 @@ public class LegendaryEffectGameTracker : GameComponent
     public override void ExposeData()
     {
         base.ExposeData();
-        Scribe_Collections.Look(ref EffectsDict, "EffectsMap", LookMode.Reference, LookMode.Def);
+        if (Scribe.mode == LoadSaveMode.Saving)
+        {
+            _effectsKeys = [];
+            _effectsValues = [];
+
+            foreach (var kvp in EffectsDict)
+            {
+                _effectsKeys.Add(kvp.Key);
+                _effectsValues.Add(kvp.Value);
+            }
+        }
+        else if (Scribe.mode == LoadSaveMode.LoadingVars)
+        {
+            _effectsKeys = null;
+            _effectsValues = null;
+        }
+
+        Scribe_Collections.Look(ref _effectsKeys, "EffectsDict_keys", LookMode.Reference);
+        Scribe_Collections.Look(ref _effectsValues, "EffectsDict_values", LookMode.Def);
+
+        if (Scribe.mode != LoadSaveMode.PostLoadInit) return;
+        EffectsDict.Clear();
+
+        if (_effectsKeys == null || _effectsValues == null)
+        {
+            FCPLog.Error("FCP.Tools: Failed to load EffectsDict: keys or values were null.");
+            return;
+        }
+        if (_effectsValues.Count != _effectsKeys.Count)
+        {
+            FCPLog.Error("FCP.Tools: Failed to load EffectsDict: Key/Value count mismatched.");
+            return;
+        }
+        for (int i = 0; i < _effectsKeys.Count; i++)
+        {
+            EffectsDict[_effectsKeys[i]] = _effectsValues[i];
+        }
     }
 
     public static void AddNewLegendaryEffectFor(Thing thing)
