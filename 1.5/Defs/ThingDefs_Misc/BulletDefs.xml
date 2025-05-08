@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!--__________ Bullets __________-->
+
+    <!-- .45-70 Government Bullet -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_4570</defName>
+        <label>.45-70 Government Bullet</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+            <speed>75</speed>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>22</damageAmountBase>
+            <armorPenetrationBase>0.5</armorPenetrationBase>
+            <stoppingPower>1.3</stoppingPower>
+        </projectile>
+    </ThingDef>
+
+    <!-- 12.7mm Bullet -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_127mm</defName>
+        <label>12.7mm Bullet</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+            <speed>75</speed>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>20</damageAmountBase>
+            <armorPenetrationBase>0.5</armorPenetrationBase>
+            <stoppingPower>1.2</stoppingPower>
+        </projectile>
+    </ThingDef>
+
+    <!-- .308 Bullet -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_308</defName>
+        <label>.308 Bullet</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+            <speed>80</speed>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>18</damageAmountBase>
+            <armorPenetrationBase>0.4</armorPenetrationBase>
+            <stoppingPower>1.0</stoppingPower>
+        </projectile>
+    </ThingDef>
+
+    <!-- 5mm Bullet -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_5mm</defName>
+        <label>5mm Bullet</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+            <speed>70</speed>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>8</damageAmountBase>
+            <armorPenetrationBase>0.2</armorPenetrationBase>
+            <stoppingPower>0.5</stoppingPower>
+        </projectile>
+    </ThingDef>
+
+    <!-- 10mm Bullet -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_10mm</defName>
+        <label>10mm Bullet</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+            <speed>65</speed>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>12</damageAmountBase>
+            <armorPenetrationBase>0.3</armorPenetrationBase>
+            <stoppingPower>0.7</stoppingPower>
+        </projectile>
+    </ThingDef>
+
+    <!-- 9mm Bullet -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_9mm</defName>
+        <label>9mm Bullet</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+            <speed>60</speed>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>10</damageAmountBase>
+            <armorPenetrationBase>0.25</armorPenetrationBase>
+            <stoppingPower>0.6</stoppingPower>
+        </projectile>
+    </ThingDef>
+
+    <!-- .32 Bullet -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_32</defName>
+        <label>.32 Bullet</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+            <speed>55</speed>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>9</damageAmountBase>
+            <armorPenetrationBase>0.2</armorPenetrationBase>
+            <stoppingPower>0.5</stoppingPower>
+        </projectile>
+    </ThingDef>
+
+    <!-- .45 ACP Bullet -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_45ACP</defName>
+        <label>.45 ACP Bullet</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+            <speed>50</speed>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>14</damageAmountBase>
+            <armorPenetrationBase>0.3</armorPenetrationBase>
+            <stoppingPower>0.8</stoppingPower>
+        </projectile>
+    </ThingDef>
+
+    <!-- .22 LR Bullet -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_22LR</defName>
+        <label>.22 LR Bullet</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+            <speed>55</speed>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>6</damageAmountBase>
+            <armorPenetrationBase>0.1</armorPenetrationBase>
+            <stoppingPower>0.3</stoppingPower>
+        </projectile>
+    </ThingDef>
+
+    <!-- .44 Magnum Bullet -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_44Magnum</defName>
+        <label>.44 Magnum Bullet</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+            <speed>70</speed>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>16</damageAmountBase>
+            <armorPenetrationBase>0.35</armorPenetrationBase>
+            <stoppingPower>0.9</stoppingPower>
+        </projectile>
+    </ThingDef>
+
+    <!-- 5.56 Bullet -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_556mm</defName>
+        <label>556mm Bullet</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>10</damageAmountBase>
+            <speed>75</speed>
+        </projectile>
+    </ThingDef>
+
+    <!-- Ranger Sequoia Bullet -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_Ranger_Sequoia</defName>
+        <label>Ranger Sequoia Bullet</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>18</damageAmountBase>
+            <stoppingPower>5</stoppingPower>
+            <speed>70</speed>
+        </projectile>
+    </ThingDef>
+
+    <!-- Anti-Material Rifle -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_AMR</defName>
+        <label>AMR Bullet</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_big</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>50</damageAmountBase>
+            <stoppingPower>5</stoppingPower>
+            <speed>120</speed>
+        </projectile>
+    </ThingDef>
+
+    <!-- 20 Gauge Shell -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_20Gauge_Shell</defName>
+        <label>20 Gauge Shell</label>
+        <graphicData>
+            <texPath>Things/Misc/Bullets/FCP_20G_Pellet</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <thingClass>FragProjectile.Projectile_FragExplosion</thingClass>
+        <projectile>
+            <speed>70</speed>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>2</damageAmountBase>
+            <explosionRadius>0</explosionRadius>
+            <armorPenetrationBase>0</armorPenetrationBase>
+            <stoppingPower>1</stoppingPower>
+            <ai_IsIncendiary>false</ai_IsIncendiary>
+        </projectile>
+        <modExtensions>
+            <li Class="FragProjectile.ProjectileExtension_Fragmentation">
+                <projCount>7</projCount>
+                <radius>3~5</radius>
+                <isCone>true</isCone>
+                <projectileDef>FCP_Bullet_20Gauge_Pellet</projectileDef>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!-- 12 Gauge Shell -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_12Gauge_Shell</defName>
+        <label>12 Gauge Shell</label>
+        <graphicData>
+            <texPath>Things/Misc/Bullets/FCP_12G_Pellet</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <thingClass>FragProjectile.Projectile_FragExplosion</thingClass>
+        <projectile>
+            <speed>70</speed>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>2</damageAmountBase>
+            <explosionRadius>0</explosionRadius>
+            <armorPenetrationBase>0</armorPenetrationBase>
+            <stoppingPower>1</stoppingPower>
+            <ai_IsIncendiary>false</ai_IsIncendiary>
+        </projectile>
+        <modExtensions>
+            <li Class="FragProjectile.ProjectileExtension_Fragmentation">
+                <projCount>7</projCount>                <!-- Amount of frag projectile that can spawn -->
+                <radius>3~5</radius>                <!-- How far the frag projectile can travel before reaching ground -->
+                <isCone>true</isCone>                <!-- An indicator where the frag projectile can launch in a cone-like trajectory instead of radial trajectory -->
+                <projectileDef>FCP_Bullet_12Gauge_Pellet</projectileDef>                <!-- Type of bullet for the frag projectile -->
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+</Defs>
