@@ -7,7 +7,7 @@
 
     <!-- Ghoul Feral Mental State -->
 
-    <MentalStateDef ParentName="BaseMentalState" MayRequire="Rick.FCP.Ghouls">
+    <MentalStateDef ParentName="BaseMentalState">
         <defName>FCP_MentalState_PermanentBerserk</defName>
         <stateClass>FCP_Ghoul.MentalState_Feral</stateClass>
         <label>feral</label>
@@ -34,7 +34,7 @@
         <baseInspectLine>Mental state: Feral</baseInspectLine>
         <stateEffecter>Berserk</stateEffecter>
         <tale>MentalStateBerserk</tale>
-        <modExtensions MayRequire="Rick.FCP.Ghouls">
+        <modExtensions>
             <li Class="FCP_Ghoul.PermanentBerserk_ModExtension" />
         </modExtensions>
     </MentalStateDef>

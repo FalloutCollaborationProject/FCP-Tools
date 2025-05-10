@@ -149,10 +149,10 @@
         </subSounds>
     </SoundDef>
 
-    <!-- Plasma -->
+    <!-- Tri-Beam Laser Rifle Shot Sound -->
 
     <SoundDef>
-        <defName>FCP_Sound_Shot_Plasma</defName>
+        <defName>FCP_Sound_Shot_Tri_Beam_Laser_Rifle</defName>
         <context>MapOnly</context>
         <eventNames />
         <maxSimultaneous>1</maxSimultaneous>
@@ -160,7 +160,389 @@
             <li>
                 <grains>
                     <li Class="AudioGrain_Clip">
-                        <clipPath>FCP_Shot_Plasma</clipPath>
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Laser_Weapon_Sounds/FCP_Sound_Shot_Tri_Beam_Laser_Rifle</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Tri-Beam Laser Rifle Interact Sound -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Interact_Tri_Beam_Laser_Rifle</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Laser_Weapon_Sounds/FCP_Sound_Interact_Tri_Beam_Laser_Rifle</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Laser RCW Shot Sound -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Laser_RCW</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Laser_Weapon_Sounds/FCP_Sound_Shot_Laser_RCW</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Laser RCW Interact Sound -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Interact_Laser_RCW</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Laser_Weapon_Sounds/FCP_Sound_Interact_Laser_RCW</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!--__ Plasma Weapons __-->
+
+    <!--_ Plasma Pistols _-->
+
+    <!-- Plasma Pistol Shot Sound -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Plasma_Pistol</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Plasma_Weapon_Sounds/FCP_Sound_Shot_Plasma_Pistol</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Plasma Pistol Interact Sound -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Interact_Plasma_Pistol</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Plasma_Weapon_Sounds/FCP_Sound_Interact_Plasma_Pistol</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Plasma Defender Shot Sound -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Plasma_Defender</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Plasma_Weapon_Sounds/FCP_Sound_Shot_Plasma_Defender</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Plasma Defender Interact Sound -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Interact_Plasma_Defender</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Plasma_Weapon_Sounds/FCP_Sound_Interact_Plasma_Defender</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!--_ Plasma Rifles _-->
+
+    <!-- Plasma Rifle Shot Sound -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Plasma_Rifle</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Plasma_Weapon_Sounds/FCP_Sound_Shot_Plasma_Rifle</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Plasma Rifle Interact Sound -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Interact_Plasma_Rifle</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Plasma_Weapon_Sounds/FCP_Sound_Interact_Plasma_Rifle</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Multiplas Rifle Shot Sound -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Multiplas_Rifle</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Plasma_Weapon_Sounds/FCP_Sound_Shot_Multiplas_Rifle</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Multiplas Rifle Interact Sound -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Interact_Multiplas_Rifle</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Plasma_Weapon_Sounds/FCP_Sound_Interact_Multiplas_Rifle</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!--_ Heavy Plasma Weapons _-->
+
+    <!-- Plasma Caster Shot Sound -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Plasma_Caster</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Plasma_Weapon_Sounds/FCP_Sound_Shot_Plasma_Caster</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!--__ Recharger Weapons __-->
+
+    <!--_ Recharger Rifles _-->
+
+    <!-- Recharger Rifle Shot Sound -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Recharger_Rifle</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Recharger_Weapon_Sounds/FCP_Sound_Shot_Recharger_Rifle</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Recharger Rifle Interact Sound -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Interact_Recharger_Rifle</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Recharger_Weapon_Sounds/FCP_Sound_Interact_Recharger_Rifle</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!--_ Recharger Pistol _-->
+
+    <!-- Recharger Pistol Shot Sound -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Recharger_Pistol</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Recharger_Weapon_Sounds/FCP_Sound_Shot_Recharger_Pistol</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Recharger Pistol Interact Sound -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Interact_Recharger_Pistol</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Recharger_Weapon_Sounds/FCP_Sound_Interact_Recharger_Pistol</clipPath>
                     </li>
                 </grains>
                 <volumeRange>
