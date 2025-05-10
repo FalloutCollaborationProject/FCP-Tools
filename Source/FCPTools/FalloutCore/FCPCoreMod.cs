@@ -9,28 +9,28 @@ public class FCPCoreMod : Mod
     public static FCPCoreMod mod;
     public static FCP_Settings Settings;
     public static Harmony harmony;
+    public AssetBundle bundleInt;
+    
     public FCPCoreMod(ModContentPack content) : base(content)
     {
-        harmony = new("FCP.Core.Patches"); // PatchesUwU ~ Steve
+        harmony = new Harmony("FCP.Core.Patches"); // PatchesUwU ~ Steve
         harmony.PatchAll();
         mod = this;
         Settings = GetSettings<FCP_Settings>();
-        FCPLog.Message("Welcome home...");
-        FCPLog.Error("This is an unstable beta version and bugs are very likely, if not guaranteed!\nRemember to report bugs on steam page or our discord: 3HEXN3Qbn4");
+        FCPLog.Warning("Beta version: bugs likely, if not guaranteed! " +
+                       "Report bugs on steam workshop page or on discord: 3HEXN3Qbn4");
     }
-
+    
     public override void DoSettingsWindowContents(Rect inRect)
     {
         base.DoSettingsWindowContents(inRect);
         Settings.DoWindowContents(inRect);
     }
-
+    
     public override string SettingsCategory()
     {
         return "FCP_Settings_Category".Translate();
     }
-
-    public AssetBundle bundleInt;
 
     public AssetBundle MainBundle
     {
@@ -53,7 +53,7 @@ public class FCPCoreMod : Mod
             }
 
             string bundlePath = Path.Combine(Content.RootDir, $@"FCP-UnityAssets\Materials\{text}\fcpshaders");
-            Log.Message("Bundle Path: " + bundlePath);
+            //FCPLog.Message("Bundle Path: " + bundlePath);
 
             AssetBundle bundle = AssetBundle.LoadFromFile(bundlePath);
 

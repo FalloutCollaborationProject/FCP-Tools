@@ -1,48 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-    <!--__________ Ruined Vehicles addition __________-->
+    <!-- Ruined Vehicles addition -->
+    <!-- US ARMY -->
 
-    <!--_____ US ARMY _____-->
-
-    <Operation Class="PatchOperationAdd">
-        <xpath>Defs/GenStepDef[defName="AncientJunkClusters"]/genStep/groups</xpath>
-        <value>
-            <li>
-                <things>
-                    <FCP_Pre_War_Army_Vertibird>1</FCP_Pre_War_Army_Vertibird>
-                    <FCP_Pre_War_Army_Truck>1</FCP_Pre_War_Army_Truck>
-                </things>
-                <indoorRuin>false</indoorRuin>
-                <coveredCellsPer10Cells>1.25~2</coveredCellsPer10Cells>
-                <filthDef>Filth_OilSmear</filthDef>
-                <filthExpandBy>1</filthExpandBy>
-                <filthChance>0.05</filthChance>
-                <clusterRectRadius>12~35</clusterRectRadius>
-            </li>
-            <li>
-                <things>
-                    <FCP_Pre_War_Army_Truck>1</FCP_Pre_War_Army_Truck>
-                </things>
-                <indoorRuin>false</indoorRuin>
-                <coveredCellsPer10Cells>1.25~2</coveredCellsPer10Cells>
-                <filthDef>Filth_OilSmear</filthDef>
-                <filthExpandBy>1</filthExpandBy>
-                <filthChance>0.05</filthChance>
-                <clusterRectRadius>12~20</clusterRectRadius>
-            </li>
-            <li>
-                <things>
-                    <FCP_Pre_War_Army_Vertibird>1</FCP_Pre_War_Army_Vertibird>
-                </things>
-                <indoorRuin>false</indoorRuin>
-                <coveredCellsPer10Cells>1.25~2</coveredCellsPer10Cells>
-                <filthDef>Filth_OilSmear</filthDef>
-                <filthExpandBy>1</filthExpandBy>
-                <filthChance>0.05</filthChance>
-                <clusterRectRadius>12~30</clusterRectRadius>
-            </li>
-        </value>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Ideology</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/GenStepDef[defName="AncientJunkClusters"]/genStep/groups</xpath>
+            <value>
+                <li>
+                    <things>
+                        <FCP_Pre_War_Army_Vertibird>1</FCP_Pre_War_Army_Vertibird>
+                        <FCP_Pre_War_Army_Truck>1</FCP_Pre_War_Army_Truck>
+                    </things>
+                    <indoorRuin>false</indoorRuin>
+                    <coveredCellsPer10Cells>1.25~2</coveredCellsPer10Cells>
+                    <filthDef>Filth_OilSmear</filthDef>
+                    <filthExpandBy>1</filthExpandBy>
+                    <filthChance>0.05</filthChance>
+                    <clusterRectRadius>12~35</clusterRectRadius>
+                </li>
+                <li>
+                    <things>
+                        <FCP_Pre_War_Army_Truck>1</FCP_Pre_War_Army_Truck>
+                    </things>
+                    <indoorRuin>false</indoorRuin>
+                    <coveredCellsPer10Cells>1.25~2</coveredCellsPer10Cells>
+                    <filthDef>Filth_OilSmear</filthDef>
+                    <filthExpandBy>1</filthExpandBy>
+                    <filthChance>0.05</filthChance>
+                    <clusterRectRadius>12~20</clusterRectRadius>
+                </li>
+                <li>
+                    <things>
+                        <FCP_Pre_War_Army_Vertibird>1</FCP_Pre_War_Army_Vertibird>
+                    </things>
+                    <indoorRuin>false</indoorRuin>
+                    <coveredCellsPer10Cells>1.25~2</coveredCellsPer10Cells>
+                    <filthDef>Filth_OilSmear</filthDef>
+                    <filthExpandBy>1</filthExpandBy>
+                    <filthChance>0.05</filthChance>
+                    <clusterRectRadius>12~30</clusterRectRadius>
+                </li>
+            </value>
+        </match>
     </Operation>
 
 </Patch>

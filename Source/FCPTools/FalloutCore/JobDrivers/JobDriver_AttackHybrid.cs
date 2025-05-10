@@ -54,8 +54,8 @@ namespace FCP.Core
                 false, attack.Equipment);
             return true;
         }
-        
-        public override IEnumerable<Toil> MakeNewToils()
+
+        protected override IEnumerable<Toil> MakeNewToils()
         {
             yield return Toils_Misc.ThrowColonistAttackingMote(TargetIndex.A);
             

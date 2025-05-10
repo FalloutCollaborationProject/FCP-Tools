@@ -2,7 +2,7 @@
 
 public class PawnRenderNodeWorker_Flying : PawnRenderNodeWorker
 {
-    public override Graphic GetGraphic(PawnRenderNode node, PawnDrawParms parms)
+    protected override Graphic GetGraphic(PawnRenderNode node, PawnDrawParms parms)
     {
         PawnRenderNode_Flying casted = (PawnRenderNode_Flying)node;
 

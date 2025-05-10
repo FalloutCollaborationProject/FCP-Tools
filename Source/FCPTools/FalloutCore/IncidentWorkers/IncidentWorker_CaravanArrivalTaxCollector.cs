@@ -2,13 +2,13 @@
 {
     public class IncidentWorker_CaravanArrivalTaxCollector : IncidentWorker_TraderCaravanArrival
     {
-        public override PawnGroupKindDef PawnGroupKindDef => 
+        protected override PawnGroupKindDef PawnGroupKindDef => 
             FCPDefOf.FCP_PawnGroupKind_TaxCollector;
         
         private ModExtension_FactionTaxCollectors Extension => 
             def.GetModExtension<ModExtension_FactionTaxCollectors>();
         
-        public override bool TryResolveParmsGeneral(IncidentParms parms)
+        protected override bool TryResolveParmsGeneral(IncidentParms parms)
         {
             Faction faction = Find.FactionManager
                 .FirstFactionOfDef(Extension.factionDef);
@@ -22,13 +22,13 @@
             return base.TryResolveParmsGeneral(parms);
         }
 
-        public override bool CanFireNowSub(IncidentParms parms)
+        protected override bool CanFireNowSub(IncidentParms parms)
         {
             return base.CanFireNowSub(parms) && 
                    Find.FactionManager.FirstFactionOfDef(Extension.factionDef) != null;
         }
         
-        public override bool FactionCanBeGroupSource(Faction f, Map map, bool desperate = false)
+        protected override bool FactionCanBeGroupSource(Faction f, Map map, bool desperate = false)
         {
             if (!base.FactionCanBeGroupSource(f, map, desperate))
                 return false;
@@ -36,14 +36,14 @@
             return f.def == Extension.factionDef;
         }
         
-        public override float TraderKindCommonality(TraderKindDef traderKind, Map map, Faction faction)
+        protected override float TraderKindCommonality(TraderKindDef traderKind, Map map, Faction faction)
         {
             return traderKind != Extension.traderKindDef 
                 ? 0f 
                 : traderKind.CalculatedCommonality;
         }
         
-        public override void SendLetter(IncidentParms parms, List<Pawn> pawns, TraderKindDef traderKind)
+        protected override void SendLetter(IncidentParms parms, List<Pawn> pawns, TraderKindDef traderKind)
         {
             TaggedString letterLabel = def.letterLabel ?? "Extension was Null";
             TaggedString letterText = def.letterText ?? "Extension was Null";
