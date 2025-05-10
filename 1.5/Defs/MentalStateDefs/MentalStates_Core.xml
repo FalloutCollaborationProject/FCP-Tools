@@ -34,8 +34,8 @@
         <baseInspectLine>Mental state: Feral</baseInspectLine>
         <stateEffecter>Berserk</stateEffecter>
         <tale>MentalStateBerserk</tale>
-        <modExtensions>
-            <li Class="FCP_Ghoul.PermanentBerserk_ModExtension"></li>
+        <modExtensions MayRequire="Rick.FCP.Ghouls">
+            <li Class="FCP_Ghoul.PermanentBerserk_ModExtension" />
         </modExtensions>
     </MentalStateDef>
 

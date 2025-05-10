@@ -49,10 +49,16 @@
     
     <!--_____ Weapons _____-->
 
-    <!-- Lasers -->
+    <!--___ Energy Weapons ___-->
+
+    <!--__ Laser Weapons __-->
+
+    <!--_ Laser Pistols _-->
+
+    <!-- Laser Pistol Shot Sound -->
 
     <SoundDef>
-        <defName>FCP_Sound_Shot_Laser</defName>
+        <defName>FCP_Sound_Shot_Laser_Pistol</defName>
         <context>MapOnly</context>
         <eventNames />
         <maxSimultaneous>1</maxSimultaneous>
@@ -60,18 +66,89 @@
             <li>
                 <grains>
                     <li Class="AudioGrain_Clip">
-                        <clipPath>FCP_Shot_Laser</clipPath>
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Laser_Weapon_Sounds/FCP_Sound_Shot_Laser_Pistol</clipPath>
                     </li>
                 </grains>
                 <volumeRange>
-                    <min>39.76471</min>
-                    <max>41.76471</max>
+                    <min>39</min>
+                    <max>41</max>
                 </volumeRange>
                 <sustainLoop>False</sustainLoop>
             </li>
         </subSounds>
     </SoundDef>
-    
+
+    <!-- Laser Pistol Interact Sound -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Interact_Laser_Pistol</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Laser_Weapon_Sounds/FCP_Sound_Interact_Laser_Pistol</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!--_ Laser Rifles _-->
+
+    <!-- Laser Rifle Shot Sound -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Laser_Rifle</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Laser_Weapon_Sounds/FCP_Sound_Shot_Laser_Rifle</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Laser Rifle Interact Sound -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Interact_Laser_Rifle</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Laser_Weapon_Sounds/FCP_Sound_Interact_Laser_Rifle</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
     <!-- Plasma -->
 
     <SoundDef>
@@ -87,8 +164,8 @@
                     </li>
                 </grains>
                 <volumeRange>
-                    <min>39.76471</min>
-                    <max>41.76471</max>
+                    <min>39</min>
+                    <max>41</max>
                 </volumeRange>
                 <sustainLoop>False</sustainLoop>
             </li>

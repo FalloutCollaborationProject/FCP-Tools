@@ -159,7 +159,7 @@
         <race>Human</race>
         <xenotypeSet>
             <xenotypeChances>
-                <FCP_Xenotype_Glowing_One MayRequire="Rick.FCP.Ghouls">1</FCP_Xenotype_Glowing_One>
+                <FCP_Xenotype_Ghoul_Glowing_One MayRequire="Rick.FCP.Ghouls">1</FCP_Xenotype_Ghoul_Glowing_One>
             </xenotypeChances>
         </xenotypeSet>
         <useFactionXenotypes>false</useFactionXenotypes>

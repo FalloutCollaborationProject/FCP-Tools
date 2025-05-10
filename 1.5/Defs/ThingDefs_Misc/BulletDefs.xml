@@ -6,7 +6,7 @@
     <!-- .45-70 Government Bullet -->
 
     <ThingDef ParentName="BaseBullet">
-        <defName>FCP_Bullet_4570</defName>
+        <defName>FCP_Bullet_4570mm</defName>
         <label>.45-70 Government Bullet</label>
         <graphicData>
             <texPath>Things/Projectile/Bullet_Small</texPath>
@@ -44,7 +44,7 @@
     <!-- .308 Bullet -->
 
     <ThingDef ParentName="BaseBullet">
-        <defName>FCP_Bullet_308</defName>
+        <defName>FCP_Bullet_308mm</defName>
         <label>.308 Bullet</label>
         <graphicData>
             <texPath>Things/Projectile/Bullet_Small</texPath>
@@ -120,7 +120,7 @@
     <!-- .32 Bullet -->
 
     <ThingDef ParentName="BaseBullet">
-        <defName>FCP_Bullet_32</defName>
+        <defName>FCP_Bullet_32mm</defName>
         <label>.32 Bullet</label>
         <graphicData>
             <texPath>Things/Projectile/Bullet_Small</texPath>
@@ -273,6 +273,25 @@
         </modExtensions>
     </ThingDef>
 
+    <!-- 20 Gauge Pellet -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_20Gauge_Pellet</defName>
+        <label>20 Gauge Pellet</label>
+        <graphicData>
+            <texPath>Things/Misc/Bullets/FCP_20G_Pellet</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+            <speed>70</speed>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>6</damageAmountBase>
+            <armorPenetrationBase>0.12</armorPenetrationBase>
+            <stoppingPower>0.5</stoppingPower>
+        </projectile>
+    </ThingDef>
+
     <!-- 12 Gauge Shell -->
 
     <ThingDef ParentName="BaseBullet">
@@ -295,12 +314,31 @@
         </projectile>
         <modExtensions>
             <li Class="FragProjectile.ProjectileExtension_Fragmentation">
-                <projCount>7</projCount>                <!-- Amount of frag projectile that can spawn -->
-                <radius>3~5</radius>                <!-- How far the frag projectile can travel before reaching ground -->
-                <isCone>true</isCone>                <!-- An indicator where the frag projectile can launch in a cone-like trajectory instead of radial trajectory -->
-                <projectileDef>FCP_Bullet_12Gauge_Pellet</projectileDef>                <!-- Type of bullet for the frag projectile -->
+                <projCount>7</projCount>
+                <radius>3~5</radius>
+                <isCone>true</isCone>
+                <projectileDef>FCP_Bullet_12Gauge_Pellet</projectileDef>
             </li>
         </modExtensions>
+    </ThingDef>
+
+    <!-- 12 Gauge Pellet -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_12Gauge_Pellet</defName>
+        <label>12 Gauge Pellet</label>
+        <graphicData>
+            <texPath>Things/Misc/Bullets/FCP_12G_Pellet</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+            <speed>70</speed>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>8</damageAmountBase>
+            <armorPenetrationBase>0.18</armorPenetrationBase>
+            <stoppingPower>0.7</stoppingPower>
+        </projectile>
     </ThingDef>
 
 </Defs>
