@@ -57,6 +57,49 @@
         </apparelTags>
     </PawnKindDef>
 
+    <!--___ BoS Base ___-->
+
+	<!-- BoS Base -->
+
+	<PawnKindDef Name="FCP_BoSkindBase" Abstract="True">
+		<race>Human</race>
+		<defaultFactionType>FCP_Faction_BoS</defaultFactionType>
+		<maxGenerationAge>60</maxGenerationAge>
+		<chemicalAddictionChance>0</chemicalAddictionChance>
+		<invNutrition>2.7</invNutrition>
+		<invFoodDef>MealSurvivalPack</invFoodDef>
+		<disallowedTraits>
+			<li>Nudist</li>
+			<li>Brawler</li>
+		</disallowedTraits>
+		<requiredWorkTags>
+			<li>Violent</li>
+		</requiredWorkTags>
+		<backstoryFiltersOverride>
+			<li>
+				<categoriesChildhood>
+					<li>FCP_Backstory_Wastelander_Child</li>
+					<li>FCP_Backstory_BoS_Child</li>
+				</categoriesChildhood>
+			</li>
+		</backstoryFiltersOverride>
+		<pawnGroupDevelopmentStage>Adult</pawnGroupDevelopmentStage>
+	</PawnKindDef>
+
+	<!-- BoS Power Armor Base -->
+
+	<PawnKindDef ParentName="FCP_BoSkindBase" Name="FCP_BoS_PowerArmorBase" Abstract="True">
+		<apparelRequired>
+			<li>FCP_Apparel_Power_Armor_Frame</li>
+			<li>FCP_Apparel_BoS_Jumpsuit</li>
+			<li>FCP_Apparel_BOS_T60_Power_Armor</li>
+			<li>FCP_Apparel_T60_Power_Armor_Helmet</li>
+		</apparelRequired>
+		<forcedTraits>
+			<FCP_Power_Armor_Trained />
+		</forcedTraits>
+	</PawnKindDef>
+
     <!--___ Legion Base ___-->
 
     <PawnKindDef Name="FCP_LegionkindBase" Abstract="True">

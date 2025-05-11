@@ -124,4 +124,15 @@
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
 
+    <!--_____ Heavy Weapon Reload _____-->
+
+    <!-- Reload Pawns -->
+
+    <JobDef>
+        <defName>BM_ReloadOtherPawns</defName>
+        <driverClass>BM_HeavyWeapon.JobDriver_ReloadOtherPawns</driverClass>
+        <reportString>Reloading TargetA.</reportString>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+
 </Defs>
