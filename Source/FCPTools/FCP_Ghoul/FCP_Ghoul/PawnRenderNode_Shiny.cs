@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RimWorld;
-using UnityEngine;
+﻿using UnityEngine;
 using Verse;
+
 namespace FCP_Ghoul
 {
     public class PawnRenderNode_Shiny : PawnRenderNode
     {
-        protected override Shader DefaultShader => ShaderDatabase.MoteGlow;
+        public override Shader DefaultShader => ShaderDatabase.MoteGlow;
         public PawnRenderNode_Shiny(Pawn pawn,PawnRenderNodeProperties props, PawnRenderTree tree) : base(pawn, props, tree)
         {
 

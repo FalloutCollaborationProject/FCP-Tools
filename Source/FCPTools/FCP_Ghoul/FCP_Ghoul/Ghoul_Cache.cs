@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RimWorld;
-using Verse;
+﻿using Verse;
+using FCP.Core;
+
 namespace FCP_Ghoul
 {
     [StaticConstructorOnStartup]
@@ -27,20 +23,55 @@ namespace FCP_Ghoul
 
         static Ghoul_Cache()
         {
-            ToxHeal = DefDatabase<GeneDef>.AllDefsListForReading.Where(x => x.HasModExtension<ToxHeal_ModExtension>() == true).First();
-            PermanentBerserk = DefDatabase<MentalStateDef>.AllDefsListForReading.
-                Where(x => x.HasModExtension<PermanentBerserk_ModExtension>() == true).First();
-            FeralFur = DefDatabase<GeneDef>.AllDefsListForReading.Where(x=>x.HasModExtension<FeralFur_ModExtension>()==true).First();
-            FeralHead=DefDatabase<GeneDef>.AllDefsListForReading.Where(x => x.HasModExtension<FeralHead_ModExtension>() == true).First();
-            Fur = DefDatabase<GeneDef>.AllDefsListForReading.Where(x => x.HasModExtension<Fur_ModExtension>() == true).First();
-            Head= DefDatabase<GeneDef>.AllDefsListForReading.Where(x => x.HasModExtension<Head_ModExtension>() == true).First();
-            SkinA= DefDatabase<GeneDef>.AllDefsListForReading.Where(x => x.HasModExtension<SkinA_ModExtension>() == true).First();
-            SkinB = DefDatabase<GeneDef>.AllDefsListForReading.Where(x => x.HasModExtension<SkinB_ModExtension>() == true).First();
-            SkinC = DefDatabase<GeneDef>.AllDefsListForReading.Where(x => x.HasModExtension<SkinC_ModExtension>() == true).First();
-            SkinD = DefDatabase<GeneDef>.AllDefsListForReading.Where(x => x.HasModExtension<SkinD_ModExtension>() == true).First();
-            SkinE = DefDatabase<GeneDef>.AllDefsListForReading.Where(x => x.HasModExtension<SkinE_ModExtension>() == true).First();
-            SkinFeral= DefDatabase<GeneDef>.AllDefsListForReading.Where(x => x.HasModExtension<SkinFeral_ModExtension>() == true).First();
-            ToxHealHediff= DefDatabase<HediffDef>.AllDefsListForReading.Where(x => x.HasModExtension<ToxHealHediff_ModExtension>() == true).First();
+            foreach (var geneDef in DefDatabase<GeneDef>.AllDefsListForReading)
+            {
+                if (ToxHeal is null && geneDef.HasModExtension<ToxHeal_ModExtension>()) ToxHeal = geneDef;
+                if (FeralFur is null && geneDef.HasModExtension<FeralFur_ModExtension>()) FeralFur = geneDef;
+                if (FeralHead is null && geneDef.HasModExtension<FeralHead_ModExtension>()) FeralHead = geneDef;
+                if (Fur is null && geneDef.HasModExtension<Fur_ModExtension>()) Fur = geneDef;
+                if (Head is null && geneDef.HasModExtension<Head_ModExtension>()) Head = geneDef;
+                if (SkinA is null && geneDef.HasModExtension<SkinA_ModExtension>()) SkinA = geneDef;
+                if (SkinB is null && geneDef.HasModExtension<SkinB_ModExtension>()) SkinB = geneDef;
+                if (SkinC is null && geneDef.HasModExtension<SkinC_ModExtension>()) SkinC = geneDef;
+                if (SkinD is null && geneDef.HasModExtension<SkinD_ModExtension>()) SkinD = geneDef;
+                if (SkinE is null && geneDef.HasModExtension<SkinE_ModExtension>()) SkinE = geneDef;
+                if (SkinFeral is null && geneDef.HasModExtension<SkinFeral_ModExtension>()) SkinFeral = geneDef;
+                
+                if (ToxHeal != null && FeralFur != null && FeralHead != null && Fur != null && Head != null &&
+                    SkinA != null && SkinB != null && SkinC != null && SkinD != null && SkinE != null && SkinFeral != null)
+                    break;
+            }
+            foreach (var mentalStateDef in DefDatabase<MentalStateDef>.AllDefsListForReading)
+            {
+                if (mentalStateDef.HasModExtension<PermanentBerserk_ModExtension>())
+                {
+                    PermanentBerserk = mentalStateDef;
+                    break;
+                }
+            }
+            foreach (var hediffDef in DefDatabase<HediffDef>.AllDefsListForReading)
+            {
+                if (hediffDef.HasModExtension<ToxHealHediff_ModExtension>())
+                {
+                    ToxHealHediff = hediffDef;
+                    break;
+                }
+            }
+            #if DEBUG
+            if (ToxHeal == null) FCPLog.Error("Ghoul_Cache: Missing GeneDef with ToxHeal_ModExtension.");
+            if (FeralFur == null) FCPLog.Error("Ghoul_Cache: Missing GeneDef with FeralFur_ModExtension.");
+            if (FeralHead == null) FCPLog.Error("Ghoul_Cache: Missing GeneDef with FeralHead_ModExtension.");
+            if (Fur == null) FCPLog.Error("Ghoul_Cache: Missing GeneDef with Fur_ModExtension.");
+            if (Head == null) FCPLog.Error("Ghoul_Cache: Missing GeneDef with Head_ModExtension.");
+            if (SkinA == null) FCPLog.Error("Ghoul_Cache: Missing GeneDef with SkinA_ModExtension.");
+            if (SkinB == null) FCPLog.Error("Ghoul_Cache: Missing GeneDef with SkinB_ModExtension.");
+            if (SkinC == null) FCPLog.Error("Ghoul_Cache: Missing GeneDef with SkinC_ModExtension.");
+            if (SkinD == null) FCPLog.Error("Ghoul_Cache: Missing GeneDef with SkinD_ModExtension.");
+            if (SkinE == null) FCPLog.Error("Ghoul_Cache: Missing GeneDef with SkinE_ModExtension.");
+            if (SkinFeral == null) FCPLog.Error("Ghoul_Cache: Missing GeneDef with SkinFeral_ModExtension.");
+            if (PermanentBerserk == null) FCPLog.Error("Ghoul_Cache: Missing MentalStateDef with PermanentBerserk_ModExtension.");
+            if (ToxHealHediff == null) FCPLog.Error("Ghoul_Cache: Missing HediffDef with ToxHealHediff_ModExtension.");
+            #endif
         }
         
     }
