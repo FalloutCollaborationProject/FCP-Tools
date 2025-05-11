@@ -77,8 +77,8 @@
 				<hediffOnEmptyFuel>FCP_Hediff_Power_Armor_Empty_Fusion_Core</hediffOnEmptyFuel>
 			</li>
 			<li Class="CompProperties_Refuelable">
-				<fuelCapacity>1</fuelCapacity>
-				<fuelConsumptionRate>1</fuelConsumptionRate>
+				<fuelCapacity>100</fuelCapacity>
+				<fuelConsumptionRate>20</fuelConsumptionRate>
 				<fuelLabel>Fusion Core</fuelLabel>
 				<fuelGizmoLabel>Fusion Core</fuelGizmoLabel>
 				<outOfFuelMessage>Needs Fusion Core</outOfFuelMessage>
@@ -88,7 +88,7 @@
 						<li>Chemfuel</li>
 					</thingDefs>
 				</fuelFilter>
-				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<!-- <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed> -->
 				<initialFuelPercent>1</initialFuelPercent>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
