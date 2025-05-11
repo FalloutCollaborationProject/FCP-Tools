@@ -88,7 +88,7 @@
 						<li>Chemfuel</li>
 					</thingDefs>
 				</fuelFilter>
-				<!-- <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed> -->
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
 				<initialFuelPercent>1</initialFuelPercent>
 				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
 			</li>
