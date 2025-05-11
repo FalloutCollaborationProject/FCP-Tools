@@ -51,9 +51,10 @@ namespace RangerRick_PowerArmor
             base.CompTick();
             if (parent is Apparel apparel && apparel.Wearer is not null)
             {
+                var comp = CompRefuelable;
+                comp.ConsumeFuel(CompRefuelable.ConsumptionRatePerTick);
                 if (Props.hediffOnEmptyFuel != null)
                 {
-                    var comp = CompRefuelable;
                     if (comp.HasFuel is false)
                     {
                         var hediff = apparel.Wearer.health.hediffSet.GetFirstHediffOfDef(Props.hediffOnEmptyFuel);
