@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RimWorld;
-using UnityEngine;
+﻿using UnityEngine;
 using Verse;
+
 namespace FCP_Ghoul
 {
     class PawnRenderNode_CustomColorForHead : PawnRenderNode_Head
     {
-        protected override Shader DefaultShader => ShaderDatabase.CutoutSkinOverlay;
+        public override Shader DefaultShader => ShaderDatabase.CutoutSkinOverlay;
         public PawnRenderNode_CustomColorForHead(Pawn pawn, PawnRenderNodeProperties props, PawnRenderTree tree)
             : base(pawn, props, tree)
         {
