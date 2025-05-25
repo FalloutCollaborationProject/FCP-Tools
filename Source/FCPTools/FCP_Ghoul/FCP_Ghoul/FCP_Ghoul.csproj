@@ -84,34 +84,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChanceGene.cs" />
-    <Compile Include="ChanceGene_ModExtension.cs" />
-    <Compile Include="EmitTox_Gene.cs" />
-    <Compile Include="FeralHead_Gene.cs" />
-    <Compile Include="FeralHead_ModExtension.cs" />
-    <Compile Include="FeralityGene_ModExtension.cs" />
-    <Compile Include="FeralFur_ModExtension.cs" />
-    <Compile Include="Fur_ModExtension.cs" />
-    <Compile Include="GeneGizmo_FeralityResource.cs" />
-    <Compile Include="Gene_FeralBody.cs" />
-    <Compile Include="Gene_Ferality.cs" />
-    <Compile Include="Ghoul_Cache.cs" />
-    <Compile Include="HarmonyConstructor.cs" />
-    <Compile Include="Head_ModExtension.cs" />
-    <Compile Include="MentalState_Feral.cs" />
-    <Compile Include="PawnRenderNodeWorker_CustomColor.cs" />
-    <Compile Include="PawnRenderNode_CustomColor.cs" />
-    <Compile Include="PawnRenderNode_CustomColorForHead.cs" />
-    <Compile Include="PawnRenderNode_Shiny.cs" />
-    <Compile Include="PermanentBerserk_ModExtension.cs" />
+    <Compile Include="Defs\DefModExtensions\ModExtension_Gene_GhoulSkin.cs" />
+    <Compile Include="Defs\DefModExtensions\ModExtension_Gene_Manic.cs" />
+    <Compile Include="Defs\DefModExtensions\ModExtension_Gene_Glowing.cs" />
+    <Compile Include="Defs\DefModExtensions\ModExtension_Gene_ToxSpew.cs" />
+    <Compile Include="Defs\FCPGDefOf.cs" />
+    <Compile Include="Genes\GeneCollections.cs" />
+    <Compile Include="Genes\GeneColorUtil.cs" />
+    <Compile Include="Genes\Gene_GhoulSkin.cs" />
+    <Compile Include="Genes\Gene_Glowing.cs" />
+    <Compile Include="Genes\Gene_ToxSpew.cs" />
+    <Compile Include="Genes\Gene_Manic.cs" />
+    <Compile Include="Gizmos\GeneGizmo_FeralityResource.cs" />
+    <Compile Include="Harmony\HarmonyPatches.cs" />
+    <Compile Include="MentalStates\MentalState_Feral.cs" />
+    <Compile Include="PawnRenderNodes\PawnRenderNode_BodySkinColor.cs" />
+    <Compile Include="PawnRenderNodes\PawnRenderNode_BodyGlow.cs" />
+    <Compile Include="PawnRenderNodes\PawnRenderNode_HeadGlow.cs" />
+    <Compile Include="PawnRenderNodes\PawnRenderNode_HeadSkinColor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DoToxicDamage_Patch.cs" />
-    <Compile Include="SkinA.cs" />
-    <Compile Include="SkinFeral_ModExtension.cs" />
-    <Compile Include="ToxBomb_ModExtension.cs" />
-    <Compile Include="ToxHealHediff_ModExtension.cs" />
-    <Compile Include="ToxHeal_ModExtension.cs" />
-    <Compile Include="TurnFeral_ModExtension.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Update="Lib.Harmony" Version="2.3.6" />
+    <PackageReference Update="Krafs.Rimworld.Ref" Version="1.5.4409" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
