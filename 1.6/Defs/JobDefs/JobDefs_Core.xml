@@ -90,28 +90,6 @@
         <collideWithPawns>true</collideWithPawns>
     </JobDef>
 
-    <!--_____ Armor Racks _____-->
-
-    <!-- Wear On Armor Rack -->
-
-    <JobDef>
-        <defName>ArmorRacks_JobWearRack</defName>
-        <driverClass>ArmorRacks.Jobs.JobDriverWearRack</driverClass>
-        <reportString>Equipping from armor rack.</reportString>
-        <suspendable>false</suspendable>
-        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
-    </JobDef>
-
-    <!-- Transfer To Armor Rack -->
-
-    <JobDef>
-        <defName>ArmorRacks_JobTransferToRack</defName>
-        <driverClass>ArmorRacks.Jobs.JobDriverTransferToRack</driverClass>
-        <reportString>Transferring equipment to armor rack.</reportString>
-        <suspendable>false</suspendable>
-        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
-    </JobDef>
-
     <!--_____ Mine Pocket _____-->
 
     <!-- Defuse Mine -->

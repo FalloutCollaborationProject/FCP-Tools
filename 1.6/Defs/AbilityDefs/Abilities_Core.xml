@@ -36,7 +36,7 @@
                 <canTargetPawns>true</canTargetPawns>
                 <canTargetAnimals>true</canTargetAnimals>
                 <canTargetMechs>true</canTargetMechs>
-                <canTargetMutants>true</canTargetMutants>
+                <canTargetSubhumans>true</canTargetSubhumans>
                 <canTargetPlants>false</canTargetPlants>
                 <canTargetBuildings>false</canTargetBuildings>
                 <canTargetCorpses>false</canTargetCorpses>
