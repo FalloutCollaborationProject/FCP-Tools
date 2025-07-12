@@ -5,7 +5,7 @@ namespace FCP_Ghoul
 {
     public class PawnRenderNode_Shiny : PawnRenderNode
     {
-        public override Shader DefaultShader => ShaderDatabase.MoteGlow;
+        protected override Shader DefaultShader => ShaderDatabase.MoteGlow;
         public PawnRenderNode_Shiny(Pawn pawn,PawnRenderNodeProperties props, PawnRenderTree tree) : base(pawn, props, tree)
         {
 

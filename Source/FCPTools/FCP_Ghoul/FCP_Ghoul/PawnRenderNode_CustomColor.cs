@@ -5,7 +5,7 @@ namespace FCP_Ghoul
 {
     public class PawnRenderNode_CustomColor : PawnRenderNode_Fur
     {
-        public override Shader DefaultShader => ShaderDatabase.CutoutSkinOverlay;
+        protected override Shader DefaultShader => ShaderDatabase.CutoutSkinOverlay;
         
         public PawnRenderNode_CustomColor(Pawn pawn, PawnRenderNodeProperties props, PawnRenderTree tree) : base(pawn, props, tree)
         {

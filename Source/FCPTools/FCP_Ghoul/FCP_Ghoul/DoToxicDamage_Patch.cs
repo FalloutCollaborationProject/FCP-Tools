@@ -4,9 +4,7 @@ using HarmonyLib;
 
 namespace FCP_Ghoul
 {
-    [HarmonyPatch(typeof(GameCondition_ToxicFallout),nameof(GameCondition_ToxicFallout.DoPawnToxicDamage),new[] { 
-    typeof(Pawn),typeof(bool),typeof(float)
-    })]
+    [HarmonyPatch(typeof(ToxicUtility),nameof(ToxicUtility.DoPawnToxicDamage))]
     public class DoToxicDamage_Patch 
     {
         public static void Postfix(Pawn p)
