@@ -14,7 +14,7 @@
   <!-- Debug configuration -->
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <Optimize>true</Optimize>
-    <OutputPath>..\Assemblies\</OutputPath>
+    <OutputPath>..\..\..\1.6\Assemblies\</OutputPath>
     <!-- Output directly to Assemblies -->
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>none</DebugType>
@@ -23,7 +23,7 @@
   <!-- Release configuration -->
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <Optimize>true</Optimize>
-    <OutputPath>..\Assemblies\</OutputPath>
+    <OutputPath>..\..\..\1.6\Assemblies\</OutputPath>
     <!-- Output directly to Assemblies -->
     <DefineConstants>TRACE</DefineConstants>
     <DebugType>none</DebugType>
