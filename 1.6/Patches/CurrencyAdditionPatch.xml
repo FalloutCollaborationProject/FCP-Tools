@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- Currency patch -->
+
+	<!--
+		- Automatically adds the mod extension to every faction that DOESN'T already have the mod extensions
+		- If a faction already has the mod extension, they'll keep using whatever currency is already defined
+		- HOWEVER make sure you use <modExtensions Inherit="False"> if inheriting from a non-abstract faction def, otherwise they will use the currency from that def instead
+	-->
+
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/FactionDef[not(modExtensions/li[@Class="FCP.Currencies.CurrencyReplacement"])]</xpath>
+		<value>
+			<li Class="FCP.Currencies.CurrencyReplacement">
+				<currency>FCP_Currency_Caps</currency>
+			</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationAddModExtension">
+		<xpath>Defs/TraderKindDef[orbital="true" and not(modExtensions/li[@Class="FCP.Currencies.CurrencyReplacement"])]</xpath>
+		<value>
+			<li Class="FCP.Currencies.CurrencyReplacement">
+				<currency>FCP_Currency_Caps</currency>
+			</li>
+		</value>
+	</Operation>
+	
+	<!-- Patch to replace scenarios that start with silver, to instead start with caps -->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Silver"]/thingDef</xpath>
+		<value>
+			<thingDef>FCP_Currency_Caps</thingDef>
+		</value>
+	</Operation>
+
+	<!-- Add a honor value to silver -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Silver"]/statBases</xpath>
+		<value>
+			<RoyalFavorValue>0.0015</RoyalFavorValue>
+		</value>
+	</Operation>
+	
+</Patch>

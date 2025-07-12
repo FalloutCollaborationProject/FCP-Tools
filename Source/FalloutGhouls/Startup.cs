@@ -12,7 +12,7 @@ namespace FalloutGhouls
     public static class Startup
     {
         static Startup()
-        {
+        {   
             new Harmony("FalloutGhouls.Mod").PatchAll();
         }
     }

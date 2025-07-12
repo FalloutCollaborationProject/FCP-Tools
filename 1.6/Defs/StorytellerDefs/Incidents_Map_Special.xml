@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Incidents __________-->
+
+    <!--_____ Pawn Joining Incidents _____-->
+
+    <!-- Mysterious Stranger -->
+
+    <IncidentDef>
+        <defName>FCP_Incident_Mysterious_Stranger</defName>
+        <label>Mysterious Stranger</label>
+        <category>Special</category>
+        <targetTags>
+            <li>Map_PlayerHome</li>
+        </targetTags>
+        <workerClass>IncidentWorker_WandererJoin</workerClass>
+        <letterLabel>Mysterious Stranger</letterLabel>
+        <letterText>You have a Guardian Angel, but with a deadly hand-cannon instead of wings. Meet the Mysterious Stranger, an odd and eldritch entity said to appear and aid you in combat before you draw your dying breath. Or at least this man claims to be the Mysterious Stranger, but you'll take all the help you can get right now.</letterText>
+        <baseChance>0</baseChance>
+        <minRefireDays>60</minRefireDays>
+        <minGreatestPopulation>3</minGreatestPopulation>
+        <pawnKind>FCP_Mysterious_Stranger</pawnKind>
+        <pawnFixedGender>Male</pawnFixedGender>
+        <pawnMustBeCapableOfViolence>true</pawnMustBeCapableOfViolence>
+    </IncidentDef>
+
+</Defs>

@@ -110,12 +110,11 @@ public class UniqueCharactersTracker : WorldComponent
         
         return character.pawn;
     }
-    
-    public override void FinalizeInit()
-    {
-        base.FinalizeInit();
-        Instance = this;
 
+    public override void FinalizeInit(bool fromLoad)
+    {
+        base.FinalizeInit(fromLoad);
+        Instance = this;
     }
     
     public override void ExposeData()

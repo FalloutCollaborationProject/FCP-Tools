@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!--__________ Hairs and Beards __________-->
+
+    <!--_____ Hairs _____-->
+
+    <!--___ Unique ___-->
+
+    <!-- Ranger Rick -->
+
+    <HairDef>
+        <defName>FCP_Hair_Ranger_Rick</defName>
+        <label>Rangers Pomp</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Custom/Ranger_Rick/FCP_Hair_Ranger_Rick</texPath>
+        <category>Urban</category>
+        <styleTags>
+            <li>FCP_Ranger_Rick</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Vault Boy -->
+
+    <HairDef>
+        <defName>FCP_Hair_Vault_Boy</defName>
+        <label>Vault Boy</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Custom/Vault_Boy/FCP_Hair_Vault_Boy</texPath>
+        <category>Urban</category>
+        <styleTags>
+            <li>FCP_Vault_Boy</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Vault Girl -->
+
+    <HairDef>
+        <defName>FCP_Hair_Vault_Girl</defName>
+        <label>Vault Girl</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Custom/Vault_Girl/FCP_Hair_Vault_Girl</texPath>
+        <category>Urban</category>
+        <styleTags>
+            <li>FCP_Vault_Girl</li>
+        </styleTags>
+    </HairDef>
+
+</Defs>

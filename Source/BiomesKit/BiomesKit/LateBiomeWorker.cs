@@ -23,10 +23,13 @@ public class LateBiomeWorker : WorldGenStep
 
 	public override int SeedPart => 123456789;
 
-	public override void GenerateFresh(string seed)
-	{
-		BiomesKit();
-	}
+    public override void GenerateFresh(string seed, PlanetLayer layer)
+    {
+		if (layer.IsRootSurface)
+		{
+            BiomesKit();
+        }
+    }
 
 	private void BiomesKit()
 	{
@@ -70,7 +73,8 @@ public class LateBiomeWorker : WorldGenStep
 		WorldGrid worldGrid = Find.WorldGrid;
 		for (int i = 0; i < worldGrid.TilesCount; i++)
 		{
-			Tile tile = worldGrid[i];
+			var tile = worldGrid[i] as SurfaceTile;
+			if (tile is null) continue;
 			float y = worldGrid.LongLatOf(i).y;
 			int seed = Find.World.info.Seed;
 			Vector3 tileCenter = worldGrid.GetTileCenter(i);
@@ -92,7 +96,12 @@ public class LateBiomeWorker : WorldGenStep
 			flag2 = ((y < num && y > num2) ? true : false);
 			bool flag3 = true;
 			flag3 = ((y > modExtension.minNorthLatitude && y < modExtension.maxNorthLatitude) ? true : false);
-			if ((!flag3 && !flag2 && modExtension.minSouthLatitude != -9999f && modExtension.minNorthLatitude != -9999f && modExtension.maxSouthLatitude != -9999f && modExtension.maxNorthLatitude != 9999f) || (tile.WaterCovered && !modExtension.allowOnWater) || (!tile.WaterCovered && !modExtension.allowOnLand) || (modExtension.needRiver && (tile.Rivers == null || tile.Rivers.Count == 0)))
+			if ((!flag3 && !flag2 && modExtension.minSouthLatitude != -9999f 
+				&& modExtension.minNorthLatitude != -9999f && modExtension.maxSouthLatitude != -9999f
+				&& modExtension.maxNorthLatitude != 9999f) 
+				|| (tile.WaterCovered && !modExtension.allowOnWater) || (!tile.WaterCovered 
+				&& !modExtension.allowOnLand) || (modExtension.needRiver
+				&& (tile.Rivers == null || tile.Rivers.Count == 0)))
 			{
 				continue;
 			}
@@ -116,7 +125,7 @@ public class LateBiomeWorker : WorldGenStep
 			{
 				continue;
 			}
-			List<int> list = new List<int>();
+			var list = new List<PlanetTile>();
 			worldGrid.GetTileNeighbors(i, list);
 			int j = 0;
 			int num3 = 0;

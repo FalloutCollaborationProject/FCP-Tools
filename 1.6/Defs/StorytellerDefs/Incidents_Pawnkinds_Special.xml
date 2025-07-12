@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Incident Pawnkinds __________-->
+
+    <!--_____ Hidden Wasteland Faction _____-->
+
+    <!-- Mysterious Stranger -->
+
+    <PawnKindDef>
+        <defName>FCP_Mysterious_Stranger</defName>
+        <label>Mysterious Stranger</label>
+        <labelMale>Mysterious Stranger</labelMale>
+        <labelFemale>Mysterious Stranger</labelFemale>
+        <labelPlural>Mysterious Stranger</labelPlural>
+        <race>Human</race>
+        <defaultFactionDef>FCP_Faction_Hidden_Wastelanders</defaultFactionDef>
+        <combatPower>55</combatPower>
+        <minGenerationAge>20</minGenerationAge>
+        <maxGenerationAge>55</maxGenerationAge>
+        <isFighter>true</isFighter>
+        <backstoryFiltersOverride>
+            <li>
+                <categoriesChildhood>
+                    <li MayRequire="Rick.FCP.NCR">FCP_NCR_Child</li>
+                    <li>FCP_Wastelander_Child</li>
+                </categoriesChildhood>
+                <categoriesAdulthood>
+                    <li>FCP_Unique_Mysterious_Stranger</li>
+                </categoriesAdulthood>
+            </li>
+        </backstoryFiltersOverride>
+        <requiredWorkTags>
+            <li>Violent</li>
+            <li>Caring</li>
+        </requiredWorkTags>
+        <invNutrition>10.0</invNutrition>
+        <inventoryOptions>
+            <subOptionsChooseOne>
+                <li>
+                    <thingDef>MedicineIndustrial</thingDef>
+                    <countRange>5</countRange>
+                </li>
+            </subOptionsChooseOne>
+        </inventoryOptions>
+        <gearHealthRange>1~1</gearHealthRange>
+        <itemQuality>Good</itemQuality>
+        <weaponMoney>500~500</weaponMoney>
+        <weaponTags>
+            <li>FCP_Gun_Mysterious_Revolver</li>
+        </weaponTags>
+        <apparelRequired>
+            <li>FCP_Apparel_Mysterious_Stranger_Outfit</li>
+            <li>FCP_Apparel_Mysterious_Stranger_Hat</li>
+        </apparelRequired>
+        <ignoreIdeoApparelColors>true</ignoreIdeoApparelColors>
+        <initialWillRange>0~0</initialWillRange>
+        <initialResistanceRange>0~2</initialResistanceRange>
+        <humanPregnancyChance>0</humanPregnancyChance>
+        <skills>
+            <li>
+                <skill>Shooting</skill>
+                <range>8~16</range>
+            </li>
+        </skills>
+    </PawnKindDef>
+
+</Defs>

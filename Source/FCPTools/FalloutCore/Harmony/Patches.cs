@@ -143,8 +143,8 @@ public static class Patches
         if (extension is null) return;
         bool hasNoCaves = extension.requireCaves && !Find.World.HasCaves(___map.Tile);
         bool hasNoCoast = extension.requireCoast && !Find.World.CoastDirectionAt(___map.Tile).IsValid;
-        bool hasNoHills = extension.requireHills && Find.WorldGrid[___map.Tile].hilliness == Hilliness.Flat;
-        bool hasNoRiver = extension.requireRiver && Find.WorldGrid[___map.Tile].Rivers == null;
+        bool hasNoHills = extension.requireHills && ___map.Tile.Tile.hilliness == Hilliness.Flat;
+        bool hasNoRiver = extension.requireRiver && (___map.Tile.Tile as SurfaceTile)?.Rivers == null;
 
         if (hasNoCaves || hasNoCoast || hasNoHills || hasNoRiver)
         {

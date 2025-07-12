@@ -1,12 +1,14 @@
-﻿namespace FCP.Core;
+﻿using RimWorld.Planet;
+
+namespace FCP.Core;
 
 public class StockGenerator_PawnsWithXenotype : StockGenerator_Slaves
 {
 	private bool respectPopulationIntent = true;
 	public bool ignoreIdeoRequirements = false;
 	public XenotypeDef xenotypeDef;
-    	
-	public override IEnumerable<Thing> GenerateThings(int forTile, Faction faction = null)
+
+	public override IEnumerable<Thing> GenerateThings(PlanetTile forTile, Faction faction = null)
 	{
 		if (respectPopulationIntent && Rand.Value > StorytellerUtilityPopulation.PopulationIntent)
 		{

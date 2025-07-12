@@ -35,9 +35,9 @@ namespace FalloutCore
                 if ((vec3 == IntVec3.Invalid || (vec3 != IntVec3.Invalid && vec3 != @int)) && Find.TickManager.TicksGame >= this.nextUpdateTick)
                 {
                     this.nextUpdateTick = Find.TickManager.TicksGame + 50;
-                    map.mapDrawer.MapMeshDirty(this.parent.Position, MapMeshFlag.Things);
+                    map.mapDrawer.MapMeshDirty(this.parent.Position, MapMeshFlagDefOf.Things);
                     map.glowGrid.DeRegisterGlower(this);
-                    map.mapDrawer.MapMeshDirty(this.parent.Position, MapMeshFlag.Things);
+                    map.mapDrawer.MapMeshDirty(this.parent.Position, MapMeshFlagDefOf.Things);
                     map.glowGrid.RegisterGlower(this);
                 }
                 if (Find.TickManager.TicksGame % Props.toxicBuildupEmitTickRate == 0)
@@ -46,7 +46,7 @@ namespace FalloutCore
                     foreach (var pawn in pawns)
                     {
                         float num = Props.toxicBuildupSeverityAdjust;
-                        num *= pawn.GetStatValue(StatDefOf.ToxicSensitivity);
+                        num *= 1f - pawn.GetStatValue(StatDefOf.ToxicResistance);
                         if (num != 0f)
                         {
                             HealthUtility.AdjustSeverity(pawn, HediffDefOf.ToxicBuildup, num);

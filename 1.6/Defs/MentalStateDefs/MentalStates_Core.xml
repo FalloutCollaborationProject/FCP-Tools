@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--_________ Mental States _________-->
+
+    <!--_____ Ghouls _____-->
+
+    <!-- Ghoul Feral Mental State -->
+
+    <MentalStateDef ParentName="BaseMentalState">
+        <defName>FCP_MentalState_PermanentBerserk</defName>
+        <stateClass>FCP_Ghoul.MentalState_Feral</stateClass>
+        <label>feral</label>
+        <category>Aggro</category>
+        <blockInteractionInitiationExcept>
+            <li>Insult</li>
+        </blockInteractionInitiationExcept>
+        <blockInteractionRecipientExcept>
+            <li>Insult</li>
+        </blockInteractionRecipientExcept>
+        <recoveryMtbDays>999</recoveryMtbDays>
+        <blockRandomInteraction>true</blockRandomInteraction>
+        <blockNormalThoughts>true</blockNormalThoughts>
+        <nameColor>(0.9,0.2,0.5)</nameColor>
+        <beginLetter>{0} has gone berserk.\n\n[PAWN_pronoun] will attack anyone [PAWN_pronoun] sees.</beginLetter>
+        <beginLetterDef>ThreatSmall</beginLetterDef>
+        <minTicksBeforeRecovery>99999999</minTicksBeforeRecovery>
+        <maxTicksBeforeRecovery>99999999</maxTicksBeforeRecovery>
+        <inCaravanCanDo>true</inCaravanCanDo>
+        <recoverFromSleep>false</recoverFromSleep>
+        <recoverFromDowned>false</recoverFromDowned>
+        <recoverFromCollapsingExhausted>false</recoverFromCollapsingExhausted>
+        <recoveryMessage>{0}'s berserk rage has come to an end.</recoveryMessage>
+        <baseInspectLine>Mental state: Feral</baseInspectLine>
+        <stateEffecter>Berserk</stateEffecter>
+        <tale>MentalStateBerserk</tale>
+        <modExtensions>
+            <li Class="FCP_Ghoul.PermanentBerserk_ModExtension" />
+        </modExtensions>
+    </MentalStateDef>
+
+</Defs>

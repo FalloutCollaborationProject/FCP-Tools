@@ -2,3 +2,4 @@ C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\FCP-Tools\1.5\Assemb
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\FCP-Tools\Source\ApparelExtension\obj\Debug\ApparelExtension.csproj.AssemblyReference.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\FCP-Tools\Source\ApparelExtension\obj\Debug\ApparelExtension.csproj.CoreCompileInputs.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\FCP-Tools\Source\ApparelExtension\obj\Debug\ApparelExtension.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\FCP-Tools\1.6\Assemblies\ApparelExtension.dll

@@ -27,12 +27,10 @@
             return base.CanFireNowSub(parms) && 
                    Find.FactionManager.FirstFactionOfDef(Extension.factionDef) != null;
         }
-        
-        protected override bool FactionCanBeGroupSource(Faction f, Map map, bool desperate = false)
-        {
-            if (!base.FactionCanBeGroupSource(f, map, desperate))
-                return false;
 
+        public override bool FactionCanBeGroupSource(Faction f, IncidentParms parms, bool desperate = false)
+        {
+            if (!base.FactionCanBeGroupSource(f, parms, desperate)) return false;
             return f.def == Extension.factionDef;
         }
         

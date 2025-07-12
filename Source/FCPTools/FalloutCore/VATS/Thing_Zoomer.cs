@@ -10,7 +10,7 @@ public class Thing_Zoomer : ThingWithComps
         startTicks = Find.TickManager.TicksGame;
     }
 
-    public override void Tick()
+    protected override void Tick()
     {
         base.Tick();
 

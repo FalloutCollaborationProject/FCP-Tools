@@ -4,11 +4,11 @@ using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
 using UnityEngine;
-using Verse;
+using Verse;	
 
 namespace BiomesKitPatches;
 
-[HarmonyPatch(typeof(WorldLayer_Hills), "Regenerate")]
+[HarmonyPatch(typeof(WorldDrawLayer_Hills), "Regenerate")]
 internal static class WorldLayer
 {
 	internal static void Prefix()
@@ -16,7 +16,7 @@ internal static class WorldLayer
 		foreach (BiomeDef item in DefDatabase<BiomeDef>.AllDefsListForReading.Where((BiomeDef x) => x.HasModExtension<BiomesKitControls>()))
 		{
 			_ = item;
-			if (ModsConfig.IsActive("Odeum.WMBP"))
+			if (ModsConfig.IsActive("Odeum.WMBP"))	
 			{
 				Material value = MaterialPool.MatFrom("Transparent", ShaderDatabase.WorldOverlayTransparentLit, 3510);
 				AccessTools.Field(typeof(WorldMaterials), "SmallHills").SetValue(null, value);

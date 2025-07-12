@@ -16,25 +16,34 @@ namespace FCP_RadiantQuests
     /// Patches the targeting parameters to be able to target all prisoners that dont belong to the player
     /// to free them instead of only those that have mindState.WillJoinColonyIfRescued
     /// </summary>
-    [HarmonyPatch]
-    public static class ReleasePrisonerRightClickPatch
+    [HarmonyPatch(typeof(FloatMenuOptionProvider_OfferHelp), "GetSingleOptionFor")]
+    public static class FloatMenuOptionProvider_OfferHelp_GetSingleOptionFor_Patch
     {
-        private static MethodBase TargetMethod()
+        public static bool Prefix(FloatMenuOptionProvider_OfferHelp __instance, Pawn clickedPawn, 
+            FloatMenuContext context, ref FloatMenuOption __result)
         {
-            return AccessTools.Method(typeof(TargetingParameters), nameof(TargetingParameters.ForQuestPawnsWhoWillJoinColony));
-        }
-        private static bool Prefix(ref TargetingParameters __result, Pawn p)
-        {
-            __result = new TargetingParameters
+            if (clickedPawn.Dead)
             {
-                canTargetPawns = true,
-                canTargetBuildings = false,
-                mapObjectTargetsMustBeAutoAttackable = false,
-                validator = (TargetInfo x) => x.Thing is Pawn { Dead: false } pawn && pawn.IsPrisoner && !pawn.IsPrisonerOfColony
-            };
+                return false;
+            }
+            if (clickedPawn.IsPrisoner && !clickedPawn.IsPrisonerOfColony)
+            {
+                TaggedString taggedString = (clickedPawn.IsPrisoner ? "FreePrisoner".Translate() : "OfferHelp".Translate());
+                if (!context.FirstSelectedPawn.CanReach(clickedPawn, PathEndMode.Touch, Danger.Deadly))
+                {
+                    __result = new FloatMenuOption(taggedString + ": " + "NoPath".Translate(), null);
+                    return false;
+                }
+                __result = FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(taggedString, delegate
+                {
+                    context.FirstSelectedPawn.jobs.TryTakeOrderedJob(JobMaker.MakeJob(JobDefOf.OfferHelp, clickedPawn), JobTag.Misc);
+                }, MenuOptionPriority.RescueOrCapture, null, clickedPawn), context.FirstSelectedPawn, clickedPawn);
+                return false;
+            }
             return false;
         }
     }
+
     /// <summary>
     /// Patches the job driver to let the pawn run away if it doesnt have mindState.WillJoinColonyIfRescued
     /// </summary>

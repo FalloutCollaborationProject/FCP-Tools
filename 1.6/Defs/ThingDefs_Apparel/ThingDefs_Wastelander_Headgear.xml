@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!--__________ Wastelander Clothing __________-->
+
+    <!--_____ Armor _____-->
+
+    <!--___ Pre-War Armor ___-->
+
+    <!--__ Combat Armor __-->
+
+    <!-- Combat Armor Helmet -->
+
+    <ThingDef ParentName="HatBase">
+        <defName>FCP_Apparel_Combat_Helmet</defName>
+        <label>Combat Helmet</label>
+        <description>A matching helmet for the combat armor, it offers a bit of protection.</description>
+        <techLevel>Industrial</techLevel>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/CombatArmor/FCP_Combat_Armor_Helmet_south</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <smeltable>false</smeltable>
+        <statBases>
+            <WorkToMake>3000</WorkToMake>
+            <MaxHitPoints>80</MaxHitPoints>
+            <Mass>0.8</Mass>
+            <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+            <Insulation_Heat>2</Insulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>UpperHead</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/CombatArmor/FCP_Combat_Armor_Helmet</wornGraphicPath>
+            <layers>
+                <li>Overhead</li>
+            </layers>
+            <tags>
+                <li>FCP_Combat_Armors</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Combat Armor Helmet (Fallout 4) -->
+
+    <ThingDef ParentName="HatBase">
+        <defName>FCP_Apparel_Combat_Armor_Helmet</defName>
+        <label>Modular Combat Armor Helmet</label>
+        <description>The combat armor helmet is the corresponding armor piece to the combat armor set. This model displays what is possibly a headlamp, attached to the left side above the brow line.</description>
+        <techLevel>Industrial</techLevel>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/CombatArmorHelmet/FCP_Combat_Armor_Helmet_Modular</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <smeltable>false</smeltable>
+        <statBases>
+            <WorkToMake>3000</WorkToMake>
+            <MaxHitPoints>80</MaxHitPoints>
+            <Mass>0.8</Mass>
+            <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.10</ArmorRating_Heat>
+            <Insulation_Heat>2</Insulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>UpperHead</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/CombatArmorHelmet/FCP_Combat_Armor_Helmet_Modular</wornGraphicPath>
+            <layers>
+                <li>Overhead</li>
+            </layers>
+            <tags>
+                <li>FCP_Combat_Armor_Modular</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Reinforced Combat Armor Helmet -->
+
+    <ThingDef ParentName="HatBase">
+        <defName>FCP_Apparel_Reinforced_Combat_Armor_Helmet</defName>
+        <label>Reinforced Combat Armor Helmet</label>
+        <description>The helmet is a ballistic assembly, designed to protect the wearer from projectile, bladed weapons, and blunt trauma. An integrated polarized visor protects the user's eyes from the ordinary battlefield hazards of grit and dust.</description>
+        <techLevel>Industrial</techLevel>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/ReinforcedCombatArmor/FCP_Reinforced_Combat_Armor_Helmet</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <smeltable>false</smeltable>
+        <statBases>
+            <WorkToMake>3000</WorkToMake>
+            <MaxHitPoints>80</MaxHitPoints>
+            <Mass>0.8</Mass>
+            <ArmorRating_Sharp>0.24</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.12</ArmorRating_Blunt>
+            <Insulation_Heat>2</Insulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>FullHead</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/ReinforcedCombatArmor/FCP_Reinforced_Combat_Armor_Helmet</wornGraphicPath>
+            <layers>
+                <li>Overhead</li>
+            </layers>
+            <tags>
+                <li>FCP_Combat_Armor_Reinforced</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Reinforced Combat Armor Helmet Mk II-->
+
+    <ThingDef ParentName="HatBase">
+        <defName>FCP_Apparel_Reinforced_Combat_Armor_Helmet_Mk_II</defName>
+        <label>Reinforced Combat Armor Helmet</label>
+        <description>The helmet is a ballistic assembly, designed to protect the wearer from projectile, bladed weapons, and blunt trauma. An integrated polarized visor protects the user's eyes from the ordinary battlefield hazards of grit and dust. It is similar in appearance to the helmet used with the reinforced suit but is a different color.</description>
+        <techLevel>Industrial</techLevel>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/ReinforcedCombatArmorII/FCP_Reinforced_Combat_Armor_Helmet_Mk_II</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <smeltable>false</smeltable>
+        <statBases>
+            <WorkToMake>3000</WorkToMake>
+            <MaxHitPoints>80</MaxHitPoints>
+            <Mass>0.8</Mass>
+            <ArmorRating_Sharp>0.24</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.12</ArmorRating_Blunt>
+            <Insulation_Heat>2</Insulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>FullHead</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/ReinforcedCombatArmorII/FCP_Reinforced_Combat_Armor_Helmet_Mk_II</wornGraphicPath>
+            <layers>
+                <li>Overhead</li>
+            </layers>
+            <tags>
+                <li>FCP_Combat_Armor_Reinforced_MK_II</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!--_____ Apparel _____-->
+
+    <!--___ Pre-War Apparel ___-->
+
+    <!-- Army Helmet -->
+
+    <ThingDef ParentName="HatBase">
+        <defName>FCP_Apparel_Army_Helmet</defName>
+        <label>Army Helmet</label>
+        <description>Part of the army uniform, this helmet offers a little protection.</description>
+        <techLevel>Industrial</techLevel>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/ArmyUniform/FCP_Army_Helmet_Clean</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <smeltable>false</smeltable>
+        <statBases>
+            <WorkToMake>3000</WorkToMake>
+            <MaxHitPoints>80</MaxHitPoints>
+            <Mass>0.8</Mass>
+            <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+            <Insulation_Heat>2</Insulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>UpperHead</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/ArmyUniform/FCP_Army_Helmet_Clean</wornGraphicPath>
+            <layers>
+                <li>Overhead</li>
+            </layers>
+            <tags>
+                <li>FCP_Combat_Armors</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Radiation Suit helmet-->
+
+    <ThingDef ParentName="HatBase">
+        <defName>FCP_Apparel_Radiations_Suit_Helmet</defName>
+        <label>Combat Armor Helmet</label>
+        <description>The combat armor helmet is the corresponding armor piece to the combat armor set. This model displays what is possibly a headlamp, attached to the left side above the brow line.</description>
+        <techLevel>Industrial</techLevel>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/RadiationSuit/FCP_Radiation_Suit_Helmet</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <smeltable>false</smeltable>
+        <statBases>
+            <WorkToMake>3000</WorkToMake>
+            <MaxHitPoints>80</MaxHitPoints>
+            <Mass>0.8</Mass>
+            <Insulation_Heat>2</Insulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <ToxicResistance>0.15</ToxicResistance>
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>FullHead</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/RadiationSuit/FCP_Radiation_Suit_Helmet</wornGraphicPath>
+            <layers>
+                <li>Overhead</li>
+            </layers>
+            <tags>
+                <li>FCP_Radiation_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Mysterious Stranger Hat -->
+
+    <ThingDef ParentName="HatMakeableBase">
+        <defName>FCP_Apparel_Mysterious_Stranger_Hat</defName>
+        <label>Sheriff Hat</label>
+        <description>Mysterious Strangers hat.</description>
+        <techLevel>Industrial</techLevel>
+        <graphicData>
+            <texPath>Things/Apparel/Custom/Mysterious_Stranger/Mysterious_Stranger_Hat/FCP_Mysterious_Stranger_Hat</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <recipeMaker>
+            <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>2</Crafting>
+            </skillRequirements>
+        </recipeMaker>
+        <costList>
+            <Leather_Plain>15</Leather_Plain>
+        </costList>
+        <statBases>
+            <WorkToMake>3000</WorkToMake>
+            <MaxHitPoints>80</MaxHitPoints>
+            <Mass>0.8</Mass>
+            <Insulation_Heat>2</Insulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <ShootingAccuracyPawn>0.05</ShootingAccuracyPawn>            <!-- PERCEPTION +1 -->
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>UpperHead</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Custom/Mysterious_Stranger/Mysterious_Stranger_Hat/FCP_Mysterious_Stranger_Hat</wornGraphicPath>
+            <layers>
+                <li>Overhead</li>
+            </layers>
+            <tags>
+                <li>FCP_Mysterious_Stranger_Outfit</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!--___ Wastelander Apparel ___-->
+
+    <!-- Sheriff Hat -->
+
+    <ThingDef ParentName="HatMakeableBase">
+        <defName>FCP_Apparel_Sheriff_Hat</defName>
+        <label>Sheriff Hat</label>
+        <description>Part of the sheriff duster outfit. it gives a little buff to perception.</description>
+        <techLevel>Industrial</techLevel>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/SheriffDuster/FCP_Sheriff_Hat</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <recipeMaker>
+            <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>2</Crafting>
+            </skillRequirements>
+        </recipeMaker>
+        <costList>
+            <Leather_Plain>15</Leather_Plain>
+        </costList>
+        <statBases>
+            <WorkToMake>3000</WorkToMake>
+            <MaxHitPoints>80</MaxHitPoints>
+            <Mass>0.8</Mass>
+            <Insulation_Heat>2</Insulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <ShootingAccuracyPawn>0.05</ShootingAccuracyPawn>            <!-- PERCEPTION +1 -->
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>UpperHead</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/SheriffDuster/FCP_Sheriff_Hat</wornGraphicPath>
+            <layers>
+                <li>Overhead</li>
+            </layers>
+            <tags>
+                <li>FCP_Wastelander_Sheriff</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Ranger Gas Mask -->
+
+    <ThingDef ParentName="HatMakeableBase">
+        <defName>FCP_Apparel_Gas_Ranger_Gas_Mask</defName>
+        <label>Ranger Gas Mask</label>
+        <description>A gas mask to go with the gas ranger outfit.</description>
+        <techLevel>Industrial</techLevel>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/GasRanger/GasRangerWhite/FCP_Rickys_Rando_Rangers_Gas_Mask_White</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <recipeMaker>
+            <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>2</Crafting>
+            </skillRequirements>
+        </recipeMaker>
+        <statBases>
+            <WorkToMake>3000</WorkToMake>
+            <MaxHitPoints>80</MaxHitPoints>
+            <Mass>0.8</Mass>
+            <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.10</ArmorRating_Heat>
+            <Insulation_Heat>2</Insulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+        </statBases>
+        <costList>
+            <Leather_Plain>15</Leather_Plain>
+        </costList>
+        <apparel>
+            <bodyPartGroups>
+                <li>FullHead</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/GasRanger/GasRangerWhite/FCP_Rickys_Rando_Rangers_Gas_Mask_White</wornGraphicPath>
+            <layers>
+                <li>Overhead</li>
+            </layers>
+            <tags>
+                <li>FCP_Wastelander_Rangers_Rick</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!--___ Slave Apparel ___-->
+
+    <!-- Slave Bandana -->
+
+    <ThingDef ParentName="HatMakeableBase">
+        <defName>FCP_Apparel_Slave_Bandana</defName>
+        <label>Slave Bandana</label>
+        <description>A bandana tipically worn by slaves.</description>
+        <techLevel>Industrial</techLevel>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/SlaveBandana/FCP_Slave_Bandana</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <recipeMaker>
+            <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>2</Crafting>
+            </skillRequirements>
+        </recipeMaker>
+        <costList>
+            <Cloth>15</Cloth>
+        </costList>
+        <statBases>
+            <WorkToMake>3000</WorkToMake>
+            <MaxHitPoints>80</MaxHitPoints>
+            <Mass>0.8</Mass>
+            <Insulation_Heat>2</Insulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>UpperHead</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/SlaveBandana/FCP_Slave_Bandana</wornGraphicPath>
+            <layers>
+                <li>Overhead</li>
+            </layers>
+            <tags>
+                <li>FCP_Slave_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Slave Rag Hood -->
+
+    <ThingDef ParentName="HatMakeableBase">
+        <defName>FCP_Apparel_Slave_Rag_Hood</defName>
+        <label>Slave Rag Hood</label>
+        <description>A scarf used to create a hood, tipically worn by slaves.</description>
+        <techLevel>Industrial</techLevel>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/SlaveRagHood/FCP_Slave_Rag_Hood</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <recipeMaker>
+            <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>2</Crafting>
+            </skillRequirements>
+        </recipeMaker>
+        <costList>
+            <Cloth>15</Cloth>
+        </costList>
+        <statBases>
+            <WorkToMake>3000</WorkToMake>
+            <MaxHitPoints>80</MaxHitPoints>
+            <Mass>0.8</Mass>
+            <Insulation_Heat>2</Insulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <ShootingAccuracyPawn>0.05</ShootingAccuracyPawn>            <!-- PERCEPTION +1 -->
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>UpperHead</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/SlaveRagHood/FCP_Slave_Rag_Hood</wornGraphicPath>
+            <layers>
+                <li>Overhead</li>
+            </layers>
+            <tags>
+                <li>FCP_Slave_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+    <!-- Slave Scarf Hat -->
+
+    <ThingDef ParentName="HatMakeableBase">
+        <defName>FCP_Apparel_Slave_Scarf_Hat</defName>
+        <label>Slave Scarf Hat</label>
+        <description>A scarf used to create a hat, tipically worn by slaves.</description>
+        <techLevel>Industrial</techLevel>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/SlaveScarfHat/FCP_Slave_Scarf_Hat</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <costList>
+            <Cloth>15</Cloth>
+        </costList>
+        <recipeMaker>
+            <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>2</Crafting>
+            </skillRequirements>
+        </recipeMaker>
+        <statBases>
+            <WorkToMake>3000</WorkToMake>
+            <MaxHitPoints>80</MaxHitPoints>
+            <Mass>0.8</Mass>
+            <Insulation_Heat>2</Insulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <ShootingAccuracyPawn>0.05</ShootingAccuracyPawn>            <!-- PERCEPTION +1 -->
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>UpperHead</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/SlaveScarfHat/FCP_Slave_Scarf_Hat</wornGraphicPath>
+            <layers>
+                <li>Overhead</li>
+            </layers>
+            <tags>
+                <li>FCP_Slave_Apparel</li>
+            </tags>
+        </apparel>
+    </ThingDef>
+
+</Defs>

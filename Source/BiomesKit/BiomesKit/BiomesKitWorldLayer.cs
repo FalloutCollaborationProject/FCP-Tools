@@ -5,7 +5,7 @@ using Verse;
 
 namespace BiomesKit;
 
-public class BiomesKitWorldLayer : WorldLayer
+public class BiomesKitWorldLayer : WorldDrawLayer_Hills
 {
 	private static readonly IntVec2 TexturesInAtlas = new IntVec2(2, 2);
 
@@ -20,7 +20,8 @@ public class BiomesKitWorldLayer : WorldLayer
 		WorldGrid worldGrid = Find.WorldGrid;
 		for (int i = 0; i < Find.WorldGrid.TilesCount; i++)
 		{
-			Tile tile = Find.WorldGrid[i];
+			var tile = Find.WorldGrid[i] as SurfaceTile;
+			if (tile is null) continue;
 			Vector3 tileCenter = worldGrid.GetTileCenter(i);
 			if (tile.biome.HasModExtension<BiomesKitControls>())
 			{
@@ -91,7 +92,7 @@ public class BiomesKitWorldLayer : WorldLayer
 						{
 							Material material = MaterialPool.MatFrom(text, ShaderDatabase.WorldOverlayTransparentLit, modExtension.materialLayer);
 							LayerSubMesh subMesh = GetSubMesh(material);
-							WorldRendererUtility.PrintQuadTangentialToPlanet(tileCenter, tileCenter, worldGrid.averageTileSize * num, 0.01f, subMesh, counterClockwise: false, modExtension.materialRandomRotation, printUVs: false);
+							WorldRendererUtility.PrintQuadTangentialToPlanet(tileCenter, tileCenter, worldGrid.AverageTileSize * num, 0.01f, subMesh, counterClockwise: false, modExtension.materialRandomRotation ? Rand.Range(0f, 360f) : 0f, printUVs: false);
 							WorldRendererUtility.PrintTextureAtlasUVs(Rand.Range(0, TexturesInAtlas.x), Rand.Range(0, TexturesInAtlas.z), TexturesInAtlas.x, TexturesInAtlas.z, subMesh);
 						}
 					}
@@ -121,7 +122,7 @@ public class BiomesKitWorldLayer : WorldLayer
 					{
 						Material material2 = MaterialPool.MatFrom(text2, ShaderDatabase.WorldOverlayTransparentLit, modExtension.materialLayer);
 						LayerSubMesh subMesh2 = GetSubMesh(material2);
-						WorldRendererUtility.PrintQuadTangentialToPlanet(tileCenter, tileCenter, new FloatRange(0.9f, 1.1f).RandomInRange * worldGrid.averageTileSize, 0.005f, subMesh2, counterClockwise: false, randomizeRotation: true, printUVs: false);
+						WorldRendererUtility.PrintQuadTangentialToPlanet(tileCenter, tileCenter, new FloatRange(0.9f, 1.1f).RandomInRange * worldGrid.AverageTileSize, 0.005f, subMesh2, counterClockwise: false, rotation: Rand.Range(0, 360), printUVs: false);
 						WorldRendererUtility.PrintTextureAtlasUVs(Rand.Range(0, TexturesInAtlas.x), Rand.Range(0, TexturesInAtlas.z), TexturesInAtlas.x, TexturesInAtlas.z, subMesh2);
 					}
 				}
@@ -151,14 +152,14 @@ public class BiomesKitWorldLayer : WorldLayer
 					}
 					Material material3 = MaterialPool.MatFrom(text3, ShaderDatabase.WorldOverlayTransparentLit, modExtension.materialLayer);
 					LayerSubMesh subMesh3 = GetSubMesh(material3);
-					WorldRendererUtility.PrintQuadTangentialToPlanet(tileCenter, tileCenter, worldGrid.averageTileSize * modExtension.materialSizeMultiplier, 0.01f, subMesh3, counterClockwise: false, modExtension.materialRandomRotation, printUVs: false);
+					WorldRendererUtility.PrintQuadTangentialToPlanet(tileCenter, tileCenter, worldGrid.AverageTileSize * modExtension.materialSizeMultiplier, 0.01f, subMesh3, counterClockwise: false, modExtension.materialRandomRotation ? Rand.Range(0f, 360f) : 0f, printUVs: false);
 					WorldRendererUtility.PrintTextureAtlasUVs(Rand.Range(0, TexturesInAtlas.x), Rand.Range(0, TexturesInAtlas.z), TexturesInAtlas.x, TexturesInAtlas.z, subMesh3);
 				}
 				if (modExtension.materialPath != "World/MapGraphics/Default")
 				{
 					Material material4 = MaterialPool.MatFrom(modExtension.materialPath, ShaderDatabase.WorldOverlayTransparentLit, modExtension.materialLayer);
 					LayerSubMesh subMesh4 = GetSubMesh(material4);
-					WorldRendererUtility.PrintQuadTangentialToPlanet(tileCenter, tileCenter, worldGrid.averageTileSize * modExtension.materialSizeMultiplier, 0.01f, subMesh4, counterClockwise: false, modExtension.materialRandomRotation, printUVs: false);
+					WorldRendererUtility.PrintQuadTangentialToPlanet(tileCenter, tileCenter, worldGrid.AverageTileSize * modExtension.materialSizeMultiplier, 0.01f, subMesh4, counterClockwise: false, modExtension.materialRandomRotation ? Rand.Range(0f, 360f) : 0f, printUVs: false);
 					WorldRendererUtility.PrintTextureAtlasUVs(Rand.Range(0, TexturesInAtlas.x), Rand.Range(0, TexturesInAtlas.z), TexturesInAtlas.x, TexturesInAtlas.z, subMesh4);
 				}
 			}
@@ -187,7 +188,7 @@ public class BiomesKitWorldLayer : WorldLayer
 				{
 					Material material5 = MaterialPool.MatFrom(text4, ShaderDatabase.WorldOverlayTransparentLit, 3510);
 					LayerSubMesh subMesh5 = GetSubMesh(material5);
-					WorldRendererUtility.PrintQuadTangentialToPlanet(tileCenter, tileCenter, new FloatRange(0.9f, 1.1f).RandomInRange * worldGrid.averageTileSize, 0.005f, subMesh5, counterClockwise: false, randomizeRotation: true, printUVs: false);
+					WorldRendererUtility.PrintQuadTangentialToPlanet(tileCenter, tileCenter, new FloatRange(0.9f, 1.1f).RandomInRange * worldGrid.AverageTileSize, 0.005f, subMesh5, counterClockwise: false, rotation: Rand.Range(0, 360), printUVs: false);
 					WorldRendererUtility.PrintTextureAtlasUVs(Rand.Range(0, TexturesInAtlas.x), Rand.Range(0, TexturesInAtlas.z), TexturesInAtlas.x, TexturesInAtlas.z, subMesh5);
 				}
 			}

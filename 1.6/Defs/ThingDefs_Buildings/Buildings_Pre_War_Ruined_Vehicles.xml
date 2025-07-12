@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Pre-War Vehicle Ruins __________-->
+
+    <!--_____ US ARMY _____-->
+
+    <!-- Pre-War US Army Truck -->
+
+    <ThingDef ParentName="NonDeconstructibleAncientBuildingBase">
+        <defName>FCP_Pre_War_Army_Truck</defName>
+        <label>Pre-War US Army Truck</label>
+        <description>An old, destroyed military truck. Used by the great nations before the bombs droped.</description>
+        <graphicData>
+            <texPath>Things/Building/Ruins/PreWarArmyTruckDestroyed/FCP_Pre_War_Army_Truck_Destroyed</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(9,9)</drawSize>
+            <shadowData>
+                <volume>(0.8, 0.7, 3.4)</volume>
+            </shadowData>
+        </graphicData>
+        <size>(4,7)</size>
+        <fillPercent>0.5</fillPercent>
+        <passability>PassThroughOnly</passability>
+        <pathCost>50</pathCost>
+        <statBases>
+            <MaxHitPoints>600</MaxHitPoints>
+        </statBases>
+        <killedLeavings>
+            <ChunkSlagSteel>2</ChunkSlagSteel>
+        </killedLeavings>
+    </ThingDef>
+
+    <!-- Pre-War US Army Vertibird -->
+
+    <ThingDef ParentName="NonDeconstructibleAncientBuildingBase">
+        <defName>FCP_Pre_War_Army_Vertibird</defName>
+        <label>Pre-War US Army Vertibird</label>
+        <description>An old, destroyed military Vertibid. Used by the great nations before the bombs droped.</description>
+        <rotatable>false</rotatable>
+        <graphicData>
+            <texPath>Things/Building/Ruins/PreWarArmyVertibirdDestroyed/FCP_Pre_War_Army_Vertibird_Destroyed</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(8,8)</drawSize>
+            <shadowData>
+                <volume>(0.8, 0.7, 3.4)</volume>
+            </shadowData>
+        </graphicData>
+        <size>(10,8)</size>
+        <fillPercent>0.5</fillPercent>
+        <passability>PassThroughOnly</passability>
+        <pathCost>50</pathCost>
+        <statBases>
+            <MaxHitPoints>600</MaxHitPoints>
+        </statBases>
+        <killedLeavings>
+            <ChunkSlagSteel>2</ChunkSlagSteel>
+        </killedLeavings>
+    </ThingDef>
+
+</Defs>

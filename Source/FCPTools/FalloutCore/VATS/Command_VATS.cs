@@ -33,6 +33,6 @@ public class Command_VATS : Command_Ability
 
     public override void GizmoUpdateOnMouseover()
     {
-        Verb.verbProps.DrawRadiusRing_NewTemp(Verb.caster.Position, Verb);
+        Verb.verbProps.DrawRadiusRing(Verb.caster.Position, Verb);
     }
 }

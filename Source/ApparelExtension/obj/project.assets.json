@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.7.2": {
-      "Krafs.Rimworld.Ref/1.5.4243": {
+      "Krafs.Rimworld.Ref/1.5.4409": {
         "type": "package",
         "compile": {
           "ref/net472/Assembly-CSharp-firstpass.dll": {},
@@ -107,7 +107,7 @@
       }
     },
     ".NETFramework,Version=v4.7.2/win": {
-      "Krafs.Rimworld.Ref/1.5.4243": {
+      "Krafs.Rimworld.Ref/1.5.4409": {
         "type": "package",
         "compile": {
           "ref/net472/Assembly-CSharp-firstpass.dll": {},
@@ -212,7 +212,7 @@
       }
     },
     ".NETFramework,Version=v4.7.2/win-arm64": {
-      "Krafs.Rimworld.Ref/1.5.4243": {
+      "Krafs.Rimworld.Ref/1.5.4409": {
         "type": "package",
         "compile": {
           "ref/net472/Assembly-CSharp-firstpass.dll": {},
@@ -317,7 +317,7 @@
       }
     },
     ".NETFramework,Version=v4.7.2/win-x64": {
-      "Krafs.Rimworld.Ref/1.5.4243": {
+      "Krafs.Rimworld.Ref/1.5.4409": {
         "type": "package",
         "compile": {
           "ref/net472/Assembly-CSharp-firstpass.dll": {},
@@ -422,7 +422,7 @@
       }
     },
     ".NETFramework,Version=v4.7.2/win-x86": {
-      "Krafs.Rimworld.Ref/1.5.4243": {
+      "Krafs.Rimworld.Ref/1.5.4409": {
         "type": "package",
         "compile": {
           "ref/net472/Assembly-CSharp-firstpass.dll": {},
@@ -528,17 +528,17 @@
     }
   },
   "libraries": {
-    "Krafs.Rimworld.Ref/1.5.4243": {
-      "sha512": "2poo9wWPms6B3XChUxhEW1/+7kvPL7ljHF63jGLniIX30lEfmCp1p5hdCjEYiczaXvTkFct1fOXERFBCNg2Enw==",
+    "Krafs.Rimworld.Ref/1.5.4409": {
+      "sha512": "0Sn9Ow0hbsQ1pmwHoKmcAzhMkv/BjHrIpZOH4eyUwHx238a3+2jDqNwCggKR8E3BouNeIOQuNcyMrc78slOtaA==",
       "type": "package",
-      "path": "krafs.rimworld.ref/1.5.4243",
+      "path": "krafs.rimworld.ref/1.5.4409",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.md",
         "README.md",
         "icon.png",
-        "krafs.rimworld.ref.1.5.4243.nupkg.sha512",
+        "krafs.rimworld.ref.1.5.4409.nupkg.sha512",
         "krafs.rimworld.ref.nuspec",
         "ref/net472/Assembly-CSharp-firstpass.dll",
         "ref/net472/Assembly-CSharp.dll",
@@ -666,7 +666,7 @@
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.2": [
       "Krafs.Rimworld.Ref >= 1.5.*-*",
-      "Lib.Harmony >= 2.3.*"
+      "Lib.Harmony >= 2.3.3"
     ]
   },
   "packageFolders": {
@@ -682,6 +682,7 @@
       "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\FCP-Tools\\Source\\ApparelExtension\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
+      "UsingMicrosoftNETSdk": false,
       "configFilePaths": [
         "C:\\Users\\Vova\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -711,19 +712,15 @@
             "target": "Package",
             "version": "[1.5.*-*, )"
           },
-          "Krafs.Rimworld.Ref": {
+          "Lib.Harmony": {
+            "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "target": "Package",
-            "version": "[1.5.*-*, )"
+            "version": "[2.3.3, )"
           },
           "Lib.Harmony": {
             "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "target": "Package",
-            "version": "[2.3.*, )"
-          },
-          "Lib.Harmony": {
-            "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-            "target": "Package",
-            "version": "[2.3.*, )"
+            "version": "[2.3.3, )"
           }
         }
       }

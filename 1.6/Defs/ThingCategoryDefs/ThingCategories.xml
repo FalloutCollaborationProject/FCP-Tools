@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!--__________ Currencies ___________-->
+
+	<!-- Bottle Caps -->
+
+	<ThingCategoryDef>
+		<defName>FCP_Currencies</defName>
+		<label>currencies</label>
+		<parent>Manufactured</parent>
+		<iconPath>Things/Items/Currencies/FCP_Bottle_Caps_Currency/FCP_Bottle_Caps_Currency_c</iconPath>
+		<resourceReadoutRoot>true</resourceReadoutRoot>
+	</ThingCategoryDef>
+
+</Defs>

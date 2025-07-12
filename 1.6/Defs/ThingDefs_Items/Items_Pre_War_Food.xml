@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!--__________ Pre-War Food __________-->
+
+    <!-- Base -->
+
+    <ThingDef Name="FCP_Food_Pre_War_Meals" Abstract="True" ParentName="MealBaseIngredientless">
+        <statBases>
+            <MarketValue>20</MarketValue>
+            <Mass>0.3</Mass>
+            <Nutrition>0.7</Nutrition>
+            <DeteriorationRate>0</DeteriorationRate>
+        </statBases>
+        <graphicData>
+            <drawSize>0.70</drawSize>
+            <graphicClass>Graphic_StackCount</graphicClass>
+        </graphicData>
+        <tradeability>Buyable</tradeability>
+        <ingestible>
+            <foodType>Processed</foodType>
+            <preferability>MealSimple</preferability>
+            <tasteThought>FCP_Ate_Pre_War_Food</tasteThought>
+            <ingestEffect>EatVegetarian</ingestEffect>
+            <ingestSound>Meal_Eat</ingestSound>
+        </ingestible>
+        <allowedArchonexusCount>40</allowedArchonexusCount>
+    </ThingDef>
+
+    <!--_____ Blamco _____-->
+
+    <!-- Blamco Original Flavor -->
+
+    <ThingDef ParentName="FCP_Food_Pre_War_Meals">
+        <defName>FCP_Food_Blamco_Original_Flavor</defName>
+        <label>Blamco Original Flavor</label>
+        <description>A surprisingly well-preserved fast-food product from before the war. It’s a rectangular box filled with a mix of macaroni and cheese, a staple of pre-war American cuisine and as such is a common sight in the wasteland.</description>
+        <graphicData>
+            <texPath>Things/Items/Meals/FCP_Blamco/FCP_Blamco_Original_Flavor</texPath>
+        </graphicData>
+    </ThingDef>
+
+    <!-- Blamco Extra Cheezy Flavor -->
+
+    <ThingDef ParentName="FCP_Food_Pre_War_Meals">
+        <defName>FCP_Food_Blamco_Extra_Cheezy_Flavor</defName>
+        <label>Blamco Extra Cheezy Flavor</label>
+        <description>A surprisingly well-preserved fast-food product from before the war. It’s a rectangular box filled with a mix of macaroni and cheese, a staple of pre-war American cuisine and as such is a common sight in the wasteland. This seems to be the Extra Cheezy variation, adding slightly more calories to your meal.</description>
+        <graphicData>
+            <texPath>Things/Items/Meals/FCP_Blamco/FCP_Blamco_Extra_Cheezy_Flavor</texPath>
+        </graphicData>
+    </ThingDef>
+
+    <!--_____ Cram _____-->
+
+    <!-- Cram -->
+
+    <ThingDef ParentName="FCP_Food_Pre_War_Meals">
+        <defName>FCP_Food_Cram</defName>
+        <label>Cram</label>
+        <description>A tin can full of processed meat. Its main ingredients are pork and ham pressed into form and hold together by gelatine. It’s filled with enough preservatives to be edible over 200 years after its fabrication and is a common and popular ration for soldiers in the NCR due to its high calorie content.</description>
+        <graphicData>
+            <texPath>Things/Items/Meals/FCP_Cram/FCP_Cram</texPath>
+        </graphicData>
+    </ThingDef>
+
+    <!-- Cram Low Sodium -->
+
+    <ThingDef ParentName="FCP_Food_Pre_War_Meals">
+        <defName>FCP_Food_Cram_Low_Sodium</defName>
+        <label>Cram Low Sodium</label>
+        <description>A high-quality packaged meal, manufactured for use in survival situations. While it never rots, it can still deteriorate if left outside. Great for traveling.</description>
+        <graphicData>
+            <texPath>Things/Items/Meals/FCP_Cram/FCP_Cram_Low_Sodium</texPath>
+        </graphicData>
+    </ThingDef>
+
+    <!--_____ Dandy Boy Apples _____-->
+
+    <!-- Dandy Boy Apples -->
+
+    <ThingDef ParentName="FCP_Food_Pre_War_Meals">
+        <defName>FCP_Food_Dandy_Boy_Apples</defName>
+        <label>Dandy Boy Apples</label>
+        <description>Candied apples contained in a red cardboard box, a popular pre-war snack, made by the Dandy Boy company. The staggering amount of sugar and preservatives added to the product ensures its edibility even 200 years later.</description>
+        <graphicData>
+            <texPath>Things/Items/Meals/FCP_Dandy_Boy_Apples/FCP_Dandy_Boy_Apples</texPath>
+        </graphicData>
+        <statBases>
+            <MarketValue>24</MarketValue>
+            <Nutrition>0.74</Nutrition>
+        </statBases>
+        <ingestible>
+            <joy>0.24</joy>
+            <joyKind>Gluttonous</joyKind>
+            <maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
+            <defaultNumToIngestAtOnce>1</defaultNumToIngestAtOnce>
+            <ingestSound>Meal_Eat</ingestSound>
+        </ingestible>
+    </ThingDef>
+
+    <!-- Dandy Boy Caramel Apples -->
+
+    <ThingDef ParentName="FCP_Food_Pre_War_Meals">
+        <defName>FCP_Food_Dandy_Boy_Caramel_Apples</defName>
+        <label>Dandy Boy Caramel Apples</label>
+        <description>Candied apples contained in a red cardboard box, a popular pre-war snack, made by the Dandy Boy company. The staggering amount of sugar and preservatives added to the product ensures its edibility even 200 years later. This variation seems to have a delicious caramel shell!</description>
+        <graphicData>
+            <texPath>Things/Items/Meals/FCP_Dandy_Boy_Apples/FCP_Dandy_Boy_Caramel_Apples</texPath>
+        </graphicData>
+        <statBases>
+            <MarketValue>28</MarketValue>
+            <Nutrition>0.78</Nutrition>
+        </statBases>
+        <ingestible>
+            <joy>0.30</joy>
+            <joyKind>Gluttonous</joyKind>
+            <maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
+            <defaultNumToIngestAtOnce>1</defaultNumToIngestAtOnce>
+            <ingestSound>Meal_Eat</ingestSound>
+        </ingestible>
+    </ThingDef>
+
+    <!--_____ Fancy Lad Snack Cakes _____-->
+
+    <!-- Fancy Lad Snack Cakes -->
+
+    <ThingDef ParentName="FCP_Food_Pre_War_Meals">
+        <defName>FCP_Food_Fancy_Lad_Snack_Cakes</defName>
+        <label>Fancy Lad Snack Cakes</label>
+        <description>Pre-war snack cakes packed up in a small box. Bite-sized pieces of cake with icing, these snacks are nearly unperishable and still serve as a sugary, sweet treat 200 years after their making.</description>
+        <graphicData>
+            <texPath>Things/Items/Meals/FCP_Facny_Lads_Snack_Cakes/FCP_Facny_Lads_Snack_Cakes</texPath>
+        </graphicData>
+        <statBases>
+            <MarketValue>32</MarketValue>
+            <Nutrition>0.80</Nutrition>
+        </statBases>
+        <ingestible>
+            <joy>0.36</joy>
+            <joyKind>Gluttonous</joyKind>
+            <maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
+            <defaultNumToIngestAtOnce>1</defaultNumToIngestAtOnce>
+            <ingestSound>Meal_Eat</ingestSound>
+        </ingestible>
+    </ThingDef>
+
+    <!-- Fancy Lad Snack Cakes Buzzbite Flavor -->
+
+    <ThingDef ParentName="FCP_Food_Pre_War_Meals">
+        <defName>FCP_Food_Fancy_Lad_Snack_Cakes_Buzzbite_Flavor</defName>
+        <label>Fancy Lad Snack Cakes Buzzbite Flavor</label>
+        <description>Pre-war snack cakes packed up in a small box. Bite-sized pieces of cake with icing, these snacks are nearly unperishable and still serve as a sugary, sweet treat 200 years after their making. Be sure to look out for this version as it is the limited edition Buzzbite Flavor!</description>
+        <graphicData>
+            <texPath>Things/Items/Meals/FCP_Facny_Lads_Snack_Cakes/FCP_Fancy_Lads_Snack_Cakes_Buzzbite_Flavor</texPath>
+        </graphicData>
+        <statBases>
+            <MarketValue>34</MarketValue>
+            <Nutrition>0.85</Nutrition>
+        </statBases>
+        <ingestible>
+            <joy>0.42</joy>
+            <joyKind>Gluttonous</joyKind>
+            <maxNumToIngestAtOnce>1</maxNumToIngestAtOnce>
+            <defaultNumToIngestAtOnce>1</defaultNumToIngestAtOnce>
+            <ingestSound>Meal_Eat</ingestSound>
+        </ingestible>
+    </ThingDef>
+
+    <!--_____ Gum Drops _____-->
+
+    <!-- Gum Drops -->
+
+    <ThingDef ParentName="FCP_Food_Pre_War_Meals">
+        <defName>FCP_Food_Gum_Drops</defName>
+        <label>Gum Drops</label>
+        <description>A small green package with logo symbolizing a radioactive hazard sign. However, its contents are relatively harmless, apart from the omnipresent background radiation. The small gum drops contained within are sweet and tasty and have endured the ravages of time quite well. A sugary snack for wasteland explorers.</description>
+        <graphicData>
+            <texPath>Things/Items/Meals/FCP_Gum_Drops/FCP_Gum_Drops</texPath>
+        </graphicData>
+        <statBases>
+            <MarketValue>12</MarketValue>
+            <Nutrition>0.15</Nutrition>
+        </statBases>
+        <ingestible>
+            <joy>0.10</joy>
+            <joyKind>Gluttonous</joyKind>
+            <maxNumToIngestAtOnce>4</maxNumToIngestAtOnce>
+            <defaultNumToIngestAtOnce>4</defaultNumToIngestAtOnce>
+            <ingestSound>Meal_Eat</ingestSound>
+        </ingestible>
+    </ThingDef>
+
+    <!-- Gum Drops Anchorage Arctic Flavor -->
+
+    <ThingDef ParentName="FCP_Food_Pre_War_Meals">
+        <defName>FCP_Food_Gum_Drops_Anchorage_Arctic_Flavor</defName>
+        <label>Gum Drops Anchorage Arctic Flavor</label>
+        <description>A small green package with logo symbolizing a radioactive hazard sign. However, its contents are relatively harmless, apart from the omnipresent background radiation. The small gum drops contained within are sweet and tasty and have endured the ravages of time quite well. A sugary snack for wasteland explorers. This popular pre-war flavor features the mountain battlefields of Anchorage Alaska.</description>
+        <graphicData>
+            <texPath>Things/Items/Meals/FCP_Gum_Drops/FCP_Gum_Drops_Anchorage_Arctic_Flavor</texPath>
+        </graphicData>
+        <statBases>
+            <MarketValue>14</MarketValue>
+            <Nutrition>0.15</Nutrition>
+        </statBases>
+        <ingestible>
+            <joy>0.12</joy>
+            <joyKind>Gluttonous</joyKind>
+            <maxNumToIngestAtOnce>4</maxNumToIngestAtOnce>
+            <defaultNumToIngestAtOnce>4</defaultNumToIngestAtOnce>
+            <ingestSound>Meal_Eat</ingestSound>
+        </ingestible>
+    </ThingDef>
+
+    <!--_____ Insta Mash _____-->
+
+    <!-- Insta Mash -->
+
+    <ThingDef ParentName="FCP_Food_Pre_War_Meals">
+        <defName>FCP_Food_Insta_Mash</defName>
+        <label>Insta Mash</label>
+        <description>A box of freeze-dried powdered mashed potatoes. This convenience food product proved to be edible two centuries after the war and can be found in many locations in the wasteland. Best paired with Salisbury Steak!</description>
+        <graphicData>
+            <texPath>Things/Items/Meals/FCP_Insta_Mash/FCP_Insta_Mash</texPath>
+        </graphicData>
+    </ThingDef>
+
+    <!-- Insta Mash And Bacon -->
+
+    <ThingDef ParentName="FCP_Food_Pre_War_Meals">
+        <defName>FCP_Food_Insta_Mash_And_Bacon</defName>
+        <label>Insta Mash And Bacon</label>
+        <description>A box of freeze-dried powdered mashed potatoes with bacon added for extra flavor and texture! This convenience food product proved to be edible two centuries after the war and can be found in many locations in the wasteland. Best paired with Salisbury Steak!</description>
+        <graphicData>
+            <texPath>Things/Items/Meals/FCP_Insta_Mash/FCP_Insta_Mash_And_Bacon</texPath>
+        </graphicData>
+    </ThingDef>
+
+    <!--_____ Pork N Beans _____-->
+
+    <!-- Pork N Beans -->
+
+    <ThingDef ParentName="FCP_Food_Pre_War_Meals">
+        <defName>FCP_Food_Pork_N_Beans</defName>
+        <label>Pork N Beans</label>
+        <description>A can of beans stewed in a tomato sauce with chunks of bacon and salt-cured pork. A product from the Greasy Prospector company, Pork n’Beans were sold in a tin can with a blue and red label and remain edible to this day.</description>
+        <graphicData>
+            <texPath>Things/Items/Meals/FCP_Pork_N_Beans/FCP_Pork_N_Beans</texPath>
+        </graphicData>
+    </ThingDef>
+
+    <!-- Pork N Beans Hot N Spicy Flavor -->
+
+    <ThingDef ParentName="FCP_Food_Pre_War_Meals">
+        <defName>FCP_Food_Pork_N_Beans_Hot_N_Spicy_Flavor</defName>
+        <label>Pork N Beans Hot N Spicy Flavor</label>
+        <description>A can of beans stewed in a tomato sauce with chunks of bacon and salt-cured pork. A product from the Greasy Prospector company, Pork n’Beans were sold in a tin can with a blue and red label and remain edible to this day. Based on the packaging this seems to be the "Hot N Spicy Flavor".</description>
+        <graphicData>
+            <texPath>Things/Items/Meals/FCP_Pork_N_Beans/FCP_Pork_N_Beans_Hot_N_Spicy_Flavor</texPath>
+        </graphicData>
+    </ThingDef>
+
+    <!--_____ Potato Crisps _____-->
+
+    <!-- Potato Crisps -->
+
+    <ThingDef ParentName="FCP_Food_Pre_War_Meals">
+        <defName>FCP_Food_Potato_Crisps</defName>
+        <label>Potato Crisps</label>
+        <description>A box of Spring Valley potato chips. An iconic pre-war snack composed of thin potato slices salted and baked in oil. Due to their immense popularity before the war they’re still a common sight in the wasteland.</description>
+        <graphicData>
+            <texPath>Things/Items/Meals/FCP_Potato_Crisps/FCP_Potato_Crisps</texPath>
+        </graphicData>
+    </ThingDef>
+
+    <!-- Potato Crisps Lightly Salted -->
+
+    <ThingDef ParentName="FCP_Food_Pre_War_Meals">
+        <defName>FCP_Food_Potato_Crisps_Lightly_Salted</defName>
+        <label>Potato Crisps Lightly Salted</label>
+        <description>A tube of Spring Valley potato chips in lightly salted falvor. An iconic pre-war snack composed of thin potato slices salted and baked in oil. Due to their immense popularity before the war they’re still a common sight in the wasteland.</description>
+        <graphicData>
+            <texPath>Things/Items/Meals/FCP_Potato_Crisps/FCP_Potato_Crisps_Lighty_Salted</texPath>
+        </graphicData>
+    </ThingDef>
+
+    <!--_____ Salisbury Steak _____-->
+
+    <!-- Salisbury Steak -->
+
+    <ThingDef ParentName="FCP_Food_Pre_War_Meals">
+        <defName>FCP_Food_Salisbury_Steak</defName>
+        <label>Salisbury Steak</label>
+        <description>A high-quality packaged meal, manufactured for use in survival situations. While it never rots, it can still deteriorate if left outside. Great for traveling.</description>
+        <graphicData>
+            <texPath>Things/Items/Meals/FCP_Salisbury_Steak/FCP_Salisbury_Steak</texPath>
+        </graphicData>
+        <statBases>
+            <MarketValue>30</MarketValue>
+            <Nutrition>0.9</Nutrition>
+        </statBases>
+    </ThingDef>
+
+    <!-- BIG BOY Salisbury Steak -->
+
+    <ThingDef ParentName="FCP_Food_Pre_War_Meals">
+        <defName>FCP_Food_BIG_BOY_Salisbury_Steak</defName>
+        <label>BIG BOY Salisbury Steak</label>
+        <description>A sealed pre-packaged meal consisting of ground beef steak with gravy, another staple of American cuisine. It’s very filling and quite tasty, making it a popular dish even centuries after the war. The BIG BOY meal comes with a side of InstaMash!</description>
+        <graphicData>
+            <texPath>Things/Items/Meals/FCP_Salisbury_Steak/FCP_BIG_BOY_Salisbury_Steak</texPath>
+        </graphicData>
+        <statBases>
+            <MarketValue>34</MarketValue>
+            <Nutrition>1.0</Nutrition>
+        </statBases>
+    </ThingDef>
+
+    <!--_____ Sugar Bombs _____-->
+
+    <!-- Sugar Bombs -->
+
+    <ThingDef ParentName="FCP_Food_Pre_War_Meals">
+        <defName>FCP_Food_Sugar_Bombs</defName>
+        <label>Sugar Bombs</label>
+        <description>A red, white and blue box of pre-war breakfast cereals, famous (and notorious) for their high sugar content. While such an amount of sugar surely is unhealthy, it also ensured that they’re edible to this day. Due to its status as the dominant breakfast cereal, it can still be found nearly everywhere in the wasteland.</description>
+        <graphicData>
+            <texPath>Things/Items/Meals/FCP_Sugar_Bombs/FCP_Sugar_Bombs</texPath>
+        </graphicData>
+    </ThingDef>
+
+    <!--_____ Yum Yum Deviled Eggs _____-->
+
+    <!-- Yum Yum Deviled Eggs -->
+
+    <ThingDef ParentName="FCP_Food_Pre_War_Meals">
+        <defName>FCP_Food_Yum_Yum_Deviled_Eggs</defName>
+        <label>Yum Yum Deviled Eggs</label>
+        <description>A red and blue package with dried whole deviled eggs made by YumYum. Despite being hard-boiled eggs filled with a paste made from egg yolks, mustard and mayonnaise, they’re still edible for reasons best left to discretion.</description>
+        <graphicData>
+            <texPath>Things/Items/Meals/FCP_Yum_Yum_Deviled_Eggs/FCP_Yum_Yum_Deviled_Eggs</texPath>
+        </graphicData>
+    </ThingDef>
+
+    <!-- Yum Yum Deviled Eggs Sour Cream Flavor -->
+
+    <ThingDef ParentName="FCP_Food_Pre_War_Meals">
+        <defName>FCP_Food_Yum_Yum_Deviled_Eggs_Sour_Cream_Flavor</defName>
+        <label>Yum Yum Deviled Eggs Sour Cream Flavor</label>
+        <description>A yellow and gold package with dried whole deviled eggs made by YumYum with a hint of sour cream added flavor. Despite being hard-boiled eggs filled with a paste made from egg yolks, mustard and mayonnaise, they’re still edible for reasons best left to discretion.</description>
+        <graphicData>
+            <texPath>Things/Items/Meals/FCP_Yum_Yum_Deviled_Eggs/FCP_Yum_Yum_Deviled_Eggs_Sour_Cream_Flavor</texPath>
+        </graphicData>
+    </ThingDef>
+
+</Defs>

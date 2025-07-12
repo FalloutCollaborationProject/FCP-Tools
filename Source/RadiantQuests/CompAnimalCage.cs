@@ -171,10 +171,10 @@ namespace FCP_RadiantQuests
             base.PostSpawnSetup(respawningAfterLoad);
         }
 
-        public override void PostDeSpawn(Map map)
+        public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
         {
             EjectContents(map);
-            base.PostDeSpawn(map);
+            base.PostDeSpawn(map, mode);
         }
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)

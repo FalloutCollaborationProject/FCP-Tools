@@ -6,7 +6,7 @@ namespace FCP.Core
     public class WorldFeatureTextMesh_FactionLabel : WorldFeatureTextMesh_TextMeshPro
     {
         public void Initialize(Vector3 position, string factionName, 
-            float size = 1f, Color? color = null)
+            float size = 1f, Color? color = null, PlanetLayer layer = null)
         {
             Init();
             Text = factionName;
@@ -23,7 +23,7 @@ namespace FCP.Core
             
             Rotation = rotation;
             
-            WrapAroundPlanetSurface();
+            WrapAroundPlanetSurface(layer);
             SetActive(true);
         }
     }

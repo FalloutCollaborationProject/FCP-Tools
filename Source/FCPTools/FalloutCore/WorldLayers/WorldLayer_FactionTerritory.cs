@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace FCP.Core
 {
-    public class WorldLayer_FactionTerritory : WorldLayer
+    public class WorldLayer_FactionTerritory : WorldDrawLayer
     {
         private static readonly int MatTexture = Shader.PropertyToID("_MainTex");
         private static readonly int MatColor = Shader.PropertyToID("_Color");
@@ -149,7 +149,7 @@ namespace FCP.Core
                     
                     territory.Add(tile);
                     
-                    List<int> neighbors = [];
+                    List<PlanetTile> neighbors = [];
                     worldGrid.GetTileNeighbors(tile, neighbors);
                     foreach (int neighbor in neighbors)
                     {
@@ -177,7 +177,7 @@ namespace FCP.Core
                 if (!_processedTiles.Add(tile))
                     continue;
                 
-                List<int> neighbors = [];
+                List<PlanetTile> neighbors = [];
                 worldGrid.GetTileNeighbors(tile, neighbors);
                 bool isBorderTile = neighbors.Any(n => !tileSet.Contains(n));
                 
@@ -249,7 +249,7 @@ namespace FCP.Core
                 string factionName = settlement.Faction.def.LabelCap;
                 
                 WorldFeatureTextMesh_FactionLabel textMesh = new();
-                textMesh.Initialize(adjustedPos, factionName, 10f, ext.factionLabelColor);
+                textMesh.Initialize(adjustedPos, factionName, 10f, ext.factionLabelColor, this.planetLayer);
                 textMesh.SetActive(true);
                 _activeFactionLabels.Add(textMesh);
             }

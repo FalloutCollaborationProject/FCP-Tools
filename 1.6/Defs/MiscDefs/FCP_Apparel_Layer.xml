@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Apparel Layers __________-->
+
+    <!--_____ Utility Belt _____-->
+
+    <!-- Mine Pocket -->
+
+    <ApparelLayerDef>
+        <defName>FCP_Apparel_Layer_Mine_Pocket</defName>
+        <label>Mine Pocket</label>
+        <drawOrder>320</drawOrder>
+      </ApparelLayerDef>
+
+    <!--_____ Power Armor _____-->
+
+    <!-- Power Armor Frame -->
+
+    <ApparelLayerDef>
+        <defName>FCP_Apparel_Layer_Power_Armor_Frame</defName>
+        <label>Power Armor Frame</label>
+        <drawOrder>110</drawOrder>
+    </ApparelLayerDef>
+
+</Defs>

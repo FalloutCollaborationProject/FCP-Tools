@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!--__________ Core Hediffs __________-->
+
+    <!-- V.A.T.S. -->
+
+    <HediffDef>
+        <defName>FCP_VATS_VatsLink</defName>
+        <hediffClass>HediffWithComps</hediffClass>
+        <label>V.A.T.S. Neural Link</label>
+        <description>A neurally linked targeting computer which provides the pawn with the RimTech Assisisted Targeting System.</description>
+        <defaultInstallPart>Head</defaultInstallPart>
+        <comps>
+            <li Class="HediffCompProperties_GiveAbility">
+                <abilityDefs>
+                    <li>FC_VATS_Attack</li>
+                </abilityDefs>
+            </li>
+        </comps>
+        <addedPartProps>
+            <solid>true</solid>
+        </addedPartProps>
+    </HediffDef>
+
+    <!-- Power Armor Empty Fuel -->
+
+    <HediffDef ParentName="DiseaseBase">
+        <defName>FCP_Hediff_Power_Armor_Empty_Fusion_Core</defName>
+        <label>Power Armor (Empty Fusion Core)</label>
+        <description>Your power armor is out of fusion cores!</description>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <postFactor>-0.8</postFactor>
+                    </li>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <postFactor>-0.5</postFactor>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!-- Ghoul Toxic Heal -->
+
+    <HediffDef>
+        <defName>FCP_Hediff_ToxHeal</defName>
+        <label>sterilized</label>
+        <description>placeholder.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <defaultLabelColor>(0.9, 1.0, 0.35)</defaultLabelColor>
+        <initialSeverity>1</initialSeverity>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>7500~7500</disappearsAfterTicks>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <statFactors>
+                    <InjuryHealingFactor>1.5</InjuryHealingFactor>
+                </statFactors>
+            </li>
+        </stages>
+        <modExtensions>
+            <li Class="FCP_Ghoul.ToxHealHediff_ModExtension"></li>
+        </modExtensions>
+    </HediffDef>
+
+</Defs>

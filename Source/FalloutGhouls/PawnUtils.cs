@@ -59,13 +59,13 @@ namespace FalloutCore
                         num3 *= curStage.naturalHealingFactor;
                     }
                 }
-                    (from x in pawn.health.hediffSet.GetHediffs<Hediff_Injury>()
+                    (from x in pawn.health.hediffSet.hediffs.OfType<Hediff_Injury>()
                      where x.CanHealNaturally()
                      select x).RandomElement().Heal(num3 * pawn.HealthScale * 0.01f * pawn.GetStatValue(StatDefOf.InjuryHealingFactor));
             }
             if (pawn.health.hediffSet.HasTendedAndHealingInjury() && (pawn.needs.food == null || !pawn.needs.food.Starving))
             {
-                Hediff_Injury hediff_Injury = (from x in pawn.health.hediffSet.GetHediffs<Hediff_Injury>()
+                Hediff_Injury hediff_Injury = (from x in pawn.health.hediffSet.hediffs.OfType<Hediff_Injury>()
                                                where x.CanHealFromTending()
                                                select x).RandomElement();
                 float tendQuality = hediff_Injury.TryGetComp<HediffComp_TendDuration>().tendQuality;
@@ -88,15 +88,15 @@ namespace FalloutCore
             {
                 newPawn.playerSettings = new Pawn_PlayerSettings(newPawn);
                 newPawn.playerSettings.hostilityResponse = origin.playerSettings.hostilityResponse;
-                newPawn.playerSettings.AreaRestriction = origin.playerSettings.AreaRestriction;
+                newPawn.playerSettings.AreaRestrictionInPawnCurrentMap = origin.playerSettings.AreaRestrictionInPawnCurrentMap;
                 newPawn.playerSettings.medCare = origin.playerSettings.medCare;
                 newPawn.playerSettings.selfTend = origin.playerSettings.selfTend;
             }
 
             if (newPawn.foodRestriction == null) newPawn.foodRestriction = new Pawn_FoodRestrictionTracker();
-            if (origin.foodRestriction?.CurrentFoodRestriction != null) newPawn.foodRestriction.CurrentFoodRestriction = origin.foodRestriction?.CurrentFoodRestriction;
+            if (origin.foodRestriction?.CurrentFoodPolicy != null) newPawn.foodRestriction.CurrentFoodPolicy = origin.foodRestriction?.CurrentFoodPolicy;
             if (newPawn.outfits == null) newPawn.outfits = new Pawn_OutfitTracker();
-            if (origin.outfits?.CurrentOutfit != null) newPawn.outfits.CurrentOutfit = origin.outfits?.CurrentOutfit;
+            if (origin.outfits?.CurrentApparelPolicy != null) newPawn.outfits.CurrentApparelPolicy = origin.outfits?.CurrentApparelPolicy;
             if (newPawn.drugs == null) newPawn.drugs = new Pawn_DrugPolicyTracker();
             if (origin.drugs?.CurrentPolicy != null) newPawn.drugs.CurrentPolicy = origin.drugs?.CurrentPolicy;
             if (newPawn.timetable == null) newPawn.timetable = new Pawn_TimetableTracker(newPawn);

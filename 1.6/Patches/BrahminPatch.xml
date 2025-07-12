@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <!-- Add Biome -->
+
+        <Operation Class="PatchOperationAdd">
+            <xpath>Defs/BiomeDef/allowedPackAnimals</xpath>
+            <value>
+                <li>FCP_Animal_Brahmin</li>
+            </value>
+        </Operation>
+
+</Patch>

@@ -8,4 +8,11 @@
 		<li IfModActive="vanillaexpanded.vnutriente">1.5/Compatibilities/VNPE</li>
 		<!-- <li IfModActive="zal.mef">LoadFolders/MusicExpanded</li> -->
 	</v1.5>
+	<v1.6>
+		<li>/</li>
+    <li>Common</li>
+    <li>1.6</li>
+		<li IfModActive="vanillaexpanded.vnutriente">1.6/Compatibilities/VNPE</li>
+		<!-- <li IfModActive="zal.mef">LoadFolders/MusicExpanded</li> -->
+	</v1.6>
 </loadFolders>

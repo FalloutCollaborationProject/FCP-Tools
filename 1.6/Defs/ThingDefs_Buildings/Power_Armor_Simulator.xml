@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!--__________ Buildings __________-->
+
+    <!-- Power Armor Simulation VR Pod -->
+
+    <ThingDef ParentName="BuildingBase">
+        <defName>FCP_Power_Armor_VR_Pod</defName>
+        <label>Power Armor Simulation VR Pod</label>
+        <description>A virtual reality pod designed for power armor training simulations, enhancing the user's combat skills and proficiency with power armor.</description>
+        <rotatable>false</rotatable>
+        <graphicData>
+            <texPath>Things/Building/Power_Armor/Simulation_Pod/FCP_Simulation_Pod</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(3, 3)</drawSize>
+            <damageData>
+                <rect>(0,0,3,1.8)</rect>
+                <cornerBL>Damage/Corner</cornerBL>
+                <cornerBR>Damage/Corner</cornerBR>
+            </damageData>
+            <shadowData>
+                <volume>(3,0.5,2)</volume>
+            </shadowData>
+        </graphicData>
+        <altitudeLayer>Building</altitudeLayer>
+        <passability>PassThroughOnly</passability>
+        <pathCost>50</pathCost>
+        <blockWind>true</blockWind>
+        <castEdgeShadows>false</castEdgeShadows>
+        <fillPercent>0.5</fillPercent>
+        <canOverlapZones>false</canOverlapZones>
+        <statBases>
+            <MaxHitPoints>250</MaxHitPoints>
+            <WorkToBuild>2200</WorkToBuild>
+            <Flammability>0.6</Flammability>
+        </statBases>
+        <size>(3,3)</size>
+        <building>
+            <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+        </building>
+        <defaultPlacingRot>South</defaultPlacingRot>
+        <interactionCellOffset>(0,0,1)</interactionCellOffset>
+        <hasInteractionCell>true</hasInteractionCell>
+        <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+        <designationCategory>Misc</designationCategory>
+        <uiOrder>2100</uiOrder>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <shortCircuitInRain>true</shortCircuitInRain>
+                <basePowerConsumption>200</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable"/>
+            <li Class="CompProperties_BiosculpterPod"/>
+            <li Class="RangerRick_PowerArmor.CompProperties_Trainer">
+                <givesTrait>FCP_Trait_Power_Armor_Trained</givesTrait>
+                <trainDuration>5000</trainDuration>
+            </li>
+        </comps>
+        <designationHotKey>Misc3</designationHotKey>
+        <placeWorkers>
+            <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+        </placeWorkers>
+        <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+        <tickerType MayRequire="Ludeon.RimWorld.Biotech">Normal</tickerType>        <!-- used by call bossgroup -->
+    </ThingDef>
+
+</Defs>
