@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70F552C7-DEA4-4805-9647-F554F0D814ED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FCPEnlist</RootNamespace>
+    <AssemblyName>FCPEnlist</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <LangVersion>latest</LangVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <OutputPath>..\..\1.6\Assemblies\</OutputPath>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\1.6\Assemblies\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>false</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\1.6\Assemblies\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Krafs.Publicizer" Version="2.*">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.4297">
+    </PackageReference>
+    <PackageReference Include="Lib.Harmony" Version="2.*">
+      <ExcludeAssets>runtime</ExcludeAssets>
+      <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <Publicize Include="Assembly-CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CaravanOptions.cs" />
+    <Compile Include="Dialog_Missions.cs" />
+    <Compile Include="Dialog_ResignConfirmation.cs" />
+    <Compile Include="EnlistMod.cs" />
+    <Compile Include="EnlistSettings.cs" />
+    <Compile Include="EnlistUtils.cs" />
+    <Compile Include="FactionEnlistOptions.cs" />
+    <Compile Include="FactionEnlistOptionsDef.cs" />
+    <Compile Include="FactionEnlistWorker.cs" />
+    <Compile Include="FactionOptions.cs" />
+    <Compile Include="FactionState.cs" />
+    <Compile Include="FactionStorage.cs" />
+    <Compile Include="GUIHelper.cs" />
+    <Compile Include="Harmony_Patches.cs" />
+    <Compile Include="PawnTrader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProtocolOption.cs" />
+    <Compile Include="ProvisionsInfo.cs" />
+    <Compile Include="QuestContainer.cs" />
+    <Compile Include="QuestsContainer.cs" />
+    <Compile Include="SalaryInfo.cs" />
+    <Compile Include="StatPart_CaravanImmunityGain.cs" />
+    <Compile Include="StockGenerator_Pawns.cs" />
+    <Compile Include="Window_Password.cs" />
+    <Compile Include="WorldEnlistTracker.cs" />
+    <Compile Include="WorldObjectCompEnlist.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
