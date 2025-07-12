@@ -361,44 +361,5 @@ namespace FCP_RadiantQuests
             innerContainer.TryDropAll(parent.InteractionCell, map, ThingPlaceMode.Near);
             contentsKnown = true;
         }
-        public static void AddCarryToCageJobs(List<FloatMenuOption> opts, Pawn pawn, Pawn target)
-        {
-            if (!pawn.CanReserveAndReach(target, PathEndMode.OnCell, Danger.Deadly, 1, -1, null, ignoreOtherReservations: true))
-            {
-                return;
-            }
-            string text = "";
-            Action action = null;
-            if (!AnimalCageUtility.TryGetCagesThatFitBodySize(target.RaceProps.baseBodySize, target.Map, out List<CompAnimalCage> cages))
-            {
-                return;
-            }
-            foreach (CompAnimalCage item in cages)
-            {
-                text = "FCP_CarryAnimalToCage".Translate(target);
-                if (target.IsQuestLodger())
-                {
-                    text += " (" + "CryptosleepCasketGuestsNotAllowed".Translate() + ")";
-                    continue;
-                }
-                if (!item.CanAcceptPawn(target))
-                {
-                    text += " (" + "CryptosleepCasketOccupied".Translate() + ")";
-                    continue;
-                }
-                Thing pod = item.parent;
-                action = delegate
-                {
-                    Job job = JobMaker.MakeJob(DefOfs.FCP_CarryAnimalToCage, target, pod);
-                    job.count = 1;
-                    pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
-                };
-                break;
-            }
-            if (!text.NullOrEmpty())
-            {
-                opts.Add(FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(text, action), pawn, target));
-            }
-        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using FCP.Currencies;
 using HarmonyLib;
+using RimWorld.Planet;
 
 namespace FCP.Currency;
 
@@ -93,7 +94,7 @@ public static class Tradeable_IsCurrency_Patch
 [HarmonyPatch(typeof(StockGenerator_SingleDef), "GenerateThings")]
 public static class GenerateThings_Patch
 {
-    public static IEnumerable<Thing> Postfix(IEnumerable<Thing> result, StockGenerator_SingleDef __instance, int forTile, 
+    public static IEnumerable<Thing> Postfix(IEnumerable<Thing> result, StockGenerator_SingleDef __instance, PlanetTile forTile, 
         Faction faction = null)
     {
         var __state = __instance.thingDef;

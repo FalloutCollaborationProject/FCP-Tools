@@ -5,10 +5,6 @@ VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FCP-RadiantQuests", "FCP-RadiantQuests.csproj", "{5F1D8C6D-E127-4001-A575-E56D99DF271F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Compatibilities", "Compatibilities", "{EA92090E-40FC-4935-8C3B-A3297A0842EB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FCP-NutrientPaste", "Compatibilities\FCP-NutrientPaste\FCP-NutrientPaste.csproj", "{EC99CD43-3BE7-42B0-82EE-F8EB49924EBF}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,16 +15,9 @@ Global
 		{5F1D8C6D-E127-4001-A575-E56D99DF271F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F1D8C6D-E127-4001-A575-E56D99DF271F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F1D8C6D-E127-4001-A575-E56D99DF271F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EC99CD43-3BE7-42B0-82EE-F8EB49924EBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EC99CD43-3BE7-42B0-82EE-F8EB49924EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EC99CD43-3BE7-42B0-82EE-F8EB49924EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EC99CD43-3BE7-42B0-82EE-F8EB49924EBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{EC99CD43-3BE7-42B0-82EE-F8EB49924EBF} = {EA92090E-40FC-4935-8C3B-A3297A0842EB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {479671DB-E9C4-429D-A366-590348018F34}

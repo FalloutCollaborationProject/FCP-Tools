@@ -13,48 +13,79 @@ using Verse.AI;
 
 namespace FCP_RadiantQuests.HarmonyPatches
 {
-
-    [HarmonyPatch]
-    public static class RightClickAnimalPatch
+    public class FloatMenuProvider_CarryToCage : FloatMenuOptionProvider
     {
-        private static MethodBase TargetMethod()
+        protected override bool Drafted => true;
+
+        protected override bool Undrafted => true;
+
+        protected override bool Multiselect => false;
+
+        protected override FloatMenuOption GetSingleOptionFor(Thing clickedThing, FloatMenuContext context)
         {
-            return AccessTools.Method(typeof(FloatMenuMakerMap), "AddHumanlikeOrders");
-        }
-        private static void Postfix(Vector3 clickPos, Pawn pawn, List<FloatMenuOption> opts)
-        {
-            foreach (LocalTargetInfo item in GenUI.TargetsAt(clickPos, new TargetingParameters
+            var targ = (LocalTargetInfo)clickedThing;
+            if (Validator(targ))
             {
-                canTargetPawns = true,
-                canTargetBuildings = false,
-                mapObjectTargetsMustBeAutoAttackable = false,
-                validator = delegate (TargetInfo targ)
+                var target = clickedThing as Pawn;
+                var pawn = context.FirstSelectedPawn;
+                if (!pawn.CanReserveAndReach(target, PathEndMode.OnCell, Danger.Deadly, 1, -1, null, ignoreOtherReservations: true))
                 {
-                    if (!targ.HasThing)
-                    {
-                        return false;
-                    }
-                    if (!(targ.Thing is Pawn pawn) || !pawn.AnimalOrWildMan() || pawn.Dead)
-                    {
-                        return false;
-                    }
-                    if(pawn.Faction != Faction.OfPlayer && !pawn.Downed)
-                    {
-                        return false;
-                    }
-                    return true;
+                    return null;
                 }
-            }))
-            {
-                Pawn pawn2 = item.Pawn;
-                if (pawn2 != pawn)
+                string text = "";
+                Action action = null;
+                if (!AnimalCageUtility.TryGetCagesThatFitBodySize(target.RaceProps.baseBodySize, target.Map, out List<CompAnimalCage> cages))
                 {
-                    CompAnimalCage.AddCarryToCageJobs(opts, pawn, pawn2);
+                    return null;
+                }
+                foreach (CompAnimalCage item in cages)
+                {
+                    text = "FCP_CarryAnimalToCage".Translate(target);
+                    if (target.IsQuestLodger())
+                    {
+                        text += " (" + "CryptosleepCasketGuestsNotAllowed".Translate() + ")";
+                        continue;
+                    }
+                    if (!item.CanAcceptPawn(target))
+                    {
+                        text += " (" + "CryptosleepCasketOccupied".Translate() + ")";
+                        continue;
+                    }
+                    Thing pod = item.parent;
+                    action = delegate
+                    {
+                        Job job = JobMaker.MakeJob(DefOfs.FCP_CarryAnimalToCage, target, pod);
+                        job.count = 1;
+                        pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                    };
+                    break;
+                }
+                if (!text.NullOrEmpty())
+                {
+                    return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(text, action), pawn, target);
                 }
             }
+            return null;
+        }
 
+        private static bool Validator(LocalTargetInfo targ)
+        {
+            if (!targ.HasThing)
+            {
+                return false;
+            }
+            if (!(targ.Thing is Pawn pawn) || !pawn.AnimalOrWildMan() || pawn.Dead)
+            {
+                return false;
+            }
+            if (pawn.Faction != Faction.OfPlayer && !pawn.Downed)
+            {
+                return false;
+            }
+            return true;
         }
     }
+
     [HarmonyPatch]
     public static class WillingToAnimalsInCagePatch
     {
