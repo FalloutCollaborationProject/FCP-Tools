@@ -36,6 +36,20 @@
             <li Class="FCP.Core.CharacterTitleDefinition" MayRequire="Rick.FCP.NCR">
                 <title>FCP_Title_NCR_Ranger_Volunteer</title>
             </li>
+            <!-- Unique Apparels -->
+            <li Class="FCP.Core.CharacterUniqueItemDefinition" MayRequire="Rick.FCP.NCR">
+                <uniqueItem>FCP_Apparel_Ranger_Ricks_Uniform</uniqueItem>
+            </li>
+            <li Class="FCP.Core.CharacterUniqueItemDefinition" MayRequire="Rick.FCP.NCR">
+                <uniqueItem>FCP_Apparel_Ranger_Ricks_Armor</uniqueItem>
+            </li>
+            <li Class="FCP.Core.CharacterUniqueItemDefinition" MayRequire="Rick.FCP.NCR">
+                <uniqueItem>FCP_Apparel_Ranger_Ricks_Duster</uniqueItem>
+            </li>
+            <li Class="FCP.Core.CharacterUniqueItemDefinition" MayRequire="Rick.FCP.NCR">
+                <uniqueItem>FCP_Apparel_Ranger_Ricks_Helmet</uniqueItem>
+            </li>
+
         </definitions>
     </FCP.Core.CharacterDef>
 
