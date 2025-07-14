@@ -49,7 +49,6 @@
             <li Class="FCP.Core.CharacterUniqueItemDefinition" MayRequire="Rick.FCP.NCR">
                 <uniqueItem>FCP_Apparel_Ranger_Ricks_Helmet</uniqueItem>
             </li>
-
         </definitions>
     </FCP.Core.CharacterDef>
 
