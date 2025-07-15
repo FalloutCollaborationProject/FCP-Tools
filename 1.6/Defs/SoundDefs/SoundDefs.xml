@@ -49,6 +49,940 @@
     
     <!--_____ Weapons _____-->
 
+    <!--___ Ballistic Weapons ___-->
+
+    <!--__ Pistols __-->
+
+    <!-- 10mm Pistol -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_10mm_Pistol</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_10mm_Pistol</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Silenced 10mm Pistol -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Silenced_10mm_Pistol</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Silenced_10mm_Pistol</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Chinese Pistol -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Chinese_Pistol</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Chinese_Pistol</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- 9mm Pistol -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_9mm_Pistol</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_9mm_Pistol</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- 5.56mm Pistol -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_556_Pistol</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_556_Pistol</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- 12.7mm Pistol -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_127mm_Pistol</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_127mm_Pistol</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Silenced .22 Pistol -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Silenced_22_Pistol</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Silenced_22_Pistol</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- __ Revolvers __-->
+
+    <!-- 32 Pistol -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_32_Pistol</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_32_Pistol</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- .357 Revolver -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_357_Revolver</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_357_Revolver</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- .44 Magnum -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_44Magnum_Revolver</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_44Magnum_Revolver</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Hunting Revolver -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Hunting_Revolver</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Hunting_Revolver</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!--__ Rifles __-->
+
+    <!-- Power Armor Assault Rifle -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_FO4_Assault_Rifle</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_FO4_Assault_Rifle</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Service Rifle -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Service_Rifle</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Service_Rifle</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- F3 Assault Rifle -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Assault_Rifle</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Assault_Rifle</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Chinese Assault Rifle -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Chinese_Assault_Rifle</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Chinese_Assault_Rifle</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Marksman Carbine -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Marksman_Carbine</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Marksman_Carbine</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Assault Carbine -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Assault_Carbine</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Assault_Carbine</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- DKS 501 Sniper Rifle -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_DKS_501_Sniper_Rifle</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_DKS_501_Sniper_Rifle</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Scoped Hunting Rifle -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_308mm_Hunting_Rifle</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_308mm_Hunting_Rifle</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Combat Rifle -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Combat_Rifle</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Combat_Rifle</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- BB Gun -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_BB</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_BB</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Brush Gun -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Brush_Gun</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Brush_Gun</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Cowboy Repeater -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Cowboy_Repeater</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Cowboy_Repeater</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Trail Carbine -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Trail_Carbine</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Trail_Carbine</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- .32 Hunting Rifle -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_32mm_Hunting_Rifle</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_32mm_Hunting_Rifle</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Varmint Rifle -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Varmint_Rifle</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Varmint_Rifle</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!--__ SMGs __-->
+
+    <!-- 10mm SMG -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_10mm_SMG</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_10mm_SMG</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- 9mm SMG -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_9mm_SMG</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_9mm_SMG</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- 12.7mm SMG -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_127mm_SMG</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_127mm_SMG</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- .45mm SMG -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_45mm_SMG</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_45mm_SMG</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Silenced .22 SMG -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Silenced_22_SMG</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Silenced_22_SMG</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!--__ Shotguns __-->
+
+    <!-- Caravan Shotgun -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Caravan_Shotgun</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Caravan_Shotgun</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Hunting Shotgun -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Hunting_Shotgun</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Hunting_Shotgun</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Combat Shotgun -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Combat_Shotgun</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Combat_Shotgun</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Riot Shotgun -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Riot_Shotgun</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Riot_Shotgun</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Sawn-Off Shotgun -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_SawnOff_Shotgun</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_SawnOff_Shotgun</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Lever Action Shotgun -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_LeverAction_Shotgun</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_LeverAction_Shotgun</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Single Shotgun -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Single_Shotgun</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Single_Shotgun</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!--__ Heavy Weapons __-->
+
+    <!-- Minigun -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Minigun</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Minigun</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- LMG -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_LMG</defName>
+        <context>MapOnly</context>
+        <eventNames />
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_LMG</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>39</min>
+                    <max>41</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
     <!--___ Energy Weapons ___-->
 
     <!--__ Laser Weapons __-->
