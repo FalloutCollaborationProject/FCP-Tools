@@ -3,9 +3,7 @@
 
     <!--__________ Hairs and Beards __________-->
 
-    <!--_____ Hairs _____-->
-
-    <!--___ Unique ___-->
+    <!--_____ Custom Hairs _____-->
 
     <!-- Ranger Rick -->
 
@@ -38,11 +36,502 @@
     <HairDef>
         <defName>FCP_Hair_Vault_Girl</defName>
         <label>Vault Girl</label>
-        <styleGender>Male</styleGender>
+        <styleGender>Female</styleGender>
         <texPath>Hairs/Custom/Vault_Girl/FCP_Hair_Vault_Girl</texPath>
         <category>Urban</category>
         <styleTags>
             <li>FCP_Vault_Girl</li>
+        </styleTags>
+    </HairDef>
+
+    <!--_____ Male Hairs _____-->
+
+    <!-- Balding -->
+
+    <HairDef>
+        <defName>FCP_Hair_Balding</defName>
+        <label>Balding</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Male/Balding/Balding</texPath>
+        <category>Average</category>
+        <styleTags>
+            <li>Wasteland</li>
+            <li>Tribal</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Buzz Saw -->
+
+    <HairDef>
+        <defName>FCP_Hair_Buzz_Saw</defName>
+        <label>Buzz Saw</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Male/Buzz_Saw/Buzz_Saw</texPath>
+        <category>Punk</category>
+        <styleTags>
+            <li>Punk</li>
+            <li>Raider</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Comb Over -->
+
+    <HairDef>
+        <defName>FCP_Hair_Comb_Over</defName>
+        <label>Comb Over</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Male/Comb_Over/Comb_Over</texPath>
+        <category>Average</category>
+        <styleTags>
+            <li>Urban</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- High Riser -->
+
+    <HairDef>
+        <defName>FCP_Hair_High_Riser</defName>
+        <label>High Riser</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Male/High_Riser/High_Riser</texPath>
+        <category>Punk</category>
+        <styleTags>
+            <li>Punk</li>
+            <li>Raider</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Pompadour -->
+
+    <HairDef>
+        <defName>FCP_Hair_Pompadour</defName>
+        <label>Pompadour</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Male/Pompadour/Pompadour</texPath>
+        <category>Urban</category>
+        <styleTags>
+            <li>Urban</li>
+            <li>Greaser</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Punked -->
+
+    <HairDef>
+        <defName>FCP_Hair_Punked</defName>
+        <label>Punked</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Male/Punked/Punked</texPath>
+        <category>Punk</category>
+        <styleTags>
+            <li>Punk</li>
+            <li>Raider</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Shaggy Suave -->
+
+    <HairDef>
+        <defName>FCP_Hair_Shaggy_Suave</defName>
+        <label>Shaggy Suave</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Male/Shaggy_Suave/Shaggy_Suave</texPath>
+        <category>Average</category>
+        <styleTags>
+            <li>Urban</li>
+            <li>Wasteland</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Smooth Suave -->
+
+    <HairDef>
+        <defName>FCP_Hair_Smooth_Suave</defName>
+        <label>Smooth Suave</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Male/Smooth_Suave/Smooth_Suave</texPath>
+        <category>Urban</category>
+        <styleTags>
+            <li>Urban</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Terrosaur -->
+
+    <HairDef>
+        <defName>FCP_Hair_Terrosaur</defName>
+        <label>Terrosaur</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Male/Terrosaur/Terrosaur</texPath>
+        <category>Punk</category>
+        <styleTags>
+            <li>Punk</li>
+            <li>Raider</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Tunnel Snake -->
+
+    <HairDef>
+        <defName>FCP_Hair_Tunnel_Snake</defName>
+        <label>Tunnel Snake</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Male/Tunnel_Snake/Tunnel_Snake</texPath>
+        <category>Urban</category>
+        <styleTags>
+            <li>Urban</li>
+            <li>Greaser</li>
+            <li>Gang</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Warhawk -->
+
+    <HairDef>
+        <defName>FCP_Hair_Warhawk</defName>
+        <label>Warhawk</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Male/Warhawk/Warhawk</texPath>
+        <category>Punk</category>
+        <styleTags>
+            <li>Punk</li>
+            <li>Raider</li>
+            <li>Mohawk</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Waster -->
+
+    <HairDef>
+        <defName>FCP_Hair_Waster</defName>
+        <label>Waster</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Male/Waster/Waster</texPath>
+        <category>Average</category>
+        <styleTags>
+            <li>Wasteland</li>
+            <li>Tribal</li>
+            <li>Rough</li>
+        </styleTags>
+    </HairDef>
+
+    <!--_____ Female Hairs _____-->
+
+    <!-- Domestic Goddess -->
+
+    <HairDef>
+        <defName>FCP_Hair_Domestic_Goddess</defName>
+        <label>Domestic Goddess</label>
+        <styleGender>Female</styleGender>
+        <texPath>Hairs/Female/Domestic_Goddess/Domestic_Goddess</texPath>
+        <category>Average</category>
+        <styleTags>
+            <li>Urban</li>
+            <li>Traditional</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Fairy Tails -->
+
+    <HairDef>
+        <defName>FCP_Hair_Fairy_Tails</defName>
+        <label>Fairy Tails</label>
+        <styleGender>Female</styleGender>
+        <texPath>Hairs/Female/Fairy_Tails/Fairy_Tails</texPath>
+        <category>Average</category>
+        <styleTags>
+            <li>Urban</li>
+            <li>Young</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Fallen Angel -->
+
+    <HairDef>
+        <defName>FCP_Hair_Fallen_Angel</defName>
+        <label>Fallen Angel</label>
+        <styleGender>Female</styleGender>
+        <texPath>Hairs/Female/Fallen_Angel/Fallen_Angel</texPath>
+        <category>Average</category>
+        <styleTags>
+            <li>Urban</li>
+            <li>Wasteland</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Frazzled -->
+
+    <HairDef>
+        <defName>FCP_Hair_Frazzled</defName>
+        <label>Frazzled</label>
+        <styleGender>Female</styleGender>
+        <texPath>Hairs/Female/Frazzled/Frazzled</texPath>
+        <category>Average</category>
+        <styleTags>
+            <li>Wasteland</li>
+            <li>Rough</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Iron Maiden -->
+
+    <HairDef>
+        <defName>FCP_Hair_Iron_Maiden</defName>
+        <label>Iron Maiden</label>
+        <styleGender>Female</styleGender>
+        <texPath>Hairs/Female/Iron_Maiden/Iron_Maiden</texPath>
+        <category>Punk</category>
+        <styleTags>
+            <li>Punk</li>
+            <li>Raider</li>
+            <li>Metal</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Lil Devil -->
+
+    <HairDef>
+        <defName>FCP_Hair_Lil_Devil</defName>
+        <label>Lil Devil</label>
+        <styleGender>Female</styleGender>
+        <texPath>Hairs/Female/Lil_Devil/Lil_Devil</texPath>
+        <category>Punk</category>
+        <styleTags>
+            <li>Punk</li>
+            <li>Raider</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- No Nonsense -->
+
+    <HairDef>
+        <defName>FCP_Hair_No_Nonsense</defName>
+        <label>No Nonsense</label>
+        <styleGender>Female</styleGender>
+        <texPath>Hairs/Female/No_Nonsense/No_Nonsense</texPath>
+        <category>Average</category>
+        <styleTags>
+            <li>Urban</li>
+            <li>Professional</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Prim N Proper -->
+
+    <HairDef>
+        <defName>FCP_Hair_Prim_N_Proper</defName>
+        <label>Prim N Proper</label>
+        <styleGender>Female</styleGender>
+        <texPath>Hairs/Female/Prim_N_Proper/Prim_N_Proper</texPath>
+        <category>Average</category>
+        <styleTags>
+            <li>Urban</li>
+            <li>Traditional</li>
+            <li>Proper</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Rough Nite -->
+
+    <HairDef>
+        <defName>FCP_Hair_Rough_Nite</defName>
+        <label>Rough Nite</label>
+        <styleGender>Female</styleGender>
+        <texPath>Hairs/Female/Rough_Nite/Rough_Nite</texPath>
+        <category>Average</category>
+        <styleTags>
+            <li>Wasteland</li>
+            <li>Rough</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Rude Ridge -->
+
+    <HairDef>
+        <defName>FCP_Hair_Rude_Ridge</defName>
+        <label>Rude Ridge</label>
+        <styleGender>Female</styleGender>
+        <texPath>Hairs/Female/Rude_Ridge/Rude_Ridge</texPath>
+        <category>Punk</category>
+        <styleTags>
+            <li>Punk</li>
+            <li>Raider</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Seductress -->
+
+    <HairDef>
+        <defName>FCP_Hair_Seductress</defName>
+        <label>Seductress</label>
+        <styleGender>Female</styleGender>
+        <texPath>Hairs/Female/Seductress/Seductress</texPath>
+        <category>Average</category>
+        <styleTags>
+            <li>Urban</li>
+            <li>Elegant</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Shaved Female -->
+
+    <HairDef>
+        <defName>FCP_Hair_Shaved_Female</defName>
+        <label>Shaved</label>
+        <styleGender>Female</styleGender>
+        <texPath>Hairs/Female/Shaved/Shaved</texPath>
+        <category>Average</category>
+        <styleTags>
+            <li>Bald</li>
+            <li>Punk</li>
+            <li>Military</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- The Sophisticate -->
+
+    <HairDef>
+        <defName>FCP_Hair_The_Sophisticate</defName>
+        <label>The Sophisticate</label>
+        <styleGender>Female</styleGender>
+        <texPath>Hairs/Female/The_Sophisticate/The_Sophisticate</texPath>
+        <category>Average</category>
+        <styleTags>
+            <li>Urban</li>
+            <li>Elegant</li>
+            <li>Sophisticated</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Unladylike -->
+
+    <HairDef>
+        <defName>FCP_Hair_Unladylike</defName>
+        <label>Unladylike</label>
+        <styleGender>Female</styleGender>
+        <texPath>Hairs/Female/Unladylike/Unladylike</texPath>
+        <category>Average</category>
+        <styleTags>
+            <li>Wasteland</li>
+            <li>Rough</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Wendy The Welder -->
+
+    <HairDef>
+        <defName>FCP_Hair_Wendy_The_Welder</defName>
+        <label>Wendy The Welder</label>
+        <styleGender>Female</styleGender>
+        <texPath>Hairs/Female/Wendy_The_Welder/Wendy_The_Welder</texPath>
+        <category>Average</category>
+        <styleTags>
+            <li>Industrial</li>
+            <li>Working</li>
+            <li>Practical</li>
+        </styleTags>
+    </HairDef>
+
+    <!--_____ Unisex Hairs _____-->
+
+    <!-- Bedraggled -->
+
+    <HairDef>
+        <defName>FCP_Hair_Bedraggled</defName>
+        <label>Bedraggled</label>
+        <styleGender>MaleUsually</styleGender>
+        <texPath>Hairs/Unisex/Bedraggled/Bedraggled</texPath>
+        <category>Average</category>
+        <styleTags>
+            <li>Wasteland</li>
+            <li>Rough</li>
+            <li>Tribal</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Blast Back -->
+
+    <HairDef>
+        <defName>FCP_Hair_Blast_Back</defName>
+        <label>Blast Back</label>
+        <styleGender>MaleUsually</styleGender>
+        <texPath>Hairs/Unisex/Blast_Back/Blast_Back</texPath>
+        <category>Average</category>
+        <styleTags>
+            <li>Wasteland</li>
+            <li>Rough</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Buzz Cut -->
+
+    <HairDef>
+        <defName>FCP_Hair_Buzz_Cut</defName>
+        <label>Buzz Cut</label>
+        <styleGender>MaleUsually</styleGender>
+        <texPath>Hairs/Unisex/Buzz_Cut/Buzz_Cut</texPath>
+        <category>Average</category>
+        <styleTags>
+            <li>Military</li>
+            <li>Short</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Clean Cut -->
+
+    <HairDef>
+        <defName>FCP_Hair_Clean_Cut</defName>
+        <label>Clean Cut</label>
+        <styleGender>MaleUsually</styleGender>
+        <texPath>Hairs/Unisex/Clean_Cut/Clean_Cut</texPath>
+        <category>Average</category>
+        <styleTags>
+            <li>Urban</li>
+            <li>Professional</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Mangy -->
+
+    <HairDef>
+        <defName>FCP_Hair_Mangy</defName>
+        <label>Mangy</label>
+        <styleGender>MaleUsually</styleGender>
+        <texPath>Hairs/Unisex/Mangy/Mangy</texPath>
+        <category>Average</category>
+        <styleTags>
+            <li>Wasteland</li>
+            <li>Rough</li>
+            <li>Tribal</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- Sarge -->
+
+    <HairDef>
+        <defName>FCP_Hair_Sarge</defName>
+        <label>Sarge</label>
+        <styleGender>MaleUsually</styleGender>
+        <texPath>Hairs/Unisex/Sarge/Sarge</texPath>
+        <category>Average</category>
+        <styleTags>
+            <li>Military</li>
+            <li>Short</li>
+        </styleTags>
+    </HairDef>
+
+    <!-- The Unsettler -->
+
+    <HairDef>
+        <defName>FCP_Hair_The_Unsettler</defName>
+        <label>The Unsettler</label>
+        <styleGender>MaleUsually</styleGender>
+        <texPath>Hairs/Unisex/The_Unsettler/The_Unsettler</texPath>
+        <category>Average</category>
+        <styleTags>
+            <li>Wasteland</li>
+            <li>Rough</li>
+            <li>Wild</li>
         </styleTags>
     </HairDef>
 

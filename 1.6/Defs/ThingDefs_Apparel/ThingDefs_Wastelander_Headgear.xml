@@ -11,7 +11,7 @@
 
     <!-- Combat Armor Helmet -->
 
-    <ThingDef ParentName="HatBase">
+    <ThingDef ParentName="HatMakeableBase">
         <defName>FCP_Apparel_Combat_Helmet</defName>
         <label>Combat Helmet</label>
         <description>A matching helmet for the combat armor, it offers a bit of protection.</description>
@@ -21,6 +21,17 @@
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker>
+            <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+            <researchPrerequisite>FCP_Research_CombatArmorStandard</researchPrerequisite>
+            <skillRequirements>
+                <Crafting>8</Crafting>
+            </skillRequirements>
+        </recipeMaker>
+        <costList>
+            <Steel>40</Steel>
+            <ComponentIndustrial>2</ComponentIndustrial>
+        </costList>
         <statBases>
             <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
@@ -46,7 +57,7 @@
 
     <!-- Combat Armor Helmet (Fallout 4) -->
 
-    <ThingDef ParentName="HatBase">
+    <ThingDef ParentName="HatMakeableBase">
         <defName>FCP_Apparel_Combat_Armor_Helmet</defName>
         <label>Modular Combat Armor Helmet</label>
         <description>The combat armor helmet is the corresponding armor piece to the combat armor set. This model displays what is possibly a headlamp, attached to the left side above the brow line.</description>
@@ -56,6 +67,17 @@
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker>
+            <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+            <researchPrerequisite>FCP_Research_CombatArmorStandard</researchPrerequisite>
+            <skillRequirements>
+                <Crafting>8</Crafting>
+            </skillRequirements>
+        </recipeMaker>
+        <costList>
+            <Steel>35</Steel>
+            <ComponentIndustrial>1</ComponentIndustrial>
+        </costList>
         <statBases>
             <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
@@ -82,7 +104,7 @@
 
     <!-- Reinforced Combat Armor Helmet -->
 
-    <ThingDef ParentName="HatBase">
+    <ThingDef ParentName="HatMakeableBase">
         <defName>FCP_Apparel_Reinforced_Combat_Armor_Helmet</defName>
         <label>Reinforced Combat Armor Helmet</label>
         <description>The helmet is a ballistic assembly, designed to protect the wearer from projectile, bladed weapons, and blunt trauma. An integrated polarized visor protects the user's eyes from the ordinary battlefield hazards of grit and dust.</description>
@@ -92,6 +114,17 @@
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker>
+            <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+            <researchPrerequisite>FCP_Research_CombatArmorStandard</researchPrerequisite>
+            <skillRequirements>
+                <Crafting>10</Crafting>
+            </skillRequirements>
+        </recipeMaker>
+        <costList>
+            <Steel>50</Steel>
+            <ComponentIndustrial>3</ComponentIndustrial>
+        </costList>
         <statBases>
             <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
@@ -117,7 +150,7 @@
 
     <!-- Reinforced Combat Armor Helmet Mk II-->
 
-    <ThingDef ParentName="HatBase">
+    <ThingDef ParentName="HatMakeableBase">
         <defName>FCP_Apparel_Reinforced_Combat_Armor_Helmet_Mk_II</defName>
         <label>Reinforced Combat Armor Helmet</label>
         <description>The helmet is a ballistic assembly, designed to protect the wearer from projectile, bladed weapons, and blunt trauma. An integrated polarized visor protects the user's eyes from the ordinary battlefield hazards of grit and dust. It is similar in appearance to the helmet used with the reinforced suit but is a different color.</description>
@@ -127,6 +160,17 @@
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker>
+            <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+            <researchPrerequisite>FCP_Research_CombatArmorStandard</researchPrerequisite>
+            <skillRequirements>
+                <Crafting>10</Crafting>
+            </skillRequirements>
+        </recipeMaker>
+        <costList>
+            <Steel>50</Steel>
+            <ComponentIndustrial>3</ComponentIndustrial>
+        </costList>
         <statBases>
             <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
@@ -156,7 +200,7 @@
 
     <!-- Army Helmet -->
 
-    <ThingDef ParentName="HatBase">
+    <ThingDef ParentName="HatMakeableBase">
         <defName>FCP_Apparel_Army_Helmet</defName>
         <label>Army Helmet</label>
         <description>Part of the army uniform, this helmet offers a little protection.</description>
@@ -166,6 +210,17 @@
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker>
+            <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+            <researchPrerequisite>FCP_Research_MilitaryUniforms</researchPrerequisite>
+            <skillRequirements>
+                <Crafting>6</Crafting>
+            </skillRequirements>
+        </recipeMaker>
+        <costList>
+            <Steel>25</Steel>
+            <Cloth>10</Cloth>
+        </costList>
         <statBases>
             <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
@@ -191,16 +246,28 @@
 
     <!-- Radiation Suit helmet-->
 
-    <ThingDef ParentName="HatBase">
+    <ThingDef ParentName="HatMakeableBase">
         <defName>FCP_Apparel_Radiations_Suit_Helmet</defName>
-        <label>Combat Armor Helmet</label>
-        <description>The combat armor helmet is the corresponding armor piece to the combat armor set. This model displays what is possibly a headlamp, attached to the left side above the brow line.</description>
+        <label>Radiation Suit Helmet</label>
+        <description>A helmet designed to protect the wearer from radiation exposure. Part of the radiation suit set.</description>
         <techLevel>Industrial</techLevel>
         <graphicData>
             <texPath>Things/Apparel/Wasteland_Apparel/RadiationSuit/FCP_Radiation_Suit_Helmet</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <smeltable>false</smeltable>
+        <recipeMaker>
+            <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+            <researchPrerequisite>FCP_Research_MilitaryUniforms</researchPrerequisite>
+            <skillRequirements>
+                <Crafting>8</Crafting>
+            </skillRequirements>
+        </recipeMaker>
+        <costList>
+            <Cloth>20</Cloth>
+            <Plasteel>15</Plasteel>
+            <ComponentIndustrial>1</ComponentIndustrial>
+        </costList>
         <statBases>
             <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
@@ -229,8 +296,8 @@
 
     <ThingDef ParentName="HatMakeableBase">
         <defName>FCP_Apparel_Mysterious_Stranger_Hat</defName>
-        <label>Sheriff Hat</label>
-        <description>Mysterious Strangers hat.</description>
+        <label>Mysterious Stranger Hat</label>
+        <description>A distinctive hat worn by the mysterious stranger, providing a subtle boost to accuracy.</description>
         <techLevel>Industrial</techLevel>
         <graphicData>
             <texPath>Things/Apparel/Custom/Mysterious_Stranger/Mysterious_Stranger_Hat/FCP_Mysterious_Stranger_Hat</texPath>
@@ -238,8 +305,9 @@
         </graphicData>
         <recipeMaker>
             <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+            <researchPrerequisite>FCP_Research_BusinessWear</researchPrerequisite>
             <skillRequirements>
-                <Crafting>2</Crafting>
+                <Crafting>4</Crafting>
             </skillRequirements>
         </recipeMaker>
         <costList>
@@ -284,8 +352,9 @@
         </graphicData>
         <recipeMaker>
             <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+            <researchPrerequisite>FCP_Research_CasualWear</researchPrerequisite>
             <skillRequirements>
-                <Crafting>2</Crafting>
+                <Crafting>4</Crafting>
             </skillRequirements>
         </recipeMaker>
         <costList>
@@ -328,8 +397,9 @@
         </graphicData>
         <recipeMaker>
             <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+            <researchPrerequisite>FCP_Research_CasualWear</researchPrerequisite>
             <skillRequirements>
-                <Crafting>2</Crafting>
+                <Crafting>6</Crafting>
             </skillRequirements>
         </recipeMaker>
         <statBases>
@@ -374,8 +444,9 @@
         </graphicData>
         <recipeMaker>
             <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+            <researchPrerequisite>FCP_Research_CasualWear</researchPrerequisite>
             <skillRequirements>
-                <Crafting>2</Crafting>
+                <Crafting>3</Crafting>
             </skillRequirements>
         </recipeMaker>
         <costList>
@@ -415,8 +486,9 @@
         </graphicData>
         <recipeMaker>
             <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+            <researchPrerequisite>FCP_Research_CasualWear</researchPrerequisite>
             <skillRequirements>
-                <Crafting>2</Crafting>
+                <Crafting>3</Crafting>
             </skillRequirements>
         </recipeMaker>
         <costList>
@@ -462,8 +534,9 @@
         </costList>
         <recipeMaker>
             <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+            <researchPrerequisite>FCP_Research_CasualWear</researchPrerequisite>
             <skillRequirements>
-                <Crafting>2</Crafting>
+                <Crafting>3</Crafting>
             </skillRequirements>
         </recipeMaker>
         <statBases>

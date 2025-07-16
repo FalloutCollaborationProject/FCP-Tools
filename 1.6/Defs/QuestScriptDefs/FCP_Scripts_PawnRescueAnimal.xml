@@ -1,61 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <QuestScriptDef>
-        <defName>FCP_Quest_PawnRescueAnimal</defName>
-        <rootSelectionWeight>1.0</rootSelectionWeight>
-        <rootMinPoints>50</rootMinPoints>
-        <defaultChallengeRating>1</defaultChallengeRating>
+    <!-- Parent Quest Script for Animal Rescue -->
+    <QuestScriptDef Name="FCP_Quest_PawnRescueAnimal_Base" Abstract="true">
         <canGiveRoyalFavor>true</canGiveRoyalFavor>
-        <expireDaysRange>4~8</expireDaysRange>
         <questNameRules>
             <rulesStrings>
-                <li>questName->[prisoner_nameDef]'s Salvation</li>
-                <li>questName->[prisoner_nameDef]'s Rescue</li>
-                <li>questName->[prisoner_nameDef]'s Breakout</li>
-                <li>questName->Rescuing [prisoner_nameDef]</li>
-                <li>questName->Saving [prisoner_nameDef]</li>
-                <li>questName->Breaking [prisoner_nameDef] Out</li>
+                <li>questName->Operation: [prisoner_nameDef]</li>
+                <li>questName->Wasteland Rescue: [prisoner_nameDef]</li>
+                <li>questName->Liberation of [prisoner_nameDef]</li>
+                <li>questName->The [prisoner_nameDef] Job</li>
+                <li>questName->Raider Camp Infiltration</li>
+                <li>questName->Operation Creature Freedom</li>
+                <li>questName->The Wasteland Liberation</li>
+                <li>questName->Prisoner [prisoner_nameDef] Extraction</li>
+                <li>questName->Breaking the Chains</li>
+                <li>questName->Freedom for [prisoner_nameDef]</li>
+                <li>questName->The Containment Breach</li>
+                <li>questName->Wasteland Wildlife Rescue</li>
             </rulesStrings>
         </questNameRules>
-        <questDescriptionRules>
-            <rulesStrings>
-                <li>questDescription->Raaah.</li>
-            </rulesStrings>
-        </questDescriptionRules>
         <root Class="QuestNode_Sequence">
             <nodes>
-
                 <li Class="FCP_RadiantQuests.QuestNode_GetLeaderOfFaction">
                     <storeAs>asker</storeAs>
-                    <!--The faction def that issues the quest-->
                     <factionDef>OutlanderCivil</factionDef>
                 </li>
                 <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>enemyFaction</storeAs>
-                    <!--The faction def that will be guarding-->
                     <factionDefs>
                         <li>PirateWaster</li>
                     </factionDefs>
                 </li>
                 <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>prisonerFaction</storeAs>
-                    <!--The faction def that will be the prisoner-->
                     <factionDefs>
                         <li>OutlanderCivil</li>
                     </factionDefs>
                 </li>
+                <!-- These will be overridden in child definitions -->
                 <li Class="FCP_RadiantQuests.QuestNode_GetPawnKind">
-                    <!--Dont change storeAs its hardcoded in C#-->
                     <storeAs>prisonerPawnKind</storeAs>
-                    <pawnKindDef>Lynx</pawnKindDef>
+                    <pawnKindDef>Hare</pawnKindDef>
                 </li>
                 <li Class="FCP_RadiantQuests.QuestNode_GetCageDef">
-                    <!--Dont change storeAs its hardcoded in C#-->
                     <storeAs>cageDef</storeAs>
-                    <!--The cage def that will be used to store the animal prisoner-->
-                    <cageDef>FCP_AnimalCage_Placeholder</cageDef>
+                    <cageDef>FCP_AnimalCage_Small</cageDef>
                 </li>
+                <!-- End overrideable section -->
                 <li Class="QuestNode_GetRandomInRangeFloat">
                     <storeAs>chanceToJoinVal</storeAs>
                     <range>0~1</range>
@@ -75,12 +67,10 @@
                     <def>Util_AdjustPointsForDistantFight</def>
                 </li>
                 <li Class="QuestNode_GetMap" />
-
                 <li Class="QuestNode_GetSiteTile">
                     <storeAs>siteTile</storeAs>
                     <preferCloserTiles>true</preferCloserTiles>
                 </li>
-
                 <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
                     <storeAs>sitePartDefs</storeAs>
                     <storeFactionAs>siteFaction</storeFactionAs>
@@ -150,6 +140,180 @@
                 <li Class="QuestNode_NoWorldObject">
                     <worldObject>$site</worldObject>
                     <node Class="QuestNode_End" />
+                </li>
+            </nodes>
+        </root>
+    </QuestScriptDef>
+
+    <!-- Small Animal Rescue Quest -->
+    <QuestScriptDef ParentName="FCP_Quest_PawnRescueAnimal_Base">
+        <defName>FCP_Quest_PawnRescueAnimal_Small</defName>
+        <rootSelectionWeight>1.0</rootSelectionWeight>
+        <rootMinPoints>50</rootMinPoints>
+        <defaultChallengeRating>1</defaultChallengeRating>
+        <expireDaysRange>4~8</expireDaysRange>
+        <questDescriptionRules>
+            <rulesStrings>
+                <li>questDescription->A small irradiated creature has been captured by wasteland raiders and is being held in their camp. The local settlement is offering payment and a containment cage for its safe rescue - these creatures are valuable for research and companionship in the harsh wasteland.</li>
+                <li>questDescription->Raiders have trapped a small wasteland animal for their sick entertainment. Help liberate this innocent creature from their makeshift prison, and you'll be rewarded with a proper cage to keep it safe from the dangers of the post-nuclear world.</li>
+                <li>questDescription->A harmless wasteland critter has fallen into the hands of ruthless raiders. The locals want it rescued before the raiders decide to make it their next meal. Your reward: a sturdy cage and the gratitude of those who still care about life in this desolate world.</li>
+            </rulesStrings>
+        </questDescriptionRules>
+        <root Class="QuestNode_Sequence">
+            <nodes>
+                <li Class="FCP_RadiantQuests.QuestNode_GetLeaderOfFaction">
+                    <storeAs>asker</storeAs>
+                    <factionDef>OutlanderCivil</factionDef>
+                </li>
+                <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
+                    <storeAs>enemyFaction</storeAs>
+                    <factionDefs>
+                        <li>PirateWaster</li>
+                    </factionDefs>
+                </li>
+                <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
+                    <storeAs>prisonerFaction</storeAs>
+                    <factionDefs>
+                        <li>OutlanderCivil</li>
+                    </factionDefs>
+                </li>
+                <li Class="FCP_RadiantQuests.QuestNode_GetPawnKind">
+                    <storeAs>prisonerPawnKind</storeAs>
+                    <pawnKindDef>Hare</pawnKindDef>
+                </li>
+                <li Class="FCP_RadiantQuests.QuestNode_GetCageDef">
+                    <storeAs>cageDef</storeAs>
+                    <cageDef>FCP_AnimalCage_Small</cageDef>
+                </li>
+            </nodes>
+        </root>
+    </QuestScriptDef>
+
+    <!-- Medium Animal Rescue Quest -->
+    <QuestScriptDef ParentName="FCP_Quest_PawnRescueAnimal_Base">
+        <defName>FCP_Quest_PawnRescueAnimal_Medium</defName>
+        <rootSelectionWeight>0.8</rootSelectionWeight>
+        <rootMinPoints>75</rootMinPoints>
+        <defaultChallengeRating>2</defaultChallengeRating>
+        <expireDaysRange>5~9</expireDaysRange>
+        <questDescriptionRules>
+            <rulesStrings>
+                <li>questDescription->A medium-sized predator has been captured by well-armed raiders who plan to use it in their gladiatorial fights. This creature has adapted well to the irradiated wasteland and would make a valuable addition to any settlement. Rescue it and claim a reinforced containment system as your reward.</li>
+                <li>questDescription->Raiders have caged a dangerous but valuable wasteland predator, likely planning to sell it to the highest bidder. The local authorities want this creature rescued and properly contained before it falls into the wrong hands. A military-grade cage awaits successful mercenaries.</li>
+                <li>questDescription->A formidable wasteland hunter sits trapped in a raider camp, its natural ferocity slowly being broken by captivity. Liberation of this creature would not only be a merciful act but also earn you a professional-grade containment cage - perfect for housing dangerous specimens.</li>
+            </rulesStrings>
+        </questDescriptionRules>
+        <root Class="QuestNode_Sequence">
+            <nodes>
+                <li Class="FCP_RadiantQuests.QuestNode_GetLeaderOfFaction">
+                    <storeAs>asker</storeAs>
+                    <factionDef>OutlanderCivil</factionDef>
+                </li>
+                <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
+                    <storeAs>enemyFaction</storeAs>
+                    <factionDefs>
+                        <li>PirateWaster</li>
+                    </factionDefs>
+                </li>
+                <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
+                    <storeAs>prisonerFaction</storeAs>
+                    <factionDefs>
+                        <li>OutlanderCivil</li>
+                    </factionDefs>
+                </li>
+                <li Class="FCP_RadiantQuests.QuestNode_GetPawnKind">
+                    <storeAs>prisonerPawnKind</storeAs>
+                    <pawnKindDef>Lynx</pawnKindDef>
+                </li>
+                <li Class="FCP_RadiantQuests.QuestNode_GetCageDef">
+                    <storeAs>cageDef</storeAs>
+                    <cageDef>FCP_AnimalCage_Medium</cageDef>
+                </li>
+            </nodes>
+        </root>
+    </QuestScriptDef>
+
+    <!-- Large Animal Rescue Quest -->
+    <QuestScriptDef ParentName="FCP_Quest_PawnRescueAnimal_Base">
+        <defName>FCP_Quest_PawnRescueAnimal_Large</defName>
+        <rootSelectionWeight>0.5</rootSelectionWeight>
+        <rootMinPoints>125</rootMinPoints>
+        <defaultChallengeRating>3</defaultChallengeRating>
+        <expireDaysRange>6~12</expireDaysRange>
+        <questDescriptionRules>
+            <rulesStrings>
+                <li>questDescription->A massive apex predator of the wasteland has been captured by heavily fortified raiders who plan to weaponize it against their enemies. This is an extremely dangerous creature, evolved to survive in the harshest post-nuclear conditions. Successfully rescue it and you'll receive state-of-the-art containment technology capable of holding such a formidable beast.</li>
+                <li>questDescription->The raiders have done the impossible - they've caged one of the wasteland's most feared predators. This alpha specimen represents years of evolutionary adaptation to radiation and environmental hazards. Its rescue will require significant force, but the reward includes advanced containment systems developed by pre-war military scientists.</li>
+                <li>questDescription->Intelligence reports indicate raiders have captured what may be the last of its species - a colossal wasteland behemoth. The scientific and tactical value of this creature cannot be overstated. Mount a full-scale rescue operation and claim the most advanced bio-containment system available in the post-apocalyptic world.</li>
+            </rulesStrings>
+        </questDescriptionRules>
+        <root Class="QuestNode_Sequence">
+            <nodes>
+                <li Class="FCP_RadiantQuests.QuestNode_GetLeaderOfFaction">
+                    <storeAs>asker</storeAs>
+                    <factionDef>OutlanderCivil</factionDef>
+                </li>
+                <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
+                    <storeAs>enemyFaction</storeAs>
+                    <factionDefs>
+                        <li>PirateWaster</li>
+                    </factionDefs>
+                </li>
+                <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
+                    <storeAs>prisonerFaction</storeAs>
+                    <factionDefs>
+                        <li>OutlanderCivil</li>
+                    </factionDefs>
+                </li>
+                <li Class="FCP_RadiantQuests.QuestNode_GetPawnKind">
+                    <storeAs>prisonerPawnKind</storeAs>
+                    <pawnKindDef>Bear_Grizzly</pawnKindDef>
+                </li>
+                <li Class="FCP_RadiantQuests.QuestNode_GetCageDef">
+                    <storeAs>cageDef</storeAs>
+                    <cageDef>FCP_AnimalCage_Large</cageDef>
+                </li>
+            </nodes>
+        </root>
+    </QuestScriptDef>
+
+    <!-- Legacy quest for backwards compatibility -->
+    <QuestScriptDef ParentName="FCP_Quest_PawnRescueAnimal_Base">
+        <defName>FCP_Quest_PawnRescueAnimal</defName>
+        <rootSelectionWeight>0.0</rootSelectionWeight>
+        <rootMinPoints>50</rootMinPoints>
+        <defaultChallengeRating>1</defaultChallengeRating>
+        <expireDaysRange>4~8</expireDaysRange>
+        <questDescriptionRules>
+            <rulesStrings>
+                <li>questDescription->A small irradiated creature has been captured by wasteland raiders and is being held in their camp. The local settlement is offering payment and a containment cage for its safe rescue - these creatures are valuable for research and companionship in the harsh wasteland.</li>
+            </rulesStrings>
+        </questDescriptionRules>
+        <root Class="QuestNode_Sequence">
+            <nodes>
+                <li Class="FCP_RadiantQuests.QuestNode_GetLeaderOfFaction">
+                    <storeAs>asker</storeAs>
+                    <factionDef>OutlanderCivil</factionDef>
+                </li>
+                <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
+                    <storeAs>enemyFaction</storeAs>
+                    <factionDefs>
+                        <li>PirateWaster</li>
+                    </factionDefs>
+                </li>
+                <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
+                    <storeAs>prisonerFaction</storeAs>
+                    <factionDefs>
+                        <li>OutlanderCivil</li>
+                    </factionDefs>
+                </li>
+                <li Class="FCP_RadiantQuests.QuestNode_GetPawnKind">
+                    <storeAs>prisonerPawnKind</storeAs>
+                    <pawnKindDef>Hare</pawnKindDef>
+                </li>
+                <li Class="FCP_RadiantQuests.QuestNode_GetCageDef">
+                    <storeAs>cageDef</storeAs>
+                    <cageDef>FCP_AnimalCage_Small</cageDef>
                 </li>
             </nodes>
         </root>

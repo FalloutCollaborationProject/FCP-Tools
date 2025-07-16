@@ -61,46 +61,103 @@
     <!-- Small Cage -->
 
     <ThingDef ParentName="FCP_AnimalCage_Base">
-        <defName>FCP_AnimalCage_Placeholder</defName>
-        <label>animal cage</label>
-        <description>Its a cage sir</description>
+        <defName>FCP_AnimalCage_Small</defName>
+        <label>small animal cage</label>
+        <description>A sturdy metal cage designed to safely capture and contain small wasteland creatures. Originally used by pre-war researchers and hunters, these cages have proven invaluable for wastelanders looking to domesticate the various mutated animals roaming the post-nuclear landscape. Requires regular feeding to maintain captured animals.</description>
+        <graphicData>
+            <texPath>Things/Building/Production/MechGestatorStandard</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(2,2)</drawSize>
+        </graphicData>
+        <statBases>
+            <MaxHitPoints>200</MaxHitPoints>
+            <WorkToBuild>2500</WorkToBuild>
+            <Flammability>0.5</Flammability>
+            <Mass>35</Mass>
+        </statBases>
+        <size>(2,2)</size>
+        <interactionCellOffset>(0,0,1)</interactionCellOffset>
+        <building>
+            <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+            <haulToContainerDuration>80</haulToContainerDuration>
+            <uninstallWork>1200</uninstallWork>
+        </building>
+        <costList>
+            <Steel>75</Steel>
+            <ComponentIndustrial>2</ComponentIndustrial>
+        </costList>
+        <comps>
+            <li Class="FCP_RadiantQuests.CompProperties_AnimalCage">
+                <maxBodySize>0.8</maxBodySize>
+                <minBodySize>0.1</minBodySize>
+                <!--Int-->
+                <ticksForCaptureChance>900</ticksForCaptureChance>
+                <!--0-1-->
+                <captureChance>0.75</captureChance>
+                <animalsThatGetCaught>
+                    <!--Animal kind defs-->
+                    <li>Rat</li>
+                    <li>Hare</li>
+                    <li>Squirrel</li>
+                    <li>Cat</li>
+                    <li>Iguana</li>
+                </animalsThatGetCaught>
+                <fuelConsumptionRate>12.0</fuelConsumptionRate>
+                <fuelCapacity>30.0</fuelCapacity>
+                <fuelFilter>
+                    <categories>
+                        <li>Foods</li>
+                    </categories>
+                </fuelFilter>
+            </li>
+        </comps>
+        <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+    </ThingDef>
+
+    <!-- Medium Cage -->
+
+    <ThingDef ParentName="FCP_AnimalCage_Base">
+        <defName>FCP_AnimalCage_Medium</defName>
+        <label>medium animal cage</label>
+        <description>A reinforced cage capable of holding medium-sized wasteland creatures. Built with thicker steel bars and improved locking mechanisms, this cage can safely contain animals that would easily escape from smaller enclosures. Popular among wasteland traders who deal in exotic mutated pets and working animals.</description>
         <graphicData>
             <texPath>Things/Building/Production/MechGestatorStandard</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <drawSize>(3,2)</drawSize>
         </graphicData>
         <statBases>
-            <MaxHitPoints>300</MaxHitPoints>
+            <MaxHitPoints>350</MaxHitPoints>
             <WorkToBuild>4000</WorkToBuild>
-            <Flammability>1.0</Flammability>
-            <Mass>50</Mass>
+            <Flammability>0.5</Flammability>
+            <Mass>60</Mass>
         </statBases>
         <size>(3,2)</size>
         <interactionCellOffset>(0,0,2)</interactionCellOffset>
         <building>
             <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
             <haulToContainerDuration>120</haulToContainerDuration>
-            <uninstallWork>1800</uninstallWork>
+            <uninstallWork>2000</uninstallWork>
         </building>
         <costList>
-            <Steel>180</Steel>
-            <Gold>30</Gold>
-            <ComponentIndustrial>4</ComponentIndustrial>
+            <Steel>125</Steel>
+            <ComponentIndustrial>3</ComponentIndustrial>
         </costList>
         <comps>
             <li Class="FCP_RadiantQuests.CompProperties_AnimalCage">
                 <maxBodySize>1.5</maxBodySize>
-                <minBodySize>0.1</minBodySize>
+                <minBodySize>0.3</minBodySize>
                 <!--Int-->
-                <ticksForCaptureChance>600</ticksForCaptureChance>
+                <ticksForCaptureChance>720</ticksForCaptureChance>
                 <!--0-1-->
-                <captureChance>1</captureChance>
+                <captureChance>0.85</captureChance>
                 <animalsThatGetCaught>
                     <!--Animal kind defs-->
                     <li>Lynx</li>
                     <li>Husky</li>
-                    <li>Panther</li>
+                    <li>Wolf</li>
                     <li>Deer</li>
+                    <li>Alpaca</li>
+                    <li>Pig</li>
                 </animalsThatGetCaught>
                 <fuelConsumptionRate>18.0</fuelConsumptionRate>
                 <fuelCapacity>50.0</fuelCapacity>
@@ -111,7 +168,66 @@
                 </fuelFilter>
             </li>
         </comps>
-        <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+        <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    </ThingDef>
+
+    <!-- Large Cage -->
+
+    <ThingDef ParentName="FCP_AnimalCage_Base">
+        <defName>FCP_AnimalCage_Large</defName>
+        <label>large animal cage</label>
+        <description>A massive, heavily reinforced cage designed to contain the largest and most dangerous wasteland predators. Originally designed for pre-war zoos and research facilities, these cages feature reinforced steel construction and advanced containment systems. Only the most skilled engineers can properly construct these formidable enclosures.</description>
+        <graphicData>
+            <texPath>Things/Building/Production/MechGestatorStandard</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(4,3)</drawSize>
+        </graphicData>
+        <statBases>
+            <MaxHitPoints>500</MaxHitPoints>
+            <WorkToBuild>6000</WorkToBuild>
+            <Flammability>0.3</Flammability>
+            <Mass>100</Mass>
+        </statBases>
+        <size>(4,3)</size>
+        <interactionCellOffset>(0,0,3)</interactionCellOffset>
+        <building>
+            <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+            <haulToContainerDuration>180</haulToContainerDuration>
+            <uninstallWork>3000</uninstallWork>
+        </building>
+        <costList>
+            <Steel>200</Steel>
+            <Plasteel>25</Plasteel>
+            <ComponentIndustrial>5</ComponentIndustrial>
+        </costList>
+        <comps>
+            <li Class="FCP_RadiantQuests.CompProperties_AnimalCage">
+                <maxBodySize>3.0</maxBodySize>
+                <minBodySize>1.0</minBodySize>
+                <!--Int-->
+                <ticksForCaptureChance>600</ticksForCaptureChance>
+                <!--0-1-->
+                <captureChance>0.95</captureChance>
+                <animalsThatGetCaught>
+                    <!--Animal kind defs-->
+                    <li>Panther</li>
+                    <li>Bear_Grizzly</li>
+                    <li>Bear_Polar</li>
+                    <li>Warg</li>
+                    <li>Thrumbo</li>
+                    <li>Elephant</li>
+                    <li>Rhinoceros</li>
+                </animalsThatGetCaught>
+                <fuelConsumptionRate>30.0</fuelConsumptionRate>
+                <fuelCapacity>100.0</fuelCapacity>
+                <fuelFilter>
+                    <categories>
+                        <li>Foods</li>
+                    </categories>
+                </fuelFilter>
+            </li>
+        </comps>
+        <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
     </ThingDef>
 
 </Defs>

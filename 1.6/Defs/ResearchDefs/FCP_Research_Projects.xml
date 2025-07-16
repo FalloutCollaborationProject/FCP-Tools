@@ -1134,7 +1134,7 @@
     <ResearchProjectDef ParentName="FCP_Pre_War_Civilian_Research_Base">
         <defName>FCP_Research_BusinessWear</defName>
         <label>Holotape File: Pre-War Businesswear</label>
-        <description>PLACEHOLDER.</description>
+        <description>Holotape containing the schematics and patterns for pre-war business attire, including suits and formal wear.</description>
         <researchViewX>0</researchViewX>
         <researchViewY>1</researchViewY>
     </ResearchProjectDef>
@@ -1144,7 +1144,7 @@
     <ResearchProjectDef ParentName="FCP_Pre_War_Civilian_Research_Base">
         <defName>FCP_Research_Costumes</defName>
         <label>Holotape File: Pre-War Costumes</label>
-        <description>PLACEHOLDER.</description>
+        <description>Holotape containing the designs and instructions for crafting pre-war costumes and themed outfits.</description>
         <researchViewX>0</researchViewX>
         <researchViewY>2</researchViewY>
     </ResearchProjectDef>
@@ -1154,7 +1154,7 @@
     <ResearchProjectDef ParentName="FCP_Pre_War_Civilian_Research_Base">
         <defName>FCP_Research_CasualWear</defName>
         <label>Holotape File: Pre-War Casual Wear</label>
-        <description>PLACEHOLDER.</description>
+        <description>Holotape containing the patterns and instructions for making casual pre-war clothing such as shirts, pants, and dresses.</description>
         <researchViewX>0</researchViewX>
         <researchViewY>3</researchViewY>
     </ResearchProjectDef>
@@ -1164,51 +1164,19 @@
     <ResearchProjectDef ParentName="FCP_Pre_War_Military_Research_Base">
         <defName>FCP_Research_MilitaryUniforms</defName>
         <label>Holotape File: Pre-War Military Uniforms</label>
-        <description>PLACEHOLDER.</description>
+        <description>Holotape containing the schematics and patterns for crafting pre-war military uniforms and gear.</description>
         <researchViewX>0</researchViewX>
         <researchViewY>4</researchViewY>
     </ResearchProjectDef>
-
-    <!--____ Column 1 ____-->
 
     <!-- Combat Armor Standard -->
 
     <ResearchProjectDef ParentName="FCP_Pre_War_Military_Research_Base">
         <defName>FCP_Research_CombatArmorStandard</defName>
         <label>Holotape File: Combat Armor Standard</label>
-        <description>PLACEHOLDER.</description>
+        <description>Holotape containing the schematics for standard issue combat armor used by pre-war military forces.</description>
         <researchViewX>1</researchViewX>
         <researchViewY>1</researchViewY>
-    </ResearchProjectDef>
-
-    <!-- Combat Armor Light -->
-
-    <ResearchProjectDef ParentName="FCP_Pre_War_Military_Research_Base">
-        <defName>FCP_Research_CombatArmorLight</defName>
-        <label>Holotape File: Combat Armor Light</label>
-        <description>PLACEHOLDER.</description>
-        <researchViewX>1</researchViewX>
-        <researchViewY>2</researchViewY>
-    </ResearchProjectDef>
-
-    <!-- Combat Armor Medium -->
-
-    <ResearchProjectDef ParentName="FCP_Pre_War_Military_Research_Base">
-        <defName>FCP_Research_CombatArmorMedium</defName>
-        <label>Holotape File: Combat Armor Medium</label>
-        <description>PLACEHOLDER.</description>
-        <researchViewX>1</researchViewX>
-        <researchViewY>3</researchViewY>
-    </ResearchProjectDef>
-
-    <!-- Combat Armor Heavy -->
-
-    <ResearchProjectDef ParentName="FCP_Pre_War_Military_Research_Base">
-        <defName>FCP_Research_CombatArmorHeavy</defName>
-        <label>Holotape File: Combat Armor Heavy</label>
-        <description>PLACEHOLDER.</description>
-        <researchViewX>1</researchViewX>
-        <researchViewY>4</researchViewY>
     </ResearchProjectDef>
 
 </Defs>

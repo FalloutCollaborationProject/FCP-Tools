@@ -124,24 +124,6 @@
         </apparel>
     </ThingDef>
 
-    <!-- Combat Armor Van Graff -->
-
-    <ThingDef ParentName="FCP_Apparel_Combat_Armor_Base">
-        <defName>FCP_Apparel_Van_Graff_Combat_Armor</defName>
-        <description>The Van Graff combat armor is colored matte black for "brand recognition purposes," but has no matching black helmet.</description>
-        <label>Van GraffCombat Armor</label>
-        <graphicData>
-            <texPath>Things/Apparel/Wasteland_Apparel/CombatArmor/FCP_Van_Graff_Combat_Armor_Male_south</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-        </graphicData>
-        <apparel>
-            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/CombatArmor/FCP_Van_Graff_Combat_Armor</wornGraphicPath>
-            <tags>
-                <li>FCP_Combat_Armors_Van_Graff</li>
-            </tags>
-        </apparel>
-    </ThingDef>
-
     <!-- Combat Armor Light -->
 
     <ThingDef ParentName="ApparelBase">
@@ -158,7 +140,7 @@
             <skillRequirements>
                 <Crafting>4</Crafting>
             </skillRequirements>
-        <researchPrerequisite>FCP_Research_CombatArmorLight</researchPrerequisite>
+        <researchPrerequisite>FCP_Research_CombatArmorStandard</researchPrerequisite>
             <recipeUsers>
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
@@ -216,7 +198,7 @@
             <skillRequirements>
                 <Crafting>4</Crafting>
             </skillRequirements>
-        <researchPrerequisite>FCP_Research_CombatArmorMedium</researchPrerequisite>
+        <researchPrerequisite>FCP_Research_CombatArmorStandard</researchPrerequisite>
             <recipeUsers>
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
@@ -274,7 +256,7 @@
             <skillRequirements>
                 <Crafting>4</Crafting>
             </skillRequirements>
-        <researchPrerequisite>FCP_Research_CombatArmorHeavy</researchPrerequisite>
+        <researchPrerequisite>FCP_Research_CombatArmorStandard</researchPrerequisite>
             <recipeUsers>
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
@@ -332,7 +314,7 @@
             <skillRequirements>
                 <Crafting>4</Crafting>
             </skillRequirements>
-        <researchPrerequisite>FCP_Research_CombatArmorMedium</researchPrerequisite>
+        <researchPrerequisite>FCP_Research_CombatArmorStandard</researchPrerequisite>
             <recipeUsers>
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
@@ -388,7 +370,7 @@
             <skillRequirements>
                 <Crafting>4</Crafting>
             </skillRequirements>
-        <researchPrerequisite>FCP_Research_CombatArmorHeavy</researchPrerequisite>
+        <researchPrerequisite>FCP_Research_CombatArmorStandard</researchPrerequisite>
             <recipeUsers>
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
