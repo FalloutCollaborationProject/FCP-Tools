@@ -10,17 +10,27 @@
         <expireDaysRange>4~8</expireDaysRange>
         <questNameRules>
             <rulesStrings>
-                <li>questName->[prisoner_nameDef]'s Salvation</li>
-                <li>questName->[prisoner_nameDef]'s Rescue</li>
-                <li>questName->[prisoner_nameDef]'s Breakout</li>
-                <li>questName->Rescuing [prisoner_nameDef]</li>
-                <li>questName->Saving [prisoner_nameDef]</li>
+                <li>questName->Operation: Rescue [prisoner_nameDef]</li>
+                <li>questName->Wasteland Liberation: [prisoner_nameDef]</li>
+                <li>questName->Breaking the Chains</li>
+                <li>questName->Slave Camp Infiltration</li>
+                <li>questName->Freedom for [prisoner_nameDef]</li>
+                <li>questName->The [prisoner_nameDef] Extraction</li>
+                <li>questName->Raider Camp Assault</li>
+                <li>questName->Liberation Mission: [prisoner_nameDef]</li>
                 <li>questName->Breaking [prisoner_nameDef] Out</li>
+                <li>questName->Rescue from the Wasteland</li>
+                <li>questName->Operation Prisoner Freedom</li>
+                <li>questName->The Great Escape</li>
             </rulesStrings>
         </questNameRules>
         <questDescriptionRules>
             <rulesStrings>
-                <li>questDescription->Raaah.</li>
+                <li>questDescription->A desperate transmission from [asker_faction_name] has crackled through the radio static. One of their people, [prisoner_nameDef], has been captured by wasteland raiders and is being held in a fortified slave camp. The captors are known for their brutality, and time is running out. Mount a rescue operation to liberate this survivor before they become another casualty of the harsh wasteland.</li>
+                <li>questDescription->Intelligence from [asker_faction_name] reports that [prisoner_nameDef], a valued member of their community, has fallen into the hands of ruthless slavers. The raider camp is heavily defended, but the captive's knowledge of pre-war technology makes them too valuable to abandon. Infiltrate the compound and extract the prisoner before they're sold to the highest bidder.</li>
+                <li>questDescription->An urgent message from [asker_faction_name]: "[prisoner_nameDef] was taken during a supply run gone wrong. The raiders who captured them are part of a notorious slaving operation that's been terrorizing the wasteland. We can't leave one of our own to suffer in their hands. Break into their stronghold and bring [prisoner_nameDef] home."</li>
+                <li>questDescription->Emergency communication from [asker_faction_name]: A survivor named [prisoner_nameDef] has been enslaved by raiders after their caravan was ambushed. The captors are demanding an impossible ransom while subjecting their prisoner to unspeakable conditions. The only option is a direct assault on their fortified position. Free this innocent soul from their wasteland nightmare.</li>
+                <li>questDescription->Priority alert from [asker_faction_name]: [prisoner_nameDef], a skilled wasteland survivor, has been captured by a gang of violent raiders known for their slave trading operations. The prisoner's intimate knowledge of local settlements makes them both valuable and dangerous in enemy hands. Stage a rescue mission before this information can be extracted and used against innocent communities.</li>
             </rulesStrings>
         </questDescriptionRules>
         <root Class="QuestNode_Sequence">
@@ -42,12 +52,13 @@
                     <!--The faction def that will be the prisoner-->
                     <factionDefs>
                         <li>OutlanderCivil</li>
+                        <li>FCP_Faction_Hidden_Wastelanders</li>
                     </factionDefs>
                 </li>
                 <li Class="FCP_RadiantQuests.QuestNode_GetPawnKind">
                     <!--Dont change storeAs its hardcoded in C#-->
                     <storeAs>prisonerPawnKind</storeAs>
-                    <pawnKindDef>Slave</pawnKindDef>
+                    <pawnKindDef>FCP_Pawnkind_Wastelander_Citizen</pawnKindDef>
                 </li>
                 <li Class="QuestNode_GetRandomInRangeFloat">
                     <storeAs>chanceToJoinVal</storeAs>

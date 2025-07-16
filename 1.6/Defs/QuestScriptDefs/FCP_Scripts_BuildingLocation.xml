@@ -13,16 +13,31 @@
         <expireDaysRange>4~8</expireDaysRange>
         <questNameRules>
             <rulesStrings>
-                <li>facility->[Facility]</li>
-                <li>facility->Facility</li>
-                <li>facility->Outpost</li>
-                <li>facility->Complex</li>
-                <li>facility->Installation</li>
+                <li>questName->Operation: [facility]</li>
+                <li>questName->Securing [facility]</li>
+                <li>questName->The [facility] Situation</li>
+                <li>questName->Wasteland [facility] Recovery</li>
+                <li>questName->Pre-War [facility] Reactivation</li>
+                <li>questName->Lost Technology: [facility]</li>
+                <li>questName->Reclaiming [facility]</li>
+                <li>facility->Vault-Tec Facility</li>
+                <li>facility->Pre-War Installation</li>
+                <li>facility->Military Outpost</li>
+                <li>facility->Research Complex</li>
+                <li>facility->Technical Facility</li>
+                <li>facility->Government Bunker</li>
+                <li>facility->Industrial Complex</li>
+                <li>facility->Communications Array</li>
+                <li>facility->Power Station</li>
+                <li>facility->Medical Facility</li>
             </rulesStrings>
         </questNameRules>
         <questDescriptionRules>
             <rulesStrings>
-                <li>questDescription->[asker_faction_name], has sent us a message. They seem to be having issues trying to get a pre-war piece of technology online.</li>
+                <li>questDescription->A transmission from [asker_faction_name] has reached us through the static-filled airwaves. They've located a pre-war [facility] but can't get its ancient technology operational. The facility likely contains valuable pre-war tech, but it's currently occupied by hostiles. Clear the area and help restore this piece of old-world engineering to working order.</li>
+                <li>questDescription->Intelligence reports from [asker_faction_name] indicate they've discovered an intact pre-war [facility] in the wasteland. The complex still has power, but automated security systems and raiders have made it inaccessible. They need experienced wasteland operatives to secure the facility and bring its dormant systems back online.</li>
+                <li>questDescription->A priority message from [asker_faction_name]: "We've found something big - a [facility] from before the bombs fell. The place is a goldmine of old-world technology, but we can't crack the security protocols. Help us clear out the current occupants and reactivate this monument to pre-war innovation."</li>
+                <li>questDescription->Urgent communication from [asker_faction_name]: A [facility] dating back to the old world has been discovered, still largely intact after all these years. The potential technological salvage is enormous, but hostile forces have claimed it as their base. Eliminate the threat and help restore this relic of civilization to operational status.</li>
             </rulesStrings>
         </questDescriptionRules>
         <root Class="QuestNode_Sequence">

@@ -10,14 +10,31 @@
         <expireDaysRange>4~8</expireDaysRange>
         <questNameRules>
             <rulesStrings>
-                <li>questName->Saving [settlement]</li>
-                <li>settlement->a settlement</li>
-                <li>settlement->an outpost</li>
+                <li>questName->Defending [settlement]</li>
+                <li>questName->Operation: Protect [settlement]</li>
+                <li>questName->Wasteland Defense: [settlement]</li>
+                <li>questName->Settlement Under Siege</li>
+                <li>questName->The [settlement] Stand</li>
+                <li>questName->Protecting the Innocent</li>
+                <li>questName->Raider Threat Elimination</li>
+                <li>questName->Last Stand at [settlement]</li>
+                <li>settlement->a wasteland settlement</li>
+                <li>settlement->a survivor outpost</li>
+                <li>settlement->a trading post</li>
+                <li>settlement->a farming community</li>
+                <li>settlement->a frontier settlement</li>
+                <li>settlement->a refugee camp</li>
+                <li>settlement->a scavenger outpost</li>
+                <li>settlement->a civilian settlement</li>
             </rulesStrings>
         </questNameRules>
         <questDescriptionRules>
             <rulesStrings>
-                <li>questDescription->[asker_nameFull], [asker_faction_leaderTitle] of [asker_faction_name], has sent us a message. One of their settlements will be raided soon and they request your assistance in dealing with the raiders.</li>
+                <li>questDescription->Emergency transmission from [asker_nameFull], [asker_faction_leaderTitle] of [asker_faction_name]: "We've received urgent intelligence that raiders are planning a coordinated assault on one of our [settlement]s. The settlers there are defenseless - mostly farmers, traders, and families just trying to survive in the wasteland. We need experienced fighters to reach the settlement and help defend it before the attack begins."</li>
+                <li>questDescription->Priority alert from [asker_nameFull] of [asker_faction_name]: "A notorious raider gang has been spotted moving toward [settlement]. The civilians there have no military training and limited weapons - they're sitting ducks. Intelligence suggests the raiders are after the settlement's food stores and fuel reserves. Time is critical - get there and fortify their defenses before the wasteland vultures arrive."</li>
+                <li>questDescription->Distress signal from [asker_faction_name]: "[asker_nameFull] here. We've lost contact with [settlement] after reports of raider activity in the area. Our scouts indicate a major assault is imminent - possibly within hours. The settlement houses dozens of innocent survivors who've built something decent in this godforsaken wasteland. They deserve a chance to keep what they've worked so hard to build."</li>
+                <li>questDescription->Urgent communication from [asker_nameFull], [asker_faction_leaderTitle]: "Raiders have been circling [settlement] like vultures for days, testing their defenses. The settlement's barely armed - they're peaceful folks who've managed to carve out a life in the ruins. Word is the raiders plan to hit them at dawn. These people took us in when we had nothing - now it's our turn to stand by them."</li>
+                <li>questDescription->Critical mission briefing from [asker_faction_name]: A heavily armed raider warband is converging on [settlement]. The target is strategically important - it sits on a major trade route and has clean water sources. If it falls, it'll embolden every raider gang in the region. [asker_nameFull] is personally requesting assistance: "Help us protect these people. In this wasteland, every functioning settlement is a beacon of hope."</li>
             </rulesStrings>
         </questDescriptionRules>
         <root Class="QuestNode_Sequence">
@@ -25,7 +42,7 @@
                 <li Class="FCP_RadiantQuests.QuestNode_GetLeaderOfFaction">
                     <storeAs>asker</storeAs>
                     <!--The faction def that issues the quest-->
-                    <factionDef>OutlanderCivil</factionDef>
+                    <factionDef>FCP_Faction_Hidden_Wastelanders</factionDef>
                 </li>
                 <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>enemyFaction</storeAs>
@@ -38,7 +55,7 @@
                     <storeAs>settlementFaction</storeAs>
                     <!--The faction def that will be raided-->
                     <factionDefs>
-                        <li>OutlanderCivil</li>
+                        <li>FCP_Faction_Hidden_Wastelanders</li>
                     </factionDefs>
                 </li>
                 <li Class="QuestNode_SubScript">
@@ -142,8 +159,8 @@
                                             <radius>20</radius>
                                         </li>
                                         <li Class="QuestNode_Letter">
-                                            <label TKey="LetterLabelSettlerAidRaidInProgress">The raiders are already here!</label>
-                                            <text TKey="LetterTextSettlerAidRaidInProgress">The raiders have already engaged the settlers you were asked to protect!</text>
+                                            <label TKey="LetterLabelSettlerAidRaidInProgress">Raiders attacking settlement!</label>
+                                            <text TKey="LetterTextSettlerAidRaidInProgress">The wasteland scum have already begun their assault! The settlement's defenders are fighting for their lives - get in there and help them drive off these raiders!</text>
                                             <letterDef>ThreatBig</letterDef>
                                             <lookTargets>$raiders</lookTargets>
                                             <filterDeadPawnsFromLookTargets>true</filterDeadPawnsFromLookTargets>
@@ -161,8 +178,8 @@
                                                 <radius>20</radius>
                                             </li>
                                             <li Class="QuestNode_Letter">
-                                                <label TKey="LetterLabelSettlerAidRaidDelayed">The raiders are here!</label>
-                                                <text TKey="LetterTextSettlerAidRaidDelayed">The raiders have arrived!</text>
+                                                <label TKey="LetterLabelSettlerAidRaidDelayed">Raider assault incoming!</label>
+                                                <text TKey="LetterTextSettlerAidRaidDelayed">The raider warband has arrived at the settlement perimeter! Shots fired - the attack has begun!</text>
                                                 <letterDef>ThreatBig</letterDef>
                                                 <lookTargets>$raiders</lookTargets>
                                                 <filterDeadPawnsFromLookTargets>true</filterDeadPawnsFromLookTargets>
@@ -187,8 +204,8 @@
                                                             <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
                                                         </parms>
                                                         <addCampLootReward>false</addCampLootReward>
-                                                        <customLetterLabel TKey="LetterLabelPaymentArrived">The settlers survived</customLetterLabel>
-                                                        <customLetterText TKey="LetterTextPaymentArrived">The settlers you were assigned to protect have survived the onslaught, you have completed your mission.</customLetterText>
+                                                        <customLetterLabel TKey="LetterLabelPaymentArrived">Settlement defense successful</customLetterLabel>
+                                                        <customLetterText TKey="LetterTextPaymentArrived">The raiders have been driven off and the settlement stands! The grateful survivors are pooling together what they can spare as payment for your heroic defense of their home.</customLetterText>
                                                         <nodeIfChosenPawnSignalUsed Class="QuestNode_Letter">
                                                             <letterDef>ChoosePawn</letterDef>
                                                             <label TKey="LetterLabelFavorReceiver">[asker_faction_royalFavorLabel]</label>
@@ -204,9 +221,9 @@
                                             </node>
                                         </li>
                                         <li Class="QuestNode_Letter">
-                                            <label TKey="LetterLabelSettlerAidEndFailure">The settlers perished</label>
+                                            <label TKey="LetterLabelSettlerAidEndFailure">Settlement overrun</label>
                                             <letterDef>NegativeEvent</letterDef>
-                                            <text TKey="LetterTextSettlerAidEndFailure">The settlers you were assigned to protect have perished, you have failed your mission.</text>
+                                            <text TKey="LetterTextSettlerAidEndFailure">The raiders have overwhelmed the settlement's defenses. Smoke rises from the ruins as the survivors flee into the wasteland. Your mission has failed.</text>
                                         </li>
                                         <li Class="QuestNode_End">
                                             <outcome>Fail</outcome>
@@ -228,8 +245,8 @@
                     <node Class="QuestNode_Sequence">
                         <nodes>
                             <li Class="QuestNode_Letter">
-                                <label TKey="LetterLabelSettlerAidExpired">Quest expired: [resolvedQuestName]</label>
-                                <text TKey="LetterTextSettlerAidExpired">The settlement has been raided. The quest [resolvedQuestName] has expired.</text>
+                                <label TKey="LetterLabelSettlerAidExpired">Settlement lost to raiders</label>
+                                <text TKey="LetterTextSettlerAidExpired">Without assistance, the settlement fell to the raider assault. Another light in the wasteland has been extinguished. The quest [resolvedQuestName] has failed.</text>
                             </li>
                             <li Class="QuestNode_End">
                                 <outcome>Fail</outcome>
@@ -245,8 +262,8 @@
                     <node Class="QuestNode_Sequence">
                         <nodes>
                             <li Class="QuestNode_Letter">
-                                <label TKey="LetterLabelSettlerAidFailedLeft">Quest failed: [resolvedQuestName]</label>
-                                <text TKey="LetterTextSettlerAidFailedLeft">You left the settlement, it has been raided.</text>
+                                <label TKey="LetterLabelSettlerAidFailedLeft">Settlement abandoned to raiders</label>
+                                <text TKey="LetterTextSettlerAidFailedLeft">By leaving the settlement undefended, you've sealed its fate. The raiders have claimed another victory in the wasteland.</text>
                             </li>
                             <li Class="QuestNode_End">
                                 <outcome>Fail</outcome>
