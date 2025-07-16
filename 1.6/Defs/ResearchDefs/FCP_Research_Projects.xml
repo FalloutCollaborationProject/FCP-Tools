@@ -221,9 +221,6 @@
         <description>Research into the application and enhancement of power armor technology for improved combat effectiveness.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
-        <prerequisites>
-            <li>FCP_Research_T45_Power_Armor_Maintenance</li>
-        </prerequisites>
         <researchViewX>4</researchViewX>
         <researchViewY>6</researchViewY>
         <tab>FCP_Research</tab>
@@ -237,9 +234,6 @@
         <description>Research into the maintenance and upkeep of T-45 Power Armor for optimal performance.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
-        <prerequisites>
-            <li>FCP_Research_T51_Power_Armor_Maintenance</li>
-        </prerequisites>
         <researchViewX>4</researchViewX>
         <researchViewY>7</researchViewY>
         <tab>FCP_Research</tab>
@@ -253,9 +247,6 @@
         <description>Research into the maintenance and upkeep of T-60 Power Armor for optimal performance.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
-        <prerequisites>
-            <li>FCP_Research_T60_Power_Armor_Maintenance</li>
-        </prerequisites>
         <researchViewX>4</researchViewX>
         <researchViewY>8</researchViewY>
         <tab>FCP_Research</tab>
@@ -287,7 +278,7 @@
         <label>Apparel Production</label>
         <description>Research into the techniques and methods for producing various types of apparel.</description>
         <baseCost>500</baseCost>
-        <techLevel>Medieval</techLevel>
+        <techLevel>Industrial</techLevel>
         <prerequisites>
             <li>ComplexClothing</li>
         </prerequisites>
@@ -325,87 +316,6 @@
         </prerequisites>
         <researchViewX>5</researchViewX>
         <researchViewY>4</researchViewY>
-        <tab>FCP_Research</tab>
-    </ResearchProjectDef>
-
-    <!-- Basic Power Armor -->
-
-    <ResearchProjectDef>
-        <defName>FCP_Research_Basic_Power_Armor</defName>
-        <label>Basic Power Armor</label>
-        <description>Research into the techniques and methods for producing basic power armor.</description>
-        <baseCost>1000</baseCost>
-        <techLevel>Industrial</techLevel>
-        <prerequisites>
-            <li>FCP_Research_Power_Armor_Applications</li>
-        </prerequisites>
-        <researchViewX>5</researchViewX>
-        <researchViewY>5</researchViewY>
-        <tab>FCP_Research</tab>
-    </ResearchProjectDef>
-
-    <!-- T-45 Power Armor Maintenance -->
-
-    <ResearchProjectDef>
-        <defName>FCP_Research_T45_Power_Armor_Maintenance</defName>
-        <label>T-45 Power Armor Maintenance</label>
-        <description>Research into the techniques and methods for maintaining T-45 Power Armor.</description>
-        <baseCost>2000</baseCost>
-        <techLevel>Industrial</techLevel>
-        <prerequisites>
-            <li>FCP_Research_Basic_Power_Armor</li>
-            <li>FCP_Research_Power_Armor_Training</li>
-        </prerequisites>
-        <researchViewX>5</researchViewX>
-        <researchViewY>6</researchViewY>
-        <tab>FCP_Research</tab>
-    </ResearchProjectDef>
-
-    <!-- T-51 Power Armor Maintenance -->
-
-    <ResearchProjectDef>
-        <defName>FCP_Research_T51_Power_Armor_Maintenance</defName>
-        <label>T-51 Power Armor Maintenance</label>
-        <description>Research into the techniques and methods for maintaining T-51 Power Armor.</description>
-        <baseCost>2000</baseCost>
-        <techLevel>Industrial</techLevel>
-        <prerequisites>
-            <li>FCP_Research_T45_Power_Armor_Maintenance</li>
-        </prerequisites>
-        <researchViewX>5</researchViewX>
-        <researchViewY>7</researchViewY>
-        <tab>FCP_Research</tab>
-    </ResearchProjectDef>
-
-    <!-- T-60 Power Armor Maintenance -->
-
-    <ResearchProjectDef>
-        <defName>FCP_Research_T60_Power_Armor_Maintenance</defName>
-        <label>T-60 Power Armor Maintenance</label>
-        <description>Research into the techniques and methods for maintaining T-60 Power Armor.</description>
-        <baseCost>2000</baseCost>
-        <techLevel>Industrial</techLevel>
-        <prerequisites>
-            <li>FCP_Research_T51_Power_Armor_Maintenance</li>
-        </prerequisites>
-        <researchViewX>5</researchViewX>
-        <researchViewY>8</researchViewY>
-        <tab>FCP_Research</tab>
-    </ResearchProjectDef>
-
-    <!-- X-Series Power Armor Maintenance -->
-
-    <ResearchProjectDef>
-        <defName>FCP_Research_X_Power_Armor_Maintenance</defName>
-        <label>X-Series Power Armor Maintenance</label>
-        <description>Research into the techniques and methods for maintaining X-Series Power Armor.</description>
-        <baseCost>2000</baseCost>
-        <techLevel>Industrial</techLevel>
-        <prerequisites>
-            <li>FCP_Research_T60_Power_Armor_Maintenance</li>
-        </prerequisites>
-        <researchViewX>5</researchViewX>
-        <researchViewY>9</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -479,34 +389,24 @@
 
     <!-- Gunsmithing -->
 
-    <ResearchProjectDef>
+    <ResearchProjectDef ParentName="FCP_Pre_War_Military_Research_Base">
         <defName>FCP_Research_Gunsmithing</defName>
-        <label>Gunsmithing</label>
-        <description>Research into the creation and use of furnishings suitable for the harsh conditions of the wasteland.</description>
-        <baseCost>500</baseCost>
-        <techLevel>Industrial</techLevel>
-        <prerequisites>
-            <li>FCP_Research_Crafting_Stations</li>
-        </prerequisites>
+        <label>Holotape File: Gunsmithing</label>
+        <description>Holotape containing the schematics for various firearms.</description>
         <researchViewX>6.5</researchViewX>
         <researchViewY>2</researchViewY>
-        <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
     <!-- Advanced Gunsmithing -->
 
-    <ResearchProjectDef>
+    <ResearchProjectDef ParentName="FCP_Pre_War_Military_Research_Base">
         <defName>FCP_Research_Advanced_Gunsmithing</defName>
-        <label>Advanced Gunsmithing</label>
-        <description>Research into the development and implementation of lighting solutions suitable for the wasteland environment.</description>
+        <label>Holotape File: Advanced Gunsmithing</label>
+        <description>Holotape containing the schematics for various advanced firearms.</description>
         <baseCost>750</baseCost>
         <techLevel>Industrial</techLevel>
-        <prerequisites>
-            <li>FCP_Research_Gunsmithing</li>
-        </prerequisites>
         <researchViewX>6.5</researchViewX>
         <researchViewY>3</researchViewY>
-        <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
     <!--_____ Column 7 _____-->
@@ -519,9 +419,6 @@
         <description>Research into the development and construction of fabricated walls and security systems for enhanced protection.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
-        <prerequisites>
-            <li>FCP_Research_Gunsmithing</li>
-        </prerequisites>
         <researchViewX>7</researchViewX>
         <researchViewY>4</researchViewY>
         <tab>FCP_Research</tab>
@@ -562,31 +459,24 @@
 
     <!-- Energy Based Weaponry -->
 
-    <ResearchProjectDef>
+    <ResearchProjectDef ParentName="FCP_Pre_War_Military_Research_Base">
         <defName>FCP_Research_Energy_Based_Weaponry</defName>
-        <label>Energy Based Weaponry</label>
-        <description>Research into the development and manufacturing of energy-based weapons for advanced combat capabilities.</description>
+        <label>Holotape File: Energy Based Weaponry</label>
+        <description>Holotape containing the schematics for basic energy weapons weapons.</description>
         <baseCost>1000</baseCost>
         <techLevel>Industrial</techLevel>
-        <prerequisites>
-            <li>FCP_Research_Advanced_Weapons_Manufacturing</li>
-        </prerequisites>
         <researchViewX>7</researchViewX>
         <researchViewY>7</researchViewY>
-        <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
     <!-- Plasma Weapon Manufacturing -->
 
-    <ResearchProjectDef>
+    <ResearchProjectDef ParentName="FCP_Pre_War_Military_Research_Base">
         <defName>FCP_Research_Plasma_Weapons_Manufacturing</defName>
-        <label>Plasma Weapon Manufacturing</label>
-        <description>Research into the development and implementation of automated defense systems for enhanced security.</description>
+        <label>Holotape File: Plasma Weapon Manufacturing</label>
+        <description>Holotape containing the schematics for plasma weapons weapons.</description>
         <baseCost>2000</baseCost>
         <techLevel>Industrial</techLevel>
-        <prerequisites>
-            <li>FCP_Research_Energy_Based_Weaponry</li>
-        </prerequisites>
         <researchViewX>7</researchViewX>
         <researchViewY>8</researchViewY>
         <tab>FCP_Research</tab>
