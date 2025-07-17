@@ -409,6 +409,86 @@
                         <countRange>1</countRange>
 						<!-- <weight>0.7</weight> -->
                     </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Engineer_Jumpsuit</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.4</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Trooper_Fatigues</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.4</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Trooper_MP_Uniform</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.4</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Ranger_Casual</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.4</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Trooper_Armor</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.4</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Trooper_Bandoleer_Armor</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.4</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Trooper_Vest</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.4</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCRCF_Guard_Vest</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.4</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCRCF_Guard_Helmet</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.3</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Trooper_Helmet</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.3</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Goggles_Helmet</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.3</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Face_Wrap_Helmet</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.3</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Face_Wrap_Goggles_Helmet</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.3</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Ranger_Hat_Grey</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.3</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Ranger_Hat_Brown</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.3</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Ranger_Hat_Tan</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.3</weight> -->
+                    </li>
                 </weightedDrops>
             </li>
             <li Class="CompProperties_UseEffectDestroySelf"/>
@@ -504,6 +584,74 @@
                     </li>
                     <li>
                         <thingDef>FCP_Apparel_Combat_Armor_Heavy</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Ambassador_Dress</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Ambassador_Suit</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Generals_Uniform</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Ranger_Veteran_Uniform</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Ranger_Veteran_Duster</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Trooper_Mantle_Armor</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Scout_Recon_Armor</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Salvaged_Power_Armor</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Ranger_Patrol_Armor</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Ranger_Veteran_Armor</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_MP_Helmet</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Beret</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Beret_1st_Recon</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Salvaged_Power_Armor_Helmet</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_General_Cap</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Ranger_Hat_Patrol</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.NCR">
+                        <thingDef>FCP_Apparel_NCR_Veteran_Ranger_Helmet</thingDef>
                         <countRange>1</countRange>
                     </li>
                 </weightedDrops>
