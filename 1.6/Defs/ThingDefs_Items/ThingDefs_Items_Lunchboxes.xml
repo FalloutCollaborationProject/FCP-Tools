@@ -489,6 +489,91 @@
                         <countRange>1</countRange>
 						<!-- <weight>0.3</weight> -->
                     </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Service_Rifle</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.6</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_10mm_Pistol</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.5</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Chinese_Pistol</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.4</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_9mm_Pistol</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.5</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Silenced_22_Pistol</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.4</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Caravan_Shotgun</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.5</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_BB_Gun</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.3</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_32_Pistol</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.4</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Pipe_Revolver</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.3</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Pipe_BoltAction_Rifle</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.4</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Pipe_Burst</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.4</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_32_Hunting_Rifle</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.4</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Varmint_Rifle</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.4</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_9mm_Hunting_Rifle</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.4</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Silenced_10mm_Pistol</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.4</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Single_Shotgun</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.4</weight> -->
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_SawnOff_Shotgun</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.3</weight> -->
+                    </li>
                 </weightedDrops>
             </li>
             <li Class="CompProperties_UseEffectDestroySelf"/>
@@ -652,6 +737,126 @@
                     </li>
                     <li MayRequire="Rick.FCP.NCR">
                         <thingDef>FCP_Apparel_NCR_Veteran_Ranger_Helmet</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Power_Armor_Assault_Rifle</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Light_Machine_Gun</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Minigun_FO3</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_556_Pistol</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_127mm_Pistol</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_R91_Rifle</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Chinese_Assault_Rifle</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Marksman_Carbine</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Assault_Carbine</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_DKS_501_Sniper_Rifle</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Scoped_Hunting_Rifle</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Combat_Rifle_Standard</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Combat_Rifle_Scoped</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Combat_Rifle_Marksman</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Brush_Gun</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Cowboy_Repeater</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Trail_Carbine</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_223_Rangemaster</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_10mm_SMG</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_9mm_SMG</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_127mm_SMG</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Submachine_Gun</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Silenced_22_SMG</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Hunting_Shotgun</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Combat_Shotgun</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Riot_Shotgun</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_LeverAction_Shotgun</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_357_Revolver</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_44Magnum_Revolver</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Hunting_Revolver</thingDef>
                         <countRange>1</countRange>
                     </li>
                 </weightedDrops>
