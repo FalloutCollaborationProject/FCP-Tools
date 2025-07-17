@@ -34,6 +34,7 @@
             <MaxHitPoints>250</MaxHitPoints>
             <WorkToMake>9200</WorkToMake>
             <Mass>5.0</Mass>
+            <MarketValue>350</MarketValue>
             <ArmorRating_Sharp>0.40</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.20</ArmorRating_Blunt>
             <ArmorRating_Heat>0.30</ArmorRating_Heat>
@@ -55,6 +56,11 @@
                 <li>FCP_Combat_Armors</li>
             </defaultOutfitTags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Combat Armor Base -->
@@ -79,7 +85,7 @@
         </costList>
         <statBases>
             <MaxHitPoints>250</MaxHitPoints>
-            <MarketValue>250</MarketValue>
+            <MarketValue>950</MarketValue>
             <Mass>5.0</Mass>
             <ArmorRating_Sharp>0.90</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.45</ArmorRating_Blunt>
@@ -104,6 +110,11 @@
                 <li>FCP_Combat_Armors</li>
             </defaultOutfitTags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Combat Armor -->
@@ -122,6 +133,11 @@
                 <li>FCP_Combat_Armors</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Combat Armor Light -->
@@ -155,6 +171,7 @@
             <MaxHitPoints>250</MaxHitPoints>
             <WorkToMake>9200</WorkToMake>
             <Mass>5.0</Mass>
+            <MarketValue>350</MarketValue>
             <ArmorRating_Sharp>0.40</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.20</ArmorRating_Blunt>
             <ArmorRating_Heat>0.30</ArmorRating_Heat>
@@ -180,6 +197,11 @@
                 <li>FCP_Combat_Armors</li>
             </defaultOutfitTags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Combat Armor Sturdy -->
@@ -213,6 +235,7 @@
             <MaxHitPoints>250</MaxHitPoints>
             <WorkToMake>9200</WorkToMake>
             <Mass>5.0</Mass>
+            <MarketValue>650</MarketValue>
             <ArmorRating_Sharp>0.75</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.37</ArmorRating_Blunt>
             <ArmorRating_Heat>0.75</ArmorRating_Heat>
@@ -238,6 +261,11 @@
                 <li>FCP_Combat_Armors</li>
             </defaultOutfitTags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Combat Armor Heavy-->
@@ -271,6 +299,7 @@
             <MaxHitPoints>250</MaxHitPoints>
             <WorkToMake>9200</WorkToMake>
             <Mass>5.0</Mass>
+            <MarketValue>1050</MarketValue>
             <ArmorRating_Sharp>1.01</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.50</ArmorRating_Blunt>
             <ArmorRating_Heat>1.01</ArmorRating_Heat>
@@ -296,6 +325,11 @@
                 <li>FCP_Combat_Armors</li>
             </defaultOutfitTags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Reinforced Combat Armor -->
@@ -327,6 +361,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>1250</MarketValue>
             <ArmorRating_Sharp>1.04</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.52</ArmorRating_Blunt>
             <Insulation_Cold>3.0</Insulation_Cold>
@@ -352,6 +387,11 @@
                 <li>FCP_Combat_Armor_Reinforced</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Reinforced Combat Armor II -->
@@ -383,6 +423,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>1450</MarketValue>
             <ArmorRating_Sharp>1.22</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.68</ArmorRating_Blunt>
             <Insulation_Cold>3.0</Insulation_Cold>
@@ -408,6 +449,11 @@
                 <li>FCP_Combat_Armor_Reinforced_MK_II</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!--_____ Apparel _____-->
@@ -487,6 +533,11 @@
                 <li>FCP_Pre_War_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Pre-War Army Uniform Craftable -->
@@ -497,6 +548,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>100</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>80</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -524,6 +576,11 @@
                 <li>OnSkin</li>
             </layers>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
     
     <!-- Pre-War Army Uniform -->
@@ -542,6 +599,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>120</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -575,6 +633,11 @@
                 <li>FCP_Pre_War_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Pre-War Fancy Suit (Clean) -->
@@ -625,10 +688,15 @@
             <layers>
                 <li>OnSkin</li>
             </layers>
-            <tags>
-                <li>FCP_Bennys_Apparel</li>
-            </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Unique</rarity>
+            </li>
+        </comps>
+		<modExtensions>
+			<li Class="FCP.Core.UniqueThingExtension"></li>
+		</modExtensions>
     </ThingDef>
 
     <!-- Mysterious Stranger -->
@@ -659,6 +727,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>1200</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -683,6 +752,14 @@
                 <li>FCP_Mysterious_Stranger_Outfit</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Unique</rarity>
+            </li>
+        </comps>
+		<modExtensions>
+			<li Class="FCP.Core.UniqueThingExtension"></li>
+		</modExtensions>
     </ThingDef>
 
     <!-- Business Pre War -->
@@ -714,13 +791,11 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>180</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
         </statBases>
-        <equippedStatOffsets>
-            <SocialImpact>0.15</SocialImpact>            <!-- Speech +5 -->
-        </equippedStatOffsets>
         <apparel>
             <bodyPartGroups>
                 <li>Torso</li>
@@ -737,6 +812,11 @@
                 <li>FCP_Pre_War_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Spring Pre War Dress -->
@@ -768,13 +848,11 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>160</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
         </statBases>
-        <equippedStatOffsets>
-            <RangedCooldownFactor>0.05</RangedCooldownFactor>            <!-- AGILITY +1 -->
-        </equippedStatOffsets>
         <apparel>
             <bodyPartGroups>
                 <li>Torso</li>
@@ -792,6 +870,11 @@
                 <li>FCP_Pre_War_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Spring Pre War Shirt -->
@@ -823,13 +906,11 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>160</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
         </statBases>
-        <equippedStatOffsets>
-            <RangedCooldownFactor>0.05</RangedCooldownFactor>            <!-- AGILITY +1 -->
-        </equippedStatOffsets>
         <apparel>
             <bodyPartGroups>
                 <li>Torso</li>
@@ -847,6 +928,11 @@
                 <li>FCP_Pre_War_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Radiation Suit -->
@@ -878,6 +964,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>320</MarketValue>
             <ArmorRating_Sharp>0.25</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.13</ArmorRating_Blunt>
             <Insulation_Cold>3.0</Insulation_Cold>
@@ -904,6 +991,11 @@
                 <li>FCP_Radiation_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Red Rocket Overalls-->
@@ -935,6 +1027,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>140</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -955,6 +1048,11 @@
                 <li>FCP_Pre_War_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Naughty Nightgown -->
@@ -986,6 +1084,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>170</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -1011,6 +1110,11 @@
                 <li>FCP_Pre_War_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Naughty Nightwear -->
@@ -1042,6 +1146,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>170</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -1066,6 +1171,11 @@
                 <li>FCP_Pre_War_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Fancy Gambler Dress -->
@@ -1097,6 +1207,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>190</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -1118,6 +1229,11 @@
                 <li>FCP_Pre_War_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Fancy Gambler Suit -->
@@ -1149,6 +1265,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>190</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -1171,6 +1288,11 @@
                 <li>FCP_Pre_War_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Lab Coat Capital -->
@@ -1202,6 +1324,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>220</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -1226,6 +1349,11 @@
                 <li>FCP_Pre_War_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Lab Coat Commonwealth-->
@@ -1257,6 +1385,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>240</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -1281,6 +1410,11 @@
                 <li>FCP_Pre_War_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Mistress Mistery -->
@@ -1312,6 +1446,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>850</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -1331,6 +1466,14 @@
                 <li>FCP_Pre_War_Costume</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Unique</rarity>
+            </li>
+        </comps>
+		<modExtensions>
+			<li Class="FCP.Core.UniqueThingExtension"></li>
+		</modExtensions>
     </ThingDef>
 
     <!-- Grognak Female -->
@@ -1362,6 +1505,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>750</MarketValue>
             <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
             <ArmorRating_Heat>0.15</ArmorRating_Heat>
@@ -1388,6 +1532,14 @@
                 <li>FCP_Pre_War_Costume</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Unique</rarity>
+            </li>
+        </comps>
+		<modExtensions>
+			<li Class="FCP.Core.UniqueThingExtension"></li>
+		</modExtensions>
     </ThingDef>
 
     <!-- Grognak Male -->
@@ -1419,6 +1571,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>750</MarketValue>
             <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
             <ArmorRating_Heat>0.15</ArmorRating_Heat>
@@ -1444,6 +1597,14 @@
                 <li>FCP_Pre_War_Costume</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Unique</rarity>
+            </li>
+        </comps>
+		<modExtensions>
+			<li Class="FCP.Core.UniqueThingExtension"></li>
+		</modExtensions>
     </ThingDef>
 
     <!-- Inspector -->
@@ -1475,6 +1636,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>820</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -1494,6 +1656,14 @@
                 <li>FCP_Pre_War_Costume</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Unique</rarity>
+            </li>
+        </comps>
+		<modExtensions>
+			<li Class="FCP.Core.UniqueThingExtension"></li>
+		</modExtensions>
     </ThingDef>
 
     <!-- Silver Shroud-->
@@ -1511,6 +1681,7 @@
         <recipeMaker Inherit= "false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
+
                 <Crafting>4</Crafting>
             </skillRequirements>
         <researchPrerequisite>FCP_Research_Costumes</researchPrerequisite>
@@ -1525,6 +1696,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>890</MarketValue>
             <ArmorRating_Heat>0.15</ArmorRating_Heat>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
@@ -1550,6 +1722,14 @@
                 <li>FCP_Pre_War_Costume</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Unique</rarity>
+            </li>
+        </comps>
+		<modExtensions>
+			<li Class="FCP.Core.UniqueThingExtension"></li>
+		</modExtensions>
     </ThingDef>
 
     <!-- Manta Man -->
@@ -1581,6 +1761,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>810</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -1600,6 +1781,14 @@
                 <li>FCP_Pre_War_Costume</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Unique</rarity>
+            </li>
+        </comps>
+		<modExtensions>
+			<li Class="FCP.Core.UniqueThingExtension"></li>
+		</modExtensions>
     </ThingDef>
 
     <!--__ Wastelander Apparel __-->
@@ -1619,6 +1808,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>110</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -1652,6 +1842,11 @@
                 <li>FCP_Wastelander_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Brahmin Skin Outfit -->
@@ -1681,6 +1876,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>90</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -1703,6 +1899,11 @@
                 <li>FCP_Wastelander_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Caravaneer Outfit -->
@@ -1733,6 +1934,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>130</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -1752,6 +1954,11 @@
                 <li>FCP_Wastelander_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Field Hand Female Outfit -->
@@ -1783,6 +1990,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>110</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -1803,6 +2011,11 @@
                 <li>FCP_Wastelander_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Field Hand Male Outfit -->
@@ -1834,6 +2047,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>110</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -1854,6 +2068,11 @@
                 <li>FCP_Wastelander_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Gas Ranger -->
@@ -1883,6 +2102,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>210</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -1899,6 +2119,11 @@
                 <li>OnSkin</li>
             </layers>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Lab Coat Followers -->
@@ -1953,6 +2178,11 @@
                 <li>FCP_Wastelander_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Leather Coat -->
@@ -1979,6 +2209,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>180</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -2001,6 +2232,11 @@
                 <li>FCP_Wastelander_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Merc Adventurer Outfit -->
@@ -2029,6 +2265,7 @@
             <ArmorRating_Sharp>0.07</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.04</ArmorRating_Blunt>
             <Mass>2</Mass>
+            <MarketValue>200</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -2056,6 +2293,11 @@
                 <li>FCP_Wastelander_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Merc Charmer Dress -->
@@ -2084,6 +2326,7 @@
             <ArmorRating_Sharp>0.07</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.04</ArmorRating_Blunt>
             <Mass>2</Mass>
+            <MarketValue>200</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -2111,6 +2354,11 @@
                 <li>FCP_Wastelander_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Merc Charmer Suit -->
@@ -2124,33 +2372,29 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
+        <smeltable>false</smeltable>
         <recipeMaker Inherit= "false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
                 <Crafting>4</Crafting>
             </skillRequirements>
+        <researchPrerequisite>FCP_Research_BusinessWear</researchPrerequisite>
             <recipeUsers>
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
         </recipeMaker>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
-            <ArmorRating_Sharp>0.07</ArmorRating_Sharp>
-            <ArmorRating_Blunt>0.04</ArmorRating_Blunt>
             <Mass>2</Mass>
+            <MarketValue>180</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
         </statBases>
-        <costList>
-            <Leather_Plain>25</Leather_Plain>
-            <Cloth>25</Cloth>
-        </costList>
-        <equippedStatOffsets>
-            <MeleeHitChance>1</MeleeHitChance>            <!-- Melee Weapons +2 -->
-            <ShootingAccuracyPawn>1</ShootingAccuracyPawn>            <!-- Guns +2 -->
-        </equippedStatOffsets>
         <apparel>
             <bodyPartGroups>
                 <li>Torso</li>
@@ -2166,6 +2410,11 @@
                 <li>FCP_Wastelander_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Merc Cruiser Suit -->
@@ -2194,6 +2443,7 @@
             <ArmorRating_Sharp>0.07</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.04</ArmorRating_Blunt>
             <Mass>2</Mass>
+            <MarketValue>210</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -2221,6 +2471,11 @@
                 <li>FCP_Wastelander_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Prospector Outfit -->
@@ -2249,6 +2504,7 @@
             <ArmorRating_Sharp>0.13</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.08</ArmorRating_Blunt>
             <Mass>2</Mass>
+            <MarketValue>200</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -2272,164 +2528,14 @@
                 <li>FCP_Wastelander_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Regulator Duster -->
-
-    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
-        <defName>FCP_Apparel_Regulator_Duster</defName>
-        <label>Regulator Duster</label>
-        <description>An outfit consisting of a black undershirt and a pair of gray canvas pants underneath a long, brown leather overcoat with the sleeves rolled up above the elbow.</description>
-        <graphicData>
-            <texPath>Things/Apparel/Wasteland_Apparel/RegulatorDuster/FCP_Regulator_Duster</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <recipeMaker Inherit= "false">
-            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
-            <skillRequirements>
-                <Crafting>4</Crafting>
-            </skillRequirements>
-            <recipeUsers>
-                <li>FCP_Production_Tailoring_Workbench</li>
-            </recipeUsers>
-        </recipeMaker>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <equippedStatOffsets>
-            <ShootingAccuracyPawn>3</ShootingAccuracyPawn>            <!-- Guns +5 -->
-        </equippedStatOffsets>
-        <costList>
-            <Cloth>20</Cloth>
-            <Leather_Plain>30</Leather_Plain>
-        </costList>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/RegulatorDuster/FCP_Regulator_Duster</wornGraphicPath>
-            <layers>
-                <li>OnSkin</li>
-            </layers>
-            <tags>
-                <li>FCP_Wastelander_Apparel_Regulator</li>
-            </tags>
-        </apparel>
-    </ThingDef>
-
-    <!-- Settler Female Outfit-->
-
-    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
-        <defName>FCP_Apparel_Settler_Female_Outfit</defName>
-        <label>Settler Female Outfit</label>
-        <description>An outfit often associated with the wild frontier; these robust clothes are often seen worn by those living further away from the last strongholds of civilisation. While they are sturdy, they are not exactly protective against bullets, knives, teeth, stingers, or claws.</description>
-        <graphicData>
-            <texPath>Things/Apparel/Wasteland_Apparel/SettlerFemaleOutfit/FCP_Settler_Female_Outfit</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <recipeMaker Inherit= "false">
-            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
-            <skillRequirements>
-                <Crafting>4</Crafting>
-            </skillRequirements>
-            <recipeUsers>
-                <li>FCP_Production_Tailoring_Workbench</li>
-            </recipeUsers>
-        </recipeMaker>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <ArmorRating_Sharp>0.13</ArmorRating_Sharp>
-            <ArmorRating_Blunt>0.07</ArmorRating_Blunt>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <costList>
-            <Cloth>30</Cloth>
-        </costList>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/SettlerFemaleOutfit/FCP_Settler_Female_Outfit</wornGraphicPath>
-            <layers>
-                <li>OnSkin</li>
-            </layers>
-            <gender>Female</gender>
-            <tags>
-                <li>FCP_Wastelander_Apparel</li>
-            </tags>
-        </apparel>
-    </ThingDef>
-
-    <!-- Settler Male Outfit-->
-
-    <ThingDef ParentName="FCP_Apparel_Makeable_Base">
-        <defName>FCP_Apparel_Settler_Male_Outfit</defName>
-        <label>Settler Male Outfit</label>
-        <description>An outfit often associated with the wild frontier; these robust clothes are often seen worn by those living further away from the last strongholds of civilisation. While they are sturdy, they are not exactly protective against bullets, knives, teeth, stingers, or claws.</description>
-        <graphicData>
-            <texPath>Things/Apparel/Wasteland_Apparel/SettlerMaleOutfit/FCP_Settler_Male_Outfit</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>0.90</drawSize>
-        </graphicData>
-        <recipeMaker Inherit= "false">
-            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
-            <skillRequirements>
-                <Crafting>4</Crafting>
-            </skillRequirements>
-            <recipeUsers>
-                <li>FCP_Production_Tailoring_Workbench</li>
-            </recipeUsers>
-        </recipeMaker>
-        <statBases>
-            <MaxHitPoints>120</MaxHitPoints>
-            <WorkToMake>6000</WorkToMake>
-            <Mass>2</Mass>
-            <ArmorRating_Sharp>0.13</ArmorRating_Sharp>
-            <ArmorRating_Blunt>0.07</ArmorRating_Blunt>
-            <Insulation_Cold>3.0</Insulation_Cold>
-            <Insulation_Heat>2.3</Insulation_Heat>
-            <EquipDelay>3</EquipDelay>
-        </statBases>
-        <costList>
-            <Cloth>20</Cloth>
-            <Leather_Plain>30</Leather_Plain>
-        </costList>
-        <apparel>
-            <bodyPartGroups>
-                <li>Torso</li>
-                <li>Shoulders</li>
-                <li>Arms</li>
-                <li>Legs</li>
-            </bodyPartGroups>
-            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/SettlerMaleOutfit/FCP_Settler_Male_Outfit</wornGraphicPath>
-            <layers>
-                <li>OnSkin</li>
-            </layers>
-            <gender>Male</gender>
-            <tags>
-                <li>FCP_Wastelander_Apparel</li>
-            </tags>
-        </apparel>
-    </ThingDef>
-
-    <!-- Sheriff Duster -->
 
     <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Sheriff_Duster</defName>
@@ -2453,6 +2559,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>210</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -2479,6 +2586,11 @@
                 <li>FCP_Wastelander_Apparel_Sheriff</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Surveyor Outfit -->
@@ -2505,6 +2617,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>230</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -2531,6 +2644,11 @@
                 <li>FCP_Wastelander_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Wasteland Doctor Outfit -->
@@ -2559,6 +2677,7 @@
             <Mass>2</Mass>
             <ArmorRating_Sharp>0.13</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.07</ArmorRating_Blunt>
+            <MarketValue>240</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -2585,6 +2704,11 @@
                 <li>FCP_Wastelander_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Wasteland Wanderer Outfit -->
@@ -2611,8 +2735,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
-            <ArmorRating_Sharp>0.13</ArmorRating_Sharp>
-            <ArmorRating_Blunt>0.07</ArmorRating_Blunt>
+            <MarketValue>130</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -2639,6 +2762,11 @@
                 <li>FCP_Wastelander_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!--___ Ghoul Apparel ___-->
@@ -2661,6 +2789,7 @@
             <ArmorRating_Sharp>0.07</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.04</ArmorRating_Blunt>
             <Mass>2</Mass>
+            <MarketValue>1350</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -2683,6 +2812,14 @@
                 <li>FCP_Ghoul_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Unique</rarity>
+            </li>
+        </comps>
+		<modExtensions>
+			<li Class="FCP.Core.UniqueThingExtension"></li>
+		</modExtensions>
     </ThingDef>
 
     <!-- Bright Brotherhood Robe -->
@@ -2732,6 +2869,11 @@
                 <li>FCP_Bright_Brotherhood</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!--___ Slave Apparel ___-->
@@ -2782,6 +2924,11 @@
                 <li>FCP_Slaves_New_Vegas_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Exposed Prostitute Outfit -->
@@ -2811,6 +2958,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>110</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -2830,6 +2978,11 @@
                 <li>FCP_Slaves_New_Vegas_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Prostitute Outfit Female -->
@@ -2856,13 +3009,19 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>150</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
         </statBases>
         <costList>
-            <Leather_Plain>35</Leather_Plain>
+            <Leather_Plain>10</Leather_Plain>
         </costList>
+        <equippedStatOffsets>
+            <SocialImpact>0.20</SocialImpact>            <!-- Speech +10 -->
+            <WorkSpeedGlobal>0.05</WorkSpeedGlobal>            <!-- LUCK +1 -->
+        </equippedStatOffsets>
+        <smeltable>false</smeltable>
         <apparel>
             <bodyPartGroups>
                 <li>Torso</li>
@@ -2879,6 +3038,11 @@
                 <li>FCP_Slaves_New_Vegas_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Prostitute Outfit Male -->
@@ -2905,12 +3069,13 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>150</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
         </statBases>
         <costList>
-            <Leather_Plain>35</Leather_Plain>
+            <Leather_Plain>10</Leather_Plain>
         </costList>
         <apparel>
             <bodyPartGroups>
@@ -2928,6 +3093,11 @@
                 <li>FCP_Slaves_New_Vegas_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Slave Rags -->
@@ -2954,6 +3124,7 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
+            <MarketValue>60</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
@@ -2976,6 +3147,11 @@
                 <li>FCP_Slave_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
 </Defs>

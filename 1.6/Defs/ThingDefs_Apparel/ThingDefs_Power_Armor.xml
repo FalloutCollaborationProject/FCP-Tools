@@ -66,6 +66,9 @@
 		</tradeTags>
 		<building />
 		<comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
 			<li Class="RangerRick_PowerArmor.CompProperties_ApparelDependency" />
 			<li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
 				<workDisables>
@@ -171,6 +174,9 @@
 		</tradeTags>
 		<building />
 		<comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>		
 			<li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
 				<requiredApparels>
 					<li>FCP_Apparel_Power_Armor_Frame</li>
@@ -256,6 +262,9 @@
 		</tradeTags>
 		<building />
 		<comps>
+			<li Class="FCP.Core.CompProperties_LabelColored">
+				<rarity>Rare</rarity>
+			</li>
 			<li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
 				<requiredApparels>
 					<li>FCP_Apparel_Power_Armor_Frame</li>
@@ -341,6 +350,9 @@
 		</tradeTags>
 		<building />
 		<comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>		
 			<li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
 				<requiredApparels>
 					<li>FCP_Apparel_Power_Armor_Frame</li>
@@ -426,6 +438,9 @@
 		</tradeTags>
 		<building />
 		<comps>
+			<li Class="FCP.Core.CompProperties_LabelColored">
+				<rarity>Rare</rarity>
+			</li>
 			<li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
 				<requiredApparels>
 					<li>FCP_Apparel_Power_Armor_Frame</li>

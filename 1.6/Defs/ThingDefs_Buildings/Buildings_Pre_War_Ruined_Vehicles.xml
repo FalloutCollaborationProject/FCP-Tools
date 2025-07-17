@@ -29,6 +29,46 @@
         <killedLeavings>
             <ChunkSlagSteel>2</ChunkSlagSteel>
         </killedLeavings>
+        <comps>
+            <li Class="CompProperties_Usable">
+                <useJob>UseItem</useJob>
+                <useLabel>Collect {0}</useLabel>
+            </li>
+            <li Class="FCP.Core.CompProperties_UseEffectItemBox">
+                <numWeightedDrops>3</numWeightedDrops>
+                <guaranteedDrops>
+                </guaranteedDrops>
+                <weightedDrops>
+                    <li>
+                        <thingDef>FCP_Currency_Caps</thingDef>
+                        <countRange>50~100</countRange>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Army_Helmet</thingDef>
+                        <countRange>1~3</countRange>
+						<!-- <weight>0.5</weight> -->
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Gas_Ranger_Gas_Mask</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.3</weight> -->
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Military_Fatigues</thingDef>
+                        <countRange>1~3</countRange>
+						<!-- <weight>0.4</weight> -->
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Army_Uniform</thingDef>
+                        <countRange>1~3</countRange>
+						<!-- <weight>0.4</weight> -->
+                    </li>
+                </weightedDrops>
+            </li>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Pre-War US Army Vertibird -->
@@ -56,6 +96,46 @@
         <killedLeavings>
             <ChunkSlagSteel>2</ChunkSlagSteel>
         </killedLeavings>
+        <comps>
+            <li Class="CompProperties_Usable">
+                <useJob>UseItem</useJob>
+                <useLabel>Collect {0}</useLabel>
+            </li>
+            <li Class="FCP.Core.CompProperties_UseEffectItemBox">
+                <numWeightedDrops>3</numWeightedDrops>
+                <guaranteedDrops>
+                </guaranteedDrops>
+                <weightedDrops>
+                    <li>
+                        <thingDef>FCP_Currency_Caps</thingDef>
+                        <countRange>50~100</countRange>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Army_Helmet</thingDef>
+                        <countRange>1~3</countRange>
+						<!-- <weight>0.5</weight> -->
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Gas_Ranger_Gas_Mask</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.3</weight> -->
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Military_Fatigues</thingDef>
+                        <countRange>1~3</countRange>
+						<!-- <weight>0.4</weight> -->
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Army_Uniform</thingDef>
+                        <countRange>1~3</countRange>
+						<!-- <weight>0.4</weight> -->
+                    </li>
+                </weightedDrops>
+            </li>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
 </Defs>

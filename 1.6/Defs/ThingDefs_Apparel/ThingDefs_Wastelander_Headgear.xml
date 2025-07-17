@@ -36,6 +36,7 @@
             <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
             <Mass>0.8</Mass>
+            <MarketValue>150</MarketValue>
             <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
             <Insulation_Heat>2</Insulation_Heat>
@@ -53,6 +54,11 @@
                 <li>FCP_Combat_Armors</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Combat Armor Helmet (Fallout 4) -->
@@ -82,6 +88,7 @@
             <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
             <Mass>0.8</Mass>
+            <MarketValue>120</MarketValue>
             <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
             <ArmorRating_Heat>0.10</ArmorRating_Heat>
@@ -100,6 +107,11 @@
                 <li>FCP_Combat_Armor_Modular</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Reinforced Combat Armor Helmet -->
@@ -129,6 +141,7 @@
             <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
             <Mass>0.8</Mass>
+            <MarketValue>250</MarketValue>
             <ArmorRating_Sharp>0.24</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.12</ArmorRating_Blunt>
             <Insulation_Heat>2</Insulation_Heat>
@@ -146,6 +159,11 @@
                 <li>FCP_Combat_Armor_Reinforced</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Reinforced Combat Armor Helmet Mk II-->
@@ -175,6 +193,7 @@
             <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
             <Mass>0.8</Mass>
+            <MarketValue>250</MarketValue>
             <ArmorRating_Sharp>0.24</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.12</ArmorRating_Blunt>
             <Insulation_Heat>2</Insulation_Heat>
@@ -192,6 +211,11 @@
                 <li>FCP_Combat_Armor_Reinforced_MK_II</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!--_____ Apparel _____-->
@@ -225,6 +249,7 @@
             <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
             <Mass>0.8</Mass>
+            <MarketValue>100</MarketValue>
             <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
             <Insulation_Heat>2</Insulation_Heat>
@@ -242,6 +267,11 @@
                 <li>FCP_Combat_Armors</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Radiation Suit helmet-->
@@ -272,6 +302,7 @@
             <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
             <Mass>0.8</Mass>
+            <MarketValue>180</MarketValue>
             <Insulation_Heat>2</Insulation_Heat>
             <EquipDelay>1.5</EquipDelay>
         </statBases>
@@ -290,6 +321,11 @@
                 <li>FCP_Radiation_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Mysterious Stranger Hat -->
@@ -335,6 +371,14 @@
                 <li>FCP_Mysterious_Stranger_Outfit</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Unique</rarity>
+            </li>
+        </comps>
+		<modExtensions>
+			<li Class="FCP.Core.UniqueThingExtension"></li>
+		</modExtensions>
     </ThingDef>
 
     <!--___ Wastelander Apparel ___-->
@@ -382,6 +426,11 @@
                 <li>FCP_Wastelander_Sheriff</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Ranger Gas Mask -->
@@ -406,6 +455,7 @@
             <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
             <Mass>0.8</Mass>
+            <MarketValue>160</MarketValue>
             <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
             <ArmorRating_Blunt>0.05</ArmorRating_Blunt>
             <ArmorRating_Heat>0.10</ArmorRating_Heat>
@@ -427,6 +477,11 @@
                 <li>FCP_Wastelander_Rangers_Rick</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!--___ Slave Apparel ___-->
@@ -456,6 +511,7 @@
             <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
             <Mass>0.8</Mass>
+            <MarketValue>30</MarketValue>
             <Insulation_Heat>2</Insulation_Heat>
             <EquipDelay>1.5</EquipDelay>
         </statBases>
@@ -471,6 +527,11 @@
                 <li>FCP_Slave_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Slave Rag Hood -->
@@ -498,6 +559,7 @@
             <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
             <Mass>0.8</Mass>
+            <MarketValue>35</MarketValue>
             <Insulation_Heat>2</Insulation_Heat>
             <EquipDelay>1.5</EquipDelay>
         </statBases>
@@ -516,6 +578,11 @@
                 <li>FCP_Slave_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
     <!-- Slave Scarf Hat -->
@@ -543,6 +610,7 @@
             <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
             <Mass>0.8</Mass>
+            <MarketValue>35</MarketValue>
             <Insulation_Heat>2</Insulation_Heat>
             <EquipDelay>1.5</EquipDelay>
         </statBases>
@@ -561,6 +629,11 @@
                 <li>FCP_Slave_Apparel</li>
             </tags>
         </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
     </ThingDef>
 
 </Defs>

@@ -31,6 +31,11 @@
 		<smallVolume>true</smallVolume>
 		<allowedArchonexusCount>1000</allowedArchonexusCount>
 		<possessionCount>40</possessionCount>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
 	</ThingDef>
 
 </Defs>

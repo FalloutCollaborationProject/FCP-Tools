@@ -60,6 +60,9 @@
                 </weightedDrops>
             </li>
             <li Class="CompProperties_UseEffectDestroySelf"/>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
         </comps>
     </ThingDef>
 
@@ -126,6 +129,9 @@
                 </weightedDrops>
             </li>
             <li Class="CompProperties_UseEffectDestroySelf"/>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Unique</rarity>
+            </li>
         </comps>
     </ThingDef>
 
@@ -309,16 +315,6 @@
 						<!-- <weight>0.5</weight> -->
                     </li>
                     <li>
-                        <thingDef>FCP_Apparel_Settler_Female_Outfit</thingDef>
-                        <countRange>1</countRange>
-						<!-- <weight>0.5</weight> -->
-                    </li>
-                    <li>
-                        <thingDef>FCP_Apparel_Settler_Male_Outfit</thingDef>
-                        <countRange>1</countRange>
-						<!-- <weight>0.5</weight> -->
-                    </li>
-                    <li>
                         <thingDef>FCP_Apparel_Surveyor_Outfit</thingDef>
                         <countRange>1</countRange>
 						<!-- <weight>0.5</weight> -->
@@ -386,6 +382,9 @@
                 </weightedDrops>
             </li>
             <li Class="CompProperties_UseEffectDestroySelf"/>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
         </comps>
     </ThingDef>
 
@@ -448,13 +447,12 @@
                         <thingDef>FCP_Apparel_Sheriff_Duster</thingDef>
                         <countRange>1</countRange>
                     </li>
-                    <li>
-                        <thingDef>FCP_Apparel_Regulator_Duster</thingDef>
-                        <countRange>1</countRange>
-                    </li>
                 </weightedDrops>
             </li>
             <li Class="CompProperties_UseEffectDestroySelf"/>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
         </comps>
     </ThingDef>
 
@@ -499,11 +497,7 @@
                 <weightedDrops>
                     <li>
                         <thingDef>FCP_Currency_Caps</thingDef>
-                        <countRange>50~100</countRange>
-                    </li>
-                    <li>
-                        <thingDef>FCP_Apparel_Benny_Pre_War_Fancy_Suit_Clean</thingDef>
-                        <countRange>1</countRange>
+                        <countRange>50~1000</countRange>
                     </li>
                     <li>
                         <thingDef>FCP_Apparel_Radiation_Suit</thingDef>
@@ -512,6 +506,9 @@
                 </weightedDrops>
             </li>
             <li Class="CompProperties_UseEffectDestroySelf"/>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Unique</rarity>
+            </li>
         </comps>
     </ThingDef>
 
