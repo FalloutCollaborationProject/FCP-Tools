@@ -168,29 +168,6 @@
         </subSounds>
     </SoundDef>
 
-    <!-- 12.7mm Pistol -->
-
-    <SoundDef>
-        <defName>FCP_Sound_Shot_127mm_Pistol</defName>
-        <context>MapOnly</context>
-        <eventNames />
-        <maxSimultaneous>1</maxSimultaneous>
-        <subSounds>
-            <li>
-                <grains>
-                    <li Class="AudioGrain_Clip">
-                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_127mm_Pistol</clipPath>
-                    </li>
-                </grains>
-                <volumeRange>
-                    <min>39</min>
-                    <max>41</max>
-                </volumeRange>
-                <sustainLoop>False</sustainLoop>
-            </li>
-        </subSounds>
-    </SoundDef>
-
     <!-- Silenced .22 Pistol -->
 
     <SoundDef>
@@ -322,29 +299,6 @@
                 <grains>
                     <li Class="AudioGrain_Clip">
                         <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_FO4_Assault_Rifle</clipPath>
-                    </li>
-                </grains>
-                <volumeRange>
-                    <min>39</min>
-                    <max>41</max>
-                </volumeRange>
-                <sustainLoop>False</sustainLoop>
-            </li>
-        </subSounds>
-    </SoundDef>
-
-    <!-- Service Rifle -->
-
-    <SoundDef>
-        <defName>FCP_Sound_Shot_Service_Rifle</defName>
-        <context>MapOnly</context>
-        <eventNames />
-        <maxSimultaneous>1</maxSimultaneous>
-        <subSounds>
-            <li>
-                <grains>
-                    <li Class="AudioGrain_Clip">
-                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Service_Rifle</clipPath>
                     </li>
                 </grains>
                 <volumeRange>
