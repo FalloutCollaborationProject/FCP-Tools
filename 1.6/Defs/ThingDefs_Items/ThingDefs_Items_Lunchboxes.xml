@@ -379,6 +379,36 @@
                         <countRange>1</countRange>
 						<!-- <weight>0.5</weight> -->
                     </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Combat_Helmet</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.3</weight> -->
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Combat_Armor_Helmet</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.3</weight> -->
+                    </li>
+                    <li>
+                        <thingDef>FCP_Food_Salisbury_Steak</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.7</weight> -->
+                    </li>
+                    <li>
+                        <thingDef>FCP_Food_Cram</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.7</weight> -->
+                    </li>
+                    <li>
+                        <thingDef>FCP_Food_Sugar_Bombs</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.7</weight> -->
+                    </li>
+                    <li>
+                        <thingDef>FCP_Food_Nuka_Cola</thingDef>
+                        <countRange>1</countRange>
+						<!-- <weight>0.7</weight> -->
+                    </li>
                 </weightedDrops>
             </li>
             <li Class="CompProperties_UseEffectDestroySelf"/>
@@ -447,6 +477,35 @@
                         <thingDef>FCP_Apparel_Sheriff_Duster</thingDef>
                         <countRange>1</countRange>
                     </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Combat_Armor</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+
+                    <li>
+                        <thingDef>FCP_Apparel_Reinforced_Combat_Armor</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Reinforced_Combat_Armor_Helmet</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Combat_Armor_Light</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Combat_Armor_Modular_Light</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Combat_Armor_Modular_Sturdy</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Combat_Armor_Heavy</thingDef>
+                        <countRange>1</countRange>
+                    </li>
                 </weightedDrops>
             </li>
             <li Class="CompProperties_UseEffectDestroySelf"/>
@@ -501,6 +560,50 @@
                     </li>
                     <li>
                         <thingDef>FCP_Apparel_Radiation_Suit</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Power_Armor_Frame</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Power_Armor_T45_Helmet</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Power_Armor_T51_Helmet</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Power_Armor_T60_Helmet</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Power_Armor_X01_Helmet</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Reinforced_Combat_Armor_II</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Reinforced_Combat_Armor_Helmet_Mk_II</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Power_Armor_T45Armor</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Power_Armor_T51Armor</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Power_Armor_T60Armor</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_X01_Power_Armor</thingDef>
                         <countRange>1</countRange>
                     </li>
                 </weightedDrops>
