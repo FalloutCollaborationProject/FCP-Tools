@@ -53,7 +53,7 @@
         <label>Balding</label>
         <styleGender>Male</styleGender>
         <texPath>Hairs/Male/Balding/Balding</texPath>
-        <category>Average</category>
+        <category>Urban</category>
         <styleTags>
             <li>Wasteland</li>
             <li>Tribal</li>
@@ -67,7 +67,7 @@
         <label>Buzz Saw</label>
         <styleGender>Male</styleGender>
         <texPath>Hairs/Male/Buzz_Saw/Buzz_Saw</texPath>
-        <category>Punk</category>
+        <category>Urban</category>
         <styleTags>
             <li>Punk</li>
             <li>Raider</li>
@@ -81,7 +81,7 @@
         <label>Comb Over</label>
         <styleGender>Male</styleGender>
         <texPath>Hairs/Male/Comb_Over/Comb_Over</texPath>
-        <category>Average</category>
+        <category>Urban</category>
         <styleTags>
             <li>Urban</li>
         </styleTags>
@@ -94,7 +94,7 @@
         <label>High Riser</label>
         <styleGender>Male</styleGender>
         <texPath>Hairs/Male/High_Riser/High_Riser</texPath>
-        <category>Punk</category>
+        <category>Urban</category>
         <styleTags>
             <li>Punk</li>
             <li>Raider</li>
@@ -122,7 +122,7 @@
         <label>Punked</label>
         <styleGender>Male</styleGender>
         <texPath>Hairs/Male/Punked/Punked</texPath>
-        <category>Punk</category>
+        <category>Urban</category>
         <styleTags>
             <li>Punk</li>
             <li>Raider</li>
@@ -136,7 +136,7 @@
         <label>Shaggy Suave</label>
         <styleGender>Male</styleGender>
         <texPath>Hairs/Male/Shaggy_Suave/Shaggy_Suave</texPath>
-        <category>Average</category>
+        <category>Urban</category>
         <styleTags>
             <li>Urban</li>
             <li>Wasteland</li>
@@ -163,7 +163,7 @@
         <label>Terrosaur</label>
         <styleGender>Male</styleGender>
         <texPath>Hairs/Male/Terrosaur/Terrosaur</texPath>
-        <category>Punk</category>
+        <category>Urban</category>
         <styleTags>
             <li>Punk</li>
             <li>Raider</li>
@@ -192,7 +192,7 @@
         <label>Warhawk</label>
         <styleGender>Male</styleGender>
         <texPath>Hairs/Male/Warhawk/Warhawk</texPath>
-        <category>Punk</category>
+        <category>Urban</category>
         <styleTags>
             <li>Punk</li>
             <li>Raider</li>
@@ -207,7 +207,7 @@
         <label>Waster</label>
         <styleGender>Male</styleGender>
         <texPath>Hairs/Male/Waster/Waster</texPath>
-        <category>Average</category>
+        <category>Urban</category>
         <styleTags>
             <li>Wasteland</li>
             <li>Tribal</li>
@@ -224,7 +224,7 @@
         <label>Domestic Goddess</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Domestic_Goddess/Domestic_Goddess</texPath>
-        <category>Average</category>
+        <category>Urban</category>
         <styleTags>
             <li>Urban</li>
             <li>Traditional</li>
@@ -238,7 +238,7 @@
         <label>Fairy Tails</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Fairy_Tails/Fairy_Tails</texPath>
-        <category>Average</category>
+        <category>Urban</category>
         <styleTags>
             <li>Urban</li>
             <li>Young</li>
@@ -252,7 +252,7 @@
         <label>Fallen Angel</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Fallen_Angel/Fallen_Angel</texPath>
-        <category>Average</category>
+        <category>Urban</category>
         <styleTags>
             <li>Urban</li>
             <li>Wasteland</li>
@@ -266,7 +266,7 @@
         <label>Frazzled</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Frazzled/Frazzled</texPath>
-        <category>Average</category>
+        <category>Urban</category>
         <styleTags>
             <li>Wasteland</li>
             <li>Rough</li>
@@ -280,7 +280,7 @@
         <label>Iron Maiden</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Iron_Maiden/Iron_Maiden</texPath>
-        <category>Punk</category>
+        <category>Urban</category>
         <styleTags>
             <li>Punk</li>
             <li>Raider</li>
@@ -295,7 +295,7 @@
         <label>Lil Devil</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Lil_Devil/Lil_Devil</texPath>
-        <category>Punk</category>
+        <category>Urban</category>
         <styleTags>
             <li>Punk</li>
             <li>Raider</li>
@@ -309,7 +309,7 @@
         <label>No Nonsense</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/No_Nonsense/No_Nonsense</texPath>
-        <category>Average</category>
+        <category>Urban</category>
         <styleTags>
             <li>Urban</li>
             <li>Professional</li>
@@ -323,7 +323,7 @@
         <label>Prim N Proper</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Prim_N_Proper/Prim_N_Proper</texPath>
-        <category>Average</category>
+        <category>Urban</category>
         <styleTags>
             <li>Urban</li>
             <li>Traditional</li>
@@ -338,7 +338,7 @@
         <label>Rough Nite</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Rough_Nite/Rough_Nite</texPath>
-        <category>Average</category>
+        <category>Urban</category>
         <styleTags>
             <li>Wasteland</li>
             <li>Rough</li>
@@ -352,7 +352,7 @@
         <label>Rude Ridge</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Rude_Ridge/Rude_Ridge</texPath>
-        <category>Punk</category>
+        <category>Urban</category>
         <styleTags>
             <li>Punk</li>
             <li>Raider</li>
@@ -366,7 +366,7 @@
         <label>Seductress</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Seductress/Seductress</texPath>
-        <category>Average</category>
+        <category>Urban</category>
         <styleTags>
             <li>Urban</li>
             <li>Elegant</li>
@@ -380,7 +380,7 @@
         <label>Shaved</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Shaved/Shaved</texPath>
-        <category>Average</category>
+        <category>Urban</category>
         <styleTags>
             <li>Bald</li>
             <li>Punk</li>
@@ -395,7 +395,7 @@
         <label>The Sophisticate</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/The_Sophisticate/The_Sophisticate</texPath>
-        <category>Average</category>
+        <category>Urban</category>
         <styleTags>
             <li>Urban</li>
             <li>Elegant</li>
@@ -410,7 +410,7 @@
         <label>Unladylike</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Unladylike/Unladylike</texPath>
-        <category>Average</category>
+        <category>Urban</category>
         <styleTags>
             <li>Wasteland</li>
             <li>Rough</li>
@@ -424,7 +424,7 @@
         <label>Wendy The Welder</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Wendy_The_Welder/Wendy_The_Welder</texPath>
-        <category>Average</category>
+        <category>Urban</category>
         <styleTags>
             <li>Industrial</li>
             <li>Working</li>
@@ -441,7 +441,7 @@
         <label>Bedraggled</label>
         <styleGender>MaleUsually</styleGender>
         <texPath>Hairs/Unisex/Bedraggled/Bedraggled</texPath>
-        <category>Average</category>
+        <category>Urban</category>
         <styleTags>
             <li>Wasteland</li>
             <li>Rough</li>
@@ -456,7 +456,7 @@
         <label>Blast Back</label>
         <styleGender>MaleUsually</styleGender>
         <texPath>Hairs/Unisex/Blast_Back/Blast_Back</texPath>
-        <category>Average</category>
+        <category>Urban</category>
         <styleTags>
             <li>Wasteland</li>
             <li>Rough</li>
@@ -470,7 +470,7 @@
         <label>Buzz Cut</label>
         <styleGender>MaleUsually</styleGender>
         <texPath>Hairs/Unisex/Buzz_Cut/Buzz_Cut</texPath>
-        <category>Average</category>
+        <category>Urban</category>
         <styleTags>
             <li>Military</li>
             <li>Short</li>
@@ -484,7 +484,7 @@
         <label>Clean Cut</label>
         <styleGender>MaleUsually</styleGender>
         <texPath>Hairs/Unisex/Clean_Cut/Clean_Cut</texPath>
-        <category>Average</category>
+        <category>Urban</category>
         <styleTags>
             <li>Urban</li>
             <li>Professional</li>
@@ -498,7 +498,7 @@
         <label>Mangy</label>
         <styleGender>MaleUsually</styleGender>
         <texPath>Hairs/Unisex/Mangy/Mangy</texPath>
-        <category>Average</category>
+        <category>Urban</category>
         <styleTags>
             <li>Wasteland</li>
             <li>Rough</li>
@@ -513,7 +513,7 @@
         <label>Sarge</label>
         <styleGender>MaleUsually</styleGender>
         <texPath>Hairs/Unisex/Sarge/Sarge</texPath>
-        <category>Average</category>
+        <category>Urban</category>
         <styleTags>
             <li>Military</li>
             <li>Short</li>
@@ -527,7 +527,7 @@
         <label>The Unsettler</label>
         <styleGender>MaleUsually</styleGender>
         <texPath>Hairs/Unisex/The_Unsettler/The_Unsettler</texPath>
-        <category>Average</category>
+        <category>Urban</category>
         <styleTags>
             <li>Wasteland</li>
             <li>Rough</li>
