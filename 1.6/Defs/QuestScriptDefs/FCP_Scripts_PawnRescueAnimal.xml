@@ -2,6 +2,7 @@
 <Defs>
 
     <!-- Parent Quest Script for Animal Rescue -->
+
     <QuestScriptDef Name="FCP_Quest_PawnRescueAnimal_Base" Abstract="true">
         <canGiveRoyalFavor>true</canGiveRoyalFavor>
         <questNameRules>
@@ -146,6 +147,7 @@
     </QuestScriptDef>
 
     <!-- Small Animal Rescue Quest -->
+
     <QuestScriptDef ParentName="FCP_Quest_PawnRescueAnimal_Base">
         <defName>FCP_Quest_PawnRescueAnimal_Small</defName>
         <rootSelectionWeight>1.0</rootSelectionWeight>
@@ -190,6 +192,7 @@
     </QuestScriptDef>
 
     <!-- Medium Animal Rescue Quest -->
+
     <QuestScriptDef ParentName="FCP_Quest_PawnRescueAnimal_Base">
         <defName>FCP_Quest_PawnRescueAnimal_Medium</defName>
         <rootSelectionWeight>0.8</rootSelectionWeight>
@@ -234,6 +237,7 @@
     </QuestScriptDef>
 
     <!-- Large Animal Rescue Quest -->
+
     <QuestScriptDef ParentName="FCP_Quest_PawnRescueAnimal_Base">
         <defName>FCP_Quest_PawnRescueAnimal_Large</defName>
         <rootSelectionWeight>0.5</rootSelectionWeight>
@@ -278,6 +282,7 @@
     </QuestScriptDef>
 
     <!-- Legacy quest for backwards compatibility -->
+
     <QuestScriptDef ParentName="FCP_Quest_PawnRescueAnimal_Base">
         <defName>FCP_Quest_PawnRescueAnimal</defName>
         <rootSelectionWeight>0.0</rootSelectionWeight>
