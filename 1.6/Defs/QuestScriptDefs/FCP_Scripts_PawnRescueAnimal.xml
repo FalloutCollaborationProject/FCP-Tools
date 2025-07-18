@@ -25,7 +25,7 @@
             <nodes>
                 <li Class="FCP_RadiantQuests.QuestNode_GetLeaderOfFaction">
                     <storeAs>asker</storeAs>
-                    <factionDef>OutlanderCivil</factionDef>
+                    <factionDef>FCP_Faction_Hidden_Wastelanders</factionDef>
                 </li>
                 <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>enemyFaction</storeAs>
@@ -36,7 +36,7 @@
                 <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>prisonerFaction</storeAs>
                     <factionDefs>
-                        <li>OutlanderCivil</li>
+                        <li>FCP_Faction_Hidden_Wastelanders</li>
                     </factionDefs>
                 </li>
                 <!-- These will be overridden in child definitions -->
@@ -165,7 +165,7 @@
             <nodes>
                 <li Class="FCP_RadiantQuests.QuestNode_GetLeaderOfFaction">
                     <storeAs>asker</storeAs>
-                    <factionDef>OutlanderCivil</factionDef>
+                    <factionDef>FCP_Faction_Hidden_Wastelanders</factionDef>
                 </li>
                 <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>enemyFaction</storeAs>
@@ -176,7 +176,7 @@
                 <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>prisonerFaction</storeAs>
                     <factionDefs>
-                        <li>OutlanderCivil</li>
+                        <li>FCP_Faction_Hidden_Wastelanders</li>
                     </factionDefs>
                 </li>
                 <li Class="FCP_RadiantQuests.QuestNode_GetPawnKind">
@@ -210,7 +210,7 @@
             <nodes>
                 <li Class="FCP_RadiantQuests.QuestNode_GetLeaderOfFaction">
                     <storeAs>asker</storeAs>
-                    <factionDef>OutlanderCivil</factionDef>
+                    <factionDef>FCP_Faction_Hidden_Wastelanders</factionDef>
                 </li>
                 <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>enemyFaction</storeAs>
@@ -221,7 +221,7 @@
                 <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>prisonerFaction</storeAs>
                     <factionDefs>
-                        <li>OutlanderCivil</li>
+                        <li>FCP_Faction_Hidden_Wastelanders</li>
                     </factionDefs>
                 </li>
                 <li Class="FCP_RadiantQuests.QuestNode_GetPawnKind">
@@ -255,7 +255,7 @@
             <nodes>
                 <li Class="FCP_RadiantQuests.QuestNode_GetLeaderOfFaction">
                     <storeAs>asker</storeAs>
-                    <factionDef>OutlanderCivil</factionDef>
+                    <factionDef>FCP_Faction_Hidden_Wastelanders</factionDef>
                 </li>
                 <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>enemyFaction</storeAs>
@@ -266,7 +266,7 @@
                 <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>prisonerFaction</storeAs>
                     <factionDefs>
-                        <li>OutlanderCivil</li>
+                        <li>FCP_Faction_Hidden_Wastelanders</li>
                     </factionDefs>
                 </li>
                 <li Class="FCP_RadiantQuests.QuestNode_GetPawnKind">
@@ -298,7 +298,7 @@
             <nodes>
                 <li Class="FCP_RadiantQuests.QuestNode_GetLeaderOfFaction">
                     <storeAs>asker</storeAs>
-                    <factionDef>OutlanderCivil</factionDef>
+                    <factionDef>FCP_Faction_Hidden_Wastelanders</factionDef>
                 </li>
                 <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>enemyFaction</storeAs>
@@ -309,7 +309,7 @@
                 <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>prisonerFaction</storeAs>
                     <factionDefs>
-                        <li>OutlanderCivil</li>
+                        <li>FCP_Faction_Hidden_Wastelanders</li>
                     </factionDefs>
                 </li>
                 <li Class="FCP_RadiantQuests.QuestNode_GetPawnKind">
