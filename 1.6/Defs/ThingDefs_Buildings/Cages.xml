@@ -154,7 +154,8 @@
                     <!--Animal kind defs-->
                     <li>Lynx</li>
                     <li>Husky</li>
-                    <li>Wolf</li>
+                    <li>Wolf_Timber</li>
+                    <li>Wolf_Arctic</li>
                     <li>Deer</li>
                     <li>Alpaca</li>
                     <li>Pig</li>
