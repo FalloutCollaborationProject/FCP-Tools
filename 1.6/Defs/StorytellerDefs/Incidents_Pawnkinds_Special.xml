@@ -26,7 +26,7 @@
                     <li>FCP_Backstory_Wastelander_Child</li>
                 </categoriesChildhood>
                 <categoriesAdulthood>
-                    <li>FCP_Backstory_Mysterious_Stranger</li>
+                    <li>FCP_Backstory_Unique_Mysterious_Stranger</li>
                 </categoriesAdulthood>
             </li>
         </backstoryFiltersOverride>
