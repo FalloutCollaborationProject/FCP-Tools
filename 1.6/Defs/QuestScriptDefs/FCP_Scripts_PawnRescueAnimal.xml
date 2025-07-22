@@ -287,7 +287,7 @@
         <defName>FCP_Quest_PawnRescueAnimal</defName>
         <rootSelectionWeight>0.0</rootSelectionWeight>
         <rootMinPoints>50</rootMinPoints>
-        <defaultChallengeRating>1</defaultChallengeRating>
+        <!--defaultChallengeRating>1</defaultChallengeRating-->
         <expireDaysRange>4~8</expireDaysRange>
         <questDescriptionRules>
             <rulesStrings>
