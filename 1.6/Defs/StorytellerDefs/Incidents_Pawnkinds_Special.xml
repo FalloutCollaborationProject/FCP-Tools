@@ -22,11 +22,11 @@
         <backstoryFiltersOverride>
             <li>
                 <categoriesChildhood>
-                    <li MayRequire="Rick.FCP.NCR">FCP_NCR_Child</li>
-                    <li>FCP_Wastelander_Child</li>
+                    <li MayRequire="Rick.FCP.NCR">FCP_Backstory_NCR_Child</li>
+                    <li>FCP_Backstory_Wastelander_Child</li>
                 </categoriesChildhood>
                 <categoriesAdulthood>
-                    <li>FCP_Unique_Mysterious_Stranger</li>
+                    <li>FCP_Backstory_Mysterious_Stranger</li>
                 </categoriesAdulthood>
             </li>
         </backstoryFiltersOverride>
