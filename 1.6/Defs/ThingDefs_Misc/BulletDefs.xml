@@ -22,6 +22,42 @@
         </projectile>
     </ThingDef>
 
+    <!-- .223 Bullet -->
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_223mm</defName>
+        <label>.223 Bullet</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+            <speed>70</speed>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>11</damageAmountBase>
+            <armorPenetrationBase>0.28</armorPenetrationBase>
+            <stoppingPower>0.7</stoppingPower>
+        </projectile>
+    </ThingDef>
+
+    <!-- BB Pellet -->
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_BB</defName>
+        <label>BB Pellet</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+            <speed>40</speed>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>3</damageAmountBase>
+            <armorPenetrationBase>0.05</armorPenetrationBase>
+            <stoppingPower>0.1</stoppingPower>
+        </projectile>
+    </ThingDef>
+
     <!-- 12.7mm Bullet -->
 
     <ThingDef ParentName="BaseBullet">
