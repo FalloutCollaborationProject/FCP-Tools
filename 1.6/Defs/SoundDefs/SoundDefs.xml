@@ -459,7 +459,7 @@
             <li>
                 <grains>
                     <li Class="AudioGrain_Clip">
-                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Combat_Rifle</clipPath>
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Assault_Carbine</clipPath>
                     </li>
                 </grains>
                 <volumeRange>
@@ -622,7 +622,7 @@
             <li>
                 <grains>
                     <li Class="AudioGrain_Clip">
-                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_10mm_SMG</clipPath>
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_10mm_Pistol</clipPath>
                     </li>
                 </grains>
                 <volumeRange>
@@ -668,7 +668,7 @@
             <li>
                 <grains>
                     <li Class="AudioGrain_Clip">
-                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_127mm_SMG</clipPath>
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_127mm_Pistol</clipPath>
                     </li>
                 </grains>
                 <volumeRange>
@@ -691,7 +691,7 @@
             <li>
                 <grains>
                     <li Class="AudioGrain_Clip">
-                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_45mm_SMG</clipPath>
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_45mm_AutoPistol</clipPath>
                     </li>
                 </grains>
                 <volumeRange>
@@ -902,7 +902,7 @@
             <li>
                 <grains>
                     <li Class="AudioGrain_Clip">
-                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Minigun</clipPath>
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Assault_Carbine</clipPath>
                     </li>
                 </grains>
                 <volumeRange>
