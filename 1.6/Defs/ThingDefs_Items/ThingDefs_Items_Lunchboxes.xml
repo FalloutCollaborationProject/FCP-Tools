@@ -404,11 +404,6 @@
                         <countRange>1</countRange>
 						<!-- <weight>0.7</weight> -->
                     </li>
-                    <li>
-                        <thingDef>FCP_Food_Nuka_Cola</thingDef>
-                        <countRange>1</countRange>
-						<!-- <weight>0.7</weight> -->
-                    </li>
                     <li MayRequire="Rick.FCP.NCR">
                         <thingDef>FCP_Apparel_NCR_Engineer_Jumpsuit</thingDef>
                         <countRange>1</countRange>
@@ -530,32 +525,12 @@
 						<!-- <weight>0.4</weight> -->
                     </li>
                     <li MayRequire="Rick.FCP.BallisticWeapons">
-                        <thingDef>FCP_Gun_Pipe_Revolver</thingDef>
-                        <countRange>1</countRange>
-						<!-- <weight>0.3</weight> -->
-                    </li>
-                    <li MayRequire="Rick.FCP.BallisticWeapons">
-                        <thingDef>FCP_Gun_Pipe_BoltAction_Rifle</thingDef>
-                        <countRange>1</countRange>
-						<!-- <weight>0.4</weight> -->
-                    </li>
-                    <li MayRequire="Rick.FCP.BallisticWeapons">
-                        <thingDef>FCP_Gun_Pipe_Burst</thingDef>
-                        <countRange>1</countRange>
-						<!-- <weight>0.4</weight> -->
-                    </li>
-                    <li MayRequire="Rick.FCP.BallisticWeapons">
                         <thingDef>FCP_Gun_32_Hunting_Rifle</thingDef>
                         <countRange>1</countRange>
 						<!-- <weight>0.4</weight> -->
                     </li>
                     <li MayRequire="Rick.FCP.BallisticWeapons">
                         <thingDef>FCP_Gun_Varmint_Rifle</thingDef>
-                        <countRange>1</countRange>
-						<!-- <weight>0.4</weight> -->
-                    </li>
-                    <li MayRequire="Rick.FCP.BallisticWeapons">
-                        <thingDef>FCP_Gun_9mm_Hunting_Rifle</thingDef>
                         <countRange>1</countRange>
 						<!-- <weight>0.4</weight> -->
                     </li>
@@ -660,11 +635,11 @@
                         <countRange>1</countRange>
                     </li>
                     <li>
-                        <thingDef>FCP_Apparel_Combat_Armor_Modular_Light</thingDef>
+                        <thingDef>FCP_Apparel_Combat_Armor_Light</thingDef>
                         <countRange>1</countRange>
                     </li>
                     <li>
-                        <thingDef>FCP_Apparel_Combat_Armor_Modular_Sturdy</thingDef>
+                        <thingDef>FCP_Apparel_Combat_Armor_Sturdy</thingDef>
                         <countRange>1</countRange>
                     </li>
                     <li>
@@ -748,10 +723,6 @@
                         <countRange>1</countRange>
                     </li>
                     <li MayRequire="Rick.FCP.BallisticWeapons">
-                        <thingDef>FCP_Gun_Minigun_FO3</thingDef>
-                        <countRange>1</countRange>
-                    </li>
-                    <li MayRequire="Rick.FCP.BallisticWeapons">
                         <thingDef>FCP_Gun_556_Pistol</thingDef>
                         <countRange>1</countRange>
                     </li>
@@ -785,14 +756,6 @@
                     </li>
                     <li MayRequire="Rick.FCP.BallisticWeapons">
                         <thingDef>FCP_Gun_Combat_Rifle_Standard</thingDef>
-                        <countRange>1</countRange>
-                    </li>
-                    <li MayRequire="Rick.FCP.BallisticWeapons">
-                        <thingDef>FCP_Gun_Combat_Rifle_Scoped</thingDef>
-                        <countRange>1</countRange>
-                    </li>
-                    <li MayRequire="Rick.FCP.BallisticWeapons">
-                        <thingDef>FCP_Gun_Combat_Rifle_Marksman</thingDef>
                         <countRange>1</countRange>
                     </li>
                     <li MayRequire="Rick.FCP.BallisticWeapons">
