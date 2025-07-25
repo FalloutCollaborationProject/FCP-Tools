@@ -123,6 +123,11 @@
         </apparelTags>
         <backstoryFiltersOverride>
             <li>
+                <categoriesAdulthood>
+                    <li>FCP_Legion</li>
+                </categoriesAdulthood>
+            </li>
+            <li>
                 <categoriesChildhood>
                     <li>FCP_Backstory_Legion_Child</li>
                 </categoriesChildhood>
