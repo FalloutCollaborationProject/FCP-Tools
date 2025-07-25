@@ -261,6 +261,23 @@
             <speed>70</speed>
         </projectile>
     </ThingDef>
+    
+    <!-- 357mm Bullet -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_357mm</defName>
+        <label>357mm Bullet</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>10</damageAmountBase>
+            <stoppingPower>5</stoppingPower>
+            <speed>70</speed>
+        </projectile>
+    </ThingDef>
 
     <!-- Anti-Material Rifle -->
 
