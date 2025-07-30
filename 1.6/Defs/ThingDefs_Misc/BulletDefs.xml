@@ -172,6 +172,26 @@
         </projectile>
     </ThingDef>
 
+    <!-- 14mm Bullet -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_14mm</defName>
+        <label>14mm bullet</label>
+        <description>A powerful 14mm round for high-caliber pistols.</description>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>22</damageAmountBase>
+            <speed>70</speed>
+            <armorPenetrationBase>0.35</armorPenetrationBase>
+            <stoppingPower>1.0</stoppingPower>
+        </projectile>
+    </ThingDef>
+
+
     <!-- .45 ACP Bullet -->
 
     <ThingDef ParentName="BaseBullet">
@@ -276,6 +296,25 @@
             <damageAmountBase>10</damageAmountBase>
             <stoppingPower>5</stoppingPower>
             <speed>70</speed>
+        </projectile>
+    </ThingDef>
+
+    <!-- .50 AE Bullet -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_50AE</defName>
+        <label>.50 AE bullet</label>
+        <description>A massive .50 Action Express round for the most powerful handguns.</description>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>28</damageAmountBase>
+            <speed>65</speed>
+            <armorPenetrationBase>0.45</armorPenetrationBase>
+            <stoppingPower>1.2</stoppingPower>
         </projectile>
     </ThingDef>
 
