@@ -519,11 +519,10 @@
                         <countRange>1</countRange>
 						<!-- <weight>0.3</weight> -->
                     </li>
-                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                    <!-- <li MayRequire="Rick.FCP.BallisticWeapons">
                         <thingDef>FCP_Gun_32_Pistol</thingDef>
                         <countRange>1</countRange>
-						<!-- <weight>0.4</weight> -->
-                    </li>
+                    </li> -->
                     <li MayRequire="Rick.FCP.BallisticWeapons">
                         <thingDef>FCP_Gun_32_Hunting_Rifle</thingDef>
                         <countRange>1</countRange>
@@ -786,10 +785,10 @@
                         <thingDef>FCP_Gun_127mm_SMG</thingDef>
                         <countRange>1</countRange>
                     </li>
-                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                    <!-- <li MayRequire="Rick.FCP.BallisticWeapons">
                         <thingDef>FCP_Gun_Submachine_Gun</thingDef>
                         <countRange>1</countRange>
-                    </li>
+                    </li> -->
                     <li MayRequire="Rick.FCP.BallisticWeapons">
                         <thingDef>FCP_Gun_Silenced_22_SMG</thingDef>
                         <countRange>1</countRange>
