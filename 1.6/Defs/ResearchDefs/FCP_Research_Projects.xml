@@ -51,7 +51,7 @@
     <ResearchProjectDef>
         <defName>FCP_Research_Basic_Agriculture</defName>
         <label>Basic Agriculture</label>
-        <description>Research into the cultivation and farming of various mushroom species.</description>
+        <description>Research into the cultivation and farming of various plant species.</description>
         <baseCost>100</baseCost>
         <techLevel>Industrial</techLevel>
         <researchViewX>1</researchViewX>
