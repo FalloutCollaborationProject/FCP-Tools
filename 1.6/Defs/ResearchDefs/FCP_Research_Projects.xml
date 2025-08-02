@@ -548,7 +548,7 @@
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
-    <!-- Med-Ex Production -->
+    <!-- Med-X Production -->
 
     <ResearchProjectDef>
         <defName>FCP_Research_MedX_Production</defName>
@@ -574,7 +574,7 @@
         <baseCost>1500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
-            <li>FCP_Research_MedEx_Production</li>
+            <li>FCP_Research_MedX_Production</li>
         </prerequisites>
         <researchViewX>8</researchViewX>
         <researchViewY>6</researchViewY>
@@ -647,12 +647,12 @@
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
-    <!-- Rad-Ex Production -->
+    <!-- Rad-X Production -->
 
     <ResearchProjectDef>
-        <defName>FCP_Research_RadEx_Production</defName>
-        <label>Rad-Ex Production</label>
-        <description>Research into the techniques and methods for producing Rad-Ex.</description>
+        <defName>FCP_Research_RadX_Production</defName>
+        <label>Rad-X Production</label>
+        <description>Research into the techniques and methods for producing Rad-X.</description>
         <baseCost>1000</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
