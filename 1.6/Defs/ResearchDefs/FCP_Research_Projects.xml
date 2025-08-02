@@ -551,9 +551,9 @@
     <!-- Med-Ex Production -->
 
     <ResearchProjectDef>
-        <defName>FCP_Research_MedEx_Production</defName>
-        <label>Med-Ex Production</label>
-        <description>Research into the techniques and methods for producing Med-Ex.</description>
+        <defName>FCP_Research_MedX_Production</defName>
+        <label>Med-X Production</label>
+        <description>Research into the techniques and methods for producing Med-X.</description>
         <baseCost>1000</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
