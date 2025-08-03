@@ -3,7 +3,7 @@
 
 	<!--__________ Power Armor - Basic __________-->
 
-		<!--_____ Base _____-->
+	<!--_____ Base _____-->
 	
 	<ThingDef ParentName="ApparelBase" Name="FCP_Apparel_Power_Armor_Base" Abstract="true">
 		<thingSetMakerTags>
