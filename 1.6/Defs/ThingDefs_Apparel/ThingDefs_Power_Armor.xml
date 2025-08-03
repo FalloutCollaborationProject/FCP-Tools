@@ -56,9 +56,9 @@
 		</tradeTags>
 		<building />
 		<comps>
-            		<li Class="FCP.Core.CompProperties_LabelColored">
-                		<rarity>Rare</rarity>
-           		 </li>		
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+           	</li>		
 			<li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
 				<requiredApparels>
 					<li>FCP_Apparel_Power_Armor_Frame</li>
@@ -67,9 +67,9 @@
 					<li>Construction</li>
 				</workDisables>
 				<canSleep>False</canSleep>
-				<ignoresLegs />
-				<requiredTrait />
-				<hediffOnEmptyFuel />
+				<ignoresLegs>True</ignoresLegs>
+				<requiredTrait>FCP_Trait_Power_Armor_Trained</requiredTrait>
+				<hediffOnEmptyFuel>FCP_Hediff_Power_Armor_Empty_Fusion_Core</hediffOnEmptyFuel>
 			</li>
 		</comps>
 		<modExtensions>
