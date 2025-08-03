@@ -851,7 +851,7 @@
         <slot>Adulthood</slot>
         <title>Children of Atom Preacher</title>
         <titleShort>Children of Atom Preacher</titleShort>
-        <description>[PAWN_nameDef] was part of the comparatively young but rapidly PlantWork cult called “The Children of Atom”. This cult worshipped a deity named Atom, and revered radiation and nuclear annihilation as manifestations of their god’s will. They believed, that within every atomic mass in all of creation existed an entire universe and nuclear fission was a divine act of creating new life. [PAWN_nameDef] became part of this cult while [PAWN_pronoun] was searching for meaning in the brutal, unforgiving world that came to be after the great war. Unfortunately for [PAWN_objective] not all wastelanders looked favourably upon such… innovative ideas.</description>
+        <description>[PAWN_nameDef] was part of the comparatively young but rapidly growing cult called “The Children of Atom”. This cult worshipped a deity named Atom, and revered radiation and nuclear annihilation as manifestations of their god’s will. They believed, that within every atomic mass in all of creation existed an entire universe and nuclear fission was a divine act of creating new life. [PAWN_nameDef] became part of this cult while [PAWN_pronoun] was searching for meaning in the brutal, unforgiving world that came to be after the great war. Unfortunately for [PAWN_objective] not all wastelanders looked favourably upon such… innovative ideas.</description>
         <skillGains>
             <Shooting>2</Shooting>
             <Melee>2</Melee>
