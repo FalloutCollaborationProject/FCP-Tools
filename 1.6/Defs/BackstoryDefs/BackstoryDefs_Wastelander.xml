@@ -2003,7 +2003,7 @@
         <slot>Childhood</slot>
         <title>Diamond City Kid</title>
         <titleShort>Diamond City Kid</titleShort>
-        <description>[PAWN_nameDef] was born in the “green jewel” of the commonwealth wasteland, Diamon City. Protected by the near impenetrable walls of the largest settlement in the commonwealth, [PAWN_nameDef] enjoyed a relatively safe and happy childhood, visiting the local school and spending [PAWN_possessive] free time practicing hitting things with [PAWN_possessive] trusty baseball bat.</description>
+        <description>[PAWN_nameDef] was born in the “green jewel” of the commonwealth wasteland, Diamond City. Protected by the near impenetrable walls of the largest settlement in the commonwealth, [PAWN_nameDef] enjoyed a relatively safe and happy childhood, visiting the local school and spending [PAWN_possessive] free time practicing hitting things with [PAWN_possessive] trusty baseball bat.</description>
         <skillGains>
             <Melee>3</Melee>
             <Social>2</Social>
