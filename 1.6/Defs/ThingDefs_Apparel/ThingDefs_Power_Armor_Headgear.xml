@@ -29,7 +29,7 @@
         </statBases>
         <equippedStatOffsets>
             <ToxicEnvironmentResistance>0.8</ToxicEnvironmentResistance>            <!-- Good, but not perfect -->
-            <MoveSpeed>0.97</MoveSpeed>            <!-- Bulky -->
+            <MoveSpeed>-0.5</MoveSpeed>            <!-- Bulky -->
             <AimingDelayFactor>-0.01</AimingDelayFactor>
             <SocialImpact>-0.05</SocialImpact>
         </equippedStatOffsets>
@@ -88,7 +88,7 @@
         </statBases>
         <equippedStatOffsets>
             <ToxicEnvironmentResistance>0.9</ToxicEnvironmentResistance>
-            <MoveSpeed>0.98</MoveSpeed>
+            <MoveSpeed>-0.3</MoveSpeed>
             <AimingDelayFactor>-0.02</AimingDelayFactor>
             <SocialImpact>-0.03</SocialImpact>
         </equippedStatOffsets>
@@ -146,7 +146,7 @@
         </statBases>
         <equippedStatOffsets>
             <ToxicEnvironmentResistance>0.95</ToxicEnvironmentResistance>
-            <MoveSpeed>0.99</MoveSpeed>
+            <MoveSpeed>-0.2</MoveSpeed>
             <AimingDelayFactor>-0.03</AimingDelayFactor>
             <SocialImpact>-0.01</SocialImpact>
         </equippedStatOffsets>
@@ -204,7 +204,6 @@
         </statBases>
         <equippedStatOffsets>
             <ToxicEnvironmentResistance>1.0</ToxicEnvironmentResistance>            <!-- Perfect gas mask -->
-            <MoveSpeed>1.00</MoveSpeed>            <!-- No penalty -->
             <AimingDelayFactor>-0.04</AimingDelayFactor>
             <SocialImpact>0.05</SocialImpact>            <!-- Awe-inspiring -->
         </equippedStatOffsets>
