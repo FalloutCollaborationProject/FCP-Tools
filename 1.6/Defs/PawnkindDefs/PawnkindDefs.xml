@@ -474,4 +474,45 @@
         <pawnGroupDevelopmentStage>Adult</pawnGroupDevelopmentStage>
     </PawnKindDef>
 
+    <!--___ Rivet City Citizens ___-->
+
+    <!-- Rivet City Security -->
+
+    <PawnKindDef ParentName="FCP_WastelanderkindBase">
+        <defName>FCP_Pawnkind_Rivet_City_Security</defName>
+        <label>Rivet City Security Officer</label>
+        <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+        <combatPower>50</combatPower>
+        <gearHealthRange>1~1.8</gearHealthRange>
+        <apparelMoney>1000~2000</apparelMoney>
+        <weaponMoney>1000</weaponMoney>
+        <weaponTags>
+            <li>FCP_Gun_Assault_Rifle</li>
+        </weaponTags>
+        <apparelTags Inherit="False">
+        </apparelTags>
+        <apparelRequired>
+            <li>FCP_Apparel_Rivet_City_Security_Armor</li>
+            <li>FCP_Apparel_Rivet_City_Security_Helmet</li>
+        </apparelRequired>
+        <techHediffsMoney>50~50</techHediffsMoney>
+        <techHediffsTags>
+            <li>Poor</li>
+        </techHediffsTags>
+        <techHediffsChance>0.03</techHediffsChance>
+        <initialWillRange>1~3</initialWillRange>
+        <initialResistanceRange>15~24</initialResistanceRange>
+        <backstoryFiltersOverride>
+            <li>
+                <categoriesChildhood>
+                    <li>FCP_Backstory_Wastelander_Child</li>
+                </categoriesChildhood>
+                <categoriesAdulthood>
+                    <li>FCP_Backstory_Rivet_City_Security</li>
+                </categoriesAdulthood>
+            </li>
+        </backstoryFiltersOverride>
+        <pawnGroupDevelopmentStage>Adult</pawnGroupDevelopmentStage>
+    </PawnKindDef>
+
 </Defs>

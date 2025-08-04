@@ -94,6 +94,163 @@
 
     <!--___ Uniques ___-->
 
+    <!--__ Traders (Fallout 3) __-->
+
+    <!--_ Angela Staley _-->
+
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Trader_Angela_Staley</defName>
+        <identifier>FCP_Backstory_Wastelander_Trader_Angela_Staley</identifier>
+        <slot>Adulthood</slot>
+        <title>Food and Supplies Merchant</title>
+        <titleShort>Food Merchant</titleShort>
+        <description>[PAWN_nameDef] became a lifeline for many in the Capital Wasteland, running a caravan that specialized in food, water, and essential supplies. Known for [PAWN_possessive] resourcefulness and compassion, Angela Staley always tried to help those in need, even when it meant risking her own safety. Her caravan was a welcome sight for hungry settlers and desperate wanderers alike, and her reputation for fairness and kindness spread far and wide.</description>
+        <skillGains>
+            <Social>8</Social>
+            <Cooking>5</Cooking>
+            <Plants>3</Plants>
+            <Intellectual>1</Intellectual>
+        </skillGains>
+        <workDisables>Violent</workDisables>
+        <requiredWorkTags>Caring</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Trader_Angela_Staley</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Female</bodyTypeMale>
+        <possessions>
+        </possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+    
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Trader_Angela_Staley_Child</defName>
+        <identifier>FCP_Backstory_Wastelander_Trader_Angela_Staley_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Helpful Scavenger</title>
+        <titleShort>Angela's Childhood</titleShort>
+        <description>As a child, [PAWN_nameDef] was always looking out for others, sharing what little [PAWN_pronoun] could find with friends and family. [PAWN_pronoun] learned to scavenge for edible plants, clean water, and safe places to rest, often putting [PAWN_objective]self last to make sure others were cared for. Angela's early years taught her the value of kindness and the importance of a full belly in the harsh wasteland.</description>
+        <skillGains>
+            <Cooking>2</Cooking>
+            <Plants>2</Plants>
+            <Social>2</Social>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Caring</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Trader_Angela_Staley_Child</li>
+        </spawnCategories>
+        <possessions>
+        </possessions>
+    </BackstoryDef>
+
+    <!--_ Banon _-->
+
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Trader_Banon</defName>
+        <identifier>FCP_Backstory_Wastelander_Trader_Banon</identifier>
+        <slot>Adulthood</slot>
+        <title>Rivet City Council Leader</title>
+        <titleShort>Council Leader</titleShort>
+        <description>[PAWN_nameDef] served as the head of the Rivet City Council, guiding the largest settlement in the Capital Wasteland with a steady hand and a sharp mind. In addition to [PAWN_possessive] leadership duties, Banon was known for running a well-stocked clothing shop, providing quality apparel to settlers and travelers alike. Balancing politics, trade, and the daily challenges of wasteland life, Banon became a respected figure whose wisdom and sense of fairness helped Rivet City thrive.</description>
+        <skillGains>
+            <Social>8</Social>
+            <Intellectual>5</Intellectual>
+            <Crafting>3</Crafting>
+            <Construction>2</Construction>
+        </skillGains>
+        <workDisables>Violent</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Trader_Banon</li>
+        </spawnCategories>
+        <bodyTypeFemale>Male</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions>
+        </possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Trader_Banon_Child</defName>
+        <identifier>FCP_Backstory_Wastelander_Trader_Banon_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Resourceful Youth</title>
+        <titleShort>Banon's Childhood</titleShort>
+        <description>Growing up in the ruins of the old world, [PAWN_nameDef] learned to solve problems and mediate disputes from a young age. [PAWN_pronoun] was always the one to organize games, share food, and help others find shelter. Banon's early experiences taught [PAWN_objective] the value of cooperation, quick thinking, and looking out for the group above all else.</description>
+        <skillGains>
+            <Social>3</Social>
+            <Intellectual>2</Intellectual>
+            <Construction>1</Construction>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Trader_Banon_Child</li>
+        </spawnCategories>
+        <possessions>
+        </possessions>
+    </BackstoryDef>
+
+    <!--_ Belle Bonny _-->
+
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Belle_Bonny</defName>
+        <identifier>FCP_Backstory_Wastelander_Belle_Bonny</identifier>
+        <slot>Adulthood</slot>
+        <title>Rivet City Bar Owner</title>
+        <titleShort>Bar Owner</titleShort>
+        <description>[PAWN_nameDef] ran the Muddy Rudder, Rivet City's most popular bar, serving drinks and advice to settlers, drifters, and security alike. Known for [PAWN_possessive] sharp wit, no-nonsense attitude, and ability to keep order even when things got rowdy, Belle Bonny was the heart of the city's nightlife. [PAWN_pronoun] knew everyone's secrets and always had an ear to the ground for the latest gossip.</description>
+        <skillGains>
+            <Social>7</Social>
+            <Cooking>4</Cooking>
+            <Intellectual>2</Intellectual>
+            <Construction>1</Construction>
+        </skillGains>
+        <workDisables>Violent</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Belle_Bonny</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Female</bodyTypeMale>
+        <possessions>
+        </possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+    
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Belle_Bonny_Child</defName>
+        <identifier>FCP_Backstory_Wastelander_Belle_Bonny_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Resourceful Scavenger</title>
+        <titleShort>Belle's Childhood</titleShort>
+        <description>Growing up in the Capital Wasteland, [PAWN_nameDef] learned to make do with whatever [PAWN_pronoun] could find. [PAWN_pronoun] was quick with a joke, good at making friends, and always found a way to get what [PAWN_pronoun] needed—whether it was food, shelter, or a little extra fun. Belle's early years taught [PAWN_objective] the value of resourcefulness and a sharp tongue.</description>
+        <skillGains>
+            <Social>3</Social>
+            <Cooking>2</Cooking>
+            <Intellectual>1</Intellectual>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Belle_Bonny_Child</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Female</bodyTypeMale>
+        <possessions>
+        </possessions>
+    </BackstoryDef>
+
     <!--__ Caravan Traders (Fallout 3) __-->
 
     <!--_ Crow _-->
@@ -148,7 +305,241 @@
         </possessions>
     </BackstoryDef>
 
+    <!--_ Crazy Wolfgang _-->
+
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Trader_Crazy_Wolfgang</defName>
+        <identifier>FCP_Backstory_Wastelander_Trader_Crazy_Wolfgang</identifier>
+        <slot>Adulthood</slot>
+        <title>Junk Trader</title>
+        <titleShort>Junk Trader</titleShort>
+        <description>[PAWN_nameDef] is the Capital Wasteland's most eccentric junk trader, known for his wild stories, rambling sales pitches, and a caravan bursting with oddities. With a manic grin and a love for all things scrap, Crazy Wolfgang travels the wastes in search of the next big haul—or the next person willing to buy a toaster, a lawnmower blade, or a perfectly good hunk of pre-war junk. Some say he's a little unhinged, but his eye for valuable salvage is unmatched.</description>
+        <skillGains>
+            <Shooting>2</Shooting>
+            <Cooking>1</Cooking>
+            <Animals>3</Animals>
+            <Social>11</Social>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Trader_Crazy_Wolfgang</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions>
+        </possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Trader_Crazy_Wolfgang_Child</defName>
+        <identifier>FCP_Backstory_Wastelander_Trader_Crazy_Wolfgang_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Crazy Wolfgangs' Childhood</title>
+        <titleShort>Crazy Wolfgangs' Childhood</titleShort>
+        <description>Even as a child, [PAWN_nameDef] was obsessed with collecting odd bits and pieces from the ruins of the old world. While other kids played with toys, [PAWN_pronoun] built elaborate contraptions out of scrap, broken radios, and bottle caps. [PAWN_nameDef]'s wild imagination and endless curiosity made [PAWN_objective] a fixture at every junk pile in the settlement, and [PAWN_pronoun] was always ready with a wild story about [PAWN_possessive] latest find.</description>
+        <skillGains>
+            <Medicine>2</Medicine>
+            <Plants>1</Plants>
+            <Animals>2</Animals>
+            <Social>1</Social>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Trader_Crazy_Wolfgang_Child</li>
+        </spawnCategories>
+        <possessions>
+        </possessions>
+    </BackstoryDef>
+
+    <!--_ Doc Hoff _-->
+
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Trader_Doc_Hoff</defName>
+        <identifier>FCP_Backstory_Wastelander_Trader_Doc_Hoff</identifier>
+        <slot>Adulthood</slot>
+        <title>Traveling Chem Dealer</title>
+        <titleShort>Chem Dealer</titleShort>
+        <description>[PAWN_nameDef] wandered the Capital Wasteland as a traveling doctor and chem dealer, peddling medicine and chems to anyone with the caps. Known for [PAWN_possessive] dry wit, questionable medical ethics, and a tendency to sample [PAWN_possessive] own wares, Doc Hoff was always ready with a remedy for pain—or a new addiction. [PAWN_pronoun] could patch up a bullet wound or sell you a dose of Jet, all with the same sly grin.</description>
+        <skillGains>
+            <Medicine>7</Medicine>
+            <Social>5</Social>
+            <Intellectual>2</Intellectual>
+            <Cooking>2</Cooking>
+        </skillGains>
+        <workDisables>Violent</workDisables>
+        <requiredWorkTags>Caring</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Trader_Doc_Hoff</li>
+        </spawnCategories>
+        <bodyTypeFemale>Male</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions>
+        </possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Trader_Doc_Hoff_Child</defName>
+        <identifier>FCP_Backstory_Wastelander_Trader_Doc_Hoff_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Curious Tinkerer</title>
+        <titleShort>Doc Hoff's Childhood</titleShort>
+        <description>As a child, [PAWN_nameDef] was always poking around old ruins and abandoned clinics, fascinated by bottles, syringes, and anything labeled "medicine." [PAWN_pronoun] was quick to learn first aid—sometimes on the family Brahmin—and had a knack for mixing up strange brews from whatever [PAWN_pronoun] could scavenge. Rules were more like suggestions, and [PAWN_nameDef] was always in trouble for "borrowing" supplies for [PAWN_possessive] experiments.</description>
+        <skillGains>
+            <Medicine>3</Medicine>
+            <Intellectual>2</Intellectual>
+            <Plants>1</Plants>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Trader_Doc_Hoff_Child</li>
+        </spawnCategories>
+        <possessions>
+        </possessions>
+    </BackstoryDef>
+
+    <!--_ Lucky Harith _-->
+
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Trader_Lucky_Harith</defName>
+        <identifier>FCP_Backstory_Wastelander_Trader_Lucky_Harith</identifier>
+        <slot>Adulthood</slot>
+        <title>Weapon Merchant</title>
+        <titleShort>Weapon Merchant</titleShort>
+        <description>[PAWN_nameDef] earned the nickname "Lucky" by surviving countless close calls on the treacherous roads of the Capital Wasteland. As a traveling weapons merchant, [PAWN_pronoun] always had a story about a narrow escape or a big score, and [PAWN_possessive] caravan was famous for its ever-changing arsenal. With a quick wit, a gambler's charm, and a knack for finding rare firepower, Lucky Harith could arm a settlement—or talk [PAWN_objective]self out of a firefight.</description>
+        <skillGains>
+            <Shooting>5</Shooting>
+            <Social>7</Social>
+            <Crafting>3</Crafting>
+            <Intellectual>1</Intellectual>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Trader_Lucky_Harith</li>
+        </spawnCategories>
+        <bodyTypeFemale>Male</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions>
+        </possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Trader_Lucky_Harith_Child</defName>
+        <identifier>FCP_Backstory_Wastelander_Trader_Lucky_Harith_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Wasteland Gambler</title>
+        <titleShort>Lucky Harith's Childhood</titleShort>
+        <description>Growing up, [PAWN_nameDef] was always taking chances—whether it was sneaking into forbidden ruins, betting bottle caps on two-headed ant races, or trading scavenged goods for a shot at something better. [PAWN_pronoun] learned early that luck could be as valuable as skill, and [PAWN_pronoun] was quick to make friends (and the occasional enemy) wherever [PAWN_pronoun] roamed. Every close call was just another story to tell around the campfire.</description>
+        <skillGains>
+            <Social>3</Social>
+            <Shooting>2</Shooting>
+            <Crafting>1</Crafting>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Trader_Lucky_Harith_Child</li>
+        </spawnCategories>
+        <possessions>
+        </possessions>
+    </BackstoryDef>
+
     <!--___ Adults ___-->
+
+    <!--_ Rivet City Security _-->
+
+    <!-- Standard Security Officer -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Rivet_City_Security_Officer</defName>
+        <identifier>FCP_Backstory_Rivet_City_Security_Officer</identifier>
+        <slot>Adulthood</slot>
+        <title>Rivet City Security Officer</title>
+        <titleShort>Security Officer</titleShort>
+        <description>[PAWN_nameDef] served as a security officer in Rivet City, the largest and most advanced settlement in the Capital Wasteland. Tasked with keeping the peace, [PAWN_pronoun] patrolled the ship's decks, enforced the council's laws, and protected residents from raiders and mutants. The job required discipline, vigilance, and a steady hand with a weapon.</description>
+        <skillGains>
+            <Shooting>6</Shooting>
+            <Melee>3</Melee>
+            <Social>2</Social>
+            <Construction>1</Construction>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Violent</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Rivet_City_Security</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions>
+        </possessions>
+    </BackstoryDef>
+
+    <!-- Veteran Security Officer -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Rivet_City_Security_Veteran</defName>
+        <identifier>FCP_Backstory_Rivet_City_Security_Veteran</identifier>
+        <slot>Adulthood</slot>
+        <title>Rivet City Security Veteran</title>
+        <titleShort>Security Veteran</titleShort>
+        <description>After years of service, [PAWN_nameDef] became a veteran member of Rivet City's security force. [PAWN_pronoun] had seen it all: mutant attacks, raider incursions, and the daily struggles of keeping order in a floating city. [PAWN_pronoun] was respected by peers for [PAWN_possessive] experience, quick reflexes, and calm under pressure.</description>
+        <skillGains>
+            <Shooting>8</Shooting>
+            <Melee>4</Melee>
+            <Social>3</Social>
+            <Construction>2</Construction>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Violent</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Rivet_City_Security</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions>
+        </possessions>
+    </BackstoryDef>
+
+    <!-- Rookie Security Officer -->
+    
+    <BackstoryDef>
+        <defName>FCP_Backstory_Rivet_City_Security_Rookie</defName>
+        <identifier>FCP_Backstory_Rivet_City_Security_Rookie</identifier>
+        <slot>Adulthood</slot>
+        <title>Rivet City Security Rookie</title>
+        <titleShort>Security Rookie</titleShort>
+        <description>New to the force, [PAWN_nameDef] joined Rivet City security eager to prove [PAWN_objective]self. Under the watchful eyes of veteran officers, [PAWN_pronoun] learned the ropes—patrolling the ship, breaking up disputes, and facing the dangers of the wasteland for the first time. Every day brought new challenges and valuable lessons.</description>
+        <skillGains>
+            <Shooting>4</Shooting>
+            <Melee>2</Melee>
+            <Social>1</Social>
+            <Construction>1</Construction>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Violent</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Rivet_City_Security</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions>
+        </possessions>
+    </BackstoryDef>
 
     <!-- Wasteland Farmer -->
 
