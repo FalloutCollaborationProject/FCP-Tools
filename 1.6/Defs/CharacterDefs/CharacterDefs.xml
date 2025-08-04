@@ -112,4 +112,216 @@
         </definitions>
     </FCP.Core.CharacterDef>
 
+    <!--_____ Traders _____-->
+
+    <!-- Crow -->
+
+    <FCP.Core.CharacterDef>
+        <defName>FCP_Character_Crow</defName>
+        <pawnKind>FCP_Unique_Crow</pawnKind>
+        <xenotype>Baseliner</xenotype>
+        <faction>FCP_Faction_Hidden_Wastelanders</faction>
+        <roles>
+        </roles>
+        <definitions>
+            <!-- Bio -->
+            <li Class="FCP.Core.CharacterStoryDefinition">
+                <firstName />
+                <lastName />
+                <nickname>Crow</nickname>
+                <gender>Male</gender>
+                <age>35</age>
+            </li>
+            <!-- Appearance -->
+            <li Class="FCP.Core.CharacterAppearanceDefinition">
+                <hairColor>(40, 40, 40)</hairColor>
+                <hairDef></hairDef>
+                <beardDef>NoBeard</beardDef>
+                <skinColorOverride>(120, 100, 80)</skinColorOverride>
+                <headTypeDef>Male_AverageNormal</headTypeDef>
+                <bodyTypeDef>Male</bodyTypeDef>
+            </li>
+        </definitions>
+    </FCP.Core.CharacterDef>
+
+    <!-- Crazy Wolfgang -->
+
+    <FCP.Core.CharacterDef>
+        <defName>FCP_Character_Crazy_Wolfgang</defName>
+        <pawnKind>FCP_Unique_Crazy_Wolfgang</pawnKind>
+        <xenotype>Baseliner</xenotype>
+        <faction>FCP_Faction_Hidden_Wastelanders</faction>
+        <roles>
+        </roles>
+        <definitions>
+            <!-- Bio -->
+            <li Class="FCP.Core.CharacterStoryDefinition">
+                <firstName>Wolfgang</firstName>
+                <lastName />
+                <nickname>Crazy Wolfgang</nickname>
+                <gender>Male</gender>
+                <age>42</age>
+            </li>
+            <!-- Appearance -->
+            <li Class="FCP.Core.CharacterAppearanceDefinition">
+                <hairColor>(120, 90, 60)</hairColor>
+                <hairDef></hairDef>
+                <beardDef></beardDef>
+                <skinColorOverride>(210, 180, 140)</skinColorOverride>
+                <headTypeDef>Male_AverageNormal</headTypeDef>
+                <bodyTypeDef>Male</bodyTypeDef>
+            </li>
+        </definitions>
+    </FCP.Core.CharacterDef>
+
+    <!-- Doc Hoff -->
+
+    <FCP.Core.CharacterDef>
+        <defName>FCP_Character_Doc_Hoff</defName>
+        <pawnKind>FCP_Unique_Doc_Hoff</pawnKind>
+        <xenotype>Baseliner</xenotype>
+        <faction>FCP_Faction_Hidden_Wastelanders</faction>
+        <roles>
+        </roles>
+        <definitions>
+            <!-- Bio -->
+            <li Class="FCP.Core.CharacterStoryDefinition">
+                <firstName>Hoff</firstName>
+                <lastName />
+                <nickname>Doc Hoff</nickname>
+                <gender>Male</gender>
+                <age>47</age>
+            </li>
+            <!-- Appearance -->
+            <li Class="FCP.Core.CharacterAppearanceDefinition">
+                <hairColor>(80, 80, 60)</hairColor>
+                <hairDef></hairDef>
+                <beardDef></beardDef>
+                <skinColorOverride>(200, 170, 130)</skinColorOverride>
+                <headTypeDef>Male_AverageNormal</headTypeDef>
+                <bodyTypeDef>Male</bodyTypeDef>
+            </li>
+        </definitions>
+    </FCP.Core.CharacterDef>
+
+    <!-- Lucky Harith -->
+
+    <FCP.Core.CharacterDef>
+        <defName>FCP_Character_Lucky_Harith</defName>
+        <pawnKind>FCP_Unique_Lucky_Harith</pawnKind>
+        <xenotype>Baseliner</xenotype>
+        <faction>FCP_Faction_Hidden_Wastelanders</faction>
+        <roles>
+        </roles>
+        <definitions>
+            <!-- Bio -->
+            <li Class="FCP.Core.CharacterStoryDefinition">
+                <firstName>Harith</firstName>
+                <lastName />
+                <nickname>Lucky Harith</nickname>
+                <gender>Male</gender>
+                <age>38</age>
+            </li>
+            <!-- Appearance -->
+            <li Class="FCP.Core.CharacterAppearanceDefinition">
+                <hairColor>(60, 40, 30)</hairColor>
+                <hairDef></hairDef>
+                <beardDef>NoBeard</beardDef>
+                <skinColorOverride>(160, 120, 80)</skinColorOverride>
+                <headTypeDef>Male_AverageNormal</headTypeDef>
+                <bodyTypeDef>Male</bodyTypeDef>
+            </li>
+        </definitions>
+    </FCP.Core.CharacterDef>
+
+    <!-- Belle Bonny -->
+
+    <FCP.Core.CharacterDef>
+        <defName>FCP_Character_Belle_Bonny</defName>
+        <pawnKind>FCP_Unique_Belle_Bonny</pawnKind>
+        <xenotype>Baseliner</xenotype>
+        <faction>FCP_Faction_Hidden_Wastelanders</faction>
+        <roles>
+        </roles>
+        <definitions>
+            <!-- Bio -->
+            <li Class="FCP.Core.CharacterStoryDefinition">
+                <firstName>Belle</firstName>
+                <lastName>Bonny</lastName>
+                <nickname>Belle Bonny</nickname>
+                <gender>Female</gender>
+                <age>36</age>
+            </li>
+            <!-- Appearance -->
+            <li Class="FCP.Core.CharacterAppearanceDefinition">
+                <hairColor>(180, 120, 80)</hairColor>
+                <hairDef></hairDef>
+                <beardDef>NoBeard</beardDef>
+                <skinColorOverride>(220, 180, 150)</skinColorOverride>
+                <headTypeDef>Female_AverageNormal</headTypeDef>
+                <bodyTypeDef>Female</bodyTypeDef>
+            </li>
+        </definitions>
+    </FCP.Core.CharacterDef>
+
+    <!-- Banon -->
+
+    <FCP.Core.CharacterDef>
+        <defName>FCP_Character_Banon</defName>
+        <pawnKind>FCP_Unique_Banon</pawnKind>
+        <xenotype>Baseliner</xenotype>
+        <faction>FCP_Faction_Hidden_Wastelanders</faction>
+        <roles>
+        </roles>
+        <definitions>
+            <!-- Bio -->
+            <li Class="FCP.Core.CharacterStoryDefinition">
+                <firstName>Banon</firstName>
+                <lastName />
+                <nickname>Banon</nickname>
+                <gender>Male</gender>
+                <age>54</age>
+            </li>
+            <!-- Appearance -->
+            <li Class="FCP.Core.CharacterAppearanceDefinition">
+                <hairColor>(200, 200, 180)</hairColor>
+                <hairDef></hairDef>
+                <beardDef>NoBeard</beardDef>
+                <skinColorOverride>(230, 210, 180)</skinColorOverride>
+                <headTypeDef>Male_AverageNormal</headTypeDef>
+                <bodyTypeDef>Male</bodyTypeDef>
+            </li>
+        </definitions>
+    </FCP.Core.CharacterDef>
+
+    <!-- Angela Staley -->
+
+    <FCP.Core.CharacterDef>
+        <defName>FCP_Character_Angela_Staley</defName>
+        <pawnKind>FCP_Unique_Angela_Staley</pawnKind>
+        <xenotype>Baseliner</xenotype>
+        <faction>FCP_Faction_Hidden_Wastelanders</faction>
+        <roles>
+        </roles>
+        <definitions>
+            <!-- Bio -->
+            <li Class="FCP.Core.CharacterStoryDefinition">
+                <firstName>Angela</firstName>
+                <lastName>Staley</lastName>
+                <nickname>Angela Staley</nickname>
+                <gender>Female</gender>
+                <age>33</age>
+            </li>
+            <!-- Appearance -->
+            <li Class="FCP.Core.CharacterAppearanceDefinition">
+                <hairColor>(200, 160, 120)</hairColor>
+                <hairDef></hairDef>
+                <beardDef>NoBeard</beardDef>
+                <skinColorOverride>(230, 200, 170)</skinColorOverride>
+                <headTypeDef>Female_AverageNormal</headTypeDef>
+                <bodyTypeDef>Female</bodyTypeDef>
+            </li>
+        </definitions>
+    </FCP.Core.CharacterDef>
+
 </Defs>
