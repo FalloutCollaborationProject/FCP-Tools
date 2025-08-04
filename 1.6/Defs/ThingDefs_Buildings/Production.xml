@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 
+    <!--__________ Production Buildings __________-->
+
+    <!--_____ CE _____-->
+
     <!-- Ammo Press -->
 
     <ThingDef ParentName="BenchBase">
@@ -62,6 +66,8 @@
             <li>FCP_Research_Ammo_Workbench</li>
         </researchPrerequisites>
     </ThingDef>
+
+    <!--_____ Armor and Apparel _____-->
 
     <!-- Armor Workbench -->
 
@@ -135,6 +141,72 @@
         </researchPrerequisites>
     </ThingDef>
 
+
+    <!-- Tailor Workbench -->
+
+    <ThingDef ParentName="BenchBase">
+        <defName>FCP_Production_Tailoring_Workbench</defName>
+        <label>tailoring workbench</label>
+        <description>A workbench for tailoring clothes by hand. Works at 50% of the speed of an electric tailoring bench.</description>        <!-- Description is the same as core's might want to change that -->
+        <thingClass>Building_WorkTable</thingClass>
+        <graphicData>
+            <texPath>Things/Building/Production/FCP_Tailoring_Workbench/FCP_Tailoring_Workbench</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(4,5)</drawSize>
+            <damageData>
+                <cornerTL>Damage/Corner</cornerTL>
+                <cornerTR>Damage/Corner</cornerTR>
+                <cornerBL>Damage/Corner</cornerBL>
+                <cornerBR>Damage/Corner</cornerBR>
+            </damageData>
+        </graphicData>
+        <castEdgeShadows>true</castEdgeShadows>
+        <staticSunShadowHeight>0.20</staticSunShadowHeight>
+        <costList>
+            <WoodLog>75</WoodLog>
+            <Steel>25</Steel>
+            <ComponentIndustrial>2</ComponentIndustrial>
+        </costList>
+        <altitudeLayer>Building</altitudeLayer>
+        <fillPercent>0.5</fillPercent>
+        <useHitPoints>True</useHitPoints>
+        <statBases>
+            <WorkToBuild>2000</WorkToBuild>
+            <MaxHitPoints>180</MaxHitPoints>
+            <Flammability>1.0</Flammability>
+            <WorkTableWorkSpeedFactor>0.5</WorkTableWorkSpeedFactor>
+        </statBases>
+        <size>(3,2)</size>
+        <designationCategory>Production</designationCategory>
+        <passability>PassThroughOnly</passability>
+        <pathCost>50</pathCost>
+        <hasInteractionCell>True</hasInteractionCell>
+        <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+        <surfaceType>Item</surfaceType>
+        <inspectorTabs>
+            <li>ITab_Bills</li>
+        </inspectorTabs>
+        <building>
+            <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+        </building>
+        <comps>
+            <li Class="CompProperties_AffectedByFacilities">
+                <linkableFacilities>
+                    <li>ToolCabinet</li>
+                </linkableFacilities>
+            </li>
+        </comps>
+        <placeWorkers>
+            <li>PlaceWorker_ShowFacilitiesConnections</li>
+            <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+        </placeWorkers>
+        <researchPrerequisites>
+            <li>FCP_Research_Apparel_Production</li>
+        </researchPrerequisites>
+    </ThingDef>
+
+    <!--_____ Chems _____-->
+
     <!-- Chemistry Workbench -->
 
     <ThingDef ParentName="BenchBase">
@@ -192,6 +264,72 @@
         </placeWorkers>
         <researchPrerequisites>
             <li>FCP_Research_Chem_Production</li>
+        </researchPrerequisites>
+    </ThingDef>
+
+    <!--_____ Weapons _____-->
+
+
+    <!-- Simple Weapons Workench -->
+
+    <ThingDef ParentName="BenchBase">
+        <defName>FCP_Production_Simple_Weapons_Workbench</defName>
+        <label>simple weapons workbench</label>
+        <description>A simple weapons bench.</description>
+        <thingClass>Building_WorkTable</thingClass>
+        <graphicData>
+            <texPath>Things/Building/Production/FCP_Simple_Weapons_Workbench/FCP_Simple_Weapons_Workbench</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(4,5)</drawSize>
+            <damageData>
+                <cornerTL>Damage/Corner</cornerTL>
+                <cornerTR>Damage/Corner</cornerTR>
+                <cornerBL>Damage/Corner</cornerBL>
+                <cornerBR>Damage/Corner</cornerBR>
+            </damageData>
+        </graphicData>
+        <castEdgeShadows>true</castEdgeShadows>
+        <staticSunShadowHeight>0.20</staticSunShadowHeight>
+        <costList>
+            <WoodLog>75</WoodLog>
+            <Steel>25</Steel>
+            <ComponentIndustrial>2</ComponentIndustrial>
+        </costList>
+        <altitudeLayer>Building</altitudeLayer>
+        <fillPercent>0.5</fillPercent>
+        <useHitPoints>True</useHitPoints>
+        <statBases>
+            <WorkToBuild>2000</WorkToBuild>
+            <MaxHitPoints>180</MaxHitPoints>
+            <Flammability>1.0</Flammability>
+            <WorkTableWorkSpeedFactor>0.5</WorkTableWorkSpeedFactor>
+        </statBases>
+        <size>(3,2)</size>
+        <designationCategory>Production</designationCategory>
+        <passability>PassThroughOnly</passability>
+        <pathCost>50</pathCost>
+        <hasInteractionCell>True</hasInteractionCell>
+        <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+        <surfaceType>Item</surfaceType>
+        <inspectorTabs>
+            <li>ITab_Bills</li>
+        </inspectorTabs>
+        <building>
+            <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+        </building>
+        <comps>
+            <li Class="CompProperties_AffectedByFacilities">
+                <linkableFacilities>
+                    <li>ToolCabinet</li>
+                </linkableFacilities>
+            </li>
+        </comps>
+        <placeWorkers>
+            <li>PlaceWorker_ShowFacilitiesConnections</li>
+            <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+        </placeWorkers>
+        <researchPrerequisites>
+            <li>FCP_Research_Gunsmithing</li>
         </researchPrerequisites>
     </ThingDef>
 
@@ -255,6 +393,7 @@
         </researchPrerequisites>
     </ThingDef>
 
+    <!--_____ Cooking _____-->
 
     <!-- Electric Cooking Station -->
 
@@ -266,7 +405,7 @@
         <graphicData>
             <texPath>Things/Building/Production/FCP_Cooking_Station_Electric/FCP_Cooking_Station_Electric</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(4,5)</drawSize>
+            <drawSize>(1,1)</drawSize>
             <damageData>
                 <cornerTL>Damage/Corner</cornerTL>
                 <cornerTR>Damage/Corner</cornerTR>
@@ -525,6 +664,8 @@
         </researchPrerequisites>
     </ThingDef>
 
+    <!--_____ Tools and Fabrication _____-->
+
     <!-- Fabrication Workbench -->
 
     <ThingDef ParentName="BenchBase">
@@ -662,132 +803,6 @@
         </placeWorkers>
         <researchPrerequisites>
             <li>FCP_Research_Crafting_Stations</li>
-        </researchPrerequisites>
-    </ThingDef>
-
-    <!-- Simple Weapons Workench -->
-
-    <ThingDef ParentName="BenchBase">
-        <defName>FCP_Production_Simple_Weapons_Workbench</defName>
-        <label>simple weapons workbench</label>
-        <description>A simple weapons bench.</description>
-        <thingClass>Building_WorkTable</thingClass>
-        <graphicData>
-            <texPath>Things/Building/Production/FCP_Simple_Weapons_Workbench/FCP_Simple_Weapons_Workbench</texPath>
-            <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(4,5)</drawSize>
-            <damageData>
-                <cornerTL>Damage/Corner</cornerTL>
-                <cornerTR>Damage/Corner</cornerTR>
-                <cornerBL>Damage/Corner</cornerBL>
-                <cornerBR>Damage/Corner</cornerBR>
-            </damageData>
-        </graphicData>
-        <castEdgeShadows>true</castEdgeShadows>
-        <staticSunShadowHeight>0.20</staticSunShadowHeight>
-        <costList>
-            <WoodLog>75</WoodLog>
-            <Steel>25</Steel>
-            <ComponentIndustrial>2</ComponentIndustrial>
-        </costList>
-        <altitudeLayer>Building</altitudeLayer>
-        <fillPercent>0.5</fillPercent>
-        <useHitPoints>True</useHitPoints>
-        <statBases>
-            <WorkToBuild>2000</WorkToBuild>
-            <MaxHitPoints>180</MaxHitPoints>
-            <Flammability>1.0</Flammability>
-            <WorkTableWorkSpeedFactor>0.5</WorkTableWorkSpeedFactor>
-        </statBases>
-        <size>(3,2)</size>
-        <designationCategory>Production</designationCategory>
-        <passability>PassThroughOnly</passability>
-        <pathCost>50</pathCost>
-        <hasInteractionCell>True</hasInteractionCell>
-        <interactionCellOffset>(0,0,-1)</interactionCellOffset>
-        <surfaceType>Item</surfaceType>
-        <inspectorTabs>
-            <li>ITab_Bills</li>
-        </inspectorTabs>
-        <building>
-            <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
-        </building>
-        <comps>
-            <li Class="CompProperties_AffectedByFacilities">
-                <linkableFacilities>
-                    <li>ToolCabinet</li>
-                </linkableFacilities>
-            </li>
-        </comps>
-        <placeWorkers>
-            <li>PlaceWorker_ShowFacilitiesConnections</li>
-            <li>PlaceWorker_PreventInteractionSpotOverlap</li>
-        </placeWorkers>
-        <researchPrerequisites>
-            <li>FCP_Research_Gunsmithing</li>
-        </researchPrerequisites>
-    </ThingDef>
-
-    <!-- Tailor Workbench -->
-
-    <ThingDef ParentName="BenchBase">
-        <defName>FCP_Production_Tailoring_Workbench</defName>
-        <label>tailoring workbench</label>
-        <description>A workbench for tailoring clothes by hand. Works at 50% of the speed of an electric tailoring bench.</description>        <!-- Description is the same as core's might want to change that -->
-        <thingClass>Building_WorkTable</thingClass>
-        <graphicData>
-            <texPath>Things/Building/Production/FCP_Tailoring_Workbench/FCP_Tailoring_Workbench</texPath>
-            <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(4,5)</drawSize>
-            <damageData>
-                <cornerTL>Damage/Corner</cornerTL>
-                <cornerTR>Damage/Corner</cornerTR>
-                <cornerBL>Damage/Corner</cornerBL>
-                <cornerBR>Damage/Corner</cornerBR>
-            </damageData>
-        </graphicData>
-        <castEdgeShadows>true</castEdgeShadows>
-        <staticSunShadowHeight>0.20</staticSunShadowHeight>
-        <costList>
-            <WoodLog>75</WoodLog>
-            <Steel>25</Steel>
-            <ComponentIndustrial>2</ComponentIndustrial>
-        </costList>
-        <altitudeLayer>Building</altitudeLayer>
-        <fillPercent>0.5</fillPercent>
-        <useHitPoints>True</useHitPoints>
-        <statBases>
-            <WorkToBuild>2000</WorkToBuild>
-            <MaxHitPoints>180</MaxHitPoints>
-            <Flammability>1.0</Flammability>
-            <WorkTableWorkSpeedFactor>0.5</WorkTableWorkSpeedFactor>
-        </statBases>
-        <size>(3,2)</size>
-        <designationCategory>Production</designationCategory>
-        <passability>PassThroughOnly</passability>
-        <pathCost>50</pathCost>
-        <hasInteractionCell>True</hasInteractionCell>
-        <interactionCellOffset>(0,0,-1)</interactionCellOffset>
-        <surfaceType>Item</surfaceType>
-        <inspectorTabs>
-            <li>ITab_Bills</li>
-        </inspectorTabs>
-        <building>
-            <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
-        </building>
-        <comps>
-            <li Class="CompProperties_AffectedByFacilities">
-                <linkableFacilities>
-                    <li>ToolCabinet</li>
-                </linkableFacilities>
-            </li>
-        </comps>
-        <placeWorkers>
-            <li>PlaceWorker_ShowFacilitiesConnections</li>
-            <li>PlaceWorker_PreventInteractionSpotOverlap</li>
-        </placeWorkers>
-        <researchPrerequisites>
-            <li>FCP_Research_Apparel_Production</li>
         </researchPrerequisites>
     </ThingDef>
 
