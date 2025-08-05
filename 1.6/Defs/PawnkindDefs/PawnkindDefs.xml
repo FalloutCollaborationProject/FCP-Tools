@@ -235,33 +235,6 @@
     
     <!--_____ Wastelanders _____-->
 
-    <!--___ Traders ___-->
-
-    <!-- Crow (Armor)-->
-
-    <PawnKindDef ParentName="FCP_WastelanderkindBase">
-        <defName>FCP_Pawnkind_Wastelander_Trader_Crow</defName>
-        <label>Apparel and Armor Trader</label>
-        <trader>true</trader>
-        <combatPower>30</combatPower>
-        <apparelRequired>
-            <li>FCP_Apparel_Caravaneer_Outfit</li>
-        </apparelRequired>
-        <initialWillRange>1~3</initialWillRange>
-        <initialResistanceRange>10~17</initialResistanceRange>
-        <backstoryFiltersOverride Inherit="False">
-            <li>
-                <categoriesChildhood>
-                    <li>FCP_Backstory_Wasteland_Trader_Crow_Child</li>
-                </categoriesChildhood>
-                <categoriesAdulthood>
-                    <li>FCP_Backstory_Wasteland_Trader_Crow</li>
-                </categoriesAdulthood>
-            </li>
-        </backstoryFiltersOverride>
-        <pawnGroupDevelopmentStage>Adult</pawnGroupDevelopmentStage>
-    </PawnKindDef>
-
     <!-- Caravan Guard -->
 
     <PawnKindDef ParentName="FCP_WastelanderkindBase">

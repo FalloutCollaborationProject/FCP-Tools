@@ -61,6 +61,58 @@
         </comps>
     </ThingDef>
 
+    <!-- Rivet City Security Helmet -->
+
+    <ThingDef ParentName="HatMakeableBase">
+        <defName>FCP_Apparel_Rivet_City_Security_Helmet</defName>
+        <label>Rivet City Security Helmet</label>
+        <description>A helmet worn by the security forces of Rivet City.</description>
+        <techLevel>Industrial</techLevel>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/RivetCitySecurity/Rivit_City_Security_Helmet/FCP_Rivit_City_Security_Helmet</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <smeltable>false</smeltable>
+        <recipeMaker>
+            <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+            <researchPrerequisite>FCP_Research_CombatArmorStandard</researchPrerequisite>
+            <skillRequirements>
+                <Crafting>8</Crafting>
+            </skillRequirements>
+        </recipeMaker>
+        <costList>
+            <Steel>40</Steel>
+            <ComponentIndustrial>2</ComponentIndustrial>
+        </costList>
+        <statBases>
+            <WorkToMake>3000</WorkToMake>
+            <MaxHitPoints>80</MaxHitPoints>
+            <Mass>0.8</Mass>
+            <MarketValue>150</MarketValue>
+            <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.10</ArmorRating_Blunt>
+            <Insulation_Heat>2</Insulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>UpperHead</li>
+            </bodyPartGroups>
+            <wornGraphicPath>TThings/Apparel/Wasteland_Apparel/RivetCitySecurity/Rivit_City_Security_Helmet/FCP_Rivit_City_Security_Helmet</wornGraphicPath>
+            <layers>
+                <li>Overhead</li>
+            </layers>
+            <tags>
+                <li>FCP_Combat_Armors</li>
+            </tags>
+        </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Common</rarity>
+            </li>
+        </comps>
+    </ThingDef>
+
     <!-- Combat Armor Helmet (Fallout 4) -->
 
     <ThingDef ParentName="HatMakeableBase">

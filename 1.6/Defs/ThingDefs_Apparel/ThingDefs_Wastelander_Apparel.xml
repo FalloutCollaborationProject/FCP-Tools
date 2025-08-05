@@ -140,6 +140,29 @@
         </comps>
     </ThingDef>
 
+    <!-- Rivet City Security Armor -->
+
+    <ThingDef ParentName="FCP_Apparel_Combat_Armor_Base">
+        <defName>FCP_Apparel_Rivet_City_Security_Armor</defName>
+        <description>A suit of armor worn by the security forces of Rivet City.</description>
+        <label>Rivet City Security Armor</label>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/RivetCitySecurity/Rivit_City_Security_Uniform/FCP_Rivit_City_Security_Uniform</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <apparel>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/RivetCitySecurity/Rivit_City_Security_Uniform/FCP_Rivit_City_Security_Uniform</wornGraphicPath>
+            <tags>
+                <li>FCP_Combat_Armors</li>
+            </tags>
+        </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
+    </ThingDef>
+
     <!-- Combat Armor Light -->
 
     <ThingDef ParentName="ApparelBase">
