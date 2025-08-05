@@ -131,6 +131,7 @@
             <wornGraphicPath>Things/Apparel/Wasteland_Apparel/CombatArmor/FCP_Combat_Armor</wornGraphicPath>
             <tags>
                 <li>FCP_Combat_Armors</li>
+                <li>FCP_Combat_Armor</li>
             </tags>
         </apparel>
         <comps>
@@ -154,6 +155,7 @@
             <wornGraphicPath>Things/Apparel/Wasteland_Apparel/RivetCitySecurity/Rivit_City_Security_Uniform/FCP_Rivit_City_Security_Uniform</wornGraphicPath>
             <tags>
                 <li>FCP_Combat_Armors</li>
+                <li>FCP_Combat_Armor</li>
             </tags>
         </apparel>
         <comps>
@@ -215,6 +217,7 @@
             </layers>
             <tags>
                 <li>FCP_Combat_Armor_Modular</li>
+                <li>FCP_Combat_Armor</li>
             </tags>
             <defaultOutfitTags>
                 <li>FCP_Combat_Armors</li>
@@ -408,6 +411,7 @@
             </layers>
             <tags>
                 <li>FCP_Combat_Armor_Reinforced</li>
+                <li>FCP_Combat_Armor</li>
             </tags>
         </apparel>
         <comps>
@@ -470,6 +474,8 @@
             </layers>
             <tags>
                 <li>FCP_Combat_Armor_Reinforced_MK_II</li>
+                <li>FCP_Combat_Armor</li>
+                <li>FCP_Apparel</li>
             </tags>
         </apparel>
         <comps>
@@ -717,9 +723,9 @@
                 <rarity>Unique</rarity>
             </li>
         </comps>
-		<modExtensions>
-			<li Class="FCP.Core.UniqueThingExtension"></li>
-		</modExtensions>
+        <modExtensions>
+            <li Class="FCP.Core.UniqueThingExtension"></li>
+        </modExtensions>
     </ThingDef>
 
     <!-- Mysterious Stranger -->
@@ -780,9 +786,9 @@
                 <rarity>Unique</rarity>
             </li>
         </comps>
-		<modExtensions>
-			<li Class="FCP.Core.UniqueThingExtension"></li>
-		</modExtensions>
+        <modExtensions>
+            <li Class="FCP.Core.UniqueThingExtension"></li>
+        </modExtensions>
     </ThingDef>
 
     <!-- Business Pre War -->
@@ -1494,9 +1500,9 @@
                 <rarity>Unique</rarity>
             </li>
         </comps>
-		<modExtensions>
-			<li Class="FCP.Core.UniqueThingExtension"></li>
-		</modExtensions>
+        <modExtensions>
+            <li Class="FCP.Core.UniqueThingExtension"></li>
+        </modExtensions>
     </ThingDef>
 
     <!-- Grognak Female -->
@@ -1560,9 +1566,9 @@
                 <rarity>Unique</rarity>
             </li>
         </comps>
-		<modExtensions>
-			<li Class="FCP.Core.UniqueThingExtension"></li>
-		</modExtensions>
+        <modExtensions>
+            <li Class="FCP.Core.UniqueThingExtension"></li>
+        </modExtensions>
     </ThingDef>
 
     <!-- Grognak Male -->
@@ -1625,9 +1631,9 @@
                 <rarity>Unique</rarity>
             </li>
         </comps>
-		<modExtensions>
-			<li Class="FCP.Core.UniqueThingExtension"></li>
-		</modExtensions>
+        <modExtensions>
+            <li Class="FCP.Core.UniqueThingExtension"></li>
+        </modExtensions>
     </ThingDef>
 
     <!-- Inspector -->
@@ -1684,9 +1690,9 @@
                 <rarity>Unique</rarity>
             </li>
         </comps>
-		<modExtensions>
-			<li Class="FCP.Core.UniqueThingExtension"></li>
-		</modExtensions>
+        <modExtensions>
+            <li Class="FCP.Core.UniqueThingExtension"></li>
+        </modExtensions>
     </ThingDef>
 
     <!-- Silver Shroud-->
@@ -1750,9 +1756,9 @@
                 <rarity>Unique</rarity>
             </li>
         </comps>
-		<modExtensions>
-			<li Class="FCP.Core.UniqueThingExtension"></li>
-		</modExtensions>
+        <modExtensions>
+            <li Class="FCP.Core.UniqueThingExtension"></li>
+        </modExtensions>
     </ThingDef>
 
     <!-- Manta Man -->
@@ -1809,9 +1815,9 @@
                 <rarity>Unique</rarity>
             </li>
         </comps>
-		<modExtensions>
-			<li Class="FCP.Core.UniqueThingExtension"></li>
-		</modExtensions>
+        <modExtensions>
+            <li Class="FCP.Core.UniqueThingExtension"></li>
+        </modExtensions>
     </ThingDef>
 
     <!--__ Wastelander Apparel __-->
@@ -2840,9 +2846,9 @@
                 <rarity>Unique</rarity>
             </li>
         </comps>
-		<modExtensions>
-			<li Class="FCP.Core.UniqueThingExtension"></li>
-		</modExtensions>
+        <modExtensions>
+            <li Class="FCP.Core.UniqueThingExtension"></li>
+        </modExtensions>
     </ThingDef>
 
     <!-- Bright Brotherhood Robe -->
