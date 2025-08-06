@@ -10,11 +10,6 @@
     <TraderKindDef>
         <defName>FCP_Caravan_Crow_Trader</defName>
         <label>Crow</label>
-        <tradeTags>
-            <li>FCP_Wastelander_Apparel</li>
-            <li>FCP_Pre_War_Apparel</li>
-            <li>FCP_Combat_Armors</li>
-        </tradeTags>
         <stockGenerators>
 
             <!--__ Selling __-->
@@ -25,23 +20,45 @@
 
             <li Class="StockGenerator_Tag">
                 <tradeTag>FCP_Wastelander_Apparel</tradeTag>
+                <thingDefCountRange>9~15</thingDefCountRange>
                 <countRange>4~10</countRange>
+                <excludedThingDefs />
+                <customCountRanges />
             </li>
             <li Class="StockGenerator_Tag">
                 <tradeTag>FCP_Pre_War_Apparel</tradeTag>
+                <thingDefCountRange>1~4</thingDefCountRange>
                 <countRange>1~4</countRange>
+                <excludedThingDefs />
+                <customCountRanges />
             </li>
 
             <!-- Armor -->
 
             <li Class="StockGenerator_Tag">
                 <tradeTag>FCP_Combat_Armors</tradeTag>
+                <thingDefCountRange>1~4</thingDefCountRange>
                 <countRange>0~3</countRange>
+                <excludedThingDefs />
+                <customCountRanges />
+            </li>
+
+            <!-- Misc -->
+
+            <li Class="StockGenerator_Category">
+                <categoryDef>Textiles</categoryDef>
+                <thingDefCountRange>1~2</thingDefCountRange>
+                <totalPriceRange>400~800</totalPriceRange>
+                <excludedThingDefs>
+                    <li MayRequire="Ludeon.RimWorld.Anomaly">Leather_Dread</li>
+                </excludedThingDefs>
             </li>
 
             <!--__ Buying __-->
 
-        
+            <li Class="StockGenerator_BuyTradeTag"><tag>FCP_Wastelander_Apparel</tag></li>
+            <li Class="StockGenerator_BuyTradeTag"><tag>FCP_Pre_War_Apparel</tag></li>
+            <li Class="StockGenerator_BuyTradeTag"><tag>FCP_Combat_Armors</tag></li>
 
             <!--__ Currency __-->
 
@@ -79,7 +96,8 @@
 
             <!--__ Buying __-->
 
-
+            <li Class="StockGenerator_BuyTradeTag"><tag>FCP_Junk</tag></li>
+            <li Class="StockGenerator_BuyTradeTag"><tag>FCP_Crafting_Materials</tag></li>
 
             <!--__ Currency __-->
 
@@ -88,6 +106,41 @@
             <li Class="StockGenerator_SingleDef">
                 <thingDef>FCP_Currency_Caps</thingDef>
                 <countRange>750~1200</countRange>
+            </li>
+        </stockGenerators>
+    </TraderKindDef>
+
+    <!--___ Lucky Harith ___-->
+
+    <TraderKindDef>
+        <defName>FCP_Caravan_Lucky_Harith</defName>
+        <label>Lucky Harith</label>
+        <stockGenerators>
+
+            <!--__ Selling __-->
+
+            <!--_ Apparel _-->
+
+            <!-- Clothing -->
+
+
+
+            <!-- Armor -->
+
+
+
+            <!--__ Buying __-->
+
+            <li Class="StockGenerator_BuyTradeTag"><tag>WeaponRanged</tag></li>
+            <li Class="StockGenerator_BuyTradeTag"><tag>WeaponsMelee</tag></li>
+
+            <!--__ Currency __-->
+
+            <!-- Caps -->
+
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>FCP_Currency_Caps</thingDef>
+                <countRange>300~1250</countRange>
             </li>
         </stockGenerators>
     </TraderKindDef>
@@ -113,7 +166,7 @@
 
             <!--__ Buying __-->
 
-
+            <li Class="StockGenerator_BuyTradeTag"><tag>FCP_Chems</tag></li>
 
             <!--__ Currency __-->
 

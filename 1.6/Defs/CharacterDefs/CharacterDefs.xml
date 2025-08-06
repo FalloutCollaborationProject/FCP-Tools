@@ -118,7 +118,7 @@
 
     <FCP.Core.CharacterDef>
         <defName>FCP_Character_Crow</defName>
-        <pawnKind>FCP_Unique_Crow</pawnKind>
+        <pawnKind>FCP_Unique_Pawnkind_Wastelander_Trader_Crow</pawnKind>
         <xenotype>Baseliner</xenotype>
         <faction>FCP_Faction_Hidden_Wastelanders</faction>
         <roles>
@@ -148,7 +148,7 @@
 
     <FCP.Core.CharacterDef>
         <defName>FCP_Character_Crazy_Wolfgang</defName>
-        <pawnKind>FCP_Unique_Crazy_Wolfgang</pawnKind>
+        <pawnKind>FCP_Unique_Pawnkind_Wastelander_Trader_Crazy_Wolfgang</pawnKind>
         <xenotype>Baseliner</xenotype>
         <faction>FCP_Faction_Hidden_Wastelanders</faction>
         <roles>
@@ -178,7 +178,7 @@
 
     <FCP.Core.CharacterDef>
         <defName>FCP_Character_Doc_Hoff</defName>
-        <pawnKind>FCP_Unique_Doc_Hoff</pawnKind>
+        <pawnKind>FCP_Unique_Pawnkind_Wastelander_Trader_Doc_Hoff</pawnKind>
         <xenotype>Baseliner</xenotype>
         <faction>FCP_Faction_Hidden_Wastelanders</faction>
         <roles>
@@ -208,7 +208,7 @@
 
     <FCP.Core.CharacterDef>
         <defName>FCP_Character_Lucky_Harith</defName>
-        <pawnKind>FCP_Unique_Lucky_Harith</pawnKind>
+        <pawnKind>FCP_Unique_Pawnkind_Wastelander_Trader_Lucky_Harith</pawnKind>
         <xenotype>Baseliner</xenotype>
         <faction>FCP_Faction_Hidden_Wastelanders</faction>
         <roles>
@@ -238,7 +238,7 @@
 
     <FCP.Core.CharacterDef>
         <defName>FCP_Character_Belle_Bonny</defName>
-        <pawnKind>FCP_Unique_Belle_Bonny</pawnKind>
+        <pawnKind>FCP_Unique_Pawnkind_Wastelander_Trader_Belle_Bonny</pawnKind>
         <xenotype>Baseliner</xenotype>
         <faction>FCP_Faction_Hidden_Wastelanders</faction>
         <roles>
@@ -268,7 +268,7 @@
 
     <FCP.Core.CharacterDef>
         <defName>FCP_Character_Banon</defName>
-        <pawnKind>FCP_Unique_Banon</pawnKind>
+        <pawnKind>FCP_Unique_Pawnkind_Wastelander_Trader_Banon</pawnKind>
         <xenotype>Baseliner</xenotype>
         <faction>FCP_Faction_Hidden_Wastelanders</faction>
         <roles>
@@ -298,7 +298,7 @@
 
     <FCP.Core.CharacterDef>
         <defName>FCP_Character_Angela_Staley</defName>
-        <pawnKind>FCP_Unique_Angela_Staley</pawnKind>
+        <pawnKind>FCP_Unique_Pawnkind_Wastelander_Trader_Angela_Staley</pawnKind>
         <xenotype>Baseliner</xenotype>
         <faction>FCP_Faction_Hidden_Wastelanders</faction>
         <roles>

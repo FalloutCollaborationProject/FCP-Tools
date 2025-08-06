@@ -70,10 +70,10 @@
 
             <!-- Traders -->
 
-            <li Class="FCP.Core.GroupMakerWithTraderKind">
+            <!-- <li Class="FCP.Core.GroupMakerWithTraderKind">
                 <kindDef>Trader</kindDef>
                 <traders>
-                    <FCP_Pawnkind_Wastelander_Trader_Crow>1</FCP_Pawnkind_Wastelander_Trader_Crow>
+                    <FCP_Unique_Pawnkind_Wastelander_Trader_Crow>1</FCP_Unique_Pawnkind_Wastelander_Trader_Crow>
                 </traders>
                 <carriers>
                     <FCP_Animal_Brahmin>6</FCP_Animal_Brahmin>
@@ -81,7 +81,7 @@
                 <guards>
                     <FCP_Pawnkind_Wastelander_Caravan_Guard>5</FCP_Pawnkind_Wastelander_Caravan_Guard>
                 </guards>
-            </li>
+            </li> -->
         </pawnGroupMakers>
         <modExtensions Inherit="False">
             <li Class="FCP.Core.ModExtension_HiddenFactionHasCaravans" />
@@ -165,7 +165,7 @@
             <li Class="FCP.Core.GroupMakerWithTraderKind">
                 <kindDef>Trader</kindDef>
                 <traders>
-                    <FCP_Pawnkind_Wastelander_Trader_Crow>1</FCP_Pawnkind_Wastelander_Trader_Crow>
+                    <FCP_Unique_Pawnkind_Wastelander_Trader_Crow>1</FCP_Unique_Pawnkind_Wastelander_Trader_Crow>
                 </traders>
                 <carriers>
                     <FCP_Animal_Brahmin>6</FCP_Animal_Brahmin>
