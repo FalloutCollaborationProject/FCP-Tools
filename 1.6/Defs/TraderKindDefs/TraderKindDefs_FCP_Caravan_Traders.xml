@@ -77,10 +77,6 @@
         <defName>FCP_Caravan_Crazy_Wolfgang</defName>
         <label>Crazy Wolfgang</label>
         <stockGenerators>
-        <tradeTags>
-            <li>FCP_Junk</li>
-            <li>FCP_Crafting_Materials</li>
-        </tradeTags>
 
             <!--__ Selling __-->
 
@@ -96,8 +92,8 @@
 
             <!--__ Buying __-->
 
-            <li Class="StockGenerator_BuyTradeTag"><tag>FCP_Junk</tag></li>
-            <li Class="StockGenerator_BuyTradeTag"><tag>FCP_Crafting_Materials</tag></li>
+            <!-- <li Class="StockGenerator_BuyTradeTag"><tag>FCP_Junk</tag></li>
+            <li Class="StockGenerator_BuyTradeTag"><tag>FCP_Crafting_Materials</tag></li> -->
 
             <!--__ Currency __-->
 

@@ -162,7 +162,7 @@
 
             <!-- Traders -->
 
-            <li Class="FCP.Core.GroupMakerWithCustomChar">
+            <!-- <li Class="FCP.Core.GroupMakerWithCustomChar">
                 <kindDef>Trader</kindDef>
                 <traderKinds>
                     <li>FCP_Caravan_Crow_Trader</li>
@@ -180,7 +180,7 @@
                     <li>FCP_Character_Crow</li>
                 </characterDefs>
                 <characterChance>1</characterChance>
-            </li>
+            </li> -->
         </pawnGroupMakers>
         <modExtensions Inherit="False">
             <li Class="FCP.Core.ModExtension_HiddenFactionHasCaravans" />
