@@ -4,8 +4,8 @@
 	<!--__________ Power Armor - Basic __________-->
 
 	<!--_____ Base _____-->
-	
-	<ThingDef ParentName="ApparelBase" Name="FCP_Apparel_Power_Armor_Base" Abstract="true">
+
+	<ThingDef ParentName="ApparelBase" Name="FCP_Apparel_Power_Armor_Frame_Base" Abstract="true">
 		<thingSetMakerTags>
 			<li>RewardStandardMidFreq</li>
 		</thingSetMakerTags>
@@ -56,9 +56,20 @@
 		</tradeTags>
 		<building />
 		<comps>
-            <li Class="FCP.Core.CompProperties_LabelColored">
-                <rarity>Rare</rarity>
-           	</li>		
+			<li Class="FCP.Core.CompProperties_LabelColored">
+				<rarity>Rare</rarity>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="FalloutCore.ApparelExtension">
+				<shouldHideBody>True</shouldHideBody>
+				<displayBodyType>Hulk</displayBodyType>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<ThingDef ParentName="FCP_Apparel_Power_Armor_Frame_Base" Name="FCP_Apparel_Power_Armor_Base" Abstract="true">
+		<comps>
 			<li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
 				<requiredApparels>
 					<li>FCP_Apparel_Power_Armor_Frame</li>
@@ -72,19 +83,13 @@
 				<hediffOnEmptyFuel>FCP_Hediff_Power_Armor_Empty_Fusion_Core</hediffOnEmptyFuel>
 			</li>
 		</comps>
-		<modExtensions>
-			<li Class="FalloutCore.ApparelExtension">
-				<shouldHideBody>True</shouldHideBody>
-				<displayBodyType>Hulk</displayBodyType>
-			</li>
-		</modExtensions>
 	</ThingDef>
 
 	<!--_____ Frames _____-->
 
 	<!-- Power Armor Frame -->
 
-	<ThingDef ParentName="FCP_Apparel_Power_Armor_Base">
+	<ThingDef ParentName="FCP_Apparel_Power_Armor_Frame_Base">
 		<defName>FCP_Apparel_Power_Armor_Frame</defName>
 		<label>Power Armor Frame</label>
 		<description>A reinforced exoskeletal frame designed to support the weight and systems of advanced power armor. On its own, the Power Armor Frame offers basic protection and increased carrying capacity, but it truly shines when fitted with full armor plating. Essential for anyone hoping to operate pre-war power armor suits in the wasteland.</description>
@@ -118,17 +123,8 @@
 			<tags>
 				<li>FCP_Power_Armor</li>
 			</tags>
-			</apparel>
-			<comps>
-			<li Class="RangerRick_PowerArmor.CompProperties_PowerArmor" Inherit="False">
-				<workDisables>
-					<li>Construction</li>
-				</workDisables>
-				<canSleep>False</canSleep>
-				<ignoresLegs>True</ignoresLegs>
-				<requiredTrait>FCP_Trait_Power_Armor_Trained</requiredTrait>
-				<hediffOnEmptyFuel>FCP_Hediff_Power_Armor_Empty_Fusion_Core</hediffOnEmptyFuel>
-			</li>
+		</apparel>
+		<comps>
 			<li Class="CompProperties_Refuelable">
 				<fuelCapacity>100</fuelCapacity>
 				<fuelConsumptionRate>20</fuelConsumptionRate>
@@ -147,7 +143,7 @@
 			</li>
 		</comps>
 	</ThingDef>
-	
+
 	<!--_____ T-45 _____-->
 
 	<!-- T-45 Power Armor -->
