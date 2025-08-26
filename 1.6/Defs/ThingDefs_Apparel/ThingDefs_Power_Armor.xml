@@ -120,7 +120,15 @@
 			</tags>
 			</apparel>
 			<comps>
-			<li Class="RangerRick_PowerArmor.CompProperties_ApparelDependency" />
+			<li Class="RangerRick_PowerArmor.CompProperties_PowerArmor" Inherit="False">
+				<workDisables>
+					<li>Construction</li>
+				</workDisables>
+				<canSleep>False</canSleep>
+				<ignoresLegs>True</ignoresLegs>
+				<requiredTrait>FCP_Trait_Power_Armor_Trained</requiredTrait>
+				<hediffOnEmptyFuel>FCP_Hediff_Power_Armor_Empty_Fusion_Core</hediffOnEmptyFuel>
+			</li>
 			<li Class="CompProperties_Refuelable">
 				<fuelCapacity>100</fuelCapacity>
 				<fuelConsumptionRate>20</fuelConsumptionRate>
