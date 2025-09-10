@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Title Defs __________-->
+
+    <!--_____ Base Titles _____-->
+
+    <RoyalTitleDef Abstract="True" Name="FCP_Base_Empire_Titles">
+        <awardThought>GainedTitle</awardThought>
+        <lostThought>LostTitle</lostThought>
+    </RoyalTitleDef>
+
+</Defs>
