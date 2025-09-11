@@ -3,6 +3,22 @@
 
     <!--__________ Settlement Names __________-->
 
+    <!--_____ Pre-War USA Settlement Names _____-->
+
+    <!-- Settlements -->
+
+    <RulePackDef>
+        <defName>FCP_Namer_Settlement_USA</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[USA_Settlements]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>USA_Settlements->Settlement_Names/USA/USA_Settlements</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
     <!--_____ Wasteland Settlement Names _____-->
 
     <!-- Settlements -->
