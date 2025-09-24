@@ -19,6 +19,22 @@
         </rulePack>
     </RulePackDef>
 
+    <!--_____ Pre-War China Settlement Names _____-->
+
+    <!-- Settlements -->
+
+    <RulePackDef>
+        <defName>FCP_Namer_Settlement_PRC</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[PRC_Settlements]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>PRC_Settlements->Settlement_Names/PRC/PRC_Settlements</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
     <!--_____ Wasteland Settlement Names _____-->
 
     <!-- Settlements -->
@@ -309,6 +325,38 @@
             <rulesFiles>
                 <li>FCP_Retro_Names_Female->Names/FCP_Retro_Names_Female</li>
                 <li>FCP_Retro_Names_Last->Names/FCP_Retro_Names_Last</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!--_____ Chinese Names _____-->
+
+    <!-- Male -->
+
+    <RulePackDef>
+        <defName>FCP_PRC_Namer_Male</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[FCP_Chinese_Names_Male] [FCP_Chinese_Names_Last]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>FCP_Chinese_Names_Male->Names/FCP_Chinese_Names_Male</li>
+                <li>FCP_Chinese_Names_Last->Names/FCP_Chinese_Names_Last</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!-- Female -->
+
+    <RulePackDef>
+        <defName>FCP_PRC_Namer_Female</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[FCP_Chinese_Names_Female] [FCP_Chinese_Names_Last]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>FCP_Chinese_Names_Female->Names/FCP_Chinese_Names_Female</li>
+                <li>FCP_Chinese_Names_Last->Names/FCP_Chinese_Names_Last</li>
             </rulesFiles>
         </rulePack>
     </RulePackDef>
