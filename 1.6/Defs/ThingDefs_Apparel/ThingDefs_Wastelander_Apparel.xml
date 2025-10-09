@@ -82,6 +82,8 @@
         </recipeMaker>
         <costList>
             <Cloth>25</Cloth>
+            <Steel>60</Steel>
+            <ComponentIndustrial>2</ComponentIndustrial>
         </costList>
         <statBases>
             <MaxHitPoints>250</MaxHitPoints>
