@@ -9,29 +9,20 @@
 
     <!--__ Combat Armor __-->
 
-    <!-- Combat Armor Helmet -->
+    <!-- Combat Armor Helmet Base -->
 
-    <ThingDef ParentName="HatMakeableBase">
-        <defName>FCP_Apparel_Combat_Helmet</defName>
-        <label>Combat Helmet</label>
-        <description>A matching helmet for the combat armor, it offers a bit of protection.</description>
+    <ThingDef Name="FCP_Apparel_Combat_Helmet_Base" ParentName="HatMakeableBase" Abstract="true">
         <techLevel>Industrial</techLevel>
+        <smeltable>false</smeltable>
         <graphicData>
-            <texPath>Things/Apparel/Wasteland_Apparel/CombatArmor/FCP_Combat_Armor_Helmet_south</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <smeltable>false</smeltable>
         <recipeMaker>
             <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
-            <researchPrerequisite>FCP_Research_CombatArmorStandard</researchPrerequisite>
             <skillRequirements>
                 <Crafting>8</Crafting>
             </skillRequirements>
         </recipeMaker>
-        <costList>
-            <Steel>40</Steel>
-            <ComponentIndustrial>2</ComponentIndustrial>
-        </costList>
         <statBases>
             <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
@@ -46,10 +37,30 @@
             <bodyPartGroups>
                 <li>UpperHead</li>
             </bodyPartGroups>
-            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/CombatArmor/FCP_Combat_Armor_Helmet</wornGraphicPath>
             <layers>
                 <li>Overhead</li>
             </layers>
+        </apparel>
+    </ThingDef>
+
+    <!-- Combat Armor Helmet -->
+
+    <ThingDef ParentName="FCP_Apparel_Combat_Helmet_Base">
+        <defName>FCP_Apparel_Combat_Helmet</defName>
+        <label>Combat Helmet</label>
+        <description>A matching helmet for the combat armor, it offers a bit of protection.</description>
+        <graphicData>
+            <texPath>Things/Apparel/Wasteland_Apparel/CombatArmor/FCP_Combat_Armor_Helmet_south</texPath>
+        </graphicData>
+        <recipeMaker>
+            <researchPrerequisite>FCP_Research_CombatArmorStandard</researchPrerequisite>
+        </recipeMaker>
+        <costList>
+            <Steel>40</Steel>
+            <ComponentIndustrial>2</ComponentIndustrial>
+        </costList>
+        <apparel>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/CombatArmor/FCP_Combat_Armor_Helmet</wornGraphicPath>
             <tags>
                 <li>FCP_Combat_Armors</li>
             </tags>
@@ -273,6 +284,47 @@
     <!--_____ Apparel _____-->
 
     <!--___ Pre-War Apparel ___-->
+
+    <!--Officers Cap Base -->
+
+    <ThingDef ParentName="HatMakeableBase" Name="FCP_Apparel_Officers_Cap_Base" Abstract="true">
+        <techLevel>Industrial</techLevel>
+        <recipeMaker>
+            <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+            <skillRequirements>
+                <Crafting>5</Crafting>
+            </skillRequirements>
+        </recipeMaker>
+        <graphicData>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <WorkToMake>2500</WorkToMake>
+            <MaxHitPoints>80</MaxHitPoints>
+            <Mass>0.2</Mass>
+            <ArmorRating_Sharp>0</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0</ArmorRating_Blunt>
+            <ArmorRating_Heat>0</ArmorRating_Heat>
+            <EquipDelay>1.5</EquipDelay>
+        </statBases>
+        <costList>
+            <Cloth>25</Cloth>
+        </costList>
+        <apparel>
+            <canBeDesiredForIdeo>true</canBeDesiredForIdeo>
+            <bodyPartGroups>
+                <li>UpperHead</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Overhead</li>
+            </layers>
+        </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
+    </ThingDef>
 
     <!-- Army Helmet -->
 
