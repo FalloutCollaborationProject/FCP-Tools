@@ -233,6 +233,24 @@
         </backstoryFiltersOverride>
     </PawnKindDef>
     
+    <!--___ USA Base ___-->
+
+    <PawnKindDef Name="FCP_USAkindBase" Abstract="True">
+        <race>Human</race>
+        <defaultFactionDef>FCP_Faction_USA</defaultFactionDef>
+        <maxGenerationAge>60</maxGenerationAge>
+        <chemicalAddictionChance>0</chemicalAddictionChance>
+        <invNutrition>2.7</invNutrition>
+        <invFoodDef>MealSurvivalPack</invFoodDef>
+        <disallowedTraits>
+            <li>Cannibal</li>
+            <li>Nudist</li>
+        </disallowedTraits>
+        <apparelTags>
+            <li>FCP_Pre_War</li>
+        </apparelTags>
+    </PawnKindDef>
+
     <!--_____ Wastelanders _____-->
 
     <!-- Caravan Guard -->
