@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -87,8 +87,7 @@ namespace RangerRick_PowerArmor
                 var comp = parent.GetComp<CompRefuelable>();
                 if (comp.Props.showFuelGizmo && Find.Selector.SingleSelectedThing == apparel.Wearer)
                 {
-                    Gizmo_RefuelableFuelStatus gizmo_RefuelableFuelStatus = new Gizmo_RefuelableFuelStatus();
-                    gizmo_RefuelableFuelStatus.refuelable = comp;
+                    var gizmo_RefuelableFuelStatus = new Gizmo_SetFuelLevel(comp);
                     yield return gizmo_RefuelableFuelStatus;
                 }
                 foreach (var g in comp.CompGetGizmosExtra())
