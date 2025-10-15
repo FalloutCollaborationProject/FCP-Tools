@@ -19,7 +19,7 @@ public static class CharacterRoleUtils
             return (List<CharacterDefWithRole<TRole>>)roleList;
         }
 
-        FCPLog.Error("Failed to retrieve a CharacterDefWithRole<TRole> list from the role registry, returning empty.");
+        // Return empty list when no characters have this role - this is expected behavior
         return new List<CharacterDefWithRole<TRole>>();
     }
     
