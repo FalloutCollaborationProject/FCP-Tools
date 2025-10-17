@@ -71,16 +71,17 @@
 	<ThingDef ParentName="FCP_Apparel_Power_Armor_Frame_Base" Name="FCP_Apparel_Power_Armor_Base" Abstract="true">
 		<comps>
 			<li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
-				<requiredApparels>
-					<li>FCP_Apparel_Power_Armor_Frame</li>
-				</requiredApparels>
 				<workDisables>
 					<li>Construction</li>
 				</workDisables>
 				<canSleep>False</canSleep>
 				<ignoresLegs>True</ignoresLegs>
-				<requiredTrait>FCP_Trait_Power_Armor_Trained</requiredTrait>
 				<hediffOnEmptyFuel>FCP_Hediff_Power_Armor_Empty_Fusion_Core</hediffOnEmptyFuel>
+			</li>
+			<li Class="RangerRick_PowerArmor.CompProperties_ApparelRequirement">
+				<requiredApparels>
+					<li>FCP_Apparel_Power_Armor_Frame</li>
+				</requiredApparels>
 			</li>
 			<li Class="CompProperties_Refuelable">
 				<fuelCapacity>100</fuelCapacity>
@@ -141,6 +142,9 @@
 			</tags>
 		</apparel>
 		<comps>
+			<li Class="RangerRick_PowerArmor.CompProperties_ApparelRequirement">
+				<requiredTrait>FCP_Trait_Power_Armor_Trained</requiredTrait>
+			</li>
 			<li Class="RangerRick_PowerArmor.CompProperties_ApparelDependency"></li>
 		</comps>
 	</ThingDef>

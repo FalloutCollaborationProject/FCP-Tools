@@ -51,13 +51,15 @@
                 <rarity>Rare</rarity>
             </li>
             <li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
-                <requiredApparels>
-                    <li>FCP_Apparel_Power_Armor_Frame</li>
-                </requiredApparels>
                 <workDisables>
                     <li>Construction</li>
                 </workDisables>
                 <canSleep>False</canSleep>
+            </li>
+            <li Class="RangerRick_PowerArmor.CompProperties_ApparelRequirement">
+                <requiredApparels>
+                    <li>FCP_Apparel_Power_Armor_Frame</li>
+                </requiredApparels>
             </li>
         </comps>
     </ThingDef>
@@ -109,13 +111,15 @@
                 <rarity>Rare</rarity>
             </li>
             <li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
-                <requiredApparels>
-                    <li>FCP_Apparel_Power_Armor_Frame</li>
-                </requiredApparels>
                 <workDisables>
                     <li>Construction</li>
                 </workDisables>
                 <canSleep>False</canSleep>
+            </li>
+            <li Class="RangerRick_PowerArmor.CompProperties_ApparelRequirement">
+                <requiredApparels>
+                    <li>FCP_Apparel_Power_Armor_Frame</li>
+                </requiredApparels>
             </li>
         </comps>
     </ThingDef>
@@ -167,13 +171,15 @@
                 <rarity>Rare</rarity>
             </li>
             <li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
-                <requiredApparels>
-                    <li>FCP_Apparel_Power_Armor_Frame</li>
-                </requiredApparels>
                 <workDisables>
                     <li>Construction</li>
                 </workDisables>
                 <canSleep>False</canSleep>
+            </li>
+            <li Class="RangerRick_PowerArmor.CompProperties_ApparelRequirement">
+                <requiredApparels>
+                    <li>FCP_Apparel_Power_Armor_Frame</li>
+                </requiredApparels>
             </li>
         </comps>
     </ThingDef>
@@ -224,13 +230,15 @@
                 <rarity>Rare</rarity>
             </li>
             <li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
-                <requiredApparels>
-                    <li>FCP_Apparel_Power_Armor_Frame</li>
-                </requiredApparels>
                 <workDisables>
                     <li>Construction</li>
                 </workDisables>
                 <canSleep>False</canSleep>
+            </li>
+            <li Class="RangerRick_PowerArmor.CompProperties_ApparelRequirement">
+                <requiredApparels>
+                    <li>FCP_Apparel_Power_Armor_Frame</li>
+                </requiredApparels>
             </li>
         </comps>
     </ThingDef>

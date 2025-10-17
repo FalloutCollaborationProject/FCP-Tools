@@ -18,7 +18,7 @@ namespace RangerRick_PowerArmor
             {
                 if (pawn.apparel.WornApparel.Contains(apparel))
                 {
-                    var comp = apparel.GetComp<CompPowerArmor>();
+                    var comp = apparel.GetComp<CompApparelRequirement>();
                     if (comp != null && comp.Props.requiredApparels != null && comp.HasRequiredApparel(pawn) is false)
                     {
                         pawn.apparel.TryDrop(apparel);

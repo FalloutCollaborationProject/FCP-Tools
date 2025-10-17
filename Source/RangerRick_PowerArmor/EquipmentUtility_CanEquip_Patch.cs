@@ -15,24 +15,25 @@ namespace RangerRick_PowerArmor
         {
             if (pawn.apparel != null && thing is Apparel)
             {
-                var comp = thing.TryGetComp<CompPowerArmor>();
-                if (comp != null)
+                var reqComp = thing.TryGetComp<CompApparelRequirement>();
+                
+                if (reqComp != null)
                 {
-                    if (comp.HasRequiredTrait(pawn) is false)
+                    if (reqComp.HasRequiredTrait(pawn) is false)
                     {
-                        cantReason = "RR.RequiresTrait".Translate(comp.Props.requiredTrait.degreeDatas[0].label);
+                        cantReason = "RR.RequiresTrait".Translate(reqComp.Props.requiredTrait.degreeDatas[0].label);
                         __result = false;
                         return;
                     }
-                    if (comp.HasRequiredApparel(pawn) is false)
+                    if (reqComp.HasRequiredApparel(pawn) is false)
                     {
-                        if (comp.Props.requiredApparels.Count == 1)
+                        if (reqComp.Props.requiredApparels.Count == 1)
                         {
-                            cantReason = "RR.RequiresApparel".Translate(comp.Props.requiredApparels[0].label);
+                            cantReason = "RR.RequiresApparel".Translate(reqComp.Props.requiredApparels[0].label);
                         }
                         else
                         {
-                            cantReason = "RR.RequiresApparelsAnyOf".Translate(string.Join(", ", comp.Props.requiredApparels.Select(x => x.label)));
+                            cantReason = "RR.RequiresApparelsAnyOf".Translate(string.Join(", ", reqComp.Props.requiredApparels.Select(x => x.label)));
                         }
                         __result = false;
                         return;

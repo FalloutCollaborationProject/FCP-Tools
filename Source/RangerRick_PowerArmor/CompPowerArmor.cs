@@ -11,8 +11,6 @@ namespace RangerRick_PowerArmor
 
     public class CompProperties_PowerArmor : CompProperties
     {
-        public List<ThingDef> requiredApparels;
-        public TraitDef requiredTrait;
         public HediffDef hediffOnEmptyFuel;
         public List<WorkTypeDef> workDisables;
         public bool canSleep = true;
@@ -36,15 +34,6 @@ namespace RangerRick_PowerArmor
 
         private CompRefuelable _compRefuelable;
         public CompRefuelable CompRefuelable => _compRefuelable ??= parent.GetComp<CompRefuelable>();
-
-        public bool HasRequiredApparel(Pawn pawn)
-        {
-            return Props.requiredApparels is null || pawn.apparel.WornApparel.Any(y => Props.requiredApparels.Contains(y.def));
-        }
-        public bool HasRequiredTrait(Pawn pawn)
-        {
-            return Props.requiredTrait is null || pawn.story.traits.GetTrait(Props.requiredTrait) != null;
-        }
 
         public override void CompTick()
         {
