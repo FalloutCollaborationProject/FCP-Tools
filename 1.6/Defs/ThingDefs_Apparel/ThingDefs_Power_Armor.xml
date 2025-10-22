@@ -132,7 +132,6 @@
 				<fuelLabel>Fusion Core</fuelLabel>
 				<fuelGizmoLabel>Fusion Core</fuelGizmoLabel>
 				<outOfFuelMessage>Needs Fusion Core</outOfFuelMessage>
-				<showFuelGizmo>true</showFuelGizmo>
 				<fuelFilter>
 					<thingDefs>
 						<li>Chemfuel</li>
