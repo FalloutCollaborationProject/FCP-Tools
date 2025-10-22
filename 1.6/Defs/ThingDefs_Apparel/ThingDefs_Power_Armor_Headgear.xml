@@ -18,7 +18,6 @@
         </graphicData>
         <smeltable>false</smeltable>
         <statBases>
-            <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
             <Mass>0.8</Mass>
             <ArmorRating_Sharp>1.00</ArmorRating_Sharp>
@@ -50,12 +49,6 @@
             <li Class="FCP.Core.CompProperties_LabelColored">
                 <rarity>Rare</rarity>
             </li>
-            <li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
-                <workDisables>
-                    <li>Construction</li>
-                </workDisables>
-                <canSleep>False</canSleep>
-            </li>
             <li Class="RangerRick_PowerArmor.CompProperties_ApparelRequirement">
                 <requiredApparels>
                     <li>FCP_Apparel_Power_Armor_Frame</li>
@@ -79,7 +72,6 @@
         </graphicData>
         <smeltable>false</smeltable>
         <statBases>
-            <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
             <Mass>0.8</Mass>
             <ArmorRating_Sharp>1.30</ArmorRating_Sharp>
@@ -110,12 +102,6 @@
             <li Class="FCP.Core.CompProperties_LabelColored">
                 <rarity>Rare</rarity>
             </li>
-            <li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
-                <workDisables>
-                    <li>Construction</li>
-                </workDisables>
-                <canSleep>False</canSleep>
-            </li>
             <li Class="RangerRick_PowerArmor.CompProperties_ApparelRequirement">
                 <requiredApparels>
                     <li>FCP_Apparel_Power_Armor_Frame</li>
@@ -139,7 +125,6 @@
         </graphicData>
         <smeltable>false</smeltable>
         <statBases>
-            <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
             <Mass>0.8</Mass>
             <ArmorRating_Sharp>1.60</ArmorRating_Sharp>
@@ -170,12 +155,6 @@
             <li Class="FCP.Core.CompProperties_LabelColored">
                 <rarity>Rare</rarity>
             </li>
-            <li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
-                <workDisables>
-                    <li>Construction</li>
-                </workDisables>
-                <canSleep>False</canSleep>
-            </li>
             <li Class="RangerRick_PowerArmor.CompProperties_ApparelRequirement">
                 <requiredApparels>
                     <li>FCP_Apparel_Power_Armor_Frame</li>
@@ -199,7 +178,6 @@
         </graphicData>
         <smeltable>false</smeltable>
         <statBases>
-            <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
             <Mass>0.8</Mass>
             <ArmorRating_Sharp>1.45</ArmorRating_Sharp>
@@ -228,12 +206,6 @@
         <comps>
             <li Class="FCP.Core.CompProperties_LabelColored">
                 <rarity>Rare</rarity>
-            </li>
-            <li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
-                <workDisables>
-                    <li>Construction</li>
-                </workDisables>
-                <canSleep>False</canSleep>
             </li>
             <li Class="RangerRick_PowerArmor.CompProperties_ApparelRequirement">
                 <requiredApparels>
