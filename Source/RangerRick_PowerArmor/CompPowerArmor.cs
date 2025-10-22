@@ -32,8 +32,9 @@ namespace RangerRick_PowerArmor
     {
         public CompProperties_PowerArmor Props => base.props as CompProperties_PowerArmor;
 
-        private CompRefuelable _compRefuelable;
-        public CompRefuelable CompRefuelable => _compRefuelable ??= parent.GetComp<CompRefuelable>();
+    private CompRefuelable _compRefuelable;
+    // Use TryGetComp and cache result; can be null for items without refuelable component (e.g., helmets)
+    public CompRefuelable CompRefuelable => _compRefuelable ??= parent.TryGetComp<CompRefuelable>();
 
         public override void CompTick()
         {
@@ -41,10 +42,10 @@ namespace RangerRick_PowerArmor
             if (parent is Apparel apparel && apparel.Wearer is not null)
             {
                 var comp = CompRefuelable;
-                comp.ConsumeFuel(CompRefuelable.ConsumptionRatePerTick);
-                if (Props.hediffOnEmptyFuel != null)
+                if (comp != null)
                 {
-                    if (comp.HasFuel is false)
+                    comp.ConsumeFuel(comp.ConsumptionRatePerTick);
+                    if (Props.hediffOnEmptyFuel != null && comp.HasFuel is false)
                     {
                         var hediff = apparel.Wearer.health.hediffSet.GetFirstHediffOfDef(Props.hediffOnEmptyFuel);
                         if (hediff is null)
