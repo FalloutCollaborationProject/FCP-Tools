@@ -31,25 +31,12 @@ namespace RangerRick_PowerArmor
         public override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOnDespawnedNullOrForbidden(TargetIndex.C);
-            AddEndCondition(() =>
-            {
-                var comp = RefuelableComp;
-                return comp == null ? JobCondition.Succeeded : (!comp.IsFull ? JobCondition.Ongoing : JobCondition.Succeeded);
-            });
-            AddFailCondition(() =>
-            {
-                var comp = RefuelableComp;
-                return comp == null ? true : !job.playerForced && !comp.ShouldAutoRefuelNowIgnoringFuelPct;
-            });
-            AddFailCondition(() =>
-            {
-                var comp = RefuelableComp;
-                return comp == null ? true : !comp.allowAutoRefuel && !job.playerForced;
-            });
+            AddEndCondition(() => (!RefuelableComp.IsFull) ? JobCondition.Ongoing : JobCondition.Succeeded);
+            AddFailCondition(() => !job.playerForced && !RefuelableComp.ShouldAutoRefuelNowIgnoringFuelPct);
+            AddFailCondition(() => !RefuelableComp.allowAutoRefuel && !job.playerForced);
             yield return Toils_General.DoAtomic(delegate
             {
-                var comp = RefuelableComp;
-                job.count = comp == null ? 0 : comp.GetFuelCountToFullyRefuel();
+                job.count = RefuelableComp.GetFuelCountToFullyRefuel();
             });
             Toil reserveFuel = Toils_Reserve.Reserve(TargetIndex.B);
             yield return reserveFuel;

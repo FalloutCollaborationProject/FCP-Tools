@@ -79,20 +79,15 @@ namespace RangerRick_PowerArmor
                 JobFailReason.Is(compActivable.Props.onCooldownString.CapitalizeFirst());
                 return false;
             }
-            var compRef = t.TryGetComp<CompRefuelable>();
-            if (compRef == null)
-            {
-                return false;
-            }
             if (RefuelWorkGiverUtility.FindBestFuel(pawn, t) == null)
             {
-                ThingFilter fuelFilter = compRef.Props.fuelFilter;
+                ThingFilter fuelFilter = t.TryGetComp<CompRefuelable>().Props.fuelFilter;
                 JobFailReason.Is("NoFuelToRefuel".Translate(fuelFilter.Summary));
                 return false;
             }
-            if (compRef.Props.atomicFueling && RefuelWorkGiverUtility.FindAllFuel(pawn, t) == null)
+            if (t.TryGetComp<CompRefuelable>().Props.atomicFueling && RefuelWorkGiverUtility.FindAllFuel(pawn, t) == null)
             {
-                ThingFilter fuelFilter2 = compRef.Props.fuelFilter;
+                ThingFilter fuelFilter2 = t.TryGetComp<CompRefuelable>().Props.fuelFilter;
                 JobFailReason.Is("NoFuelToRefuel".Translate(fuelFilter2.Summary));
                 return false;
             }

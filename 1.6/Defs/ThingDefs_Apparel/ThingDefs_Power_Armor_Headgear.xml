@@ -18,6 +18,7 @@
         </graphicData>
         <smeltable>false</smeltable>
         <statBases>
+            <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
             <Mass>0.8</Mass>
             <ArmorRating_Sharp>1.00</ArmorRating_Sharp>
@@ -27,8 +28,8 @@
             <EquipDelay>3</EquipDelay>
         </statBases>
         <equippedStatOffsets>
-            <ToxicEnvironmentResistance>0.8</ToxicEnvironmentResistance>
-            <MoveSpeed>-0.5</MoveSpeed>
+            <ToxicEnvironmentResistance>0.8</ToxicEnvironmentResistance>            <!-- Good, but not perfect -->
+            <MoveSpeed>-0.5</MoveSpeed>            <!-- Bulky -->
             <AimingDelayFactor>-0.01</AimingDelayFactor>
             <SocialImpact>-0.05</SocialImpact>
         </equippedStatOffsets>
@@ -48,6 +49,12 @@
         <comps>
             <li Class="FCP.Core.CompProperties_LabelColored">
                 <rarity>Rare</rarity>
+            </li>
+            <li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
+                <workDisables>
+                    <li>Construction</li>
+                </workDisables>
+                <canSleep>False</canSleep>
             </li>
             <li Class="RangerRick_PowerArmor.CompProperties_ApparelRequirement">
                 <requiredApparels>
@@ -72,6 +79,7 @@
         </graphicData>
         <smeltable>false</smeltable>
         <statBases>
+            <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
             <Mass>0.8</Mass>
             <ArmorRating_Sharp>1.30</ArmorRating_Sharp>
@@ -102,6 +110,12 @@
             <li Class="FCP.Core.CompProperties_LabelColored">
                 <rarity>Rare</rarity>
             </li>
+            <li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
+                <workDisables>
+                    <li>Construction</li>
+                </workDisables>
+                <canSleep>False</canSleep>
+            </li>
             <li Class="RangerRick_PowerArmor.CompProperties_ApparelRequirement">
                 <requiredApparels>
                     <li>FCP_Apparel_Power_Armor_Frame</li>
@@ -125,6 +139,7 @@
         </graphicData>
         <smeltable>false</smeltable>
         <statBases>
+            <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
             <Mass>0.8</Mass>
             <ArmorRating_Sharp>1.60</ArmorRating_Sharp>
@@ -155,6 +170,12 @@
             <li Class="FCP.Core.CompProperties_LabelColored">
                 <rarity>Rare</rarity>
             </li>
+            <li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
+                <workDisables>
+                    <li>Construction</li>
+                </workDisables>
+                <canSleep>False</canSleep>
+            </li>
             <li Class="RangerRick_PowerArmor.CompProperties_ApparelRequirement">
                 <requiredApparels>
                     <li>FCP_Apparel_Power_Armor_Frame</li>
@@ -178,6 +199,7 @@
         </graphicData>
         <smeltable>false</smeltable>
         <statBases>
+            <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
             <Mass>0.8</Mass>
             <ArmorRating_Sharp>1.45</ArmorRating_Sharp>
@@ -187,9 +209,9 @@
             <EquipDelay>2</EquipDelay>
         </statBases>
         <equippedStatOffsets>
-            <ToxicEnvironmentResistance>1.0</ToxicEnvironmentResistance>
+            <ToxicEnvironmentResistance>1.0</ToxicEnvironmentResistance>            <!-- Perfect gas mask -->
             <AimingDelayFactor>-0.04</AimingDelayFactor>
-            <SocialImpact>0.05</SocialImpact>
+            <SocialImpact>0.05</SocialImpact>            <!-- Awe-inspiring -->
         </equippedStatOffsets>
         <apparel>
             <bodyPartGroups>
@@ -206,6 +228,12 @@
         <comps>
             <li Class="FCP.Core.CompProperties_LabelColored">
                 <rarity>Rare</rarity>
+            </li>
+            <li Class="RangerRick_PowerArmor.CompProperties_PowerArmor">
+                <workDisables>
+                    <li>Construction</li>
+                </workDisables>
+                <canSleep>False</canSleep>
             </li>
             <li Class="RangerRick_PowerArmor.CompProperties_ApparelRequirement">
                 <requiredApparels>
