@@ -9,6 +9,7 @@
 			<canBeGeneratedToSatisfyVacuumResistance>false</canBeGeneratedToSatisfyVacuumResistance>
 			<canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
 		</apparel>
+	</ThingDef>
 	
     <!--_____ T-45 _____-->
 
