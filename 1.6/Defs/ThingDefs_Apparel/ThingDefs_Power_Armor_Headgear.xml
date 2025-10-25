@@ -3,11 +3,18 @@
 
     <!--__________ Power Armor Helmets __________-->
 
+	<ThingDef ParentName="HatBase" Name="FCP_Apparel_Power_Armor_Helmet_Base" Abstract="true">
+		<apparel>
+			<canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+			<canBeGeneratedToSatisfyVacuumResistance>false</canBeGeneratedToSatisfyVacuumResistance>
+			<canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+		</apparel>
+	
     <!--_____ T-45 _____-->
 
     <!-- T-45 Power Armor Helmet -->
-
-    <ThingDef ParentName="HatBase">
+	
+    <ThingDef ParentName="FCP_Apparel_Power_Armor_Helmet_Base">
         <defName>FCP_Apparel_Power_Armor_T45_Helmet</defName>
         <label>T-45 Power Armor Helmet</label>
         <description>An early model of power armor helmet, the T45 offers solid protection against most threats. Its bulky design is a testament to pre-war engineering, providing reliable defense at the cost of some comfort and mobility.</description>
@@ -61,7 +68,7 @@
 
     <!-- T-51 Power Armor Helmet -->
 
-    <ThingDef ParentName="HatBase">
+    <ThingDef ParentName="FCP_Apparel_Power_Armor_Helmet_Base">
         <defName>FCP_Apparel_Power_Armor_T51_Helmet</defName>
         <label>T-51 Power Armor Helmet</label>
         <description>The T51 helmet is a refined evolution of power armor technology, offering superior protection and improved ergonomics over earlier models. Favored for its balance of defense and comfort.</description>
@@ -114,7 +121,7 @@
 
     <!-- T-60 Power Armor Helmet -->
 
-    <ThingDef ParentName="HatBase">
+    <ThingDef ParentName="FCP_Apparel_Power_Armor_Helmet_Base">
         <defName>FCP_Apparel_Power_Armor_T60_Helmet</defName>
         <label>T-60 Power Armor Helmet</label>
         <description>The T60 helmet represents advanced power armor development, featuring enhanced armor plating and improved environmental sealing. Designed for frontline combat in hazardous conditions.</description>
@@ -167,7 +174,7 @@
 
     <!-- X01 Power Armor Helmet -->
 
-    <ThingDef ParentName="HatBase">
+    <ThingDef ParentName="FCP_Apparel_Power_Armor_Helmet_Base">
         <defName>FCP_Apparel_Power_Armor_X01_Helmet</defName>
         <label>X-01 Power Armor Helmet</label>
         <description>The X01 helmet is the pinnacle of power armor headgear, boasting cutting-edge materials and maximum protection. Its intimidating design and advanced systems make it a rare and valuable asset.</description>
