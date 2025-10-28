@@ -109,7 +109,7 @@
             <bodyPartGroups>
                 <li>UpperHead</li>
             </bodyPartGroups>
-            <wornGraphicPath>TThings/Apparel/Wasteland_Apparel/RivetCitySecurity/Rivit_City_Security_Helmet/FCP_Rivit_City_Security_Helmet</wornGraphicPath>
+            <wornGraphicPath>Things/Apparel/Wasteland_Apparel/RivetCitySecurity/Rivit_City_Security_Helmet/FCP_Rivit_City_Security_Helmet</wornGraphicPath>
             <layers>
                 <li>Overhead</li>
             </layers>
