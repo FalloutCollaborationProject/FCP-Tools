@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <KeyBindingCategoryDef>
+        <defName>FCP_Keybinds</defName>
+        <label>Fallout Collaboration Project</label>
+        <description>Shortcuts for the Fallout Collaboration Project</description>
+    </KeyBindingCategoryDef>
+
+    <KeyBindingDef>
+        <category>FCP_Keybinds</category>
+        <defName>FCP_VatsKeyBinding</defName>
+        <label>V.A.T.S.</label>
+    </KeyBindingDef>
+</Defs>
