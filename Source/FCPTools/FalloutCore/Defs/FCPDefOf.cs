@@ -20,6 +20,8 @@ public class FCPDefOf
 
     public static LegendaryEffectDef FCP_VATSLegendaryEffect_Rapid;
     
+    public static KeyBindingDef FCP_VatsKeyBinding;
+    
     static FCPDefOf()
     {
         DefOfHelper.EnsureInitializedInCtor(typeof(FCPDefOf));

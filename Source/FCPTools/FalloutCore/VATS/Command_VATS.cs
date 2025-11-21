@@ -6,12 +6,13 @@ namespace FCP.Core.VATS;
 public class Command_VATS : Command_Ability
 {
     public static readonly Texture2D Tex = ContentFinder<Texture2D>.Get("UI/FCP_VATS_Logo_Small");
-
+    
     public Command_VATS(Ability ability, Pawn pawn)
         : base(ability, pawn)
     {
         icon = Tex;
         Verb.Ability = Ability;
+        hotKey = FCPDefOf.FCP_VatsKeyBinding;
     }
 
     public Verb_AbilityVATS Verb => (Verb_AbilityVATS)Ability.verb;
