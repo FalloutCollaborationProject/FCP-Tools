@@ -50,7 +50,12 @@ public class LegendaryEffectGameTracker : GameComponent
         }
         for (int i = 0; i < _effectsKeys.Count; i++)
         {
-            EffectsDict[_effectsKeys[i]] = _effectsValues[i];
+            if (_effectsKeys[i] == null)
+            {
+                FCPLog.Error($"Legendary Effect Tracker - error loading EffectsDict: key at index {i} was null. Trying to continue.");
+            }else{
+                EffectsDict[_effectsKeys[i]] = _effectsValues[i];
+            }
         }
     }
 
