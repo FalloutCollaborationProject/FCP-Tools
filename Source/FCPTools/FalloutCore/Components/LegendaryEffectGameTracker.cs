@@ -17,14 +17,8 @@ public class LegendaryEffectGameTracker : GameComponent
         base.ExposeData();
         if (Scribe.mode == LoadSaveMode.Saving)
         {
-            _effectsKeys = [];
-            _effectsValues = [];
-
-            foreach (var kvp in EffectsDict)
-            {
-                _effectsKeys.Add(kvp.Key);
-                _effectsValues.Add(kvp.Value);
-            }
+            _effectsKeys = EffectsDict.Keys.ToList();
+            _effectsValues = EffectsDict.Values.ToList();
         }
         else if (Scribe.mode == LoadSaveMode.LoadingVars)
         {
@@ -50,7 +44,15 @@ public class LegendaryEffectGameTracker : GameComponent
         }
         for (int i = 0; i < _effectsKeys.Count; i++)
         {
-            EffectsDict[_effectsKeys[i]] = _effectsValues[i];
+            if (_effectsKeys[i] == null)
+            {
+                FCPLog.Error($"Legendary Effect Tracker - error loading EffectsDict: key at index {i} was null. Trying to continue.");
+            }else{
+                if (_effectsValues[i] != null)
+                {
+                    EffectsDict[_effectsKeys[i]] = _effectsValues[i];
+                }
+            }
         }
     }
 
