@@ -27,7 +27,11 @@ public class FCPCoreMod : Mod
         {
             try
             {
-                harmony.CreateClassProcessor(type).Patch();
+                // Only process types that have HarmonyPatch attributes
+                if (type.GetCustomAttributes(typeof(HarmonyPatch), true).Any())
+                {
+                    harmony.CreateClassProcessor(type).Patch();
+                }
             }
             catch (Exception e)
             {
