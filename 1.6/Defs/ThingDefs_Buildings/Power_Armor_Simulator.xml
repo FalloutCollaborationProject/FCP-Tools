@@ -23,6 +23,11 @@
                 <volume>(3,0.5,2)</volume>
             </shadowData>
         </graphicData>
+        <costList>
+            <Plasteel>20</Plasteel>
+            <Steel>100</Steel>
+            <ComponentIndustrial>8</ComponentIndustrial>
+        </costList>
         <altitudeLayer>Building</altitudeLayer>
         <passability>PassThroughOnly</passability>
         <pathCost>50</pathCost>
