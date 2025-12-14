@@ -405,7 +405,7 @@
         <graphicData>
             <texPath>Things/Building/Production/FCP_Cooking_Station_Electric/FCP_Cooking_Station_Electric</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(1,1)</drawSize>
+            <drawSize>(2,2)</drawSize>
             <damageData>
                 <cornerTL>Damage/Corner</cornerTL>
                 <cornerTR>Damage/Corner</cornerTR>
@@ -448,7 +448,7 @@
             <MaxHitPoints>180</MaxHitPoints>
             <Flammability>1.0</Flammability>
         </statBases>
-        <size>(1,1)</size>
+        <size>(2,2)</size>
         <designationCategory>Production</designationCategory>
         <passability>PassThroughOnly</passability>
         <pathCost>50</pathCost>
