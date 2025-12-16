@@ -877,23 +877,23 @@
                         <thingDef>FCP_Apparel_Radiation_Suit</thingDef>
                         <countRange>1</countRange>
                     </li>
-                    <li>
+                    <li MayRequire="Rick.FCP.PowerArmor">
                         <thingDef>FCP_Apparel_Power_Armor_Frame</thingDef>
                         <countRange>1</countRange>
                     </li>
-                    <li>
+                    <li MayRequire="Rick.FCP.PowerArmor">
                         <thingDef>FCP_Apparel_Power_Armor_T45_Helmet</thingDef>
                         <countRange>1</countRange>
                     </li>
-                    <li>
+                    <li MayRequire="Rick.FCP.PowerArmor">
                         <thingDef>FCP_Apparel_Power_Armor_T51_Helmet</thingDef>
                         <countRange>1</countRange>
                     </li>
-                    <li>
+                    <li MayRequire="Rick.FCP.PowerArmor">
                         <thingDef>FCP_Apparel_Power_Armor_T60_Helmet</thingDef>
                         <countRange>1</countRange>
                     </li>
-                    <li>
+                    <li MayRequire="Rick.FCP.PowerArmor">
                         <thingDef>FCP_Apparel_Power_Armor_X01_Helmet</thingDef>
                         <countRange>1</countRange>
                     </li>
@@ -905,19 +905,19 @@
                         <thingDef>FCP_Apparel_Reinforced_Combat_Armor_Helmet_Mk_II</thingDef>
                         <countRange>1</countRange>
                     </li>
-                    <li>
+                    <li MayRequire="Rick.FCP.PowerArmor">
                         <thingDef>FCP_Apparel_Power_Armor_T45Armor</thingDef>
                         <countRange>1</countRange>
                     </li>
-                    <li>
+                    <li MayRequire="Rick.FCP.PowerArmor">
                         <thingDef>FCP_Apparel_Power_Armor_T51Armor</thingDef>
                         <countRange>1</countRange>
                     </li>
-                    <li>
+                    <li MayRequire="Rick.FCP.PowerArmor">
                         <thingDef>FCP_Apparel_Power_Armor_T60Armor</thingDef>
                         <countRange>1</countRange>
                     </li>
-                    <li>
+                    <li MayRequire="Rick.FCP.PowerArmor">
                         <thingDef>FCP_Apparel_X01_Power_Armor</thingDef>
                         <countRange>1</countRange>
                     </li>
