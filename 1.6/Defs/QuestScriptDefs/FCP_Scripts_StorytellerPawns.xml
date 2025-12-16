@@ -32,7 +32,7 @@
         <defName>FCP_Letter_AcceptStoryteller</defName>
         <color>(41, 196, 80)</color>
         <arriveSound>GameStartSting</arriveSound>
-        <letterClass>ChoiceLetter_AcceptJoiner</letterClass>
+        <letterClass>FCP.Core.ChoiceLetter_AcceptJoinerScenario</letterClass>
       </LetterDef>
 
 </Defs>

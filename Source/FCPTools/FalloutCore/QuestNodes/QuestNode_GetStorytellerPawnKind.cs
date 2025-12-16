@@ -61,8 +61,7 @@ public class QuestNode_Root_StorytellerJoin : QuestNode_Root_WandererJoin
 		TaggedString letterTitle = "FCP_LetterLabel_SpecialWandererJoins".Translate(pawn.Named("PAWN")).AdjustedFor(pawn);
 		TaggedString letterText = "FCP_Letter_SpecialWandererJoins".Translate(pawn.Named("PAWN")).AdjustedFor(pawn);
 		letterText += $"\n\n{Find.Storyteller.def.description}";
-			
-		var choiceLetter = (ChoiceLetter_AcceptJoiner)LetterMaker.MakeLetter(letterTitle, letterText, FCPDefOf.FCP_Letter_AcceptStoryteller);
+		ChoiceLetter_AcceptJoinerScenario choiceLetter = (ChoiceLetter_AcceptJoinerScenario)LetterMaker.MakeLetter(letterTitle, letterText, FCPDefOf.FCP_Letter_AcceptStoryteller);
 		choiceLetter.signalAccept = signalAccept;
 		choiceLetter.signalReject = signalReject;
 		choiceLetter.quest = quest;
