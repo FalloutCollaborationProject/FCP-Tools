@@ -648,10 +648,11 @@ public static class Patches
     public static void GoodwillSituationWorker_PermanentEnemy_ArePermanentEnemies_Postfix(Faction a, Faction b, 
         ref bool __result)
     {
-        if (__result) return;
+        if (__result) 
+            return;
         
-        ModExtension_FactionPermanentlyHostileTo aExtension = a.def.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
-        ModExtension_FactionPermanentlyHostileTo bExtension = a.def.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
+        var aExtension = a.def.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
+        var bExtension = b.def.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
 
         // Check if either are permanently hostile with each other, but if both are null just use the existing result (false)
         __result = aExtension?.FactionIsHostileTo(b.def) ??
