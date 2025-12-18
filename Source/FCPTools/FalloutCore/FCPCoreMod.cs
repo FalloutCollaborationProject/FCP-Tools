@@ -14,28 +14,13 @@ public class FCPCoreMod : Mod
     public FCPCoreMod(ModContentPack content) : base(content)
     {
         harmony = new Harmony("FCP.Core.Patches"); // PatchesUwU ~ Steve
-        PatchAll();
+        harmony.PatchAll();
         mod = this;
         Settings = GetSettings<FCP_Settings>();
         FCPLog.Warning("Beta version: bugs likely, if not guaranteed! " +
                        "Report bugs on steam workshop page or on discord: 3HEXN3Qbn4");
     }
-
-    public static void PatchAll()
-    {
-        AccessTools.GetTypesFromAssembly(typeof(FCPCoreMod).Assembly).Do(delegate (Type type)
-        {
-            try
-            {
-                harmony.CreateClassProcessor(type).Patch();
-            }
-            catch (Exception e)
-            {
-                Log.Error("Error patching " + type + " - " + e.ToString());
-            }
-        });
-    }
-
+    
     public override void DoSettingsWindowContents(Rect inRect)
     {
         base.DoSettingsWindowContents(inRect);
