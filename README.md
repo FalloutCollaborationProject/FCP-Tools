@@ -4,7 +4,6 @@
 - RickGrymes / Ranger Rick - Project Lead / XML
 - Canonov, Taranchuk, SirMashedPotato, Scurvyez, Nalzurin, Nimrag-b, Lee, Alexis P, ViralReaction - C# Work
 - Keyz182 For the RATS/VATS code
-- khamenman For the Armor Rack code
 - DanDman, IcingWithCheesecake, Krazy4Games, RickGrymes / Ranger Rick - Art
 - Penumbra, RickGrymes / Ranger Rick - Writing
 
