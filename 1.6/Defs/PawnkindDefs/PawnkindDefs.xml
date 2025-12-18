@@ -255,7 +255,7 @@
 
     <!-- Caravan Guard -->
 
-    <PawnKindDef ParentName="FCP_WastelanderkindBase">
+    <PawnKindDef ParentName="FCP_WastelanderkindBase" MayRequire="Rick.FCP.Wastelanders">
         <defName>FCP_Pawnkind_Wastelander_Caravan_Guard</defName>
         <label>Caravan Guard</label>
         <combatPower>85</combatPower>
@@ -299,7 +299,7 @@
 
     <!-- Wastelander -->
 
-    <PawnKindDef ParentName="FCP_WastelanderkindBase">
+    <PawnKindDef ParentName="FCP_WastelanderkindBase" MayRequire="Rick.FCP.Wastelanders">
         <defName>FCP_Pawnkind_Wastelander_Citizen</defName>
         <label>Wastelander</label>
         <combatPower>30</combatPower>
@@ -337,7 +337,7 @@
 
     <!-- Combat Armor -->
 
-    <PawnKindDef ParentName="FCP_WastelanderkindBase">
+    <PawnKindDef ParentName="FCP_WastelanderkindBase" MayRequire="Rick.FCP.Wastelanders">
         <defName>FCP_Pawnkind_Armored_Wastelander_Combat_Armor</defName>
         <label>Wastelander</label>
         <combatPower>50</combatPower>
@@ -377,7 +377,7 @@
 
     <!-- Modular Combat Armor -->
 
-    <PawnKindDef ParentName="FCP_WastelanderkindBase">
+    <PawnKindDef ParentName="FCP_WastelanderkindBase" MayRequire="Rick.FCP.Wastelanders">
         <defName>FCP_Pawnkind_Armored_Wastelander_Combat_Armor_Modular</defName>
         <label>Wastelander</label>
         <combatPower>55</combatPower>
@@ -407,7 +407,7 @@
 
     <!-- Reinforced Combat Armor -->
 
-    <PawnKindDef ParentName="FCP_WastelanderkindBase">
+    <PawnKindDef ParentName="FCP_WastelanderkindBase" MayRequire="Rick.FCP.Wastelanders">
         <defName>FCP_Pawnkind_Armored_Wastelander_Combat_Armor_Reinforced</defName>
         <label>Wastelander</label>
         <combatPower>58</combatPower>
@@ -437,7 +437,7 @@
 
     <!-- Reinforced Combat Armor MKII -->
 
-    <PawnKindDef ParentName="FCP_WastelanderkindBase">
+    <PawnKindDef ParentName="FCP_WastelanderkindBase" MayRequire="Rick.FCP.Wastelanders">
         <defName>FCP_Pawnkind_Armored_Wastelander_Combat_Armor_Reinforced_MK_II</defName>
         <label>Wastelander</label>
         <combatPower>60</combatPower>
@@ -469,7 +469,7 @@
 
     <!-- Rivet City Security -->
 
-    <PawnKindDef ParentName="FCP_WastelanderkindBase">
+    <PawnKindDef ParentName="FCP_WastelanderkindBase" MayRequire="Rick.FCP.Wastelanders">
         <defName>FCP_Pawnkind_Rivet_City_Security</defName>
         <label>Rivet City Security Officer</label>
         <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>

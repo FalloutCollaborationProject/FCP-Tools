@@ -14,7 +14,6 @@ public class FCPCoreMod : Mod
     public FCPCoreMod(ModContentPack content) : base(content)
     {
         harmony = new Harmony("FCP.Core.Patches"); // PatchesUwU ~ Steve
-        PatchAll();
         mod = this;
         Settings = GetSettings<FCP_Settings>();
         FCPLog.Warning("Beta version: bugs likely, if not guaranteed! " +
