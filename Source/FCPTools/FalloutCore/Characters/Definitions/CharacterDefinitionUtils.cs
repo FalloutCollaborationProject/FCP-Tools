@@ -15,7 +15,9 @@ public static class CharacterDefinitionUtils
     {
         foreach (CharacterBaseDefinition definition in definitions)
         {
-            if (!definition.AppliesPreGeneration) return;
+            if (!definition.AppliesPreGeneration) 
+                continue;
+            
             definition.ApplyToRequest(ref request);
         }
         request.ValidateAndFix();
@@ -25,7 +27,9 @@ public static class CharacterDefinitionUtils
     {
         foreach (CharacterBaseDefinition definition in definitions)
         {
-            if (!definition.AppliesPostGeneration) return;
+            if (!definition.AppliesPostGeneration) 
+                continue;
+            
             definition.ApplyToPawn(pawn);
         }
     }
