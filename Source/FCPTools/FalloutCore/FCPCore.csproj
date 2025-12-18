@@ -263,7 +263,6 @@
       <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.XRModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <PackageReference Include="Lib.Harmony" Version="2.3.6" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Update="Krafs.Rimworld.Ref" Version="1.6.4518" />
