@@ -7,7 +7,7 @@
 
     <!-- Mysterious Stranger -->
 
-    <IncidentDef>
+    <IncidentDef MayRequire="Rick.FCP.Wastelanders">
         <defName>FCP_Incident_Mysterious_Stranger</defName>
         <label>Mysterious Stranger</label>
         <category>Special</category>

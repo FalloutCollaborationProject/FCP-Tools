@@ -7,7 +7,7 @@
 
     <!-- Mysterious Stranger -->
 
-    <PawnKindDef>
+    <PawnKindDef MayRequire="Rick.FCP.Wastelanders">
         <defName>FCP_Mysterious_Stranger</defName>
         <label>Mysterious Stranger</label>
         <labelMale>Mysterious Stranger</labelMale>
