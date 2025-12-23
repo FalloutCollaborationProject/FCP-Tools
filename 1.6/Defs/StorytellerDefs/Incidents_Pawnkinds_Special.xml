@@ -7,14 +7,14 @@
 
     <!-- Mysterious Stranger -->
 
-    <PawnKindDef MayRequire="Rick.FCP.Wastelanders">
+    <PawnKindDef>
         <defName>FCP_Mysterious_Stranger</defName>
         <label>Mysterious Stranger</label>
         <labelMale>Mysterious Stranger</labelMale>
         <labelFemale>Mysterious Stranger</labelFemale>
         <labelPlural>Mysterious Stranger</labelPlural>
         <race>Human</race>
-        <defaultFactionDef>FCP_Faction_Hidden_Wastelanders</defaultFactionDef>
+        <defaultFactionDef>OutlanderCivil</defaultFactionDef>
         <combatPower>55</combatPower>
         <minGenerationAge>20</minGenerationAge>
         <maxGenerationAge>55</maxGenerationAge>

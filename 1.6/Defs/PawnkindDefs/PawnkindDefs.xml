@@ -90,7 +90,7 @@
 
 	<PawnKindDef ParentName="FCP_BoSkindBase" Name="FCP_BoS_PowerArmorBase" Abstract="True">
 		<apparelRequired>
-			<li>FCP_Apparel_Power_Armor_Frame</li>
+			<li MayRequire="Rick.FCP.PowerArmor">FCP_Apparel_Power_Armor_Frame</li>
 			<li>FCP_Apparel_BoS_Jumpsuit</li>
 			<li>FCP_Apparel_BOS_T60_Power_Armor</li>
 			<li>FCP_Apparel_T60_Power_Armor_Helmet</li>
