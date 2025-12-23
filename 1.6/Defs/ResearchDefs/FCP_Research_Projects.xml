@@ -352,10 +352,10 @@
 
     <!-- Laser Weapon Manufacturing -->
 
-    <ResearchProjectDef>
+    <ResearchProjectDef ParentName="FCP_Pre_War_Military_Research_Base">
         <defName>FCP_Research_Laser_Weapon_Manufacturing</defName>
-        <label>Laser Weapon Manufacturing</label>
-        <description>Research into the techniques and methods for manufacturing laser weapons.</description>
+        <label>Holotape File: Laser Weapon Manufacturing</label>
+        <description>Holotape containing the schematics for manufacturing laser weapons.</description>
         <baseCost>1000</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -363,7 +363,6 @@
         </prerequisites>
         <researchViewX>6</researchViewX>
         <researchViewY>8</researchViewY>
-        <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
     <!--_____ Column 6.5 _____-->
@@ -477,6 +476,18 @@
         <researchViewX>7</researchViewX>
         <researchViewY>8</researchViewY>
         <tab>FCP_Research</tab>
+    </ResearchProjectDef>
+
+    <!-- Gauss Weapon Manufacturing -->
+
+    <ResearchProjectDef ParentName="FCP_Pre_War_Military_Research_Base">
+        <defName>FCP_Research_Gauss_Weapons_Manufacturing</defName>
+        <label>Holotape File: Gauss Weapon Manufacturing</label>
+        <description>Holotape containing the schematics for gauss weapons utilizing electromagnetic acceleration technology.</description>
+        <baseCost>2500</baseCost>
+        <techLevel>Industrial</techLevel>
+        <researchViewX>7</researchViewX>
+        <researchViewY>9</researchViewY>
     </ResearchProjectDef>
 
     <!--_____ Column 7.5 _____-->
