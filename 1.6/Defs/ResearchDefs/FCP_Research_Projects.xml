@@ -54,8 +54,8 @@
         <description>Research into the cultivation and farming of various plant species.</description>
         <baseCost>100</baseCost>
         <techLevel>Industrial</techLevel>
-        <researchViewX>1</researchViewX>
-        <researchViewY>1</researchViewY>
+        <researchViewX>1.5</researchViewX>
+        <researchViewY>1.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -70,8 +70,8 @@
         <prerequisites>
             <li>FCP_Research_Basic_Agriculture</li>
         </prerequisites>
-        <researchViewX>1</researchViewX>
-        <researchViewY>2</researchViewY>
+        <researchViewX>0.5</researchViewX>
+        <researchViewY>2.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -86,8 +86,8 @@
         <prerequisites>
             <li>FCP_Research_Mushroom_Farming</li>
         </prerequisites>
-        <researchViewX>1</researchViewX>
-        <researchViewY>3</researchViewY>
+        <researchViewX>0.5</researchViewX>
+        <researchViewY>3.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -103,8 +103,8 @@
             <li>FCP_Research_BrocXander_Refinement</li>
             <li>Hydroponics</li>
         </prerequisites>
-        <researchViewX>1</researchViewX>
-        <researchViewY>4</researchViewY>
+        <researchViewX>0.5</researchViewX>
+        <researchViewY>4.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -119,8 +119,8 @@
         <prerequisites>
             <li>FCP_Research_Spore_Creation</li>
         </prerequisites>
-        <researchViewX>1</researchViewX>
-        <researchViewY>5</researchViewY>
+        <researchViewX>0.5</researchViewX>
+        <researchViewY>5.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -137,8 +137,8 @@
         <prerequisites>
             <li>FCP_Research_Basic_Agriculture</li>
         </prerequisites>
-        <researchViewX>2</researchViewX>
-        <researchViewY>1</researchViewY>
+        <researchViewX>2.5</researchViewX>
+        <researchViewY>1.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -153,8 +153,8 @@
         <prerequisites>
             <li>FCP_Research_Advanced_Agriculture</li>
         </prerequisites>
-        <researchViewX>2</researchViewX>
-        <researchViewY>2</researchViewY>
+        <researchViewX>2.5</researchViewX>
+        <researchViewY>2.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -221,8 +221,8 @@
         <description>Research into the application and enhancement of power armor technology for improved combat effectiveness.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
-        <researchViewX>4</researchViewX>
-        <researchViewY>6</researchViewY>
+        <researchViewX>4.0</researchViewX>
+        <researchViewY>6.5</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -234,8 +234,8 @@
         <description>Research into the maintenance and upkeep of T-45 Power Armor for optimal performance.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
-        <researchViewX>4</researchViewX>
-        <researchViewY>7</researchViewY>
+        <researchViewX>4.0</researchViewX>
+        <researchViewY>7.5</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -247,8 +247,8 @@
         <description>Research into the maintenance and upkeep of T-60 Power Armor for optimal performance.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
-        <researchViewX>4</researchViewX>
-        <researchViewY>8</researchViewY>
+        <researchViewX>4.0</researchViewX>
+        <researchViewY>8.5</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -266,8 +266,8 @@
             <li>FCP_Research_Crafting_Stations</li>
             <li>Pemmican</li>
         </prerequisites>
-        <researchViewX>5</researchViewX>
-        <researchViewY>1</researchViewY>
+        <researchViewX>4.0</researchViewX>
+        <researchViewY>1.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -282,8 +282,8 @@
         <prerequisites>
             <li>ComplexClothing</li>
         </prerequisites>
-        <researchViewX>5</researchViewX>
-        <researchViewY>2</researchViewY>
+        <researchViewX>4.0</researchViewX>
+        <researchViewY>2.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -298,8 +298,8 @@
         <prerequisites>
             <li>FCP_Research_Apparel_Production</li>
         </prerequisites>
-        <researchViewX>5</researchViewX>
-        <researchViewY>3</researchViewY>
+        <researchViewX>4.0</researchViewX>
+        <researchViewY>3.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -314,8 +314,8 @@
         <prerequisites>
             <li>PoweredArmor</li>
         </prerequisites>
-        <researchViewX>5</researchViewX>
-        <researchViewY>4</researchViewY>
+        <researchViewX>4.0</researchViewX>
+        <researchViewY>4.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -329,8 +329,8 @@
         <description>Research into the techniques and methods for training individuals to use power armor effectively.</description>
         <baseCost>1000</baseCost>
         <techLevel>Industrial</techLevel>
-        <researchViewX>6</researchViewX>
-        <researchViewY>5</researchViewY>
+        <researchViewX>5.0</researchViewX>
+        <researchViewY>5.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -345,8 +345,8 @@
         <prerequisites>
             <li>FCP_Research_Energy_Based_Weaponry</li>
         </prerequisites>
-        <researchViewX>6</researchViewX>
-        <researchViewY>7</researchViewY>
+        <researchViewX>5.0</researchViewX>
+        <researchViewY>7.5</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -361,8 +361,8 @@
         <prerequisites>
             <li>FCP_Research_Makeshift_Laser_Weapons</li>
         </prerequisites>
-        <researchViewX>6</researchViewX>
-        <researchViewY>8</researchViewY>
+        <researchViewX>5.0</researchViewX>
+        <researchViewY>8.5</researchViewY>
     </ResearchProjectDef>
 
     <!--_____ Column 6.5 _____-->
@@ -378,8 +378,8 @@
         <prerequisites>
             <li>Smithing</li>
         </prerequisites>
-        <researchViewX>6.5</researchViewX>
-        <researchViewY>1</researchViewY>
+        <researchViewX>5.5</researchViewX>
+        <researchViewY>1.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -389,8 +389,8 @@
         <defName>FCP_Research_Gunsmithing</defName>
         <label>Holotape File: Gunsmithing</label>
         <description>Holotape containing the schematics for various firearms.</description>
-        <researchViewX>6.5</researchViewX>
-        <researchViewY>2</researchViewY>
+        <researchViewX>5.5</researchViewX>
+        <researchViewY>2.0</researchViewY>
     </ResearchProjectDef>
 
     <!-- Advanced Gunsmithing -->
@@ -401,8 +401,8 @@
         <description>Holotape containing the schematics for various advanced firearms.</description>
         <baseCost>750</baseCost>
         <techLevel>Industrial</techLevel>
-        <researchViewX>6.5</researchViewX>
-        <researchViewY>3</researchViewY>
+        <researchViewX>5.5</researchViewX>
+        <researchViewY>3.0</researchViewY>
     </ResearchProjectDef>
 
     <!--_____ Column 7 _____-->
@@ -415,8 +415,8 @@
         <description>Research into the development and construction of fabricated walls and security systems for enhanced protection.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
-        <researchViewX>7</researchViewX>
-        <researchViewY>4</researchViewY>
+        <researchViewX>6.0</researchViewX>
+        <researchViewY>4.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -431,8 +431,8 @@
         <prerequisites>
             <li>FCP_Research_Makeshift_Weapons</li>
         </prerequisites>
-        <researchViewX>7</researchViewX>
-        <researchViewY>5</researchViewY>
+        <researchViewX>6.0</researchViewX>
+        <researchViewY>5.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -448,8 +448,8 @@
             <li>FCP_Research_Basic_Weapons_Manufacturing</li>
             <li>FCP_Research_Advanced_Gunsmithing</li>
         </prerequisites>
-        <researchViewX>7</researchViewX>
-        <researchViewY>6</researchViewY>
+        <researchViewX>6.0</researchViewX>
+        <researchViewY>6.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -461,8 +461,8 @@
         <description>Holotape containing the schematics for basic energy weapons weapons.</description>
         <baseCost>1000</baseCost>
         <techLevel>Industrial</techLevel>
-        <researchViewX>7</researchViewX>
-        <researchViewY>7</researchViewY>
+        <researchViewX>6.0</researchViewX>
+        <researchViewY>7.5</researchViewY>
     </ResearchProjectDef>
 
     <!-- Plasma Weapon Manufacturing -->
@@ -473,8 +473,8 @@
         <description>Holotape containing the schematics for plasma weapons weapons.</description>
         <baseCost>2000</baseCost>
         <techLevel>Industrial</techLevel>
-        <researchViewX>7</researchViewX>
-        <researchViewY>8</researchViewY>
+        <researchViewX>6.0</researchViewX>
+        <researchViewY>8.5</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -486,8 +486,8 @@
         <description>Holotape containing the schematics for gauss weapons utilizing electromagnetic acceleration technology.</description>
         <baseCost>2500</baseCost>
         <techLevel>Industrial</techLevel>
-        <researchViewX>7</researchViewX>
-        <researchViewY>9</researchViewY>
+        <researchViewX>6.0</researchViewX>
+        <researchViewY>9.5</researchViewY>
     </ResearchProjectDef>
 
     <!--_____ Column 7.5 _____-->
@@ -503,8 +503,8 @@
         <prerequisites>
             <li>FCP_Research_Gunsmithing</li>
         </prerequisites>
-        <researchViewX>7.5</researchViewX>
-        <researchViewY>2</researchViewY>
+        <researchViewX>6.5</researchViewX>
+        <researchViewY>2.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -521,8 +521,8 @@
         <prerequisites>
             <li>DrugProduction</li>
         </prerequisites>
-        <researchViewX>8</researchViewX>
-        <researchViewY>1</researchViewY>
+        <researchViewX>7.0</researchViewX>
+        <researchViewY>1.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -537,8 +537,8 @@
         <prerequisites>
             <li>FCP_Research_Chem_Production</li>
         </prerequisites>
-        <researchViewX>8</researchViewX>
-        <researchViewY>3</researchViewY>
+        <researchViewX>7.0</researchViewX>
+        <researchViewY>3.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -554,8 +554,8 @@
             <li>FCP_Research_Medicinal_Drugs</li>
             <li>FCP_Research_BrocXander_Refinement</li>
         </prerequisites>
-        <researchViewX>8</researchViewX>
-        <researchViewY>4</researchViewY>
+        <researchViewX>7.0</researchViewX>
+        <researchViewY>4.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -571,8 +571,8 @@
             <li>FCP_Research_Healing_Powder</li>
             <li>PenoxycylineProduction</li>
         </prerequisites>
-        <researchViewX>8</researchViewX>
-        <researchViewY>5</researchViewY>
+        <researchViewX>7.0</researchViewX>
+        <researchViewY>5.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -587,8 +587,8 @@
         <prerequisites>
             <li>FCP_Research_MedX_Production</li>
         </prerequisites>
-        <researchViewX>8</researchViewX>
-        <researchViewY>6</researchViewY>
+        <researchViewX>7.0</researchViewX>
+        <researchViewY>6.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -605,8 +605,8 @@
         <prerequisites>
             <li>FCP_Research_Chem_Production</li>
         </prerequisites>
-        <researchViewX>9</researchViewX>
-        <researchViewY>0</researchViewY>
+        <researchViewX>8.0</researchViewX>
+        <researchViewY>0.5</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -621,8 +621,8 @@
         <prerequisites>
             <li>FCP_Research_Chem_Production</li>
         </prerequisites>
-        <researchViewX>9</researchViewX>
-        <researchViewY>1</researchViewY>
+        <researchViewX>8.0</researchViewX>
+        <researchViewY>1.5</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -637,8 +637,8 @@
         <prerequisites>
             <li>FCP_Research_Chem_Production</li>
         </prerequisites>
-        <researchViewX>9</researchViewX>
-        <researchViewY>2</researchViewY>
+        <researchViewX>8.0</researchViewX>
+        <researchViewY>2.5</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -653,8 +653,8 @@
         <prerequisites>
             <li>FCP_Research_Chem_Production</li>
         </prerequisites>
-        <researchViewX>9</researchViewX>
-        <researchViewY>3</researchViewY>
+        <researchViewX>8.0</researchViewX>
+        <researchViewY>3.5</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -670,8 +670,8 @@
             <li>FCP_Research_Healing_Powder</li>
             <li>PenoxycylineProduction</li>
         </prerequisites>
-        <researchViewX>9</researchViewX>
-        <researchViewY>4</researchViewY>
+        <researchViewX>8.0</researchViewX>
+        <researchViewY>4.5</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -691,8 +691,8 @@
             <li>FCP_Research_Mentat_Production</li>
             <li>FCP_Research_Buffout_Production</li>
         </prerequisites>
-        <researchViewX>10</researchViewX>
-        <researchViewY>1.5</researchViewY>
+        <researchViewX>9.0</researchViewX>
+        <researchViewY>2.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -708,8 +708,8 @@
             <li>FCP_Research_Healing_Powder</li>
             <li>PenoxycylineProduction</li>
         </prerequisites>
-        <researchViewX>10</researchViewX>
-        <researchViewY>4</researchViewY>
+        <researchViewX>9.0</researchViewX>
+        <researchViewY>4.5</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -727,8 +727,8 @@
             <li>ComplexFurniture</li>
             <li>FCP_Research_Sleeping_Bags</li>
         </prerequisites>
-        <researchViewX>10.5</researchViewX>
-        <researchViewY>1</researchViewY>
+        <researchViewX>10.0</researchViewX>
+        <researchViewY>1.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -743,8 +743,8 @@
         <prerequisites>
             <li>FCP_Research_Wasteland_Power_Supply</li>
         </prerequisites>
-        <researchViewX>10.5</researchViewX>
-        <researchViewY>3</researchViewY>
+        <researchViewX>10.0</researchViewX>
+        <researchViewY>3.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -760,8 +760,8 @@
             <li>TubeTelevision</li>
             <li>FCP_Research_Wasteland_Electronics</li>
         </prerequisites>
-        <researchViewX>10.5</researchViewX>
-        <researchViewY>7</researchViewY>
+        <researchViewX>10.0</researchViewX>
+        <researchViewY>7.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -778,8 +778,8 @@
         <prerequisites>
             <li>FCP_Research_Basic_Furniture</li>
         </prerequisites>
-        <researchViewX>11.5</researchViewX>
-        <researchViewY>2</researchViewY>
+        <researchViewX>11.0</researchViewX>
+        <researchViewY>2.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -795,8 +795,8 @@
             <li>Electricity</li>
             <li>FCP_Research_Wasteland_Furnishings</li>
         </prerequisites>
-        <researchViewX>11.5</researchViewX>
-        <researchViewY>3</researchViewY>
+        <researchViewX>11.0</researchViewX>
+        <researchViewY>3.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -811,8 +811,8 @@
         <prerequisites>
             <li>FCP_Research_Wasteland_Power_Supply</li>
         </prerequisites>
-        <researchViewX>11.5</researchViewX>
-        <researchViewY>4</researchViewY>
+        <researchViewX>11.0</researchViewX>
+        <researchViewY>4.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -826,8 +826,8 @@
         <description>Research into the creation and use of basic furniture for improved living conditions.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
-        <researchViewX>12</researchViewX>
-        <researchViewY>0</researchViewY>
+        <researchViewX>12.0</researchViewX>
+        <researchViewY>0.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -842,8 +842,8 @@
         <prerequisites>
             <li>FCP_Research_Basic_Furniture</li>
         </prerequisites>
-        <researchViewX>12</researchViewX>
-        <researchViewY>1</researchViewY>
+        <researchViewX>12.0</researchViewX>
+        <researchViewY>1.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -858,8 +858,8 @@
         <prerequisites>
             <li>FCP_Research_Basic_Furniture</li>
         </prerequisites>
-        <researchViewX>12</researchViewX>
-        <researchViewY>5</researchViewY>
+        <researchViewX>12.0</researchViewX>
+        <researchViewY>5.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -874,8 +874,8 @@
         <prerequisites>
             <li>FCP_Research_Complex_Furniture</li>
         </prerequisites>
-        <researchViewX>12</researchViewX>
-        <researchViewY>6</researchViewY>
+        <researchViewX>12.0</researchViewX>
+        <researchViewY>6.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -892,8 +892,8 @@
         <prerequisites>
             <li>FCP_Research_Basic_Furniture</li>
         </prerequisites>
-        <researchViewX>13</researchViewX>
-        <researchViewY>2</researchViewY>
+        <researchViewX>13.0</researchViewX>
+        <researchViewY>2.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -908,8 +908,8 @@
         <prerequisites>
             <li>FCP_Research_Wasteland_Furnishings</li>
         </prerequisites>
-        <researchViewX>13</researchViewX>
-        <researchViewY>4</researchViewY>
+        <researchViewX>13.0</researchViewX>
+        <researchViewY>4.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -924,8 +924,8 @@
         <prerequisites>
             <li>FCP_Research_Wasteland_Electronics</li>
         </prerequisites>
-        <researchViewX>13</researchViewX>
-        <researchViewY>6</researchViewY>
+        <researchViewX>13.0</researchViewX>
+        <researchViewY>6.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -942,8 +942,8 @@
         <prerequisites>
             <li>FCP_Research_Wasteland_Security</li>
         </prerequisites>
-        <researchViewX>14</researchViewX>
-        <researchViewY>1</researchViewY>
+        <researchViewX>14.0</researchViewX>
+        <researchViewY>1.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -960,8 +960,8 @@
             <li>FCP_Research_Correctional_Security</li>
             <li>FCP_Research_Makeshift_Fortifications</li>
         </prerequisites>
-        <researchViewX>14</researchViewX>
-        <researchViewY>2</researchViewY>
+        <researchViewX>14.0</researchViewX>
+        <researchViewY>2.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
@@ -977,8 +977,8 @@
             <li>AdvancedFabrication</li>
             <li>FCP_Research_Fabricated_Walls_And_Security</li>
         </prerequisites>
-        <researchViewX>14</researchViewX>
-        <researchViewY>3</researchViewY>
+        <researchViewX>14.0</researchViewX>
+        <researchViewY>3.0</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
