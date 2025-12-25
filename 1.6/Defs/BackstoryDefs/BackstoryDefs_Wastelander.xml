@@ -1714,6 +1714,8 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
         <possessions>
         </possessions>
     </BackstoryDef>
