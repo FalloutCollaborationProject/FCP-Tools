@@ -79,7 +79,7 @@
         <graphicData>
             <texPath>Things/Building/Production/FCP_Armor_Workbench/FCP_Armor_Workbench</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(4,5)</drawSize>
+            <drawSize>(5,5)</drawSize>
             <damageData>
                 <cornerTL>Damage/Corner</cornerTL>
                 <cornerTR>Damage/Corner</cornerTR>
@@ -405,7 +405,7 @@
         <graphicData>
             <texPath>Things/Building/Production/FCP_Cooking_Station_Electric/FCP_Cooking_Station_Electric</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(2,2)</drawSize>
+            <drawSize>(5,5)</drawSize>
             <damageData>
                 <cornerTL>Damage/Corner</cornerTL>
                 <cornerTR>Damage/Corner</cornerTR>
@@ -492,7 +492,7 @@
         <graphicData>
             <texPath>Things/Building/Production/FCP_Cooking_Station_Fueled_Complex/FCP_Cooking_Station_Fueled_Complex</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(3,3)</drawSize>
+            <drawSize>(5,5)</drawSize>
             <damageData>
                 <cornerTL>Damage/Corner</cornerTL>
                 <cornerTR>Damage/Corner</cornerTR>
@@ -583,7 +583,7 @@
         <graphicData>
             <texPath>Things/Building/Production/FCP_Cooking_Station_Fueled_Simple/FCP_Cooking_Station_Fueled_Simple</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(5,4)</drawSize>
+            <drawSize>(5,5)</drawSize>
             <damageData>
                 <cornerTL>Damage/Corner</cornerTL>
                 <cornerTR>Damage/Corner</cornerTR>
@@ -591,8 +591,8 @@
                 <cornerBR>Damage/Corner</cornerBR>
             </damageData>
         </graphicData>
-        <castEdgeShadows>true</castEdgeShadows>
-        <staticSunShadowHeight>0.20</staticSunShadowHeight>
+        <castEdgeShadows>false</castEdgeShadows>
+        <staticSunShadowHeight>0.0</staticSunShadowHeight>
         <costList>
             <Steel>150</Steel>
         </costList>
@@ -626,7 +626,7 @@
             <MaxHitPoints>180</MaxHitPoints>
             <Flammability>1.0</Flammability>
         </statBases>
-        <size>(2,3)</size>
+        <size>(3,2)</size>
         <designationCategory>Production</designationCategory>
         <passability>PassThroughOnly</passability>
         <pathCost>50</pathCost>
@@ -683,7 +683,7 @@
         </statBases>
         <minifiedDef />
         <thingCategories Inherit="false" />
-        <size>(5,2)</size>
+        <size>(4,2)</size>
         <costList>
             <Steel>200</Steel>
             <ComponentIndustrial>6</ComponentIndustrial>
@@ -710,7 +710,7 @@
             <texPath>Things/Building/Production/FCP_Fabrication_Workbench/FCP_Fabrication_Workbench</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
             <shaderType>CutoutComplex</shaderType>
-            <drawSize>(7,4)</drawSize>
+            <drawSize>(5,5)</drawSize>
             <damageData>
                 <cornerTL>Damage/Corner</cornerTL>
                 <cornerTR>Damage/Corner</cornerTR>
