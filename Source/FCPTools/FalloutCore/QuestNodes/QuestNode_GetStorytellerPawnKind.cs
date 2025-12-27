@@ -65,6 +65,7 @@ public class QuestNode_Root_StorytellerJoin : QuestNode_Root_WandererJoin
 		choiceLetter.signalAccept = signalAccept;
 		choiceLetter.signalReject = signalReject;
 		choiceLetter.quest = quest;
+		choiceLetter.overrideMap = Find.AnyPlayerHomeMap;
 		choiceLetter.StartTimeout(TimeoutTicks);
 			
 		Find.LetterStack.ReceiveLetter(choiceLetter);
