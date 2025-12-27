@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!--__________ Pip-Boy Personal Information Processors __________-->
+
+    <!-- Pip-Boy Base -->
+
+    <ThingDef ParentName="ApparelBase" Name="FCP_Apparel_Pipboy_Base" Abstract="True">
+        <techLevel>Spacer</techLevel>
+        <graphicData>
+            <texPath>Things/Apparel/Accessories/Pipboy/Pipboy</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <generateCommonality>0.05</generateCommonality>
+        <smeltable>false</smeltable>
+        <statBases>
+            <Mass>0.5</Mass>
+            <MaxHitPoints>60</MaxHitPoints>
+            <Flammability>0.3</Flammability>
+            <EquipDelay>1.5</EquipDelay>
+        </statBases>
+        <thingSetMakerTags>
+            <li>RewardStandardQualitySuper</li>
+        </thingSetMakerTags>
+        <thingCategories>
+            <li>ApparelUtility</li>
+        </thingCategories>
+        <apparel>
+            <countsAsClothingForNudity>false</countsAsClothingForNudity>
+            <careIfWornByCorpse>false</careIfWornByCorpse>
+            <careIfDamaged>false</careIfDamaged>
+            <wearPerDay>0</wearPerDay>
+            <bodyPartGroups>
+                <li>LeftHand</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Belt</li>
+            </layers>
+            <tags>
+                <li>FCP_Pipboy</li>
+            </tags>
+            <developmentalStageFilter>Adult</developmentalStageFilter>
+        </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <!--_____ Pip-Boy 3000 _____-->
+
+    <ThingDef ParentName="FCP_Apparel_Pipboy_Base">
+        <defName>FCP_Apparel_Pipboy3000_Mk_I</defName>
+        <label>Pip-Boy 3000</label>
+        <graphicData>
+            <texPath>Things/Apparel/Accessories/Pipboy/FCP_Pipboy3000_Mk_I</texPath>
+        </graphicData>
+        <description>The Pip-Boy 3000 model was the most common personal information processor issued to Vault dwellers before the war. This rugged wrist-mounted computer features a monochrome green display and provides essential data management capabilities. Its simple but reliable interface assists with work coordination and task management. This is the classic model known for its durability and ease of use.</description>
+        <statBases>
+            <MarketValue>5600</MarketValue>
+        </statBases>
+        <equippedStatOffsets>
+            <WorkSpeedGlobal>0.05</WorkSpeedGlobal>
+            <ResearchSpeed>0.08</ResearchSpeed>
+        </equippedStatOffsets>
+    </ThingDef>
+
+    <!--_____ Pip-Boy 3000 Mark IV _____-->
+
+    <ThingDef ParentName="FCP_Apparel_Pipboy_Base">
+        <defName>FCP_Apparel_Pipboy3000_Mark_IV</defName>
+        <label>Pip-Boy 3000 Mark IV</label>
+        <graphicData>
+            <texPath>Things/Apparel/Accessories/Pipboy/FCP_Pipboy3000_Mk_IV</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <description>An advanced iteration of the Pip-Boy 3000, the Mark IV features enhanced processing power and a more refined interface. Its improved data management systems provide better work coordination and faster information processing. The Mark IV was considered top-of-the-line before the war. This model offers superior performance compared to earlier versions, with enhanced computational capabilities.</description>
+        <statBases>
+            <MarketValue>9000</MarketValue>
+        </statBases>
+        <equippedStatOffsets>
+            <WorkSpeedGlobal>0.08</WorkSpeedGlobal>
+            <ResearchSpeed>0.12</ResearchSpeed>
+            <SocialImpact>0.05</SocialImpact>
+        </equippedStatOffsets>
+    </ThingDef>
+
+    <!--_____ Pip-Boy 2000 Mark VI _____-->
+
+    <!-- <ThingDef ParentName="FCP_Apparel_Pipboy_Base">
+        <defName>FCP_Apparel_Pipboy2000_Mark_VI</defName>
+        <label>Pip-Boy 2000 Mark VI</label>
+        <description>The Pip-Boy 2000 Mark VI represents the pinnacle of Vault-Tec's pre-war wearable computer technology. Featuring a sophisticated color display and advanced biometric monitoring, this premium model was issued to select vault personnel. Its superior interface and processing capabilities significantly enhance work efficiency and decision-making. This is the most advanced civilian personal computer known to exist from the old world.</description>
+        <statBases>
+            <WorkToMake>16000</WorkToMake>
+            <MarketValue>900</MarketValue>
+        </statBases>
+        <equippedStatOffsets>
+            <WorkSpeedGlobal>0.10</WorkSpeedGlobal>
+            <ResearchSpeed>0.15</ResearchSpeed>
+            <SocialImpact>0.08</SocialImpact>
+            <NegotiationAbility>0.05</NegotiationAbility>
+        </equippedStatOffsets>
+    </ThingDef> -->
+
+</Defs>

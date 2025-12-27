@@ -126,6 +126,21 @@
                         <countRange>1</countRange>
 						<weight>0.1</weight>
                     </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Pipboy3000_Mk_I</thingDef>
+                        <countRange>1</countRange>
+						<weight>0.05</weight>
+                    </li>
+                    <li>
+                        <thingDef>FCP_Apparel_Pipboy3000_Mark_IV</thingDef>
+                        <countRange>1</countRange>
+						<weight>0.02</weight>
+                    </li>
+                    <!-- <li>
+                        <thingDef>FCP_Apparel_Pipboy2000_Mark_VI</thingDef>
+                        <countRange>1</countRange>
+						<weight>0.01</weight>
+                    </li> -->
                 </weightedDrops>
             </li>
             <li Class="CompProperties_UseEffectDestroySelf"/>
