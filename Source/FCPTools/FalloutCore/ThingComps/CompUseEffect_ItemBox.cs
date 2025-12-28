@@ -1,73 +1,127 @@
-﻿namespace FCP.Core;
+﻿using System.Collections.Generic;
+using FCP.Core;
+using RimWorld;
+using Verse;
 
 public class CompUseEffect_ItemBox : CompUseEffect
 {
     public CompProperties_UseEffectItemBox Props => (CompProperties_UseEffectItemBox)props;
 
+    private bool lootClaimed;
+
+    public override void PostExposeData()
+    {
+        base.PostExposeData();
+        Scribe_Values.Look(ref lootClaimed, "lootClaimed", false);
+    }
+
     public override void DoEffect(Pawn usedBy)
     {
         base.DoEffect(usedBy);
-            
-        // If you just use a thing set maker instead
+
+        if (lootClaimed)
+        {
+            return;
+        }
+
+        lootClaimed = true;
+        DropLoot(parent.Position, parent.Map);
+    }
+
+    public override void PostDestroy(DestroyMode mode, Map previousMap)
+    {
+        base.PostDestroy(mode, previousMap);
+
+        // Only drop on damage-based destruction.
+        if (mode != DestroyMode.KillFinalize)
+        {
+            return;
+        }
+
+        if (lootClaimed)
+        {
+            return;
+        }
+
+        lootClaimed = true;
+
+        Map map = previousMap;
+        if (map == null)
+        {
+            return;
+        }
+
+        DropLoot(parent.Position, map);
+    }
+
+    private void DropLoot(IntVec3 pos, Map map)
+    {
+        if (map == null)
+        {
+            return;
+        }
+
         if (Props.thingSetMakerDef != null)
         {
-            List<Thing> setDropList = Props.thingSetMakerDef.root.Generate();
-            foreach (Thing thing in setDropList)
+            List<Thing> list = Props.thingSetMakerDef.root.Generate();
+            for (int i = 0; i < list.Count; i++)
             {
-                DropThing(thing);
+                DropThing(list[i], pos, map);
             }
         }
 
-        // Will attempt to drop everything in 
         if (!Props.guaranteedDrops.NullOrEmpty())
         {
-            foreach (ItemDropConfig drop in Props.guaranteedDrops)
+            for (int i = 0; i < Props.guaranteedDrops.Count; i++)
             {
-                if (!Rand.Chance(drop.chance)) continue;
-                int count = drop.countRange.RandomInRange;
-                    
-                if (count > 0)
+                ItemDropConfig guaranteedDrop = Props.guaranteedDrops[i];
+                if (Rand.Chance(guaranteedDrop.chance))
                 {
-                    DoDrop(drop.thingDef, count);
+                    int count = guaranteedDrop.countRange.RandomInRange;
+                    if (count > 0)
+                    {
+                        DoDrop(guaranteedDrop.thingDef, count, pos, map);
+                    }
                 }
             }
         }
 
-        // Will do X amount of drops, item randomly selected based on weight
-        if (Props.weightedDrops.NullOrEmpty()) return;
+        if (Props.weightedDrops.NullOrEmpty())
         {
-            for (int i = 0; i < Props.numWeightedDrops; i++)
+            return;
+        }
+
+        for (int i = 0; i < Props.numWeightedDrops; i++)
+        {
+            ItemDropConfig itemDropConfig = Props.weightedDrops.RandomElementByWeight(x => x.weight);
+            int count = itemDropConfig.countRange.RandomInRange;
+            if (count > 0)
             {
-                ItemDropConfig drop = Props.weightedDrops.RandomElementByWeight(x => x.weight);
-                int count = drop.countRange.RandomInRange;
-                if (count > 0)
-                {
-                    DoDrop(drop.thingDef, count);
-                }
+                DoDrop(itemDropConfig.thingDef, count, pos, map);
             }
         }
     }
 
-    private void DoDrop(ThingDef thingDef, int stackCount)
+    private void DoDrop(ThingDef thingDef, int stackCount, IntVec3 pos, Map map)
     {
-        Thing droppedThing = ThingMaker.MakeThing(thingDef);
-        droppedThing.stackCount = stackCount;
-        droppedThing.TryGetComp<CompQuality>()?.SetQuality(GetRandomQuality(), ArtGenerationContext.Colony);
-        DropThing(droppedThing);
+        Thing thing = ThingMaker.MakeThing(thingDef);
+        thing.stackCount = stackCount;
+        thing.TryGetComp<CompQuality>()?.SetQuality(GetRandomQuality(), ArtGenerationContext.Colony);
+        DropThing(thing, pos, map);
     }
 
     private static QualityCategory GetRandomQuality()
     {
-        QualityCategory randomQuality = QualityUtility.GenerateQualityTraderItem();
+        QualityCategory result = QualityUtility.GenerateQualityTraderItem();
         if (Rand.Chance(0.025f))
         {
-            randomQuality = QualityCategory.Legendary;
+            result = QualityCategory.Legendary;
         }
-        return randomQuality;
+        return result;
     }
 
-    private void DropThing(Thing thing)
+    private void DropThing(Thing thing, IntVec3 pos, Map map)
     {
-        GenPlace.TryPlaceThing(thing, parent.Position, parent.Map, ThingPlaceMode.Near);
+        GenPlace.TryPlaceThing(thing, pos, map, ThingPlaceMode.Near);
     }
 }

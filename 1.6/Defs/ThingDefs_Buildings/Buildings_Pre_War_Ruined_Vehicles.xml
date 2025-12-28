@@ -33,6 +33,7 @@
             <li Class="CompProperties_Usable">
                 <useJob>UseItem</useJob>
                 <useLabel>Collect {0}</useLabel>
+    <showUseGizmo>true</showUseGizmo>
             </li>
             <li Class="FCP.Core.CompProperties_UseEffectItemBox">
                 <numWeightedDrops>3</numWeightedDrops>
@@ -100,6 +101,7 @@
             <li Class="CompProperties_Usable">
                 <useJob>UseItem</useJob>
                 <useLabel>Collect {0}</useLabel>
+                <showUseGizmo>true</showUseGizmo>
             </li>
             <li Class="FCP.Core.CompProperties_UseEffectItemBox">
                 <numWeightedDrops>3</numWeightedDrops>
