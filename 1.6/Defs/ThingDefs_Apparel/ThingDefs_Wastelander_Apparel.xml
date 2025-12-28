@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 
     <!--__________ Wastelander Clothing __________-->
@@ -38,7 +38,7 @@
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
         </statBases>
-        <recipeMaker Inherit= "false">
+        <recipeMaker Inherit="false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
                 <Crafting>2</Crafting>
@@ -83,7 +83,7 @@
         <thingCategories>
             <li>ApparelArmor</li>
         </thingCategories>
-        <recipeMaker Inherit= "false">
+        <recipeMaker Inherit="false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
                 <Crafting>2</Crafting>
@@ -135,12 +135,12 @@
         <thingCategories>
             <li>ApparelArmor</li>
         </thingCategories>
-        <recipeMaker Inherit= "false">
+        <recipeMaker Inherit="false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
                 <Crafting>4</Crafting>
             </skillRequirements>
-        <researchPrerequisite>FCP_Research_CombatArmorStandard</researchPrerequisite>
+            <researchPrerequisite>FCP_Research_CombatArmorStandard</researchPrerequisite>
             <recipeUsers>
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
@@ -190,6 +190,7 @@
 
     <ThingDef ParentName="FCP_Apparel_Makeable_Base">
         <defName>FCP_Apparel_Mysterious_Stranger_Outfit</defName>
+        <useHitPoints>false</useHitPoints>
         <label>Mysterious Stranger</label>
         <description>Mysterious Strangers outfit.</description>
         <graphicData>
@@ -197,12 +198,12 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <recipeMaker Inherit= "false">
+        <recipeMaker Inherit="false">
             <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
                 <Crafting>4</Crafting>
             </skillRequirements>
-        <researchPrerequisite>FCP_Research_BusinessWear</researchPrerequisite>
+            <researchPrerequisite>FCP_Research_BusinessWear</researchPrerequisite>
             <recipeUsers>
                 <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
@@ -214,14 +215,18 @@
             <MaxHitPoints>120</MaxHitPoints>
             <WorkToMake>6000</WorkToMake>
             <Mass>2</Mass>
-            <MarketValue>1200</MarketValue>
+            <MarketValue>10000</MarketValue>
             <Insulation_Cold>3.0</Insulation_Cold>
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
+            <DeteriorationRate>0</DeteriorationRate>
+            <Flammability>0</Flammability>
         </statBases>
         <equippedStatOffsets>
-            <SocialImpact>0.15</SocialImpact>            <!-- Speech +5 -->
-            <TradePriceImprovement>0.15</TradePriceImprovement>            <!-- Barter +5 -->
+            <SocialImpact>0.15</SocialImpact>
+            <!-- Speech +5 -->
+            <TradePriceImprovement>0.15</TradePriceImprovement>
+            <!-- Barter +5 -->
         </equippedStatOffsets>
         <smeltable>false</smeltable>
         <apparel>
@@ -245,16 +250,16 @@
             </li>
         </comps>
         <modExtensions>
-            <li Class="FCP.Core.UniqueThingExtension"></li>
+            <li Class="FCP.Core.UniqueThingExtension">
+            </li>
         </modExtensions>
     </ThingDef>
 
     <!-- Mysterious Stranger Hat -->
 
-    <!-- Mysterious Stranger Hat -->
-
     <ThingDef ParentName="HatMakeableBase">
         <defName>FCP_Apparel_Mysterious_Stranger_Hat</defName>
+        <useHitPoints>false</useHitPoints>
         <label>Mysterious Stranger Hat</label>
         <description>A distinctive hat worn by the mysterious stranger, providing a subtle boost to accuracy.</description>
         <techLevel>Industrial</techLevel>
@@ -273,15 +278,20 @@
             <Leather_Plain>15</Leather_Plain>
         </costList>
         <statBases>
-            <WorkToMake>3000</WorkToMake>
             <MaxHitPoints>80</MaxHitPoints>
+            <WorkToMake>3000</WorkToMake>
             <Mass>0.8</Mass>
+            <MarketValue>10000</MarketValue>
             <Insulation_Heat>2</Insulation_Heat>
             <EquipDelay>1.5</EquipDelay>
+            <DeteriorationRate>0</DeteriorationRate>
+            <Flammability>0</Flammability>
         </statBases>
         <equippedStatOffsets>
-            <ShootingAccuracyPawn>0.05</ShootingAccuracyPawn>            <!-- PERCEPTION +1 -->
+            <ShootingAccuracyPawn>0.05</ShootingAccuracyPawn>
+            <!-- PERCEPTION +1 -->
         </equippedStatOffsets>
+        <smeltable>false</smeltable>
         <apparel>
             <bodyPartGroups>
                 <li>UpperHead</li>
@@ -299,9 +309,9 @@
                 <rarity>Unique</rarity>
             </li>
         </comps>
-		<modExtensions>
-			<li Class="FCP.Core.UniqueThingExtension"></li>
-		</modExtensions>
+        <modExtensions>
+            <li Class="FCP.Core.UniqueThingExtension">
+            </li>
+        </modExtensions>
     </ThingDef>
-
 </Defs>
