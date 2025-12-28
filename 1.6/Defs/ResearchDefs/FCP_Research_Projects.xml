@@ -1111,7 +1111,7 @@
                 <baseLabel>FCP_Techprint_Label</baseLabel>
                 <baseDescription>FCP_Techprint_Desc</baseDescription>
 				<texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Orange</texPath>
-				<requiredBench>SimpleResearchBench</requiredBench>
+				<requiredBench>FCP_Production_Tool_Bench</requiredBench>
             </li>
         </modExtensions>
     </ResearchProjectDef>
@@ -1132,7 +1132,7 @@
                 <baseLabel>FCP_Techprint_Label</baseLabel>
                 <baseDescription>FCP_Techprint_Desc</baseDescription>
 				<texPath>Things/Items/Techprints/FCP_Techprint_Holotape_Mil</texPath>
-				<requiredBench>SimpleResearchBench</requiredBench>
+				<requiredBench>FCP_Production_Tool_Bench</requiredBench>
             </li>
         </modExtensions>
     </ResearchProjectDef>

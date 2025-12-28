@@ -8,7 +8,7 @@
     <StorytellerDef ParentName="BaseStoryteller">
         <defName>FCP_Storyteller_Vault_Girl</defName>
         <label>Vault Girl</label>
-        <description>Based on the classic wasteland feel and preserving your colony.Vault Girl will ensure that your colony can both survive and thrive! Given the fact that you can fend off a few raiders or wasteland monsters every once in a while.</description>
+        <description>She emerged from Vault 84 with technical manuals and a optimistic smile, believing every settlement can thrive with proper preparation. Her experience in controlled vault environments means she understands the balance between challenge and survival - threats come in measured waves with breathing room between, giving you time to fortify, heal, and prepare. She'll test you with raiders and wasteland creatures, but she wants you to succeed.</description>
         <portraitLarge>UI/HeroArt/Storytellers/FCP_Vault_Girl</portraitLarge>
         <portraitTiny>UI/HeroArt/Storytellers/FCP_Vault_Girl_Tiny</portraitTiny>
         <listOrder>10</listOrder>
@@ -403,7 +403,7 @@
     <StorytellerDef ParentName="BaseStoryteller">
         <defName>FCP_Storyteller_Vault_Boy</defName>
         <label>Vault Boy</label>
-        <description>.</description>
+        <description>The ever-present mascot of Vault-Tec Corporation, preserved in training films and instructional pamphlets across the wasteland. His thumbs-up attitude represents the vault experiments' true purpose - controlled testing of humanity under stress. Like Vault Girl, he delivers measured challenges with recovery time, but his corporate programming adds a slight edge of unpredictability. After all, every good experiment needs variables.</description>
         <portraitLarge>UI/HeroArt/Storytellers/FCP_Vault_Boy</portraitLarge>
         <portraitTiny>UI/HeroArt/Storytellers/FCP_Vault_Boy_Tiny</portraitTiny>
         <listOrder>10</listOrder>
@@ -593,7 +593,7 @@
     <StorytellerDef ParentName="BaseStoryteller">
         <defName>FCP_Storyteller_Augustus_Autumn</defName>
         <label>Augustus Autumn</label>
-        <description>.</description>
+        <description>Colonel Autumn of the Enclave believes in order through overwhelming force and technological superiority. His tactical mind approaches colony management like a military operation - systematic, methodical, and unforgiving of weakness. Expect calculated assaults timed to test your defenses, with the cold efficiency of a career soldier who views wasteland survival as combat doctrine. The Enclave doesn't tolerate failure, and neither does he.</description>
         <portraitLarge>UI/HeroArt/Storytellers/FCP_Augustus_Autumn</portraitLarge>
         <portraitTiny>UI/HeroArt/Storytellers/FCP_Augustus_Autumn_Tiny</portraitTiny>
         <listOrder>10</listOrder>
@@ -783,7 +783,7 @@
     <StorytellerDef ParentName="BaseStoryteller">
         <defName>FCP_Storyteller_Tabitha</defName>
         <label>Tabitha</label>
-        <description>.</description>
+        <description>Once a brilliant Nightkin leader broadcasting from Black Mountain, Tabitha's fractured mind creates chaotic, unpredictable scenarios. Her schizophrenic episodes mean threats can come in erratic patterns - sometimes relentless, sometimes eerily quiet. She converses with Rhonda, her imaginary Mr. Handy companion, debating the fate of your colony through a lens of madness and super mutant logic. Her stories make sense only to her, and survival means adapting to her delusions.</description>
         <portraitLarge>UI/HeroArt/Storytellers/FCP_Tabitha</portraitLarge>
         <portraitTiny>UI/HeroArt/Storytellers/FCP_Tabitha_Tiny</portraitTiny>
         <listOrder>10</listOrder>
