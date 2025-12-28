@@ -265,6 +265,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Update="Krafs.Rimworld.Ref" Version="1.6.4518" />
+    <PackageReference Update="Krafs.Rimworld.Ref" Version="1.6.*" />
   </ItemGroup>
 </Project>
