@@ -74,38 +74,31 @@ namespace FCP.Core.TemperatureApparelPreference
         // ============================================================
         // HARD exclusion during generation: block avoided + incompatible defs at CanUsePair
         // ============================================================
-        /* Causes crash, disabled for now. Taranchuk
-        
-        [HarmonyPatch(typeof(PawnApparelGenerator), "CanUsePair",
-            new Type[] { typeof(ThingStuffPair), typeof(Pawn), typeof(float), typeof(bool), typeof(int) })]
-        public static class Patch_PawnApparelGenerator_CanUsePair
+
+        public static bool Patch_PawnApparelGenerator_CanUsePair(ThingStuffPair pair, ref bool __result)
         {
-            [HarmonyPrefix]
-            public static bool Prefix(ThingStuffPair pair, ref bool __result)
-            {
-                if (!generationOverrideActive)
-                    return true;
-
-                ThingDef def = pair.thing;
-                if (def == null)
-                    return true;
-
-                if (generationAvoided != null && generationAvoided.Contains(def))
-                {
-                    __result = false;
-                    return false;
-                }
-
-                if (generationIncompatible != null && generationIncompatible.Contains(def))
-                {
-                    __result = false;
-                    return false;
-                }
-
+            if (!generationOverrideActive)
                 return true;
+
+            ThingDef def = pair.thing;
+            if (def == null)
+                return true;
+
+            if (generationAvoided != null && generationAvoided.Contains(def))
+            {
+                __result = false;
+                return false;
             }
+
+            if (generationIncompatible != null && generationIncompatible.Contains(def))
+            {
+                __result = false;
+                return false;
+            }
+
+            return true;
         }
-        */
+
         // ============================================================
         // Weight override:
         // - avoided/incompatible => commonality 0
