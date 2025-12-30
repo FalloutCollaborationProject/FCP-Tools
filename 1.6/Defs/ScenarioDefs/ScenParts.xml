@@ -1,0 +1,9 @@
+<Defs>
+    <ScenPartDef>
+        <defName>FCP_PlayerPawnsArriveInShuttle</defName>
+        <label>arrival in shuttle</label>
+        <category>Fixed</category>
+        <scenPartClass>FCP_Shuttles.ScenPart_PlayerPawnsArriveInShuttle</scenPartClass>
+        <summaryPriority>470</summaryPriority>
+    </ScenPartDef>
+</Defs>

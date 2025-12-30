@@ -257,7 +257,6 @@
       <HintPath>..\..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.XRModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <PackageReference Include="Lib.Harmony" Version="2.3.6" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Publicizer">
@@ -266,8 +265,5 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <Publicize Include="Assembly-CSharp" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Update="Krafs.Rimworld.Ref" Version="1.6.4518" />
   </ItemGroup>
 </Project>

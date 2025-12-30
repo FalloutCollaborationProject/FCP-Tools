@@ -10,7 +10,6 @@ public class Dialog_VATS(Verb_AbilityVATS verb, LocalTargetInfo target, IWindowD
     private readonly Texture2D Logo = ContentFinder<Texture2D>.Get("UI/FCP_VATS_Logo_Small");
 
     public Verb Selected;
-    private string title = "V.A.T.S.";
 
     public Dictionary<string, float> MultiplierLookup => FCPCoreMod.Settings.MultiplierLookup;
 

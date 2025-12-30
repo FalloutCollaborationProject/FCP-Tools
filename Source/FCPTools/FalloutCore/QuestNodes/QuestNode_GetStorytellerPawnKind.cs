@@ -1,4 +1,4 @@
-﻿using RimWorld.Planet;
+using RimWorld.Planet;
 using RimWorld.QuestGen;
 
 namespace FCP.Core;
@@ -55,9 +55,10 @@ public class QuestNode_Root_StorytellerJoin : QuestNode_Root_WandererJoin
 			QuestGen_End.End(quest, QuestEndOutcome.Fail);
 		});
 	}
-
-	public override void SendLetter(Quest quest, Pawn pawn)
-	{
+	
+    [Obsolete]
+    public override void SendLetter(Quest quest, Pawn pawn)
+    {
 		TaggedString letterTitle = "FCP_LetterLabel_SpecialWandererJoins".Translate(pawn.Named("PAWN")).AdjustedFor(pawn);
 		TaggedString letterText = "FCP_Letter_SpecialWandererJoins".Translate(pawn.Named("PAWN")).AdjustedFor(pawn);
 		letterText += $"\n\n{Find.Storyteller.def.description}";
@@ -67,7 +68,6 @@ public class QuestNode_Root_StorytellerJoin : QuestNode_Root_WandererJoin
 		choiceLetter.quest = quest;
 		choiceLetter.overrideMap = Find.AnyPlayerHomeMap;
 		choiceLetter.StartTimeout(TimeoutTicks);
-			
 		Find.LetterStack.ReceiveLetter(choiceLetter);
 	}
 }

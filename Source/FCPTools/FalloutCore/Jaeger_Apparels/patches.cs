@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using RimWorld;
 using System;
 using System.Collections.Generic;
@@ -74,6 +74,8 @@ namespace FCP.Core.TemperatureApparelPreference
         // ============================================================
         // HARD exclusion during generation: block avoided + incompatible defs at CanUsePair
         // ============================================================
+        /* Causes crash, disabled for now. Taranchuk
+        
         [HarmonyPatch(typeof(PawnApparelGenerator), "CanUsePair",
             new Type[] { typeof(ThingStuffPair), typeof(Pawn), typeof(float), typeof(bool), typeof(int) })]
         public static class Patch_PawnApparelGenerator_CanUsePair
@@ -103,7 +105,7 @@ namespace FCP.Core.TemperatureApparelPreference
                 return true;
             }
         }
-
+        */
         // ============================================================
         // Weight override:
         // - avoided/incompatible => commonality 0
