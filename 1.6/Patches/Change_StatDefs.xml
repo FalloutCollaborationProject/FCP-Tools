@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/StatDef[@Name="ArmorRatingBase"]/maxValue</xpath>
+		<value>
+			<maxValue>8</maxValue>
+		</value>
+	</Operation>
+
+</Patch>
