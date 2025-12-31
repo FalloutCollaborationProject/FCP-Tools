@@ -1,4 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
+
+    <!--__________ Scenario Parts __________-->
+
+    <!--_____ Player Pawns Arrive In Shuttle _____-->
+
     <ScenPartDef>
         <defName>FCP_PlayerPawnsArriveInShuttle</defName>
         <label>arrival in shuttle</label>
@@ -6,4 +12,5 @@
         <scenPartClass>FCP_Shuttles.ScenPart_PlayerPawnsArriveInShuttle</scenPartClass>
         <summaryPriority>470</summaryPriority>
     </ScenPartDef>
+
 </Defs>
