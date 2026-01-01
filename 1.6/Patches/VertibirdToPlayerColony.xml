@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+	<!--__________ Patches __________-->
+
+    <Operation Class="PatchOperationAddModExtension">
+        <xpath>/Defs/FactionDef[defName="PlayerColony"]</xpath>
+        <value>
+            <li Class="FCP_Shuttles.FactionModExtension">
+                <transportShipDef>FCP_Vertibird</transportShipDef>
+                <minDistanceBetweenShuttles>10</minDistanceBetweenShuttles>
+                <maxPawnCountInOneShuttle>6</maxPawnCountInOneShuttle>
+            </li>
+        </value>
+    </Operation>
+	
+</Patch>

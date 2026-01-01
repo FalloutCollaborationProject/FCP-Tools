@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+	<!--__________ Patches __________-->
+
+	<!-- Vertibird Raid Patch -->
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/RaidStrategyDef[defName = "FCP_VertibirdAttack"]/selectionWeightCurvesPerFaction</xpath>
+		<value>
+			<!-- NCR -->
+			<li>
+				<faction>FCP_Faction_NCR</faction>
+				<selectionWeightPerPointsCurve>
+					<points>
+						<li>(0, 1)</li>						<!-- Constant 1 -->
+					</points>
+				</selectionWeightPerPointsCurve>
+			</li>
+			<!-- Brotherhood of Steel -->
+			<li>
+				<faction>FCP_Faction_BoS</faction>
+				<selectionWeightPerPointsCurve>
+					<points>
+						<li>(0, 1)</li>						<!-- Constant 1 -->
+					</points>
+				</selectionWeightPerPointsCurve>
+			</li>
+			<li>
+				<faction>FCP_Faction_BoS_Outcast_Remnants</faction>
+				<selectionWeightPerPointsCurve>
+					<points>
+						<li>(0, 1)</li>						<!-- Constant 1 -->
+					</points>
+				</selectionWeightPerPointsCurve>
+			</li>
+			<li>
+				<faction>FCP_Faction_BoS_Lyons_Pride_Remnants</faction>
+				<selectionWeightPerPointsCurve>
+					<points>
+						<li>(0, 1)</li>						<!-- Constant 1 -->
+					</points>
+				</selectionWeightPerPointsCurve>
+			</li>
+		</value>
+	</Operation>
+
+</Patch>
