@@ -563,6 +563,152 @@
                         <countRange>1</countRange>
 						<!-- <weight>0.3</weight> -->
                     </li>
+                    <!-- Brotherhood of Steel - Common -->
+                    <li MayRequire="Rick.FCP.Brotherhood">
+                        <thingDef>FCP_Apparel_BoS_Jumpsuit</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.Brotherhood">
+                        <thingDef>FCP_Apparel_BoS_Appalachia_Fatigues</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.Brotherhood">
+                        <thingDef>FCP_Apparel_BoS_Appalachia_Infantry_Uniform</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.Brotherhood">
+                        <thingDef>FCP_Apparel_BoS_Brotherhood_Fatigues</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.Brotherhood">
+                        <thingDef>FCP_Apparel_BoS_Brotherhood_Field_Medic_Fatigues</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.Brotherhood">
+                        <thingDef>FCP_Apparel_BoS_Bomber_Jacket</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.Brotherhood">
+                        <thingDef>FCP_Apparel_BoS_Squire</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.Brotherhood">
+                        <thingDef>FCP_Apparel_BoS_Appalachia_Beret</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.Brotherhood">
+                        <thingDef>FCP_Apparel_BoS_Appalachia_Infantry_Hood</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.Brotherhood">
+                        <thingDef>FCP_Apparel_BoS_Squire_Hat</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <!-- Caesar's Legion - Common -->
+                    <li MayRequire="Rick.FCP.Legion">
+                        <thingDef>FCP_Apparel_Legion_Tunic</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.Legion">
+                        <thingDef>FCP_Apparel_Legion_Plate</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.Legion">
+                        <thingDef>FCP_Apparel_Legion_Vest</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.Legion">
+                        <thingDef>FCP_Apparel_Legion_Explorer_Armor</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.Legion">
+                        <thingDef>FCP_Apparel_Legion_Recruit_Armor</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.Legion">
+                        <thingDef>FCP_Apparel_Legion_Explorer_Hood</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.Legion">
+                        <thingDef>FCP_Apparel_Legion_Recruit_Helmet</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.Legion">
+                        <thingDef>FCP_Apparel_Legion_Recruit_Decanus_Helmet</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <!-- Great Khans - Common -->
+                    <li MayRequire="Rick.FCP.GreatKhans">
+                        <thingDef>FCP_Apparel_Great_Khan_Simple_Armor</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <!-- United States - Common -->
+                    <li MayRequire="Rick.FCP.USA">
+                        <thingDef>FCP_Apparel_USA_Army_Combat_Armor</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.USA">
+                        <thingDef>FCP_Apparel_USA_Army_Combat_Helmet</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <!-- Ballistic Weapons - Additional Common -->
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Colt_6520_Pistol</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_32_Pistol</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_357_Revolver</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Pipe_Pistol</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Pipe_Revolver</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Pipe_Rifle</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Pipe_BoltAction</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Pipe_Shotgun</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                        <thingDef>FCP_Gun_Pipe_Sniper</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <!-- Pre-War Food - Additional Common -->
+                    <li MayRequire="Rick.FCP.PreWarFood">
+                        <thingDef>FCP_Food_Insta_Mash</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.PreWarFood">
+                        <thingDef>FCP_Food_Pork_N_Beans</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.PreWarFood">
+                        <thingDef>FCP_Food_Potato_Crisps</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.PreWarFood">
+                        <thingDef>FCP_Food_Gum_Drops</thingDef>
+                        <countRange>1</countRange>
+                    </li>
+                    <li MayRequire="Rick.FCP.PreWarFood">
+                        <thingDef>FCP_Food_Yum_Yum_Deviled_Eggs</thingDef>
+                        <countRange>1</countRange>
+                    </li>
                 </weightedDrops>
             </li>
             <li Class="CompProperties_UseEffectDestroySelf"/>
