@@ -226,7 +226,7 @@
                 <li>name->[Outcasts_Settlements]</li>
             </rulesStrings>
             <rulesFiles>
-                <li>Enclave_Settlements->Settlement_Names/BoS/Outcasts_Settlements</li>
+                <li>Outcasts_Settlements->Settlement_Names/BoS/Outcasts_Settlements</li>
             </rulesFiles>
         </rulePack>
     </RulePackDef>
@@ -242,7 +242,7 @@
                 <li>name->[Lyons_Pride_Settlements]</li>
             </rulesStrings>
             <rulesFiles>
-                <li>Enclave_Settlements->Settlement_Names/BoS/Lyons_Pride_Settlements</li>
+                <li>Lyons_Pride_Settlements->Settlement_Names/BoS/Lyons_Pride_Settlements</li>
             </rulesFiles>
         </rulePack>
     </RulePackDef>
@@ -258,7 +258,39 @@
                 <li>name->[BoS_Settlements]</li>
             </rulesStrings>
             <rulesFiles>
-                <li>Enclave_Settlements->Settlement_Names/BoS/BoS_Settlements</li>
+                <li>BoS_Settlements->Settlement_Names/BoS/BoS_Settlements</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!--__ Lost Hills __-->
+
+    <!-- Settlements -->
+
+    <RulePackDef>
+        <defName>FCP_Namer_Settlement_Lost_Hills</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[Lost_Hills_Settlements]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>Lost_Hills_Settlements->Settlement_Names/BoS/Lost_Hills_Settlements</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
+    <!--__ Midwest BoS __-->
+
+    <!-- Settlements -->
+
+    <RulePackDef>
+        <defName>FCP_Namer_Settlement_Midwest_BoS</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[Midwest_Settlements]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>Midwest_Settlements->Settlement_Names/BoS/Midwest_Settlements</li>
             </rulesFiles>
         </rulePack>
     </RulePackDef>
