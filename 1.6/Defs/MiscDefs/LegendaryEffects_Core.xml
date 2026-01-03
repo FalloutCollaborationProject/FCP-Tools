@@ -14,6 +14,9 @@
         <legendaryEffectWorkerClass>FCP.Core.LegendaryEffectWorkers.AssassinsWorker</legendaryEffectWorkerClass>
         <commonality>1</commonality>
         <weaponCategory>Gun</weaponCategory>
+        <traitAdjectives>
+            <li>Assassin's</li>
+        </traitAdjectives>
     </FCP.Core.LegendaryWeaponTraitDef>
 
     <!-- Bloodied -->
@@ -25,6 +28,9 @@
         <legendaryEffectWorkerClass>FCP.Core.LegendaryEffectWorkers.BloodiedWorker</legendaryEffectWorkerClass>
         <commonality>1</commonality>
         <weaponCategory>Gun</weaponCategory>
+        <traitAdjectives>
+            <li>Bloodied</li>
+        </traitAdjectives>
     </FCP.Core.LegendaryWeaponTraitDef>
 
     <!-- Explosive -->
@@ -36,6 +42,9 @@
         <legendaryEffectWorkerClass>FCP.Core.LegendaryEffectWorkers.ExplosiveWorker</legendaryEffectWorkerClass>
         <commonality>1</commonality>
         <weaponCategory>Gun</weaponCategory>
+        <traitAdjectives>
+            <li>Explosive</li>
+        </traitAdjectives>
     </FCP.Core.LegendaryWeaponTraitDef>
 
     <!-- Incendiary -->
@@ -47,6 +56,9 @@
         <legendaryEffectWorkerClass>FCP.Core.LegendaryEffectWorkers.IncendiaryWorker</legendaryEffectWorkerClass>
         <commonality>1</commonality>
         <weaponCategory>Gun</weaponCategory>
+        <traitAdjectives>
+            <li>Incendiary</li>
+        </traitAdjectives>
     </FCP.Core.LegendaryWeaponTraitDef>
 
     <!-- Instigating -->
@@ -58,6 +70,9 @@
         <legendaryEffectWorkerClass>FCP.Core.LegendaryEffectWorkers.InstigatingWorker</legendaryEffectWorkerClass>
         <commonality>1</commonality>
         <weaponCategory>Gun</weaponCategory>
+        <traitAdjectives>
+            <li>Instigating</li>
+        </traitAdjectives>
     </FCP.Core.LegendaryWeaponTraitDef>
 
     <!-- Junkie's -->
@@ -69,6 +84,9 @@
         <legendaryEffectWorkerClass>FCP.Core.LegendaryEffectWorkers.JunkiesWorker</legendaryEffectWorkerClass>
         <commonality>1</commonality>
         <weaponCategory>Gun</weaponCategory>
+        <traitAdjectives>
+            <li>Junkie's</li>
+        </traitAdjectives>
     </FCP.Core.LegendaryWeaponTraitDef>
 
     <!-- Powerful -->
@@ -80,6 +98,9 @@
         <legendaryEffectWorkerClass>FCP.Core.LegendaryEffectWorkers.PowerfulWorker</legendaryEffectWorkerClass>
         <commonality>1</commonality>
         <weaponCategory>Gun</weaponCategory>
+        <traitAdjectives>
+            <li>Powerful</li>
+        </traitAdjectives>
     </FCP.Core.LegendaryWeaponTraitDef>
 
     <!-- Enraging -->
@@ -91,6 +112,9 @@
         <legendaryEffectWorkerClass>FCP.Core.LegendaryEffectWorkers.EnragingWorker</legendaryEffectWorkerClass>
         <commonality>1</commonality>
         <weaponCategory>Gun</weaponCategory>
+        <traitAdjectives>
+            <li>Enraging</li>
+        </traitAdjectives>
     </FCP.Core.LegendaryWeaponTraitDef>
 
     <!-- Kneecapper -->
@@ -102,6 +126,9 @@
         <legendaryEffectWorkerClass>FCP.Core.LegendaryEffectWorkers.KneeCapperWorker</legendaryEffectWorkerClass>
         <commonality>1</commonality>
         <weaponCategory>Gun</weaponCategory>
+        <traitAdjectives>
+            <li>Kneecapper</li>
+        </traitAdjectives>
     </FCP.Core.LegendaryWeaponTraitDef>
 
     <!-- Poisoner's -->
@@ -113,6 +140,9 @@
         <legendaryEffectWorkerClass>FCP.Core.LegendaryEffectWorkers.PoisonersWorker</legendaryEffectWorkerClass>
         <commonality>1</commonality>
         <weaponCategory>Gun</weaponCategory>
+        <traitAdjectives>
+            <li>Poisoner's</li>
+        </traitAdjectives>
     </FCP.Core.LegendaryWeaponTraitDef>
 
     <!-- Staggering -->
@@ -129,6 +159,9 @@
         </extraDamages>
         <commonality>1</commonality>
         <weaponCategory>Gun</weaponCategory>
+        <traitAdjectives>
+            <li>Staggering</li>
+        </traitAdjectives>
     </FCP.Core.LegendaryWeaponTraitDef>
 
     <!-- V.A.T.S. Enhanced -->
