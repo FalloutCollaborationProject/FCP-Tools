@@ -15,13 +15,12 @@ public class FCPDefOf
     
     public static JobDef FCP_VATS_AttackHybrid;
     public static ThingDef FCP_VATS_Zoomer;
-    public static StatCategoryDef FCP_LegendaryEffectStats;
     public static EffecterDef FCP_VATSLegendaryEffect_Explosive_Explosion;
-
-    public static LegendaryEffectDef FCP_VATSLegendaryEffect_Rapid;
     
     public static KeyBindingDef FCP_VatsKeyBinding;
-    
+
+    public static HediffDef FCP_VATSCrippledHediff;
+    public static HediffDef FCP_VATSPoisoning;
     static FCPDefOf()
     {
         DefOfHelper.EnsureInitializedInCtor(typeof(FCPDefOf));

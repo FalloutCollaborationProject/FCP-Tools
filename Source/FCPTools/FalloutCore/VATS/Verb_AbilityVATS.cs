@@ -52,7 +52,7 @@ public class Verb_AbilityVATS : Verb_AbilityShoot
 
         VATS_GameComponent.ActiveAttacks.Add(CasterPawn, new VATS_GameComponent.VATSAction(currentTarget.Pawn, part, PrimaryWeapon, hitChance, shotReport));
 
-        ability.StartCooldown(Mathf.CeilToInt(ability.def.cooldownTicksRange.RandomInRange * LegendaryEffectGameTracker.CooldownModifier(CasterPawn)));
+        ability.StartCooldown(Mathf.CeilToInt(ability.def.cooldownTicksRange.RandomInRange));
 
         CasterPawn.jobs.TryTakeOrderedJob(job);
     }

@@ -5,7 +5,7 @@ namespace FCP.Core.LegendaryEffectWorkers;
 
 public class InstigatingWorker : LegendaryEffectWorker
 {
-    public override void ApplyEffect(ref DamageInfo damageInfo, Pawn pawn)
+    public override void Notify_ApplyToPawn(ref DamageInfo damageInfo, Pawn pawn)
     {
         if (pawn != null && Mathf.Approximately(pawn.health.summaryHealth.SummaryHealthPercent, 0f))
         {

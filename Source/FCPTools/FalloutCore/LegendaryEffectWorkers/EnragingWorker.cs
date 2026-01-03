@@ -2,7 +2,7 @@
 
 public class EnragingWorker : LegendaryEffectWorker
 {
-    public override void ApplyEffect(ref DamageInfo damageInfo, Pawn pawn)
+    public override void Notify_ApplyToPawn(ref DamageInfo damageInfo, Pawn pawn)
     {
         if (pawn != null)
         {

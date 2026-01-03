@@ -2,7 +2,7 @@
 
 public class KneeCapperWorker : LegendaryEffectWorker
 {
-    public override void ApplyEffect(ref DamageInfo damageInfo, Pawn pawn)
+    public override void Notify_ApplyToPawn(ref DamageInfo damageInfo, Pawn pawn)
     {
         // 20% of the time
         if (pawn == null || Rand.Range(0, 4) != 0)
@@ -14,7 +14,7 @@ public class KneeCapperWorker : LegendaryEffectWorker
 
         foreach (BodyPartRecord leg in legs)
         {
-            pawn.health.AddHediff(effect.hediffToApply, leg, damageInfo);
+            pawn.health.AddHediff(FCPDefOf.FCP_VATSCrippledHediff, leg, damageInfo);
         }
     }
 }
