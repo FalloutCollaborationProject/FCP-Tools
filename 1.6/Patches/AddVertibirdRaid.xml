@@ -26,7 +26,7 @@
 					</points>
 				</selectionWeightPerPointsCurve>
 			</li>
-			<li MayRequire="altushka.boscompendium">
+			<li MayRequire="Rick.FCP.BoS">
 				<faction>FCP_Faction_BoS_Outcast_Remnants</faction>
 				<selectionWeightPerPointsCurve>
 					<points>
@@ -34,7 +34,7 @@
 					</points>
 				</selectionWeightPerPointsCurve>
 			</li>
-			<li MayRequire="altushka.boscompendium">
+			<li MayRequire="Rick.FCP.BoS">
 				<faction>FCP_Faction_BoS_Lyons_Pride_Remnants</faction>
 				<selectionWeightPerPointsCurve>
 					<points>
