@@ -49,7 +49,7 @@
 
     <!-- Crippling -->
 
-    <FCP.Core.LegendaryEffectDef>
+    <!--<FCP.Core.LegendaryEffectDef>
         <defName>FCP_VATSLegendaryEffect_Crippling</defName>
         <label>Crippling</label>
         <description>Does more limb damage</description>
@@ -58,7 +58,7 @@
         <IsForWeapon>true</IsForWeapon>
         <IsForMelee>false</IsForMelee>
         <IsForApparel>false</IsForApparel>
-    </FCP.Core.LegendaryEffectDef>
+    </FCP.Core.LegendaryEffectDef>-->
 
     <!-- Explosive -->
 

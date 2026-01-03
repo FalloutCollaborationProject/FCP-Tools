@@ -16,9 +16,9 @@
         <projectile>
             <speed>75</speed>
             <damageDef>Bullet</damageDef>
-            <damageAmountBase>22</damageAmountBase>
-            <armorPenetrationBase>0.5</armorPenetrationBase>
-            <stoppingPower>1.3</stoppingPower>
+            <damageAmountBase>18</damageAmountBase>
+            <armorPenetrationBase>1.6</armorPenetrationBase>
+            <stoppingPower>1.5</stoppingPower>
         </projectile>
     </ThingDef>
 
@@ -36,8 +36,8 @@
             <speed>70</speed>
             <damageDef>Bullet</damageDef>
             <damageAmountBase>11</damageAmountBase>
-            <armorPenetrationBase>0.28</armorPenetrationBase>
-            <stoppingPower>0.7</stoppingPower>
+            <armorPenetrationBase>1.0</armorPenetrationBase>
+            <stoppingPower>0.8</stoppingPower>
         </projectile>
     </ThingDef>
 
@@ -54,8 +54,8 @@
         <projectile>
             <speed>40</speed>
             <damageDef>Bullet</damageDef>
-            <damageAmountBase>3</damageAmountBase>
-            <armorPenetrationBase>0.05</armorPenetrationBase>
+            <damageAmountBase>4</damageAmountBase>
+            <armorPenetrationBase>0.08</armorPenetrationBase>
             <stoppingPower>0.1</stoppingPower>
         </projectile>
     </ThingDef>
@@ -73,9 +73,9 @@
         <projectile>
             <speed>50</speed>
             <damageDef>Bullet</damageDef>
-            <damageAmountBase>4</damageAmountBase>
-            <armorPenetrationBase>0.05</armorPenetrationBase>
-            <stoppingPower>0.1</stoppingPower>
+            <damageAmountBase>5</damageAmountBase>
+            <armorPenetrationBase>0.3</armorPenetrationBase>
+            <stoppingPower>0.2</stoppingPower>
         </projectile>
     </ThingDef>
 
@@ -92,9 +92,9 @@
         <projectile>
             <speed>75</speed>
             <damageDef>Bullet</damageDef>
-            <damageAmountBase>20</damageAmountBase>
-            <armorPenetrationBase>0.5</armorPenetrationBase>
-            <stoppingPower>1.2</stoppingPower>
+            <damageAmountBase>22</damageAmountBase>
+            <armorPenetrationBase>2.0</armorPenetrationBase>
+            <stoppingPower>1.5</stoppingPower>
         </projectile>
     </ThingDef>
 
@@ -112,8 +112,8 @@
             <speed>80</speed>
             <damageDef>Bullet</damageDef>
             <damageAmountBase>18</damageAmountBase>
-            <armorPenetrationBase>0.4</armorPenetrationBase>
-            <stoppingPower>1.0</stoppingPower>
+            <armorPenetrationBase>1.5</armorPenetrationBase>
+            <stoppingPower>1.2</stoppingPower>
         </projectile>
     </ThingDef>
 
@@ -131,7 +131,7 @@
             <speed>70</speed>
             <damageDef>Bullet</damageDef>
             <damageAmountBase>8</damageAmountBase>
-            <armorPenetrationBase>0.2</armorPenetrationBase>
+            <armorPenetrationBase>0.8</armorPenetrationBase>
             <stoppingPower>0.5</stoppingPower>
         </projectile>
     </ThingDef>
@@ -150,8 +150,8 @@
             <speed>65</speed>
             <damageDef>Bullet</damageDef>
             <damageAmountBase>12</damageAmountBase>
-            <armorPenetrationBase>0.3</armorPenetrationBase>
-            <stoppingPower>0.7</stoppingPower>
+            <armorPenetrationBase>0.7</armorPenetrationBase>
+            <stoppingPower>0.8</stoppingPower>
         </projectile>
     </ThingDef>
 
@@ -168,8 +168,8 @@
         <projectile>
             <speed>60</speed>
             <damageDef>Bullet</damageDef>
-            <damageAmountBase>10</damageAmountBase>
-            <armorPenetrationBase>0.25</armorPenetrationBase>
+            <damageAmountBase>11</damageAmountBase>
+            <armorPenetrationBase>0.55</armorPenetrationBase>
             <stoppingPower>0.6</stoppingPower>
         </projectile>
     </ThingDef>
@@ -187,8 +187,8 @@
         <projectile>
             <speed>55</speed>
             <damageDef>Bullet</damageDef>
-            <damageAmountBase>9</damageAmountBase>
-            <armorPenetrationBase>0.2</armorPenetrationBase>
+            <damageAmountBase>10</damageAmountBase>
+            <armorPenetrationBase>0.45</armorPenetrationBase>
             <stoppingPower>0.5</stoppingPower>
         </projectile>
     </ThingDef>
@@ -205,13 +205,12 @@
         </graphicData>
         <projectile>
             <damageDef>Bullet</damageDef>
-            <damageAmountBase>22</damageAmountBase>
+            <damageAmountBase>20</damageAmountBase>
             <speed>70</speed>
-            <armorPenetrationBase>0.35</armorPenetrationBase>
-            <stoppingPower>1.0</stoppingPower>
+            <armorPenetrationBase>1.2</armorPenetrationBase>
+            <stoppingPower>1.3</stoppingPower>
         </projectile>
     </ThingDef>
-
 
     <!-- .45 ACP Bullet -->
 
@@ -226,9 +225,9 @@
         <projectile>
             <speed>50</speed>
             <damageDef>Bullet</damageDef>
-            <damageAmountBase>14</damageAmountBase>
-            <armorPenetrationBase>0.3</armorPenetrationBase>
-            <stoppingPower>0.8</stoppingPower>
+            <damageAmountBase>13</damageAmountBase>
+            <armorPenetrationBase>0.6</armorPenetrationBase>
+            <stoppingPower>1.0</stoppingPower>
         </projectile>
     </ThingDef>
 
@@ -245,8 +244,8 @@
         <projectile>
             <speed>55</speed>
             <damageDef>Bullet</damageDef>
-            <damageAmountBase>6</damageAmountBase>
-            <armorPenetrationBase>0.1</armorPenetrationBase>
+            <damageAmountBase>7</damageAmountBase>
+            <armorPenetrationBase>0.2</armorPenetrationBase>
             <stoppingPower>0.3</stoppingPower>
         </projectile>
     </ThingDef>
@@ -265,8 +264,8 @@
             <speed>70</speed>
             <damageDef>Bullet</damageDef>
             <damageAmountBase>16</damageAmountBase>
-            <armorPenetrationBase>0.35</armorPenetrationBase>
-            <stoppingPower>0.9</stoppingPower>
+            <armorPenetrationBase>0.85</armorPenetrationBase>
+            <stoppingPower>1.2</stoppingPower>
         </projectile>
     </ThingDef>
 
@@ -283,6 +282,8 @@
             <damageDef>Bullet</damageDef>
             <damageAmountBase>10</damageAmountBase>
             <speed>75</speed>
+            <armorPenetrationBase>0.95</armorPenetrationBase>
+            <stoppingPower>0.7</stoppingPower>
         </projectile>
     </ThingDef>
 
@@ -298,8 +299,9 @@
         <projectile>
             <damageDef>Bullet</damageDef>
             <damageAmountBase>18</damageAmountBase>
-            <stoppingPower>5</stoppingPower>
+            <stoppingPower>1.8</stoppingPower>
             <speed>70</speed>
+            <armorPenetrationBase>1.4</armorPenetrationBase>
         </projectile>
     </ThingDef>
     
@@ -314,9 +316,10 @@
         </graphicData>
         <projectile>
             <damageDef>Bullet</damageDef>
-            <damageAmountBase>10</damageAmountBase>
-            <stoppingPower>5</stoppingPower>
+            <damageAmountBase>14</damageAmountBase>
+            <stoppingPower>0.9</stoppingPower>
             <speed>70</speed>
+            <armorPenetrationBase>0.75</armorPenetrationBase>
         </projectile>
     </ThingDef>
 
@@ -332,10 +335,10 @@
         </graphicData>
         <projectile>
             <damageDef>Bullet</damageDef>
-            <damageAmountBase>28</damageAmountBase>
+            <damageAmountBase>22</damageAmountBase>
             <speed>65</speed>
-            <armorPenetrationBase>0.45</armorPenetrationBase>
-            <stoppingPower>1.2</stoppingPower>
+            <armorPenetrationBase>1.3</armorPenetrationBase>
+            <stoppingPower>1.5</stoppingPower>
         </projectile>
     </ThingDef>
 
@@ -350,9 +353,10 @@
         </graphicData>
         <projectile>
             <damageDef>Bullet</damageDef>
-            <damageAmountBase>50</damageAmountBase>
-            <stoppingPower>5</stoppingPower>
+            <damageAmountBase>40</damageAmountBase>
+            <stoppingPower>2.5</stoppingPower>
             <speed>120</speed>
+            <armorPenetrationBase>2.8</armorPenetrationBase>
         </projectile>
     </ThingDef>
 
@@ -400,9 +404,9 @@
         <projectile>
             <speed>70</speed>
             <damageDef>Bullet</damageDef>
-            <damageAmountBase>6</damageAmountBase>
-            <armorPenetrationBase>0.12</armorPenetrationBase>
-            <stoppingPower>0.5</stoppingPower>
+            <damageAmountBase>7</damageAmountBase>
+            <armorPenetrationBase>0.3</armorPenetrationBase>
+            <stoppingPower>0.4</stoppingPower>
         </projectile>
     </ThingDef>
 
@@ -450,9 +454,9 @@
         <projectile>
             <speed>70</speed>
             <damageDef>Bullet</damageDef>
-            <damageAmountBase>8</damageAmountBase>
-            <armorPenetrationBase>0.18</armorPenetrationBase>
-            <stoppingPower>0.7</stoppingPower>
+            <damageAmountBase>9</damageAmountBase>
+            <armorPenetrationBase>0.4</armorPenetrationBase>
+            <stoppingPower>0.6</stoppingPower>
         </projectile>
     </ThingDef>
 

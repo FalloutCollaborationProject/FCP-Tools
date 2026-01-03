@@ -587,10 +587,10 @@
                         <thingDef>FCP_Gun_Pipe_Sniper</thingDef>
                         <countRange>1</countRange>
                     </li>
-                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                    <!-- <li MayRequire="Rick.FCP.BallisticWeapons">
                         <thingDef>FCP_Gun_32_Pistol</thingDef>
                         <countRange>1</countRange>
-                    </li>
+                    </li> -->
                     <li MayRequire="Rick.FCP.BallisticWeapons">
                         <thingDef>FCP_Gun_357_Revolver</thingDef>
                         <countRange>1</countRange>
@@ -939,26 +939,26 @@
                         <thingDef>FCP_Gun_HK_10_SMG</thingDef>
                         <countRange>1</countRange>
                     </li>
-                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                    <!-- <li MayRequire="Rick.FCP.BallisticWeapons">
                         <thingDef>FCP_Gun_Submachine_Gun</thingDef>
                         <countRange>1</countRange>
-                    </li>
-                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                    </li> -->
+                    <!-- <li MayRequire="Rick.FCP.BallisticWeapons">
                         <thingDef>FCP_Gun_Combat_Rifle_Short</thingDef>
                         <countRange>1</countRange>
-                    </li>
-                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                    </li> -->
+                    <!-- <li MayRequire="Rick.FCP.BallisticWeapons">
                         <thingDef>FCP_Gun_Combat_Rifle_Scoped</thingDef>
                         <countRange>1</countRange>
-                    </li>
-                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                    </li> -->
+                    <!-- <li MayRequire="Rick.FCP.BallisticWeapons">
                         <thingDef>FCP_Gun_Combat_Rifle_Marksman</thingDef>
                         <countRange>1</countRange>
-                    </li>
-                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                    </li> -->
+                    <!-- <li MayRequire="Rick.FCP.BallisticWeapons">
                         <thingDef>FCP_Gun_9mm_Hunting_Rifle</thingDef>
                         <countRange>1</countRange>
-                    </li>
+                    </li> -->
                     <li MayRequire="Rick.FCP.BallisticWeapons">
                         <thingDef>FCP_Gun_223_Rifle</thingDef>
                         <countRange>1</countRange>
@@ -1243,10 +1243,10 @@
                         <thingDef>FCP_Gun_Q35_Matter_Modulator</thingDef>
                         <countRange>1</countRange>
                     </li>
-                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                    <!-- <li MayRequire="Rick.FCP.BallisticWeapons">
                         <thingDef>FCP_Gun_ThatGun</thingDef>
                         <countRange>1</countRange>
-                    </li>
+                    </li> -->
                     <li MayRequire="Rick.FCP.BallisticWeapons">
                         <thingDef>FCP_Gun_Lucky</thingDef>
                         <countRange>1</countRange>
@@ -1275,10 +1275,10 @@
                         <thingDef>FCP_Gun_HHToolsNailgun</thingDef>
                         <countRange>1</countRange>
                     </li>
-                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                    <!-- <li MayRequire="Rick.FCP.BallisticWeapons">
                         <thingDef>FCP_Gun_LilDevil</thingDef>
                         <countRange>1</countRange>
-                    </li>
+                    </li> -->
                     <li MayRequire="Rick.FCP.BallisticWeapons">
                         <thingDef>FCP_Gun_LincolnsRepeater</thingDef>
                         <countRange>1</countRange>
@@ -1295,14 +1295,14 @@
                         <thingDef>FCP_Gun_GobiCampaignScoutRifle</thingDef>
                         <countRange>1</countRange>
                     </li>
-                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                    <!-- <li MayRequire="Rick.FCP.BallisticWeapons">
                         <thingDef>FCP_Gun_MedicineStick</thingDef>
                         <countRange>1</countRange>
-                    </li>
-                    <li MayRequire="Rick.FCP.BallisticWeapons">
+                    </li> -->
+                    <!-- <li MayRequire="Rick.FCP.BallisticWeapons">
                         <thingDef>FCP_Gun_Bozar</thingDef>
                         <countRange>1</countRange>
-                    </li>
+                    </li> -->
                     <li MayRequire="Rick.FCP.BallisticWeapons">
                         <thingDef>FCP_Gun_DinnerBell</thingDef>
                         <countRange>1</countRange>
