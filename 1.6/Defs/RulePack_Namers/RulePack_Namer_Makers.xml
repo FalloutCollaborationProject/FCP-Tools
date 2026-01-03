@@ -62,7 +62,7 @@
                 <li>name->[Raider_Settlements]</li>
             </rulesStrings>
             <rulesFiles>
-                <li>Raider_Settlements->Settlement_Names/Raiders/Raider_Settlements</li>
+                <li>Raider_Settlements->Settlement_Names/Raider/Raider_Settlements</li>
             </rulesFiles>
         </rulePack>
     </RulePackDef>
