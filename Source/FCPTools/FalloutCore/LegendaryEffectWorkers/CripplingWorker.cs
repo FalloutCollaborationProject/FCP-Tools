@@ -4,6 +4,8 @@ namespace FCP.Core.LegendaryEffectWorkers;
 
 public class CripplingWorker : LegendaryEffectWorker
 {
+    public static Lazy<FieldInfo> DamageInfo_AmountInt = new(() => typeof(DamageInfo).GetField("amountInt", BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic));
+
     public override void Notify_ApplyToPawn(ref DamageInfo damageInfo, Pawn pawn)
     {
         if (
@@ -14,12 +16,10 @@ public class CripplingWorker : LegendaryEffectWorker
             || damageInfo.HitPart.def.defName.ToLower().Contains("leg")
         )
         {
-            Type dType = typeof(DamageInfo);
-            FieldInfo amountInt = dType.GetField("amountInt", BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
-            if (amountInt != null)
+            if (DamageInfo_AmountInt.Value != null)
             {
-                float damageAmount = (float)amountInt.GetValue(damageInfo);
-                amountInt.SetValueDirect(__makeref(damageInfo), damageAmount * 1.5f);
+                float damageAmount = (float)DamageInfo_AmountInt.Value.GetValue(damageInfo);
+                DamageInfo_AmountInt.Value.SetValueDirect(__makeref(damageInfo), damageAmount * 1.5f);
             }
         }
     }
