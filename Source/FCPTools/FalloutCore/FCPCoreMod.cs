@@ -1,4 +1,4 @@
-﻿using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 using HarmonyLib;
 using UnityEngine;
 
@@ -10,11 +10,16 @@ public class FCPCoreMod : Mod
     public static FCP_Settings Settings;
     public static Harmony harmony;
     public AssetBundle bundleInt;
-    
+
+    public const string LatePatchesCategory = "FCP.Core.LatePatches";
     public FCPCoreMod(ModContentPack content) : base(content)
     {
         harmony = new Harmony("FCP.Core.Patches"); // PatchesUwU ~ Steve
-        harmony.PatchAll();
+        harmony.PatchAllUncategorized();
+        LongEventHandler.ExecuteWhenFinished(() =>
+        {
+            harmony.PatchCategory(LatePatchesCategory);
+        });
         mod = this;
         Settings = GetSettings<FCP_Settings>();
         FCPLog.Warning("Beta version: bugs likely, if not guaranteed! " +
