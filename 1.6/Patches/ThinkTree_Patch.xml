@@ -1,20 +1,29 @@
 <Patch>
-<Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThinkTreeDef[defName="MentalStateCritical"]/thinkRoot/subNodes</xpath>
-    <value>
-    <li Class="ThinkNode_ConditionalMentalState">
-          <state>FCP_MentalState_PermanentBerserk</state>
-          <subNodes>
-            <li Class="ThinkNode_Priority">
-              <subNodes>
-                <li Class="JobGiver_Berserk" />
-                <li Class="JobGiver_WanderAnywhere">
-                  <maxDanger>Deadly</maxDanger>
-                </li>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/ThinkTreeDef[defName="MentalStateCritical"]/thinkRoot/subNodes</xpath>
+        <value>
+            <li Class="ThinkNode_ConditionalMentalState">
+                <state>FCP_MentalState_PermanentBerserk</state>
+                <subNodes>
+                    <li Class="ThinkNode_Priority">
+                        <subNodes>
+                            <li Class="JobGiver_Berserk" />
+                            <li Class="JobGiver_WanderAnywhere">
+                                <maxDanger>Deadly</maxDanger>
+                            </li>
+                        </subNodes>
+                    </li>
                 </subNodes>
             </li>
-          </subNodes>
-        </li>
-    </value>
-</Operation>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationInsert">
+        <xpath>Defs/ThinkTreeDef[defName="Animal"]/thinkRoot/subNodes/li[@Class="JobGiver_ReactToCloseMeleeThreat"]</xpath>
+        <value>
+            <li Class="FCP.Core.JobGiver_ReactToDistantThreat"/>
+        </value>
+    </Operation>
+
 </Patch>

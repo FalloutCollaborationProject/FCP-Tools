@@ -88,4 +88,40 @@
         </comps>
     </AbilityDef>
 
+    <!-- Nightstalker Shadow Cloak -->
+
+    <AbilityDef>
+        <defName>FCP_Ability_Nightstalker_ShadowCloak</defName>
+        <label>shadow cloak</label>
+        <description>The nightstalker uses its natural stealth abilities to become nearly invisible, striking from the shadows.</description>
+        <iconPath>UI/Abilities/Invisibility</iconPath>
+        <cooldownTicksRange>3000</cooldownTicksRange> <!-- 3 seconds (short cooldown for frequent use) -->
+        <aiCanUse>true</aiCanUse>
+        <ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
+        <hostile>false</hostile>
+        <targetRequired>false</targetRequired>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_Duration>8</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <drawAimPie>false</drawAimPie>
+            <requireLineOfSight>false</requireLineOfSight>
+            <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+            <warmupTime>0.5</warmupTime>
+            <range>0</range>
+            <targetable>false</targetable>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>PsychicInvisibility</hediffDef>
+            </li>
+        </comps>
+    </AbilityDef>
+
 </Defs>
