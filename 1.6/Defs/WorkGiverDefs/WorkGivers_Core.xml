@@ -1,12 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <!--__________ Work Givers __________-->
-
-    <!--_____ Quests _____-->
-
-    <!-- Refuel Cages -->
-
 	<WorkGiverDef>
 		<defName>FCP_RefuelCages</defName>
 		<label>refueling cages</label>
@@ -21,4 +15,18 @@
 		 <prioritizeSustains>true</prioritizeSustains>
 	</WorkGiverDef>
 
+	<WorkGiverDef>
+		<defName>RR_RepairPowerArmor</defName>
+		<label>repair power armor</label>
+		<giverClass>RangerRick_PowerArmor.WorkGiver_RepairPowerArmor</giverClass>
+		<workType>Crafting</workType>
+		<verb>repair</verb>
+		<gerund>repairing</gerund>
+		<priorityInType>141</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+	
 </Defs>

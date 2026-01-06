@@ -1,8 +1,4 @@
-﻿using HarmonyLib;
-using RimWorld;
-using System.Linq;
-using UnityEngine;
-using Verse;
+using HarmonyLib;
 
 namespace RangerRick_PowerArmor
 {

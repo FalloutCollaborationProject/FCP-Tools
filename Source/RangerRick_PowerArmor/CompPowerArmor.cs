@@ -1,11 +1,3 @@
-using RimWorld;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
-using Verse;
-using Verse.AI;
-
 namespace RangerRick_PowerArmor
 {
 
@@ -41,7 +33,9 @@ namespace RangerRick_PowerArmor
             if (parent is Apparel apparel && apparel.Wearer is not null)
             {
                 var comp = CompRefuelable;
-                comp.ConsumeFuel(CompRefuelable.ConsumptionRatePerTick);
+                if (comp == null) return;
+                
+                comp.ConsumeFuel(comp.ConsumptionRatePerTick);
                 if (Props.hediffOnEmptyFuel != null)
                 {
                     if (comp.HasFuel is false)

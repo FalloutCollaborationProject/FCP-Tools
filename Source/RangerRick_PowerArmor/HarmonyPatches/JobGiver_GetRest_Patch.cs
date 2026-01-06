@@ -1,7 +1,5 @@
 using HarmonyLib;
-using Verse;
 using Verse.AI;
-using RimWorld;
 
 namespace RangerRick_PowerArmor
 {

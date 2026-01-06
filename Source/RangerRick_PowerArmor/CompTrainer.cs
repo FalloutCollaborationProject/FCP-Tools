@@ -1,8 +1,3 @@
-﻿using RimWorld;
-using System;
-using System.Collections.Generic;
-using Verse;
-
 namespace RangerRick_PowerArmor
 {
     public class CompProperties_Trainer : CompProperties

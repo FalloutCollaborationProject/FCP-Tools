@@ -2,4 +2,9 @@
 <LanguageData>
     <RR.RequiresTrait>Requires Power Armor Training</RR.RequiresTrait>
     <RR.RequiresApparel>Requires Power Armor Frame</RR.RequiresApparel>
+    <FCP_CannotUsePowerArmorStation>Cannot use power armor station</FCP_CannotUsePowerArmorStation>
+    <FCP_StorePowerArmor>Store power armor</FCP_StorePowerArmor>
+    <FCP_EquipFromStation>Equip from station</FCP_EquipFromStation>
+    <FCP_SwapPowerArmor>Swap power armor</FCP_SwapPowerArmor>
+    <FCP_StoredApparel>Stored apparel</FCP_StoredApparel>
 </LanguageData>

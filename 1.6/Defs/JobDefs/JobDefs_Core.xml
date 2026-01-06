@@ -1,11 +1,5 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
-    <!--__________ Job Defs __________-->
-
-    <!--_____ Power Armor Job Defs _____-->
-
-    <!-- Refuel Power Armor -->
 
     <JobDef>
         <defName>RR_RefuelPowerArmor</defName>
@@ -14,18 +8,12 @@
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
 
-    <!-- Power Armor Training Trait -->
-
     <JobDef>
         <defName>RR_TrainTrait</defName>
         <driverClass>RangerRick_PowerArmor.JobDriver_TrainTrait</driverClass>
         <reportString>Training at TargetA.</reportString>
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
-
-    <!--_____ Ability Job Defs _____-->
-
-    <!-- Cast Ability -->
 
     <JobDef>
         <defName>FCP_AICastAbilityAtTarget</defName>
@@ -35,17 +23,11 @@
         <collideWithPawns>true</collideWithPawns>
     </JobDef>
 
-    <!--_____ Animal Cage Job Defs _____-->
-
-    <!-- Release Animal From Cage -->
-
     <JobDef>
         <defName>FCP_ReleaseAnimalFromCage</defName>
         <driverClass>FCP_RadiantQuests.JobDriver_ReleaseAnimalFromCage</driverClass>
         <reportString>Releasing animal from cage.</reportString>
     </JobDef>
-
-    <!-- Carry Animal To Cage -->
 
     <JobDef>
         <defName>FCP_CarryAnimalToCage</defName>
@@ -53,15 +35,11 @@
         <reportString>Bringing animal to cage.</reportString>
     </JobDef>
 
-    <!-- Transfer Animal Between Cages -->
-
     <JobDef>
         <defName>FCP_TransferAnimalBetweenCages</defName>
         <driverClass>FCP_RadiantQuests.JobDriver_TransferAnimalBetweenCages</driverClass>
         <reportString>Transferring animal to another cage.</reportString>
     </JobDef>
-
-    <!-- Refuel Animal Cage -->
 
     <JobDef>
         <defName>FCP_RefuelAnimalCage</defName>
@@ -69,17 +47,11 @@
         <reportString>refueling cage.</reportString>
     </JobDef>
 
-    <!-- Refuel Animal Cage Atomic -->
-
     <JobDef>
         <defName>FCP_RefuelAnimalCage_Atomic</defName>
         <driverClass>FCP_RadiantQuests.JobDriver_RefuelAnimalCage_Atomic</driverClass>
         <reportString>refueling cage.</reportString>
     </JobDef>
-
-    <!--_____ V.A.T.S. _____-->
-
-    <!-- V.A.T.S. -->
 
     <JobDef>
         <defName>FCP_VATS_AttackHybrid</defName>
@@ -90,10 +62,6 @@
         <collideWithPawns>true</collideWithPawns>
     </JobDef>
 
-    <!--_____ Mine Pocket _____-->
-
-    <!-- Defuse Mine -->
-
     <JobDef>
         <defName>MinePocket_Job</defName>
         <driverClass>MinePocket.MinePocketJob</driverClass>
@@ -102,10 +70,6 @@
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
 
-    <!--_____ Heavy Weapon Reload _____-->
-
-    <!-- Reload Pawns -->
-
     <JobDef>
         <defName>BM_ReloadOtherPawns</defName>
         <driverClass>BM_HeavyWeapon.JobDriver_ReloadOtherPawns</driverClass>
@@ -113,4 +77,30 @@
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
 
+
+    <JobDef>
+        <defName>FCP_StorePowerArmor</defName>
+        <driverClass>RangerRick_PowerArmor.JobDriver_StorePowerArmor</driverClass>
+        <reportString>storing power armor at TargetA.</reportString>
+    </JobDef>
+
+    <JobDef>
+        <defName>FCP_EquipFromStation</defName>
+        <driverClass>RangerRick_PowerArmor.JobDriver_EquipFromStation</driverClass>
+        <reportString>equipping power armor from TargetA.</reportString>
+    </JobDef>
+
+    <JobDef>
+        <defName>FCP_SwapPowerArmor</defName>
+        <driverClass>RangerRick_PowerArmor.JobDriver_SwapPowerArmor</driverClass>
+        <reportString>swapping power armor at TargetA.</reportString>
+    </JobDef>
+    
+    <JobDef>
+        <defName>RR_RepairPowerArmor</defName>
+        <driverClass>RangerRick_PowerArmor.JobDriver_RepairPowerArmor</driverClass>
+        <reportString>repairing power armor at TargetA.</reportString>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+ 
 </Defs>

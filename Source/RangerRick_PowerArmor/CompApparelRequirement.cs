@@ -1,7 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
-using Verse;
-
 namespace RangerRick_PowerArmor
 {
     public class CompProperties_ApparelRequirement : CompProperties
