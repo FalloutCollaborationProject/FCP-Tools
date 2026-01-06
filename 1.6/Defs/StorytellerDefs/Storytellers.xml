@@ -198,7 +198,7 @@
     <StorytellerDef MayRequire="Rick.FCP.NCR" ParentName="BaseStoryteller">
         <defName>FCP_Storyteller_Ranger_Rick</defName>
         <label>Ranger Rick</label>
-        <description>A veteran NCR Ranger who's survived everything the Mojave could throw at him through a mix of skill, grit, and sheer dumb luck. Rick brings a ranger's perspective to colony leadership - constant vigilance, regular patrols (threats), and the importance of strong faction relationships. Expect steady pressure balanced with frequent caravans and diplomatic opportunities. He'll join your colony personally if you prove worthy through a special quest. The wasteland is tough, but rangers are tougher.</description>
+        <description>A veteran Desert Ranger who's survived everything the Mojave could throw at him through a mix of skill, grit, and sheer dumb luck. Rick brings a ranger's perspective to colony leadership - constant vigilance, regular patrols (threats), and the importance of strong faction relationships. Expect steady pressure balanced with frequent caravans and diplomatic opportunities. He'll join your colony personally if you prove worthy through a special quest. The wasteland is tough, but rangers are tougher.</description>
         <portraitLarge>UI/HeroArt/Storytellers/FCP_Ranger_Rick</portraitLarge>
         <portraitTiny>UI/HeroArt/Storytellers/FCP_Ranger_Rick_Tiny</portraitTiny>
         <listOrder>10</listOrder>
