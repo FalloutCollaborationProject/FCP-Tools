@@ -2,37 +2,124 @@ using HarmonyLib;
 using RimWorld;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text;
 using Verse;
 
 namespace FCP.Core.TemperatureApparelPreference
 {
     public static class TemperatureApparelPreferencePatches
     {
-        private const int VerboseLogMax = 600;
+        private const int VerboseLogMax = 4000;
         private static int verboseCount;
 
-        private static readonly HashSet<int> newlyGeneratedPawnIds = new HashSet<int>();
-        private static readonly HashSet<int> completedPawnIds = new HashSet<int>();
+        private sealed class PawnGenState
+        {
+            public PawnGenerationRequest request;
+            public bool isNew;
+            public bool completed;
+            public int markedTick;
+        }
 
-        private static readonly Dictionary<int, PawnGenerationRequest> requestByPawnId =
-            new Dictionary<int, PawnGenerationRequest>();
+        private static readonly ConditionalWeakTable<Pawn, PawnGenState> stateByPawn =
+            new ConditionalWeakTable<Pawn, PawnGenState>();
 
-        // ===== Generation overrides (active only while we call GenerateStartingApparelFor) =====
-        private static bool generationOverrideActive;
-        private static HashSet<ThingDef> generationAvoided;
-        private static HashSet<ThingDef> generationIncompatible;
-        private static HashSet<ThingDef> generationForced;
+        [ThreadStatic] private static GenerationContext tlsContext;
 
-        // Big enough to dominate but still leaves vanilla randomness intact among non-forced items.
+        private sealed class GenerationContext
+        {
+            public HashSet<ThingDef> avoided;
+            public HashSet<ThingDef> incompatible;
+            public HashSet<ThingDef> forced;
+        }
+
         private const float ForcedCommonalityMultiplier = 10000f;
 
         private static bool VerboseLoggingEnabled =>
             Mod.Instance?.Settings != null && Mod.Instance.Settings.verboseLogging;
 
-        // ============================================================
-        // Track newly generated pawns + cache PawnGenerationRequest
-        // ============================================================
+        private static bool cachesBuilt;
+        private static readonly object cacheLock = new object();
+
+        private static List<ThingDef> cachedPrefApparelDefs;
+
+        private static readonly Dictionary<ThingDef, CompProperties_TemperatureApparelPreference> cachedPropsByDef =
+            new Dictionary<ThingDef, CompProperties_TemperatureApparelPreference>();
+
+        private static readonly Dictionary<BodyDef, Dictionary<ThingDef, HashSet<ThingDef>>> incompatibleByBody =
+            new Dictionary<BodyDef, Dictionary<ThingDef, HashSet<ThingDef>>>();
+
+        private static void EnsureCachesBuilt()
+        {
+            if (cachesBuilt) return;
+
+            lock (cacheLock)
+            {
+                if (cachesBuilt) return;
+
+                cachedPrefApparelDefs = new List<ThingDef>();
+
+                foreach (ThingDef def in DefDatabase<ThingDef>.AllDefsListForReading)
+                {
+                    if (def == null || !def.IsApparel) continue;
+
+                    CompProperties_TemperatureApparelPreference p =
+                        def.GetCompProperties<CompProperties_TemperatureApparelPreference>();
+
+                    if (p == null || !p.enabled) continue;
+
+                    cachedPrefApparelDefs.Add(def);
+                    cachedPropsByDef[def] = p;
+                }
+
+                cachesBuilt = true;
+            }
+        }
+
+        private static Dictionary<ThingDef, HashSet<ThingDef>> GetOrBuildIncompatibilityMap(BodyDef body)
+        {
+            if (body == null) return null;
+
+            if (incompatibleByBody.TryGetValue(body, out var map))
+                return map;
+
+            EnsureCachesBuilt();
+
+            map = new Dictionary<ThingDef, HashSet<ThingDef>>();
+
+            var allApparel = DefDatabase<ThingDef>.AllDefsListForReading
+                .Where(d => d != null && d.IsApparel && d.apparel != null)
+                .ToList();
+
+            for (int i = 0; i < allApparel.Count; i++)
+            {
+                ThingDef a = allApparel[i];
+                HashSet<ThingDef> incompatible = null;
+
+                for (int j = 0; j < allApparel.Count; j++)
+                {
+                    if (i == j) continue;
+
+                    ThingDef b = allApparel[j];
+
+                    if (!ApparelUtility.CanWearTogether(a, b, body))
+                    {
+                        if (incompatible == null)
+                            incompatible = new HashSet<ThingDef>();
+                        incompatible.Add(b);
+                    }
+                }
+
+                if (incompatible != null)
+                    map[a] = incompatible;
+            }
+
+            incompatibleByBody[body] = map;
+            return map;
+        }
+
         [HarmonyPatch(typeof(PawnGenerator), nameof(PawnGenerator.GeneratePawn),
             new Type[] { typeof(PawnGenerationRequest) })]
         public static class Patch_PawnGenerator_GeneratePawn
@@ -42,55 +129,63 @@ namespace FCP.Core.TemperatureApparelPreference
             {
                 if (__result == null) return;
 
-                int id = __result.thingIDNumber;
-                if (id == 0) return;
+                PawnGenState state = stateByPawn.GetOrCreateValue(__result);
+                state.request = request;
+                state.isNew = true;
+                state.completed = false;
+                state.markedTick = Find.TickManager.TicksGame;
 
-                newlyGeneratedPawnIds.Add(id);
-                requestByPawnId[id] = request;
-
-                if (newlyGeneratedPawnIds.Count > 40000)
-                    newlyGeneratedPawnIds.Clear();
-                if (requestByPawnId.Count > 40000)
-                    requestByPawnId.Clear();
-
-                VLog($"MARK new pawn: {__result} id={id}");
+                VLog(
+                    "MARK " +
+                    "pawn=" + SafePawnLabel(__result) + " " +
+                    "kind=" + (request.KindDef != null ? request.KindDef.defName : "null") + " " +
+                    "faction=" + (request.Faction != null ? request.Faction.Name : "null") + " " +
+                    "ctx=" + request.Context + " " +
+                    "tile=" + request.Tile
+                );
             }
         }
 
-        // ============================================================
-        // Apply logic on SpawnSetup (new pawns only)
-        // ============================================================
         [HarmonyPatch(typeof(Pawn), nameof(Pawn.SpawnSetup))]
         public static class Patch_Pawn_SpawnSetup
         {
             [HarmonyPostfix]
             public static void Postfix(Pawn __instance, Map map, bool respawningAfterLoad)
             {
-                if (respawningAfterLoad) return;
+                if (respawningAfterLoad)
+                {
+                    VLog("SpawnSetup skip pawn=" + SafePawnLabel(__instance) + " reason=respawnAfterLoad");
+                    return;
+                }
+
+                VLog(
+                    "SpawnSetup enter " +
+                    "pawn=" + SafePawnLabel(__instance) + " " +
+                    "map=" + (map != null ? map.Index.ToString() : "null") + " " +
+                    "spawned=" + __instance.Spawned
+                );
+
                 ApplyGenerationOverrideIfEligible(__instance, map);
             }
         }
 
-        // ============================================================
-        // HARD exclusion during generation: block avoided + incompatible defs at CanUsePair
-        // ============================================================
-
         public static bool Patch_PawnApparelGenerator_CanUsePair(ThingStuffPair pair, ref bool __result)
         {
-            if (!generationOverrideActive)
+            GenerationContext ctx = tlsContext;
+            if (ctx == null)
                 return true;
 
             ThingDef def = pair.thing;
             if (def == null)
                 return true;
 
-            if (generationAvoided != null && generationAvoided.Contains(def))
+            if (ctx.avoided != null && ctx.avoided.Contains(def))
             {
                 __result = false;
                 return false;
             }
 
-            if (generationIncompatible != null && generationIncompatible.Contains(def))
+            if (ctx.incompatible != null && ctx.incompatible.Contains(def))
             {
                 __result = false;
                 return false;
@@ -99,113 +194,185 @@ namespace FCP.Core.TemperatureApparelPreference
             return true;
         }
 
-        // ============================================================
-        // Weight override:
-        // - avoided/incompatible => commonality 0
-        // - forced => massive multiplier
-        // ============================================================
         [HarmonyPatch(typeof(ThingStuffPair), "get_Commonality")]
         public static class Patch_ThingStuffPair_Commonality
         {
             [HarmonyPostfix]
             public static void Postfix(ThingStuffPair __instance, ref float __result)
             {
-                if (!generationOverrideActive || __result <= 0f)
+                GenerationContext ctx = tlsContext;
+                if (ctx == null || __result <= 0f)
                     return;
 
                 ThingDef def = __instance.thing;
                 if (def == null)
                     return;
 
-                if (generationAvoided != null && generationAvoided.Contains(def))
+                if (ctx.avoided != null && ctx.avoided.Contains(def))
                 {
                     __result = 0f;
                     return;
                 }
 
-                if (generationIncompatible != null && generationIncompatible.Contains(def))
+                if (ctx.incompatible != null && ctx.incompatible.Contains(def))
                 {
                     __result = 0f;
                     return;
                 }
 
-                if (generationForced != null && generationForced.Contains(def))
+                if (ctx.forced != null && ctx.forced.Contains(def))
                 {
                     __result *= ForcedCommonalityMultiplier;
-                    return;
                 }
             }
         }
 
-        // ============================================================
-        // Core logic
-        // ============================================================
         private static void ApplyGenerationOverrideIfEligible(Pawn pawn, Map map)
         {
-            if (pawn?.RaceProps == null || !pawn.RaceProps.Humanlike)
+            if (pawn == null || pawn.RaceProps == null || !pawn.RaceProps.Humanlike)
+            {
+                VLog("Apply skip pawn=" + SafePawnLabel(pawn) + " reason=notHumanlike");
                 return;
+            }
 
-            int id = pawn.thingIDNumber;
-            if (!newlyGeneratedPawnIds.Contains(id) || completedPawnIds.Contains(id))
+            if (!stateByPawn.TryGetValue(pawn, out PawnGenState state))
+            {
+                VLog("Apply skip pawn=" + SafePawnLabel(pawn) + " reason=noState");
                 return;
+            }
 
-            float tempC = map?.mapTemperature?.OutdoorTemp ?? float.NaN;
+            if (!state.isNew)
+            {
+                VLog("Apply skip pawn=" + SafePawnLabel(pawn) + " reason=notMarkedNew");
+                return;
+            }
+
+            if (state.completed)
+            {
+                VLog("Apply skip pawn=" + SafePawnLabel(pawn) + " reason=alreadyCompleted");
+                return;
+            }
+
+            float tempC = map != null && map.mapTemperature != null ? map.mapTemperature.OutdoorTemp : float.NaN;
             if (float.IsNaN(tempC))
+            {
+                VLog(
+                    "Apply skip pawn=" + SafePawnLabel(pawn) + " reason=noTemp " +
+                    "map=" + (map != null) + " mapTemp=" + (map != null && map.mapTemperature != null)
+                );
                 return;
+            }
 
-            PawnGenerationRequest req;
-            if (!requestByPawnId.TryGetValue(id, out req))
-                return;
+            EnsureCachesBuilt();
 
-            HashSet<ThingDef> protectedDefs = BuildProtectedApparelSet(pawn);
-            HashSet<ThingDef> avoidedNow = BuildAvoidedNow(tempC, pawn, protectedDefs);
-            HashSet<ThingDef> forcedNow = BuildForcedNow(tempC, pawn, protectedDefs, avoidedNow);
-
-            HashSet<ThingDef> incompatibleNow = BuildIncompatibleWithForced(pawn, protectedDefs, avoidedNow, forcedNow);
-
-            VLog($"RUN: {pawn} temp={tempC:F1}C avoided={avoidedNow.Count} forced={forcedNow.Count} incompatible={incompatibleNow.Count}");
-
-            RemoveAllApparelExceptLocked(pawn);
+            Stopwatch sw = null;
+            if (VerboseLoggingEnabled)
+                sw = Stopwatch.StartNew();
 
             try
             {
-                generationAvoided = avoidedNow;
-                generationForced = forcedNow;
-                generationIncompatible = incompatibleNow;
-                generationOverrideActive = true;
+                HashSet<ThingDef> protectedDefs = BuildProtectedApparelSet(pawn);
+                HashSet<ThingDef> avoidedNow = BuildAvoidedNow(tempC, pawn, protectedDefs);
+                HashSet<ThingDef> forcedNow = BuildForcedNow(tempC, pawn, protectedDefs, avoidedNow);
+                HashSet<ThingDef> incompatibleNow = BuildIncompatibleWithForced(pawn, protectedDefs, avoidedNow, forcedNow);
 
-                PawnApparelGenerator.GenerateStartingApparelFor(pawn, req);
+                VLog(
+                    "Apply RUN " +
+                    "pawn=" + SafePawnLabel(pawn) + " " +
+                    "temp=" + tempC.ToString("F1") + " " +
+                    "protected=" + protectedDefs.Count + " " +
+                    "avoided=" + avoidedNow.Count + " " +
+                    "forced=" + forcedNow.Count + " " +
+                    "incompatible=" + incompatibleNow.Count + " " +
+                    "ctx=" + state.request.Context + " " +
+                    "tile=" + state.request.Tile
+                );
+
+                if (forcedNow.Count > 0)
+                {
+                    VLog("Apply forced sample pawn=" + SafePawnLabel(pawn) + " forced=" + JoinDefNames(forcedNow, 6));
+                }
+
+                VLog("Apply worn BEFORE pawn=" + SafePawnLabel(pawn) + " worn=" + DescribeWornApparel(pawn));
+
+                int removedCount;
+                int lockedSkippedCount;
+                RemoveAllApparelExceptLocked(pawn, out removedCount, out lockedSkippedCount);
+
+                VLog(
+                    "Apply strip pawn=" + SafePawnLabel(pawn) + " " +
+                    "removed=" + removedCount + " " +
+                    "lockedSkipped=" + lockedSkippedCount + " " +
+                    "wornAfterStrip=" + DescribeWornApparel(pawn)
+                );
+
+                var ctx = new GenerationContext
+                {
+                    avoided = avoidedNow,
+                    forced = forcedNow,
+                    incompatible = incompatibleNow
+                };
+
+                try
+                {
+                    tlsContext = ctx;
+                    PawnApparelGenerator.GenerateStartingApparelFor(pawn, state.request);
+                }
+                finally
+                {
+                    tlsContext = null;
+                }
+
+                VLog("Apply worn AFTER pawn=" + SafePawnLabel(pawn) + " worn=" + DescribeWornApparel(pawn));
+
+                if (forcedNow.Count > 0)
+                {
+                    bool anyForcedWorn = IsAnyForcedWorn(pawn, forcedNow);
+                    if (!anyForcedWorn)
+                    {
+                        VLog(
+                            "Apply WARNING pawn=" + SafePawnLabel(pawn) + " " +
+                            "forcedCount=" + forcedNow.Count + " but none worn. " +
+                            "pawnKind=" + (pawn.kindDef != null ? pawn.kindDef.defName : "null") + " " +
+                            "pawnKindApparelTags=" + DescribeKindApparelTags(pawn.kindDef)
+                        );
+
+                        VLog("Apply WARNING forced def details=" + DescribeForcedDefs(forcedNow));
+                    }
+                    else
+                    {
+                        VLog("Apply forced OK pawn=" + SafePawnLabel(pawn) + " forcedWorn=1");
+                    }
+                }
+
+                state.completed = true;
+                state.isNew = false;
             }
             finally
             {
-                generationOverrideActive = false;
-                generationAvoided = null;
-                generationForced = null;
-                generationIncompatible = null;
+                if (sw != null)
+                {
+                    sw.Stop();
+                    VLog(
+                        "Apply time pawn=" + SafePawnLabel(pawn) + " " +
+                        "ms=" + sw.ElapsedMilliseconds + " " +
+                        "markedTick=" + state.markedTick
+                    );
+                }
             }
-
-            completedPawnIds.Add(id);
-            newlyGeneratedPawnIds.Remove(id);
-            requestByPawnId.Remove(id);
         }
 
-        // ============================================================
-        // Set construction
-        // ============================================================
         private static HashSet<ThingDef> BuildAvoidedNow(float tempC, Pawn pawn, HashSet<ThingDef> protectedDefs)
         {
             var set = new HashSet<ThingDef>();
 
-            foreach (ThingDef def in DefDatabase<ThingDef>.AllDefs)
+            for (int i = 0; i < cachedPrefApparelDefs.Count; i++)
             {
-                if (!def.IsApparel) continue;
+                ThingDef def = cachedPrefApparelDefs[i];
                 if (protectedDefs.Contains(def)) continue;
-                if (def.apparel == null) continue;
                 if (!def.apparel.PawnCanWear(pawn)) continue;
 
-                var p = def.GetCompProperties<CompProperties_TemperatureApparelPreference>();
-                if (p == null || !p.enabled) continue;
-
+                CompProperties_TemperatureApparelPreference p = cachedPropsByDef[def];
                 if (ShouldAvoid(p, tempC))
                     set.Add(def);
             }
@@ -217,23 +384,22 @@ namespace FCP.Core.TemperatureApparelPreference
         {
             var set = new HashSet<ThingDef>();
 
-            foreach (ThingDef def in DefDatabase<ThingDef>.AllDefs)
+            for (int i = 0; i < cachedPrefApparelDefs.Count; i++)
             {
-                if (!def.IsApparel) continue;
+                ThingDef def = cachedPrefApparelDefs[i];
                 if (protectedDefs.Contains(def)) continue;
                 if (avoided.Contains(def)) continue;
-                if (def.apparel == null) continue;
                 if (!def.apparel.PawnCanWear(pawn)) continue;
 
-                var p = def.GetCompProperties<CompProperties_TemperatureApparelPreference>();
-                if (p == null || !p.enabled) continue;
+                CompProperties_TemperatureApparelPreference p = cachedPropsByDef[def];
 
-                bool force =
+                if (
                     (!float.IsNegativeInfinity(p.forceBelowTempC) && tempC < p.forceBelowTempC) ||
-                    (!float.IsPositiveInfinity(p.forceAboveTempC) && tempC > p.forceAboveTempC);
-
-                if (force)
+                    (!float.IsPositiveInfinity(p.forceAboveTempC) && tempC > p.forceAboveTempC)
+                )
+                {
                     set.Add(def);
+                }
             }
 
             return set;
@@ -247,40 +413,29 @@ namespace FCP.Core.TemperatureApparelPreference
         {
             var set = new HashSet<ThingDef>();
 
-            if (forced == null || forced.Count == 0)
+            if (forced.Count == 0)
                 return set;
 
-            foreach (ThingDef def in DefDatabase<ThingDef>.AllDefs)
+            var map = GetOrBuildIncompatibilityMap(pawn.RaceProps.body);
+            if (map == null)
+                return set;
+
+            foreach (ThingDef f in forced)
             {
-                if (!def.IsApparel) continue;
-                if (protectedDefs.Contains(def)) continue;
-                if (avoided.Contains(def)) continue;
-                if (forced.Contains(def)) continue;
-                if (def.apparel == null) continue;
-                if (!def.apparel.PawnCanWear(pawn)) continue;
+                if (!map.TryGetValue(f, out var incompatible)) continue;
 
-                bool incompatible = false;
-
-                foreach (ThingDef f in forced)
+                foreach (ThingDef cand in incompatible)
                 {
-                    // If either cannot be worn together, block the candidate.
-                    if (!ApparelUtility.CanWearTogether(def, f, pawn.RaceProps.body))
-                    {
-                        incompatible = true;
-                        break;
-                    }
+                    if (protectedDefs.Contains(cand)) continue;
+                    if (avoided.Contains(cand)) continue;
+                    if (forced.Contains(cand)) continue;
+                    set.Add(cand);
                 }
-
-                if (incompatible)
-                    set.Add(def);
             }
 
             return set;
         }
 
-        // ============================================================
-        // Helpers
-        // ============================================================
         private static bool ShouldAvoid(CompProperties_TemperatureApparelPreference p, float t)
         {
             if (!float.IsPositiveInfinity(p.avoidAboveTempC) && t > p.avoidAboveTempC) return true;
@@ -292,23 +447,29 @@ namespace FCP.Core.TemperatureApparelPreference
         {
             var set = new HashSet<ThingDef>();
 
-            pawn.kindDef?.apparelRequired?.ForEach(d =>
+            if (pawn.kindDef != null && pawn.kindDef.apparelRequired != null)
             {
-                if (d != null) set.Add(d);
-            });
+                for (int i = 0; i < pawn.kindDef.apparelRequired.Count; i++)
+                {
+                    ThingDef d = pawn.kindDef.apparelRequired[i];
+                    if (d != null) set.Add(d);
+                }
+            }
 
-            pawn.kindDef?.specificApparelRequirements?.ForEach(r =>
+            if (pawn.kindDef != null && pawn.kindDef.specificApparelRequirements != null)
             {
-                if (r?.ApparelDef != null) set.Add(r.ApparelDef);
-            });
+                for (int i = 0; i < pawn.kindDef.specificApparelRequirements.Count; i++)
+                {
+                    var r = pawn.kindDef.specificApparelRequirements[i];
+                    if (r != null && r.ApparelDef != null)
+                        set.Add(r.ApparelDef);
+                }
+            }
 
-            // Locked apparel are effectively protected.
             if (pawn.apparel != null)
             {
-                var worn = pawn.apparel.WornApparel;
-                for (int i = 0; i < worn.Count; i++)
+                foreach (Apparel a in pawn.apparel.WornApparel)
                 {
-                    Apparel a = worn[i];
                     if (a != null && pawn.apparel.IsLocked(a))
                         set.Add(a.def);
                 }
@@ -317,9 +478,12 @@ namespace FCP.Core.TemperatureApparelPreference
             return set;
         }
 
-        private static void RemoveAllApparelExceptLocked(Pawn pawn)
+        private static void RemoveAllApparelExceptLocked(Pawn pawn, out int removedCount, out int lockedSkippedCount)
         {
-            if (pawn?.apparel == null)
+            removedCount = 0;
+            lockedSkippedCount = 0;
+
+            if (pawn == null || pawn.apparel == null)
                 return;
 
             var worn = pawn.apparel.WornApparel;
@@ -329,9 +493,126 @@ namespace FCP.Core.TemperatureApparelPreference
                 if (a == null) continue;
 
                 if (pawn.apparel.IsLocked(a))
+                {
+                    lockedSkippedCount++;
                     continue;
+                }
 
                 pawn.apparel.Remove(a);
+                removedCount++;
+            }
+        }
+
+        private static bool IsAnyForcedWorn(Pawn pawn, HashSet<ThingDef> forced)
+        {
+            if (pawn == null || pawn.apparel == null || forced == null || forced.Count == 0)
+                return false;
+
+            var worn = pawn.apparel.WornApparel;
+            for (int i = 0; i < worn.Count; i++)
+            {
+                Apparel a = worn[i];
+                if (a == null) continue;
+                if (forced.Contains(a.def))
+                    return true;
+            }
+
+            return false;
+        }
+
+        private static string DescribeWornApparel(Pawn pawn)
+        {
+            if (pawn == null || pawn.apparel == null)
+                return "(none)";
+
+            var worn = pawn.apparel.WornApparel;
+            if (worn == null || worn.Count == 0)
+                return "(none)";
+
+            var sb = new StringBuilder();
+            for (int i = 0; i < worn.Count; i++)
+            {
+                Apparel a = worn[i];
+                if (a == null) continue;
+
+                if (sb.Length > 0) sb.Append(" | ");
+
+                bool locked = pawn.apparel.IsLocked(a);
+                sb.Append(a.def != null ? a.def.defName : "null");
+                sb.Append(locked ? "[L]" : "");
+            }
+
+            return sb.ToString();
+        }
+
+        private static string DescribeKindApparelTags(PawnKindDef kind)
+        {
+            if (kind == null)
+                return "(null)";
+
+            if (kind.apparelTags == null || kind.apparelTags.Count == 0)
+                return "(none)";
+
+            return string.Join(",", kind.apparelTags);
+        }
+
+        private static string DescribeForcedDefs(HashSet<ThingDef> forced)
+        {
+            if (forced == null || forced.Count == 0)
+                return "(none)";
+
+            int n = 0;
+            var sb = new StringBuilder();
+            foreach (ThingDef d in forced)
+            {
+                if (d == null) continue;
+                if (n++ > 0) sb.Append(" || ");
+                sb.Append(d.defName);
+
+                sb.Append(" tags=");
+                if (d.apparel != null && d.apparel.tags != null && d.apparel.tags.Count > 0)
+                    sb.Append(string.Join(",", d.apparel.tags));
+                else
+                    sb.Append("(none)");
+
+                sb.Append(" layers=");
+                if (d.apparel != null && d.apparel.layers != null && d.apparel.layers.Count > 0)
+                    sb.Append(string.Join(",", d.apparel.layers.Select(l => l != null ? l.defName : "null")));
+                else
+                    sb.Append("(none)");
+
+                if (n >= 8) break;
+            }
+
+            return sb.ToString();
+        }
+
+        private static string JoinDefNames(IEnumerable<ThingDef> defs, int max)
+        {
+            if (defs == null) return "(none)";
+            int n = 0;
+            var sb = new StringBuilder();
+            foreach (ThingDef d in defs)
+            {
+                if (d == null) continue;
+                if (n++ > 0) sb.Append(",");
+                sb.Append(d.defName);
+                if (n >= max) break;
+            }
+            if (n == 0) return "(none)";
+            return sb.ToString();
+        }
+
+        private static string SafePawnLabel(Pawn pawn)
+        {
+            if (pawn == null) return "null";
+            try
+            {
+                return pawn.LabelShortCap + "|" + (pawn.Faction != null ? pawn.Faction.Name : "null") + "|" + pawn.thingIDNumber;
+            }
+            catch
+            {
+                return pawn.ToStringSafe();
             }
         }
 

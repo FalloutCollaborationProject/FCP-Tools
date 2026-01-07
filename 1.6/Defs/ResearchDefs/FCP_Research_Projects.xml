@@ -25,8 +25,6 @@
 
     <!--__________ FCP Tools Research __________-->
 
-    <!--_____ Column 0 _____-->
-
     <!-- Honey Mesquite Sowing -->
 
     <ResearchProjectDef>
@@ -43,8 +41,6 @@
         <researchViewY>0.50</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
-
-    <!--_____ Column 1 _____-->
 
     <!-- Basic Agriculture -->
 
@@ -124,8 +120,6 @@
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
-    <!--_____ Column 2 _____-->
-
     <!-- Advanced Agriculture -->
 
     <ResearchProjectDef>
@@ -157,8 +151,6 @@
         <researchViewY>0.50</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
-
-    <!--_____ Column 4 _____-->
 
     <!-- Advanced Food Production -->
 
@@ -193,8 +185,6 @@
         <researchViewY>1.00</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
-
-    <!--_____ Column 6 _____-->
 
     <!-- Food Production -->
 
@@ -261,16 +251,14 @@
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
-    <!--_____ Column 7 _____-->
-
     <!-- Power Armor Training -->
 
     <ResearchProjectDef ParentName="FCP_Pre_War_Military_Research_Base">
         <defName>FCP_Research_Power_Armor_Training</defName>
         <label>Holotape File: Power Armor Training</label>
         <description>Holotape containing training protocols and operational procedures for power armor usage.</description>
-        <researchViewX>3.00</researchViewX>
-        <researchViewY>2.00</researchViewY>
+        <researchViewX>5.00</researchViewX>
+        <researchViewY>1.00</researchViewY>
     </ResearchProjectDef>
 
     <!-- Makeshift Laser Weapons -->
@@ -300,11 +288,9 @@
         <prerequisites>
             <li>FCP_Research_Makeshift_Laser_Weapons</li>
         </prerequisites>
-        <researchViewX>6.00</researchViewX>
+        <researchViewX>3.00</researchViewX>
         <researchViewY>4.00</researchViewY>
     </ResearchProjectDef>
-
-    <!--_____ Column 8 _____-->
 
     <!-- Crafting Stations -->
 
@@ -328,8 +314,12 @@
         <defName>FCP_Research_Gunsmithing</defName>
         <label>Holotape File: Gunsmithing</label>
         <description>Holotape containing the schematics for various firearms.</description>
+        <prerequisites>
+            <li>FCP_Research_Basic_Weapons_Manufacturing</li>
+            <li>FCP_Research_Makeshift_Weapons</li>
+        </prerequisites>
         <researchViewX>0.00</researchViewX>
-        <researchViewY>3.00</researchViewY>
+        <researchViewY>4.00</researchViewY>
     </ResearchProjectDef>
 
     <!-- Advanced Gunsmithing -->
@@ -338,13 +328,14 @@
         <defName>FCP_Research_Advanced_Gunsmithing</defName>
         <label>Holotape File: Advanced Gunsmithing</label>
         <description>Holotape containing the schematics for various advanced firearms.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
         <baseCost>750</baseCost>
         <techLevel>Industrial</techLevel>
         <researchViewX>1.00</researchViewX>
-        <researchViewY>3.00</researchViewY>
+        <researchViewY>4.00</researchViewY>
     </ResearchProjectDef>
-
-    <!--_____ Column 9 _____-->
 
     <!-- Makeshift Weapons -->
 
@@ -398,10 +389,13 @@
         <defName>FCP_Research_Energy_Based_Weaponry</defName>
         <label>Holotape File: Energy Based Weaponry</label>
         <description>Holotape containing the schematics for basic energy weapons weapons.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Gunsmithing</li>
+        </prerequisites>
         <baseCost>1000</baseCost>
         <techLevel>Industrial</techLevel>
-        <researchViewX>5.00</researchViewX>
-        <researchViewY>5.00</researchViewY>
+        <researchViewX>2.00</researchViewX>
+        <researchViewY>4.00</researchViewY>
     </ResearchProjectDef>
 
     <!-- Plasma Weapon Manufacturing -->
@@ -410,10 +404,13 @@
         <defName>FCP_Research_Plasma_Weapons_Manufacturing</defName>
         <label>Holotape File: Plasma Weapon Manufacturing</label>
         <description>Holotape containing the schematics for plasma weapons weapons.</description>
+        <prerequisites>
+            <li>FCP_Research_Energy_Based_Weaponry</li>
+        </prerequisites>
         <baseCost>2000</baseCost>
         <techLevel>Industrial</techLevel>
-        <researchViewX>6.00</researchViewX>
-        <researchViewY>5.00</researchViewY>
+        <researchViewX>4.00</researchViewX>
+        <researchViewY>4.00</researchViewY>
     </ResearchProjectDef>
 
     <!-- Gauss Weapon Manufacturing -->
@@ -423,12 +420,13 @@
         <label>Holotape File: Gauss Weapon Manufacturing</label>
         <description>Holotape containing the schematics for gauss weapons utilizing electromagnetic acceleration technology.</description>
         <baseCost>2500</baseCost>
+        <prerequisites>
+            <li>FCP_Research_Energy_Based_Weaponry</li>
+        </prerequisites>
         <techLevel>Industrial</techLevel>
-        <researchViewX>7.00</researchViewX>
-        <researchViewY>5.00</researchViewY>
+        <researchViewX>5.00</researchViewX>
+        <researchViewY>4.00</researchViewY>
     </ResearchProjectDef>
-
-    <!--_____ Column 10 _____-->
 
     <!-- Ammo Workbench -->
 
@@ -445,8 +443,6 @@
         <researchViewY>7.50</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
-
-    <!--_____ Column 11 _____-->
 
     <!-- Chem Production -->
 
@@ -530,8 +526,6 @@
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
-    <!--_____ Column 12 _____-->
-
     <!-- Jet Production -->
 
     <ResearchProjectDef>
@@ -613,8 +607,6 @@
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
-    <!--_____ Column 13 _____-->
-
     <!-- Chem Combinations -->
 
     <ResearchProjectDef>
@@ -650,8 +642,6 @@
         <researchViewY>4.00</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
-
-    <!--_____ Column 14 _____-->
 
     <!-- Wasteland Beds -->
 
@@ -703,8 +693,6 @@
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
-    <!--_____ Column 15 _____-->
-
     <!-- Wasteland Storage -->
 
     <ResearchProjectDef>
@@ -753,8 +741,6 @@
         <researchViewY>6.00</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
-
-    <!--_____ Column 16 _____-->
 
     <!-- Basic Furniture -->
 
@@ -817,8 +803,6 @@
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
-    <!--_____ Column 17 _____-->
-
     <!-- Wasteland Furnishings -->
 
     <ResearchProjectDef>
@@ -866,8 +850,6 @@
         <researchViewY>6.00</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
-
-    <!--_____ Column 18 _____-->
 
     <!-- Makeshift Fortifications -->
 
@@ -955,8 +937,6 @@
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
-    <!--_____ Column 19 _____-->
-
     <!-- Wasteland Security -->
 
     <ResearchProjectDef>
@@ -988,8 +968,6 @@
         <researchViewY>7.00</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
-
-    <!--_____ Column 20 _____-->
 
     <!-- Automated Defenses -->
 
@@ -1028,8 +1006,6 @@
     </ResearchProjectDef>
 
     <!--__________ FCP Pre-War Research __________-->
-
-    <!--_____ Column 0 _____-->
 
     <!--__Tech Print Base__-->
 
@@ -1081,8 +1057,11 @@
         <defName>FCP_Research_BusinessWear</defName>
         <label>Holotape File: Pre-War Businesswear</label>
         <description>Holotape containing the schematics and patterns for pre-war business attire, including suits and formal wear.</description>
-        <researchViewX>0</researchViewX>
-        <researchViewY>1</researchViewY>
+        <prerequisites>
+            <li>FCP_Research_CasualWear</li>
+        </prerequisites>
+        <researchViewX>1</researchViewX>
+        <researchViewY>3</researchViewY>
     </ResearchProjectDef>
 
     <!-- Costumes -->
@@ -1091,8 +1070,11 @@
         <defName>FCP_Research_Costumes</defName>
         <label>Holotape File: Pre-War Costumes</label>
         <description>Holotape containing the designs and instructions for crafting pre-war costumes and themed outfits.</description>
-        <researchViewX>0</researchViewX>
-        <researchViewY>2</researchViewY>
+        <prerequisites>
+            <li>FCP_Research_BusinessWear</li>
+        </prerequisites>
+        <researchViewX>2</researchViewX>
+        <researchViewY>3</researchViewY>
     </ResearchProjectDef>
 
     <!-- Casual Wear -->
@@ -1112,7 +1094,7 @@
         <label>Holotape File: Pre-War Military Uniforms</label>
         <description>Holotape containing the schematics and patterns for crafting pre-war military uniforms and gear.</description>
         <researchViewX>0</researchViewX>
-        <researchViewY>4</researchViewY>
+        <researchViewY>1</researchViewY>
     </ResearchProjectDef>
 
     <!-- Combat Armor Standard -->

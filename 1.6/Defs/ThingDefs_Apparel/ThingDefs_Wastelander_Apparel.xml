@@ -44,7 +44,7 @@
                 <Crafting>2</Crafting>
             </skillRequirements>
             <recipeUsers>
-                <li>FCP_Production_Tailor_Workbench</li>
+                <li>FCP_Production_Tailoring_Workbench</li>
             </recipeUsers>
         </recipeMaker>
         <costList>

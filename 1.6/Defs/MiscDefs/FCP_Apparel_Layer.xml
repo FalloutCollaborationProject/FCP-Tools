@@ -23,4 +23,12 @@
         <drawOrder>110</drawOrder>
     </ApparelLayerDef>
 
+    <!-- Power Armor Jet Pack -->
+
+    <ApparelLayerDef>
+        <defName>FCP_Apparel_Layer_Power_Armor_Jet_Pack</defName>
+        <label>Power Armor Jet Pack</label>
+        <drawOrder>150</drawOrder>
+    </ApparelLayerDef>
+
 </Defs>

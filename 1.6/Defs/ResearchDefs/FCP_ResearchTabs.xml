@@ -8,6 +8,8 @@
     <ResearchTabDef>
         <defName>FCP_Research</defName>
         <label>FCP Research</label>
+        <generalTitle>Core Research</generalTitle>
+        <generalDescription>Research focused on the fundamental technologies and principles that form the backbone of the FCP.</generalDescription>
     </ResearchTabDef>
 
     <!-- Factional Research -->
@@ -15,6 +17,8 @@
     <ResearchTabDef>
         <defName>FCP_Faction_Research</defName>
         <label>FCP Faction Research</label>
+        <generalTitle>Factional Research</generalTitle>
+        <generalDescription>Specialized research dedicated to the unique technologies and strategies of various factions.</generalDescription>
     </ResearchTabDef>
 
     <!-- Pre-War Research -->
@@ -22,6 +26,8 @@
     <ResearchTabDef>
         <defName>FCP_Pre_War_Research</defName>
         <label>FCP Pre War Research</label>
+        <generalTitle>Pre-War Research</generalTitle>
+        <generalDescription>Exploration of technologies and knowledge from before the great war, aiming to rediscover lost advancements.</generalDescription>
     </ResearchTabDef>
 
 </Defs>
