@@ -12,8 +12,9 @@
         <label>Rangers Pomp</label>
         <styleGender>Male</styleGender>
         <texPath>Hairs/Custom/Ranger_Rick/FCP_Hair_Ranger_Rick</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Pre_War</category>
         <styleTags>
+            <li>Pre_War</li>
             <li>FCP_Ranger_Rick</li>
         </styleTags>
     </HairDef>
@@ -25,7 +26,7 @@
         <label>Vault Boy</label>
         <styleGender>Male</styleGender>
         <texPath>Hairs/Custom/Vault_Boy/FCP_Hair_Vault_Boy</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Vault_Dweller</category>
         <styleTags>
             <li>FCP_Vault_Boy</li>
         </styleTags>
@@ -38,7 +39,7 @@
         <label>Vault Girl</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Custom/Vault_Girl/FCP_Hair_Vault_Girl</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Vault_Dweller</category>
         <styleTags>
             <li>FCP_Vault_Girl</li>
         </styleTags>
@@ -53,7 +54,7 @@
         <label>Balding</label>
         <styleGender>Male</styleGender>
         <texPath>Hairs/Male/Balding/Balding</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Wasteland</category>
         <styleTags>
             <li>Wasteland</li>
             <li>Tribal</li>
@@ -67,7 +68,7 @@
         <label>Buzz Saw</label>
         <styleGender>Male</styleGender>
         <texPath>Hairs/Male/Buzz_Saw/Buzz_Saw</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Raider</category>
         <styleTags>
             <li>Punk</li>
             <li>Raider</li>
@@ -81,8 +82,9 @@
         <label>Comb Over</label>
         <styleGender>Male</styleGender>
         <texPath>Hairs/Male/Comb_Over/Comb_Over</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Pre_War</category>
         <styleTags>
+            <li>Pre_War</li>
             <li>Urban</li>
         </styleTags>
     </HairDef>
@@ -94,7 +96,7 @@
         <label>High Riser</label>
         <styleGender>Male</styleGender>
         <texPath>Hairs/Male/High_Riser/High_Riser</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Raider</category>
         <styleTags>
             <li>Punk</li>
             <li>Raider</li>
@@ -108,7 +110,7 @@
         <label>Pompadour</label>
         <styleGender>Male</styleGender>
         <texPath>Hairs/Male/Pompadour/Pompadour</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Pre_War</category>
         <styleTags>
             <li>Urban</li>
             <li>Greaser</li>
@@ -122,7 +124,7 @@
         <label>Punked</label>
         <styleGender>Male</styleGender>
         <texPath>Hairs/Male/Punked/Punked</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Raider</category>
         <styleTags>
             <li>Punk</li>
             <li>Raider</li>
@@ -136,7 +138,7 @@
         <label>Shaggy Suave</label>
         <styleGender>Male</styleGender>
         <texPath>Hairs/Male/Shaggy_Suave/Shaggy_Suave</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Wasteland</category>
         <styleTags>
             <li>Urban</li>
             <li>Wasteland</li>
@@ -150,8 +152,9 @@
         <label>Smooth Suave</label>
         <styleGender>Male</styleGender>
         <texPath>Hairs/Male/Smooth_Suave/Smooth_Suave</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Pre_War</category>
         <styleTags>
+            <li>Pre_War</li>
             <li>Urban</li>
         </styleTags>
     </HairDef>
@@ -163,7 +166,7 @@
         <label>Terrosaur</label>
         <styleGender>Male</styleGender>
         <texPath>Hairs/Male/Terrosaur/Terrosaur</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Raider</category>
         <styleTags>
             <li>Punk</li>
             <li>Raider</li>
@@ -177,8 +180,9 @@
         <label>Tunnel Snake</label>
         <styleGender>Male</styleGender>
         <texPath>Hairs/Male/Tunnel_Snake/Tunnel_Snake</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Pre_War</category>
         <styleTags>
+            <li>Pre_War</li>
             <li>Urban</li>
             <li>Greaser</li>
             <li>Gang</li>
@@ -192,7 +196,7 @@
         <label>Warhawk</label>
         <styleGender>Male</styleGender>
         <texPath>Hairs/Male/Warhawk/Warhawk</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Raider</category>
         <styleTags>
             <li>Punk</li>
             <li>Raider</li>
@@ -207,7 +211,7 @@
         <label>Waster</label>
         <styleGender>Male</styleGender>
         <texPath>Hairs/Male/Waster/Waster</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Wasteland</category>
         <styleTags>
             <li>Wasteland</li>
             <li>Tribal</li>
@@ -224,8 +228,9 @@
         <label>Domestic Goddess</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Domestic_Goddess/Domestic_Goddess</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Pre_War</category>
         <styleTags>
+            <li>Pre_War</li>
             <li>Urban</li>
             <li>Traditional</li>
         </styleTags>
@@ -238,8 +243,9 @@
         <label>Fairy Tails</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Fairy_Tails/Fairy_Tails</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Pre_War</category>
         <styleTags>
+            <li>Pre_War</li>
             <li>Urban</li>
             <li>Young</li>
         </styleTags>
@@ -252,7 +258,7 @@
         <label>Fallen Angel</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Fallen_Angel/Fallen_Angel</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Wasteland</category>
         <styleTags>
             <li>Urban</li>
             <li>Wasteland</li>
@@ -266,7 +272,7 @@
         <label>Frazzled</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Frazzled/Frazzled</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Wasteland</category>
         <styleTags>
             <li>Wasteland</li>
             <li>Rough</li>
@@ -280,7 +286,7 @@
         <label>Iron Maiden</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Iron_Maiden/Iron_Maiden</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Raider</category>
         <styleTags>
             <li>Punk</li>
             <li>Raider</li>
@@ -295,7 +301,7 @@
         <label>Lil Devil</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Lil_Devil/Lil_Devil</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Raider</category>
         <styleTags>
             <li>Punk</li>
             <li>Raider</li>
@@ -309,8 +315,9 @@
         <label>No Nonsense</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/No_Nonsense/No_Nonsense</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Pre_War</category>
         <styleTags>
+            <li>Pre_War</li>
             <li>Urban</li>
             <li>Professional</li>
         </styleTags>
@@ -323,8 +330,9 @@
         <label>Prim N Proper</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Prim_N_Proper/Prim_N_Proper</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Pre_War</category>
         <styleTags>
+            <li>Pre_War</li>
             <li>Urban</li>
             <li>Traditional</li>
             <li>Proper</li>
@@ -338,7 +346,7 @@
         <label>Rough Nite</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Rough_Nite/Rough_Nite</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Wasteland</category>
         <styleTags>
             <li>Wasteland</li>
             <li>Rough</li>
@@ -352,7 +360,7 @@
         <label>Rude Ridge</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Rude_Ridge/Rude_Ridge</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Raider</category>
         <styleTags>
             <li>Punk</li>
             <li>Raider</li>
@@ -366,7 +374,7 @@
         <label>Seductress</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Seductress/Seductress</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Pre_War</category>
         <styleTags>
             <li>Urban</li>
             <li>Elegant</li>
@@ -380,7 +388,7 @@
         <label>Shaved</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Shaved/Shaved</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Military</category>
         <styleTags>
             <li>Bald</li>
             <li>Punk</li>
@@ -395,8 +403,9 @@
         <label>The Sophisticate</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/The_Sophisticate/The_Sophisticate</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Pre_War</category>
         <styleTags>
+            <li>Pre_War</li>
             <li>Urban</li>
             <li>Elegant</li>
             <li>Sophisticated</li>
@@ -410,7 +419,7 @@
         <label>Unladylike</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Unladylike/Unladylike</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Wasteland</category>
         <styleTags>
             <li>Wasteland</li>
             <li>Rough</li>
@@ -424,8 +433,9 @@
         <label>Wendy The Welder</label>
         <styleGender>Female</styleGender>
         <texPath>Hairs/Female/Wendy_The_Welder/Wendy_The_Welder</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Pre_War</category>
         <styleTags>
+            <li>Pre_War</li>
             <li>Industrial</li>
             <li>Working</li>
             <li>Practical</li>
@@ -441,7 +451,7 @@
         <label>Bedraggled</label>
         <styleGender>MaleUsually</styleGender>
         <texPath>Hairs/Unisex/Bedraggled/Bedraggled</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Wasteland</category>
         <styleTags>
             <li>Wasteland</li>
             <li>Rough</li>
@@ -456,7 +466,7 @@
         <label>Blast Back</label>
         <styleGender>MaleUsually</styleGender>
         <texPath>Hairs/Unisex/Blast_Back/Blast_Back</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Wasteland</category>
         <styleTags>
             <li>Wasteland</li>
             <li>Rough</li>
@@ -470,7 +480,7 @@
         <label>Buzz Cut</label>
         <styleGender>MaleUsually</styleGender>
         <texPath>Hairs/Unisex/Buzz_Cut/Buzz_Cut</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Military</category>
         <styleTags>
             <li>Military</li>
             <li>Short</li>
@@ -484,8 +494,9 @@
         <label>Clean Cut</label>
         <styleGender>MaleUsually</styleGender>
         <texPath>Hairs/Unisex/Clean_Cut/Clean_Cut</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Pre_War</category>
         <styleTags>
+            <li>Pre_War</li>
             <li>Urban</li>
             <li>Professional</li>
         </styleTags>
@@ -498,7 +509,7 @@
         <label>Mangy</label>
         <styleGender>MaleUsually</styleGender>
         <texPath>Hairs/Unisex/Mangy/Mangy</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Wasteland</category>
         <styleTags>
             <li>Wasteland</li>
             <li>Rough</li>
@@ -513,7 +524,7 @@
         <label>Sarge</label>
         <styleGender>MaleUsually</styleGender>
         <texPath>Hairs/Unisex/Sarge/Sarge</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Military</category>
         <styleTags>
             <li>Military</li>
             <li>Short</li>
@@ -527,7 +538,7 @@
         <label>The Unsettler</label>
         <styleGender>MaleUsually</styleGender>
         <texPath>Hairs/Unisex/The_Unsettler/The_Unsettler</texPath>
-        <category>Urban</category>
+        <category>FCP_Style_Wasteland</category>
         <styleTags>
             <li>Wasteland</li>
             <li>Rough</li>

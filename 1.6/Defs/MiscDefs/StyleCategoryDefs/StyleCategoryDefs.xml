@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!--__________ Style Categories __________-->
+
+    <!-- PreWar - Clean, civilized pre-war styles -->
+    
+    <StyleItemCategoryDef>
+        <defName>FCP_Style_Pre_War</defName>
+        <label>pre-war</label>
+    </StyleItemCategoryDef>
+
+    <!-- VaultDweller - Vault-Tec specific styles -->
+    
+    <StyleItemCategoryDef>
+        <defName>FCP_Style_Vault_Dweller</defName>
+        <label>vault dweller</label>
+    </StyleItemCategoryDef>
+
+    <!-- Military - Military and combat cuts -->
+    
+    <StyleItemCategoryDef>
+        <defName>FCP_Style_Military</defName>
+        <label>military</label>
+    </StyleItemCategoryDef>
+
+    <!-- Wasteland - Rough survivor styles -->
+    
+    <StyleItemCategoryDef>
+        <defName>FCP_Style_Wasteland</defName>
+        <label>wasteland</label>
+    </StyleItemCategoryDef>
+
+    <!-- Raider - Aggressive, punk styles -->
+    
+    <StyleItemCategoryDef>
+        <defName>FCP_Style_Raider</defName>
+        <label>raider</label>
+    </StyleItemCategoryDef>
+
+</Defs>
