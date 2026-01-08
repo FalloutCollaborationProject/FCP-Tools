@@ -14,6 +14,5 @@
     <FCP_VATS_Settings_ClampingFactor_Mouseover>Clamps the max accuracy boost, and scales appropriately</FCP_VATS_Settings_ClampingFactor_Mouseover>
     <FCP_VATS_Settings_Reset>Reset</FCP_VATS_Settings_Reset>
     <FCP_VATS_LegendaryStats>Legendary effects:</FCP_VATS_LegendaryStats>
-    
     <FCP_VATS_MessageReceivedDamageFromHediff>{PAWN_labelShort} has a crippled {1}.</FCP_VATS_MessageReceivedDamageFromHediff>
 </LanguageData>

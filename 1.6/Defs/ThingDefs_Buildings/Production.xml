@@ -812,7 +812,7 @@
         <defName>FCP_Production_Tool_Bench</defName>
         <label>tool bench</label>
         <description>A tool bench.</description>
-        <thingClass>Building_WorkTable</thingClass>
+        <thingClass>Building_ResearchBench</thingClass>
         <graphicData>
             <texPath>Things/Building/Production/FCP_Tool_Bench/FCP_Tool_Bench</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
@@ -837,7 +837,7 @@
             <WorkToBuild>2000</WorkToBuild>
             <MaxHitPoints>180</MaxHitPoints>
             <Flammability>1.0</Flammability>
-            <WorkTableWorkSpeedFactor>0.5</WorkTableWorkSpeedFactor>
+            <ResearchSpeedFactor>0.75</ResearchSpeedFactor>
         </statBases>
         <size>(3,2)</size>
         <designationCategory>Production</designationCategory>
