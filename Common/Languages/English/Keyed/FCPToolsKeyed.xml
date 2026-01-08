@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-	<FCP_MessagePermitLostOnPromotion>Due to {0_possessive} promotion to {1}, {0_labelShort} has lost {0_possessive} {2} permit</FCP_MessagePermitLostOnPromotion>
 
+	<FCP_Settings_Category>Fallout Collaboration Project</FCP_Settings_Category>
+	<FCP_MessagePermitLostOnPromotion>Due to {0_possessive} promotion to {1}, {0_labelShort} has lost {0_possessive} {2} permit</FCP_MessagePermitLostOnPromotion>
 	<!-- Storyteller Joiner -->
 	<FCP_LetterLabel_SpecialWandererJoins>Special Wanderer: {PAWN_nameDef}</FCP_LetterLabel_SpecialWandererJoins>
 	<FCP_Letter_SpecialWandererJoins>A pawn {PAWN_title} named {PAWN_nameDef} has arrived and wants to join the colony.</FCP_Letter_SpecialWandererJoins>
-	
 	<FCP_RarityCommon>Common</FCP_RarityCommon>
 	<FCP_RarityRare>Rare</FCP_RarityRare>
 	<FCP_RarityUnique>Unique</FCP_RarityUnique>
-	
 	<FCP_MechDetonate>Detonate</FCP_MechDetonate>
-
 	<FCP_CannotPickUp>Cannot pick up {0}</FCP_CannotPickUp>
 	<FCP_PickUp>Pick up {0}</FCP_PickUp>
 	<FCP_PickUpMax>Pick up max</FCP_PickUpMax>
 	<FCP_PickUpOne>Pick up one {0}</FCP_PickUpOne>
 	<FCP_TooHeavy>Too Heavy</FCP_TooHeavy>
-  <FCP_TechprintLabel>FCP techprint ({PROJECT_label})</FCP_TechprintLabel>
-  <FCP_TechprintDesc>FCP This is a techprint for the research project '{PROJECT_label}'.
+	<FCP_Techprint_Label>FCP techprint ({PROJECT_label})</FCP_Techprint_Label>
+	<FCP_Techprint_Desc>This is a techprint for the research project '{PROJECT_label}'.
 \nThe physical form of techprints can range from scraps of paper with diagrams, all the way to advanced self-contained teaching machines. Regardless of form, they play the same role. They give your researchers the confidence that an idea is possible, and a rough idea of the designs used in more established societies.
 \nYour researchers need the foundational knowledge offered by techprints to know where to start on a given technology. Only after enough techprints have been applied can your researchers work out the fine details of how to make use of the technology in your particular situation.
-\nApplying techprints to a satisfied project fulfills half the remaining research progress. In addition, researchers always gain a boost to their intellectual skills when applying techprints, even on already-completed technologies.</FCP_TechprintDesc>
-	<FCP_WrongXenotype>Wrong xenotype</FCP_WrongXenotype>
+\nApplying techprints to a satisfied project fulfills half the remaining research progress. In addition, researchers always gain a boost to their intellectual skills when applying techprints, even on already-completed technologies.</FCP_Techprint_Desc>
+<FCP_WrongXenotype>Wrong xenotype</FCP_WrongXenotype>
 
 </LanguageData>
