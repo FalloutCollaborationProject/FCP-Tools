@@ -124,4 +124,40 @@
         </comps>
     </AbilityDef>
 
+    <!-- Chameleon Cloak -->
+
+    <AbilityDef>
+        <defName>FCP_Ability_Deathclaw_ChameleonCloak</defName>
+        <label>chameleon cloak</label>
+        <description>The deathclaw uses its natural camouflage abilities to blend into its surroundings, becoming nearly invisible to enemies.</description>
+        <iconPath>UI/Abilities/Invisibility</iconPath>
+        <cooldownTicksRange>300000</cooldownTicksRange> <!-- 300 seconds (long cooldown for rare use) -->
+        <aiCanUse>true</aiCanUse>
+        <ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
+        <hostile>true</hostile>
+        <targetRequired>false</targetRequired>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <statBases>
+            <Ability_Duration>20</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <drawAimPie>false</drawAimPie>
+            <requireLineOfSight>false</requireLineOfSight>
+            <nonInterruptingSelfCast>true</nonInterruptingSelfCast>
+            <warmupTime>0.5</warmupTime>
+            <range>0</range>
+            <targetable>false</targetable>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityGiveHediff">
+                <compClass>CompAbilityEffect_GiveHediff</compClass>
+                <hediffDef>PsychicInvisibility</hediffDef>
+            </li>
+        </comps>
+    </AbilityDef>
+
 </Defs>
