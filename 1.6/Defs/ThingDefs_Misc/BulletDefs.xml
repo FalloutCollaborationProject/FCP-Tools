@@ -304,7 +304,7 @@
             <armorPenetrationBase>1.4</armorPenetrationBase>
         </projectile>
     </ThingDef>
-    
+
     <!-- 357mm Bullet -->
 
     <ThingDef ParentName="BaseBullet">
@@ -360,85 +360,23 @@
         </projectile>
     </ThingDef>
 
-    <!-- 20 Gauge Shell -->
-
-    <ThingDef ParentName="BaseBullet">
-        <defName>FCP_Bullet_20Gauge_Shell</defName>
-        <label>20 Gauge Shell</label>
-        <graphicData>
-            <texPath>Things/Misc/Bullets/FCP_20G_Pellet</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <shaderType>TransparentPostLight</shaderType>
-        </graphicData>
-        <thingClass>FragProjectile.Projectile_FragExplosion</thingClass>
-        <projectile>
-            <speed>20</speed>
-            <damageDef>Bullet</damageDef>
-            <damageAmountBase>2</damageAmountBase>
-            <explosionRadius>0</explosionRadius>
-            <soundExplode>Tick_Tiny</soundExplode>
-            <armorPenetrationBase>0</armorPenetrationBase>
-            <stoppingPower>1</stoppingPower>
-            <ai_IsIncendiary>false</ai_IsIncendiary>
-        </projectile>
-        <modExtensions>
-            <li Class="FragProjectile.ProjectileExtension_Fragmentation">
-                <projCount>7</projCount>
-                <radius>3~5</radius>
-                <isCone>true</isCone>
-                <projectileDef>FCP_Bullet_20Gauge_Pellet</projectileDef>
-            </li>
-        </modExtensions>
-    </ThingDef>
-
     <!-- 20 Gauge Pellet -->
 
     <ThingDef ParentName="BaseBullet">
         <defName>FCP_Bullet_20Gauge_Pellet</defName>
         <label>20 Gauge Pellet</label>
         <graphicData>
-            <texPath>Things/Projectile/Bullet_Shotgun</texPath>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <shaderType>TransparentPostLight</shaderType>
         </graphicData>
         <projectile>
-            <speed>70</speed>
+            <speed>60</speed>
             <damageDef>Bullet</damageDef>
-            <damageAmountBase>7</damageAmountBase>
+            <damageAmountBase>2</damageAmountBase>
             <armorPenetrationBase>0.3</armorPenetrationBase>
             <stoppingPower>0.4</stoppingPower>
         </projectile>
-    </ThingDef>
-
-    <!-- 12 Gauge Shell -->
-
-    <ThingDef ParentName="BaseBullet">
-        <defName>FCP_Bullet_12Gauge_Shell</defName>
-        <label>12 Gauge Shell</label>
-        <graphicData>
-            <texPath>Things/Misc/Bullets/FCP_12G_Pellet</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <shaderType>TransparentPostLight</shaderType>
-        </graphicData>
-        <thingClass>FragProjectile.Projectile_FragExplosion</thingClass>
-        <projectile>
-            <speed>20</speed>
-            <damageDef>Bullet</damageDef>
-            <damageAmountBase>2</damageAmountBase>
-            <explosionRadius>0</explosionRadius>
-            <soundExplode>Tick_Tiny</soundExplode>
-            <armorPenetrationBase>0</armorPenetrationBase>
-            <stoppingPower>1</stoppingPower>
-            <ai_IsIncendiary>false</ai_IsIncendiary>
-        </projectile>
-        <modExtensions>
-            <li Class="FragProjectile.ProjectileExtension_Fragmentation">
-                <projCount>7</projCount>
-                <radius>3~5</radius>
-                <isCone>true</isCone>
-                <projectileDef>FCP_Bullet_12Gauge_Pellet</projectileDef>
-            </li>
-        </modExtensions>
     </ThingDef>
 
     <!-- 12 Gauge Pellet -->
@@ -447,14 +385,14 @@
         <defName>FCP_Bullet_12Gauge_Pellet</defName>
         <label>12 Gauge Pellet</label>
         <graphicData>
-            <texPath>Things/Projectile/Bullet_Shotgun</texPath>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
             <graphicClass>Graphic_Single</graphicClass>
             <shaderType>TransparentPostLight</shaderType>
         </graphicData>
         <projectile>
-            <speed>70</speed>
+            <speed>65</speed>
             <damageDef>Bullet</damageDef>
-            <damageAmountBase>9</damageAmountBase>
+            <damageAmountBase>3</damageAmountBase>
             <armorPenetrationBase>0.4</armorPenetrationBase>
             <stoppingPower>0.6</stoppingPower>
         </projectile>

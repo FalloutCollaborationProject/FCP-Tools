@@ -1,5 +1,5 @@
 <Defs>
-<ThingDef ParentName="ResourceBase">
+    <ThingDef ParentName="ResourceBase">
     <defName>MinePocket_Charge</defName> <!--this is the resource/ammo to reload the mine pocket-->
     <label>mine charge</label>
     <description>placeholder.</description>

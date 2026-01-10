@@ -7,7 +7,7 @@
     <!--_____ Unique _____-->
     <!-- Mysterious Stranger -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Mysterious_Stranger</defName>
         <identifier>FCP_Backstory_Mysterious_Stranger</identifier>
         <slot>Adulthood</slot>
@@ -37,7 +37,7 @@
     <!--___ Adult ___-->
     <!-- Ranger Rick -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Ranger_Rick</defName>
         <identifier>FCP_Backstory_Ranger_Rick</identifier>
         <slot>Adulthood</slot>
@@ -64,7 +64,7 @@
 
     <!-- Crystal Sparkle -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Crystal_Sparkle</defName>
         <identifier>FCP_Backstory_Crystal_Sparkle</identifier>
         <title>Crystal Sparkle</title>
@@ -96,7 +96,7 @@
     <!--_ Angela Staley _-->
     <!-- Adult -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Angela_Staley</defName>
         <identifier>FCP_Backstory_Wastelander_Trader_Angela_Staley</identifier>
         <slot>Adulthood</slot>
@@ -121,7 +121,7 @@
 
     <!-- Child -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Angela_Staley_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Trader_Angela_Staley_Child</identifier>
         <slot>Childhood</slot>
@@ -144,7 +144,7 @@
     <!--_ Banon _-->
     <!-- Adult -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Banon</defName>
         <identifier>FCP_Backstory_Wastelander_Trader_Banon</identifier>
         <slot>Adulthood</slot>
@@ -169,7 +169,7 @@
 
     <!-- Child -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Banon_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Trader_Banon_Child</identifier>
         <slot>Childhood</slot>
@@ -192,7 +192,7 @@
     <!--_ Belle Bonny _-->
     <!-- Adult -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Belle_Bonny</defName>
         <identifier>FCP_Backstory_Wastelander_Belle_Bonny</identifier>
         <slot>Adulthood</slot>
@@ -217,7 +217,7 @@
 
     <!-- Child -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Belle_Bonny_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Belle_Bonny_Child</identifier>
         <slot>Childhood</slot>
@@ -244,7 +244,7 @@
     <!--_ Crow _-->
     <!-- Adult -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Crow</defName>
         <identifier>FCP_Backstory_Wastelander_Trader_Crow</identifier>
         <slot>Adulthood</slot>
@@ -269,7 +269,7 @@
 
     <!-- Child -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Crow_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Trader_Crow_Child</identifier>
         <slot>Childhood</slot>
@@ -293,7 +293,7 @@
     <!--_ Crazy Wolfgang _-->
     <!-- Adult -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Crazy_Wolfgang</defName>
         <identifier>FCP_Backstory_Wastelander_Trader_Crazy_Wolfgang</identifier>
         <slot>Adulthood</slot>
@@ -318,7 +318,7 @@
 
     <!-- Child -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Crazy_Wolfgang_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Trader_Crazy_Wolfgang_Child</identifier>
         <slot>Childhood</slot>
@@ -342,7 +342,7 @@
     <!--_ Doc Hoff _-->
     <!-- Adult -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Doc_Hoff</defName>
         <identifier>FCP_Backstory_Wastelander_Trader_Doc_Hoff</identifier>
         <slot>Adulthood</slot>
@@ -367,7 +367,7 @@
 
     <!-- Child -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Doc_Hoff_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Trader_Doc_Hoff_Child</identifier>
         <slot>Childhood</slot>
@@ -390,7 +390,7 @@
     <!--_ Lucky Harith _-->
     <!-- Adult -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Lucky_Harith</defName>
         <identifier>FCP_Backstory_Wastelander_Trader_Lucky_Harith</identifier>
         <slot>Adulthood</slot>
@@ -415,7 +415,7 @@
 
     <!-- Child -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Lucky_Harith_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Trader_Lucky_Harith_Child</identifier>
         <slot>Childhood</slot>
@@ -440,7 +440,7 @@
     <!--_ Rivet City Security _-->
     <!-- Standard Security Officer -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Rivet_City_Security_Officer</defName>
         <identifier>FCP_Backstory_Rivet_City_Security_Officer</identifier>
         <slot>Adulthood</slot>
@@ -465,7 +465,7 @@
 
     <!-- Veteran Security Officer -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Rivet_City_Security_Veteran</defName>
         <identifier>FCP_Backstory_Rivet_City_Security_Veteran</identifier>
         <slot>Adulthood</slot>
@@ -490,7 +490,7 @@
 
     <!-- Rookie Security Officer -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Rivet_City_Security_Rookie</defName>
         <identifier>FCP_Backstory_Rivet_City_Security_Rookie</identifier>
         <slot>Adulthood</slot>
@@ -515,7 +515,7 @@
 
     <!-- Wasteland Farmer -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Wasteland_Farmer</defName>
         <identifier>FCP_Backstory_Wastelander_Wasteland_Farmer</identifier>
         <slot>Adulthood</slot>
@@ -541,7 +541,7 @@
 
     <!-- Sawbones -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Sawbones</defName>
         <identifier>FCP_Backstory_Wastelander_Sawbones</identifier>
         <slot>Adulthood</slot>
@@ -568,7 +568,7 @@
 
     <!-- Moonshiner -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Moonshiner</defName>
         <identifier>FCP_Backstory_Wastelander_Moonshiner</identifier>
         <slot>Adulthood</slot>
@@ -593,7 +593,7 @@
 
     <!-- Slaver -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Slaver</defName>
         <identifier>FCP_Backstory_Wastelander_Slaver</identifier>
         <slot>Adulthood</slot>
@@ -619,7 +619,7 @@
 
     <!-- Caravaneer -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Caravaneer</defName>
         <identifier>FCP_Backstory_Wastelander_Caravaneer</identifier>
         <slot>Adulthood</slot>
@@ -645,7 +645,7 @@
 
     <!-- Weapon Artisan -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Weapon_Artisan</defName>
         <identifier>FCP_Backstory_Wastelander_Weapon_Artisan</identifier>
         <slot>Adulthood</slot>
@@ -670,7 +670,7 @@
 
     <!-- Water_Merchant -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Water_Merchant</defName>
         <identifier>FCP_Backstory_Wastelander_Water_Merchant</identifier>
         <slot>Adulthood</slot>
@@ -695,7 +695,7 @@
 
     <!-- Roving Trader -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Roving_Trader</defName>
         <identifier>FCP_Backstory_Wastelander_Roving_Trader</identifier>
         <slot>Adulthood</slot>
@@ -722,7 +722,7 @@
 
     <!-- Caravan Guard -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Caravan_Guard</defName>
         <identifier>FCP_Backstory_Wastelander_Caravan_Guard</identifier>
         <slot>Adulthood</slot>
@@ -748,7 +748,7 @@
 
     <!-- Small Time Mercenary -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Small_Time_Mercenary</defName>
         <identifier>FCP_Backstory_Wastelander_Small_Time_Mercenary</identifier>
         <slot>Adulthood</slot>
@@ -774,7 +774,7 @@
 
     <!-- Wasteland Artist -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Wasteland_Artist</defName>
         <identifier>FCP_Backstory_Wastelander_Wasteland_Artist</identifier>
         <slot>Adulthood</slot>
@@ -800,7 +800,7 @@
 
     <!-- Settlement Guard -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Settlement_Guard</defName>
         <identifier>FCP_Backstory_Wastelander_Settlement_Guard</identifier>
         <slot>Adulthood</slot>
@@ -826,7 +826,7 @@
 
     <!-- Courier -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Courier</defName>
         <identifier>FCP_Backstory_Wastelander_Courier</identifier>
         <slot>Adulthood</slot>
@@ -853,7 +853,7 @@
 
     <!-- Gecko Hunter -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Gecko_Hunter</defName>
         <identifier>FCP_Backstory_Wastelander_Gecko_Hunter</identifier>
         <slot>Adulthood</slot>
@@ -878,7 +878,7 @@
 
     <!-- Sheriff -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Sheriff</defName>
         <identifier>FCP_Backstory_Wastelander_Sheriff</identifier>
         <slot>Adulthood</slot>
@@ -902,7 +902,7 @@
 
     <!-- Prospector -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Prospector</defName>
         <identifier>FCP_Backstory_Wastelander_Prospector</identifier>
         <slot>Adulthood</slot>
@@ -926,7 +926,7 @@
 
     <!-- Freed Slave -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Freed_Slave</defName>
         <identifier>FCP_Backstory_Wastelander_Freed_Slave</identifier>
         <slot>Adulthood</slot>
@@ -951,6 +951,7 @@
     </BackstoryDef>
 
     <!-- Nuka-Cola Fan -->
+
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Nuka_Cola_Fan</defName>
         <identifier>FCP_Backstory_Wastelander_Nuka_Cola_Fan</identifier>
@@ -976,7 +977,7 @@
 
     <!-- Tinkerer -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Tinkerer</defName>
         <identifier>FCP_Backstory_Wastelander_Tinkerer</identifier>
         <slot>Adulthood</slot>
@@ -1001,7 +1002,7 @@
 
     <!-- Former Junkie -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Former_Junkie</defName>
         <identifier>FCP_Backstory_Wastelander_Former_Junkie</identifier>
         <slot>Adulthood</slot>
@@ -1027,7 +1028,7 @@
 
     <!-- Drifting Musician -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Drifting_Musician</defName>
         <identifier>FCP_Backstory_Wastelander_Drifting_Musician</identifier>
         <slot>Adulthood</slot>
@@ -1051,7 +1052,7 @@
 
     <!-- Militia Member -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Militia_Member</defName>
         <identifier>FCP_Backstory_Wastelander_Militia_Member</identifier>
         <slot>Adulthood</slot>
@@ -1076,7 +1077,7 @@
 
     <!-- Former Tribal -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Former_Tribal</defName>
         <identifier>FCP_Backstory_Wastelander_Former_Tribal</identifier>
         <slot>Adulthood</slot>
@@ -1102,7 +1103,7 @@
 
     <!-- Radio Presenter -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Radio_Presenter</defName>
         <identifier>FCP_Backstory_Wastelander_Radio_Presenter</identifier>
         <slot>Adulthood</slot>
@@ -1128,7 +1129,7 @@
 
     <!-- Wasteland Butcher -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Wasteland_Butcher</defName>
         <identifier>FCP_Backstory_Wastelander_Wasteland_Butcher</identifier>
         <slot>Adulthood</slot>
@@ -1155,7 +1156,7 @@
 
     <!-- Wandering Priest -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Wandering_Priest</defName>
         <identifier>FCP_Backstory_Wastelander_Wandering_Priest</identifier>
         <slot>Adulthood</slot>
@@ -1181,7 +1182,7 @@
 
     <!-- Children of Atom Preacher -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Children_of_Atom_Preacher</defName>
         <identifier>FCP_Backstory_Wastelander_Children_of_Atom_Preacher</identifier>
         <slot>Adulthood</slot>
@@ -1208,7 +1209,7 @@
 
     <!-- Water Purifier Worker -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Water_Purifier_Worker</defName>
         <identifier>FCP_Backstory_Wastelander_Water_Purifier_Worker</identifier>
         <slot>Adulthood</slot>
@@ -1233,7 +1234,7 @@
 
     <!-- Solar Panel Expert -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Solar_Panel_Expert</defName>
         <identifier>FCP_Backstory_Wastelander_Solar_Panel_Expert</identifier>
         <slot>Adulthood</slot>
@@ -1257,7 +1258,7 @@
 
     <!-- Roadside Merchant -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Roadside_Merchant</defName>
         <identifier>FCP_Backstory_Wastelander_Roadside_Merchant</identifier>
         <slot>Adulthood</slot>
@@ -1283,7 +1284,7 @@
 
     <!-- Enclave Patriot -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Enclave_Patriot</defName>
         <identifier>FCP_Backstory_Wastelander_Enclave_Patriot</identifier>
         <slot>Adulthood</slot>
@@ -1309,7 +1310,7 @@
 
     <!-- Wasteland Bounty Hunter -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Wasteland_Bounty_Hunter</defName>
         <identifier>FCP_Backstory_Wastelander_Wasteland_Bounty_Hunter</identifier>
         <slot>Adulthood</slot>
@@ -1334,7 +1335,7 @@
 
     <!-- Wasteland Teacher -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Wasteland_Teacher</defName>
         <identifier>FCP_Backstory_Wastelander_Wasteland_Teacher</identifier>
         <slot>Adulthood</slot>
@@ -1360,7 +1361,7 @@
 
     <!-- Wasteland Quack -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Wasteland_Quack</defName>
         <identifier>FCP_Backstory_Wastelander_Wasteland_Quack</identifier>
         <slot>Adulthood</slot>
@@ -1388,7 +1389,7 @@
 
     <!-- Wasteland Hooker -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Wasteland_Hooker</defName>
         <identifier>FCP_Backstory_Wastelander_Wasteland_Hooker</identifier>
         <slot>Adulthood</slot>
@@ -1412,7 +1413,7 @@
 
     <!-- Wasteland Mayor -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Wasteland_Mayor</defName>
         <identifier>FCP_Backstory_Wastelander_Wasteland_Mayor</identifier>
         <slot>Adulthood</slot>
@@ -1438,7 +1439,7 @@
 
     <!-- Daring Explorer -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Daring_Explorer</defName>
         <identifier>FCP_Backstory_Wastelander_Daring_Explorer</identifier>
         <slot>Adulthood</slot>
@@ -1464,7 +1465,7 @@
 
     <!-- Holodisk Librarian -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Holodisk_Librarian</defName>
         <identifier>FCP_Backstory_Wastelander_Holodisk_Librarian</identifier>
         <slot>Adulthood</slot>
@@ -1490,7 +1491,7 @@
 
     <!-- Diner Chef -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Diner_Chef</defName>
         <identifier>FCP_Backstory_Wastelander_Diner_Chef</identifier>
         <slot>Adulthood</slot>
@@ -1518,7 +1519,7 @@
 
     <!-- Brotherhood Deserter -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Brotherhood_Deserter</defName>
         <identifier>FCP_Backstory_Wastelander_Brotherhood_Deserter</identifier>
         <slot>Adulthood</slot>
@@ -1545,7 +1546,7 @@
 
     <!-- Implant Expert -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Implant_Expert</defName>
         <identifier>FCP_Backstory_Wastelander_Implant_Expert</identifier>
         <slot>Adulthood</slot>
@@ -1571,6 +1572,7 @@
     </BackstoryDef>
 
     <!-- Co-op Gardener -->
+
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Co_op_Gardener</defName>
         <identifier>FCP_Backstory_Wastelander_Co_op_Gardener</identifier>
@@ -1596,7 +1598,7 @@
 
     <!-- Greaser -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Greaser</defName>
         <identifier>FCP_Backstory_Wastelander_Greaser</identifier>
         <slot>Adulthood</slot>
@@ -1622,7 +1624,7 @@
     <!--__ Children __-->
     <!-- Orphaned Wanderer -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Orphaned_Wanderer</defName>
         <identifier>FCP_Backstory_Wastelander_Orphaned_Wanderer</identifier>
         <slot>Childhood</slot>
@@ -1647,7 +1649,7 @@
 
     <!-- Child Entrepreneur -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Child_Entrepreneur</defName>
         <identifier>FCP_Backstory_Wastelander_Child_Entrepreneur</identifier>
         <slot>Childhood</slot>
@@ -1668,7 +1670,7 @@
 
     <!-- Curious Child -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Curious_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Curious_Child</identifier>
         <slot>Childhood</slot>
@@ -1690,7 +1692,7 @@
 
     <!-- Bully -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Bully</defName>
         <identifier>FCP_Backstory_Wastelander_Bully</identifier>
         <slot>Childhood</slot>
@@ -1711,7 +1713,7 @@
 
     <!-- Apprentice -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Apprentice</defName>
         <identifier>FCP_Backstory_Wastelander_Apprentice</identifier>
         <slot>Childhood</slot>
@@ -1736,7 +1738,7 @@
 
     <!-- BB Gun Crack shot -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_BB_Gun_Crack_shot</defName>
         <identifier>FCP_Backstory_Wastelander_BB_Gun_Crack_shot</identifier>
         <slot>Childhood</slot>
@@ -1757,7 +1759,7 @@
 
     <!-- Ruin Dweller -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Ruin_Dweller</defName>
         <identifier>FCP_Backstory_Wastelander_Ruin_Dweller</identifier>
         <slot>Childhood</slot>
@@ -1781,7 +1783,7 @@
 
     <!-- Gas Station Inhabitant -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Gas_Station_Inhabitant</defName>
         <identifier>FCP_Backstory_Wastelander_Gas_Station_Inhabitant</identifier>
         <slot>Childhood</slot>
@@ -1803,7 +1805,7 @@
 
     <!-- Caravan Child -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Caravan_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Caravan_Child</identifier>
         <slot>Childhood</slot>
@@ -1824,7 +1826,7 @@
 
     <!-- Street Kid -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Street_Kid</defName>
         <identifier>FCP_Backstory_Wastelander_Street_Kid</identifier>
         <slot>Childhood</slot>
@@ -1846,7 +1848,7 @@
 
     <!-- Cannibalistic Youth -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Cannibalistic_Youth</defName>
         <identifier>FCP_Backstory_Wastelander_Cannibalistic_Youth</identifier>
         <slot>Childhood</slot>
@@ -1868,7 +1870,7 @@
 
     <!-- Cryostasis Child -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Cryostasis_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Cryostasis_Child</identifier>
         <slot>Childhood</slot>
@@ -1892,7 +1894,7 @@
 
     <!-- Wild Child -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Wild_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Wild_Child</identifier>
         <slot>Childhood</slot>
@@ -1916,7 +1918,7 @@
 
     <!-- Stung by Radscorpion -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Stung_by_Radscorpion</defName>
         <identifier>FCP_Backstory_Wastelander_Stung_by_Radscorpion</identifier>
         <slot>Childhood</slot>
@@ -1938,6 +1940,7 @@
     </BackstoryDef>
 
     <!-- Eco-Cultist -->
+
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Eco_Cultist</defName>
         <identifier>FCP_Backstory_Wastelander_Eco_Cultist</identifier>
@@ -1961,7 +1964,7 @@
 
     <!-- Whorehouse Kid -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Whorehouse_Kid</defName>
         <identifier>FCP_Backstory_Wastelander_Whorehouse_Kid</identifier>
         <slot>Childhood</slot>
@@ -1983,7 +1986,7 @@
 
     <!-- Gambler’s Kid -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Gamblers_Kid</defName>
         <identifier>FCP_Backstory_Wastelander_Gamblers_Kid</identifier>
         <slot>Childhood</slot>
@@ -2008,7 +2011,7 @@
 
     <!-- Child Sheriff -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Child_Sheriff</defName>
         <identifier>FCP_Backstory_Wastelander_Child_Sheriff</identifier>
         <slot>Childhood</slot>
@@ -2030,7 +2033,7 @@
 
     <!-- Surviving Mormon -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Surviving_Mormon</defName>
         <identifier>FCP_Backstory_Wastelander_Surviving_Mormon</identifier>
         <slot>Childhood</slot>
@@ -2054,7 +2057,7 @@
 
     <!-- Advanced Student -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Advanced_Student</defName>
         <identifier>FCP_Backstory_Wastelander_Advanced_Student</identifier>
         <slot>Childhood</slot>
@@ -2078,7 +2081,7 @@
 
     <!-- Livestock Herder -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Livestock_Herder</defName>
         <identifier>FCP_Backstory_Wastelander_Livestock_Herder</identifier>
         <slot>Childhood</slot>
@@ -2100,7 +2103,7 @@
 
     <!-- Nomad Child -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Nomad_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Nomad_Child</identifier>
         <slot>Childhood</slot>
@@ -2124,7 +2127,7 @@
 
     <!-- Abducted by Aliens -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Abducted_by_Aliens</defName>
         <identifier>FCP_Backstory_Wastelander_Abducted_by_Aliens</identifier>
         <slot>Childhood</slot>
@@ -2147,7 +2150,7 @@
 
     <!-- Swamp Dweller -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Swamp_Dweller</defName>
         <identifier>FCP_Backstory_Wastelander_Swamp_Dweller</identifier>
         <slot>Childhood</slot>
@@ -2170,7 +2173,7 @@
 
     <!-- Pit Refugee -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Pit_Refugee</defName>
         <identifier>FCP_Backstory_Wastelander_Pit_Refugee</identifier>
         <slot>Childhood</slot>
@@ -2193,7 +2196,7 @@
 
     <!-- Greenhorn -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Greenhorn</defName>
         <identifier>FCP_Backstory_Wastelander_Greenhorn</identifier>
         <slot>Childhood</slot>
@@ -2215,7 +2218,7 @@
 
     <!-- Megaton Child -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Megaton_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Megaton_Child</identifier>
         <slot>Childhood</slot>
@@ -2237,7 +2240,7 @@
 
     <!-- Rivet City Child -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Rivet_City_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Rivet_City_Child</identifier>
         <slot>Childhood</slot>
@@ -2262,7 +2265,7 @@
 
     <!-- Children of Atom Novice -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Children_of_Atom_Novice</defName>
         <identifier>FCP_Backstory_Wastelander_Children_of_Atom_Novice</identifier>
         <slot>Childhood</slot>
@@ -2286,7 +2289,7 @@
 
     <!-- Diamond City Kid -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Diamond_City_Kid</defName>
         <identifier>FCP_Backstory_Wastelander_Diamond_City_Kid</identifier>
         <slot>Childhood</slot>
@@ -2308,7 +2311,7 @@
 
     <!-- Novac Kid -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Novac_Kid</defName>
         <identifier>FCP_Backstory_Wastelander_Novac_Kid</identifier>
         <slot>Childhood</slot>
@@ -2330,7 +2333,7 @@
 
     <!-- Westside Child -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Westside_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Westside_Child</identifier>
         <slot>Childhood</slot>
@@ -2352,7 +2355,7 @@
 
     <!-- Goodsprings Child -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Goodsprings_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Goodsprings_Child</identifier>
         <slot>Childhood</slot>
@@ -2374,7 +2377,7 @@
 
     <!-- Trapper Offspring -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trapper_Offspring</defName>
         <identifier>FCP_Backstory_Wastelander_Trapper_Offspring</identifier>
         <slot>Childhood</slot>
@@ -2396,7 +2399,7 @@
 
     <!-- Primm Kid -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Primm_Kid</defName>
         <identifier>FCP_Backstory_Wastelander_Primm_Kid</identifier>
         <slot>Childhood</slot>
@@ -2418,7 +2421,7 @@
 
     <!-- Tribal Child -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Tribal_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Tribal_Child</identifier>
         <slot>Childhood</slot>
@@ -2441,7 +2444,7 @@
 
     <!-- Gunslinger Juvie -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Gunslinger_Juvie</defName>
         <identifier>FCP_Backstory_Wastelander_Gunslinger_Juvie</identifier>
         <slot>Childhood</slot>
@@ -2463,7 +2466,7 @@
 
     <!-- Frontier Kid -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Frontier_Kid</defName>
         <identifier>FCP_Backstory_Wastelander_Frontier_Kid</identifier>
         <slot>Childhood</slot>
@@ -2487,7 +2490,7 @@
 
     <!-- Displaced Child -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Displaced_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Displaced_Child</identifier>
         <slot>Childhood</slot>
@@ -2509,7 +2512,7 @@
 
     <!-- Born Miner -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Born_Miner</defName>
         <identifier>FCP_Backstory_Wastelander_Born_Miner</identifier>
         <slot>Childhood</slot>
@@ -2531,7 +2534,7 @@
 
     <!-- Apothecary’s Apprentice -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Apothecarys_Apprentice</defName>
         <identifier>FCP_Backstory_Wastelander_Apothecarys_Apprentice</identifier>
         <slot>Childhood</slot>
@@ -2553,7 +2556,7 @@
 
     <!-- Entitled Youth -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Entitled_Youth</defName>
         <identifier>FCP_Backstory_Wastelander_Entitled_Youth</identifier>
         <slot>Childhood</slot>
@@ -2575,7 +2578,7 @@
 
     <!-- Drug Courier -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Drug_Courier</defName>
         <identifier>FCP_Backstory_Wastelander_Drug_Courier</identifier>
         <slot>Childhood</slot>
@@ -2597,7 +2600,7 @@
 
     <!-- Junior Mechanic -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Junior_Mechanic</defName>
         <identifier>FCP_Backstory_Wastelander_Junior_Mechanic</identifier>
         <slot>Childhood</slot>
@@ -2618,7 +2621,7 @@
 
     <!-- Little Lamplight Kid -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Little_Lamplight_Kid</defName>
         <identifier>FCP_Backstory_Wastelander_Little_Lamplight_Kid</identifier>
         <slot>Childhood</slot>
@@ -2640,7 +2643,7 @@
 
     <!-- Goodneighbour Juvie -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Goodneighbour_Juvie</defName>
         <identifier>FCP_Backstory_Wastelander_Goodneighbour_Juvie</identifier>
         <slot>Childhood</slot>
@@ -2662,7 +2665,7 @@
 
     <!-- Shopkeeper’s Child -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Shopkeepers_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Shopkeepers_Child</identifier>
         <slot>Childhood</slot>
@@ -2684,7 +2687,7 @@
 
     <!-- Aspiring Treasure Hunter -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Aspiring_Treasure_Hunter</defName>
         <identifier>FCP_Backstory_Wastelander_Aspiring_Treasure_Hunter</identifier>
         <slot>Childhood</slot>
@@ -2707,7 +2710,7 @@
 
     <!-- Merc’s Kid -->
     
-<BackstoryDef>
+    <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Mercs_Kid</defName>
         <identifier>FCP_Backstory_Wastelander_Mercs_Kid</identifier>
         <slot>Childhood</slot>
