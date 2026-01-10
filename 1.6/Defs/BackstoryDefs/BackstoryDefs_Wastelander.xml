@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
+
 
     <!--__________ Backstories __________-->
 
     <!--_____ Unique _____-->
-
     <!-- Mysterious Stranger -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Mysterious_Stranger</defName>
         <identifier>FCP_Backstory_Mysterious_Stranger</identifier>
         <slot>Adulthood</slot>
@@ -29,17 +29,15 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!--_____ Storytellers _____-->
 
     <!--___ Adult ___-->
-
     <!-- Ranger Rick -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Ranger_Rick</defName>
         <identifier>FCP_Backstory_Ranger_Rick</identifier>
         <slot>Adulthood</slot>
@@ -61,13 +59,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Crystal Sparkle -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Crystal_Sparkle</defName>
         <identifier>FCP_Backstory_Crystal_Sparkle</identifier>
         <title>Crystal Sparkle</title>
@@ -97,10 +94,9 @@
     <!--__ Traders (Fallout 3) __-->
 
     <!--_ Angela Staley _-->
-
     <!-- Adult -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Angela_Staley</defName>
         <identifier>FCP_Backstory_Wastelander_Trader_Angela_Staley</identifier>
         <slot>Adulthood</slot>
@@ -120,13 +116,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Female</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Child -->
     
-    <BackstoryDef>
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Angela_Staley_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Trader_Angela_Staley_Child</identifier>
         <slot>Childhood</slot>
@@ -143,15 +138,13 @@
         <spawnCategories>
             <li>FCP_Backstory_Wasteland_Trader_Angela_Staley_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!--_ Banon _-->
-
     <!-- Adult -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Banon</defName>
         <identifier>FCP_Backstory_Wastelander_Trader_Banon</identifier>
         <slot>Adulthood</slot>
@@ -171,13 +164,12 @@
         </spawnCategories>
         <bodyTypeFemale>Male</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Child -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Banon_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Trader_Banon_Child</identifier>
         <slot>Childhood</slot>
@@ -194,15 +186,13 @@
         <spawnCategories>
             <li>FCP_Backstory_Wasteland_Trader_Banon_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!--_ Belle Bonny _-->
-
     <!-- Adult -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Belle_Bonny</defName>
         <identifier>FCP_Backstory_Wastelander_Belle_Bonny</identifier>
         <slot>Adulthood</slot>
@@ -222,13 +212,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Female</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Child -->
     
-    <BackstoryDef>
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Belle_Bonny_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Belle_Bonny_Child</identifier>
         <slot>Childhood</slot>
@@ -247,17 +236,15 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Female</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!--__ Caravan Traders (Fallout 3) __-->
 
     <!--_ Crow _-->
-
     <!-- Adult -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Crow</defName>
         <identifier>FCP_Backstory_Wastelander_Trader_Crow</identifier>
         <slot>Adulthood</slot>
@@ -277,13 +264,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Child -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Crow_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Trader_Crow_Child</identifier>
         <slot>Childhood</slot>
@@ -301,15 +287,13 @@
         <spawnCategories>
             <li>FCP_Backstory_Wasteland_Trader_Crow_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!--_ Crazy Wolfgang _-->
-
     <!-- Adult -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Crazy_Wolfgang</defName>
         <identifier>FCP_Backstory_Wastelander_Trader_Crazy_Wolfgang</identifier>
         <slot>Adulthood</slot>
@@ -329,13 +313,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Child -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Crazy_Wolfgang_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Trader_Crazy_Wolfgang_Child</identifier>
         <slot>Childhood</slot>
@@ -353,15 +336,13 @@
         <spawnCategories>
             <li>FCP_Backstory_Wasteland_Trader_Crazy_Wolfgang_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!--_ Doc Hoff _-->
-
     <!-- Adult -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Doc_Hoff</defName>
         <identifier>FCP_Backstory_Wastelander_Trader_Doc_Hoff</identifier>
         <slot>Adulthood</slot>
@@ -381,13 +362,12 @@
         </spawnCategories>
         <bodyTypeFemale>Male</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Child -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Doc_Hoff_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Trader_Doc_Hoff_Child</identifier>
         <slot>Childhood</slot>
@@ -404,15 +384,13 @@
         <spawnCategories>
             <li>FCP_Backstory_Wasteland_Trader_Doc_Hoff_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!--_ Lucky Harith _-->
-
     <!-- Adult -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Lucky_Harith</defName>
         <identifier>FCP_Backstory_Wastelander_Trader_Lucky_Harith</identifier>
         <slot>Adulthood</slot>
@@ -432,13 +410,12 @@
         </spawnCategories>
         <bodyTypeFemale>Male</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Child -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Lucky_Harith_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Trader_Lucky_Harith_Child</identifier>
         <slot>Childhood</slot>
@@ -455,17 +432,15 @@
         <spawnCategories>
             <li>FCP_Backstory_Wasteland_Trader_Lucky_Harith_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!--___ Adults ___-->
 
     <!--_ Rivet City Security _-->
-
     <!-- Standard Security Officer -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Rivet_City_Security_Officer</defName>
         <identifier>FCP_Backstory_Rivet_City_Security_Officer</identifier>
         <slot>Adulthood</slot>
@@ -485,13 +460,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Veteran Security Officer -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Rivet_City_Security_Veteran</defName>
         <identifier>FCP_Backstory_Rivet_City_Security_Veteran</identifier>
         <slot>Adulthood</slot>
@@ -511,13 +485,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Rookie Security Officer -->
     
-    <BackstoryDef>
+<BackstoryDef>
         <defName>FCP_Backstory_Rivet_City_Security_Rookie</defName>
         <identifier>FCP_Backstory_Rivet_City_Security_Rookie</identifier>
         <slot>Adulthood</slot>
@@ -537,13 +510,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Wasteland Farmer -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Wasteland_Farmer</defName>
         <identifier>FCP_Backstory_Wastelander_Wasteland_Farmer</identifier>
         <slot>Adulthood</slot>
@@ -564,13 +536,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Sawbones -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Sawbones</defName>
         <identifier>FCP_Backstory_Wastelander_Sawbones</identifier>
         <slot>Adulthood</slot>
@@ -592,13 +563,12 @@
         <bodyTypeGlobal>Thin</bodyTypeGlobal>
         <bodyTypeFemale>Thin</bodyTypeFemale>
         <bodyTypeMale>Thin</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Moonshiner -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Moonshiner</defName>
         <identifier>FCP_Backstory_Wastelander_Moonshiner</identifier>
         <slot>Adulthood</slot>
@@ -618,13 +588,12 @@
         <bodyTypeGlobal>Fat</bodyTypeGlobal>
         <bodyTypeFemale>Fat</bodyTypeFemale>
         <bodyTypeMale>Fat</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Slaver -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Slaver</defName>
         <identifier>FCP_Backstory_Wastelander_Slaver</identifier>
         <slot>Adulthood</slot>
@@ -645,13 +614,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Caravaneer -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Caravaneer</defName>
         <identifier>FCP_Backstory_Wastelander_Caravaneer</identifier>
         <slot>Adulthood</slot>
@@ -672,13 +640,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Weapon Artisan -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Weapon_Artisan</defName>
         <identifier>FCP_Backstory_Wastelander_Weapon_Artisan</identifier>
         <slot>Adulthood</slot>
@@ -698,13 +665,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Water_Merchant -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Water_Merchant</defName>
         <identifier>FCP_Backstory_Wastelander_Water_Merchant</identifier>
         <slot>Adulthood</slot>
@@ -724,13 +690,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Roving Trader -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Roving_Trader</defName>
         <identifier>FCP_Backstory_Wastelander_Roving_Trader</identifier>
         <slot>Adulthood</slot>
@@ -752,13 +717,12 @@
         <bodyTypeGlobal>Thin</bodyTypeGlobal>
         <bodyTypeFemale>Thin</bodyTypeFemale>
         <bodyTypeMale>Thin</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Caravan Guard -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Caravan_Guard</defName>
         <identifier>FCP_Backstory_Wastelander_Caravan_Guard</identifier>
         <slot>Adulthood</slot>
@@ -779,14 +743,12 @@
         <bodyTypeGlobal>Hulk</bodyTypeGlobal>
         <bodyTypeFemale>Hulk</bodyTypeFemale>
         <bodyTypeMale>Hulk</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
-
     <!-- Small Time Mercenary -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Small_Time_Mercenary</defName>
         <identifier>FCP_Backstory_Wastelander_Small_Time_Mercenary</identifier>
         <slot>Adulthood</slot>
@@ -807,13 +769,12 @@
         <bodyTypeGlobal>Hulk</bodyTypeGlobal>
         <bodyTypeFemale>Hulk</bodyTypeFemale>
         <bodyTypeMale>Hulk</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Wasteland Artist -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Wasteland_Artist</defName>
         <identifier>FCP_Backstory_Wastelander_Wasteland_Artist</identifier>
         <slot>Adulthood</slot>
@@ -834,13 +795,12 @@
         <bodyTypeGlobal>Thin</bodyTypeGlobal>
         <bodyTypeFemale>Thin</bodyTypeFemale>
         <bodyTypeMale>Thin</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Settlement Guard -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Settlement_Guard</defName>
         <identifier>FCP_Backstory_Wastelander_Settlement_Guard</identifier>
         <slot>Adulthood</slot>
@@ -861,13 +821,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Courier -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Courier</defName>
         <identifier>FCP_Backstory_Wastelander_Courier</identifier>
         <slot>Adulthood</slot>
@@ -889,13 +848,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Gecko Hunter -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Gecko_Hunter</defName>
         <identifier>FCP_Backstory_Wastelander_Gecko_Hunter</identifier>
         <slot>Adulthood</slot>
@@ -915,13 +873,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Sheriff -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Sheriff</defName>
         <identifier>FCP_Backstory_Wastelander_Sheriff</identifier>
         <slot>Adulthood</slot>
@@ -940,13 +897,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Prospector -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Prospector</defName>
         <identifier>FCP_Backstory_Wastelander_Prospector</identifier>
         <slot>Adulthood</slot>
@@ -965,13 +921,12 @@
         <bodyTypeGlobal>Fat</bodyTypeGlobal>
         <bodyTypeFemale>Fat</bodyTypeFemale>
         <bodyTypeMale>Fat</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Freed Slave -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Freed_Slave</defName>
         <identifier>FCP_Backstory_Wastelander_Freed_Slave</identifier>
         <slot>Adulthood</slot>
@@ -992,12 +947,10 @@
         <bodyTypeGlobal>Thin</bodyTypeGlobal>
         <bodyTypeFemale>Thin</bodyTypeFemale>
         <bodyTypeMale>Thin</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Nuka-Cola Fan -->
-
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Nuka_Cola_Fan</defName>
         <identifier>FCP_Backstory_Wastelander_Nuka_Cola_Fan</identifier>
@@ -1018,13 +971,12 @@
         <bodyTypeGlobal>Thin</bodyTypeGlobal>
         <bodyTypeFemale>Thin</bodyTypeFemale>
         <bodyTypeMale>Thin</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Tinkerer -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Tinkerer</defName>
         <identifier>FCP_Backstory_Wastelander_Tinkerer</identifier>
         <slot>Adulthood</slot>
@@ -1044,13 +996,12 @@
         <bodyTypeGlobal>Thin</bodyTypeGlobal>
         <bodyTypeFemale>Thin</bodyTypeFemale>
         <bodyTypeMale>Thin</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Former Junkie -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Former_Junkie</defName>
         <identifier>FCP_Backstory_Wastelander_Former_Junkie</identifier>
         <slot>Adulthood</slot>
@@ -1063,20 +1014,20 @@
             <Medicine>2</Medicine>
         </skillGains>
         <!-- chemical damage (severe) -->
-        <workDisables>None</workDisables>
+        
+<workDisables>None</workDisables>
         <requiredWorkTags>None</requiredWorkTags>
         <spawnCategories>
             <li>FCP_Backstory_Wastelander</li>
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Drifting Musician -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Drifting_Musician</defName>
         <identifier>FCP_Backstory_Wastelander_Drifting_Musician</identifier>
         <slot>Adulthood</slot>
@@ -1095,13 +1046,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Militia Member -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Militia_Member</defName>
         <identifier>FCP_Backstory_Wastelander_Militia_Member</identifier>
         <slot>Adulthood</slot>
@@ -1121,13 +1071,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Former Tribal -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Former_Tribal</defName>
         <identifier>FCP_Backstory_Wastelander_Former_Tribal</identifier>
         <slot>Adulthood</slot>
@@ -1148,13 +1097,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Radio Presenter -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Radio_Presenter</defName>
         <identifier>FCP_Backstory_Wastelander_Radio_Presenter</identifier>
         <slot>Adulthood</slot>
@@ -1175,13 +1123,12 @@
         <bodyTypeGlobal>Thin</bodyTypeGlobal>
         <bodyTypeFemale>Thin</bodyTypeFemale>
         <bodyTypeMale>Thin</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Wasteland Butcher -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Wasteland_Butcher</defName>
         <identifier>FCP_Backstory_Wastelander_Wasteland_Butcher</identifier>
         <slot>Adulthood</slot>
@@ -1203,13 +1150,12 @@
         <bodyTypeGlobal>Fat</bodyTypeGlobal>
         <bodyTypeFemale>Fat</bodyTypeFemale>
         <bodyTypeMale>Fat</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Wandering Priest -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Wandering_Priest</defName>
         <identifier>FCP_Backstory_Wastelander_Wandering_Priest</identifier>
         <slot>Adulthood</slot>
@@ -1230,13 +1176,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Children of Atom Preacher -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Children_of_Atom_Preacher</defName>
         <identifier>FCP_Backstory_Wastelander_Children_of_Atom_Preacher</identifier>
         <slot>Adulthood</slot>
@@ -1258,13 +1203,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Water Purifier Worker -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Water_Purifier_Worker</defName>
         <identifier>FCP_Backstory_Wastelander_Water_Purifier_Worker</identifier>
         <slot>Adulthood</slot>
@@ -1284,13 +1228,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Solar Panel Expert -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Solar_Panel_Expert</defName>
         <identifier>FCP_Backstory_Wastelander_Solar_Panel_Expert</identifier>
         <slot>Adulthood</slot>
@@ -1309,13 +1252,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Roadside Merchant -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Roadside_Merchant</defName>
         <identifier>FCP_Backstory_Wastelander_Roadside_Merchant</identifier>
         <slot>Adulthood</slot>
@@ -1336,13 +1278,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Enclave Patriot -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Enclave_Patriot</defName>
         <identifier>FCP_Backstory_Wastelander_Enclave_Patriot</identifier>
         <slot>Adulthood</slot>
@@ -1363,13 +1304,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Wasteland Bounty Hunter -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Wasteland_Bounty_Hunter</defName>
         <identifier>FCP_Backstory_Wastelander_Wasteland_Bounty_Hunter</identifier>
         <slot>Adulthood</slot>
@@ -1389,13 +1329,12 @@
         <bodyTypeGlobal>Hulk</bodyTypeGlobal>
         <bodyTypeFemale>Hulk</bodyTypeFemale>
         <bodyTypeMale>Hulk</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Wasteland Teacher -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Wasteland_Teacher</defName>
         <identifier>FCP_Backstory_Wastelander_Wasteland_Teacher</identifier>
         <slot>Adulthood</slot>
@@ -1416,13 +1355,12 @@
         <bodyTypeGlobal>Thin</bodyTypeGlobal>
         <bodyTypeFemale>Thin</bodyTypeFemale>
         <bodyTypeMale>Thin</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Wasteland Quack -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Wasteland_Quack</defName>
         <identifier>FCP_Backstory_Wastelander_Wasteland_Quack</identifier>
         <slot>Adulthood</slot>
@@ -1445,13 +1383,12 @@
         <bodyTypeGlobal>Thin</bodyTypeGlobal>
         <bodyTypeFemale>Thin</bodyTypeFemale>
         <bodyTypeMale>Thin</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Wasteland Hooker -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Wasteland_Hooker</defName>
         <identifier>FCP_Backstory_Wastelander_Wasteland_Hooker</identifier>
         <slot>Adulthood</slot>
@@ -1470,13 +1407,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Wasteland Mayor -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Wasteland_Mayor</defName>
         <identifier>FCP_Backstory_Wastelander_Wasteland_Mayor</identifier>
         <slot>Adulthood</slot>
@@ -1497,13 +1433,12 @@
         <bodyTypeGlobal>Fat</bodyTypeGlobal>
         <bodyTypeFemale>Fat</bodyTypeFemale>
         <bodyTypeMale>Fat</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Daring Explorer -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Daring_Explorer</defName>
         <identifier>FCP_Backstory_Wastelander_Daring_Explorer</identifier>
         <slot>Adulthood</slot>
@@ -1524,13 +1459,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Holodisk Librarian -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Holodisk_Librarian</defName>
         <identifier>FCP_Backstory_Wastelander_Holodisk_Librarian</identifier>
         <slot>Adulthood</slot>
@@ -1551,13 +1485,12 @@
         <bodyTypeGlobal>Thin</bodyTypeGlobal>
         <bodyTypeFemale>Thin</bodyTypeFemale>
         <bodyTypeMale>Thin</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Diner Chef -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Diner_Chef</defName>
         <identifier>FCP_Backstory_Wastelander_Diner_Chef</identifier>
         <slot>Adulthood</slot>
@@ -1580,13 +1513,12 @@
         <bodyTypeGlobal>Fat</bodyTypeGlobal>
         <bodyTypeFemale>Fat</bodyTypeFemale>
         <bodyTypeMale>Fat</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Brotherhood Deserter -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Brotherhood_Deserter</defName>
         <identifier>FCP_Backstory_Wastelander_Brotherhood_Deserter</identifier>
         <slot>Adulthood</slot>
@@ -1608,13 +1540,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Implant Expert -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Implant_Expert</defName>
         <identifier>FCP_Backstory_Wastelander_Implant_Expert</identifier>
         <slot>Adulthood</slot>
@@ -1636,12 +1567,10 @@
         <bodyTypeGlobal>Thin</bodyTypeGlobal>
         <bodyTypeFemale>Thin</bodyTypeFemale>
         <bodyTypeMale>Thin</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Co-op Gardener -->
-
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Co_op_Gardener</defName>
         <identifier>FCP_Backstory_Wastelander_Co_op_Gardener</identifier>
@@ -1662,13 +1591,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Greaser -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Greaser</defName>
         <identifier>FCP_Backstory_Wastelander_Greaser</identifier>
         <slot>Adulthood</slot>
@@ -1688,15 +1616,13 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!--__ Children __-->
-
     <!-- Orphaned Wanderer -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Orphaned_Wanderer</defName>
         <identifier>FCP_Backstory_Wastelander_Orphaned_Wanderer</identifier>
         <slot>Childhood</slot>
@@ -1716,13 +1642,12 @@
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Male</bodyTypeMale>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Child Entrepreneur -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Child_Entrepreneur</defName>
         <identifier>FCP_Backstory_Wastelander_Child_Entrepreneur</identifier>
         <slot>Childhood</slot>
@@ -1738,13 +1663,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Curious Child -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Curious_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Curious_Child</identifier>
         <slot>Childhood</slot>
@@ -1761,13 +1685,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Bully -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Bully</defName>
         <identifier>FCP_Backstory_Wastelander_Bully</identifier>
         <slot>Childhood</slot>
@@ -1783,13 +1706,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Apprentice -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Apprentice</defName>
         <identifier>FCP_Backstory_Wastelander_Apprentice</identifier>
         <slot>Childhood</slot>
@@ -1809,13 +1731,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- BB Gun Crack shot -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_BB_Gun_Crack_shot</defName>
         <identifier>FCP_Backstory_Wastelander_BB_Gun_Crack_shot</identifier>
         <slot>Childhood</slot>
@@ -1831,13 +1752,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Ruin Dweller -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Ruin_Dweller</defName>
         <identifier>FCP_Backstory_Wastelander_Ruin_Dweller</identifier>
         <slot>Childhood</slot>
@@ -1856,13 +1776,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Gas Station Inhabitant -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Gas_Station_Inhabitant</defName>
         <identifier>FCP_Backstory_Wastelander_Gas_Station_Inhabitant</identifier>
         <slot>Childhood</slot>
@@ -1879,13 +1798,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Caravan Child -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Caravan_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Caravan_Child</identifier>
         <slot>Childhood</slot>
@@ -1901,19 +1819,18 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Street Kid -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Street_Kid</defName>
         <identifier>FCP_Backstory_Wastelander_Street_Kid</identifier>
         <slot>Childhood</slot>
         <title>Street Kid</title>
         <titleShort>Street Kid</titleShort>
-        <description>[PAWN_nameDef] was born and raised on the streets of a settlement somewhere in the wasteland. From a very young age [PAWN_pronoun] had to take care of [PAWN_objective]self and the fact [PAWN_pronoun] made it to adulthood at all showed [PAWN_possessive ] tenacity.</description>
+        <description>[PAWN_nameDef] was born and raised on the streets of a settlement somewhere in the wasteland. From a very young age [PAWN_pronoun] had to take care of [PAWN_objective]self and the fact [PAWN_pronoun] made it to adulthood at all showed [PAWN_possessive] tenacity.</description>
         <skillGains>
             <Melee>3</Melee>
             <Cooking>1</Cooking>
@@ -1924,13 +1841,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Cannibalistic Youth -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Cannibalistic_Youth</defName>
         <identifier>FCP_Backstory_Wastelander_Cannibalistic_Youth</identifier>
         <slot>Childhood</slot>
@@ -1947,13 +1863,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Cryostasis Child -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Cryostasis_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Cryostasis_Child</identifier>
         <slot>Childhood</slot>
@@ -1972,13 +1887,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Wild Child -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Wild_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Wild_Child</identifier>
         <slot>Childhood</slot>
@@ -1997,13 +1911,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Stung by Radscorpion -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Stung_by_Radscorpion</defName>
         <identifier>FCP_Backstory_Wastelander_Stung_by_Radscorpion</identifier>
         <slot>Childhood</slot>
@@ -2021,12 +1934,10 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Eco-Cultist -->
-
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Eco_Cultist</defName>
         <identifier>FCP_Backstory_Wastelander_Eco_Cultist</identifier>
@@ -2045,13 +1956,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Whorehouse Kid -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Whorehouse_Kid</defName>
         <identifier>FCP_Backstory_Wastelander_Whorehouse_Kid</identifier>
         <slot>Childhood</slot>
@@ -2068,13 +1978,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Gambler’s Kid -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Gamblers_Kid</defName>
         <identifier>FCP_Backstory_Wastelander_Gamblers_Kid</identifier>
         <slot>Childhood</slot>
@@ -2094,13 +2003,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Child Sheriff -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Child_Sheriff</defName>
         <identifier>FCP_Backstory_Wastelander_Child_Sheriff</identifier>
         <slot>Childhood</slot>
@@ -2117,13 +2025,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Surviving Mormon -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Surviving_Mormon</defName>
         <identifier>FCP_Backstory_Wastelander_Surviving_Mormon</identifier>
         <slot>Childhood</slot>
@@ -2142,13 +2049,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Advanced Student -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Advanced_Student</defName>
         <identifier>FCP_Backstory_Wastelander_Advanced_Student</identifier>
         <slot>Childhood</slot>
@@ -2167,13 +2073,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Livestock Herder -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Livestock_Herder</defName>
         <identifier>FCP_Backstory_Wastelander_Livestock_Herder</identifier>
         <slot>Childhood</slot>
@@ -2190,13 +2095,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Nomad Child -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Nomad_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Nomad_Child</identifier>
         <slot>Childhood</slot>
@@ -2215,13 +2119,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Abducted by Aliens -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Abducted_by_Aliens</defName>
         <identifier>FCP_Backstory_Wastelander_Abducted_by_Aliens</identifier>
         <slot>Childhood</slot>
@@ -2239,13 +2142,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Swamp Dweller -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Swamp_Dweller</defName>
         <identifier>FCP_Backstory_Wastelander_Swamp_Dweller</identifier>
         <slot>Childhood</slot>
@@ -2263,13 +2165,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Pit Refugee -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Pit_Refugee</defName>
         <identifier>FCP_Backstory_Wastelander_Pit_Refugee</identifier>
         <slot>Childhood</slot>
@@ -2287,13 +2188,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Greenhorn -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Greenhorn</defName>
         <identifier>FCP_Backstory_Wastelander_Greenhorn</identifier>
         <slot>Childhood</slot>
@@ -2310,13 +2210,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Megaton Child -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Megaton_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Megaton_Child</identifier>
         <slot>Childhood</slot>
@@ -2333,13 +2232,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Rivet City Child -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Rivet_City_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Rivet_City_Child</identifier>
         <slot>Childhood</slot>
@@ -2359,13 +2257,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Children of Atom Novice -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Children_of_Atom_Novice</defName>
         <identifier>FCP_Backstory_Wastelander_Children_of_Atom_Novice</identifier>
         <slot>Childhood</slot>
@@ -2384,13 +2281,12 @@
             <li>FCP_Backstory_Wastelander_Child</li>
             <li>FCP_Backstory_Children_of_Atom_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Diamond City Kid -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Diamond_City_Kid</defName>
         <identifier>FCP_Backstory_Wastelander_Diamond_City_Kid</identifier>
         <slot>Childhood</slot>
@@ -2407,13 +2303,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Novac Kid -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Novac_Kid</defName>
         <identifier>FCP_Backstory_Wastelander_Novac_Kid</identifier>
         <slot>Childhood</slot>
@@ -2430,13 +2325,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Westside Child -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Westside_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Westside_Child</identifier>
         <slot>Childhood</slot>
@@ -2453,13 +2347,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Goodsprings Child -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Goodsprings_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Goodsprings_Child</identifier>
         <slot>Childhood</slot>
@@ -2476,13 +2369,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Trapper Offspring -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trapper_Offspring</defName>
         <identifier>FCP_Backstory_Wastelander_Trapper_Offspring</identifier>
         <slot>Childhood</slot>
@@ -2499,13 +2391,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Primm Kid -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Primm_Kid</defName>
         <identifier>FCP_Backstory_Wastelander_Primm_Kid</identifier>
         <slot>Childhood</slot>
@@ -2522,13 +2413,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Tribal Child -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Tribal_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Tribal_Child</identifier>
         <slot>Childhood</slot>
@@ -2546,13 +2436,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Gunslinger Juvie -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Gunslinger_Juvie</defName>
         <identifier>FCP_Backstory_Wastelander_Gunslinger_Juvie</identifier>
         <slot>Childhood</slot>
@@ -2569,13 +2458,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Frontier Kid -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Frontier_Kid</defName>
         <identifier>FCP_Backstory_Wastelander_Frontier_Kid</identifier>
         <slot>Childhood</slot>
@@ -2594,13 +2482,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Displaced Child -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Displaced_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Displaced_Child</identifier>
         <slot>Childhood</slot>
@@ -2617,13 +2504,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Born Miner -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Born_Miner</defName>
         <identifier>FCP_Backstory_Wastelander_Born_Miner</identifier>
         <slot>Childhood</slot>
@@ -2640,13 +2526,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Apothecary’s Apprentice -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Apothecarys_Apprentice</defName>
         <identifier>FCP_Backstory_Wastelander_Apothecarys_Apprentice</identifier>
         <slot>Childhood</slot>
@@ -2663,13 +2548,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Entitled Youth -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Entitled_Youth</defName>
         <identifier>FCP_Backstory_Wastelander_Entitled_Youth</identifier>
         <slot>Childhood</slot>
@@ -2686,13 +2570,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Drug Courier -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Drug_Courier</defName>
         <identifier>FCP_Backstory_Wastelander_Drug_Courier</identifier>
         <slot>Childhood</slot>
@@ -2709,13 +2592,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Junior Mechanic -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Junior_Mechanic</defName>
         <identifier>FCP_Backstory_Wastelander_Junior_Mechanic</identifier>
         <slot>Childhood</slot>
@@ -2731,13 +2613,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Little Lamplight Kid -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Little_Lamplight_Kid</defName>
         <identifier>FCP_Backstory_Wastelander_Little_Lamplight_Kid</identifier>
         <slot>Childhood</slot>
@@ -2754,13 +2635,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Goodneighbour Juvie -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Goodneighbour_Juvie</defName>
         <identifier>FCP_Backstory_Wastelander_Goodneighbour_Juvie</identifier>
         <slot>Childhood</slot>
@@ -2777,13 +2657,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Shopkeeper’s Child -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Shopkeepers_Child</defName>
         <identifier>FCP_Backstory_Wastelander_Shopkeepers_Child</identifier>
         <slot>Childhood</slot>
@@ -2800,13 +2679,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Aspiring Treasure Hunter -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Aspiring_Treasure_Hunter</defName>
         <identifier>FCP_Backstory_Wastelander_Aspiring_Treasure_Hunter</identifier>
         <slot>Childhood</slot>
@@ -2824,13 +2702,12 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
 
     <!-- Merc’s Kid -->
-
-    <BackstoryDef>
+    
+<BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Mercs_Kid</defName>
         <identifier>FCP_Backstory_Wastelander_Mercs_Kid</identifier>
         <slot>Childhood</slot>
@@ -2848,8 +2725,6 @@
         <spawnCategories>
             <li>FCP_Backstory_Wastelander_Child</li>
         </spawnCategories>
-        <possessions>
-        </possessions>
+        <possessions></possessions>
     </BackstoryDef>
-
 </Defs>
