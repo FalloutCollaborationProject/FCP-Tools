@@ -47,6 +47,20 @@
 
     <!--_____ Male Hairs _____-->
 
+    <!-- Urban Ranger -->
+
+    <HairDef>
+        <defName>FCP_Hair_Urban_Ranger</defName>
+        <label>Urban Ranger</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Male/Urban_Ranger/FCP_Urban_Ranger</texPath>
+        <category>FCP_Style_Pre_War</category>
+        <styleTags>
+            <li>Pre_War</li>
+            <li>Urban</li>
+        </styleTags>
+    </HairDef>
+
     <!-- Balding -->
 
     <HairDef>

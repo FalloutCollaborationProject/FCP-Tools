@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Laser Bullets __________-->
+
+    <!-- Laser -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_Laser</defName>
+        <label>Laser Shot</label>
+        <graphicData>
+            <texPath>Things/Projectile/FCP_Laser</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>FCP_Damage_Laser_Burn</damageDef>
+            <damageAmountBase>21</damageAmountBase>
+            <armorPenetrationBase>1.28</armorPenetrationBase>
+            <speed>70</speed>
+        </projectile>
+    </ThingDef>
+
+    <!-- MF Breeder -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_MF_Breeder</defName>
+        <label>Laser Shot</label>
+        <graphicData>
+            <texPath>Things/Projectile/FCP_Laser</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>FCP_Damage_Laser_Burn</damageDef>
+            <damageAmountBase>12</damageAmountBase>
+            <armorPenetrationBase>1.2</armorPenetrationBase>
+            <speed>65</speed>
+        </projectile>
+    </ThingDef>
+
+    <!-- Laser S -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_Laser_S</defName>
+        <label>Laser Shot</label>
+        <graphicData>
+            <texPath>Things/Projectile/FCP_Laser_S</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>FCP_Damage_Laser_Burn</damageDef>
+            <damageAmountBase>25</damageAmountBase>
+            <armorPenetrationBase>0.85</armorPenetrationBase>
+            <speed>75</speed>
+        </projectile>
+    </ThingDef>
+
+    <!--__________ Plasma Bullets __________-->
+
+    <!-- Plasma Cast -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_Plasma</defName>
+        <label>Plasma Cast</label>
+        <graphicData>
+            <texPath>Things/Projectile/FCP_Plasma</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>FCP_Damage_Plasma_Burn</damageDef>
+            <damageAmountBase>27</damageAmountBase>
+            <armorPenetrationBase>1.75</armorPenetrationBase>
+            <speed>55</speed>
+        </projectile>
+    </ThingDef>
+
+    <!--__________ Gauss Bullets __________-->
+
+    <!-- Gauss 2mm EC -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_Gauss</defName>
+        <label>2mm EC Round</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>22</damageAmountBase>
+            <armorPenetrationBase>1.95</armorPenetrationBase>
+            <speed>100</speed>
+            <stoppingPower>2.5</stoppingPower>
+        </projectile>
+    </ThingDef>
+
+    <!--__________ Ultracite Bullets __________-->
+
+    <!-- Ultracite Round -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_Ultracite</defName>
+        <label>Ultracite Shot</label>
+        <graphicData>
+            <texPath>Things/Projectile/FCP_Plasma</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>FCP_Damage_Plasma_Burn</damageDef>
+            <damageAmountBase>22</damageAmountBase>
+            <armorPenetrationBase>1.65</armorPenetrationBase>
+            <speed>70</speed>
+        </projectile>
+    </ThingDef>
+
+</Defs>
