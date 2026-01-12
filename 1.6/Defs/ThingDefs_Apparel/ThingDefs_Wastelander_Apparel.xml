@@ -20,9 +20,6 @@
 
     <ThingDef ParentName="ApparelBase" Name="FCP_Apparel_Base" Abstract="True">
         <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>Apparel</li>
-        </thingCategories>
     </ThingDef>
 
     <!-- Pre-War Army Uniform Craftable -->
@@ -267,7 +264,7 @@
             <texPath>Things/Apparel/Custom/Mysterious_Stranger/Mysterious_Stranger_Hat/FCP_Mysterious_Stranger_Hat</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <recipeMaker>
+<recipeMaker>
             <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
             <researchPrerequisite>FCP_Research_BusinessWear</researchPrerequisite>
             <skillRequirements>

@@ -16,8 +16,7 @@
             </points>
         </selectionWeightPerPointsCurve>
         <selectionWeightCurvesPerFaction>
-
-    </selectionWeightCurvesPerFaction>
+        </selectionWeightCurvesPerFaction>
         <pointsFactorCurve>
             <points>
                 <li>0, 1</li>
