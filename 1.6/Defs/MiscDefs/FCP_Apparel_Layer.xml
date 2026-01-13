@@ -3,6 +3,14 @@
 
     <!--__________ Apparel Layers __________-->
 
+    <!--_____ Misc Armor _____-->
+
+    <ApparelLayerDef>
+        <defName>FCP_Apparel_Layer_Display_Over_All</defName>
+        <label>Display Over All</label>
+        <drawOrder>400</drawOrder>
+      </ApparelLayerDef>
+
     <!--_____ Utility Belt _____-->
 
     <!-- Mine Pocket -->
