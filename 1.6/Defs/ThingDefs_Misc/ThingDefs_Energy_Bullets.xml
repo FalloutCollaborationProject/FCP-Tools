@@ -15,7 +15,7 @@
         <projectile>
             <damageDef>FCP_Damage_Laser_Burn</damageDef>
             <damageAmountBase>21</damageAmountBase>
-            <armorPenetrationBase>1.28</armorPenetrationBase>
+            <armorPenetrationBase>2.2</armorPenetrationBase>
             <speed>70</speed>
         </projectile>
     </ThingDef>
@@ -32,7 +32,7 @@
         <projectile>
             <damageDef>FCP_Damage_Laser_Burn</damageDef>
             <damageAmountBase>12</damageAmountBase>
-            <armorPenetrationBase>1.2</armorPenetrationBase>
+            <armorPenetrationBase>2.0</armorPenetrationBase>
             <speed>65</speed>
         </projectile>
     </ThingDef>
@@ -49,7 +49,7 @@
         <projectile>
             <damageDef>FCP_Damage_Laser_Burn</damageDef>
             <damageAmountBase>25</damageAmountBase>
-            <armorPenetrationBase>0.85</armorPenetrationBase>
+            <armorPenetrationBase>1.4</armorPenetrationBase>
             <speed>75</speed>
         </projectile>
     </ThingDef>
@@ -68,7 +68,7 @@
         <projectile>
             <damageDef>FCP_Damage_Plasma_Burn</damageDef>
             <damageAmountBase>27</damageAmountBase>
-            <armorPenetrationBase>1.75</armorPenetrationBase>
+            <armorPenetrationBase>2.8</armorPenetrationBase>
             <speed>55</speed>
         </projectile>
     </ThingDef>
@@ -87,7 +87,7 @@
         <projectile>
             <damageDef>Bullet</damageDef>
             <damageAmountBase>22</damageAmountBase>
-            <armorPenetrationBase>1.95</armorPenetrationBase>
+            <armorPenetrationBase>3.4</armorPenetrationBase>
             <speed>100</speed>
             <stoppingPower>2.5</stoppingPower>
         </projectile>
@@ -107,7 +107,7 @@
         <projectile>
             <damageDef>FCP_Damage_Plasma_Burn</damageDef>
             <damageAmountBase>22</damageAmountBase>
-            <armorPenetrationBase>1.65</armorPenetrationBase>
+            <armorPenetrationBase>2.6</armorPenetrationBase>
             <speed>70</speed>
         </projectile>
     </ThingDef>
