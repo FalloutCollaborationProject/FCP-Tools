@@ -151,6 +151,7 @@
         <chemicalAddictionChance>0</chemicalAddictionChance>
         <invNutrition>2.7</invNutrition>
         <invFoodDef>MealSurvivalPack</invFoodDef>
+        <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
         <disallowedTraits>
             <li>Nudist</li>
         </disallowedTraits>
