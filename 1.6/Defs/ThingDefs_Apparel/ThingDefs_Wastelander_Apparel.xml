@@ -151,11 +151,11 @@
             <MaxHitPoints>250</MaxHitPoints>
             <MarketValue>950</MarketValue>
             <Mass>5.0</Mass>
-            <ArmorRating_Sharp>0.90</ArmorRating_Sharp>
-            <ArmorRating_Blunt>0.45</ArmorRating_Blunt>
-            <ArmorRating_Heat>0.30</ArmorRating_Heat>
-            <Insulation_Cold>5</Insulation_Cold>
-            <Insulation_Heat>3</Insulation_Heat>
+            <ArmorRating_Sharp>1.05</ArmorRating_Sharp>
+            <ArmorRating_Blunt>0.48</ArmorRating_Blunt>
+            <ArmorRating_Heat>0.38</ArmorRating_Heat>
+            <Insulation_Cold>10</Insulation_Cold>
+            <Insulation_Heat>8</Insulation_Heat>
             <EquipDelay>1.2</EquipDelay>
         </statBases>
         <apparel>
