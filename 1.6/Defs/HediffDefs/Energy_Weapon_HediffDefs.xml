@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!--__________ Energy Weapon Hediffs __________-->
+
+    <!--_____ Plasma Weapon Hediffs _____-->
+
+    <!-- Plasma Burn -->
+
+    <HediffDef ParentName="InjuryBase">
+        <defName>FCP_Hediff_Plasma_Burn</defName>
+        <label>Plasma Burn</label>
+        <labelNoun>a plasma burn</labelNoun>
+        <description>A plasma burn with minimal pain.</description>
+        <comps>
+            <li Class="HediffCompProperties_TendDuration">
+                <labelTendedWell>bandaged</labelTendedWell>
+                <labelTendedWellInner>tended</labelTendedWellInner>
+                <labelSolidTendedWell>tended</labelSolidTendedWell>
+            </li>
+            <li Class="HediffCompProperties_Infecter">
+                <infectionChance>0.30</infectionChance>
+            </li>
+            <li Class="HediffCompProperties_GetsPermanent">
+                <permanentLabel>plasma burn scar</permanentLabel>
+            </li>
+        </comps>
+        <injuryProps>
+            <painPerSeverity>0.0042</painPerSeverity>
+            <averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+            <canMerge>true</canMerge>
+            <destroyedLabel>Burned off</destroyedLabel>
+            <destroyedOutLabel>Burned out</destroyedOutLabel>
+        </injuryProps>
+    </HediffDef>
+
+    <!--_____ Laser Weapon Hediffs _____-->
+
+    <!-- Laser Burn -->
+
+    <HediffDef ParentName="InjuryBase">
+        <defName>FCP_Hediff_Laser_Burn</defName>
+        <label>Laser Burn</label>
+        <labelNoun>a laser burn</labelNoun>
+        <description>A laser burn with minimal pain.</description>
+        <comps>
+            <li Class="HediffCompProperties_TendDuration">
+                <labelTendedWell>bandaged</labelTendedWell>
+                <labelTendedWellInner>tended</labelTendedWellInner>
+                <labelSolidTendedWell>tended</labelSolidTendedWell>
+            </li>
+            <li Class="HediffCompProperties_Infecter">
+                <infectionChance>0.30</infectionChance>
+            </li>
+            <li Class="HediffCompProperties_GetsPermanent">
+                <permanentLabel>laser burn scar</permanentLabel>
+            </li>
+        </comps>
+        <injuryProps>
+            <painPerSeverity>0.0042</painPerSeverity>
+            <averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+            <canMerge>true</canMerge>
+            <destroyedLabel>Burned off</destroyedLabel>
+            <destroyedOutLabel>Burned out</destroyedOutLabel>
+        </injuryProps>
+    </HediffDef>
+
+    <!--_____ Gauss Weapon Hediffs _____-->
+
+    <!--_____ Pulse Weapon Hediffs _____-->
+
+</Defs>
