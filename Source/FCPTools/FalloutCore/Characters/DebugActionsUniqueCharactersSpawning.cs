@@ -147,6 +147,12 @@ public static class DebugActionsUniqueCharactersSpawning
         Find.WindowStack.Add(new Dialog_DebugOptionListLister(options, title));
     }
 
+    [DebugAction(CategoryName, "Open Character Browser", actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+    private static void OpenCharacterBrowser()
+    {
+        Find.WindowStack.Add(new Dialog_CharacterBrowser());
+    }
+
     [DebugAction(CategoryName, "Spawn Character from Def", actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap)]
     private static void SpawnCharacterFromDef()
     {
