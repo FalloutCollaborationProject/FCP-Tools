@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--========================= Bunker Floors =============================-->
+
+    <!-- Base -->
+    <TerrainDef Name="FCP_BunkerFloorBase" Abstract="True">
+        <layerable>true</layerable>
+        <affordances>
+            <li>Light</li>
+            <li>Medium</li>
+            <li>Heavy</li>
+            <li>Walkable</li>
+        </affordances>
+        <tags>
+            <li>Floor</li>
+        </tags>
+        <drawStyleCategory>Floors</drawStyleCategory>
+        <designationCategory>Floors</designationCategory>
+        <fertility>0</fertility>
+        <constructEffect>ConstructMetal</constructEffect>
+        <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+        <pollutionShaderType MayRequire="Ludeon.RimWorld.Biotech">TerrainFadeRoughLinearBurn</pollutionShaderType>
+        <pollutionOverlayTexturePath>Terrain/Surfaces/PollutionFloorSmooth</pollutionOverlayTexturePath>
+        <pollutionColor>(1, 1, 1, 0.8)</pollutionColor>
+        <pollutionOverlayScale>(0.75, 0.75)</pollutionOverlayScale>
+        <canEverTerraform>false</canEverTerraform>
+        <edgeType>Hard</edgeType>
+        <renderPrecedence>240</renderPrecedence>
+        <pathCost>0</pathCost>
+        <statBases>
+            <Beauty>1</Beauty>
+            <WorkToBuild>200</WorkToBuild>
+            <CleaningTimeFactor>0.6</CleaningTimeFactor>
+        </statBases>
+        <costList>
+            <Steel>4</Steel>
+        </costList>
+        <researchPrerequisites>
+            <li>Fabrication</li>
+        </researchPrerequisites>
+    </TerrainDef>
+
+    <!-- Round Grills Floor -->
+    <TerrainDef ParentName="FCP_BunkerFloorBase">
+        <defName>FCP_Floor_BunkerRoundGrills</defName>
+        <label>bunker floor (round grills)</label>
+        <description>Heavy-duty metal flooring with round ventilation grills, commonly found in pre-war military bunkers. Durable and easy to clean.</description>
+        <texturePath>Things/Building/Atlas/BunkerFloors/RoundGrills_Floor</texturePath>
+        <uiIconPath>Things/Building/Atlas/BunkerFloors/RoundGrills_FloorTiles</uiIconPath>
+        <statBases>
+            <Beauty>2</Beauty>
+            <WorkToBuild>220</WorkToBuild>
+            <CleaningTimeFactor>0.5</CleaningTimeFactor>
+        </statBases>
+        <designationHotKey>Misc7</designationHotKey>
+        <uiOrder>2100</uiOrder>
+    </TerrainDef>
+
+    <!-- Straight Grills Floor -->
+    <TerrainDef ParentName="FCP_BunkerFloorBase">
+        <defName>FCP_Floor_BunkerStraightGrills</defName>
+        <label>bunker floor (straight grills)</label>
+        <description>Heavy-duty metal flooring with straight ventilation grills, commonly found in pre-war military bunkers. Durable and easy to clean.</description>
+        <texturePath>Things/Building/Atlas/BunkerFloors/StraightGrills_Floor</texturePath>
+        <uiIconPath>Things/Building/Atlas/BunkerFloors/StraightGrills_FloorTiles</uiIconPath>
+        <statBases>
+            <Beauty>2</Beauty>
+            <WorkToBuild>220</WorkToBuild>
+            <CleaningTimeFactor>0.5</CleaningTimeFactor>
+        </statBases>
+        <designationHotKey>Misc8</designationHotKey>
+        <uiOrder>2101</uiOrder>
+    </TerrainDef>
+
+</Defs>

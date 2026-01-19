@@ -117,21 +117,6 @@ namespace StimPacks.Comps
                         healed *= 1.5f;
                     ToHeal -= healed;
                 }
-                else if(Props.HealMissingBodyParts)
-                {
-                    var missingBodyParts = Pawn.health.hediffSet.GetMissingPartsCommonAncestors();
-                    if (missingBodyParts.Count > 0)
-                    {
-                        var missing = missingBodyParts.First();
-                        Pawn.health.RemoveHediff(missing);
-                        var toAdd = HediffMaker.MakeHediff(HediffDefOf.Cut, Pawn, missing.Part);
-                        var partHealth = toAdd.Part.def.GetMaxHealth(Pawn) - 1f;
-                        Log.Warning(partHealth.ToString());
-                        toAdd.Severity = partHealth;
-                        Pawn.health.AddHediff(toAdd);
-                        ToHeal -= 3;
-                    }
-                }
             }
         }
     }

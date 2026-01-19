@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--========================= Bunker Wall =============================-->
+
+    <ThingDef ParentName="BuildingBase">
+        <defName>FCP_Wall_Bunker</defName>
+        <label>bunker wall</label>
+        <description>A heavy reinforced concrete wall designed for military bunkers. Extremely durable and provides excellent protection. These walls were commonly used in pre-war military installations.</description>
+        <thingClass>Building</thingClass>
+        <category>Building</category>
+        <noRightClickDraftAttack>true</noRightClickDraftAttack>
+        <replaceTags>
+            <li>Wall</li>
+        </replaceTags>
+        <graphicData>
+            <texPath>Things/Building/Atlas/BunkerWalls/FOWall1_Atlas</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <linkType>CornerFiller</linkType>
+            <linkFlags>
+                <li>Wall</li>
+                <li>Rock</li>
+            </linkFlags>
+            <damageData>
+                <cornerTL>Damage/Corner</cornerTL>
+                <cornerTR>Damage/Corner</cornerTR>
+                <cornerBL>Damage/Corner</cornerBL>
+                <cornerBR>Damage/Corner</cornerBR>
+                <edgeTop>Damage/Edge</edgeTop>
+                <edgeBot>Damage/Edge</edgeBot>
+                <edgeLeft>Damage/Edge</edgeLeft>
+                <edgeRight>Damage/Edge</edgeRight>
+            </damageData>
+        </graphicData>
+        <uiIconPath>Things/Building/Atlas/BunkerWalls/FOWall1_UI</uiIconPath>
+        <statBases>
+            <MaxHitPoints>800</MaxHitPoints>
+            <WorkToBuild>500</WorkToBuild>
+            <Flammability>0</Flammability>
+        </statBases>
+        <costList>
+            <Steel>15</Steel>
+            <ComponentIndustrial>2</ComponentIndustrial>
+        </costList>
+        <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+        <resourcesFractionWhenDeconstructed>0.75</resourcesFractionWhenDeconstructed>
+        <altitudeLayer>Building</altitudeLayer>
+        <passability>Impassable</passability>
+        <blockWind>true</blockWind>
+        <castEdgeShadows>true</castEdgeShadows>
+        <fillPercent>1</fillPercent>
+        <coversFloor>true</coversFloor>
+        <drawStyleCategory>Walls</drawStyleCategory>
+        <tickerType>Never</tickerType>
+        <rotatable>false</rotatable>
+        <selectable>true</selectable>
+        <neverMultiSelect>true</neverMultiSelect>
+        <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+        <holdsRoof>true</holdsRoof>
+        <designationCategory>Structure</designationCategory>
+        <staticSunShadowHeight>1.0</staticSunShadowHeight>
+        <blockLight>true</blockLight>
+        <canOverlapZones>false</canOverlapZones>
+        <fertility>0</fertility>
+        <building>
+            <isInert>true</isInert>
+            <ai_chillDestination>false</ai_chillDestination>
+        </building>
+        <damageMultipliers>
+            <li>
+                <damageDef>Bomb</damageDef>
+                <multiplier>0.5</multiplier>
+            </li>
+            <li>
+                <damageDef>Bullet</damageDef>
+                <multiplier>0.3</multiplier>
+            </li>
+            <li>
+                <damageDef>ArrowHighVelocity</damageDef>
+                <multiplier>0.3</multiplier>
+            </li>
+        </damageMultipliers>
+        <researchPrerequisites>
+            <li>Fabrication</li>
+        </researchPrerequisites>
+    </ThingDef>
+
+</Defs>
