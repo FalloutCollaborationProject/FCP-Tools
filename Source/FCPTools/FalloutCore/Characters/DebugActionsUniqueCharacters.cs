@@ -3,28 +3,11 @@ using LudeonTK;
 
 namespace FCP.Core;
 
+[UsedImplicitly(ImplicitUseTargetFlags.Members)]
 public static class DebugActionsUniqueCharacters
 {
-    public const string CategoryName = "FCP: Characters";
-    
-    [DebugAction(CategoryName, "Spawn Character", actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap)]
-    private static void GenerateCharacter()
-    {
-        var charOptions = new List<DebugMenuOption>();
+    private const string CategoryName = "FCP: Characters";
 
-        foreach (CharacterDef def in DefDatabase<CharacterDef>.AllDefsListForReading)
-        {
-            charOptions.Add(new DebugMenuOption(def.defName, DebugMenuOptionMode.Tool, delegate
-            {
-                IntVec3 cell = UI.MouseCell();
-                Pawn pawn = UniqueCharactersTracker.Instance.GetOrGenPawn(def);
-                GenSpawn.Spawn(pawn, cell, Find.CurrentMap);
-            }));
-        }
-        
-        Find.WindowStack.Add(new Dialog_DebugOptionListLister(charOptions, "Characters"));
-    }
-    
     [DebugAction(CategoryName, "Log Characters", actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.Playing)]
     private static void LogCharacters()
     {
