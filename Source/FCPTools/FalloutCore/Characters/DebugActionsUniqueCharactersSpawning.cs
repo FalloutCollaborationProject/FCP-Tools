@@ -167,7 +167,31 @@ public static class DebugActionsUniqueCharactersSpawning
                 GenSpawn.Spawn(pawn, cell, Find.CurrentMap);
             }));
         }
-        
+
         Find.WindowStack.Add(new Dialog_DebugOptionListLister(charOptions, "Characters"));
+    }
+
+    [DebugAction(CategoryName, "Generate All Characters", actionType = DebugActionType.Action, allowedGameStates = AllowedGameStates.PlayingOnMap)]
+    private static void GenerateAllCharacters()
+    {
+        var tracker = UniqueCharactersTracker.Instance;
+        var allDefs = DefDatabase<CharacterDef>.AllDefsListForReading;
+
+        int generated = 0;
+        int skipped = 0;
+
+        foreach (CharacterDef def in allDefs)
+        {
+            if (tracker.CharacterPawnExists(def))
+            {
+                skipped++;
+                continue;
+            }
+
+            tracker.GetOrGenPawn(def);
+            generated++;
+        }
+
+        Messages.Message($"Generated {generated} characters ({skipped} already existed)", MessageTypeDefOf.PositiveEvent, false);
     }
 }
