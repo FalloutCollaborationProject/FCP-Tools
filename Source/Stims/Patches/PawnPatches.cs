@@ -23,8 +23,6 @@ namespace StimPacks.Patches
             {
                 if(!ConfigUI.Config.AutoStim)
                     return;
-                if(__instance?.story?.traits == null)
-                    return;
                 if(!ConfigUI.Config.TeetotalerAutoStim && __instance.story.traits.DegreeOfTrait(TraitDefOf.DrugDesire) < 0)
                     return;
                 if (totalDamageDealt > 0)

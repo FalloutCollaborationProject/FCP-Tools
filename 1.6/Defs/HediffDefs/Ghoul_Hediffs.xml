@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <HediffDef>
+        <defName>ToxicHealing</defName>
+        <hediffClass>HediffWithComps</hediffClass>
+        <label>toxic metabolism</label>
+        <description>This creature's body converts toxic buildup into healing energy.</description>
+        <defaultLabelColor>(0.4, 1.0, 0.4)</defaultLabelColor>
+        <isBad>false</isBad>
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>1</maxSeverity>
+        <comps>
+            <li Class="FCP_Ghoul.HediffCompProperties_ToxicHealing" />
+        </comps>
+    </HediffDef>
+
+</Defs>

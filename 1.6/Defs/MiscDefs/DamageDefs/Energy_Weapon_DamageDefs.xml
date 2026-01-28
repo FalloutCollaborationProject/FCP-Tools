@@ -38,7 +38,7 @@
         <workerClass>FalloutCore.LaserBurn</workerClass>
         <label>laser burn</label>
         <hasForcefulImpact>false</hasForcefulImpact>
-        <makesBlood>false</makesBlood>
+        <makesBlood>true</makesBlood>
         <canInterruptJobs>false</canInterruptJobs>
         <externalViolence>true</externalViolence>
         <deathMessage>{0} has been laser burned to death.</deathMessage>

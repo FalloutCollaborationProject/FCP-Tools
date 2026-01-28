@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Verse;
 
-namespace PresettablePocketMap
+namespace FCP.PocketMaps
 {
     public class ModExtensionPresettablePocketMap : DefModExtension
     {
-        public List<PocketMapPresetDef> presetDefs = new List<PocketMapPresetDef>();
+        public List<string> prefabDefs;
+        public string abandonedMessage = "This pocket map has been abandoned and can no longer be entered.";
     }
 }

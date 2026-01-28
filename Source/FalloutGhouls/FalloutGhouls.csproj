@@ -4,8 +4,8 @@
     <OutputType>Library</OutputType>
     <TargetFramework>net48</TargetFramework>
     <!-- Ensure this matches the original framework version -->
-    <RootNamespace>FalloutGhouls</RootNamespace>
-    <AssemblyName>FalloutGhouls</AssemblyName>
+    <RootNamespace>FCP_Ghoul</RootNamespace>
+    <AssemblyName>FCP_Ghoul</AssemblyName>
     <LangVersion>latest</LangVersion>
     <Deterministic>true</Deterministic>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
@@ -40,11 +40,6 @@
   <ItemGroup>
     <PackageReference Include="Krafs.Publicizer" Version="2.*" PrivateAssets="all">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.4518" />
-    <PackageReference Include="Lib.Harmony" Version="2.3.6">
-      <ExcludeAssets>runtime</ExcludeAssets>
-      <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
   <PropertyGroup>

@@ -7,8 +7,8 @@
     <ProjectGuid>{8B8AAE7E-DE81-478E-8AEF-D0E3F4AE91D8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PresettablePocketMap</RootNamespace>
-    <AssemblyName>PresettablePocketMap</AssemblyName>
+    <RootNamespace>FCP.PocketMaps</RootNamespace>
+    <AssemblyName>FCP.PresettablePocketMap</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -48,11 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ModExtensionPresettablePocketMap.cs" />
-    <Compile Include="PocketMapPresetBuilding.cs" />
-    <Compile Include="PocketMapPresetDef.cs" />
-    <Compile Include="PocketMapPresetPawnKind.cs" />
-    <Compile Include="PocketMapPresetRow.cs" />
-    <Compile Include="PocketMapPresetCell.cs" />
+    <Compile Include="PocketMapPrefabDef.cs" />
+    <Compile Include="CompPocketMapControl.cs" />
     <Compile Include="PresettableMapPortal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GenStep_PresettableMapEntrance.cs" />
