@@ -3,16 +3,15 @@
     <LangVersion>latest</LangVersion>
     <RootNamespace>FCP.WeaponRequirement</RootNamespace>
     <AssemblyName>FCP_WeaponRequirement</AssemblyName>
+    <OutputPath>..\..\1.6\Assemblies\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>portable</DebugType>
-    <OutputPath>..\..\..\1.6\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE;</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
-    <OutputPath>..\..\..\1.6\Assemblies\</OutputPath>
     <DefineConstants>TRACE;</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
