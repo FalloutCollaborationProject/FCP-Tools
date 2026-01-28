@@ -20,4 +20,21 @@ public class WeaponRequirement_Xenotype : WeaponRequirement
 
         return true;
     }
+
+    public override string RejectionReason(Pawn pawn, Thing equipment)
+    {
+        XenotypeDef xenotype = pawn.genes?.Xenotype;
+
+        if (xenotype is null)
+            return "FCP_WeaponReq_NoXenotype".Translate();
+
+        if (bannedXenotypes.Contains(xenotype))
+            return "FCP_WeaponReq_BannedXenotype".Translate(xenotype.label);
+
+        if (allowedXenotypes.Any() && !allowedXenotypes.Contains(xenotype))
+            return "FCP_WeaponReq_WrongXenotype".Translate(
+                string.Join(", ", allowedXenotypes.Select(x => x.label)));
+
+        return null;
+    }
 }

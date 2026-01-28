@@ -26,8 +26,22 @@ public class WeaponRequirementExtension : DefModExtension
     {
         return requirements.All(requirement => requirement.RequirementMet(pawn, equipment, onTick));
     }
-    
-    
+
+    public string RejectionReason(Pawn pawn, Thing equipment)
+    {
+        foreach (WeaponRequirement req in requirements)
+        {
+            if (!req.RequirementMet(pawn, equipment))
+            {
+                string reason = req.RejectionReason(pawn, equipment);
+                if (reason != null)
+                    return reason;
+            }
+        }
+
+        return "FCP_WeaponReq_RequirementsNotMet".Translate();
+    }
+
 }
 
 public static class WeaponRequirementUtility

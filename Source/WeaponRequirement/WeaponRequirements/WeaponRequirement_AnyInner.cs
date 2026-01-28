@@ -19,4 +19,17 @@ public class WeaponRequirement_AnyInner : WeaponRequirement
 
         return false;
     }
+
+    public override string RejectionReason(Pawn pawn, Thing equipment)
+    {
+        // All inner requirements failed - return the first rejection reason
+        foreach (WeaponRequirement req in requirements)
+        {
+            string reason = req.RejectionReason(pawn, equipment);
+            if (reason != null)
+                return reason;
+        }
+
+        return null;
+    }
 }

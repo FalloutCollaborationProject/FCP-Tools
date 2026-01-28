@@ -18,7 +18,7 @@ public static class EquipmentUtility_CanEquip_Patch
         if (!ext.dontBlockEquip && !ext.RequirementsMet(pawn, thing, onTick: false))
         {
             __result = false;
-            cantReason = "TBD requirements not met";
+            cantReason = ext.RejectionReason(pawn, thing);
         }
     }
 }

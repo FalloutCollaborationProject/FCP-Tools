@@ -18,4 +18,13 @@ public class WeaponRequirement_AnyApparel : WeaponRequirement
 
         return false;
     }
+
+    public override string RejectionReason(Pawn pawn, Thing equipment)
+    {
+        if (!requiredApparel.Any())
+            return null;
+
+        return "FCP_WeaponReq_RequiresApparel".Translate(
+            string.Join(", ", requiredApparel.Select(x => x.label)));
+    }
 }
