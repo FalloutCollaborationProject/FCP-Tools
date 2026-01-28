@@ -2,7 +2,7 @@ namespace FCP.WeaponRequirement;
 
 public class WeaponRequirement_AnyApparel : WeaponRequirement
 {
-    [UsedImplicitly] public HashSet<ThingDef> requiredApparel = [];
+    [UsedImplicitly] public List<ThingDef> requiredApparel = [];
 
     public override bool RequirementMet(Pawn pawn, Thing equipment, bool onTick = false)
     {

@@ -18,13 +18,14 @@ public static class Pawn_GeneTracker_SetXenotype_Patch
 
         foreach (ThingWithComps equipment in pawn.equipment.AllEquipmentListForReading)
         {
-            if (!equipment.TryGetComp(out CompWeaponRequirement comp))
+            var ext = equipment.def.GetModExtension<WeaponRequirementExtension>();
+            if (ext == null)
                 continue;
 
-            HediffDef hediffDef = comp.Props.requirementsNotMetHediff;
+            HediffDef hediffDef = ext.requirementsNotMetHediff;
             Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(hediffDef);
 
-            if (comp.RequirementsMet(pawn))
+            if (ext.RequirementsMet(pawn, equipment, onTick: false))
             {
                 if (hediff != null)
                     pawn.health.RemoveHediff(hediff);

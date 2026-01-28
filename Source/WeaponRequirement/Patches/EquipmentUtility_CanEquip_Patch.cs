@@ -11,10 +11,11 @@ public static class EquipmentUtility_CanEquip_Patch
         if (pawn.apparel == null)
             return;
         
-        if (!thing.TryGetComp(out CompWeaponRequirement comp))
+        var ext = thing.def.GetModExtension<WeaponRequirementExtension>();
+        if (ext == null)
             return;
 
-        if (!comp.Props.dontBlockEquip && !comp.RequirementsMet(pawn))
+        if (!ext.dontBlockEquip && !ext.RequirementsMet(pawn, thing, onTick: false))
         {
             __result = false;
             cantReason = "TBD requirements not met";
