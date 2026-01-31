@@ -23,8 +23,8 @@ namespace FCP.Core.TemperatureApparelPreference
         {
             try
             {
-                harmonyInitType = AccessTools.TypeByName("FalloutCore.HarmonyInit");
-                apparelExtensionType = AccessTools.TypeByName("FalloutCore.ApparelExtension");
+                harmonyInitType = AccessTools.TypeByName("FCP.ApparelExtensions.HarmonyInit");
+                apparelExtensionType = AccessTools.TypeByName("FCP.ApparelExtensions.ApparelExtension");
 
                 if (harmonyInitType == null || apparelExtensionType == null)
                     return;
