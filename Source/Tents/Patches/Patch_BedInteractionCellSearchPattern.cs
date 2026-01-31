@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 
-namespace Tent;
+namespace FCP.Tents;
 
 [HarmonyPatch(typeof(BedInteractionCellSearchPattern),nameof(BedInteractionCellSearchPattern.BedCellOffsets))]
 public class Patch_BedInteractionCellSearchPattern

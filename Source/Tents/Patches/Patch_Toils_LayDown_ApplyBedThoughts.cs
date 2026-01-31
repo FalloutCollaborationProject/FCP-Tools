@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 
-namespace Tent;
+namespace FCP.Tents;
 
 [HarmonyPatch(typeof(Toils_LayDown), "ApplyBedThoughts", typeof(Pawn), typeof(Building_Bed))]
 public class Patch_Toils_LayDown_ApplyBedThoughts

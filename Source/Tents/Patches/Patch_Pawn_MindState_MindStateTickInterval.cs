@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using Verse.AI;
 
-namespace Tent;
+namespace FCP.Tents;
 
 [HarmonyPatch(typeof(Pawn_MindState), nameof(Pawn_MindState.MindStateTickInterval))]
 public class Patch_Pawn_MindState_MindStateTickInterval

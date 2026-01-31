@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <RootNamespace>Tent</RootNamespace>
+    <RootNamespace>FCP.Tents</RootNamespace>
     <AssemblyName>FCP_Tents</AssemblyName>
     <AssemblyTitle>Fallout Tents Module</AssemblyTitle>
     <AssemblyCopyright>Copyright © iforgotmysocks 2020</AssemblyCopyright>

@@ -2,7 +2,7 @@
 using HarmonyLib;
 using UnityEngine;
 
-namespace Tent;
+namespace FCP.Tents;
 
 public class TentsMod : Mod
 {

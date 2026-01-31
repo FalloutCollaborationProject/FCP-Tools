@@ -1,4 +1,4 @@
-﻿namespace Tent;
+﻿namespace FCP.Tents;
 
 public class CompAssignBedHediff : ThingComp
 {

@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 
-namespace Tent;
+namespace FCP.Tents;
 
 [HarmonyPatch(typeof(CompAssignableToPawn_Bed), "IdeoligionForbids")]
 public class Patch_CompAssignableToPawn_Bed_IdeoligionForbids
