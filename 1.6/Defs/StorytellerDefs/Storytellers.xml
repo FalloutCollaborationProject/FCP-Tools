@@ -565,9 +565,14 @@
                 </enableIfAnyModActive>
             </li>
             <!-- Ideology gauranlen connection -->
-            <li Class="StorytellerCompProperties_RefiringUniqueQuest" MayRequire="Ludeon.RimWorld.Ideology">
-                <incident>GauranlenPodSpawn</incident>
-                <refireEveryDays>40</refireEveryDays>
+            <li Class="StorytellerCompProperties_GauranlenPodSpawn" MayRequire="Ludeon.RimWorld.Ideology">
+                <incident MayRequire="Ludeon.RimWorld.Ideology">GauranlenPodSpawn</incident>
+                <minDaysPassed>4</minDaysPassed>
+                <daysBetweenPodSpawns>60</daysBetweenPodSpawns>
+                <countdownFactorAnyConnectors>2</countdownFactorAnyConnectors>
+                <allowedTargetTags>
+                    <li>Map_PlayerHome</li>
+                </allowedTargetTags>
             </li>
             <!-- Ideology archonexus -->
             <li Class="StorytellerCompProperties_RefiringUniqueQuest" MayRequire="Ludeon.RimWorld.Ideology">
