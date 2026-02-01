@@ -1,13 +1,11 @@
 ﻿using HarmonyLib;
-using Verse;
 
-namespace BM_HeavyWeapon
+namespace FCP.HeavyWeapon;
+
+public class BM_HeavyWeaponMod : Mod
 {
-    public class BM_HeavyWeaponMod : Mod
+    public BM_HeavyWeaponMod(ModContentPack pack) : base(pack)
     {
-        public BM_HeavyWeaponMod(ModContentPack pack) : base(pack)
-        {
-			new Harmony("BM_HeavyWeaponMod").PatchAll();
-        }
+        new Harmony("BM_HeavyWeaponMod").PatchAll();
     }
 }

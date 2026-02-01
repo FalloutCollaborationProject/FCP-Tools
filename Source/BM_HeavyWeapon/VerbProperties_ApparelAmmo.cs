@@ -1,13 +1,9 @@
-﻿using System.Collections.Generic;
-using Verse;
+﻿namespace FCP.HeavyWeapon;
 
-namespace BM_HeavyWeapon
+public class VerbProperties_ApparelAmmo : VerbProperties
 {
-    public class VerbProperties_ApparelAmmo : VerbProperties
-    {
-        public int pelletCount;
-        public List<ThingDef> apparelList;
-        public string missingReason;
-        public string noAmmoReason;
-    }
+    public int pelletCount;
+    public List<ThingDef> apparelList;
+    public string missingReason;
+    public string noAmmoReason;
 }
