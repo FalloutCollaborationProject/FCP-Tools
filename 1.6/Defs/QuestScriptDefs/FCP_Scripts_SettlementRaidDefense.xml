@@ -39,19 +39,19 @@
         </questDescriptionRules>
         <root Class="QuestNode_Sequence">
             <nodes>
-                <li Class="FCP_RadiantQuests.QuestNode_GetLeaderOfFaction">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetLeaderOfFaction">
                     <storeAs>asker</storeAs>
                     <!--The faction def that issues the quest-->
                     <factionDef>FCP_Faction_Hidden_Wastelanders</factionDef>
                 </li>
-                <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>enemyFaction</storeAs>
                     <!--The faction def that will raid-->
                     <factionDefs>
                         <li>PirateWaster</li>
                     </factionDefs>
                 </li>
-                <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>settlementFaction</storeAs>
                     <!--The faction def that will be raided-->
                     <factionDefs>
@@ -73,7 +73,7 @@
                     <storeAs>siteTile</storeAs>
                     <preferCloserTiles>true</preferCloserTiles>
                 </li>
-                <li Class="FCP_RadiantQuests.QuestNode_GetSitePartDefsByTagsAndFaction">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetSitePartDefsByTagsAndFaction">
                     <factionToUse>$settlementFaction</factionToUse>
                     <storeAs>sitePartDefs</storeAs>
                     <storeFactionAs>siteFaction</storeFactionAs>
@@ -125,19 +125,19 @@
                                 <name>pointsForSettlers</name>
                                 <value>$($points * 0.5)</value>
                             </li>
-                            <li Class="FCP_RadiantQuests.QuestNode_GeneratePawns">
+                            <li Class="FCP.Core.RadiantQuests.QuestNode_GeneratePawns">
                                 <storeAs>settlers</storeAs>
                                 <faction>$siteFaction</faction>
                                 <pawnGroupKind>Peaceful</pawnGroupKind>
                                 <pointsToUse>$pointsForSettlers</pointsToUse>
                             </li>
-                            <li Class="FCP_RadiantQuests.QuestNode_GeneratePawns">
+                            <li Class="FCP.Core.RadiantQuests.QuestNode_GeneratePawns">
                                 <storeAs>raiders</storeAs>
                                 <faction>$enemyFaction</faction>
                                 <pawnGroupKind>Combat</pawnGroupKind>
                                 <pointsToUse>$points</pointsToUse>
                             </li>
-                            <li Class="FCP_RadiantQuests.QuestNode_SpawnSettlers">
+                            <li Class="FCP.Core.RadiantQuests.QuestNode_SpawnSettlers">
                                 <inSignal>site.MapGenerated</inSignal>
                                 <pawns>$settlers</pawns>
                                 <radius>20</radius>
@@ -152,7 +152,7 @@
                                 <value2>0.75</value2>
                                 <node Class="QuestNode_Sequence">
                                     <nodes>
-                                        <li Class="FCP_RadiantQuests.QuestNode_SpawnRaiders">
+                                        <li Class="FCP.Core.RadiantQuests.QuestNode_SpawnRaiders">
                                             <inSignal>site.MapGenerated</inSignal>
                                             <spawnOnEdge>false</spawnOnEdge>
                                             <pawns>$raiders</pawns>
@@ -172,7 +172,7 @@
                                     <delayTicks>$(randInt(2500,30000))</delayTicks>
                                     <node Class="QuestNode_Sequence">
                                         <nodes>
-                                            <li Class="FCP_RadiantQuests.QuestNode_SpawnRaiders">
+                                            <li Class="FCP.Core.RadiantQuests.QuestNode_SpawnRaiders">
                                                 <spawnOnEdge>true</spawnOnEdge>
                                                 <pawns>$raiders</pawns>
                                                 <radius>20</radius>
@@ -279,3 +279,4 @@
     </QuestScriptDef>
 
 </Defs>
+

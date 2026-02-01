@@ -11,7 +11,7 @@
         <initialSeverity>1</initialSeverity>
         <maxSeverity>1</maxSeverity>
         <comps>
-            <li Class="FCP_Ghoul.HediffCompProperties_ToxicHealing" />
+            <li Class="FCP.Core.Ghouls.HediffCompProperties_ToxicHealing" />
         </comps>
     </HediffDef>
 

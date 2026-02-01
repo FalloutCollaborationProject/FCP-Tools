@@ -23,28 +23,28 @@
         </questNameRules>
         <root Class="QuestNode_Sequence">
             <nodes>
-                <li Class="FCP_RadiantQuests.QuestNode_GetLeaderOfFaction">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetLeaderOfFaction">
                     <storeAs>asker</storeAs>
                     <factionDef>FCP_Faction_Hidden_Wastelanders</factionDef>
                 </li>
-                <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>enemyFaction</storeAs>
                     <factionDefs>
                         <li>PirateWaster</li>
                     </factionDefs>
                 </li>
-                <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>prisonerFaction</storeAs>
                     <factionDefs>
                         <li>FCP_Faction_Hidden_Wastelanders</li>
                     </factionDefs>
                 </li>
                 <!-- These will be overridden in child definitions -->
-                <li Class="FCP_RadiantQuests.QuestNode_GetPawnKind">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetPawnKind">
                     <storeAs>prisonerPawnKind</storeAs>
                     <pawnKindDef>Hare</pawnKindDef>
                 </li>
-                <li Class="FCP_RadiantQuests.QuestNode_GetCageDef">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetCageDef">
                     <storeAs>cageDef</storeAs>
                     <cageDef>FCP_AnimalCage_Small</cageDef>
                 </li>
@@ -163,27 +163,27 @@
         </questDescriptionRules>
         <root Class="QuestNode_Sequence">
             <nodes>
-                <li Class="FCP_RadiantQuests.QuestNode_GetLeaderOfFaction">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetLeaderOfFaction">
                     <storeAs>asker</storeAs>
                     <factionDef>FCP_Faction_Hidden_Wastelanders</factionDef>
                 </li>
-                <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>enemyFaction</storeAs>
                     <factionDefs>
                         <li>PirateWaster</li>
                     </factionDefs>
                 </li>
-                <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>prisonerFaction</storeAs>
                     <factionDefs>
                         <li>FCP_Faction_Hidden_Wastelanders</li>
                     </factionDefs>
                 </li>
-                <li Class="FCP_RadiantQuests.QuestNode_GetPawnKind">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetPawnKind">
                     <storeAs>prisonerPawnKind</storeAs>
                     <pawnKindDef>Hare</pawnKindDef>
                 </li>
-                <li Class="FCP_RadiantQuests.QuestNode_GetCageDef">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetCageDef">
                     <storeAs>cageDef</storeAs>
                     <cageDef>FCP_AnimalCage_Small</cageDef>
                 </li>
@@ -208,27 +208,27 @@
         </questDescriptionRules>
         <root Class="QuestNode_Sequence">
             <nodes>
-                <li Class="FCP_RadiantQuests.QuestNode_GetLeaderOfFaction">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetLeaderOfFaction">
                     <storeAs>asker</storeAs>
                     <factionDef>FCP_Faction_Hidden_Wastelanders</factionDef>
                 </li>
-                <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>enemyFaction</storeAs>
                     <factionDefs>
                         <li>PirateWaster</li>
                     </factionDefs>
                 </li>
-                <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>prisonerFaction</storeAs>
                     <factionDefs>
                         <li>FCP_Faction_Hidden_Wastelanders</li>
                     </factionDefs>
                 </li>
-                <li Class="FCP_RadiantQuests.QuestNode_GetPawnKind">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetPawnKind">
                     <storeAs>prisonerPawnKind</storeAs>
                     <pawnKindDef>Lynx</pawnKindDef>
                 </li>
-                <li Class="FCP_RadiantQuests.QuestNode_GetCageDef">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetCageDef">
                     <storeAs>cageDef</storeAs>
                     <cageDef>FCP_AnimalCage_Medium</cageDef>
                 </li>
@@ -253,27 +253,27 @@
         </questDescriptionRules>
         <root Class="QuestNode_Sequence">
             <nodes>
-                <li Class="FCP_RadiantQuests.QuestNode_GetLeaderOfFaction">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetLeaderOfFaction">
                     <storeAs>asker</storeAs>
                     <factionDef>FCP_Faction_Hidden_Wastelanders</factionDef>
                 </li>
-                <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>enemyFaction</storeAs>
                     <factionDefs>
                         <li>PirateWaster</li>
                     </factionDefs>
                 </li>
-                <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>prisonerFaction</storeAs>
                     <factionDefs>
                         <li>FCP_Faction_Hidden_Wastelanders</li>
                     </factionDefs>
                 </li>
-                <li Class="FCP_RadiantQuests.QuestNode_GetPawnKind">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetPawnKind">
                     <storeAs>prisonerPawnKind</storeAs>
                     <pawnKindDef>Bear_Grizzly</pawnKindDef>
                 </li>
-                <li Class="FCP_RadiantQuests.QuestNode_GetCageDef">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetCageDef">
                     <storeAs>cageDef</storeAs>
                     <cageDef>FCP_AnimalCage_Large</cageDef>
                 </li>
@@ -296,27 +296,27 @@
         </questDescriptionRules>
         <root Class="QuestNode_Sequence">
             <nodes>
-                <li Class="FCP_RadiantQuests.QuestNode_GetLeaderOfFaction">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetLeaderOfFaction">
                     <storeAs>asker</storeAs>
                     <factionDef>FCP_Faction_Hidden_Wastelanders</factionDef>
                 </li>
-                <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>enemyFaction</storeAs>
                     <factionDefs>
                         <li>PirateWaster</li>
                     </factionDefs>
                 </li>
-                <li Class="FCP_RadiantQuests.QuestNode_GetFactionFromList">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>prisonerFaction</storeAs>
                     <factionDefs>
                         <li>FCP_Faction_Hidden_Wastelanders</li>
                     </factionDefs>
                 </li>
-                <li Class="FCP_RadiantQuests.QuestNode_GetPawnKind">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetPawnKind">
                     <storeAs>prisonerPawnKind</storeAs>
                     <pawnKindDef>Hare</pawnKindDef>
                 </li>
-                <li Class="FCP_RadiantQuests.QuestNode_GetCageDef">
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetCageDef">
                     <storeAs>cageDef</storeAs>
                     <cageDef>FCP_AnimalCage_Small</cageDef>
                 </li>
@@ -325,3 +325,4 @@
     </QuestScriptDef>
 
 </Defs>
+

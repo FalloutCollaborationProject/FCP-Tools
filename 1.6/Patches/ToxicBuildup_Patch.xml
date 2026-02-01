@@ -4,7 +4,7 @@
     <Operation Class="PatchOperationAdd">
         <xpath>Defs/HediffDef[defName="ToxicBuildup"]/comps</xpath>
         <value>
-            <li Class="FCP_Ghoul.HediffCompProperties_ToxicTransformation" />
+            <li Class="FCP.Core.Ghouls.HediffCompProperties_ToxicTransformation" />
         </value>
     </Operation>
 </Patch>
