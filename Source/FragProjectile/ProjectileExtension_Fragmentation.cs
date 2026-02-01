@@ -1,34 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Verse;
+﻿namespace FragProjectile;
 
-namespace FragProjectile
+public class ProjectileExtension_Fragmentation : DefModExtension
 {
-    public class ProjectileExtension_Fragmentation : DefModExtension
-    {
-        public int projCount;
+    public int projCount;
 
-        public float projAngle;
+    public float projAngle;
 
-        public bool isCone;
+    public bool isCone;
 
-        public bool coneFacingIntendedTarget;
+    public bool coneFacingIntendedTarget;
 
-        public FloatRange radius;
+    public FloatRange radius;
 
-        public bool isExplodePreemptively;
+    public bool isExplodePreemptively;
 
-        public float tickBeforeImpact = 1;
+    public float tickBeforeImpact = 1;
 
-        //public float randomSpread = 0f;
+    //public float randomSpread = 0f;
 
-        public ThingDef projectileDef;
+    public ThingDef projectileDef;
 
-        public bool isSureHit;
+    public bool isSureHit;
 
-        public ThingDef sureHitProjectileDef;
-    }
+    public ThingDef sureHitProjectileDef;
 }
