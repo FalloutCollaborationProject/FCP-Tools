@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>FCP.Compatibility.VNPE</RootNamespace>
+    <AssemblyName>FCP-VNPE-NutrientPaste</AssemblyName>
+    <OutputPath>..\..\..\1.6\Compatibilities\VNPE\Assemblies\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>portable</DebugType>
+    <DefineConstants>DEBUG;TRACE;</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <DefineConstants>TRACE;</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="FCP_Core">
+      <HintPath>..\..\..\1.6\Assemblies\FCP_Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="FCP_RadiantQuests">
+      <HintPath>..\..\..\1.6\Assemblies\FCP_RadiantQuests.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PipeSystem">
+      <HintPath>..\..\..\..\VanillaExpandedFramework\1.6\Assemblies\PipeSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
