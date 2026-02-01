@@ -1,10 +1,9 @@
 ﻿using System;
 
-namespace  FCP.Enlist
+namespace FCP.Enlist;
+
+public class ProtocolOption
 {
-    public class ProtocolOption
-	{
-		public int protocolHashKey;
-		public Action action;
-	}
+	public int protocolHashKey;
+	public Action action;
 }

@@ -11,212 +11,170 @@ using UnityEngine;
 using Verse;
 using Verse.Grammar;
 
-namespace  FCP.Enlist
+namespace FCP.Enlist;
+
+[HarmonyPatch(typeof(QuestGen))]
+[HarmonyPatch("AddSlateQuestTags")]
+public static class Patch_AddSlateQuestTags
 {
-    [HarmonyPatch(typeof(QuestGen))]
-    [HarmonyPatch("AddSlateQuestTags")]
-    public static class Patch_AddSlateQuestTags
-    {
-        public static Slate slate;
+    public static Slate slate;
 
-        public static void Postfix()
+    public static void Postfix()
+    {
+        slate = QuestGen.slate.DeepCopy();
+    }
+}
+
+
+[HarmonyPatch(typeof(QuestNode_GetSiteTile))]
+[HarmonyPatch("TryFindTile")]
+public static class Patch_TryFindTile
+{
+    public static WorldObject worldObject;
+    public static bool Prefix(ref bool __result, QuestNode_GetSiteTile __instance, Slate slate, ref PlanetTile tile)
+    {
+        if (worldObject != null && TryFindTile(worldObject, slate, __instance.preferCloserTiles, __instance.allowCaravans, __instance.clampRangeBySiteParts, __instance.sitePartDefs, out tile))
         {
-            slate = QuestGen.slate.DeepCopy();
+            __result = true;
+            return false;
         }
+        return true;
     }
 
-
-    [HarmonyPatch(typeof(QuestNode_GetSiteTile))]
-    [HarmonyPatch("TryFindTile")]
-    public static class Patch_TryFindTile
+    private static bool TryFindTile(WorldObject worldObject, Slate slate, SlateRef<bool> preferCloserTiles, SlateRef<bool> allowCaravans, SlateRef<bool?> clampRangeBySiteParts, SlateRef<IEnumerable<SitePartDef>> sitePartDefs, out PlanetTile tile)
     {
-        public static WorldObject worldObject;
-        public static bool Prefix(ref bool __result, QuestNode_GetSiteTile __instance, Slate slate, ref PlanetTile tile)
+        var nearThisTile = worldObject.Tile;
+        int num = int.MaxValue;
+        bool? value = clampRangeBySiteParts.GetValue(slate);
+        if (value.HasValue && value.Value)
         {
-            if (worldObject != null && TryFindTile(worldObject, slate, __instance.preferCloserTiles, __instance.allowCaravans, __instance.clampRangeBySiteParts, __instance.sitePartDefs, out tile))
+            foreach (SitePartDef item in sitePartDefs.GetValue(slate))
             {
-                __result = true;
-                return false;
-            }
-            return true;
-        }
-
-        private static bool TryFindTile(WorldObject worldObject, Slate slate, SlateRef<bool> preferCloserTiles, SlateRef<bool> allowCaravans, SlateRef<bool?> clampRangeBySiteParts, SlateRef<IEnumerable<SitePartDef>> sitePartDefs, out PlanetTile tile)
-        {
-            var nearThisTile = worldObject.Tile;
-            int num = int.MaxValue;
-            bool? value = clampRangeBySiteParts.GetValue(slate);
-            if (value.HasValue && value.Value)
-            {
-                foreach (SitePartDef item in sitePartDefs.GetValue(slate))
+                if (item.conditionCauserDef != null)
                 {
-                    if (item.conditionCauserDef != null)
-                    {
-                        num = Mathf.Min(num, item.conditionCauserDef.GetCompProperties<CompProperties_CausesGameCondition>().worldRange);
-                    }
+                    num = Mathf.Min(num, item.conditionCauserDef.GetCompProperties<CompProperties_CausesGameCondition>().worldRange);
                 }
             }
-            if (!slate.TryGet("siteDistRange", out IntRange var))
-            {
-                var = new IntRange(7, Mathf.Min(27, num));
-            }
-            else if (num != int.MaxValue)
-            {
-                var = new IntRange(Mathf.Min(var.min, num), Mathf.Min(var.max, num));
-            }
-            var tileMode = preferCloserTiles.GetValue(slate) ? TileFinderMode.Near : TileFinderMode.Random;
-            return TileFinder.TryFindNewSiteTile(out tile, nearThisTile, var.min, var.max, allowCaravans.GetValue(slate), tileFinderMode: tileMode);
         }
+        if (!slate.TryGet("siteDistRange", out IntRange var))
+        {
+            var = new IntRange(7, Mathf.Min(27, num));
+        }
+        else if (num != int.MaxValue)
+        {
+            var = new IntRange(Mathf.Min(var.min, num), Mathf.Min(var.max, num));
+        }
+        var tileMode = preferCloserTiles.GetValue(slate) ? TileFinderMode.Near : TileFinderMode.Random;
+        return TileFinder.TryFindNewSiteTile(out tile, nearThisTile, var.min, var.max, allowCaravans.GetValue(slate), tileFinderMode: tileMode);
     }
+}
 
-    [HarmonyPatch(typeof(Faction))]
-    [HarmonyPatch("TryAffectGoodwillWith")]
-    public static class Patch_TryAffectGoodwillWith
+[HarmonyPatch(typeof(Faction))]
+[HarmonyPatch("TryAffectGoodwillWith")]
+public static class Patch_TryAffectGoodwillWith
+{
+    public static void Postfix(Faction __instance, Faction other, int goodwillChange, bool canSendMessage = true, bool canSendHostilityLetter = true, string reason = null, GlobalTargetInfo? lookTarget = null)
     {
-        public static void Postfix(Faction __instance, Faction other, int goodwillChange, bool canSendMessage = true, bool canSendHostilityLetter = true, string reason = null, GlobalTargetInfo? lookTarget = null)
+        if (__instance != null && other != null)
         {
-            if (__instance != null && other != null)
-            {
 
-            }
-            var worldTracker = WorldEnlistTracker.Instance;
-            if (__instance != Faction.OfPlayer && other == Faction.OfPlayer && other.RelationKindWith(__instance) == FactionRelationKind.Hostile)
+        }
+        var worldTracker = WorldEnlistTracker.Instance;
+        if (__instance != Faction.OfPlayer && other == Faction.OfPlayer && other.RelationKindWith(__instance) == FactionRelationKind.Hostile)
+        {
+            foreach (var def in __instance.GetEnlistOptions())
             {
-                foreach (var def in __instance.GetEnlistOptions())
+                if (worldTracker.EnlistedTo(__instance, def))
                 {
-                    if (worldTracker.EnlistedTo(__instance, def))
-                    {
-                        worldTracker.KickOut(__instance, def);
-                    }
+                    worldTracker.KickOut(__instance, def);
                 }
             }
-            else if (other != Faction.OfPlayer && __instance == Faction.OfPlayer && other.RelationKindWith(__instance) == FactionRelationKind.Hostile)
+        }
+        else if (other != Faction.OfPlayer && __instance == Faction.OfPlayer && other.RelationKindWith(__instance) == FactionRelationKind.Hostile)
+        {
+            foreach (var def in other.GetEnlistOptions())
             {
-                foreach (var def in other.GetEnlistOptions())
+                if (worldTracker.EnlistedTo(other, def))
                 {
-                    if (worldTracker.EnlistedTo(other, def))
-                    {
-                        worldTracker.KickOut(other, def);
-                    }
+                    worldTracker.KickOut(other, def);
                 }
             }
         }
     }
+}
 
-    [HarmonyPatch(typeof(Pawn_DraftController), "GetGizmos")]
-    public class Pawn_DraftController_GetGizmos_Patch
+[HarmonyPatch(typeof(Pawn_DraftController), "GetGizmos")]
+public class Pawn_DraftController_GetGizmos_Patch
+{
+    public static TargetingParameters ForLoc()
     {
-        public static TargetingParameters ForLoc()
+        TargetingParameters targetingParameters = new TargetingParameters();
+        targetingParameters.canTargetLocations = true;
+        return targetingParameters;
+    }
+    public static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> __result, Pawn_DraftController __instance)
+    {
+        foreach (var gizmo in __result)
         {
-            TargetingParameters targetingParameters = new TargetingParameters();
-            targetingParameters.canTargetLocations = true;
-            return targetingParameters;
+            yield return gizmo;
         }
-        public static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> __result, Pawn_DraftController __instance)
+        Pawn pawn = __instance.pawn;
+        if (pawn.IsColonistPlayerControlled && __instance.Drafted)
         {
-            foreach (var gizmo in __result)
+            var tracker = WorldEnlistTracker.Instance;
+            foreach (var enlistedFaction in tracker.EnlistedFactions())
             {
-                yield return gizmo;
-            }
-            Pawn pawn = __instance.pawn;
-            if (pawn.IsColonistPlayerControlled && __instance.Drafted)
-            {
-                var tracker = WorldEnlistTracker.Instance;
-                foreach (var enlistedFaction in tracker.EnlistedFactions())
+                foreach (var optionsDef in enlistedFaction.GetEnlistOptions())
                 {
-                    foreach (var optionsDef in enlistedFaction.GetEnlistOptions())
+                    if (tracker.EnlistedTo(enlistedFaction, optionsDef))
                     {
-                        if (tracker.EnlistedTo(enlistedFaction, optionsDef))
+                        if (optionsDef.reinforcementsAreEnabled)
                         {
-                            if (optionsDef.reinforcementsAreEnabled)
+                            Command_Action command = new Command_Action()
                             {
-                                Command_Action command = new Command_Action()
+                                defaultLabel = optionsDef.reinforcementsButtonLabelKey.Translate(enlistedFaction),
+                                defaultDesc = optionsDef.reinforcementsButtonDescKey.Translate(enlistedFaction),
+                                icon = ContentFinder<Texture2D>.Get(optionsDef.reinforcementsButtonIconTexPath),
+                                disabled = !tracker.CanCallReinforcementFrom(enlistedFaction, optionsDef),
+                                action = delegate
                                 {
-                                    defaultLabel = optionsDef.reinforcementsButtonLabelKey.Translate(enlistedFaction),
-                                    defaultDesc = optionsDef.reinforcementsButtonDescKey.Translate(enlistedFaction),
-                                    icon = ContentFinder<Texture2D>.Get(optionsDef.reinforcementsButtonIconTexPath),
-                                    disabled = !tracker.CanCallReinforcementFrom(enlistedFaction, optionsDef),
-                                    action = delegate
+                                    Find.Targeter.BeginTargeting(ForLoc(), delegate (LocalTargetInfo x)
                                     {
-                                        Find.Targeter.BeginTargeting(ForLoc(), delegate (LocalTargetInfo x)
-                                        {
-                                            tracker.CallReinforcement(enlistedFaction, optionsDef, pawn, x.Cell);
-                                        }, null, null);
-                                    }
-                                };
-                                yield return command;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    /*[HarmonyPatch(typeof(StatExtension), nameof(StatExtension.GetStatValue))]
-    public static class GetStatValue_Patch
-    {
-        private static void Postfix(Thing thing, StatDef stat, bool applyPostProcess, ref float __result)
-        {
-            if (stat == StatDefOf.ImmunityGainSpeed && thing is Pawn pawn)
-            {
-                var caravan = pawn.GetCaravan();
-                if (caravan != null && !caravan.pather.moving && !caravan.NightResting)
-                {
-                    var settlement = Find.WorldObjects.SettlementAt(caravan.Tile);
-                    if (settlement != null)
-                    {
-                        foreach (var def in settlement.Faction.GetEnlistOptions())
-                        {
-                            if (WorldEnlistTracker.Instance.EnlistedTo(settlement.Faction, def))
-                            {
-                                var comp = settlement.GetComponent<WorldObjectCompEnlist>();
-                                var caravanOptions = comp.GetCaravanOptions(caravan);
-                                if (caravanOptions?.curWorkOption != null && caravanOptions.curWorkOption.immunityGainSpeedMultiplier.HasValue)
-                                {
-                                    __result *= caravanOptions.curWorkOption.immunityGainSpeedMultiplier.Value;
+                                        tracker.CallReinforcement(enlistedFaction, optionsDef, pawn, x.Cell);
+                                    }, null, null);
                                 }
-                            }
+                            };
+                            yield return command;
                         }
                     }
                 }
             }
         }
-    } Removed due to replacing with Statpart */
-
-    [HarmonyPatch(typeof(TransferableUIUtility), nameof(TransferableUIUtility.DrawCaptiveTradeInfo))]
-    public static class TransferableUIUtility_Patch
-    {
-        private static bool Prefix(Transferable trad, ITrader trader, Rect rect, ref float curX)
-        {
-            if (trader is PawnTrader)
-            {
-                return false;
-            }
-            return true;
-        }
     }
+}
 
-    [HarmonyPatch(typeof(CaravanVisitUtility), nameof(CaravanVisitUtility.TradeCommand))]
-    public static class CaravanVisitUtility_TradeCommand_Patch
+/*[HarmonyPatch(typeof(StatExtension), nameof(StatExtension.GetStatValue))]
+public static class GetStatValue_Patch
+{
+    private static void Postfix(Thing thing, StatDef stat, bool applyPostProcess, ref float __result)
     {
-        public static void Postfix(ref Command __result, Caravan caravan, Faction faction = null, TraderKindDef trader = null)
+        if (stat == StatDefOf.ImmunityGainSpeed && thing is Pawn pawn)
         {
-            if (faction != null)
+            var caravan = pawn.GetCaravan();
+            if (caravan != null && !caravan.pather.moving && !caravan.NightResting)
             {
-                foreach (var option in faction.GetEnlistOptions())
+                var settlement = Find.WorldObjects.SettlementAt(caravan.Tile);
+                if (settlement != null)
                 {
-                    if (WorldEnlistTracker.Instance.EnlistedTo(faction, option) is false)
+                    foreach (var def in settlement.Faction.GetEnlistOptions())
                     {
-                        if (option.settlementTradingLockedBehindEnlist)
+                        if (WorldEnlistTracker.Instance.EnlistedTo(settlement.Faction, def))
                         {
-                            if (option.settlementTradingLockedBehindEnlistReasonKey.NullOrEmpty())
+                            var comp = settlement.GetComponent<WorldObjectCompEnlist>();
+                            var caravanOptions = comp.GetCaravanOptions(caravan);
+                            if (caravanOptions?.curWorkOption != null && caravanOptions.curWorkOption.immunityGainSpeedMultiplier.HasValue)
                             {
-                                __result.Disable();
-                            }
-                            else
-                            {
-                                __result.Disable(option.settlementTradingLockedBehindEnlistReasonKey.Translate());
+                                __result *= caravanOptions.curWorkOption.immunityGainSpeedMultiplier.Value;
                             }
                         }
                     }
@@ -224,46 +182,87 @@ namespace  FCP.Enlist
             }
         }
     }
+} Removed due to replacing with Statpart */
 
-    [HarmonyPatch(typeof(FactionGiftUtility), nameof(FactionGiftUtility.OfferGiftsCommand))]
-    public static class FactionGiftUtility_OfferGiftsCommand_Patch
+[HarmonyPatch(typeof(TransferableUIUtility), nameof(TransferableUIUtility.DrawCaptiveTradeInfo))]
+public static class TransferableUIUtility_Patch
+{
+    private static bool Prefix(Transferable trad, ITrader trader, Rect rect, ref float curX)
     {
-        public static void Postfix(ref Command __result, Caravan caravan, Settlement settlement)
+        if (trader is PawnTrader)
         {
-            if (settlement.Faction != null)
+            return false;
+        }
+        return true;
+    }
+}
+
+[HarmonyPatch(typeof(CaravanVisitUtility), nameof(CaravanVisitUtility.TradeCommand))]
+public static class CaravanVisitUtility_TradeCommand_Patch
+{
+    public static void Postfix(ref Command __result, Caravan caravan, Faction faction = null, TraderKindDef trader = null)
+    {
+        if (faction != null)
+        {
+            foreach (var option in faction.GetEnlistOptions())
             {
-                foreach (var option in settlement.Faction.GetEnlistOptions())
+                if (WorldEnlistTracker.Instance.EnlistedTo(faction, option) is false)
                 {
-                    if (WorldEnlistTracker.Instance.EnlistedTo(settlement.Faction, option) is false)
+                    if (option.settlementTradingLockedBehindEnlist)
                     {
-                        if (option.settlementGiftingLockedBehindEnlist)
+                        if (option.settlementTradingLockedBehindEnlistReasonKey.NullOrEmpty())
                         {
-                            if (option.settlementGiftingLockedBehindEnlistReasonKey.NullOrEmpty())
-                            {
-                                __result.Disable();
-                            }
-                            else
-                            {
-                                __result.Disable(option.settlementGiftingLockedBehindEnlistReasonKey.Translate());
-                            }
+                            __result.Disable();
+                        }
+                        else
+                        {
+                            __result.Disable(option.settlementTradingLockedBehindEnlistReasonKey.Translate());
                         }
                     }
                 }
             }
         }
     }
+}
 
-    [HarmonyPatch(typeof(GuestUtility), "IsSellingToSlavery")]
-    public static class GuestUtility_IsSellingToSlavery_Patch
+[HarmonyPatch(typeof(FactionGiftUtility), nameof(FactionGiftUtility.OfferGiftsCommand))]
+public static class FactionGiftUtility_OfferGiftsCommand_Patch
+{
+    public static void Postfix(ref Command __result, Caravan caravan, Settlement settlement)
     {
-        public static bool Prefix()
+        if (settlement.Faction != null)
         {
-            if (TradeSession.trader is PawnTrader pawnTrader 
-                && pawnTrader.factionOptionDef?.turnInTraderKind == pawnTrader.TraderKind)
+            foreach (var option in settlement.Faction.GetEnlistOptions())
             {
-                return false;
+                if (WorldEnlistTracker.Instance.EnlistedTo(settlement.Faction, option) is false)
+                {
+                    if (option.settlementGiftingLockedBehindEnlist)
+                    {
+                        if (option.settlementGiftingLockedBehindEnlistReasonKey.NullOrEmpty())
+                        {
+                            __result.Disable();
+                        }
+                        else
+                        {
+                            __result.Disable(option.settlementGiftingLockedBehindEnlistReasonKey.Translate());
+                        }
+                    }
+                }
             }
-            return true;
         }
+    }
+}
+
+[HarmonyPatch(typeof(GuestUtility), "IsSellingToSlavery")]
+public static class GuestUtility_IsSellingToSlavery_Patch
+{
+    public static bool Prefix()
+    {
+        if (TradeSession.trader is PawnTrader pawnTrader 
+            && pawnTrader.factionOptionDef?.turnInTraderKind == pawnTrader.TraderKind)
+        {
+            return false;
+        }
+        return true;
     }
 }

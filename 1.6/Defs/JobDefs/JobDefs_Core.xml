@@ -72,7 +72,7 @@
 
     <JobDef>
         <defName>BM_ReloadOtherPawns</defName>
-        <driverClass>BM_HeavyWeapon.JobDriver_ReloadOtherPawns</driverClass>
+        <driverClass>FCP.HeavyWeapon.JobDriver_ReloadOtherPawns</driverClass>
         <reportString>Reloading TargetA.</reportString>
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>

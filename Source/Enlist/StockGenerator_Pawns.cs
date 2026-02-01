@@ -11,21 +11,20 @@ using Verse;
 using Verse.AI;
 using Verse.Grammar;
 
-namespace  FCP.Enlist
+namespace FCP.Enlist;
+
+public class StockGenerator_Pawns : StockGenerator
 {
-    public class StockGenerator_Pawns : StockGenerator
+    public override IEnumerable<Thing> GenerateThings(PlanetTile forTile, Faction faction = null)
     {
-        public override IEnumerable<Thing> GenerateThings(PlanetTile forTile, Faction faction = null)
+        yield break;
+    }
+    public override bool HandlesThingDef(ThingDef thingDef)
+    {
+        if (thingDef.category == ThingCategory.Pawn && thingDef.race.Humanlike)
         {
-            yield break;
+            return true;
         }
-        public override bool HandlesThingDef(ThingDef thingDef)
-        {
-            if (thingDef.category == ThingCategory.Pawn && thingDef.race.Humanlike)
-            {
-                return true;
-            }
-            return false;
-        }
+        return false;
     }
 }

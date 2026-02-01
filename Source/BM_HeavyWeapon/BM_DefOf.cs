@@ -1,11 +1,7 @@
-﻿using RimWorld;
-using Verse;
+﻿namespace FCP.HeavyWeapon;
 
-namespace BM_HeavyWeapon
+[DefOf]
+public static class BM_DefOf
 {
-    [DefOf]
-    public static class BM_DefOf
-    {
-        public static JobDef BM_ReloadOtherPawns;
-    }
+    public static JobDef BM_ReloadOtherPawns;
 }
