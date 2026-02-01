@@ -47,9 +47,10 @@
         <defName>FCP_FacilityBuilding</defName>
         <linkWithSite>FCP_Site_Facility</linkWithSite>
         <order>452</order>
-        <genStep Class="FCP_RadiantQuests.GenStep_SpawnBuildingInRoom">
+        <genStep Class="FCP.Core.RadiantQuests.GenStep_SpawnBuildingInRoom">
             <buildingDef>FCP_Power_Armor_VR_Pod</buildingDef>
         </genStep>
     </GenStepDef>
 
 </Defs>
+

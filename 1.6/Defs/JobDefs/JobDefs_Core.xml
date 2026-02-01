@@ -25,31 +25,31 @@
 
     <JobDef>
         <defName>FCP_ReleaseAnimalFromCage</defName>
-        <driverClass>FCP_RadiantQuests.JobDriver_ReleaseAnimalFromCage</driverClass>
+        <driverClass>FCP.Core.RadiantQuests.JobDriver_ReleaseAnimalFromCage</driverClass>
         <reportString>Releasing animal from cage.</reportString>
     </JobDef>
 
     <JobDef>
         <defName>FCP_CarryAnimalToCage</defName>
-        <driverClass>FCP_RadiantQuests.JobDriver_CarryAnimalToCage</driverClass>
+        <driverClass>FCP.Core.RadiantQuests.JobDriver_CarryAnimalToCage</driverClass>
         <reportString>Bringing animal to cage.</reportString>
     </JobDef>
 
     <JobDef>
         <defName>FCP_TransferAnimalBetweenCages</defName>
-        <driverClass>FCP_RadiantQuests.JobDriver_TransferAnimalBetweenCages</driverClass>
+        <driverClass>FCP.Core.RadiantQuests.JobDriver_TransferAnimalBetweenCages</driverClass>
         <reportString>Transferring animal to another cage.</reportString>
     </JobDef>
 
     <JobDef>
         <defName>FCP_RefuelAnimalCage</defName>
-        <driverClass>FCP_RadiantQuests.JobDriver_RefuelAnimalCage</driverClass>
+        <driverClass>FCP.Core.RadiantQuests.JobDriver_RefuelAnimalCage</driverClass>
         <reportString>refueling cage.</reportString>
     </JobDef>
 
     <JobDef>
         <defName>FCP_RefuelAnimalCage_Atomic</defName>
-        <driverClass>FCP_RadiantQuests.JobDriver_RefuelAnimalCage_Atomic</driverClass>
+        <driverClass>FCP.Core.RadiantQuests.JobDriver_RefuelAnimalCage_Atomic</driverClass>
         <reportString>refueling cage.</reportString>
     </JobDef>
 
@@ -104,3 +104,6 @@
     </JobDef>
  
 </Defs>
+
+
+

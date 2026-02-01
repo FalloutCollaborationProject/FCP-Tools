@@ -9,7 +9,7 @@
         <defName>FCP_Site_PawnRescue</defName>
         <label>prisoner camp</label>
         <description>A prisoner being held by enemies.</description>
-        <workerClass>FCP_RadiantQuests.SitePartWorker_PawnRescue</workerClass>
+        <workerClass>FCP.Core.RadiantQuests.SitePartWorker_PawnRescue</workerClass>
         <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
         <expandingIconTexture>World/WorldObjects/Expanding/Sites/Prisoner</expandingIconTexture>
         <forceExitAndRemoveMapCountdownDurationDays>6</forceExitAndRemoveMapCountdownDurationDays>
@@ -40,10 +40,11 @@
         <defName>FCP_Site_PawnRescue_PawnPrisoner</defName>
         <linkWithSite>FCP_Site_PawnRescue</linkWithSite>
         <order>460</order>
-        <genStep Class="FCP_RadiantQuests.GenStep_PawnRescue">
+        <genStep Class="FCP.Core.RadiantQuests.GenStep_PawnRescue">
             <count>1</count>
             <nearMapCenter>true</nearMapCenter>
         </genStep>
     </GenStepDef>
     
 </Defs>
+

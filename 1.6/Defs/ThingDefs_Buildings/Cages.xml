@@ -87,7 +87,7 @@
             <ComponentIndustrial>2</ComponentIndustrial>
         </costList>
         <comps>
-            <li Class="FCP_RadiantQuests.CompProperties_AnimalCage">
+            <li Class="FCP.Core.RadiantQuests.CompProperties_AnimalCage">
                 <maxBodySize>0.8</maxBodySize>
                 <minBodySize>0.1</minBodySize>
                 <!--Int-->
@@ -143,7 +143,7 @@
             <ComponentIndustrial>3</ComponentIndustrial>
         </costList>
         <comps>
-            <li Class="FCP_RadiantQuests.CompProperties_AnimalCage">
+            <li Class="FCP.Core.RadiantQuests.CompProperties_AnimalCage">
                 <maxBodySize>1.5</maxBodySize>
                 <minBodySize>0.3</minBodySize>
                 <!--Int-->
@@ -202,7 +202,7 @@
             <ComponentIndustrial>5</ComponentIndustrial>
         </costList>
         <comps>
-            <li Class="FCP_RadiantQuests.CompProperties_AnimalCage">
+            <li Class="FCP.Core.RadiantQuests.CompProperties_AnimalCage">
                 <maxBodySize>3.0</maxBodySize>
                 <minBodySize>1.0</minBodySize>
                 <!--Int-->
@@ -232,3 +232,4 @@
     </ThingDef>
 
 </Defs>
+

@@ -80,7 +80,7 @@
                 <pawnLoadedSound>Shuttle_PawnLoaded</pawnLoadedSound>
                 <pawnExitSound>Shuttle_PawnExit</pawnExitSound>
             </li>
-            <li Class="FCP_Shuttles.CompProperties_RotatingBlades">
+            <li Class="FCP.Core.Shuttles.CompProperties_RotatingBlades">
                 <bladeGraphicsData>
                     <li>
                         <bladeGraphic>
@@ -149,7 +149,7 @@
             <motesPerCell>1</motesPerCell>
         </skyfaller>
         <comps>
-            <li Class="FCP_Shuttles.CompProperties_RotatingBlades">
+            <li Class="FCP.Core.Shuttles.CompProperties_RotatingBlades">
                 <bladeGraphicsData>
                     <li>
                         <bladeGraphic>

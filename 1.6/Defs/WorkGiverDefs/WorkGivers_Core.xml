@@ -4,7 +4,7 @@
 	<WorkGiverDef>
 		<defName>FCP_RefuelCages</defName>
 		<label>refueling cages</label>
-		<giverClass>FCP_RadiantQuests.WorkGiver_AnimalCageRefuel</giverClass>
+		<giverClass>FCP.Core.RadiantQuests.WorkGiver_AnimalCageRefuel</giverClass>
 		<workType>Hauling</workType>
 		<verb>refuel</verb>
 		<gerund>refueling</gerund>
@@ -30,3 +30,6 @@
 	</WorkGiverDef>
 	
 </Defs>
+
+
+

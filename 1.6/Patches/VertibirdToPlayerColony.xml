@@ -6,7 +6,7 @@
     <Operation Class="PatchOperationAddModExtension">
         <xpath>/Defs/FactionDef[defName="PlayerColony"]</xpath>
         <value>
-            <li Class="FCP_Shuttles.FactionModExtension">
+            <li Class="FCP.Core.Shuttles.FactionModExtension">
                 <transportShipDef>FCP_Vertibird</transportShipDef>
                 <minDistanceBetweenShuttles>10</minDistanceBetweenShuttles>
                 <maxPawnCountInOneShuttle>6</maxPawnCountInOneShuttle>

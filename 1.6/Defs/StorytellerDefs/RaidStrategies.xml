@@ -35,7 +35,7 @@
 
     <PawnsArrivalModeDef>
         <defName>FCP_VertibirdAttack</defName>
-        <workerClass>FCP_Shuttles.PawnsArrivalModeWorker_VertibirdAttack</workerClass>
+        <workerClass>FCP.Core.Shuttles.PawnsArrivalModeWorker_VertibirdAttack</workerClass>
         <selectionWeightCurve>
             <points>
                 <li>(100, 0)</li>
