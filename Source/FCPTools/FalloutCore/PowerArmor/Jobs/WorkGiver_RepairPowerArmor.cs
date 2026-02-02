@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using FCP.Core.Access;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -45,7 +46,7 @@ public class WorkGiver_RepairPowerArmor : WorkGiver_Scanner
 		List<IngredientCount> ingredients = repairResources.Select((ThingDefFloatClass tc) => tc.ToIngredientCount()).ToList();
 
 		IntVec3 rootCell = building is Building b && b.def.hasInteractionCell ? b.InteractionCell : building.Position;
-		return WorkGiver_DoBill.TryFindBestIngredientsHelper(delegate (Thing t)
+		return WorkGiver_DoBill.P_TryFindBestIngredientsHelper(delegate (Thing t)
 		{
 			foreach (IngredientCount ingredient in ingredients)
 			{
@@ -55,7 +56,7 @@ public class WorkGiver_RepairPowerArmor : WorkGiver_Scanner
 				}
 			}
 			return false;
-		}, (List<Thing> foundThings) => WorkGiver_DoBill.TryFindBestIngredientsInSet_NoMixHelper(foundThings, ingredients, chosen, rootCell, alreadySorted: false, null), ingredients, pawn, building, chosen, 999f);
+		}, (List<Thing> foundThings) => WorkGiver_DoBill.P_TryFindBestIngredientsInSet_NoMixHelper(foundThings, ingredients, chosen, rootCell, alreadySorted: false, null), ingredients, pawn, building, chosen, 999f);
 	}
 
 	public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
@@ -94,10 +95,7 @@ public class WorkGiver_RepairPowerArmor : WorkGiver_Scanner
 			Dictionary<ThingDef, int> foundCounts = new Dictionary<ThingDef, int>();
 			foreach (ThingCount chosen in chosenResources)
 			{
-				if (!foundCounts.ContainsKey(chosen.Thing.def))
-				{
-					foundCounts[chosen.Thing.def] = 0;
-				}
+				foundCounts.TryAdd(chosen.Thing.def, 0);
 				foundCounts[chosen.Thing.def] += chosen.Count;
 			}
 
@@ -141,7 +139,7 @@ public class WorkGiver_RepairPowerArmor : WorkGiver_Scanner
 			return null;
 		}
 
-		Job job = JobMaker.MakeJob(RR_DefOf.RR_RepairPowerArmor, building);
+		Job job = JobMaker.MakeJob(PowerArmorDefOf.RR_RepairPowerArmor, building);
 		job.targetQueueB = new List<LocalTargetInfo>(chosenResources.Count);
 		job.countQueue = new List<int>(chosenResources.Count);
 

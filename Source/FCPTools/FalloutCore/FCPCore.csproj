@@ -4,6 +4,7 @@
     <RootNamespace>FCP.Core</RootNamespace>
     <AssemblyName>FCP_Core</AssemblyName>
     <AssemblyTitle>Fallout Core Module</AssemblyTitle>
+    <LangVersion>14</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>portable</DebugType>
