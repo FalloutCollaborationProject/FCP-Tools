@@ -3,14 +3,14 @@
 
     <JobDef>
         <defName>RR_RefuelPowerArmor</defName>
-        <driverClass>RangerRick_PowerArmor.JobDriver_RefuelPowerArmor</driverClass>
+        <driverClass>FCP.Core.PowerArmor.JobDriver_RefuelPowerArmor</driverClass>
         <reportString>Refueling TargetA.</reportString>
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
 
     <JobDef>
         <defName>RR_TrainTrait</defName>
-        <driverClass>RangerRick_PowerArmor.JobDriver_TrainTrait</driverClass>
+        <driverClass>FCP.Core.PowerArmor.JobDriver_TrainTrait</driverClass>
         <reportString>Training at TargetA.</reportString>
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
@@ -80,25 +80,25 @@
 
     <JobDef>
         <defName>FCP_StorePowerArmor</defName>
-        <driverClass>RangerRick_PowerArmor.JobDriver_StorePowerArmor</driverClass>
+        <driverClass>FCP.Core.PowerArmor.JobDriver_StorePowerArmor</driverClass>
         <reportString>storing power armor at TargetA.</reportString>
     </JobDef>
 
     <JobDef>
         <defName>FCP_EquipFromStation</defName>
-        <driverClass>RangerRick_PowerArmor.JobDriver_EquipFromStation</driverClass>
+        <driverClass>FCP.Core.PowerArmor.JobDriver_EquipFromStation</driverClass>
         <reportString>equipping power armor from TargetA.</reportString>
     </JobDef>
 
     <JobDef>
         <defName>FCP_SwapPowerArmor</defName>
-        <driverClass>RangerRick_PowerArmor.JobDriver_SwapPowerArmor</driverClass>
+        <driverClass>FCP.Core.PowerArmor.JobDriver_SwapPowerArmor</driverClass>
         <reportString>swapping power armor at TargetA.</reportString>
     </JobDef>
     
     <JobDef>
         <defName>RR_RepairPowerArmor</defName>
-        <driverClass>RangerRick_PowerArmor.JobDriver_RepairPowerArmor</driverClass>
+        <driverClass>FCP.Core.PowerArmor.JobDriver_RepairPowerArmor</driverClass>
         <reportString>repairing power armor at TargetA.</reportString>
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>

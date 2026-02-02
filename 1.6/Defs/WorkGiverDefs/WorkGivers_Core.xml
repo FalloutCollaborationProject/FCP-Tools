@@ -18,7 +18,7 @@
 	<WorkGiverDef>
 		<defName>RR_RepairPowerArmor</defName>
 		<label>repair power armor</label>
-		<giverClass>RangerRick_PowerArmor.WorkGiver_RepairPowerArmor</giverClass>
+		<giverClass>FCP.Core.PowerArmor.WorkGiver_RepairPowerArmor</giverClass>
 		<workType>Crafting</workType>
 		<verb>repair</verb>
 		<gerund>repairing</gerund>
