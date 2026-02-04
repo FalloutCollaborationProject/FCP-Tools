@@ -26,14 +26,17 @@
 ## Installation
 
 ### Recommended: FCP Mod Updater
-Use the official updater tool to install and keep FCP-Tools up to date:
+Use the official updater tool to easily install and keep FCP-Tools up to date:
 
 **[FCP Mod Updater](https://github.com/FalloutCollaborationProject/FCP-Mod-Updater)**
 
 ### Alternative (Manual Updates) Zip Files: 
 1. Download and extract to your RimWorld `Mods` folder
-2. Enable in the mod manager
-3. Load after Harmony, Royalty, and Biotech
+   - Click code -> download as zip file
+   - This is located in your game install, for steam you can right click RimWorld -> manage -> browse local files
+   - Extract so that your folders look like RimWorld/Mods/FCP-Tools-Main and FCP-Tools-Main has the About Folder
+3. Enable in the mod manager
+4. Load after Harmony, and Core DLCs, but high up.
 
 ### Alternative: Git
 ```bash
