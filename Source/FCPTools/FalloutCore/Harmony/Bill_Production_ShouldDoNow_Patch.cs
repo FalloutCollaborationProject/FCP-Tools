@@ -9,15 +9,12 @@ public class Bill_Production_ShouldDoNow_Patch
     [HarmonyPrefix]
     public static void ShouldDoNow_GoodWillCheck(ref bool __result, Bill_Production __instance)
     {
-        Faction playerFaction = Faction.OfPlayer;
-        if (playerFaction == null)
-        {
-            __instance.suspended = true;
-            __result = false;
-        }
         var modExtension = __instance.recipe.GetModExtension<RecipeExtension_GoodwillCheck>();
-        Faction targetFact = Find.FactionManager.FirstFactionOfDef(modExtension.requireFaction);
-        if (targetFact == null)
+        if (modExtension == null)
+            return;
+        
+        Faction faction = Find.FactionManager.FirstFactionOfDef(modExtension.requireFaction);
+        if (faction == null)
         {
             if (!__instance.suspended)
             {
@@ -28,22 +25,22 @@ public class Bill_Production_ShouldDoNow_Patch
         }
         else
         {
-            if (targetFact.defeated && modExtension.uncraftableIfFactionDefeated)
+            if (faction.defeated && modExtension.uncraftableIfFactionDefeated)
             {
                 if (!__instance.suspended)
                 {
-                    Messages.Message("Goodwill_FactionDefeated".Translate(targetFact.Name),
+                    Messages.Message("Goodwill_FactionDefeated".Translate(faction.Name),
                         MessageTypeDefOf.NegativeEvent);
                 }
 
                 __instance.suspended = true;
                 __result = false;
             }
-            else if (targetFact.GoodwillWith(playerFaction) < modExtension.minimumGoodwill)
+            else if (faction.GoodwillWith(Faction.OfPlayer) < modExtension.minimumGoodwill)
             {
                 if (!__instance.suspended)
                 {
-                    Messages.Message("GoodwillUnmet".Translate(targetFact.Name,modExtension.minimumGoodwill), MessageTypeDefOf.NegativeEvent);
+                    Messages.Message("GoodwillUnmet".Translate(faction.Name,modExtension.minimumGoodwill), MessageTypeDefOf.NegativeEvent);
                 }
                 __instance.suspended = true;
                 __result = false;
