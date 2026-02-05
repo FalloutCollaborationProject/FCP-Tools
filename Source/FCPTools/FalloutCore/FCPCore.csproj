@@ -4,17 +4,19 @@
     <RootNamespace>FCP.Core</RootNamespace>
     <AssemblyName>FCP_Core</AssemblyName>
     <AssemblyTitle>Fallout Core Module</AssemblyTitle>
-    <LangVersion>14</LangVersion>
+    <LangVersion>latest</LangVersion>
+    <OutputPath>..\..\..\1.6\Assemblies\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugType>portable</DebugType>
-    <OutputPath>..\..\..\1.6\Assemblies\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;</DefineConstants>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>true</Optimize>
+    <DebugType>embedded</DebugType>
+    <DefineConstants>DEBUG;</DefineConstants>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>none</DebugType>
-    <OutputPath>..\..\..\1.6\Assemblies\</OutputPath>
-    <DefineConstants>TRACE;</DefineConstants>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <DebugType>embedded</DebugType>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System.Data.DataSetExtensions" />

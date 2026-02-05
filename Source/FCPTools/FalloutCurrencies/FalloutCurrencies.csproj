@@ -4,14 +4,19 @@
     <RootNamespace>FCP.Currencies</RootNamespace>
     <AssemblyName>FCP_Currencies</AssemblyName>
     <AssemblyTitle>Fallout Currencies</AssemblyTitle>
+    <LangVersion>latest</LangVersion>
+    <OutputPath>..\..\..\1.6\Assemblies\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugType>portable</DebugType>
-    <OutputPath>..\..\..\1.6\Assemblies\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>true</Optimize>
+    <DebugType>embedded</DebugType>
+    <DefineConstants>DEBUG;</DefineConstants>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <OutputPath>..\..\..\1.6\Assemblies\</OutputPath>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <DebugType>embedded</DebugType>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System.Data.DataSetExtensions" />
