@@ -21,24 +21,23 @@ public class Bill_Production_ShouldDoNow_Patch
         {
             if (!__instance.suspended)
             {
-                Messages.Message("GoodwillUnmet".Translate(targetFact.Name, modExtension.minimumGoodwill), MessageTypeDefOf.NegativeEvent);
+                Messages.Message("Goodwill_FactionDontExist".Translate(modExtension.requireFaction.defName), MessageTypeDefOf.NegativeEvent);
             }
             __instance.suspended = true;
             __result = false;
         }
         else
         {
-            if (targetFact.defeated)
+            if (targetFact.defeated && modExtension.uncraftableIfFactionDefeated)
             {
-                if (modExtension.uncraftableIfFactionDefeated)
+                if (!__instance.suspended)
                 {
-                    if (!__instance.suspended)
-                    {
-                        Messages.Message("GoodwillUnmet".Translate(targetFact.Name, modExtension.minimumGoodwill), MessageTypeDefOf.NegativeEvent);
-                    }
-                    __instance.suspended = true;
-                    __result = false;
+                    Messages.Message("Goodwill_FactionDefeated".Translate(targetFact.Name),
+                        MessageTypeDefOf.NegativeEvent);
                 }
+
+                __instance.suspended = true;
+                __result = false;
             }
             else if (targetFact.GoodwillWith(playerFaction) < modExtension.minimumGoodwill)
             {
