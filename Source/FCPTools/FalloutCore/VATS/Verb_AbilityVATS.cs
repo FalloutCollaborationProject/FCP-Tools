@@ -17,7 +17,7 @@ public class Verb_AbilityVATS : Verb_AbilityShoot
         get => ability;
         set
         {
-            AccessTools.Field(typeof(Ability), "cooldownDuration").SetValue(value, FCPCoreMod.Settings.CooldownTicks);
+            AccessTools.Field(typeof(Ability), "cooldownDuration").SetValue(value, VATSMod.Settings.CooldownTicks);
             ability = value;
         }
     }

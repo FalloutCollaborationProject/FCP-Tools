@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace FCP.Core;
+namespace FCP.Core.VATS;
 
-public class FCP_Settings : ModSettings
+public class VATSModSettings : ModSettings
 {
     public float FlatHitChanceBoost = 0.2f;
     public int CooldownTicks = 600;
@@ -31,7 +31,7 @@ public class FCP_Settings : ModSettings
         PopulateMissingMultipliers();
     }
 
-    public void PopulateMissingMultipliers()
+    private void PopulateMissingMultipliers()
     {
         if (MultiplierLookup.Count() >= DefDatabase<BodyPartDef>.AllDefs.Count())
         {

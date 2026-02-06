@@ -31,7 +31,7 @@ namespace FCP.Core
             ThingDef projectileDef = attackVerb.GetProjectile();
             Projectile projectile = (Projectile)GenSpawn.Spawn(projectileDef, resultingLine.Source, TargetThingA.Map);
             
-            if (FCPCoreMod.Settings.EnableZoom)
+            if (VATSMod.Settings.EnableZoom)
             {
                 Thing zoomer = GenSpawn.Spawn(FCPDefOf.FCP_VATS_Zoomer, resultingLine.Source, TargetThingA.Map);
                 ((Graphic_Zoomer)zoomer.Graphic).Parent = projectile;

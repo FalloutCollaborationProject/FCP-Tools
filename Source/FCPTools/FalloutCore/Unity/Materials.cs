@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+using FCP.Core.VATS;
+using UnityEngine;
 
 namespace FCP.Core.Unity;
 
@@ -14,7 +15,7 @@ public static class Materials
         _lookupMaterials ??= new Dictionary<string, Material>();
         if (!_lookupMaterials.ContainsKey(materialName))
         {
-            _lookupMaterials[materialName] = FCPCoreMod.mod.MainBundle.LoadAsset<Material>(materialName);
+            _lookupMaterials[materialName] = VATSMod.Instance.MainBundle.LoadAsset<Material>(materialName);
         }
 
         Material mat = _lookupMaterials[materialName];

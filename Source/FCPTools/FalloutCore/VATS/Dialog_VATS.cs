@@ -11,7 +11,7 @@ public class Dialog_VATS(Verb_AbilityVATS verb, LocalTargetInfo target, IWindowD
 
     public Verb Selected;
 
-    public Dictionary<string, float> MultiplierLookup => FCPCoreMod.Settings.MultiplierLookup;
+    public Dictionary<string, float> MultiplierLookup => VATSMod.Settings.MultiplierLookup;
 
     public override Vector2 InitialSize => new(845f, 740f);
     protected virtual Vector2 ButtonSize => new(200f, 40f);

@@ -19,7 +19,7 @@ public class Thing_Zoomer : ThingWithComps
             return;
         }
 
-        if (startTicks + FCPCoreMod.Settings.ZoomTimeout < Find.TickManager.TicksGame)
+        if (startTicks + VATSMod.Settings.ZoomTimeout < Find.TickManager.TicksGame)
         {
             Destroy();
         }
