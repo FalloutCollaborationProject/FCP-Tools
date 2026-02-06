@@ -83,7 +83,7 @@ public static class JobGiver_Reload_TryGiveJob_Patch
             JobFailReason.Is("NoFuelToRefuel".Translate(fuelFilter.Summary));
             return false;
         }
-        if (t.TryGetComp<CompRefuelable>().Props.atomicFueling && RefuelWorkGiverUtility.P_FindBestFuel(pawn, t) == null)
+        if (t.TryGetComp<CompRefuelable>().Props.atomicFueling && RefuelWorkGiverUtility.P_FindAllFuel(pawn, t) == null)
         {
             ThingFilter fuelFilter2 = t.TryGetComp<CompRefuelable>().Props.fuelFilter;
             JobFailReason.Is("NoFuelToRefuel".Translate(fuelFilter2.Summary));
