@@ -26,7 +26,7 @@ public class CompApparelRequirement : ThingComp
     public override void Notify_Unequipped(Pawn pawn)
     {
         base.Notify_Unequipped(pawn);
-        foreach (Apparel apparel in pawn.apparel.WornApparel)
+        foreach (Apparel apparel in pawn.apparel.WornApparel.ToList())
         {
             if (!pawn.apparel.WornApparel.Contains(apparel)) 
                 continue;
