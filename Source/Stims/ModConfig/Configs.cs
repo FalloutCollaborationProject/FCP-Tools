@@ -1,15 +1,16 @@
 ﻿using Verse;
 
-namespace StimPacks.ModConfig;
-
-public class Configs : ModSettings
+namespace StimPacks.ModConfig
 {
-    public bool AutoStim = true;
-    public bool TeetotalerAutoStim = false;
-    public override void ExposeData()
+    public class Configs : ModSettings
     {
-        Scribe_Values.Look(ref AutoStim, "MaxLevel", true);
-        Scribe_Values.Look(ref TeetotalerAutoStim, "TeetotalerAutoStim", false);
-        base.ExposeData();
+        public bool AutoStim = true;
+        public bool TeetotalerAutoStim = false;
+        public override void ExposeData()
+        {
+            Scribe_Values.Look(ref AutoStim, "MaxLevel", true);
+            Scribe_Values.Look(ref TeetotalerAutoStim, "TeetotalerAutoStim", false);
+            base.ExposeData();
+        }
     }
 }
