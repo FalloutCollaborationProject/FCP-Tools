@@ -1,4 +1,6 @@
-﻿namespace FCP.Core.VATS;
+﻿using FCP.Core;
+
+namespace FCP.Core.VATS;
 
 public class Thing_Zoomer : ThingWithComps
 {
@@ -19,7 +21,7 @@ public class Thing_Zoomer : ThingWithComps
             return;
         }
 
-        if (startTicks + VATSMod.Settings.ZoomTimeout < Find.TickManager.TicksGame)
+        if (startTicks + FCPCoreMod.SettingsTab<VATSSettings>().zoomTimeout < Find.TickManager.TicksGame)
         {
             Destroy();
         }

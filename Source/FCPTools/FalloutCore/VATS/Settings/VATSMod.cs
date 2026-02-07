@@ -7,23 +7,10 @@ namespace FCP.Core.VATS;
 public class VATSMod : Mod
 {
     public static VATSMod Instance { get; private set; }
-    public static VATSModSettings Settings { get; private set; }
 
     public VATSMod(ModContentPack content) : base(content)
     {
         Instance = this;
-        Settings = GetSettings<VATSModSettings>();
-    }
-
-    public override void DoSettingsWindowContents(Rect inRect)
-    {
-        base.DoSettingsWindowContents(inRect);
-        Settings.DoWindowContents(inRect);
-    }
-
-    public override string SettingsCategory()
-    {
-        return "FCP_VATS_Settings_Category".Translate();
     }
 
     public AssetBundle MainBundle

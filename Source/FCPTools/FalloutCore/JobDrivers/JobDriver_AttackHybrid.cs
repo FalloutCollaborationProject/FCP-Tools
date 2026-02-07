@@ -1,4 +1,5 @@
-﻿using FCP.Core.VATS;
+﻿using FCP.Core;
+using FCP.Core.VATS;
 using Verse.AI;
 
 namespace FCP.Core
@@ -31,7 +32,7 @@ namespace FCP.Core
             ThingDef projectileDef = attackVerb.GetProjectile();
             Projectile projectile = (Projectile)GenSpawn.Spawn(projectileDef, resultingLine.Source, TargetThingA.Map);
             
-            if (VATSMod.Settings.EnableZoom)
+            if (FCPCoreMod.SettingsTab<VATSSettings>().enableZoom)
             {
                 Thing zoomer = GenSpawn.Spawn(FCPDefOf.FCP_VATS_Zoomer, resultingLine.Source, TargetThingA.Map);
                 ((Graphic_Zoomer)zoomer.Graphic).Parent = projectile;

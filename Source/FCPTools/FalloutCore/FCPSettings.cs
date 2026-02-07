@@ -1,33 +1,31 @@
-using FCP.Core.Settings;
-using DebugSettings = FCP.Core.Settings.DebugSettings;
+using FCP.Core.VATS;
+// ReSharper disable InconsistentNaming
 
 namespace FCP.Core;
 
 public class FCPSettings : ModSettings
 {
-    private List<SettingsTab> tabs;
-    public IReadOnlyList<SettingsTab> Tabs => tabs;
+    public GeneralSettings General = new GeneralSettings();
+    public DebugSettings Debug = new DebugSettings();
+    public VATSSettings VATS = new VATSSettings();
+
+    public IReadOnlyList<SettingsTab> Tabs => [General, Debug, VATS];
 
     public T GetTab<T>() where T : SettingsTab
-        => tabs.OfType<T>().FirstOrDefault();
-
-    public bool HasTab<T>() where T : SettingsTab
-        => tabs.OfType<T>().Any();
+        => Tabs.OfType<T>().FirstOrDefault();
 
     public override void ExposeData()
     {
-        tabs ??= [];
-
-        AddTabTypeIfNone<GeneralSettings>();
-        AddTabTypeIfNone<DebugSettings>();
-        
         base.ExposeData();
-        Scribe_Collections.Look(ref tabs, nameof(tabs), LookMode.Deep);
-    }
+        Scribe_Deep.Look(ref General, nameof(General));
+        Scribe_Deep.Look(ref Debug, nameof(Debug));
+        Scribe_Deep.Look(ref VATS, nameof(VATS));
 
-    private void AddTabTypeIfNone<T>() where T : SettingsTab, new()
-    {
-        if (!tabs.ContainsAny(tab => tab is T))
-            tabs.Add(new T());
+        if (Scribe.mode == LoadSaveMode.PostLoadInit)
+        {
+            General ??= new GeneralSettings();
+            Debug ??= new DebugSettings();
+            VATS ??= new VATSSettings();
+        }
     }
 }

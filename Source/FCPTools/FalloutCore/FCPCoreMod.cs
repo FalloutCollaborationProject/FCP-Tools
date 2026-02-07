@@ -1,4 +1,4 @@
-using FCP.Core.Settings;
+using FCP.Core;
 using HarmonyLib;
 using UnityEngine;
 
@@ -12,8 +12,7 @@ public class FCPCoreMod : Mod
     public static FCPSettings Settings { get; private set; }
 
     // Settings Helper
-    public static T GetSettingsTab<T>() where T : SettingsTab => Settings.GetTab<T>();
-    public static bool HasSettingsTab<T>() where T : SettingsTab => Settings.HasTab<T>();
+    public static T SettingsTab<T>() where T : SettingsTab => Settings.GetTab<T>();
 
     // Patch Categories
     public const string LatePatchesCategory = "FCP.Core.LatePatches";
@@ -52,7 +51,7 @@ public class FCPCoreMod : Mod
         Widgets.DrawMenuSection(mainRect);
 
         // Draw Tabs
-        currentTab ??= GetSettingsTab<GeneralSettings>();
+        currentTab ??= SettingsTab<GeneralSettings>();
 
         var tabs = Settings.Tabs
             .Select(tab => new TabRecord(tab.TabName, () =>
