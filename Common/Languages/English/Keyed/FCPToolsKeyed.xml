@@ -2,6 +2,9 @@
 <LanguageData>
 
 	<FCP_Settings_Category>FCP Tools</FCP_Settings_Category>
+	<FCP_Settings.General>General</FCP_Settings.General>
+	<FCP_Settings.Debug>Debug</FCP_Settings.Debug>
+
 	<FCP_MessagePermitLostOnPromotion>Due to {0_possessive} promotion to {1}, {0_labelShort} has lost {0_possessive} {2} permit</FCP_MessagePermitLostOnPromotion>
 	<!-- Storyteller Joiner -->
 	<FCP_LetterLabel_SpecialWandererJoins>Special Wanderer: {PAWN_nameDef}</FCP_LetterLabel_SpecialWandererJoins>

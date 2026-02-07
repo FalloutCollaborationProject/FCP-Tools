@@ -35,7 +35,7 @@ namespace FCP.Core.TemperatureApparelPreference
             if (patched) return;
             patched = true;
 
-            var harmony = FCPCoreMod.harmony;
+            var harmony = FCPCoreMod.Harmony;
             harmony.Patch(original: AccessTools.Method(typeof(PawnApparelGenerator), "CanUsePair"), prefix: new HarmonyMethod(typeof(TemperatureApparelPreferencePatches), nameof(TemperatureApparelPreferencePatches.Patch_PawnApparelGenerator_CanUsePair)));
         }
     }
