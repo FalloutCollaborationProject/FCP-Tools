@@ -4,7 +4,7 @@ using HarmonyLib;
 namespace FCP.Core.Access;
 
 [StaticConstructorOnStartup]
-internal static class AccessExtensions_RefuelWorkGiverUtility
+public static class AccessExtensions_RefuelWorkGiverUtility
 {
     private delegate Thing FindBestFuel_Delegate(Pawn pawn, Thing refuelable);
 
@@ -20,12 +20,9 @@ internal static class AccessExtensions_RefuelWorkGiverUtility
 
     static AccessExtensions_RefuelWorkGiverUtility() {}
 
-    extension(RefuelWorkGiverUtility)
-    {
-        internal static Thing P_FindBestFuel(Pawn pawn, Thing refuelable)
-            => FindBestFuel(pawn, refuelable);
+    public static Thing P_FindBestFuel(Pawn pawn, Thing refuelable)
+        => FindBestFuel(pawn, refuelable);
 
-        internal static List<Thing> P_FindAllFuel(Pawn pawn, Thing refuelable)
-            => FindAllFuel(pawn, refuelable);
-    }
+    public static List<Thing> P_FindAllFuel(Pawn pawn, Thing refuelable)
+        => FindAllFuel(pawn, refuelable);
 }

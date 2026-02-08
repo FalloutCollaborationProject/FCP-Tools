@@ -46,7 +46,7 @@ public class WorkGiver_RepairPowerArmor : WorkGiver_Scanner
 		List<IngredientCount> ingredients = repairResources.Select((ThingDefFloatClass tc) => tc.ToIngredientCount()).ToList();
 
 		IntVec3 rootCell = building is Building b && b.def.hasInteractionCell ? b.InteractionCell : building.Position;
-		return WorkGiver_DoBill.P_TryFindBestIngredientsHelper(delegate (Thing t)
+		return AccessExtensions_WorkGiver_DoBill.P_TryFindBestIngredientsHelper(delegate (Thing t)
 		{
 			foreach (IngredientCount ingredient in ingredients)
 			{
@@ -56,7 +56,7 @@ public class WorkGiver_RepairPowerArmor : WorkGiver_Scanner
 				}
 			}
 			return false;
-		}, (List<Thing> foundThings) => WorkGiver_DoBill.P_TryFindBestIngredientsInSet_NoMixHelper(foundThings, ingredients, chosen, rootCell, alreadySorted: false, null), ingredients, pawn, building, chosen, 999f);
+		}, (List<Thing> foundThings) => AccessExtensions_WorkGiver_DoBill.P_TryFindBestIngredientsInSet_NoMixHelper(foundThings, ingredients, chosen, rootCell, alreadySorted: false, null), ingredients, pawn, building, chosen, 999f);
 	}
 
 	public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)

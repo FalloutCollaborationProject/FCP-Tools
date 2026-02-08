@@ -5,7 +5,7 @@
     <AssemblyName>FCP_Enlist</AssemblyName>
     <AssemblyTitle>Fallout Tents Module</AssemblyTitle>
     <AssemblyCopyright>Copyright © iforgotmysocks 2020</AssemblyCopyright>
-    <LangVersion>14</LangVersion>
+    <LangVersion>12</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>disable</Nullable>
   </PropertyGroup>

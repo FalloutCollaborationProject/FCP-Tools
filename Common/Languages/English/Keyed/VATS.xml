@@ -15,4 +15,21 @@
     <FCP_VATS_Settings_Reset>Reset</FCP_VATS_Settings_Reset>
     <FCP_VATS_LegendaryStats>Legendary effects:</FCP_VATS_LegendaryStats>
     <FCP_VATS_MessageReceivedDamageFromHediff>{PAWN_labelShort} has a crippled {1}.</FCP_VATS_MessageReceivedDamageFromHediff>
+    
+    <!-- Settings Sections -->
+    <FCP_Settings_Stimpaks>Stimpaks</FCP_Settings_Stimpaks>
+    <FCP_Settings_TemperatureApparelPreference>Temperature Apparel Preference</FCP_Settings_TemperatureApparelPreference>
+    <FCP_Settings_EnlistmentOptions>Enlistment Options</FCP_Settings_EnlistmentOptions>
+    <FCP_Settings_VATS>VATS Settings</FCP_Settings_VATS>
+    <FCP_Settings_VerboseLogging>Verbose logging</FCP_Settings_VerboseLogging>
+    <FCP_Settings_VerboseLoggingDesc>If enabled, logs detailed decisions made by Temperature Apparel Preference. Disable unless diagnosing.</FCP_Settings_VerboseLoggingDesc>
+    
+    <!-- Stimpak Settings -->
+    <AutoStim>Auto-Stim</AutoStim>
+    <AutoStimDesc>Automatically apply stimpaks when pawns are injured.</AutoStimDesc>
+    <TeetotalerAutoStim>Teetotaler Auto-Stim</TeetotalerAutoStim>
+    <TeetotalerAutoStimDesc>Allow teetotalers to use stimpaks automatically.</TeetotalerAutoStimDesc>
+    
+    <!-- Enlistment Settings -->
+    <RH.ActiveEnlistOptions>Active enlist options</RH.ActiveEnlistOptions>
 </LanguageData>

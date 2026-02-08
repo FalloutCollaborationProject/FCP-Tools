@@ -16,19 +16,10 @@ class EnlistMod : Mod
         settings = GetSettings<EnlistSettings>();
         new Harmony("ChickenPlucker.Enlist").PatchAll();
     }
-    public override void DoSettingsWindowContents(Rect inRect)
-    {
-        base.DoSettingsWindowContents(inRect);
-        settings.DoSettingsWindowContents(inRect);
-    }
 
     public override void WriteSettings()
     {
         base.WriteSettings();
         EnlistUtils.DoDefsRemoval();
-    }
-    public override string SettingsCategory()
-    {
-        return "Enlistment";
     }
 }

@@ -4,9 +4,8 @@
     <RootNamespace>StimPacks</RootNamespace>
     <AssemblyName>FCP_StimPacks</AssemblyName>
     <AssemblyTitle>Fallout Stimpacks Module</AssemblyTitle>
-    <LangVersion>7.3</LangVersion>
+    <LangVersion>11</LangVersion>
     <ImplicitUsings>disable</ImplicitUsings>
-    <GenerateGlobalUsings>false</GenerateGlobalUsings>
     <Nullable>disable</Nullable>
   </PropertyGroup>
 

@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Reflection;
+using System.Collections;
 
 namespace FCP.Core;
 
@@ -50,14 +52,156 @@ public class FCP_Settings : ModSettings
     {
         PopulateMissingMultipliers();
         int multiplierHeight = MultiplierLookup.Count * 56;
-        int restHeight = 248 + 64;
-        float scrollViewHeight = multiplierHeight + restHeight; // Adjust this value as needed
+        
+        // Calculate enlist count dynamically
+        int enlistCount = 0;
+        var enlistModTypeForCount = Type.GetType("FCP.Enlist.EnlistMod, FCP_Enlist");
+        if (enlistModTypeForCount != null)
+        {
+            var settingsField = enlistModTypeForCount.GetField("settings", BindingFlags.Public | BindingFlags.Static);
+            if (settingsField != null)
+            {
+                var enlistSettings = settingsField.GetValue(null);
+                if (enlistSettings != null)
+                {
+                    var enlistStatesField = enlistSettings.GetType().GetField("enlistStates", BindingFlags.Public | BindingFlags.Instance);
+                    if (enlistStatesField != null)
+                    {
+                        var enlistStates = enlistStatesField.GetValue(enlistSettings) as IDictionary;
+                        enlistCount = enlistStates?.Count ?? 0;
+                    }
+                }
+            }
+        }
+        
+        int restHeight = 248 + 64 + 200 + (enlistCount * 24); // Added space for new settings sections
+        float scrollViewHeight = multiplierHeight + restHeight;
         Rect viewRect = new Rect(0, 0, wrect.width - 20, scrollViewHeight);
         scrollPosition = GUI.BeginScrollView(new Rect(0, 50, wrect.width, wrect.height - 50), scrollPosition, viewRect);
         Listing_Standard options = new Listing_Standard();
         options.Begin(viewRect);
         try
         {
+            // === Stims Settings ===
+            options.GapLine();
+            Text.Font = GameFont.Medium;
+            options.Label("FCP_Settings_Stimpaks".Translate());
+            Text.Font = GameFont.Small;
+            
+            // Use reflection to access StimPacks.ModConfig.ConfigUI.Config if available
+            var stimConfigType = Type.GetType("StimPacks.ModConfig.ConfigUI, FCP_StimPacks");
+            if (stimConfigType != null)
+            {
+                var configField = stimConfigType.GetField("Config", BindingFlags.Public | BindingFlags.Static);
+                if (configField != null)
+                {
+                    var config = configField.GetValue(null);
+                    if (config != null)
+                    {
+                        var autoStimField = config.GetType().GetField("AutoStim", BindingFlags.Public | BindingFlags.Instance);
+                        var teetotalerField = config.GetType().GetField("TeetotalerAutoStim", BindingFlags.Public | BindingFlags.Instance);
+                        
+                        if (autoStimField != null)
+                        {
+                            bool autoStim = (bool)autoStimField.GetValue(config);
+                            options.CheckboxLabeled("AutoStim".Translate(), ref autoStim, "AutoStimDesc".Translate());
+                            autoStimField.SetValue(config, autoStim);
+                        }
+                        
+                        if (teetotalerField != null)
+                        {
+                            bool teetotalerAutoStim = (bool)teetotalerField.GetValue(config);
+                            options.CheckboxLabeled("TeetotalerAutoStim".Translate(), ref teetotalerAutoStim, "TeetotalerAutoStimDesc".Translate());
+                            teetotalerField.SetValue(config, teetotalerAutoStim);
+                        }
+                    }
+                }
+            }
+            options.Gap();
+
+            // === Temperature Apparel Preference Settings ===
+            options.GapLine();
+            Text.Font = GameFont.Medium;
+            options.Label("FCP_Settings_TemperatureApparelPreference".Translate());
+            Text.Font = GameFont.Small;
+            
+            // Use reflection to access FCP.Core.TemperatureApparelPreference.Mod
+            var tempApparelModType = Type.GetType("FCP.Core.TemperatureApparelPreference.Mod, FCP_Core");
+            if (tempApparelModType != null)
+            {
+                var instanceProp = tempApparelModType.GetProperty("Instance", BindingFlags.Public | BindingFlags.Static);
+                if (instanceProp != null)
+                {
+                    var instance = instanceProp.GetValue(null);
+                    if (instance != null)
+                    {
+                        var settingsProp = instance.GetType().GetProperty("Settings", BindingFlags.Public | BindingFlags.Instance);
+                        if (settingsProp != null)
+                        {
+                            var settings = settingsProp.GetValue(instance);
+                            if (settings != null)
+                            {
+                                var verboseField = settings.GetType().GetField("verboseLogging", BindingFlags.Public | BindingFlags.Instance);
+                                if (verboseField != null)
+                                {
+                                    bool verboseLogging = (bool)verboseField.GetValue(settings);
+                                    options.CheckboxLabeled(
+                                        "FCP_Settings_VerboseLogging".Translate(),
+                                        ref verboseLogging,
+                                        "FCP_Settings_VerboseLoggingDesc".Translate()
+                                    );
+                                    verboseField.SetValue(settings, verboseLogging);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            options.Gap();
+
+            // === Enlistment Settings ===
+            options.GapLine();
+            Text.Font = GameFont.Medium;
+            options.Label("FCP_Settings_EnlistmentOptions".Translate());
+            Text.Font = GameFont.Small;
+            
+            // Use reflection to access FCP.Enlist.EnlistMod.settings
+            var enlistModType = Type.GetType("FCP.Enlist.EnlistMod, FCP_Enlist");
+            if (enlistModType != null)
+            {
+                var settingsField = enlistModType.GetField("settings", BindingFlags.Public | BindingFlags.Static);
+                if (settingsField != null)
+                {
+                    var enlistSettings = settingsField.GetValue(null);
+                    if (enlistSettings != null)
+                    {
+                        var enlistStatesField = enlistSettings.GetType().GetField("enlistStates", BindingFlags.Public | BindingFlags.Instance);
+                        if (enlistStatesField != null)
+                        {
+                            var enlistStates = enlistStatesField.GetValue(enlistSettings) as IDictionary;
+                            if (enlistStates != null && enlistStates.Count > 0)
+                            {
+                                var keys = enlistStates.Keys.Cast<string>().OrderByDescending(x => x).ToList();
+                                options.Label("RH.ActiveEnlistOptions".Translate());
+                                foreach (var key in keys)
+                                {
+                                    bool value = (bool)enlistStates[key];
+                                    options.CheckboxLabeled(key, ref value);
+                                    enlistStates[key] = value;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            options.Gap();
+
+            // === VATS Settings ===
+            options.GapLine();
+            Text.Font = GameFont.Medium;
+            options.Label("FCP_Settings_VATS".Translate());
+            Text.Font = GameFont.Small;
+            
             //30
             if (options.ButtonText("FCP_VATS_Settings_Reset".Translate()))
             {
@@ -103,6 +247,8 @@ public class FCP_Settings : ModSettings
             //12
             options.Gap();
 
+            // Body Part Multipliers
+            options.GapLine();
             //22
             options.Label("FCP_VATS_Settings_BodyPartMultipliers".Translate());
 

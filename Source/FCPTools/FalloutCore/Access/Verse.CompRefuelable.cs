@@ -18,8 +18,6 @@ internal static class AccessExtensions_CompRefuelable
     {
     }
 
-    extension(CompRefuelable comp)
-    {
-        internal float P_ConsumptionRatePerTick => ConsumptionRatePerTick_Get(comp);
-    }
+    internal static float P_ConsumptionRatePerTick(this CompRefuelable comp) 
+        => ConsumptionRatePerTick_Get(comp);
 }

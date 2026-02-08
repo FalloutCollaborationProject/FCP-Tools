@@ -19,17 +19,6 @@ namespace FCP.Core.TemperatureApparelPreference
             LongEventHandler.ExecuteWhenFinished(EnsurePatched);
         }
 
-        public override string SettingsCategory()
-        {
-            return "Temperature Apparel Preference";
-        }
-
-        public override void DoSettingsWindowContents(UnityEngine.Rect inRect)
-        {
-            base.DoSettingsWindowContents(inRect);
-            Settings.DoWindowContents(inRect);
-        }
-
         private void EnsurePatched()
         {
             if (patched) return;

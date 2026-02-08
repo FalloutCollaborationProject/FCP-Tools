@@ -31,7 +31,7 @@ public class CompPowerArmor : ThingComp
         if (CompRefuelable is not CompRefuelable comp) 
             return;
                 
-        comp.ConsumeFuel(comp.P_ConsumptionRatePerTick);
+        comp.ConsumeFuel(AccessExtensions_CompRefuelable.P_ConsumptionRatePerTick(comp));
         if (Props.hediffOnEmptyFuel == null || comp.HasFuel) 
             return;
         
