@@ -12,6 +12,10 @@
 	<FCP_Settings_Stims_TeetotalerAutoStim>Teetotalers can auto-inject</FCP_Settings_Stims_TeetotalerAutoStim>
 	<FCP_Settings_Stims_TeetotalerAutoStim_Desc>Allow pawns with the teetotaler trait to automatically use stimpaks.</FCP_Settings_Stims_TeetotalerAutoStim_Desc>
 
+	<!-- Enlistment Settings -->
+	<FCP_Settings_Enlistment>Enlistment</FCP_Settings_Enlistment>
+	<FCP_Settings_Enlistment_ActiveTypes>Active Enlistment Types</FCP_Settings_Enlistment_ActiveTypes>
+
 	<!-- Debug Settings-->
 	<FCP_Settings_Debug>Debug</FCP_Settings_Debug>
 	<FCP_Settings_Debug_tt>Options to help with the diagnosis of issues or modify behaviour for debugging</FCP_Settings_Debug_tt>

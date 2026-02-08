@@ -1,4 +1,5 @@
-﻿using RimWorld;
+using FCP.Core;
+using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -10,15 +11,18 @@ public static class EnlistUtils
 {
     static EnlistUtils()
     {
+        var enlistTab = FCPCoreMod.SettingsTab<EnlistSettings>();
+        enlistTab.OnSaved = DoDefsRemoval;
+
         foreach (var factionEnlistOptionsDef in DefDatabase<FactionEnlistOptionsDef>.AllDefs)
         {
-            if (EnlistMod.settings.enlistStates == null) EnlistMod.settings.enlistStates = new Dictionary<string, bool>();
-            if (!EnlistMod.settings.enlistStates.ContainsKey(factionEnlistOptionsDef.defName))
+            if (enlistTab.enlistStates == null) enlistTab.enlistStates = new Dictionary<string, bool>();
+            if (!enlistTab.enlistStates.ContainsKey(factionEnlistOptionsDef.defName))
             {
-                EnlistMod.settings.enlistStates[factionEnlistOptionsDef.defName] = true;
+                enlistTab.enlistStates[factionEnlistOptionsDef.defName] = true;
             }
 
-            if (EnlistMod.settings.enlistStates[factionEnlistOptionsDef.defName] && factionEnlistOptionsDef.autoAssignToAllFactions)
+            if (enlistTab.enlistStates[factionEnlistOptionsDef.defName] && factionEnlistOptionsDef.autoAssignToAllFactions)
             {
                 foreach (var factionDef in DefDatabase<FactionDef>.AllDefs)
                 {
@@ -114,6 +118,7 @@ public static class EnlistUtils
     }
     public static List<FactionEnlistOptionsDef> GetEnlistOptions(this Faction faction)
     {
+        var enlistTab = FCPCoreMod.SettingsTab<EnlistSettings>();
         var optionDefs = new List<FactionEnlistOptionsDef>();
         if (faction != null)
         {
@@ -126,7 +131,7 @@ public static class EnlistUtils
                 }
             }
         }
-        return optionDefs.Where(x => EnlistMod.settings.enlistStates[x.defName]).ToList();
+        return optionDefs.Where(x => enlistTab.enlistStates[x.defName]).ToList();
     }
 
     private static void AssignModExtension(FactionDef factionDef, FactionEnlistOptionsDef factionEnlistOptionsDef)
@@ -162,7 +167,8 @@ public static class EnlistUtils
     }
     public static void DoDefsRemoval()
     {
-        foreach (var enlistState in EnlistMod.settings.enlistStates)
+        var enlistTab = FCPCoreMod.SettingsTab<EnlistSettings>();
+        foreach (var enlistState in enlistTab.enlistStates)
         {
             if (!enlistState.Value)
             {

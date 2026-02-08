@@ -34,6 +34,13 @@ public class FCPCoreMod : Mod
                        "Report bugs on steam workshop page or on discord: 3HEXN3Qbn4");
     }
 
+    public override void WriteSettings()
+    {
+        base.WriteSettings();
+        foreach (var tab in Settings.Tabs)
+            tab.OnWriteSettings();
+    }
+
     public override string SettingsCategory() => "FCP_Settings_Category".Translate();
     
     public override void DoSettingsWindowContents(Rect inRect)

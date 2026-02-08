@@ -36,4 +36,10 @@
     <Publicize Include="Assembly-CSharp" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="FCP_Core">
+      <HintPath>../../1.6/Assemblies/FCP_Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

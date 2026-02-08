@@ -9,6 +9,8 @@ public class SettingsTab : IExposable
     public virtual string TabToolTip => null;
 
     public virtual void DoTabWindowContents(Rect tabRect) { }
-    
+
     public virtual void ExposeData() { }
+
+    public virtual void OnWriteSettings() { }
 }
