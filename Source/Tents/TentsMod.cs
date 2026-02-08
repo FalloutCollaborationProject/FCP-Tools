@@ -12,4 +12,15 @@ public class TentsMod : Mod
         var harmony = new Harmony("FCP.Tents");
         harmony.PatchAll(Assembly.GetExecutingAssembly());
     }
+
+    public override void DoSettingsWindowContents(Rect inRect)
+    {
+        base.DoSettingsWindowContents(inRect);
+        GetSettings<ModSettings>().DoWindowContents(inRect);
+    }
+
+    public override string SettingsCategory()
+    {
+        return "Camping Tent";
+    }
 }

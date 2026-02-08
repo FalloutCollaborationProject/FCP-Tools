@@ -10,5 +10,24 @@ namespace StimPacks.ModConfig
             {
                 Config = GetSettings<Configs>();
             }
+
+            public override string SettingsCategory()
+            {
+                return "Stims";
+            }
+            
+            public override void DoSettingsWindowContents(Rect inRect)
+            {
+                Listing_Standard listing = new Listing_Standard();
+                listing.Begin(inRect);
+                
+                listing.CheckboxLabeled("AutoStim".Translate(), ref Config.AutoStim, "AutoStimDesc".Translate());
+                
+                listing.CheckboxLabeled("TeetotalerAutoStim".Translate(), ref Config.TeetotalerAutoStim, "TeetotalerAutoStimDesc".Translate());
+                
+                listing.End();
+                
+                base.DoSettingsWindowContents(inRect);
+            }
     }
 }
