@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Verse;
 
-namespace FCP.Core.TemperatureApparelPreference
+namespace FCP.Core
 {
     public class CompProperties_TemperatureApparelPreference : CompProperties
     {

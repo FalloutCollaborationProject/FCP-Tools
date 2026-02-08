@@ -4,10 +4,10 @@ using System.Collections.Concurrent;
 using System.Reflection;
 using Verse;
 
-namespace FCP.Core.TemperatureApparelPreference
+namespace FCP.Core
 {
     [StaticConstructorOnStartup]
-    public static class Compatibility
+    public static class TemperatureApparelPreferenceCompatibility
     {
         private static readonly ConcurrentDictionary<ThingDef, object> cachedExtensions =
             new ConcurrentDictionary<ThingDef, object>();
@@ -19,7 +19,7 @@ namespace FCP.Core.TemperatureApparelPreference
         private static FieldInfo shouldHideBodyField;
         private static FieldInfo shouldHideHeadField;
 
-        static Compatibility()
+        static TemperatureApparelPreferenceCompatibility()
         {
             try
             {
@@ -33,8 +33,7 @@ namespace FCP.Core.TemperatureApparelPreference
                 if (getModExtensionClosed == null)
                     return;
 
-                var harmony = new Harmony("FCP.Core.TemperatureApparelPreference.FalloutCoreCompat");
-                PatchFalloutCore(harmony);
+                PatchFalloutCore(FCPCoreMod.Harmony);
 
                 Log.Message("[TemperatureApparelPreference] Applied FalloutCore ApparelExtension thread-safety compatibility patch.");
             }
@@ -86,14 +85,14 @@ namespace FCP.Core.TemperatureApparelPreference
             {
                 harmony.Patch(
                     shouldHideBody,
-                    prefix: new HarmonyMethod(typeof(Compatibility), nameof(ShouldHideBody_Prefix)));
+                    prefix: new HarmonyMethod(typeof(TemperatureApparelPreferenceCompatibility), nameof(ShouldHideBody_Prefix)));
             }
 
             if (shouldHideHead != null)
             {
                 harmony.Patch(
                     shouldHideHead,
-                    prefix: new HarmonyMethod(typeof(Compatibility), nameof(ShouldHideHead_Prefix)));
+                    prefix: new HarmonyMethod(typeof(TemperatureApparelPreferenceCompatibility), nameof(ShouldHideHead_Prefix)));
             }
         }
 

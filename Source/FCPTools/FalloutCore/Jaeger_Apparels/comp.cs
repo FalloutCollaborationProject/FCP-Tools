@@ -1,6 +1,6 @@
 ﻿using Verse;
 
-namespace FCP.Core.TemperatureApparelPreference
+namespace FCP.Core
 {
     public class CompTemperatureApparelPreference : ThingComp
     {
