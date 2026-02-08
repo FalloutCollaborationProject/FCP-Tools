@@ -1,74 +1,43 @@
-﻿using UnityEngine;
+using FCP.Core.Tents;
+using UnityEngine;
 
-namespace FCP.Tents;
+namespace FCP.Core;
 
-public class SleepingEffects : IExposable
+[StaticConstructorOnStartup]
+public class InitTentStartup
 {
-    public string tentDefName;
-    public string hediffDefName;
-    public string label;
-    public bool negateWater;
-    public bool negateSleptOutside;
-    public bool negateSleptInCold;
-    public bool negateSleptInHeat;
-    public bool negateSleptInBarracks;
-    public bool ideologyTentAssignmentAllowed;
-    public float fuelCapacity;
-    public float fuelConsumptionRate;
-    public bool fuelEnabled;
-
-    public void ExposeData()
+    static InitTentStartup()
     {
-        Scribe_Values.Look(ref tentDefName, "tentDefName");
-        Scribe_Values.Look(ref hediffDefName, "hediffDefName");
-        Scribe_Values.Look(ref negateWater, "negateWater");
-        Scribe_Values.Look(ref negateSleptOutside, "negateSleptOutside");
-        Scribe_Values.Look(ref negateSleptInCold, "negateSleptInCold");
-        Scribe_Values.Look(ref negateSleptInHeat, "negateSleptInHeat");
-        Scribe_Values.Look(ref negateSleptInBarracks, "negateSleptInBarracks");
-        Scribe_Values.Look(ref ideologyTentAssignmentAllowed, "ideologyTentAssignmentAllowed");
-        Scribe_Values.Look(ref fuelCapacity, "fuelCapacity");
-        Scribe_Values.Look(ref fuelConsumptionRate, "fuelConsumptionRate");
-        Scribe_Values.Look(ref fuelEnabled, "fuelEnabled", true);
+        if (ModsConfig.IsActive("Rick.FCP.Tents"))
+            TentsSettings.InitTents();
     }
 }
 
-public class HediffSet : IExposable
+public class TentsSettings : SettingsTab
 {
-    public string hediffDefName;
-    public string label;
-    public float comfyTemperatureMin;
-    public float comfyTemperatureMax;
+    public override string TabName => "Tents";
+    public override bool Enabled => ModsConfig.IsActive("Rick.FCP.Tents");
 
-    public void ExposeData()
-    {
-        Scribe_Values.Look(ref hediffDefName, "hediffDefName");
-        Scribe_Values.Look(ref comfyTemperatureMin, "comfyTemperatureMin");
-        Scribe_Values.Look(ref comfyTemperatureMax, "comfyTemperatureMax");
-    }
-}
-
-public class ModSettings : Verse.ModSettings
-{
     public static List<SleepingEffects> effects;
-    public static List<HediffSet> hediffSets;
+    public static List<TentHediffSet> hediffSets;
     public static bool xmlOverride;
+
+    private Vector2 scrollPos;
 
     public override void ExposeData()
     {
-        base.ExposeData();
         Scribe_Collections.Look(ref effects, "effects", LookMode.Deep);
         Scribe_Collections.Look(ref hediffSets, "hediffSets", LookMode.Deep);
         Scribe_Values.Look(ref xmlOverride, "xmlOverride");
     }
 
-    private Vector2 scrollPos;
-
-    public void DoWindowContents(Rect mainRect)
+    public override void DoTabWindowContents(Rect mainRect)
     {
         var options = new Listing_Standard();
-        var viewRect = new Rect(0f, 0f, mainRect.width - 60,
-            effects != null ? (effects.Count * 304f + hediffSets.Count * 42) : 2000f);
+        var contentHeight = 100f;
+        if (effects != null) contentHeight += effects.Count * 304f;
+        if (hediffSets != null) contentHeight += hediffSets.Count * 42f;
+        var viewRect = new Rect(0f, 0f, mainRect.width - 60, Math.Max(contentHeight, mainRect.height));
         Widgets.BeginScrollView(mainRect, ref scrollPos, viewRect);
         options.Begin(viewRect);
 
@@ -80,79 +49,84 @@ public class ModSettings : Verse.ModSettings
         options.GapLine();
         options.Gap();
 
-        foreach (SleepingEffects effect in effects)
+        if (effects != null)
         {
-            Text.Font = GameFont.Medium;
-            options.Label($"Tent: {effect.tentDefName} (Hediff: {effect.label})");
-            Text.Font = GameFont.Small;
-            options.CheckboxLabeled("Negate getting wet", ref effect.negateWater);
-            options.CheckboxLabeled("Negate slept outside", ref effect.negateSleptOutside);
-            options.CheckboxLabeled("Negate slept in cold", ref effect.negateSleptInCold);
-            options.CheckboxLabeled("Negate slept in heat", ref effect.negateSleptInHeat);
-            options.CheckboxLabeled("Negate slept in barracks", ref effect.negateSleptInBarracks);
-            if (ModsConfig.IdeologyActive)
-                options.CheckboxLabeled("Disable ideology tent assignment limitation",
-                    ref effect.ideologyTentAssignmentAllowed);
-            options.CheckboxLabeled("Fuel requirement enabled", ref effect.fuelEnabled);
-            if (effect.fuelEnabled)
+            foreach (SleepingEffects effect in effects)
             {
-                var rect = options.GetRect(Text.LineHeight);
-                rect.width = options.ColumnWidth / 2;
-                Widgets.Label(rect, "Fuel capacity: ");
-                var input = Widgets.TextField(BRect(options.ColumnWidth - 40, rect.y, 40, Text.LineHeight),
-                    effect.fuelCapacity.ToString());
-                if (double.TryParse(input, out var inputDouble)) effect.fuelCapacity = Convert.ToInt32(inputDouble);
+                Text.Font = GameFont.Medium;
+                options.Label($"Tent: {effect.tentDefName} (Hediff: {effect.label})");
+                Text.Font = GameFont.Small;
+                options.CheckboxLabeled("Negate getting wet", ref effect.negateWater);
+                options.CheckboxLabeled("Negate slept outside", ref effect.negateSleptOutside);
+                options.CheckboxLabeled("Negate slept in cold", ref effect.negateSleptInCold);
+                options.CheckboxLabeled("Negate slept in heat", ref effect.negateSleptInHeat);
+                options.CheckboxLabeled("Negate slept in barracks", ref effect.negateSleptInBarracks);
+                if (ModsConfig.IdeologyActive)
+                    options.CheckboxLabeled("Disable ideology tent assignment limitation",
+                        ref effect.ideologyTentAssignmentAllowed);
+                options.CheckboxLabeled("Fuel requirement enabled", ref effect.fuelEnabled);
+                if (effect.fuelEnabled)
+                {
+                    var rect = options.GetRect(Text.LineHeight);
+                    rect.width = options.ColumnWidth / 2;
+                    Widgets.Label(rect, "Fuel capacity: ");
+                    var input = Widgets.TextField(BRect(options.ColumnWidth - 40, rect.y, 40, Text.LineHeight),
+                        effect.fuelCapacity.ToString());
+                    if (double.TryParse(input, out var inputDouble))
+                        effect.fuelCapacity = Convert.ToInt32(inputDouble);
 
-                rect = options.GetRect(Text.LineHeight);
-                rect.width = options.ColumnWidth / 2;
-                Widgets.Label(rect, "Fuel consumption rate: ");
-                input = Widgets.TextField(BRect(options.ColumnWidth - 40, rect.y, 40, Text.LineHeight),
-                    effect.fuelConsumptionRate.ToString());
-                if (double.TryParse(input, out inputDouble)) effect.fuelConsumptionRate = Convert.ToInt32(inputDouble);
+                    rect = options.GetRect(Text.LineHeight);
+                    rect.width = options.ColumnWidth / 2;
+                    Widgets.Label(rect, "Fuel consumption rate: ");
+                    input = Widgets.TextField(BRect(options.ColumnWidth - 40, rect.y, 40, Text.LineHeight),
+                        effect.fuelConsumptionRate.ToString());
+                    if (double.TryParse(input, out inputDouble))
+                        effect.fuelConsumptionRate = Convert.ToInt32(inputDouble);
+                }
+
+                options.Gap();
             }
-
-            options.Gap();
         }
 
         options.GapLine();
         options.Gap();
 
-        foreach (var hediff in hediffSets)
+        if (hediffSets != null)
         {
-            Text.Font = GameFont.Medium;
-            options.Label($"Hediff: {hediff.label}");
-            Text.Font = GameFont.Small;
-            var rect = options.GetRect(Text.LineHeight);
-            rect.width = options.ColumnWidth / 2;
-            Widgets.Label(rect, "Min Compfy Temperature bonus: ");
+            foreach (var hediff in hediffSets)
+            {
+                Text.Font = GameFont.Medium;
+                options.Label($"Hediff: {hediff.label}");
+                Text.Font = GameFont.Small;
+                var rect = options.GetRect(Text.LineHeight);
+                rect.width = options.ColumnWidth / 2;
+                Widgets.Label(rect, "Min Compfy Temperature bonus: ");
 
-            var input = Widgets.TextField(BRect(options.ColumnWidth - 40, rect.y, 40, Text.LineHeight),
-                hediff.comfyTemperatureMin.ToString());
-            if (double.TryParse(input, out var inputDouble))
-                hediff.comfyTemperatureMin = Convert.ToInt32(inputDouble);
+                var input = Widgets.TextField(BRect(options.ColumnWidth - 40, rect.y, 40, Text.LineHeight),
+                    hediff.comfyTemperatureMin.ToString());
+                if (double.TryParse(input, out var inputDouble))
+                    hediff.comfyTemperatureMin = Convert.ToInt32(inputDouble);
 
-            rect = options.GetRect(Text.LineHeight);
-            rect.width = options.ColumnWidth / 2;
-            Widgets.Label(rect, "Max Compfy Temperature bonus: ");
+                rect = options.GetRect(Text.LineHeight);
+                rect.width = options.ColumnWidth / 2;
+                Widgets.Label(rect, "Max Compfy Temperature bonus: ");
 
-            input = Widgets.TextField(BRect(options.ColumnWidth - 40, rect.y, 40, Text.LineHeight),
-                hediff.comfyTemperatureMax.ToString());
-            if (double.TryParse(input, out inputDouble))
-                hediff.comfyTemperatureMax = Convert.ToInt32(inputDouble);
+                input = Widgets.TextField(BRect(options.ColumnWidth - 40, rect.y, 40, Text.LineHeight),
+                    hediff.comfyTemperatureMax.ToString());
+                if (double.TryParse(input, out inputDouble))
+                    hediff.comfyTemperatureMax = Convert.ToInt32(inputDouble);
 
-            options.Gap();
+                options.Gap();
+            }
         }
 
         options.End();
         Widgets.EndScrollView();
     }
 
-    public static Rect lastRect;
-
-    public static Rect BRect(float x, float y, float width, float height)
+    private static Rect BRect(float x, float y, float width, float height)
     {
-        lastRect = new Rect(x, y, width, height);
-        return lastRect;
+        return new Rect(x, y, width, height);
     }
 
     public static void InitTents()
@@ -175,12 +149,12 @@ public class ModSettings : Verse.ModSettings
 
     private static void ReadHediffs(IEnumerable<HediffDef> hediffs)
     {
-        hediffSets = new List<HediffSet>();
+        hediffSets = new List<TentHediffSet>();
         foreach (var hediff in hediffs)
         {
             if (hediff?.defName == null) continue;
 
-            hediffSets.Add(new HediffSet()
+            hediffSets.Add(new TentHediffSet()
             {
                 hediffDefName = hediff.defName,
                 label = hediff.label,
@@ -192,7 +166,7 @@ public class ModSettings : Verse.ModSettings
         }
     }
 
-    private static void ApplyHediffs(List<HediffSet> hediffSets)
+    private static void ApplyHediffs(List<TentHediffSet> hediffSets)
     {
         foreach (var hediffSet in hediffSets)
         {
@@ -275,10 +249,4 @@ public class ModSettings : Verse.ModSettings
             }
         }
     }
-}
-
-[StaticConstructorOnStartup]
-public class InitTentStartup
-{
-    static InitTentStartup() => ModSettings.InitTents();
 }

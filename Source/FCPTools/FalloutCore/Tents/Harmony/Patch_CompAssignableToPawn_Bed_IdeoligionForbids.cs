@@ -1,7 +1,8 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 
-namespace FCP.Tents;
+namespace FCP.Core.Tents;
 
+[HarmonyPatchCategory(FCPCoreMod.TentsPatchesCategory)]
 [HarmonyPatch(typeof(CompAssignableToPawn_Bed), "IdeoligionForbids")]
 public class Patch_CompAssignableToPawn_Bed_IdeoligionForbids
 {
@@ -11,7 +12,7 @@ public class Patch_CompAssignableToPawn_Bed_IdeoligionForbids
         var modExt = __instance.parent.def.GetModExtension<TentModExtension>();
         if (modExt == null) return;
 
-        var effect = ModSettings.effects.FirstOrDefault(x => x?.tentDefName == __instance.parent.def.defName);
+        var effect = TentsSettings.effects.FirstOrDefault(x => x?.tentDefName == __instance.parent.def.defName);
         if (effect == null) return;
         if (effect.ideologyTentAssignmentAllowed) __result = false;
     }

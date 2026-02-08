@@ -1,8 +1,9 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using UnityEngine;
 
-namespace FCP.Tents;
+namespace FCP.Core.Tents;
 
+[HarmonyPatchCategory(FCPCoreMod.TentsPatchesCategory)]
 [HarmonyPatch(typeof(PawnRenderer), nameof(PawnRenderer.RenderPawnAt), typeof(Vector3), typeof(Rot4?), typeof(bool))]
 public class Patch_PawnRenderer_RenderPawnAt
 {

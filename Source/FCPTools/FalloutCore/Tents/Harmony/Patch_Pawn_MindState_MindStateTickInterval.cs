@@ -1,8 +1,9 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using Verse.AI;
 
-namespace FCP.Tents;
+namespace FCP.Core.Tents;
 
+[HarmonyPatchCategory(FCPCoreMod.TentsPatchesCategory)]
 [HarmonyPatch(typeof(Pawn_MindState), nameof(Pawn_MindState.MindStateTickInterval))]
 public class Patch_Pawn_MindState_MindStateTickInterval
 {

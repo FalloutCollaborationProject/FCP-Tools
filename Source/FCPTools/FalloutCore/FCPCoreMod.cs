@@ -16,6 +16,7 @@ public class FCPCoreMod : Mod
 
     // Patch Categories
     public const string LatePatchesCategory = "FCP.Core.LatePatches";
+    public const string TentsPatchesCategory = "FCP.Core.Tents";
     
     private SettingsTab currentTab = null;
 
@@ -26,6 +27,8 @@ public class FCPCoreMod : Mod
         
         // PatchesUwU ~ Steve
         Harmony.PatchAllUncategorized();
+        if (ModsConfig.IsActive("Rick.FCP.Tents"))
+            Harmony.PatchCategory(TentsPatchesCategory);
         LongEventHandler.ExecuteWhenFinished(() =>
         {
             Harmony.PatchCategory(LatePatchesCategory);
@@ -69,6 +72,16 @@ public class FCPCoreMod : Mod
             .ToList();
 
         TabDrawer.DrawTabs(tabRect, tabs);
-        currentTab?.DoTabWindowContents(mainRect.ContractedBy(15f));
+        if (currentTab is { Enabled: true })
+            currentTab.DoTabWindowContents(mainRect.ContractedBy(15f));
+        else if (currentTab != null)
+        {
+            Rect labelRect = mainRect.ContractedBy(15f);
+            Text.Font = GameFont.Medium;
+            Text.Anchor = TextAnchor.UpperCenter;
+            Widgets.Label(labelRect, $"Requires the corresponding FCP module to be installed and active.");
+            Text.Anchor = TextAnchor.UpperLeft;
+            Text.Font = GameFont.Small;
+        }
     }
 }

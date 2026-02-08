@@ -1,6 +1,4 @@
-﻿//namespace FCP.Tents;
-
-namespace FCP.Tents;
+namespace FCP.Core.Tents;
 
 [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 public class TentModExtension : DefModExtension

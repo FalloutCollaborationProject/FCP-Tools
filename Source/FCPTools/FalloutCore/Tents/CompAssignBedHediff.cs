@@ -1,4 +1,4 @@
-﻿namespace FCP.Tents;
+namespace FCP.Core.Tents;
 
 public class CompAssignBedHediff : ThingComp
 {
@@ -34,5 +34,4 @@ public class CompAssignBedHediff : ThingComp
         if (refuelableComp != null && !refuelableComp.HasFuel) return;
         foreach (var sleepyhead in bed.CurOccupants) if (!sleepyhead.health.hediffSet.HasHediff(modExt.customHediff)) sleepyhead.health.AddHediff(modExt.customHediff);
     }
-
 }

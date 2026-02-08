@@ -1,7 +1,8 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 
-namespace FCP.Tents;
+namespace FCP.Core.Tents;
 
+[HarmonyPatchCategory(FCPCoreMod.TentsPatchesCategory)]
 [HarmonyPatch(typeof(Toils_LayDown), "ApplyBedThoughts", typeof(Pawn), typeof(Building_Bed))]
 public class Patch_Toils_LayDown_ApplyBedThoughts
 {
@@ -12,7 +13,7 @@ public class Patch_Toils_LayDown_ApplyBedThoughts
         var modExt = building_Bed.def.GetModExtension<TentModExtension>();
         if (modExt == null) return;
 
-        var effect = ModSettings.effects.FirstOrDefault(x => x?.tentDefName == building_Bed.def.defName);
+        var effect = TentsSettings.effects.FirstOrDefault(x => x?.tentDefName == building_Bed.def.defName);
         if (effect == null) return;
         if (effect.negateSleptOutside) actor.needs.mood.thoughts.memories.RemoveMemoriesOfDef(ThoughtDefOf.SleptOutside);
         if (effect.negateSleptInCold) actor.needs.mood.thoughts.memories.RemoveMemoriesOfDef(ThoughtDefOf.SleptInCold);
