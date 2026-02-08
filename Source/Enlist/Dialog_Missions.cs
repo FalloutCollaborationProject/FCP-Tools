@@ -55,7 +55,7 @@ public class Dialog_Missions : Dialog_NodeTree
             {
                 this.chosenQuest = null;
             }
-            settlementComp.ExtractMoneyFromCaravan(caravan, options.missionsQuestCost);
+            settlementComp.ExtractMoneyFromCaravan(caravan, options.missionsQuestCost, options);
             this.Close();
         };
         if (!CaravanHasEnoughMoney(options.missionsQuestCost))
@@ -73,7 +73,8 @@ public class Dialog_Missions : Dialog_NodeTree
 
     private bool CaravanHasEnoughMoney(int fee)
     {
-        return this.caravan.AllThings.Where(x => x.def == ThingDefOf.Silver).Sum((Thing t) => t.stackCount) >= fee;
+        ThingDef currencyDef = options.currencyDef ?? ThingDefOf.Silver;
+        return this.caravan.AllThings.Where(x => x.def == currencyDef).Sum((Thing t) => t.stackCount) >= fee;
     }
 
 

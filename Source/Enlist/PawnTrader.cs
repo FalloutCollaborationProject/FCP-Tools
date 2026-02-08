@@ -22,7 +22,14 @@ public class PawnTrader : IExposable, ITrader, IThingHolder
     public Caravan caravan;
 
     private int randomPriceFactorSeed = -1;
-    public int Silver => CountHeldOf(ThingDefOf.Silver);
+    public int Silver
+    {
+        get
+        {
+            ThingDef currencyDef = factionOptionDef?.currencyDef ?? ThingDefOf.Silver;
+            return CountHeldOf(currencyDef);
+        }
+    }
     public TradeCurrency TradeCurrency => TraderKind.tradeCurrency;
     public IThingHolder ParentHolder => null;
 
@@ -34,10 +41,10 @@ public class PawnTrader : IExposable, ITrader, IThingHolder
     {
         get
         {
-
+            ThingDef currencyDef = factionOptionDef?.currencyDef ?? ThingDefOf.Silver;
             for (int i = 0; i < things.Count; i++)
             {
-                if (things[i].def == ThingDefOf.Silver)
+                if (things[i].def == currencyDef)
                 {
                     yield return things[i];
                 }

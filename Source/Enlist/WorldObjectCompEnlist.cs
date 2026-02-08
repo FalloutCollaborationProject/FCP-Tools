@@ -355,7 +355,7 @@ public class WorldObjectCompEnlist : WorldObjectComp
 								icon = ContentFinder<Texture2D>.Get(optionDef.mechSerumButtonIconTexPath),
 								action = delegate
 								{
-									ExtractMoneyFromCaravan(caravan, optionDef.mechSerumCost);
+									ExtractMoneyFromCaravan(caravan, optionDef.mechSerumCost, optionDef);
 									foreach (Pawn pawn in caravan.PawnsListForReading)
 									{
 										List<BodyPartRecord> list = (from x in pawn.RaceProps.body.AllParts
@@ -389,7 +389,8 @@ public class WorldObjectCompEnlist : WorldObjectComp
 									}
 								}
 							};
-							if (caravan.AllThings.Where(x => x.def == ThingDefOf.Silver).Sum(x => x.stackCount) < optionDef.mechSerumCost)
+							ThingDef mechSerumCurrency = optionDef.currencyDef ?? ThingDefOf.Silver;
+							if (caravan.AllThings.Where(x => x.def == mechSerumCurrency).Sum(x => x.stackCount) < optionDef.mechSerumCost)
 							{
 								command_MechSerum.Disable(optionDef.mechSerumCostRequirementKey.Translate());
 							}
@@ -476,13 +477,38 @@ public class WorldObjectCompEnlist : WorldObjectComp
 
 								alsoClickIfOtherInGroupClicked = false
 							};
-							if (caravan.AllThings.Where(x => x.def == ThingDefOf.Silver).Sum(x => x.stackCount) < optionDef.dropPodServiceCost)
+							ThingDef dropPodCurrency = optionDef.currencyDef ?? ThingDefOf.Silver;
+							if (caravan.AllThings.Where(x => x.def == dropPodCurrency).Sum(x => x.stackCount) < optionDef.dropPodServiceCost)
 							{
 								command_DropPodService.Disable(optionDef.dropPodServiceCostRequirementKey.Translate());
 							}
 
 							command_DropPodService.order = order;
 							yield return command_DropPodService;
+							order++;
+						}
+						if (optionDef.shuttleServiceIsEnabled)
+						{
+							Command_Action command_ShuttleService = new Command_Action
+							{
+								defaultLabel = optionDef.shuttleServiceLabelKey.Translate(faction.Named("FACTION")),
+								defaultDesc = optionDef.shuttleServiceDescKey.Translate(faction.Named("FACTION")),
+								icon = ContentFinder<Texture2D>.Get(optionDef.shuttleServiceButtonIconTexPath),
+								action = delegate
+								{
+									StartChoosingShuttleDestination(caravan, optionDef);
+								},
+
+								alsoClickIfOtherInGroupClicked = false
+							};
+							ThingDef shuttleCurrency = optionDef.currencyDef ?? ThingDefOf.Silver;
+							if (caravan.AllThings.Where(x => x.def == shuttleCurrency).Sum(x => x.stackCount) < optionDef.shuttleServiceCost)
+							{
+								command_ShuttleService.Disable(optionDef.shuttleServiceCostRequirementKey.Translate());
+							}
+
+							command_ShuttleService.order = order;
+							yield return command_ShuttleService;
 							order++;
 						}
 						if (promotedByOptions is null)
@@ -703,7 +729,7 @@ public class WorldObjectCompEnlist : WorldObjectComp
 					pawn.inventory.unloadEverything = true;
 				}
 			}
-			ExtractMoneyFromCaravan(caravan, curFactionEnlistOptionsDef.dropPodServiceCost);
+			ExtractMoneyFromCaravan(caravan, curFactionEnlistOptionsDef.dropPodServiceCost, curFactionEnlistOptionsDef);
 
 			ActiveTransporter ActiveTransporter = (ActiveTransporter)ThingMaker.MakeThing(ThingDefOf.ActiveDropPod);
 			ActiveTransporter.Contents = new ActiveTransporterInfo();
@@ -725,20 +751,142 @@ public class WorldObjectCompEnlist : WorldObjectComp
 		}
 	}
 
-	public void ExtractMoneyFromCaravan(Caravan caravan, int fee)
+	public void StartChoosingShuttleDestination(Caravan caravan, FactionEnlistOptionsDef optionsDef)
 	{
+		tmpCaravan = caravan;
+		CameraJumper.TryJump(CameraJumper.GetWorldTarget(parent));
+		Find.WorldSelector.ClearSelection();
+		int tile = parent.Tile;
+		curFactionEnlistOptionsDef = optionsDef;
+		Find.WorldTargeter.BeginTargeting(ChoseShuttleWorldTarget, canTargetTiles: true, CompLaunchable.TargeterMouseAttachment, closeWorldTabWhenFinished: false, delegate
+		{
+			GenDraw.DrawWorldRadiusRing(tile, MaxLaunchDistance);
+		}, (GlobalTargetInfo target) => TargetingLabelGetter(target, tile, MaxLaunchDistance, caravan));
+	}
+
+	private bool ChoseShuttleWorldTarget(GlobalTargetInfo target)
+	{
+		return ChoseWorldTarget(target, parent.Tile, MaxLaunchDistance, TryLaunchShuttle, tmpCaravan);
+	}
+
+	public void TryLaunchShuttle(int destinationTile, TransportersArrivalAction arrivalAction, Caravan caravan)
+	{
+		int num = Find.WorldGrid.TraversalDistanceBetween(parent.Tile, destinationTile);
+		if (num <= MaxLaunchDistance)
+		{
+			foreach (Pawn pawn in caravan.PawnsListForReading)
+			{
+				if (pawn.IsColonist && pawn.inventory != null)
+				{
+					pawn.inventory.unloadEverything = true;
+				}
+			}
+			ExtractMoneyFromCaravan(caravan, curFactionEnlistOptionsDef.shuttleServiceCost, curFactionEnlistOptionsDef);
+
+			// Try to get custom shuttle from faction using reflection
+			TransportShipDef transportShipDef = null;
+			
+			if (parent.Faction?.def?.modExtensions != null)
+			{
+				foreach (var extension in parent.Faction.def.modExtensions)
+				{
+					if (extension.GetType().Name == "FactionModExtension")
+					{
+						var transportShipDefField = extension.GetType().GetField("transportShipDef");
+						if (transportShipDefField != null)
+						{
+							transportShipDef = transportShipDefField.GetValue(extension) as TransportShipDef;
+							break;
+						}
+					}
+				}
+			}
+
+			Thing transportThing;
+			ThingDef skyfallerDef;
+			WorldObjectDef worldObjectDef;
+
+			if (transportShipDef != null)
+			{
+				// Use custom shuttle
+				transportThing = ThingMaker.MakeThing(transportShipDef.shipThing);
+				skyfallerDef = transportShipDef.leavingSkyfaller;
+				worldObjectDef = transportShipDef.worldObject;
+			}
+			else
+			{
+				// Fall back to drop pods
+				transportThing = ThingMaker.MakeThing(ThingDefOf.ActiveDropPod);
+				skyfallerDef = ThingDefOf.DropPodLeaving;
+				worldObjectDef = WorldObjectDefOf.TravellingTransporters;
+			}
+
+			// Load the transport
+			CompTransporter compTransporter = transportThing.TryGetComp<CompTransporter>();
+			if (compTransporter != null)
+			{
+				compTransporter.GetDirectlyHeldThings().TryAddRangeOrTransfer(caravan.GetDirectlyHeldThings(), canMergeWithExistingStacks: true, destroyLeftover: true);
+			}
+
+			// Create the skyfaller
+			Skyfaller skyfaller = (Skyfaller)SkyfallerMaker.MakeSkyfaller(skyfallerDef, transportThing);
+			if (skyfaller is FlyShipLeaving flyShip)
+			{
+				flyShip.groupID = 1;
+				flyShip.destinationTile = destinationTile;
+				flyShip.arrivalAction = arrivalAction;
+				flyShip.worldObjectDef = worldObjectDef;
+			}
+
+			// Create traveling world object
+			WorldObject travelingPods = WorldObjectMaker.MakeWorldObject(worldObjectDef);
+			travelingPods.Tile = base.parent.Tile;
+			travelingPods.SetFaction(Faction.OfPlayer);
+			
+			// Set destination using reflection since we don't know the exact type
+			var destTileField = travelingPods.GetType().GetField("destinationTile");
+			if (destTileField != null)
+			{
+				destTileField.SetValue(travelingPods, destinationTile);
+			}
+			
+			var arrivalActionField = travelingPods.GetType().GetField("arrivalAction");
+			if (arrivalActionField != null)
+			{
+				arrivalActionField.SetValue(travelingPods, arrivalAction);
+			}
+			
+			Find.WorldObjects.Add(travelingPods);
+
+			// Add pods using reflection
+			if (compTransporter != null)
+			{
+				var addPodMethod = travelingPods.GetType().GetMethod("AddPod");
+				if (addPodMethod != null)
+				{
+					addPodMethod.Invoke(travelingPods, new object[] { compTransporter.GetDirectlyHeldThings().ToList(), true });
+				}
+			}
+
+			caravan.Destroy();
+		}
+	}
+
+	public void ExtractMoneyFromCaravan(Caravan caravan, int fee, FactionEnlistOptionsDef optionDef)
+	{
+		ThingDef currencyDef = optionDef.currencyDef ?? ThingDefOf.Silver;
 		while (true)
 		{
 			if (fee > 0)
 			{
-				List<Thing> silvers = caravan.AllThings.Where(x => x.def == ThingDefOf.Silver).ToList();
-				for (int i = silvers.Count - 1; i >= 0; i--)
+				List<Thing> currencies = caravan.AllThings.Where(x => x.def == currencyDef).ToList();
+				for (int i = currencies.Count - 1; i >= 0; i--)
 				{
-					Thing silver = silvers[i];
-					if (silver.stackCount > 0)
+					Thing currency = currencies[i];
+					if (currency.stackCount > 0)
 					{
-						int num = Math.Min(fee, silver.stackCount);
-						silver.SplitOff(num)?.Destroy();
+						int num = Math.Min(fee, currency.stackCount);
+						currency.SplitOff(num)?.Destroy();
 						fee -= num;
 						if (fee <= 0)
 						{
