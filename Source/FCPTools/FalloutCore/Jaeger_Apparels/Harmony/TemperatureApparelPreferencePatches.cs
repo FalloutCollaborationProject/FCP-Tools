@@ -250,7 +250,7 @@ public static class TemperatureApparelPreferencePatches
 
         if (state.request.Context == PawnGenerationContext.PlayerStarter)
         {
-            VLog("Apply skip pawn=" + SafePawnLabel(pawn) + " reason=playerStarter");
+            FCPLog.Verbose("Apply skip pawn=" + SafePawnLabel(pawn) + " reason=playerStarter");
             state.completed = true;
             state.isNew = false;
             return;
