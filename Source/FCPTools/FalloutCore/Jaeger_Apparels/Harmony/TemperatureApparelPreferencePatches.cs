@@ -8,8 +8,6 @@ namespace FCP.Core;
 [HarmonyPatch]
 public static class TemperatureApparelPreferencePatches
 {
-    private const int VerboseLogMax = 4000;
-    private static int verboseCount;
 
     private sealed class PawnGenState
     {
@@ -32,9 +30,6 @@ public static class TemperatureApparelPreferencePatches
     }
 
     private const float ForcedCommonalityMultiplier = 10000f;
-
-    private static bool VerboseLoggingEnabled =>
-        FCPCoreMod.SettingsTab<DebugSettings>()?.verboseLogging ?? false;
 
     private static bool cachesBuilt;
     private static readonly object cacheLock = new object();
@@ -132,14 +127,8 @@ public static class TemperatureApparelPreferencePatches
             state.completed = false;
             state.markedTick = Find.TickManager.TicksGame;
 
-            VLog(
-                "MARK " +
-                "pawn=" + SafePawnLabel(__result) + " " +
-                "kind=" + (request.KindDef != null ? request.KindDef.defName : "null") + " " +
-                "faction=" + (request.Faction != null ? request.Faction.Name : "null") + " " +
-                "ctx=" + request.Context + " " +
-                "tile=" + request.Tile
-            );
+            if (FCPLog.VerboseEnabled)
+                FCPLog.Verbose($"MARK pawn={SafePawnLabel(__result)} kind={request.KindDef?.defName ?? "null"} faction={request.Faction?.Name ?? "null"} ctx={request.Context} tile={request.Tile}");
         }
     }
 
@@ -152,16 +141,13 @@ public static class TemperatureApparelPreferencePatches
         {
             if (respawningAfterLoad)
             {
-                VLog("SpawnSetup skip pawn=" + SafePawnLabel(__instance) + " reason=respawnAfterLoad");
+                if (FCPLog.VerboseEnabled)
+                    FCPLog.Verbose($"SpawnSetup skip pawn={SafePawnLabel(__instance)} reason=respawnAfterLoad");
                 return;
             }
 
-            VLog(
-                "SpawnSetup enter " +
-                "pawn=" + SafePawnLabel(__instance) + " " +
-                "map=" + (map != null ? map.Index.ToString() : "null") + " " +
-                "spawned=" + __instance.Spawned
-            );
+            if (FCPLog.VerboseEnabled)
+                FCPLog.Verbose($"SpawnSetup enter pawn={SafePawnLabel(__instance)} map={map?.Index.ToString() ?? "null"} spawned={__instance.Spawned}");
 
             ApplyGenerationOverrideIfEligible(__instance, map);
         }
@@ -236,42 +222,45 @@ public static class TemperatureApparelPreferencePatches
     {
         if (pawn == null || pawn.RaceProps == null || !pawn.RaceProps.Humanlike)
         {
-            VLog("Apply skip pawn=" + SafePawnLabel(pawn) + " reason=notHumanlike");
+            if (FCPLog.VerboseEnabled)
+                FCPLog.Verbose($"Apply skip pawn={SafePawnLabel(pawn)} reason=notHumanlike");
             return;
         }
 
         if (!stateByPawn.TryGetValue(pawn, out PawnGenState state))
         {
-            VLog("Apply skip pawn=" + SafePawnLabel(pawn) + " reason=noState");
+            if (FCPLog.VerboseEnabled)
+                FCPLog.Verbose($"Apply skip pawn={SafePawnLabel(pawn)} reason=noState");
             return;
         }
 
         if (!state.isNew)
         {
-            VLog("Apply skip pawn=" + SafePawnLabel(pawn) + " reason=notMarkedNew");
+            if (FCPLog.VerboseEnabled)
+                FCPLog.Verbose($"Apply skip pawn={SafePawnLabel(pawn)} reason=notMarkedNew");
             return;
         }
 
         if (state.completed)
         {
-            VLog("Apply skip pawn=" + SafePawnLabel(pawn) + " reason=alreadyCompleted");
+            if (FCPLog.VerboseEnabled)
+                FCPLog.Verbose($"Apply skip pawn={SafePawnLabel(pawn)} reason=alreadyCompleted");
             return;
         }
 
         float tempC = map != null && map.mapTemperature != null ? map.mapTemperature.OutdoorTemp : float.NaN;
         if (float.IsNaN(tempC))
         {
-            VLog(
-                "Apply skip pawn=" + SafePawnLabel(pawn) + " reason=noTemp " +
-                "map=" + (map != null) + " mapTemp=" + (map != null && map.mapTemperature != null)
-            );
+            if (FCPLog.VerboseEnabled)
+                FCPLog.Verbose($"Apply skip pawn={SafePawnLabel(pawn)} reason=noTemp map={map != null} mapTemp={map != null && map.mapTemperature != null}");
             return;
         }
 
         EnsureCachesBuilt();
 
+        bool verbose = FCPLog.VerboseEnabled;
         Stopwatch sw = null;
-        if (VerboseLoggingEnabled)
+        if (verbose)
             sw = Stopwatch.StartNew();
 
         try
@@ -281,35 +270,22 @@ public static class TemperatureApparelPreferencePatches
             HashSet<ThingDef> forcedNow = BuildForcedNow(tempC, pawn, protectedDefs, avoidedNow);
             HashSet<ThingDef> incompatibleNow = BuildIncompatibleWithForced(pawn, protectedDefs, avoidedNow, forcedNow);
 
-            VLog(
-                "Apply RUN " +
-                "pawn=" + SafePawnLabel(pawn) + " " +
-                "temp=" + tempC.ToString("F1") + " " +
-                "protected=" + protectedDefs.Count + " " +
-                "avoided=" + avoidedNow.Count + " " +
-                "forced=" + forcedNow.Count + " " +
-                "incompatible=" + incompatibleNow.Count + " " +
-                "ctx=" + state.request.Context + " " +
-                "tile=" + state.request.Tile
-            );
-
-            if (forcedNow.Count > 0)
+            if (verbose)
             {
-                VLog("Apply forced sample pawn=" + SafePawnLabel(pawn) + " forced=" + JoinDefNames(forcedNow, 6));
-            }
+                FCPLog.Verbose($"Apply RUN pawn={SafePawnLabel(pawn)} temp={tempC:F1} protected={protectedDefs.Count} avoided={avoidedNow.Count} forced={forcedNow.Count} incompatible={incompatibleNow.Count} ctx={state.request.Context} tile={state.request.Tile}");
 
-            VLog("Apply worn BEFORE pawn=" + SafePawnLabel(pawn) + " worn=" + DescribeWornApparel(pawn));
+                if (forcedNow.Count > 0)
+                    FCPLog.Verbose($"Apply forced sample pawn={SafePawnLabel(pawn)} forced={JoinDefNames(forcedNow, 6)}");
+
+                FCPLog.Verbose($"Apply worn BEFORE pawn={SafePawnLabel(pawn)} worn={DescribeWornApparel(pawn)}");
+            }
 
             int removedCount;
             int lockedSkippedCount;
             RemoveAllApparelExceptLocked(pawn, out removedCount, out lockedSkippedCount);
 
-            VLog(
-                "Apply strip pawn=" + SafePawnLabel(pawn) + " " +
-                "removed=" + removedCount + " " +
-                "lockedSkipped=" + lockedSkippedCount + " " +
-                "wornAfterStrip=" + DescribeWornApparel(pawn)
-            );
+            if (verbose)
+                FCPLog.Verbose($"Apply strip pawn={SafePawnLabel(pawn)} removed={removedCount} lockedSkipped={lockedSkippedCount} wornAfterStrip={DescribeWornApparel(pawn)}");
 
             var ctx = new GenerationContext
             {
@@ -328,25 +304,22 @@ public static class TemperatureApparelPreferencePatches
                 tlsContext = null;
             }
 
-            VLog("Apply worn AFTER pawn=" + SafePawnLabel(pawn) + " worn=" + DescribeWornApparel(pawn));
-
-            if (forcedNow.Count > 0)
+            if (verbose)
             {
-                bool anyForcedWorn = IsAnyForcedWorn(pawn, forcedNow);
-                if (!anyForcedWorn)
-                {
-                    VLog(
-                        "Apply WARNING pawn=" + SafePawnLabel(pawn) + " " +
-                        "forcedCount=" + forcedNow.Count + " but none worn. " +
-                        "pawnKind=" + (pawn.kindDef != null ? pawn.kindDef.defName : "null") + " " +
-                        "pawnKindApparelTags=" + DescribeKindApparelTags(pawn.kindDef)
-                    );
+                FCPLog.Verbose($"Apply worn AFTER pawn={SafePawnLabel(pawn)} worn={DescribeWornApparel(pawn)}");
 
-                    VLog("Apply WARNING forced def details=" + DescribeForcedDefs(forcedNow));
-                }
-                else
+                if (forcedNow.Count > 0)
                 {
-                    VLog("Apply forced OK pawn=" + SafePawnLabel(pawn) + " forcedWorn=1");
+                    bool anyForcedWorn = IsAnyForcedWorn(pawn, forcedNow);
+                    if (!anyForcedWorn)
+                    {
+                        FCPLog.Verbose($"Apply WARNING pawn={SafePawnLabel(pawn)} forcedCount={forcedNow.Count} but none worn. pawnKind={pawn.kindDef?.defName ?? "null"} pawnKindApparelTags={DescribeKindApparelTags(pawn.kindDef)}");
+                        FCPLog.Verbose($"Apply WARNING forced def details={DescribeForcedDefs(forcedNow)}");
+                    }
+                    else
+                    {
+                        FCPLog.Verbose($"Apply forced OK pawn={SafePawnLabel(pawn)} forcedWorn=1");
+                    }
                 }
             }
 
@@ -358,11 +331,7 @@ public static class TemperatureApparelPreferencePatches
             if (sw != null)
             {
                 sw.Stop();
-                VLog(
-                    "Apply time pawn=" + SafePawnLabel(pawn) + " " +
-                    "ms=" + sw.ElapsedMilliseconds + " " +
-                    "markedTick=" + state.markedTick
-                );
+                FCPLog.Verbose($"Apply time pawn={SafePawnLabel(pawn)} ms={sw.ElapsedMilliseconds} markedTick={state.markedTick}");
             }
         }
     }
@@ -621,9 +590,4 @@ public static class TemperatureApparelPreferencePatches
         }
     }
 
-    private static void VLog(string msg)
-    {
-        if (!VerboseLoggingEnabled || verboseCount++ >= VerboseLogMax) return;
-        Log.Message("[TemperatureApparelPreference] " + msg);
-    }
 }
