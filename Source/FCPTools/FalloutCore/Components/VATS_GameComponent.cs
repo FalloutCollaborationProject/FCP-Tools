@@ -1,4 +1,7 @@
-﻿namespace FCP.Core;
+using FCP.Core;
+using FCP.Core.VATS;
+
+namespace FCP.Core;
 
 public class VATS_GameComponent(Game game) : GameComponent
 {
@@ -11,7 +14,7 @@ public class VATS_GameComponent(Game game) : GameComponent
 
     public static void SetSlowMo(Thing slowMoCauser)
     {
-        if (!FCPCoreMod.Settings.EnableSlowDownTime)
+        if (!FCPCoreMod.SettingsTab<VATSSettings>().enableSlowDownTime)
         {
             return;
         }

@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using FCP.Core;
+using HarmonyLib;
 using UnityEngine;
 using Verse.AI;
 
@@ -17,7 +18,7 @@ public class Verb_AbilityVATS : Verb_AbilityShoot
         get => ability;
         set
         {
-            AccessTools.Field(typeof(Ability), "cooldownDuration").SetValue(value, FCPCoreMod.Settings.CooldownTicks);
+            AccessTools.Field(typeof(Ability), "cooldownDuration").SetValue(value, FCPCoreMod.SettingsTab<VATSSettings>().cooldownTicks);
             ability = value;
         }
     }

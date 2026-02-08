@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-    <FCP_VATS_Settings_Category>R.A.T.S.</FCP_VATS_Settings_Category>
+    <FCP_Settings.VATS>R.A.T.S.</FCP_Settings.VATS>
     <FCP_VATS_Settings_EnableSlowDownTime>Enable time slowdown</FCP_VATS_Settings_EnableSlowDownTime>
     <FCP_VATS_Settings_EnableZoom>Enable the zoom shader</FCP_VATS_Settings_EnableZoom>
     <FCP_VATS_Settings_ZoomTimeout>How many ticks after creation until we force remove the zoom (in case of bugs): {0} ticks</FCP_VATS_Settings_ZoomTimeout>

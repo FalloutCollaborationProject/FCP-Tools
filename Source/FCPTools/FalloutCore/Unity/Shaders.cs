@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+using FCP.Core.VATS;
+using UnityEngine;
 
 namespace FCP.Core.Unity;
 
@@ -14,7 +15,7 @@ public static class Shaders
         _lookupShaders ??= new Dictionary<string, Shader>();
         if (!_lookupShaders.ContainsKey(shaderName))
         {
-            _lookupShaders[shaderName] = FCPCoreMod.mod.MainBundle.LoadAsset<Shader>(shaderName);
+            _lookupShaders[shaderName] = VATSMod.Instance.MainBundle.LoadAsset<Shader>(shaderName);
         }
         
         Shader shader = _lookupShaders[shaderName];
