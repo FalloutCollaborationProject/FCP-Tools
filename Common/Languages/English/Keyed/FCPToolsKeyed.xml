@@ -4,8 +4,6 @@
 	<FCP_Settings_Category>FCP Tools</FCP_Settings_Category>
 	<FCP_Settings.General>General</FCP_Settings.General>
 	<FCP_Settings.General.tt>Options that affect the whole mod or don't fit anywhere else.</FCP_Settings.General.tt>
-	<FCP_Settings.Debug>Debug</FCP_Settings.Debug>
-	<FCP_Settings.Debug.tt>Options to help with the diagnosis of issues or modify behaviour for debugging</FCP_Settings.Debug.tt>
 
 	<!-- Stims Settings -->
 	<FCP_Settings_Stims>Stims</FCP_Settings_Stims>
@@ -14,7 +12,16 @@
 	<FCP_Settings_Stims_TeetotalerAutoStim>Teetotalers can auto-inject</FCP_Settings_Stims_TeetotalerAutoStim>
 	<FCP_Settings_Stims_TeetotalerAutoStim_Desc>Allow pawns with the teetotaler trait to automatically use stimpaks.</FCP_Settings_Stims_TeetotalerAutoStim_Desc>
 
+	<!-- Debug Settings-->
+	<FCP_Settings_Debug>Debug</FCP_Settings_Debug>
+	<FCP_Settings_Debug_tt>Options to help with the diagnosis of issues or modify behaviour for debugging</FCP_Settings_Debug_tt>
+
+	<FCP_Settings_Debug_Logging>Logging</FCP_Settings_Debug_Logging>
+	<FCP_Settings_Debug_VerboseLogging>Debug</FCP_Settings_Debug_VerboseLogging>
+
+	<!-- Permits -->
 	<FCP_MessagePermitLostOnPromotion>Due to {0_possessive} promotion to {1}, {0_labelShort} has lost {0_possessive} {2} permit</FCP_MessagePermitLostOnPromotion>
+
 	<!-- Storyteller Joiner -->
 	<FCP_LetterLabel_SpecialWandererJoins>Special Wanderer: {PAWN_nameDef}</FCP_LetterLabel_SpecialWandererJoins>
 	<FCP_Letter_SpecialWandererJoins>A pawn {PAWN_title} named {PAWN_nameDef} has arrived and wants to join the colony.</FCP_Letter_SpecialWandererJoins>

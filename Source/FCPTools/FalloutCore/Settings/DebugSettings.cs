@@ -4,8 +4,8 @@ namespace FCP.Core;
 
 public class DebugSettings : SettingsTab
 {
-    public override string TabName => "FCP_Settings.Debug".Translate();
-    public override string TabToolTip => "FCP_Settings.Debug.tt".Translate();
+    public override string TabName => "FCP_Settings_Debug".Translate();
+    public override string TabToolTip => "FCP_Settings_Debug_tt".Translate();
 
     public bool verboseLogging;
 
@@ -14,8 +14,12 @@ public class DebugSettings : SettingsTab
         var list = new Listing_Standard();
         list.Begin(tabRect);
         
-        list.Label("Logging");
-        list.CheckboxLabeled("Verbose Logging", ref verboseLogging);
+        // Stimpacks
+        Text.Font = GameFont.Medium;
+        list.Label("FCP_Settings_Debug_Logging".Translate());
+        Text.Font = GameFont.Small;
+        list.GapLine();
+        list.CheckboxLabeled("FCP_Settings_Debug_VerboseLogging".Translate(), ref verboseLogging);
         
         list.End();
     }
