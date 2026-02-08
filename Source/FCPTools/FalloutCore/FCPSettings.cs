@@ -11,8 +11,11 @@ public class FCPSettings : ModSettings
 
     public IReadOnlyList<SettingsTab> Tabs => [General, VATS, Debug];
 
+    private Dictionary<Type, SettingsTab> TabsByType
+        => field ??= Tabs.ToDictionary(tab => tab.GetType());
+
     public T GetTab<T>() where T : SettingsTab
-        => Tabs.OfType<T>().FirstOrDefault();
+        => TabsByType.TryGetValue(typeof(T), out SettingsTab tab) ? (T)tab : null;
 
     public override void ExposeData()
     {
