@@ -7,6 +7,13 @@
 	<FCP_Settings.Debug>Debug</FCP_Settings.Debug>
 	<FCP_Settings.Debug.tt>Options to help with the diagnosis of issues or modify behaviour for debugging</FCP_Settings.Debug.tt>
 
+	<!-- Stims Settings -->
+	<FCP_Settings_Stims>Stims</FCP_Settings_Stims>
+	<FCP_Settings_Stims_AutoStim>Auto-inject stimpaks</FCP_Settings_Stims_AutoStim>
+	<FCP_Settings_Stims_AutoStim_Desc>Pawns will automatically use stimpaks from their inventory when damaged.</FCP_Settings_Stims_AutoStim_Desc>
+	<FCP_Settings_Stims_TeetotalerAutoStim>Teetotalers can auto-inject</FCP_Settings_Stims_TeetotalerAutoStim>
+	<FCP_Settings_Stims_TeetotalerAutoStim_Desc>Allow pawns with the teetotaler trait to automatically use stimpaks.</FCP_Settings_Stims_TeetotalerAutoStim_Desc>
+
 	<FCP_MessagePermitLostOnPromotion>Due to {0_possessive} promotion to {1}, {0_labelShort} has lost {0_possessive} {2} permit</FCP_MessagePermitLostOnPromotion>
 	<!-- Storyteller Joiner -->
 	<FCP_LetterLabel_SpecialWandererJoins>Special Wanderer: {PAWN_nameDef}</FCP_LetterLabel_SpecialWandererJoins>
