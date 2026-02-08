@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using FCP.Factions;
+using HarmonyLib;
 
 namespace FCP.Core;
 
@@ -9,7 +10,7 @@ public class Bill_Production_ShouldDoNow_Patch
     [HarmonyPrefix]
     public static void ShouldDoNow_GoodWillCheck(ref bool __result, Bill_Production __instance)
     {
-        var modExtension = __instance.recipe.GetModExtension<RecipeExtension_GoodwillCheck>();
+        var modExtension = __instance.recipe.GetModExtension<RecipeExtension_FactionGoodwillCheck>();
         if (modExtension == null)
             return;
         

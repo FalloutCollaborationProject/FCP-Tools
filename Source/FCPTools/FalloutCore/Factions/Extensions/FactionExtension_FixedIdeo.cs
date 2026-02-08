@@ -1,9 +1,9 @@
 ﻿// ReSharper disable UnassignedField.Global
 // ReSharper disable ClassNeverInstantiated.Global
 
-namespace FCP.Core;
+namespace FCP.Factions;
 
-public class ModExtension_FixedIdeo : DefModExtension
+public class FactionExtension_FixedIdeo : DefModExtension
 {
     public IdeoIconDef ideoIconDef;
     public IdeoColorDef ideoColorDef;
@@ -11,7 +11,7 @@ public class ModExtension_FixedIdeo : DefModExtension
     public string adjective;
     public string ritualRoomName;
     public List<RoleOverride> roleOverrides;
-        
+
     public void CopyToIdeo(Ideo ideo)
     {
         ideo.memberName = memberName ?? ideo.memberName;
@@ -22,11 +22,12 @@ public class ModExtension_FixedIdeo : DefModExtension
         {
             LongEventHandler.ExecuteWhenFinished(delegate
             {
-                ideo.SetIcon(ideoIconDef, ideoColorDef.colorDef ?? ideo.colorDef ?? IdeoFoundation.GetRandomColorDef(ideo));
+                ideo.SetIcon(ideoIconDef,
+                    ideoColorDef.colorDef ?? ideo.colorDef ?? IdeoFoundation.GetRandomColorDef(ideo));
             });
         }
     }
-        
+
     public class RoleOverride
     {
         public PreceptDef preceptDef;

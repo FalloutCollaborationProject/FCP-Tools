@@ -267,4 +267,7 @@
       <Private>False</Private>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Factions\Harmony\" />
+  </ItemGroup>
 </Project>

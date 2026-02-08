@@ -17,7 +17,7 @@
         <targetTags>
             <li>Map_PlayerHome</li>
         </targetTags>
-        <workerClass>FCP.Core.IncidentWorker_CaravanArrivalTaxCollector</workerClass>
+        <workerClass>FCP.Factions.IncidentWorker_CaravanArrivalTaxCollector</workerClass>
         <category>FactionArrival</category>
         <baseChance>0</baseChance> <!-- given by a special storyteller comp -->
         <requireColonistsPresent>True</requireColonistsPresent>

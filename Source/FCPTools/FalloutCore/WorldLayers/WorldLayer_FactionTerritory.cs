@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using FCP.Factions;
 using RimWorld.Planet;
 using UnityEngine;
 
@@ -66,10 +67,10 @@ namespace FCP.Core
             // step 1: collect settlement territories
             foreach (Settlement settlement in _settlements)
             {
-                if (settlement.Faction.def.HasModExtension<ModExtension_FactionTerritory>())
+                if (settlement.Faction.def.HasModExtension<FactionExtension_HasTerritory>())
                 {
-                    ModExtension_FactionTerritory ext =
-                        settlement.Faction.def.GetModExtension<ModExtension_FactionTerritory>();
+                    FactionExtension_HasTerritory ext =
+                        settlement.Faction.def.GetModExtension<FactionExtension_HasTerritory>();
 
                     _territoryColor = ext.territoryColor;
                     _territoryBorderColor = ext.territoryBorderColor;
@@ -243,8 +244,8 @@ namespace FCP.Core
                 if (settlement == null)
                     continue;
                 
-                ModExtension_FactionTerritory ext = 
-                    settlement.Faction.def.GetModExtension<ModExtension_FactionTerritory>();
+                FactionExtension_HasTerritory ext = 
+                    settlement.Faction.def.GetModExtension<FactionExtension_HasTerritory>();
                 
                 string factionName = settlement.Faction.def.LabelCap;
                 

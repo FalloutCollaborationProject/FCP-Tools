@@ -303,7 +303,7 @@ public static class Patches
     /// </summary>
     public static void IdeoGeneratorMakeFixedIdeo_Postfix(IdeoGenerationParms parms, Ideo __result)
     {
-        ModExtension_FixedIdeo extension = parms.forFaction?.GetModExtension<ModExtension_FixedIdeo>();
+        FactionExtension_FixedIdeo extension = parms.forFaction?.GetModExtension<FactionExtension_FixedIdeo>();
         extension?.CopyToIdeo(__result);
     }
 
@@ -321,14 +321,14 @@ public static class Patches
     /// </summary>
     public static void IdeoFoundationInitPrecepts_Postfix(IdeoGenerationParms parms, IdeoFoundation __instance)
     {
-        ModExtension_FixedIdeo extension = parms.forFaction?.GetModExtension<ModExtension_FixedIdeo>();
+        FactionExtension_FixedIdeo extension = parms.forFaction?.GetModExtension<FactionExtension_FixedIdeo>();
         if (extension == null) return;
 
         foreach (Precept precept in __instance.ideo.PreceptsListForReading)
         {
             if (precept is not Precept_Role preceptRole) continue;
 
-            ModExtension_FixedIdeo.RoleOverride overrides = extension.roleOverrides
+            FactionExtension_FixedIdeo.RoleOverride overrides = extension.roleOverrides
                 .FirstOrDefault(x => x.preceptDef == preceptRole.def);
 
             if (overrides == null) continue;
@@ -361,7 +361,7 @@ public static class Patches
         if (__result == false)
             return;
 
-        ModExtension_FactionBannedArrivalModes extension = parms.faction?.def.GetModExtension<ModExtension_FactionBannedArrivalModes>();
+        FactionExtension_BannedArrivalModes extension = parms.faction?.def.GetModExtension<FactionExtension_BannedArrivalModes>();
         if (extension != null && extension.arrivalModes.NotNullAndContains(___def))
         {
             __result = false;
@@ -400,8 +400,8 @@ public static class Patches
             .InsertAndAdvance(
                 new CodeInstruction(OpCodes.Brfalse, nextConditional),
                 CodeInstruction.LoadArgument(1), // Load the Faction field
-                CodeInstruction.Call(typeof(ModExtension_HiddenFactionHasCaravans),
-                    nameof(ModExtension_HiddenFactionHasCaravans.FactionHas))
+                CodeInstruction.Call(typeof(FactionExtension_HiddenFactionHasCaravans),
+                    nameof(FactionExtension_HiddenFactionHasCaravans.FactionHas))
             )
             .SetOpcodeAndAdvance(OpCodes.Brfalse);
 
@@ -430,8 +430,8 @@ public static class Patches
             .SetAndAdvance(OpCodes.Brfalse, nextCheckPoint)
             .Insert(
                 CodeInstruction.LoadArgument(1), // Load Faction
-                CodeInstruction.Call(typeof(ModExtension_HiddenFactionHasCaravans),
-                    nameof(ModExtension_HiddenFactionHasCaravans.FactionHas)),
+                CodeInstruction.Call(typeof(FactionExtension_HiddenFactionHasCaravans),
+                    nameof(FactionExtension_HiddenFactionHasCaravans.FactionHas)),
                 new CodeInstruction(OpCodes.Brfalse, failurePoint)
             );
 
@@ -506,7 +506,7 @@ public static class Patches
     // Retrieves the Extension and if necessary, append the max title text.
     private static string PermitsCardUtility_Util_AppendMaxTitleStatus(string text, Pawn pawn)
     {
-        MaxTitlePermitExtension permitExtension = PermitsCardUtility.selectedPermit.GetModExtension<MaxTitlePermitExtension>();
+        PermitExtension_MaxFactionTitle permitExtension = PermitsCardUtility.selectedPermit.GetModExtension<PermitExtension_MaxFactionTitle>();
         if (permitExtension?.maxTitle == null) return text;
             
         bool meetsMaxTitleRequirements = pawn.royalty.GetCurrentTitle(PermitsCardUtility.selectedFaction).seniority
@@ -526,7 +526,7 @@ public static class Patches
         if (__result == false)
             return;
         
-        MaxTitlePermitExtension permitExtension = __instance.GetModExtension<MaxTitlePermitExtension>();
+        PermitExtension_MaxFactionTitle permitExtension = __instance.GetModExtension<PermitExtension_MaxFactionTitle>();
         if (permitExtension == null) 
             return;
         
@@ -546,7 +546,7 @@ public static class Patches
     {
         foreach (FactionPermit permit in pawn.royalty.AllFactionPermits.ToList())
         {
-            MaxTitlePermitExtension permitExtension = permit.Permit.GetModExtension<MaxTitlePermitExtension>();
+            PermitExtension_MaxFactionTitle permitExtension = permit.Permit.GetModExtension<PermitExtension_MaxFactionTitle>();
 
             if (newTitle.seniority <= permitExtension?.maxTitle.seniority) continue;
             
@@ -651,8 +651,8 @@ public static class Patches
         if (__result) 
             return;
         
-        var aExtension = a.def.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
-        var bExtension = b.def.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
+        var aExtension = a.def.GetModExtension<FactionExtension_PermanentlyHostileTo>();
+        var bExtension = b.def.GetModExtension<FactionExtension_PermanentlyHostileTo>();
 
         // Check if either are permanently hostile with each other, but if both are null just use the existing result (false)
         __result = aExtension?.FactionIsHostileTo(b.def) ??
@@ -668,7 +668,7 @@ public static class Patches
         if (__result == false)
             return;
 
-        ModExtension_FactionPermanentlyHostileTo extension = __instance.def.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
+        FactionExtension_PermanentlyHostileTo extension = __instance.def.GetModExtension<FactionExtension_PermanentlyHostileTo>();
         if (extension == null)
             return;
 
@@ -682,7 +682,7 @@ public static class Patches
     {
         if (__result) return;
 
-        ModExtension_FactionPermanentlyHostileTo extension = __instance.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
+        FactionExtension_PermanentlyHostileTo extension = __instance.GetModExtension<FactionExtension_PermanentlyHostileTo>();
         __result = extension?.FactionIsHostileTo(otherFactionDef) ?? false;
     }
         
@@ -692,7 +692,7 @@ public static class Patches
     /// </summary>
     public static bool Faction_TryMakeInitialRelationsWith_GetInitialGoodwill_Prefix(Faction a, Faction b, ref int __result)
     {
-        ModExtension_FactionPermanentlyHostileTo extension = a.def.GetModExtension<ModExtension_FactionPermanentlyHostileTo>();
+        FactionExtension_PermanentlyHostileTo extension = a.def.GetModExtension<FactionExtension_PermanentlyHostileTo>();
         if (extension == null || !extension.hostileFactionDefs.Contains(b.def)) return true;
             
         // They're hostile, so set to -100 and skip the original.
