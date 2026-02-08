@@ -1,11 +1,4 @@
 using RimWorld.BaseGen;
-using RimWorld;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Verse;
 
 namespace FCP.Core.RadiantQuests
 {
@@ -16,7 +9,7 @@ namespace FCP.Core.RadiantQuests
         public bool generateLoot = true;
         private bool generatePawns = true;
 
-        private bool clearBuildingFaction;
+        private bool clearBuildingFaction = false;
 
         private static List<IntVec3> tmpCandidates = new List<IntVec3>();
 
