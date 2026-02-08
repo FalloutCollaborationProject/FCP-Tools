@@ -248,6 +248,14 @@ public static class TemperatureApparelPreferencePatches
             return;
         }
 
+        if (state.request.Context == PawnGenerationContext.PlayerStarter)
+        {
+            VLog("Apply skip pawn=" + SafePawnLabel(pawn) + " reason=playerStarter");
+            state.completed = true;
+            state.isNew = false;
+            return;
+        }
+
         float tempC = map != null && map.mapTemperature != null ? map.mapTemperature.OutdoorTemp : float.NaN;
         if (float.IsNaN(tempC))
         {
