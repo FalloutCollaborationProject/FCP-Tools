@@ -4,7 +4,7 @@ namespace FCP.Core.VATS;
 
 public class VATSSettings : SettingsTab
 {
-    public override string TabName => "FCP_Settings.VATS".Translate();
+    public override string TabName => "FCP_Settings_VATS".Translate();
 
     public float flatHitChanceBoost = 0.2f;
     public int cooldownTicks = 600;
@@ -17,16 +17,20 @@ public class VATSSettings : SettingsTab
 
     public override void DoTabWindowContents(Rect wrect)
     {
-        
-        
         PopulateMissingMultipliers();
         int multiplierHeight = multiplierLookup.Count * 56;
         int restHeight = 248 + 64;
         float scrollViewHeight = multiplierHeight + restHeight;
         Rect viewRect = new Rect(wrect.x, wrect.y, wrect.width - 20, scrollViewHeight);
         scrollPosition = GUI.BeginScrollView(new Rect(wrect.x, wrect.y, wrect.width, wrect.height - 50), scrollPosition, viewRect);
-        Listing_Standard options = new Listing_Standard();
+        var options = new Listing_Standard();
         options.Begin(viewRect);
+        
+        Text.Font = GameFont.Medium;
+        options.Label("FCP_Settings_VATS_header".Translate());
+        Text.Font = GameFont.Small;
+        options.GapLine();
+        
         try
         {
             if (options.ButtonText("FCP_VATS_Settings_Reset".Translate()))

@@ -21,7 +21,7 @@
 	<FCP_Settings_Debug_tt>Options to help with the diagnosis of issues or modify behaviour for debugging</FCP_Settings_Debug_tt>
 
 	<FCP_Settings_Debug_Logging>Logging</FCP_Settings_Debug_Logging>
-	<FCP_Settings_Debug_VerboseLogging>Debug</FCP_Settings_Debug_VerboseLogging>
+	<FCP_Settings_Debug_VerboseLogging>Verbose Logging</FCP_Settings_Debug_VerboseLogging>
 
 	<!-- Permits -->
 	<FCP_MessagePermitLostOnPromotion>Due to {0_possessive} promotion to {1}, {0_labelShort} has lost {0_possessive} {2} permit</FCP_MessagePermitLostOnPromotion>
