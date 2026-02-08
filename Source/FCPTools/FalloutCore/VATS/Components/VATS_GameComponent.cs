@@ -1,5 +1,4 @@
-using FCP.Core;
-using FCP.Core.VATS;
+﻿using FCP.Core.VATS;
 
 namespace FCP.Core;
 
