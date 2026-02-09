@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using Verse;
+using FCP.Core.Shuttles;
 
 namespace FCP.Enlist;
 
@@ -493,7 +494,7 @@ public class WorldObjectCompEnlist : WorldObjectComp
 							{
 								defaultLabel = optionDef.shuttleServiceLabelKey.Translate(faction.Named("FACTION")),
 								defaultDesc = optionDef.shuttleServiceDescKey.Translate(faction.Named("FACTION")),
-								icon = ContentFinder<Texture2D>.Get(optionDef.shuttleServiceButtonIconTexPath),
+								icon = ContentFinder<Texture2D>.Get(optionDef.shuttleServiceButtonIconTexPath, reportFailure: false) ?? BaseContent.BadTex,
 								action = delegate
 								{
 									StartChoosingShuttleDestination(caravan, optionDef);
@@ -692,7 +693,7 @@ public class WorldObjectCompEnlist : WorldObjectComp
 			Messages.Message("TransportPodDestinationBeyondMaximumRange".Translate(), MessageTypeDefOf.RejectInput, historical: false);
 			return false;
 		}
-		IEnumerable<FloatMenuOption> source = GetTransportPodsFloatMenuOptionsAt(target.Tile, caravan);
+		IEnumerable<FloatMenuOption> source = GetTransportPodsFloatMenuOptionsAt(target.Tile, caravan, launchAction);
 		if (!source.Any())
 		{
 			if (Find.World.Impassable(target.Tile))
@@ -783,92 +784,63 @@ public class WorldObjectCompEnlist : WorldObjectComp
 			}
 			ExtractMoneyFromCaravan(caravan, curFactionEnlistOptionsDef.shuttleServiceCost, curFactionEnlistOptionsDef);
 
-			// Try to get custom shuttle from faction using reflection
-			TransportShipDef transportShipDef = null;
-			
-			if (parent.Faction?.def?.modExtensions != null)
+			// Get custom shuttle from faction extension - direct type access (no reflection)
+			FactionModExtension factionExtension = parent.Faction?.def?.GetModExtension<FactionModExtension>();
+			TransportShipDef transportShipDef = factionExtension?.transportShipDef;
+
+			if (transportShipDef != null && transportShipDef.worldObject != null)
 			{
-				foreach (var extension in parent.Faction.def.modExtensions)
+				// Create the shuttle thing - it's a Building with CompTransporter, not an ActiveTransporter
+				Thing shuttleThing = ThingMaker.MakeThing(transportShipDef.shipThing);
+				CompTransporter compTransporter = shuttleThing.TryGetComp<CompTransporter>();
+				
+				if (compTransporter == null)
 				{
-					if (extension.GetType().Name == "FactionModExtension")
-					{
-						var transportShipDefField = extension.GetType().GetField("transportShipDef");
-						if (transportShipDefField != null)
-						{
-							transportShipDef = transportShipDefField.GetValue(extension) as TransportShipDef;
-							break;
-						}
-					}
+					Log.Error($"[FCP Enlist] Shuttle thing {shuttleThing.def.defName} has no CompTransporter!");
+					TryLaunch(destinationTile, arrivalAction, caravan);
+					return;
 				}
-			}
-
-			Thing transportThing;
-			ThingDef skyfallerDef;
-			WorldObjectDef worldObjectDef;
-
-			if (transportShipDef != null)
-			{
-				// Use custom shuttle
-				transportThing = ThingMaker.MakeThing(transportShipDef.shipThing);
-				skyfallerDef = transportShipDef.leavingSkyfaller;
-				worldObjectDef = transportShipDef.worldObject;
-			}
-			else
-			{
-				// Fall back to drop pods
-				transportThing = ThingMaker.MakeThing(ThingDefOf.ActiveDropPod);
-				skyfallerDef = ThingDefOf.DropPodLeaving;
-				worldObjectDef = WorldObjectDefOf.TravellingTransporters;
-			}
-
-			// Load the transport
-			CompTransporter compTransporter = transportThing.TryGetComp<CompTransporter>();
-			if (compTransporter != null)
-			{
-				compTransporter.GetDirectlyHeldThings().TryAddRangeOrTransfer(caravan.GetDirectlyHeldThings(), canMergeWithExistingStacks: true, destroyLeftover: true);
-			}
-
-			// Create the skyfaller
-			Skyfaller skyfaller = (Skyfaller)SkyfallerMaker.MakeSkyfaller(skyfallerDef, transportThing);
-			if (skyfaller is FlyShipLeaving flyShip)
-			{
-				flyShip.groupID = 1;
-				flyShip.destinationTile = destinationTile;
-				flyShip.arrivalAction = arrivalAction;
-				flyShip.worldObjectDef = worldObjectDef;
-			}
-
-			// Create traveling world object
-			WorldObject travelingPods = WorldObjectMaker.MakeWorldObject(worldObjectDef);
-			travelingPods.Tile = base.parent.Tile;
-			travelingPods.SetFaction(Faction.OfPlayer);
-			
-			// Set destination using reflection since we don't know the exact type
-			var destTileField = travelingPods.GetType().GetField("destinationTile");
-			if (destTileField != null)
-			{
-				destTileField.SetValue(travelingPods, destinationTile);
-			}
-			
-			var arrivalActionField = travelingPods.GetType().GetField("arrivalAction");
-			if (arrivalActionField != null)
-			{
-				arrivalActionField.SetValue(travelingPods, arrivalAction);
-			}
-			
-			Find.WorldObjects.Add(travelingPods);
-
-			// Add pods using reflection
-			if (compTransporter != null)
-			{
-				var addPodMethod = travelingPods.GetType().GetMethod("AddPod");
-				if (addPodMethod != null)
+				
+				// Transfer caravan contents to shuttle's transporter
+				compTransporter.GetDirectlyHeldThings().TryAddRangeOrTransfer(
+					caravan.GetDirectlyHeldThings(), 
+					canMergeWithExistingStacks: true, 
+					destroyLeftover: true);
+				
+				// Create the traveling world object - cast to TravellingTransporters for direct property access
+				TravellingTransporters travelingShuttle = (TravellingTransporters)WorldObjectMaker.MakeWorldObject(transportShipDef.worldObject);
+				travelingShuttle.Tile = parent.Tile;
+				travelingShuttle.SetFaction(Faction.OfPlayer);
+				travelingShuttle.destinationTile = destinationTile;
+				
+				// Use custom arrival action that forces map loading to show shuttle landing
+			travelingShuttle.arrivalAction = arrivalAction ?? new TransportersArrivalAction_FormCaravan();
+				// Set the transport ship def (still need reflection for this private field)
+				var transportShipField = typeof(TravellingTransporters).GetField("transportShip", 
+					System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+				if (transportShipField != null)
 				{
-					addPodMethod.Invoke(travelingPods, new object[] { compTransporter.GetDirectlyHeldThings().ToList(), true });
+					transportShipField.SetValue(travelingShuttle, transportShipDef);
 				}
+				
+				Find.WorldObjects.Add(travelingShuttle);
+				
+				// Wrap the cargo in ActiveTransporterInfo for AddTransporter
+				ActiveTransporterInfo transporterInfo = new ActiveTransporterInfo();
+				transporterInfo.innerContainer.TryAddRangeOrTransfer(
+					compTransporter.GetDirectlyHeldThings(), 
+					canMergeWithExistingStacks: true, 
+					destroyLeftover: false);
+				
+				travelingShuttle.AddTransporter(transporterInfo, true);
+				
+				caravan.Destroy();
+				return;
 			}
-
-			caravan.Destroy();
+			
+			// Fallback to drop pods
+			Log.Warning("[FCP Enlist] Failed to launch shuttle, falling back to drop pods");
+			TryLaunch(destinationTile, arrivalAction, caravan);
 		}
 	}
 
@@ -901,15 +873,19 @@ public class WorldObjectCompEnlist : WorldObjectComp
 			}
 		}
 	}
-	private IEnumerable<FloatMenuOption> GetTransportPodsFloatMenuOptionsAt(int tile, Caravan caravan)
+	private IEnumerable<FloatMenuOption> GetTransportPodsFloatMenuOptionsAt(int tile, Caravan caravan, Action<int, TransportersArrivalAction, Caravan> launchAction = null)
 	{
+		// Default to TryLaunch if no launchAction specified (for drop pods)
+		if (launchAction == null)
+			launchAction = TryLaunch;
+		
 		bool anything = false;
 		if (!Find.World.Impassable(tile) && !Find.WorldObjects.AnySettlementBaseAt(tile) && !Find.WorldObjects.AnySiteAt(tile))
 		{
 			anything = true;
 			yield return new FloatMenuOption("FormCaravanHere".Translate(), delegate
 			{
-				TryLaunch(tile, new TransportersArrivalAction_FormCaravan(), caravan);
+				launchAction(tile, new TransportersArrivalAction_FormCaravan(), caravan);
 			});
 		}
 		//List<WorldObject> worldObjects = Find.WorldObjects.AllWorldObjects;
@@ -928,7 +904,7 @@ public class WorldObjectCompEnlist : WorldObjectComp
 		{
 			yield return new FloatMenuOption("TransportPodsContentsWillBeLost".Translate(), delegate
 			{
-				TryLaunch(tile, null, caravan);
+				launchAction(tile, null, caravan);
 			});
 		}
 	}

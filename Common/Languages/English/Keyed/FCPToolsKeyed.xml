@@ -29,4 +29,8 @@
 	<FCP_WeaponReq_WrongXenotype>Requires xenotype: {0}</FCP_WeaponReq_WrongXenotype>
 	<FCP_WeaponReq_RequiresApparel>Requires apparel: {0}</FCP_WeaponReq_RequiresApparel>
 
+	<!-- Enlistment - Hostile Factions -->
+	<FCP_Enemy_Of_Enlist_Faction>New Enemy</FCP_Enemy_Of_Enlist_Faction>
+	<FCP_Enemy_Of_Enlist_Faction_Desc>By enlisting with {ENLISTED_name}, you have become an enemy of {HOSTILE_name}. They are now hostile toward your colony.</FCP_Enemy_Of_Enlist_Faction_Desc>
+
 </LanguageData>
