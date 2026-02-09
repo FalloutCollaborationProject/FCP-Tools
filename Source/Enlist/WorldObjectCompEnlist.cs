@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using Verse;
+using FCP.Core.Shuttles;
 
 namespace FCP.Enlist;
 
@@ -355,7 +356,7 @@ public class WorldObjectCompEnlist : WorldObjectComp
 								icon = ContentFinder<Texture2D>.Get(optionDef.mechSerumButtonIconTexPath),
 								action = delegate
 								{
-									ExtractMoneyFromCaravan(caravan, optionDef.mechSerumCost);
+									ExtractMoneyFromCaravan(caravan, optionDef.mechSerumCost, optionDef);
 									foreach (Pawn pawn in caravan.PawnsListForReading)
 									{
 										List<BodyPartRecord> list = (from x in pawn.RaceProps.body.AllParts
@@ -389,7 +390,8 @@ public class WorldObjectCompEnlist : WorldObjectComp
 									}
 								}
 							};
-							if (caravan.AllThings.Where(x => x.def == ThingDefOf.Silver).Sum(x => x.stackCount) < optionDef.mechSerumCost)
+							ThingDef mechSerumCurrency = optionDef.currencyDef ?? ThingDefOf.Silver;
+							if (caravan.AllThings.Where(x => x.def == mechSerumCurrency).Sum(x => x.stackCount) < optionDef.mechSerumCost)
 							{
 								command_MechSerum.Disable(optionDef.mechSerumCostRequirementKey.Translate());
 							}
@@ -476,13 +478,38 @@ public class WorldObjectCompEnlist : WorldObjectComp
 
 								alsoClickIfOtherInGroupClicked = false
 							};
-							if (caravan.AllThings.Where(x => x.def == ThingDefOf.Silver).Sum(x => x.stackCount) < optionDef.dropPodServiceCost)
+							ThingDef dropPodCurrency = optionDef.currencyDef ?? ThingDefOf.Silver;
+							if (caravan.AllThings.Where(x => x.def == dropPodCurrency).Sum(x => x.stackCount) < optionDef.dropPodServiceCost)
 							{
 								command_DropPodService.Disable(optionDef.dropPodServiceCostRequirementKey.Translate());
 							}
 
 							command_DropPodService.order = order;
 							yield return command_DropPodService;
+							order++;
+						}
+						if (optionDef.shuttleServiceIsEnabled)
+						{
+							Command_Action command_ShuttleService = new Command_Action
+							{
+								defaultLabel = optionDef.shuttleServiceLabelKey.Translate(faction.Named("FACTION")),
+								defaultDesc = optionDef.shuttleServiceDescKey.Translate(faction.Named("FACTION")),
+								icon = ContentFinder<Texture2D>.Get(optionDef.shuttleServiceButtonIconTexPath, reportFailure: false) ?? BaseContent.BadTex,
+								action = delegate
+								{
+									StartChoosingShuttleDestination(caravan, optionDef);
+								},
+
+								alsoClickIfOtherInGroupClicked = false
+							};
+							ThingDef shuttleCurrency = optionDef.currencyDef ?? ThingDefOf.Silver;
+							if (caravan.AllThings.Where(x => x.def == shuttleCurrency).Sum(x => x.stackCount) < optionDef.shuttleServiceCost)
+							{
+								command_ShuttleService.Disable(optionDef.shuttleServiceCostRequirementKey.Translate());
+							}
+
+							command_ShuttleService.order = order;
+							yield return command_ShuttleService;
 							order++;
 						}
 						if (promotedByOptions is null)
@@ -666,7 +693,7 @@ public class WorldObjectCompEnlist : WorldObjectComp
 			Messages.Message("TransportPodDestinationBeyondMaximumRange".Translate(), MessageTypeDefOf.RejectInput, historical: false);
 			return false;
 		}
-		IEnumerable<FloatMenuOption> source = GetTransportPodsFloatMenuOptionsAt(target.Tile, caravan);
+		IEnumerable<FloatMenuOption> source = GetTransportPodsFloatMenuOptionsAt(target.Tile, caravan, launchAction);
 		if (!source.Any())
 		{
 			if (Find.World.Impassable(target.Tile))
@@ -703,7 +730,7 @@ public class WorldObjectCompEnlist : WorldObjectComp
 					pawn.inventory.unloadEverything = true;
 				}
 			}
-			ExtractMoneyFromCaravan(caravan, curFactionEnlistOptionsDef.dropPodServiceCost);
+			ExtractMoneyFromCaravan(caravan, curFactionEnlistOptionsDef.dropPodServiceCost, curFactionEnlistOptionsDef);
 
 			ActiveTransporter ActiveTransporter = (ActiveTransporter)ThingMaker.MakeThing(ThingDefOf.ActiveDropPod);
 			ActiveTransporter.Contents = new ActiveTransporterInfo();
@@ -725,20 +752,113 @@ public class WorldObjectCompEnlist : WorldObjectComp
 		}
 	}
 
-	public void ExtractMoneyFromCaravan(Caravan caravan, int fee)
+	public void StartChoosingShuttleDestination(Caravan caravan, FactionEnlistOptionsDef optionsDef)
 	{
+		tmpCaravan = caravan;
+		CameraJumper.TryJump(CameraJumper.GetWorldTarget(parent));
+		Find.WorldSelector.ClearSelection();
+		int tile = parent.Tile;
+		curFactionEnlistOptionsDef = optionsDef;
+		Find.WorldTargeter.BeginTargeting(ChoseShuttleWorldTarget, canTargetTiles: true, CompLaunchable.TargeterMouseAttachment, closeWorldTabWhenFinished: false, delegate
+		{
+			GenDraw.DrawWorldRadiusRing(tile, MaxLaunchDistance);
+		}, (GlobalTargetInfo target) => TargetingLabelGetter(target, tile, MaxLaunchDistance, caravan));
+	}
+
+	private bool ChoseShuttleWorldTarget(GlobalTargetInfo target)
+	{
+		return ChoseWorldTarget(target, parent.Tile, MaxLaunchDistance, TryLaunchShuttle, tmpCaravan);
+	}
+
+	public void TryLaunchShuttle(int destinationTile, TransportersArrivalAction arrivalAction, Caravan caravan)
+	{
+		int num = Find.WorldGrid.TraversalDistanceBetween(parent.Tile, destinationTile);
+		if (num <= MaxLaunchDistance)
+		{
+			foreach (Pawn pawn in caravan.PawnsListForReading)
+			{
+				if (pawn.IsColonist && pawn.inventory != null)
+				{
+					pawn.inventory.unloadEverything = true;
+				}
+			}
+			ExtractMoneyFromCaravan(caravan, curFactionEnlistOptionsDef.shuttleServiceCost, curFactionEnlistOptionsDef);
+
+			// Get custom shuttle from faction extension - direct type access (no reflection)
+			FactionModExtension factionExtension = parent.Faction?.def?.GetModExtension<FactionModExtension>();
+			TransportShipDef transportShipDef = factionExtension?.transportShipDef;
+
+			if (transportShipDef != null && transportShipDef.worldObject != null)
+			{
+				// Create the shuttle thing - it's a Building with CompTransporter, not an ActiveTransporter
+				Thing shuttleThing = ThingMaker.MakeThing(transportShipDef.shipThing);
+				CompTransporter compTransporter = shuttleThing.TryGetComp<CompTransporter>();
+				
+				if (compTransporter == null)
+				{
+					Log.Error($"[FCP Enlist] Shuttle thing {shuttleThing.def.defName} has no CompTransporter!");
+					TryLaunch(destinationTile, arrivalAction, caravan);
+					return;
+				}
+				
+				// Transfer caravan contents to shuttle's transporter
+				compTransporter.GetDirectlyHeldThings().TryAddRangeOrTransfer(
+					caravan.GetDirectlyHeldThings(), 
+					canMergeWithExistingStacks: true, 
+					destroyLeftover: true);
+				
+				// Create the traveling world object - cast to TravellingTransporters for direct property access
+				TravellingTransporters travelingShuttle = (TravellingTransporters)WorldObjectMaker.MakeWorldObject(transportShipDef.worldObject);
+				travelingShuttle.Tile = parent.Tile;
+				travelingShuttle.SetFaction(Faction.OfPlayer);
+				travelingShuttle.destinationTile = destinationTile;
+				
+				// Use custom arrival action that forces map loading to show shuttle landing
+			travelingShuttle.arrivalAction = arrivalAction ?? new TransportersArrivalAction_FormCaravan();
+				// Set the transport ship def (still need reflection for this private field)
+				var transportShipField = typeof(TravellingTransporters).GetField("transportShip", 
+					System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
+				if (transportShipField != null)
+				{
+					transportShipField.SetValue(travelingShuttle, transportShipDef);
+				}
+				
+				Find.WorldObjects.Add(travelingShuttle);
+				
+				// Wrap the cargo in ActiveTransporterInfo for AddTransporter
+				ActiveTransporterInfo transporterInfo = new ActiveTransporterInfo();
+				transporterInfo.innerContainer.TryAddRangeOrTransfer(
+					compTransporter.GetDirectlyHeldThings(), 
+					canMergeWithExistingStacks: true, 
+					destroyLeftover: false);
+				
+				travelingShuttle.AddTransporter(transporterInfo, true);
+				
+				caravan.Destroy();
+				return;
+			}
+			
+			// Fallback to drop pods
+			Log.Warning("[FCP Enlist] Failed to launch shuttle, falling back to drop pods");
+			TryLaunch(destinationTile, arrivalAction, caravan);
+		}
+	}
+
+	public void ExtractMoneyFromCaravan(Caravan caravan, int fee, FactionEnlistOptionsDef optionDef)
+	{
+		ThingDef currencyDef = optionDef.currencyDef ?? ThingDefOf.Silver;
 		while (true)
 		{
 			if (fee > 0)
 			{
-				List<Thing> silvers = caravan.AllThings.Where(x => x.def == ThingDefOf.Silver).ToList();
-				for (int i = silvers.Count - 1; i >= 0; i--)
+				List<Thing> currencies = caravan.AllThings.Where(x => x.def == currencyDef).ToList();
+				for (int i = currencies.Count - 1; i >= 0; i--)
 				{
-					Thing silver = silvers[i];
-					if (silver.stackCount > 0)
+					Thing currency = currencies[i];
+					if (currency.stackCount > 0)
 					{
-						int num = Math.Min(fee, silver.stackCount);
-						silver.SplitOff(num)?.Destroy();
+						int num = Math.Min(fee, currency.stackCount);
+						currency.SplitOff(num)?.Destroy();
 						fee -= num;
 						if (fee <= 0)
 						{
@@ -753,15 +873,19 @@ public class WorldObjectCompEnlist : WorldObjectComp
 			}
 		}
 	}
-	private IEnumerable<FloatMenuOption> GetTransportPodsFloatMenuOptionsAt(int tile, Caravan caravan)
+	private IEnumerable<FloatMenuOption> GetTransportPodsFloatMenuOptionsAt(int tile, Caravan caravan, Action<int, TransportersArrivalAction, Caravan> launchAction = null)
 	{
+		// Default to TryLaunch if no launchAction specified (for drop pods)
+		if (launchAction == null)
+			launchAction = TryLaunch;
+		
 		bool anything = false;
 		if (!Find.World.Impassable(tile) && !Find.WorldObjects.AnySettlementBaseAt(tile) && !Find.WorldObjects.AnySiteAt(tile))
 		{
 			anything = true;
 			yield return new FloatMenuOption("FormCaravanHere".Translate(), delegate
 			{
-				TryLaunch(tile, new TransportersArrivalAction_FormCaravan(), caravan);
+				launchAction(tile, new TransportersArrivalAction_FormCaravan(), caravan);
 			});
 		}
 		//List<WorldObject> worldObjects = Find.WorldObjects.AllWorldObjects;
@@ -780,7 +904,7 @@ public class WorldObjectCompEnlist : WorldObjectComp
 		{
 			yield return new FloatMenuOption("TransportPodsContentsWillBeLost".Translate(), delegate
 			{
-				TryLaunch(tile, null, caravan);
+				launchAction(tile, null, caravan);
 			});
 		}
 	}

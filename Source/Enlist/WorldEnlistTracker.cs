@@ -1,5 +1,4 @@
-using FCP.Core;
-using RimWorld;
+﻿using RimWorld;
 using RimWorld.Planet;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +19,7 @@ public class WorldEnlistTracker : WorldComponent
 
     public IEnumerable<Faction> EnlistedFactions(FactionEnlistOptionsDef optionsDef)
     {
-        if (FCPCoreMod.SettingsTab<EnlistSettings>().enlistStates[optionsDef.defName])
+        if (EnlistMod.settings.enlistStates[optionsDef.defName])
         {
             foreach (KeyValuePair<Faction, FactionOptions> data in factionOptionsContainer)
             {
@@ -38,7 +37,7 @@ public class WorldEnlistTracker : WorldComponent
         {
             foreach (KeyValuePair<FactionEnlistOptionsDef, bool> subData in data.Value.factionsRecruiters)
             {
-                if (FCPCoreMod.SettingsTab<EnlistSettings>().enlistStates[subData.Key.defName] && subData.Value)
+                if (EnlistMod.settings.enlistStates[subData.Key.defName] && subData.Value)
                 {
                     yield return data.Key;
                 }

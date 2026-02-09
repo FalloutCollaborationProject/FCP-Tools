@@ -1,13 +1,25 @@
-using HarmonyLib;
+﻿using HarmonyLib;
+using System;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using UnityEngine;
 using Verse;
 
 namespace FCP.Enlist;
 
-[StaticConstructorOnStartup]
-static class EnlistMod
+class EnlistMod : Mod
 {
-    static EnlistMod()
+    public static EnlistSettings settings;
+    public EnlistMod(ModContentPack pack) : base(pack)
     {
+        settings = GetSettings<EnlistSettings>();
         new Harmony("ChickenPlucker.Enlist").PatchAll();
+    }
+
+    public override void WriteSettings()
+    {
+        base.WriteSettings();
+        EnlistUtils.DoDefsRemoval();
     }
 }

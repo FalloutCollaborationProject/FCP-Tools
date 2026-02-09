@@ -54,6 +54,27 @@ public class FactionEnlistWorker
 			factionOptions.factionsStorages[def] = factionStorage;
 		}
 		def.enlistedSoundDef?.PlayOneShotOnCamera();
+
+		Faction player = Faction.OfPlayer;
+		foreach (Faction faction in Find.FactionManager.AllFactionsListForReading)
+		{
+			if (faction == toEnlist || faction == player || faction.defeated || faction.IsPlayer) continue;
+			
+			FactionRelation rel = toEnlist.RelationWith(faction, false);
+			if (rel == null || rel.kind != FactionRelationKind.Hostile) continue;
+			if (faction.HostileTo(player)) continue;
+			
+			int goodwill = faction.GoodwillWith(player);
+			if (goodwill > -75)
+			{
+				faction.TryAffectGoodwillWith(player, -75 - goodwill, false, true);
+			}
+			
+			Find.LetterStack.ReceiveLetter(
+				"FCP_Enemy_Of_Enlist_Faction".Translate(),
+				"FCP_Enemy_Of_Enlist_Faction_Desc".Translate(toEnlist.Named("ENLISTED"), faction.Named("HOSTILE")),
+				LetterDefOf.NegativeEvent);
+		}
 	}
 
 

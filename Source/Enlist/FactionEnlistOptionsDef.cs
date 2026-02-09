@@ -34,6 +34,8 @@ public class FactionEnlistOptionsDef : Def
 	public TechLevel? requiredTechLevel;
 	public bool overrideModExtension;
 
+	public ThingDef currencyDef;
+
 	public int? minGoodwillRequrementToEnlist;
 	public int enlistGoodwillGain;
 	public int minGoodwillUponEnlist;
@@ -101,6 +103,13 @@ public class FactionEnlistOptionsDef : Def
 	public string dropPodServiceButtonIconTexPath;
 	public int dropPodServiceCost;
 	public string dropPodServiceCostRequirementKey;
+
+	public bool shuttleServiceIsEnabled;
+	public string shuttleServiceLabelKey;
+	public string shuttleServiceDescKey;
+	public string shuttleServiceButtonIconTexPath;
+	public int shuttleServiceCost;
+	public string shuttleServiceCostRequirementKey;
 
 	public int resignGoodwillGain;
 	public string resignMenuTextKey;
