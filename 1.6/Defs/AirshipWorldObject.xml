@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <WorldObjectDef>
+        <defName>FCP_BOS_Airship</defName>
+        <worldObjectClass>FCP.Core.Airship</worldObjectClass>
+        <label>airship</label> <!-- hidden -->
+        <description>TBD</description>
+
+        <texture>World/WorldObjects/TravelingTransportPods</texture>
+        <useDynamicDrawer>true</useDynamicDrawer>
+        <expandingIcon>true</expandingIcon>
+        <expandingIconTexture>World/WorldObjects/Expanding/TravelingTransportPods</expandingIconTexture>
+        <expandingIconPriority>60</expandingIconPriority>
+        <expandMore>true</expandMore>
+
+        <neverMultiSelect>true</neverMultiSelect>
+    </WorldObjectDef>
+
+</Defs>
