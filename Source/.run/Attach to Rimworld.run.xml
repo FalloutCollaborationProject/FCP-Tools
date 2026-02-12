@@ -1,5 +1,5 @@
 ﻿<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Attach to Rimworld" type="ConnectRemote" factoryName="Mono Remote" show_console_on_std_err="false" show_console_on_std_out="false" port="56000" address="localhost">
+  <configuration default="false" name="Attach to Rimworld" type="ConnectRemote" factoryName="Mono Remote" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" useMixedMode="false">
     <option name="allowRunningInParallel" value="false" />
     <option name="listenPortForConnections" value="false" />
     <option name="projectPathOnTarget" />
