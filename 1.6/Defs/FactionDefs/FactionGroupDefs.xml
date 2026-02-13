@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!--__________ Faction Groups __________-->
+
+    <!--_____ Brotherhood _____-->
+
+    <!-- Brotherhood Of Steel -->
+    <FCP.Factions.FactionGroupDef>
+        <defName>FCP_Factions_BoS</defName>
+        <label>Brotherhood of Steel</label>
+        <description>TBD</description>
+        <leadingFaction MayRequire="Rick.FCP.BOS">FCP_Faction_BoS</leadingFaction>
+        <factions>
+            <li MayRequire="Rick.FCP.BOS">FCP_Faction_BoS</li>
+            <li MayRequire="Rick.FCP.BOS">FCP_Faction_BoS_Lost_Hills</li>
+            <li MayRequire="Rick.FCP.BOS">FCP_Faction_BoS_Midwest</li>
+            <li MayRequire="Rick.FCP.BOS">FCP_Faction_BoS_Lyons_Pride_Remnants</li>
+            <li MayRequire="Rick.FCP.BOS">FCP_Faction_BoS_Outcast_Remnants</li>
+        </factions>
+        <playerFactions>
+            <li MayRequire="Rick.FCP.BOS">FCP_Faction_BoS_Player</li>
+            <li MayRequire="Rick.FCP.BOS">FCP_Faction_BoS_Lyons_Pride_Remnants_Player</li>
+            <li MayRequire="Rick.FCP.BOS">FCP_Faction_BoS_Outcast_Remnants_Player</li>
+            <li MayRequire="Rick.FCP.BOS">FCP_Faction_BoS_Mojave_Player</li>
+            <li MayRequire="Rick.FCP.BOS">FCP_Faction_BoS_Appalachia_Player</li>
+        </playerFactions>
+    </FCP.Factions.FactionGroupDef>
+
+    
+    <!--_____ Legion / NCR _____-->
+
+    <!-- New California Republic -->
+    <FCP.Factions.FactionGroupDef MayRequire="Rick.FCP.NCR">
+        <defName>FCP_Factions_NCR</defName>
+        <label>New California Republic</label>
+        <description>TBD</description>
+        <leadingFaction>FCP_Faction_NCR</leadingFaction>
+        <factions>
+            <li>FCP_Faction_NCR</li>
+        </factions>
+        <playerFactions>
+            <li>FCP_Faction_NCR_Player</li>
+        </playerFactions>
+    </FCP.Factions.FactionGroupDef>
+
+    <!-- Legion -->
+    <FCP.Factions.FactionGroupDef MayRequire="Rick.FCP.Legion">
+        <defName>FCP_Factions_Legion</defName>
+        <label>The Legion</label>
+        <description>TBD</description>
+        <leadingFaction>FCP_Faction_Caesars_Legion</leadingFaction>
+        <factions>
+            <li>FCP_Faction_Caesars_Legion</li>
+        </factions>
+    </FCP.Factions.FactionGroupDef>
+
+
+    <!--_____ Enclave _____-->
+
+    <!-- Enclave -->
+    <FCP.Factions.FactionGroupDef MayRequire="Rick.FCP.Enclave">
+        <defName>FCP_Factions_Enclave</defName>
+        <label>The Enclave</label>
+        <description>TBD</description>
+        <leadingFaction>FCP_Faction_Enclave</leadingFaction>
+        <factions>
+            <li>FCP_Faction_Enclave</li>
+        </factions>
+        <playerFactions>
+            <li>FCP_Faction_Enclave_Player</li>
+        </playerFactions>
+    </FCP.Factions.FactionGroupDef>
+
+</Defs>
