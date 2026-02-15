@@ -117,9 +117,6 @@ namespace FCP.Core.Ghouls
 
         public override IEnumerable<Gizmo> GetGizmos()
         {
-            foreach (var gizmo in base.GetGizmos())
-                if (gizmo != null) yield return gizmo;
-
             if (pawn?.Faction == Faction.OfPlayer)
                 yield return new GeneGizmo_Ferality(this);
         }
