@@ -91,3 +91,5 @@ Penumbra, RickGrymes
 Portions of the materials used to create this content/mod are trademarks and/or copyrighted works of **Bethesda Softworks LLC**. All rights reserved by Bethesda. This content/mod is not official and is not endorsed by Bethesda.
 
 Portions of the materials used to create this content/mod are trademarks and/or copyrighted works of **Ludeon Studios Inc**. All rights reserved by Ludeon. This content/mod is not official and is not endorsed by Ludeon.
+
+By forking, cloning, or pull requesting this software, you agree to grant **Ranger Rick** and the **Fallout Collaboration Project** a non transferable option to claim, for now and for ever more, your immortal soul. Should We wish to exercise this option, you agree to surrender your immortal soul, and any claim you may have on it, within 5 (five) working days of receiving written notification from the FCP or one of its duly authorised minions. We reserve the right to serve such notice in 6 (six) foot high letters of fire, however we can accept no liability for any loss or damage caused by such an act.
