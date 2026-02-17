@@ -6,6 +6,9 @@ public class ExplosiveWorker : LegendaryEffectWorker
     {
         if (pawn == null)
             return;
+        if (damageInfo.IntendedTarget == null)
+            return;
+        
         Effecter eff = FCPDefOf.FCP_VATSLegendaryEffect_Explosive_Explosion.Spawn();
         damageInfo.Instigator.Map.effecterMaintainer.AddEffecterToMaintain(eff, damageInfo.IntendedTarget.Position.ToVector3().ToIntVec3(), 60);
 

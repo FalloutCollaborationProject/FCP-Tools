@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef Name="FCP_ApparelUpgradeableBase" ParentName="ApparelBase" Abstract="True">
+        <thingClass>Apparel</thingClass>
+        <category>Item</category>
+        <selectable>true</selectable>
+        <pathCost>14</pathCost>
+        <useHitPoints>true</useHitPoints>
+        <graphicData>
+            <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+        </graphicData>
+        <drawGUIOverlay>true</drawGUIOverlay>
+        <statBases>
+            <MaxHitPoints>100</MaxHitPoints>
+            <Flammability>1.0</Flammability>
+            <DeteriorationRate>2</DeteriorationRate>
+            <SellPriceFactor>0.5</SellPriceFactor>
+        </statBases>
+        <altitudeLayer>Item</altitudeLayer>
+        <alwaysHaulable>true</alwaysHaulable>
+        <tickerType>Never</tickerType>
+        <burnableByRecipe>true</burnableByRecipe>
+        <smeltable>false</smeltable>
+        <thingCategories>
+            <li>ApparelArmor</li>
+        </thingCategories>
+        <statBases Inherit="False">
+            <MaxHitPoints>250</MaxHitPoints>
+            <Mass>6.0</Mass>
+            <Insulation_Cold>3</Insulation_Cold>
+            <Insulation_Heat>3</Insulation_Heat>
+            <EquipDelay>1.2</EquipDelay>
+            <Flammability>1.0</Flammability>
+            <DeteriorationRate>2</DeteriorationRate>
+            <SellPriceFactor>0.5</SellPriceFactor>
+        </statBases>
+        <apparel>
+            <bodyPartGroups>
+                <li>Hands</li>
+                <li>Feet</li>
+                <li>Neck</li>
+                <li>Legs</li>
+                <li>Arms</li>
+                <li>Torso</li>
+                <li>Waist</li>
+                <li>Shoulders</li>
+            </bodyPartGroups>
+            <layers>
+                <li>Shell</li>
+            </layers>
+            <shellRenderedBehindHead>true</shellRenderedBehindHead>
+            <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+            <developmentalStageFilter>Adult</developmentalStageFilter>
+        </apparel>
+        <comps>
+            <li Class="CompProperties_Forbiddable"/>
+            <li>
+                <compClass>CompColorable</compClass>
+            </li>
+        </comps>
+    </ThingDef>
+
+</Defs>
