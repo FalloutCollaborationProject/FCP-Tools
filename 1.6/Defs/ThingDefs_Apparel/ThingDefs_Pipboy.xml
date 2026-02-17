@@ -5,7 +5,7 @@
 
     <!-- Pip-Boy Base -->
 
-    <ThingDef ParentName="ApparelBase" Name="FCP_Apparel_Pipboy_Base" Abstract="True">
+    <ThingDef ParentName="FCP_Apparel_Base" Name="FCP_Apparel_Pipboy_Base" Abstract="True">
         <techLevel>Spacer</techLevel>
         <graphicData>
             <texPath>Things/Apparel/Accessories/Pipboy/Pipboy</texPath>
