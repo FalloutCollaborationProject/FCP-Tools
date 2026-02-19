@@ -127,9 +127,6 @@
 
     <ThingDef Name="FCP_Apparel_Combat_Armor_Light_Base_Craftable" ParentName="FCP_Armor_Machineable_Base" Abstract="True">
         <smeltable>false</smeltable>
-        <thingCategories>
-            <li>ApparelArmor</li>
-        </thingCategories>
         <recipeMaker>
             <skillRequirements>
                 <Crafting>2</Crafting>
@@ -175,9 +172,6 @@
 
     <ThingDef Name="FCP_Apparel_Combat_Armor_Base" Abstract="True" ParentName="FCP_Armor_Machineable_Base">
         <smeltable>false</smeltable>
-        <thingCategories>
-            <li>ApparelArmor</li>
-        </thingCategories>
         <recipeMaker>
             <skillRequirements>
                 <Crafting>4</Crafting>
