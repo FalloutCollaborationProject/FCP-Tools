@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!--__________ Wastelander Weapons __________-->
+
+    <!-- FCP Simple Weapon Makeable Base -->
+
+    <ThingDef Name="FCP_Simple_Gun_Base" Abstract="True" ParentName="BaseHumanMakeableGun">
+        <techLevel>Industrial</techLevel>
+        <recipeMaker Inherit="false">
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <workSkill>Crafting</workSkill>
+            <effectWorking>Smith</effectWorking>
+            <soundWorking>Recipe_Smith</soundWorking>
+            <recipeUsers>
+                <li>FCP_Production_Simple_Weapons_Workbench</li>
+            </recipeUsers>
+            <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+        </recipeMaker>
+    </ThingDef>
+
+    <ThingDef Name="FCP_Complex_Gun_Base" Abstract="True" ParentName="BaseHumanMakeableGun">
+        <techLevel>Industrial</techLevel>
+        <recipeMaker Inherit="false">
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <workSkill>Crafting</workSkill>
+            <effectWorking>Smith</effectWorking>
+            <soundWorking>Recipe_Machining</soundWorking>
+            <recipeUsers>
+                <li>FCP_Production_Complex_Weapons_Workbench</li>
+            </recipeUsers>
+            <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+        </recipeMaker>
+    </ThingDef>
+
+    <ThingDef Name="FCP_Machining_Gun_Base" Abstract="True" ParentName="BaseHumanMakeableGun">
+        <techLevel>Spacer</techLevel>
+        <recipeMaker Inherit="false">
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <workSkill>Crafting</workSkill>
+            <effectWorking>Smith</effectWorking>
+            <soundWorking>Recipe_Machining</soundWorking>
+            <recipeUsers>
+                <li>FCP_Production_Fabrication_Workbench</li>
+            </recipeUsers>
+            <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+        </recipeMaker>
+    </ThingDef>
+
+    <ThingDef Name="FCP_Makeshift_Weapon_Base" Abstract="True" ParentName="BaseHumanMakeableGun">
+        <techLevel>Medieval</techLevel>
+        <recipeMaker Inherit="false">
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <workSkill>Crafting</workSkill>
+            <effectWorking>Smith</effectWorking>
+            <soundWorking>Recipe_Smith</soundWorking>
+            <recipeUsers>
+                <li></li>
+            </recipeUsers>
+            <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+        </recipeMaker>
+    </ThingDef>
+    
+    <ThingDef Name="FCP_Melee_Blunt_Base" ParentName="BaseMeleeWeapon_Blunt_Quality" Abstract="true">
+        <techLevel>Industrial</techLevel>
+        <recipeMaker  Inherit="false">
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <workSkill>Crafting</workSkill>
+            <effectWorking>Smith</effectWorking>
+            <soundWorking>Recipe_Smith</soundWorking>
+            <recipeUsers>
+                <li>FCP_Production_Simple_Weapons_Workbench</li>
+            </recipeUsers>
+            <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+        </recipeMaker>
+    </ThingDef>
+    
+    <ThingDef Name="FCP_Melee_Sharp_Base" ParentName="BaseMeleeWeapon_Sharp_Quality" Abstract="true">
+        <techLevel>Industrial</techLevel>
+        <recipeMaker  Inherit="false">
+            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+            <workSkill>Crafting</workSkill>
+            <effectWorking>Smith</effectWorking>
+            <soundWorking>Recipe_Smith</soundWorking>
+            <recipeUsers>
+                <li>FCP_Production_Simple_Weapons_Workbench</li>
+            </recipeUsers>
+            <unfinishedThingDef>UnfinishedWeapon</unfinishedThingDef>
+        </recipeMaker>
+    </ThingDef>
+    
+    <ThingDef Name="FCP_BaseGun" Abstract="True" ParentName="BaseGunWithQuality">
+        <techLevel>Industrial</techLevel>
+        <weaponTags>
+            <li>Gun</li>
+        </weaponTags>
+        <tradeTags>
+            <li>WeaponRanged</li>
+        </tradeTags>
+        <comps>
+            <li Class="CompProperties_Biocodable"/>
+        </comps>
+    </ThingDef>
+</Defs>

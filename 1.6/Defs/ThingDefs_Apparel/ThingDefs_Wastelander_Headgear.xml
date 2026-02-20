@@ -11,14 +11,12 @@
 
     <!-- Combat Armor Helmet Base -->
 
-    <ThingDef Name="FCP_Apparel_Combat_Helmet_Base" ParentName="HatMakeableBase" Abstract="true">
-        <techLevel>Industrial</techLevel>
+    <ThingDef Name="FCP_Apparel_Combat_Helmet_Base" ParentName="FCP_Armor_Helmet_Makeable_Base" Abstract="true">
         <smeltable>false</smeltable>
         <graphicData>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
         <recipeMaker>
-            <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
             <skillRequirements>
                 <Crafting>8</Crafting>
             </skillRequirements>
@@ -49,10 +47,8 @@
 
     <!--Officers Cap Base -->
 
-    <ThingDef ParentName="HatMakeableBase" Name="FCP_Apparel_Officers_Cap_Base" Abstract="true">
-        <techLevel>Industrial</techLevel>
+    <ThingDef ParentName="FCP_Hat_Makeable_Base" Name="FCP_Apparel_Officers_Cap_Base" Abstract="true">
         <recipeMaker>
-            <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
             <skillRequirements>
                 <Crafting>5</Crafting>
             </skillRequirements>
