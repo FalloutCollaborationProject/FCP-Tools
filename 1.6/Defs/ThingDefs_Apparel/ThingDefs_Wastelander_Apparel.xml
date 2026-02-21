@@ -14,61 +14,7 @@
         <thingCategories>
             <li>Apparel</li>
         </thingCategories>
-        <recipeMaker Inherit="false">
-            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
-            <workSkill>Crafting</workSkill>
-            <effectWorking>Tailor</effectWorking>
-            <soundWorking>Recipe_Tailor</soundWorking>
-            <recipeUsers>
-                <li>FCP_Production_Tailoring_Workbench</li>
-            </recipeUsers>
-            <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
-        </recipeMaker>
     </ThingDef>
-
-    <!-- FCP Armor Machinable Base-->
-
-    <ThingDef Name="FCP_Armor_Machineable_Base" Abstract="True" ParentName="ArmorMachineableBase">
-        <techLevel>Industrial</techLevel>
-        <thingCategories>
-            <li>ApparelArmor</li>
-        </thingCategories>
-        <recipeMaker Inherit="false">
-            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
-            <workSkill>Crafting</workSkill>
-            <effectWorking>Smith</effectWorking>
-            <soundWorking>Recipe_Smith</soundWorking>
-            <recipeUsers>
-                <li>FCP_Production_Armor_Workbench</li>
-            </recipeUsers>
-            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
-        </recipeMaker>
-    </ThingDef>    
-    
-    <!-- FCP Hat Makeable Base -->
-
-    <ThingDef Name="FCP_Hat_Makeable_Base" ParentName="FCP_Apparel_Makeable_Base" Abstract="True">
-        <thingCategories>
-        <li>Headgear</li>
-        </thingCategories>
-        <apparel>
-        <parentTagDef>ApparelHead</parentTagDef>
-        </apparel>
-    </ThingDef>
-
-    <!-- FCP Armor Helmet Machinable Base-->
-
-
-
-    <ThingDef Name="FCP_Armor_Helmet_Makeable_Base" ParentName="FCP_Armor_Machineable_Base" Abstract="True">
-        <thingCategories>
-        <li>ArmorHeadgear</li>
-        </thingCategories>
-        <apparel>
-        <parentTagDef>ApparelHead</parentTagDef>
-        </apparel>
-    </ThingDef>
-
 
     <!-- FCP Apparel Base -->
 
@@ -78,7 +24,7 @@
 
     <!-- Pre-War Army Uniform Craftable -->
 
-    <ThingDef Name="FCP_Apparel_Army_Uniform_Base_Craftable" ParentName="FCP_Apparel_Makeable_Base" Abstract="True">
+    <ThingDef Name="FCP_Apparel_Army_Uniform_Base_Craftable" ParentName="FCP_Apparel_Base" Abstract="True">
         <smeltable>false</smeltable>
         <statBases>
             <MaxHitPoints>120</MaxHitPoints>
@@ -89,10 +35,14 @@
             <Insulation_Heat>2.3</Insulation_Heat>
             <EquipDelay>3</EquipDelay>
         </statBases>
-        <recipeMaker>
+        <recipeMaker Inherit="false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
                 <Crafting>2</Crafting>
             </skillRequirements>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
         </recipeMaker>
         <costList>
             <FCP_Apparel_Army_Uniform>1</FCP_Apparel_Army_Uniform>
@@ -125,12 +75,19 @@
 
     <!-- Combat Armor Light -->
 
-    <ThingDef Name="FCP_Apparel_Combat_Armor_Light_Base_Craftable" ParentName="FCP_Armor_Machineable_Base" Abstract="True">
+    <ThingDef Name="FCP_Apparel_Combat_Armor_Light_Base_Craftable" ParentName="ApparelMakeableBase" Abstract="True">
         <smeltable>false</smeltable>
-        <recipeMaker>
+        <thingCategories>
+            <li>ApparelArmor</li>
+        </thingCategories>
+        <recipeMaker Inherit="false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
                 <Crafting>2</Crafting>
             </skillRequirements>
+            <recipeUsers>
+                <li>FCP_Production_Armor_Workbench</li>
+            </recipeUsers>
         </recipeMaker>
         <costList>
             <FCP_Apparel_Combat_Armor_Light>1</FCP_Apparel_Combat_Armor_Light>
@@ -170,13 +127,20 @@
 
     <!-- Combat Armor Base -->
 
-    <ThingDef Name="FCP_Apparel_Combat_Armor_Base" Abstract="True" ParentName="FCP_Armor_Machineable_Base">
+    <ThingDef Name="FCP_Apparel_Combat_Armor_Base" Abstract="True" ParentName="ApparelBase">
         <smeltable>false</smeltable>
-        <recipeMaker>
+        <thingCategories>
+            <li>ApparelArmor</li>
+        </thingCategories>
+        <recipeMaker Inherit="false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
                 <Crafting>4</Crafting>
             </skillRequirements>
             <researchPrerequisite>FCP_Research_CombatArmorStandard</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
         </recipeMaker>
         <costList>
             <Cloth>25</Cloth>
@@ -231,11 +195,15 @@
             <graphicClass>Graphic_Single</graphicClass>
             <drawSize>0.90</drawSize>
         </graphicData>
-        <recipeMaker>
+        <recipeMaker Inherit="false">
+            <unfinishedThingDef>UnfinishedArmor</unfinishedThingDef>
             <skillRequirements>
                 <Crafting>4</Crafting>
             </skillRequirements>
             <researchPrerequisite>FCP_Research_BusinessWear</researchPrerequisite>
+            <recipeUsers>
+                <li>FCP_Production_Tailoring_Workbench</li>
+            </recipeUsers>
         </recipeMaker>
         <costList>
             <Cloth>25</Cloth>
@@ -286,16 +254,18 @@
 
     <!-- Mysterious Stranger Hat -->
 
-    <ThingDef ParentName="FCP_Hat_Makeable_Base">
+    <ThingDef ParentName="HatMakeableBase">
         <defName>FCP_Apparel_Mysterious_Stranger_Hat</defName>
         <useHitPoints>false</useHitPoints>
         <label>Mysterious Stranger Hat</label>
         <description>A distinctive hat worn by the mysterious stranger, providing a subtle boost to accuracy.</description>
+        <techLevel>Industrial</techLevel>
         <graphicData>
             <texPath>Things/Apparel/Custom/Mysterious_Stranger/Mysterious_Stranger_Hat/FCP_Mysterious_Stranger_Hat</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
 <recipeMaker>
+            <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
             <researchPrerequisite>FCP_Research_BusinessWear</researchPrerequisite>
             <skillRequirements>
                 <Crafting>4</Crafting>
