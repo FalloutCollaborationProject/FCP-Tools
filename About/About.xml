@@ -13,12 +13,16 @@
     </supportedVersions>
     <modDependencies>
         <li>
-            <packageId>ludeon.rimworld.biotech</packageId>
-            <displayName>Biotech</displayName>
-        </li>
-        <li>
             <packageId>ludeon.rimworld.royalty</packageId>
             <displayName>Royalty</displayName>
+        </li>
+        <li>
+            <packageId>ludeon.rimworld.ideology</packageId>
+            <displayName>Ideology</displayName>
+        </li>
+        <li>
+            <packageId>ludeon.rimworld.biotech</packageId>
+            <displayName>Biotech</displayName>
         </li>
         <li>
             <packageId>brrainz.harmony</packageId>

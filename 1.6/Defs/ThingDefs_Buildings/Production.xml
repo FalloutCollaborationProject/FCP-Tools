@@ -50,6 +50,8 @@
         </inspectorTabs>
         <building>
             <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+            <workTableRoomRole>Workshop</workTableRoomRole>
+            <workTableNotInRoomRoleFactor>0.8</workTableNotInRoomRoleFactor>
         </building>
         <comps>
             <li Class="CompProperties_AffectedByFacilities">
@@ -113,6 +115,8 @@
         </inspectorTabs>
         <building>
             <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+            <workTableRoomRole>Workshop</workTableRoomRole>
+            <workTableNotInRoomRoleFactor>0.8</workTableNotInRoomRoleFactor>
         </building>
         <comps>
             <li Class="CompProperties_Refuelable">
@@ -188,6 +192,8 @@
         </inspectorTabs>
         <building>
             <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+            <workTableRoomRole>Workshop</workTableRoomRole>
+            <workTableNotInRoomRoleFactor>0.8</workTableNotInRoomRoleFactor>
         </building>
         <comps>
             <li Class="CompProperties_AffectedByFacilities">
@@ -250,6 +256,8 @@
         </inspectorTabs>
         <building>
             <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+            <workTableRoomRole>Workshop</workTableRoomRole>
+            <workTableNotInRoomRoleFactor>0.8</workTableNotInRoomRoleFactor>
         </building>
         <comps>
             <li Class="CompProperties_AffectedByFacilities">
@@ -315,6 +323,8 @@
         </inspectorTabs>
         <building>
             <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+            <workTableRoomRole>Workshop</workTableRoomRole>
+            <workTableNotInRoomRoleFactor>0.8</workTableNotInRoomRoleFactor>
         </building>
         <comps>
             <li Class="CompProperties_AffectedByFacilities">
@@ -354,14 +364,16 @@
         <staticSunShadowHeight>0.20</staticSunShadowHeight>
         <costList>
             <Steel>150</Steel>
+            <ComponentIndustrial>6</ComponentIndustrial>
         </costList>
         <altitudeLayer>Building</altitudeLayer>
         <fillPercent>0.5</fillPercent>
         <useHitPoints>True</useHitPoints>
         <statBases>
-            <WorkToBuild>2000</WorkToBuild>
+            <WorkToBuild>3500</WorkToBuild>
             <MaxHitPoints>180</MaxHitPoints>
             <Flammability>1.0</Flammability>
+            <WorkTableWorkSpeedFactor>1.0</WorkTableWorkSpeedFactor>
         </statBases>
         <size>(3,2)</size>
         <designationCategory>Production</designationCategory>
@@ -375,6 +387,8 @@
         </inspectorTabs>
         <building>
             <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+            <workTableRoomRole>Workshop</workTableRoomRole>
+            <workTableNotInRoomRoleFactor>0.8</workTableNotInRoomRoleFactor>
         </building>
         <comps>
             <li Class="CompProperties_AffectedByFacilities">
@@ -459,6 +473,8 @@
         </inspectorTabs>
         <building>
             <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+            <workTableRoomRole>Kitchen</workTableRoomRole>
+            <workTableNotInRoomRoleFactor>0.8</workTableNotInRoomRoleFactor>
         </building>
         <comps>
             <li Class="CompProperties_Power">
@@ -546,6 +562,8 @@
         </inspectorTabs>
         <building>
             <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+            <workTableRoomRole>Kitchen</workTableRoomRole>
+            <workTableNotInRoomRoleFactor>0.8</workTableNotInRoomRoleFactor>
         </building>
         <comps>
             <li Class="CompProperties_Refuelable">
@@ -637,6 +655,8 @@
         </inspectorTabs>
         <building>
             <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+            <workTableRoomRole>Kitchen</workTableRoomRole>
+            <workTableNotInRoomRoleFactor>0.8</workTableNotInRoomRoleFactor>
         </building>
         <comps>
             <li Class="CompProperties_Refuelable">
@@ -724,6 +744,8 @@
         </inspectorTabs>
         <building>
             <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+            <workTableRoomRole>Workshop</workTableRoomRole>
+            <workTableNotInRoomRoleFactor>0.8</workTableNotInRoomRoleFactor>
         </building>
         <fillPercent>0.5</fillPercent>
         <interactionCellOffset>(0,0,-1)</interactionCellOffset>
@@ -788,6 +810,8 @@
         </inspectorTabs>
         <building>
             <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+            <workTableRoomRole>Workshop</workTableRoomRole>
+            <workTableNotInRoomRoleFactor>0.8</workTableNotInRoomRoleFactor>
         </building>
         <comps>
             <li Class="CompProperties_AffectedByFacilities">
@@ -850,6 +874,8 @@
         </inspectorTabs>
         <building>
             <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
+            <workTableRoomRole>Workshop</workTableRoomRole>
+            <workTableNotInRoomRoleFactor>0.8</workTableNotInRoomRoleFactor>
         </building>
         <comps>
             <li Class="CompProperties_AffectedByFacilities">
