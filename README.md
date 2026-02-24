@@ -77,6 +77,7 @@ git pull
 | Lee | C# Work |
 | Alexis P | C# Work |
 | ViralReaction | C# Work |
+| AlvalorDev | XML Contributions |
 | Keyz182 | RATS/VATS Code |
 
 ### Art
