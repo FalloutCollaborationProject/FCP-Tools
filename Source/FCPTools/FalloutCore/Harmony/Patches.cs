@@ -304,7 +304,7 @@ public static class Patches
     public static void IdeoGeneratorMakeFixedIdeo_Postfix(IdeoGenerationParms parms, Ideo __result)
     {
         FactionExtension_FixedIdeo extension = parms.forFaction?.GetModExtension<FactionExtension_FixedIdeo>();
-        extension?.CopyToIdeo(__result);
+        extension?.ApplyToIdeo(__result);
     }
 
     /// <summary>
