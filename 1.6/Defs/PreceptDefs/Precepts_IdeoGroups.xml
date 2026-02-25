@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Issues -->
+  <IssueDef>
+    <defName>FCP_Issue_FactionAlignment</defName>
+    <label>factional alignment</label>
+    <iconPath>UI/Issues/Slavery</iconPath>
+  </IssueDef>
+
+  <!-- Precepts -->
+
+  <PreceptDef>
+    <defName>FCP_FactionAlignment_Neutral</defName>
+    <issue>FCP_Issue_FactionAlignment</issue>
+    <label>Neutral</label>
+    <description>TODO</description>
+    <impact>Low</impact>
+    <displayOrderInIssue>1</displayOrderInIssue>
+    <defaultSelectionWeight>1</defaultSelectionWeight>
+  </PreceptDef>
+
+  <PreceptDef>
+    <defName>FCP_FactionAlignment_Raiders</defName>
+    <issue>FCP_Issue_FactionAlignment</issue>
+    <label>Raider Group</label>
+    <description>TODO</description>
+    <impact>Medium</impact>
+    <displayOrderInIssue>901</displayOrderInIssue>
+  </PreceptDef>
+
+
+
+</Defs>
