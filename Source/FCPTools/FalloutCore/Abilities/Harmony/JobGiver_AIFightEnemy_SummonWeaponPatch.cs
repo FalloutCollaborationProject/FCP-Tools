@@ -5,7 +5,7 @@ using Verse.AI;
 namespace FCP.Core;
 
 [HarmonyPatch(typeof(JobGiver_AIFightEnemy), "TryGiveJob")]
-public static class JobGiver_AIFightEnemy_TryGiveJob_Patch
+public static class JobGiver_AIFightEnemy_SummonWeaponPatch
 {
     private static readonly FieldInfo AbilityField = AccessTools.Field(typeof(JobGiver_AICastAbility), "ability");
     private static readonly MethodInfo TryGiveJobMethod = AccessTools.Method(typeof(JobGiver_AICastAbility), "TryGiveJob");
