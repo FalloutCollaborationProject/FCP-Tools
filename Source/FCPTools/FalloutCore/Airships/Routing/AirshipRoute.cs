@@ -14,10 +14,24 @@ public class AirshipRoute : IExposable
     public RouteLeg CurrentLeg => currentLeg;
     public WorldObject LastStop => lastStop;
 
-    public bool HasNextLeg() => legs.Count > 0;
+    public bool HasNextLeg() => currentLeg != null || legs.Count > 0;
     public IEnumerable<RouteLeg> RemainingLegs => legs;
     
     public void AddLeg(WorldObject from, WorldObject to) => legs.Enqueue(new RouteLeg(from, to));
+
+    /// <summary>Append a new leg to the end of the queue.</summary>
+    public void AppendLeg(WorldObject to)
+    {
+        WorldObject from = legs.Any() ? legs.Last().toObject
+                         : currentLeg?.toObject
+                         ?? lastStop;
+        if (from == null)
+        {
+            FCPLog.Warning("AppendLeg: no known 'from' position, cannot append leg");
+            return;
+        }
+        legs.Enqueue(new RouteLeg(from, to));
+    }
 
     public void StartRoute()
     {

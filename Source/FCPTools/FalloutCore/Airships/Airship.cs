@@ -115,6 +115,112 @@ public class Airship : WorldObject
         }
     }
 
+    public void AppendDestination(WorldObject destination)
+    {
+        route.AppendLeg(destination);
+        if (currentState is IdleState)
+        {
+            route.StartRoute();
+            TransitionToState(new TravellingState(this));
+        }
+        else if (currentState is AtStopState && route.CurrentLeg == null)
+        {
+            // Appended a leg while docked at the last stop — populate currentLeg so
+            // the dwell timer (or Depart Now) can find it.
+            route.StartRoute();
+        }
+    }
+
+    public override IEnumerable<Gizmo> GetGizmos()
+    {
+        foreach (Gizmo g in base.GetGizmos()) 
+            yield return g;
+        
+        if (!Verse.DebugSettings.godMode) 
+            yield break;
+
+        // Arrive Now
+        {
+            var cmd = new Command_Action
+            {
+                defaultLabel = "Dev: Arrive Now",
+                defaultDesc = "Force-complete the current travel leg immediately.",
+                action = () =>
+                {
+                    TransitionToState(new AtStopState(this));
+                    tweener?.ResetToTarget();
+                }
+            };
+            if (currentState is not TravellingState)
+                cmd.Disable("Not currently travelling.");
+            yield return cmd;
+        }
+        // Depart Now
+        {
+            var cmd = new Command_Action
+            {
+                defaultLabel = "Dev: Depart Now",
+                defaultDesc = "Skip dwell time and immediately depart the current stop.",
+                action = () =>
+                {
+                    if (route.HasNextLeg())
+                        TransitionToState(new TravellingState(this));
+                    else
+                        TransitionToState(new IdleState(this));
+                    tweener?.ResetToTarget();
+                }
+            };
+            if (currentState is not AtStopState)
+                cmd.Disable("Not currently docked at a stop.");
+            yield return cmd;
+        }
+        // Add Destination
+        yield return new Command_Action
+        {
+            defaultLabel = "Dev: Add Destination",
+            defaultDesc = "Click a settlement on the world map to append it to the route.",
+            action = () =>
+            {
+                Find.WorldTargeter.BeginTargeting(
+                    action: target =>
+                    {
+                        if (target.WorldObject is Settlement settlement)
+                        {
+                            AppendDestination(settlement);
+                            return true;
+                        }
+                        Messages.Message("Must select a settlement.", MessageTypeDefOf.RejectInput, historical: false);
+                        return false;
+                    },
+                    canTargetTiles: false,
+                    mouseAttachment: null,
+                    closeWorldTabWhenFinished: false,
+                    onUpdate: null,
+                    extraLabelGetter: null
+                );
+            }
+        };
+        // Log State
+        yield return new Command_Action
+        {
+            defaultLabel = "Dev: Log State",
+            defaultDesc = "Print airship state info to the dev console.",
+            action = () =>
+            {
+                string stateInfo = currentState switch
+                {
+                    TravellingState ts => $"Travelling ({ts.TravelProgress * 100f:F1}%)",
+                    AtStopState => "AtStop",
+                    IdleState => $"Idle at {route.LastStop?.Label ?? "Unknown"}",
+                    null => "No state",
+                    _ => currentState.GetType().Name
+                };
+                int legsLeft = route.RemainingLegs.Count();
+                FCPLog.Message($"[Airship] State: {stateInfo} | Legs remaining: {legsLeft}");
+            }
+        };
+    }
+
     public override void ExposeData()
     {
         base.ExposeData();
