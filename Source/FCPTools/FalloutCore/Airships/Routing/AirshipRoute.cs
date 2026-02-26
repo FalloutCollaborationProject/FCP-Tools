@@ -15,6 +15,7 @@ public class AirshipRoute : IExposable
     public WorldObject LastStop => lastStop;
 
     public bool HasNextLeg() => legs.Count > 0;
+    public IEnumerable<RouteLeg> RemainingLegs => legs;
     
     public void AddLeg(WorldObject from, WorldObject to) => legs.Enqueue(new RouteLeg(from, to));
 
