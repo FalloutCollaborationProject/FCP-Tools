@@ -7,16 +7,19 @@ public static class Pawn_WorkTypeIsDisabled_Patch
 {
     public static void Postfix(WorkTypeDef w, Pawn __instance, ref bool __result)
     {
-        if (__result == false)
+        if (__result) return; // Already Disabled
+        if (__instance.apparel == null) return; // Pawn without apparel
+        
+        List<Apparel> wornApparel = __instance.apparel.WornApparel;
+        
+        foreach (Apparel apparel in wornApparel)
         {
-            var apparel = __instance.apparel?.WornApparel.FirstOrDefault(a => a.TryGetComp<CompPowerArmor>() != null);
-            if (apparel != null)
+            var comp = apparel.TryGetComp<CompPowerArmor>();
+            
+            if (comp?.Props.workDisables != null && comp.Props.workDisables.Contains(w))
             {
-                var compPowerArmor = apparel.GetComp<CompPowerArmor>();
-                if (compPowerArmor.Props.workDisables != null && compPowerArmor.Props.workDisables.Contains(w))
-                {
-                    __result = true;
-                }
+                __result = true;
+                return;
             }
         }
     }
