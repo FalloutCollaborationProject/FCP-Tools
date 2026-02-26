@@ -13,6 +13,8 @@ public class IdleState : AirshipState
     public override void OnEnter()
     {
         dockedAt = airship.Route.LastStop;
+        if (dockedAt != null)
+            airship.Tile = dockedAt.Tile;
         FCPLog.Verbose($"Airship idle at {dockedAt?.Label ?? "Unknown"}");
     }
 

@@ -3,7 +3,7 @@ using UnityEngine;
 namespace FCP.Core;
 
 // Based on Caravan_Tweener
-public class Airship_Tweener
+public class AirshipTweener
 {
     private readonly Airship airship;
 
@@ -11,7 +11,7 @@ public class Airship_Tweener
 
     public Vector3 TweenedPos { get; private set; } = Vector3.zero;
 
-    public Airship_Tweener(Airship airship)
+    public AirshipTweener(Airship airship)
     {
         this.airship = airship;
     }

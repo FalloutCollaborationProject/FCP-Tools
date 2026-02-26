@@ -8,7 +8,7 @@ public class Airship : WorldObject
 {
     private AirshipState currentState = null;
     private AirshipRoute route = new AirshipRoute();
-    private Airship_Tweener tweener;
+    private AirshipTweener tweener;
 
     public AirshipRoute Route => route;
     public Vector3 TargetPos => currentState?.GetDrawPosition() ?? Find.WorldGrid.NorthPolePos;
@@ -61,7 +61,7 @@ public class Airship : WorldObject
     public override void SpawnSetup()
     {
         base.SpawnSetup();
-        tweener = new Airship_Tweener(this);
+        tweener = new AirshipTweener(this);
         tweener.ResetToTarget();
     }
 
@@ -76,16 +76,13 @@ public class Airship : WorldObject
     {
         base.DrawExtraSelectionOverlays();
 
-        const float altitudeOffset = 0.08f;
         Vector3 prev = DrawPos;
-        prev += prev.normalized * altitudeOffset;
 
         // Line to current leg destination
         if (route.CurrentLeg?.toObject != null)
         {
             Vector3 next = Find.WorldGrid.GetTileCenter(route.CurrentLeg.ToTile);
-            next += next.normalized * altitudeOffset;
-            GenDraw.DrawWorldLineBetween(prev, next);
+            DrawWorldArc(prev, next);
             prev = next;
         }
 
@@ -93,9 +90,28 @@ public class Airship : WorldObject
         foreach (RouteLeg leg in route.RemainingLegs)
         {
             Vector3 next = Find.WorldGrid.GetTileCenter(leg.ToTile);
-            next += next.normalized * altitudeOffset;
-            GenDraw.DrawWorldLineBetween(prev, next);
+            DrawWorldArc(prev, next);
             prev = next;
+        }
+    }
+
+    /// <summary>
+    /// Draws an arc along the planet surface between two world positions,
+    /// subdivided into small slerp segments so it follows the sphere curvature.
+    /// </summary>
+    private static void DrawWorldArc(Vector3 from, Vector3 to, float altitudeOffset = 0.08f)
+    {
+        float distance = GenMath.SphericalDistance(from.normalized, to.normalized);
+        int segments = Mathf.Max(Mathf.CeilToInt(distance / 0.01f), 1);
+
+        Vector3 prev = from + from.normalized * altitudeOffset;
+        for (int i = 1; i <= segments; i++)
+        {
+            float t = (float)i / segments;
+            Vector3 point = Vector3.Slerp(from, to, t);
+            point += point.normalized * altitudeOffset;
+            GenDraw.DrawWorldLineBetween(prev, point);
+            prev = point;
         }
     }
 
