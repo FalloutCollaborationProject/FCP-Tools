@@ -7,6 +7,9 @@ namespace FCP.Core.VATS;
 
 public class Verb_AbilityVATS : Verb_AbilityShoot
 {
+    private static readonly AccessTools.FieldRef<Ability, int> CooldownDurationRef =
+        AccessTools.FieldRefAccess<Ability, int>("cooldownDuration");
+
     public Ability ability;
     public CompEquippable PrimaryWeaponEq => CasterPawn?.equipment?.PrimaryEq;
     public ThingWithComps PrimaryWeapon => CasterPawn?.equipment?.Primary;
@@ -18,7 +21,7 @@ public class Verb_AbilityVATS : Verb_AbilityShoot
         get => ability;
         set
         {
-            AccessTools.Field(typeof(Ability), "cooldownDuration").SetValue(value, FCPCoreMod.SettingsTab<VATSSettings>().cooldownTicks);
+            CooldownDurationRef(value) = FCPCoreMod.SettingsTab<VATSSettings>().cooldownTicks;
             ability = value;
         }
     }

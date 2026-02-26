@@ -1,13 +1,15 @@
-﻿using System.Reflection;
-using HarmonyLib;
+﻿using HarmonyLib;
 
 namespace FCP.Core.Vats;
 
 [HarmonyPatch(typeof(DamageWorker_AddInjury))]
 public static class DamageWorker_Patch
 {
-    public static Lazy<FieldInfo> HitPartFI = new Lazy<FieldInfo>(() => AccessTools.Field(typeof(DamageInfo), "hitPartInt"));
-    public static Lazy<FieldInfo> AllowDamagePropagationFI = new Lazy<FieldInfo>(() => AccessTools.Field(typeof(DamageInfo), "allowDamagePropagationInt"));
+    private static readonly AccessTools.StructFieldRef<DamageInfo, BodyPartRecord> HitPartRef =
+        AccessTools.StructFieldRefAccess<DamageInfo, BodyPartRecord>("hitPartInt");
+    
+    private static readonly AccessTools.StructFieldRef<DamageInfo, bool> AllowDamagePropagationRef =
+        AccessTools.StructFieldRefAccess<DamageInfo, bool>("allowDamagePropagationInt");
     
     [HarmonyPrefix]
     [HarmonyPatch("ApplyToPawn")]
@@ -21,8 +23,8 @@ public static class DamageWorker_Patch
         // Check if this attack is one launched from VATS
         if (VATS_GameComponent.ActiveAttacks.TryGetValue(instigator, out VATS_GameComponent.VATSAction attack) && attack.Target == pawn)
         {
-            HitPartFI.Value?.SetValueDirect(__makeref(dinfo), attack.Part);
-            AllowDamagePropagationFI.Value?.SetValueDirect(__makeref(dinfo), false);
+            HitPartRef(ref dinfo) = attack.Part;
+            AllowDamagePropagationRef(ref dinfo) = false;
         }
         
         // Apply any applicable legendary effects
