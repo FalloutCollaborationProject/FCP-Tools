@@ -9,6 +9,8 @@ public class TravellingState : AirshipState
     private float travelProgress;
     private const float TravelSpeed = 0.00025f;
 
+    public float TravelProgress => travelProgress;
+
     public TravellingState() { } // For loading
     public TravellingState(Airship airship) : base(airship) { }
 
@@ -40,7 +42,7 @@ public class TravellingState : AirshipState
         if (travelProgress < 1f) return;
         
         travelProgress = 1f;
-        FCPLog.Verbose($"Airship arrived at {airship.Route.CurrentLeg.toObject?.Label ?? "Unknown"}");
+        FCPLog.Verbose($"Airship arrived at {airship.Route.CurrentLeg?.toObject?.Label ?? "Unknown"}");
         airship.TransitionToState(new AtStopState(airship));
     }
 
