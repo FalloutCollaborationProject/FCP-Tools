@@ -3,35 +3,30 @@ namespace FCP.Core;
 public class CompSummonedWeapon : ThingComp
 {
     public int ticksSummoned;
-    private int lastTicked;
 
     public CompProperties_SummonedWeapon Props => props as CompProperties_SummonedWeapon;
+    public Pawn_EquipmentTracker EquipmentTracker => parent?.ParentHolder as Pawn_EquipmentTracker;
 
+    // Todo this could probably be further optimized.
     public override void CompTick()
     {
         base.CompTick();
-        if (lastTicked != Find.TickManager.TicksGame)
+
+        if (Find.TickManager.TicksGame - ticksSummoned < Props.lifetimeDuration && EquipmentTracker is not null) 
+            return;
+        
+        Map mapHeld = parent.MapHeld;
+        if (mapHeld != null && Props.fleckWhenExpired != null)
         {
-            lastTicked = Find.TickManager.TicksGame;
-            var owner = parent.ParentHolder as Pawn_EquipmentTracker;
-            if (Find.TickManager.TicksGame - ticksSummoned >= Props.lifetimeDuration || owner is null)
-            {
-                var mapHeld = parent.MapHeld;
-                if (mapHeld != null && Props.fleckWhenExpired != null)
-                {
-                    FleckMaker.Static(parent.PositionHeld, mapHeld, Props.fleckWhenExpired);
-                }
-                parent.Destroy();
-                if (owner != null)
-                {
-                    var existingWeapon = owner.pawn.inventory.innerContainer.Where(x => x.def.IsWeapon).FirstOrDefault() as ThingWithComps;
-                    if (existingWeapon != null)
-                    {
-                        existingWeapon.holdingOwner?.Remove(existingWeapon);
-                        owner.AddEquipment(existingWeapon);
-                    }
-                }
-            }
+            FleckMaker.Static(parent.PositionHeld, mapHeld, Props.fleckWhenExpired);
+        }
+        parent.Destroy();
+            
+        Thing existingWeapon = EquipmentTracker?.pawn.inventory.innerContainer?.FirstOrDefault(x => x.def.IsWeapon);
+        if (existingWeapon is ThingWithComps weapon)
+        {
+            existingWeapon.holdingOwner?.Remove(weapon);
+            EquipmentTracker.AddEquipment(weapon);
         }
     }
 
