@@ -18,7 +18,8 @@ public class AtStopState : AirshipState
         arrivedTick = GenTicks.TicksGame;
         currentStop = airship.Route.CurrentLeg.toObject;
         airship.Route.CompleteCurrentLeg();
-        
+        airship.Tile = currentStop.Tile;
+
         FCPLog.Verbose($"Airship docked at {currentStop?.Label ?? "Unknown"}");
     }
 
