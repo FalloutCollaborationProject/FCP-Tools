@@ -44,10 +44,13 @@ public static class JobGiver_Reload_TryGiveJob_Patch
         }
         if (pawn.WorkTypeIsDisabled(PowerArmorDefOf.Refuel.workType) || pawn.WorkTagIsDisabled(PowerArmorDefOf.Refuel.workTags))
         {
+            JobFailReason.Is("CannotPrioritizeWorkTypeDisabled".Translate(PowerArmorDefOf.Refuel.workType.gerundLabel));
             return false;
         }
-        if (PowerArmorDefOf.Refuel.Worker.MissingRequiredCapacity(pawn) != null)
+        PawnCapacityDef missingCapacity = PowerArmorDefOf.Refuel.Worker.MissingRequiredCapacity(pawn);
+        if (missingCapacity != null)
         {
+            JobFailReason.Is("CannotMissingHealthActivities".Translate(missingCapacity.label));
             return false;
         }
         CompRefuelable compRefuelable = t.TryGetComp<CompRefuelable>();
@@ -63,7 +66,14 @@ public static class JobGiver_Reload_TryGiveJob_Patch
         {
             return false;
         }
-        if (t.IsForbidden(pawn) || !pawn.CanReserve(t, 1, -1, null, forced))
+        if (t.IsForbidden(pawn))
+        {
+            JobFailReason.Is(t.Position.InAllowedArea(pawn)
+                ? "CannotPrioritizeForbidden".Translate(t.Label, t)
+                : "CannotPrioritizeForbiddenOutsideAllowedArea".Translate() + $" ({pawn.playerSettings.EffectiveAreaRestrictionInPawnCurrentMap.Label})");
+            return false;
+        }
+        if (!pawn.CanReserve(t, 1, -1, null, forced))
         {
             return false;
         }
