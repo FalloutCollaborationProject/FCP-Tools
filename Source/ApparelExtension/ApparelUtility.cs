@@ -1,26 +1,22 @@
+using System.Collections.Concurrent;
+
 namespace FCP.ApparelExtensions;
 
 public static class ApparelUtility
 {
-    private static readonly Dictionary<ThingDef, ApparelExtension> CachedExtensions = [];
+    private static readonly ConcurrentDictionary<ThingDef, ApparelExtension> CachedExtensions = [];
 
     extension(ThingDef def)
     {
         public bool ShouldHideBody()
         {
-            if (!CachedExtensions.TryGetValue(def, out ApparelExtension extension))
-            {
-                CachedExtensions[def] = extension = def.GetModExtension<ApparelExtension>();
-            }
+            var extension = CachedExtensions.GetOrAdd(def, static d => d.GetModExtension<ApparelExtension>());
             return extension != null && extension.shouldHideBody;
         }
 
         public bool ShouldHideHead()
         {
-            if (!CachedExtensions.TryGetValue(def, out ApparelExtension extension))
-            {
-                CachedExtensions[def] = extension = def.GetModExtension<ApparelExtension>();
-            }
+            var extension = CachedExtensions.GetOrAdd(def, static d => d.GetModExtension<ApparelExtension>());
             return extension != null && extension.shouldHideHead;
         }
     }
