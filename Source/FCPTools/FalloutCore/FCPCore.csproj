@@ -267,4 +267,15 @@
       <Private>False</Private>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Access\**" />
+    <EmbeddedResource Remove="Access\**" />
+    <None Remove="Access\**" />
+    <Compile Remove="PowerArmor\**" />
+    <EmbeddedResource Remove="PowerArmor\**" />
+    <None Remove="PowerArmor\**" />
+    <Compile Remove="JobGivers\**" />
+    <EmbeddedResource Remove="JobGivers\**" />
+    <None Remove="JobGivers\**" />
+  </ItemGroup>
 </Project>
