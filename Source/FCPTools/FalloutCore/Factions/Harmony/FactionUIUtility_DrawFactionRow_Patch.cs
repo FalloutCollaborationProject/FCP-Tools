@@ -26,7 +26,7 @@ public static class FactionUIUtility_DrawFactionRow_Patch
 
     private static TaggedString GetLabel(FactionDef def)
     {
-        TaggedString label = FactionExtension_FactionTabLabelOverride.TryGetLabel(def) ?? def.LabelCap;
+        TaggedString label = FactionExtension_FlavorOverride.TryGetLabel(def) ?? def.LabelCap;
         return label;
     }
 }
