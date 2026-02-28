@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Laser Beam Projectiles __________-->
+
+    <!-- Standard Laser Beam -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Beam_Laser</defName>
+        <label>laser beam</label>
+        <thingClass>FCP.Core.Laser.LaserProjectile</thingClass>
+        <graphicData>
+            <texPath>Things/Projectile/FCP_Laser</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>MoteGlow</shaderType>
+            <drawSize>(0.5, 1)</drawSize>
+        </graphicData>
+        <projectile>
+            <damageDef>FCP_Damage_Laser_Burn</damageDef>
+            <damageAmountBase>21</damageAmountBase>
+            <armorPenetrationBase>2.2</armorPenetrationBase>
+            <speed>140</speed>
+        </projectile>
+        <modExtensions>
+            <li Class="FCP.Core.Laser.LaserProperties">
+                <beamWidth>0.15</beamWidth>
+                <beamWidthDrawScale>1.2</beamWidthDrawScale>
+                <beamLength>-1</beamLength>
+                <damageTickRate>1</damageTickRate>
+                <lifetimeTicks>300</lifetimeTicks>
+                <sweepRatePerTick>0</sweepRatePerTick>
+                <maxSweepAngle>0</maxSweepAngle>
+                <damageThingsAcrossBeamLine>false</damageThingsAcrossBeamLine>
+                <lockOnTarget>false</lockOnTarget>
+                <textureScrollOffsetPerTick>(0, -0.5)</textureScrollOffsetPerTick>
+                <fleckChancePerTick>1.0</fleckChancePerTick>
+                <groundFleckDef>Fleck_BeamBurn</groundFleckDef>
+                <explosionSpeed>0</explosionSpeed>
+                <explosionRadius>0</explosionRadius>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!-- Stronger Laser Beam -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Beam_Laser_S</defName>
+        <label>focused laser beam</label>
+        <thingClass>FCP.Core.Laser.LaserProjectile</thingClass>
+        <graphicData>
+            <texPath>Things/Projectile/FCP_Laser_S</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>MoteGlow</shaderType>
+            <drawSize>(0.7, 1)</drawSize>
+        </graphicData>
+        <projectile>
+            <damageDef>FCP_Damage_Laser_Burn</damageDef>
+            <damageAmountBase>25</damageAmountBase>
+            <armorPenetrationBase>1.4</armorPenetrationBase>
+            <speed>140</speed>
+        </projectile>
+        <modExtensions>
+            <li Class="FCP.Core.Laser.LaserProperties">
+                <beamWidth>0.2</beamWidth>
+                <beamWidthDrawScale>1.4</beamWidthDrawScale>
+                <beamLength>-1</beamLength>
+                <damageTickRate>1</damageTickRate>
+                <lifetimeTicks>300</lifetimeTicks>
+                <sweepRatePerTick>0</sweepRatePerTick>
+                <maxSweepAngle>0</maxSweepAngle>
+                <damageThingsAcrossBeamLine>false</damageThingsAcrossBeamLine>
+                <lockOnTarget>false</lockOnTarget>
+                <textureScrollOffsetPerTick>(0, -0.6)</textureScrollOffsetPerTick>
+                <fleckChancePerTick>1.0</fleckChancePerTick>
+                <groundFleckDef>Fleck_BeamBurn</groundFleckDef>
+                <explosionSpeed>0</explosionSpeed>
+                <explosionRadius>0</explosionRadius>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!-- MF Breeder Beam -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Beam_MF_Breeder</defName>
+        <label>breeder beam</label>
+        <thingClass>FCP.Core.Laser.LaserProjectile</thingClass>
+        <graphicData>
+            <texPath>Things/Projectile/FCP_Laser</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>MoteGlow</shaderType>
+            <drawSize>(0.4, 1)</drawSize>
+        </graphicData>
+        <projectile>
+            <damageDef>FCP_Damage_Laser_Burn</damageDef>
+            <damageAmountBase>12</damageAmountBase>
+            <armorPenetrationBase>2.0</armorPenetrationBase>
+            <speed>140</speed>
+        </projectile>
+        <modExtensions>
+            <li Class="FCP.Core.Laser.LaserProperties">
+                <beamWidth>0.12</beamWidth>
+                <beamWidthDrawScale>1.0</beamWidthDrawScale>
+                <beamLength>-1</beamLength>
+                <damageTickRate>1</damageTickRate>
+                <lifetimeTicks>300</lifetimeTicks>
+                <sweepRatePerTick>0</sweepRatePerTick>
+                <maxSweepAngle>0</maxSweepAngle>
+                <damageThingsAcrossBeamLine>false</damageThingsAcrossBeamLine>
+                <lockOnTarget>false</lockOnTarget>
+                <textureScrollOffsetPerTick>(0, -0.4)</textureScrollOffsetPerTick>
+                <fleckChancePerTick>1.0</fleckChancePerTick>
+                <groundFleckDef>Fleck_BeamBurn</groundFleckDef>
+                <explosionSpeed>0</explosionSpeed>
+                <explosionRadius>0</explosionRadius>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+    <!-- Gatling Laser Beam - Sustained fire variant -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Beam_Gatling_Laser</defName>
+        <label>gatling laser beam</label>
+        <thingClass>FCP.Core.Laser.LaserProjectile</thingClass>
+        <graphicData>
+            <texPath>Things/Projectile/FCP_Laser</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>MoteGlow</shaderType>
+            <drawSize>(0.5, 1)</drawSize>
+        </graphicData>
+        <projectile>
+            <damageDef>FCP_Damage_Laser_Burn</damageDef>
+            <damageAmountBase>21</damageAmountBase>
+            <armorPenetrationBase>2.2</armorPenetrationBase>
+            <speed>140</speed>
+        </projectile>
+        <modExtensions>
+            <li Class="FCP.Core.Laser.LaserProperties">
+                <beamWidth>0.15</beamWidth>
+                <beamWidthDrawScale>1.1</beamWidthDrawScale>
+                <beamLength>-1</beamLength>
+                <damageTickRate>1</damageTickRate>
+                <lifetimeTicks>300</lifetimeTicks>
+                <sweepRatePerTick>0</sweepRatePerTick>
+                <maxSweepAngle>0</maxSweepAngle>
+                <damageThingsAcrossBeamLine>false</damageThingsAcrossBeamLine>
+                <lockOnTarget>false</lockOnTarget>
+                <textureScrollOffsetPerTick>(0, -0.6)</textureScrollOffsetPerTick>
+                <fleckChancePerTick>1.0</fleckChancePerTick>
+                <groundFleckDef>Fleck_BeamBurn</groundFleckDef>
+                <explosionSpeed>0</explosionSpeed>
+                <explosionRadius>0</explosionRadius>
+            </li>
+        </modExtensions>
+    </ThingDef>
+
+</Defs>

@@ -4,12 +4,13 @@ using UnityEngine;
 using Verse;
 using Verse.Sound;
 
-namespace taranchuk_lasers
+namespace FCP.Core.Laser
 {
     public class LaserProperties : DefModExtension
     {
         public float beamWidth;
         public float beamWidthDrawScale = 1f;
+        public float beamLength = -1f; // Visual length of beam. -1 = full stretch from origin to projectile
         public int damageTickRate;
         public int lifetimeTicks;
         public float sweepRatePerTick;
