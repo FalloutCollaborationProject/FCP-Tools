@@ -9,18 +9,23 @@ public class IdleState : AirshipState
 
     public IdleState() { } // For loading
     public IdleState(Airship airship) : base(airship) { }
-    
+
     public override void OnEnter()
     {
-        dockedAt = airship.Route.LastStop;
+        dockedAt = airship.Route?.LastStop
+                   ?? Find.WorldObjects.WorldObjectAt<WorldObject>(airship.Tile);
+
         if (dockedAt != null)
             airship.Tile = dockedAt.Tile;
+
+        airship.Route?.OnRouteComplete(airship);
+
         FCPLog.Verbose($"Airship idle at {dockedAt?.Label ?? "Unknown"}");
     }
 
     public override void OnExit()
     {
-        
+
     }
 
     public override Vector3 GetDrawPosition()

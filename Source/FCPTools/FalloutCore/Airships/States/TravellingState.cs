@@ -23,7 +23,7 @@ public class TravellingState : AirshipState
         travelProgress = 0f;
         
         FCPLog.Verbose($"Airship departing: {route.CurrentLeg.fromObject?.Label ?? "Unknown"} " +
-                       $"-> {route.CurrentLeg.fromObject?.Label ?? "Unknown"}");
+                       $"-> {route.CurrentLeg.toObject?.Label ?? "Unknown"}");
     }
 
     public override void OnExit()

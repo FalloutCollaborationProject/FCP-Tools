@@ -7,8 +7,6 @@ public class AtStopState : AirshipState
 {
     private int arrivedTick;
     private WorldObject currentStop;
-    
-    private const int DwellTimeTicks = GenDate.TicksPerHour * 5; // TEMP TODO
 
     public AtStopState() { } // For loading
     public AtStopState(Airship airship) : base(airship) { }
@@ -19,6 +17,8 @@ public class AtStopState : AirshipState
         currentStop = airship.Route.CurrentLeg.toObject;
         airship.Route.CompleteCurrentLeg();
         airship.Tile = currentStop.Tile;
+
+        airship.Route.OnArriveAtStop(airship, currentStop);
 
         FCPLog.Verbose($"Airship docked at {currentStop?.Label ?? "Unknown"}");
     }
@@ -36,13 +36,25 @@ public class AtStopState : AirshipState
 
     public override void Tick(int delta)
     {
-        if (GenTicks.TicksGame < arrivedTick + DwellTimeTicks)
+        int dwellTicks = airship.Route.GetDwellTicks(currentStop);
+        if (GenTicks.TicksGame < arrivedTick + dwellTicks)
             return;
 
         if (airship.Route.HasNextLeg())
         {
             FCPLog.Verbose("Airship departing settlement");
             airship.TransitionToState(new TravellingState(airship));
+        }
+        else if (airship.Route.ShouldLoop)
+        {
+            FCPLog.Verbose("Airship route looping");
+            airship.Route.OnRouteComplete(airship);
+
+            // After OnRouteComplete, the route may have rebuilt legs
+            if (airship.Route.HasNextLeg())
+                airship.TransitionToState(new TravellingState(airship));
+            else
+                airship.TransitionToState(new IdleState(airship));
         }
         else
         {

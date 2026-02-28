@@ -3,9 +3,9 @@ using RimWorld.Planet;
 namespace FCP.Core;
 
 /// <summary>
-/// Handles the travel queue/path
+/// Handles the travel queue/path. Subclasses define dwell times and arrival/completion behavior.
 /// </summary>
-public class AirshipRoute : IExposable
+public abstract class AirshipRoute : IExposable
 {
     private Queue<RouteLeg> legs = new Queue<RouteLeg>();
     private RouteLeg currentLeg;
@@ -16,7 +16,19 @@ public class AirshipRoute : IExposable
 
     public bool HasNextLeg() => currentLeg != null || legs.Count > 0;
     public IEnumerable<RouteLeg> RemainingLegs => legs;
-    
+
+    /// <summary>How long the airship should dwell at a given stop, in ticks.</summary>
+    public abstract int GetDwellTicks(WorldObject stop);
+
+    /// <summary>Called when the airship arrives at a stop.</summary>
+    public abstract void OnArriveAtStop(Airship airship, WorldObject stop);
+
+    /// <summary>Called when the route has no more legs.</summary>
+    public abstract void OnRouteComplete(Airship airship);
+
+    /// <summary>If true, the route loops when complete.</summary>
+    public virtual bool ShouldLoop => false;
+
     public void AddLeg(WorldObject from, WorldObject to) => legs.Enqueue(new RouteLeg(from, to));
 
     /// <summary>Append a new leg to the end of the queue.</summary>
@@ -35,7 +47,7 @@ public class AirshipRoute : IExposable
 
     public void StartRoute()
     {
-        if (legs.Count > 0) 
+        if (legs.Count > 0)
             currentLeg = legs.Dequeue();
         else
             FCPLog.Error("AirshipRoute called StartRoute with empty legs");
@@ -51,12 +63,12 @@ public class AirshipRoute : IExposable
             currentLeg = null;
     }
 
-    public void ExposeData()
+    public virtual void ExposeData()
     {
         Scribe_Deep.Look(ref currentLeg, "currentLeg");
         Scribe_References.Look(ref lastStop, "lastSettlement");
         Scribe_Collections.Look(ref legs, "legs", LookMode.Deep);
-        
+
         if (Scribe.mode == LoadSaveMode.PostLoadInit)
         {
             legs ??= new Queue<RouteLeg>();

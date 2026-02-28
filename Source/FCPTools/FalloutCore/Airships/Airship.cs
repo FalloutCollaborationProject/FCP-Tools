@@ -7,13 +7,14 @@ namespace FCP.Core;
 public class Airship : WorldObject
 {
     private AirshipState currentState = null;
-    private AirshipRoute route = new AirshipRoute();
+    private AirshipRoute route;
     private AirshipTweener tweener;
 
     public AirshipRoute Route => route;
+    public bool IsIdle => currentState is IdleState or null;
     public Vector3 TargetPos => currentState?.GetDrawPosition() ?? Find.WorldGrid.NorthPolePos;
     public override Vector3 DrawPos => tweener?.TweenedPos ?? TargetPos;
-    
+
     public void TransitionToState(AirshipState newState)
     {
         currentState?.OnExit();
@@ -22,47 +23,33 @@ public class Airship : WorldObject
     }
 
     /// <summary>
-    /// Set a new route for the Airship
+    /// Assign a new route to the airship and start travelling.
     /// </summary>
-    /// <param name="objects">WorldObjects to route through, Tile will be set to the first object to start</param>
-    public void SetRoute(IEnumerable<WorldObject> objects)
+    public void AssignRoute(AirshipRoute newRoute)
     {
-        var newRoute = new AirshipRoute();
-
-        WorldObject prev = null;
-        foreach (WorldObject obj in objects)
-        {
-            // First settlement - set initial position
-            if (prev == null)
-                Tile = obj.Tile;
-            else
-                newRoute.AddLeg(prev, obj);
-
-            prev = obj;
-        }
-
         route = newRoute;
         route.StartRoute();
+
+        if (route.HasNextLeg())
+            TransitionToState(new TravellingState(this));
     }
 
-    public void StartJourney()
-    {
-        if (route.HasNextLeg())
-        {
-            // Start Travelling
-            TransitionToState(new TravellingState(this));
-        }
-        else
-        {
-            FCPLog.Warning("Attempted to start journey with no or empty route");
-        }
-    }
-    
     public override void SpawnSetup()
     {
         base.SpawnSetup();
         tweener = new AirshipTweener(this);
+
+        if (currentState == null)
+            TransitionToState(new IdleState(this));
+
         tweener.ResetToTarget();
+        WorldComponent_AirshipManager.Instance?.Register(this);
+    }
+
+    public override void PostRemove()
+    {
+        base.PostRemove();
+        WorldComponent_AirshipManager.Instance?.Deregister(this);
     }
 
     protected override void TickInterval(int delta)
@@ -71,10 +58,12 @@ public class Airship : WorldObject
         currentState?.Tick(delta);
         tweener?.TweenerTickInterval(delta);
     }
-    
+
     public override void DrawExtraSelectionOverlays()
     {
         base.DrawExtraSelectionOverlays();
+
+        if (route == null) return;
 
         Vector3 prev = DrawPos;
 
@@ -117,8 +106,18 @@ public class Airship : WorldObject
 
     public void AppendDestination(WorldObject destination)
     {
-        route.AppendLeg(destination);
-        if (currentState is IdleState)
+        if (route == null)
+        {
+            var newRoute = new DirectRoute();
+            newRoute.AddLeg(Find.WorldObjects.WorldObjectAt<WorldObject>(Tile) ?? destination, destination);
+            route = newRoute;
+        }
+        else
+        {
+            route.AppendLeg(destination);
+        }
+
+        if (currentState is IdleState or null)
         {
             route.StartRoute();
             TransitionToState(new TravellingState(this));
@@ -133,10 +132,10 @@ public class Airship : WorldObject
 
     public override IEnumerable<Gizmo> GetGizmos()
     {
-        foreach (Gizmo g in base.GetGizmos()) 
+        foreach (Gizmo g in base.GetGizmos())
             yield return g;
-        
-        if (!Verse.DebugSettings.godMode) 
+
+        if (!Verse.DebugSettings.godMode)
             yield break;
 
         // Arrive Now
@@ -163,7 +162,7 @@ public class Airship : WorldObject
                 defaultDesc = "Skip dwell time and immediately depart the current stop.",
                 action = () =>
                 {
-                    if (route.HasNextLeg())
+                    if (route != null && route.HasNextLeg())
                         TransitionToState(new TravellingState(this));
                     else
                         TransitionToState(new IdleState(this));
@@ -211,12 +210,12 @@ public class Airship : WorldObject
                 {
                     TravellingState ts => $"Travelling ({ts.TravelProgress * 100f:F1}%)",
                     AtStopState => "AtStop",
-                    IdleState => $"Idle at {route.LastStop?.Label ?? "Unknown"}",
+                    IdleState => $"Idle at {route?.LastStop?.Label ?? "Unknown"}",
                     null => "No state",
                     _ => currentState.GetType().Name
                 };
-                int legsLeft = route.RemainingLegs.Count();
-                FCPLog.Message($"[Airship] State: {stateInfo} | Legs remaining: {legsLeft}");
+                int legsLeft = route?.RemainingLegs.Count() ?? 0;
+                FCPLog.Message($"[Airship] State: {stateInfo} | Route: {route?.GetType().Name ?? "None"} | Legs remaining: {legsLeft}");
             }
         };
     }
@@ -224,7 +223,7 @@ public class Airship : WorldObject
     public override void ExposeData()
     {
         base.ExposeData();
-        
+
         Scribe_Deep.Look(ref route, "route");
         Scribe_Deep.Look(ref currentState, "state");
 
