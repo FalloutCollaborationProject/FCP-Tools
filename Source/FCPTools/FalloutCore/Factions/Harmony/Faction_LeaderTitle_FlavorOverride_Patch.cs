@@ -4,9 +4,9 @@ using HarmonyLib;
 namespace FCP.Factions;
 
 [HarmonyPatch(typeof(Faction), nameof(Faction.LeaderTitle), MethodType.Getter)]
-public class Faction_LeaderTitle_FlavorOverride_Patch
+public static class Faction_LeaderTitle_FlavorOverride_Patch
 {
-    public bool Prefix(Faction __instance, ref string __result)
+    public static bool Prefix(Faction __instance, ref string __result)
     {
         var ext = __instance.def?.GetModExtension<FactionExtension_FlavorOverride>();
 
