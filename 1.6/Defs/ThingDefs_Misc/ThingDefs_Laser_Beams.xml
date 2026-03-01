@@ -17,7 +17,7 @@
         </graphicData>
         <projectile>
             <damageDef>FCP_Damage_Laser_Burn</damageDef>
-            <damageAmountBase>15</damageAmountBase>
+            <damageAmountBase>21</damageAmountBase>
             <armorPenetrationBase>2.2</armorPenetrationBase>
             <speed>140</speed>
         </projectile>
@@ -27,7 +27,7 @@
                 <beamWidthDrawScale>1.2</beamWidthDrawScale>
                 <beamLength>-1</beamLength>
                 <damageTickRate>1</damageTickRate>
-                <lifetimeTicks>100</lifetimeTicks>
+                <lifetimeTicks>300</lifetimeTicks>
                 <sweepRatePerTick>0</sweepRatePerTick>
                 <maxSweepAngle>0</maxSweepAngle>
                 <damageThingsAcrossBeamLine>false</damageThingsAcrossBeamLine>
@@ -55,7 +55,7 @@
         </graphicData>
         <projectile>
             <damageDef>FCP_Damage_Laser_Burn</damageDef>
-            <damageAmountBase>18</damageAmountBase>
+            <damageAmountBase>25</damageAmountBase>
             <armorPenetrationBase>1.4</armorPenetrationBase>
             <speed>140</speed>
         </projectile>
@@ -65,7 +65,7 @@
                 <beamWidthDrawScale>1.4</beamWidthDrawScale>
                 <beamLength>-1</beamLength>
                 <damageTickRate>1</damageTickRate>
-                <lifetimeTicks>100</lifetimeTicks>
+                <lifetimeTicks>300</lifetimeTicks>
                 <sweepRatePerTick>0</sweepRatePerTick>
                 <maxSweepAngle>0</maxSweepAngle>
                 <damageThingsAcrossBeamLine>false</damageThingsAcrossBeamLine>
@@ -93,7 +93,7 @@
         </graphicData>
         <projectile>
             <damageDef>FCP_Damage_Laser_Burn</damageDef>
-            <damageAmountBase>10</damageAmountBase>
+            <damageAmountBase>12</damageAmountBase>
             <armorPenetrationBase>2.0</armorPenetrationBase>
             <speed>140</speed>
         </projectile>
@@ -103,7 +103,7 @@
                 <beamWidthDrawScale>1.0</beamWidthDrawScale>
                 <beamLength>-1</beamLength>
                 <damageTickRate>1</damageTickRate>
-                <lifetimeTicks>100</lifetimeTicks>
+                <lifetimeTicks>300</lifetimeTicks>
                 <sweepRatePerTick>0</sweepRatePerTick>
                 <maxSweepAngle>0</maxSweepAngle>
                 <damageThingsAcrossBeamLine>false</damageThingsAcrossBeamLine>
@@ -131,7 +131,7 @@
         </graphicData>
         <projectile>
             <damageDef>FCP_Damage_Laser_Burn</damageDef>
-            <damageAmountBase>12</damageAmountBase>
+            <damageAmountBase>21</damageAmountBase>
             <armorPenetrationBase>2.2</armorPenetrationBase>
             <speed>140</speed>
         </projectile>
@@ -141,7 +141,7 @@
                 <beamWidthDrawScale>1.1</beamWidthDrawScale>
                 <beamLength>-1</beamLength>
                 <damageTickRate>1</damageTickRate>
-                <lifetimeTicks>100</lifetimeTicks>
+                <lifetimeTicks>300</lifetimeTicks>
                 <sweepRatePerTick>0</sweepRatePerTick>
                 <maxSweepAngle>0</maxSweepAngle>
                 <damageThingsAcrossBeamLine>false</damageThingsAcrossBeamLine>

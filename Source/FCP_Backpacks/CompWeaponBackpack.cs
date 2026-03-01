@@ -7,7 +7,7 @@ namespace FCP.Core.Backpacks;
 
 public class CompWeaponBackpack : ThingComp
 {
-    private Graphic backpackGraphic;
+    private Graphic cachedGraphic;
     
     public CompProperties_WeaponBackpack Props => (CompProperties_WeaponBackpack)props;
     
@@ -15,59 +15,43 @@ public class CompWeaponBackpack : ThingComp
     {
         get
         {
-            if (backpackGraphic == null && !Props.backpackTexPath.NullOrEmpty())
+            if (cachedGraphic == null && !Props.backpackTexPath.NullOrEmpty())
             {
-                backpackGraphic = GraphicDatabase.Get<Graphic_Single>(
+                cachedGraphic = GraphicDatabase.Get<Graphic_Multi>(
                     Props.backpackTexPath,
                     ShaderDatabase.Cutout,
                     Vector2.one * Props.backpackScale,
                     Color.white
                 );
             }
-            return backpackGraphic;
+            return cachedGraphic;
         }
-    }
-    
-    public override void PostExposeData()
-    {
-        base.PostExposeData();
     }
 }
 
-[HarmonyPatch(typeof(PawnRenderer), "DrawEquipment")]
-public static class PawnRenderer_DrawEquipment_Patch
+[HarmonyPatch(typeof(PawnRenderUtility), nameof(PawnRenderUtility.DrawEquipmentAndApparelExtras))]
+public static class PawnRenderUtility_DrawEquipmentAndApparelExtras_Patch
 {
-    private static readonly System.Reflection.FieldInfo pawnField = AccessTools.Field(typeof(PawnRenderer), "pawn");
-    
-    public static void Postfix(PawnRenderer __instance, Vector3 rootLoc, Rot4 pawnRotation, PawnRenderFlags flags)
+    public static void Prefix(Pawn pawn, Vector3 drawPos, Rot4 facing, PawnRenderFlags flags)
     {
-        if (pawnField?.GetValue(__instance) is not Pawn pawn) return;
         if (pawn?.equipment?.Primary == null) return;
         
         var comp = pawn.equipment.Primary.TryGetComp<CompWeaponBackpack>();
-        if (comp == null || comp.BackpackGraphic == null) return;
-        
+        if (comp?.BackpackGraphic == null) return;
         if (comp.Props.drawBackOnlyWhenDrafted && !pawn.Drafted) return;
         
-        // Draw for north (back) and east (side) views
-        if (pawnRotation != Rot4.North && pawnRotation != Rot4.East) return;
+        Vector3 backpackPos = pawn.DrawPos;
+        if (facing == Rot4.North)
+            backpackPos += comp.Props.northOffset;
+        else if (facing == Rot4.South)
+            backpackPos += comp.Props.southOffset;
+        else if (facing == Rot4.East)
+            backpackPos += comp.Props.eastOffset;
+        else // Rot4.West
+            backpackPos += new Vector3(-comp.Props.eastOffset.x, comp.Props.eastOffset.y, comp.Props.eastOffset.z);
         
-        Vector3 backpackLoc = rootLoc;
-        backpackLoc.y += 0.04f; // Slightly above pawn layer
-        
-        if (pawnRotation == Rot4.North)
-        {
-            backpackLoc.z -= 0.25f; // Behind the pawn
-        }
-        else if (pawnRotation == Rot4.East)
-        {
-            backpackLoc.x += 0.2f; // To the right side
-            backpackLoc.z -= 0.1f; // Slightly behind
-        }
-        
-        Mesh mesh = MeshPool.plane10;
-        Quaternion quat = Quaternion.AngleAxis(0f, Vector3.up);
-        
-        Graphics.DrawMesh(mesh, backpackLoc, quat, comp.BackpackGraphic.MatSingle, 0);
+        Mesh mesh = (facing == Rot4.West) ? MeshPool.plane10Flip : MeshPool.plane10;
+        Graphics.DrawMesh(mesh, backpackPos, Quaternion.identity, comp.BackpackGraphic.MatAt(facing), 0);
     }
 }
+
