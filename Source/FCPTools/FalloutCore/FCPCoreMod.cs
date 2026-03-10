@@ -16,6 +16,7 @@ public class FCPCoreMod : Mod
 
     // Patch Categories
     public const string LatePatchesCategory = "FCP.Core.LatePatches";
+    public const string CurrencyPatchesCategory = "FCP.Core.Currency";
     public const string TentsPatchesCategory = "FCP.Core.Tents";
     
     private SettingsTab currentTab = null;
@@ -27,8 +28,9 @@ public class FCPCoreMod : Mod
         
         // PatchesUwU ~ Steve
         Harmony.PatchAllUncategorized();
-        if (ModsConfig.IsActive("Rick.FCP.Tents"))
-            Harmony.PatchCategory(TentsPatchesCategory);
+        Harmony.PatchCategory(CurrencyPatchesCategory);
+        if (ModsConfig.IsActive("Rick.FCP.Tents")) Harmony.PatchCategory(TentsPatchesCategory);
+        
         LongEventHandler.ExecuteWhenFinished(() =>
         {
             Harmony.PatchCategory(LatePatchesCategory);

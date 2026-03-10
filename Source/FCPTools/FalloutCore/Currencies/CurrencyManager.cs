@@ -7,20 +7,24 @@ public static class CurrencyManager
 {
     public static ThingDef defaultCurrencyDef;
     public static HashSet<StockGenerator_SingleDef> silverStockGenerators = new HashSet<StockGenerator_SingleDef>();
+
+    private static readonly AccessTools.FieldRef<StockGenerator_SingleDef, ThingDef> thingDefRef =
+        AccessTools.FieldRefAccess<StockGenerator_SingleDef, ThingDef>("thingDef");
+
     static CurrencyManager()
     {
         defaultCurrencyDef = ThingDefOf.Silver;
         foreach (var traderKind in DefDatabase<TraderKindDef>.AllDefs)
         {
             var stock = traderKind.stockGenerators.FirstOrDefault(x => x is StockGenerator_SingleDef singleDef
-                                                                       && singleDef.thingDef == ThingDefOf.Gold);
+                                                                       && thingDefRef(singleDef) == ThingDefOf.Gold);
             if (stock != null)
             {
                 var silverStock = new StockGenerator_SingleDef
                 {
-                    thingDef = defaultCurrencyDef,
                     countRange = new IntRange(stock.countRange.min * 2, stock.countRange.max * 2)
                 };
+                thingDefRef(silverStock) = defaultCurrencyDef;
                 silverStockGenerators.Add(silverStock);
                 traderKind.stockGenerators.Add(silverStock);
             }
