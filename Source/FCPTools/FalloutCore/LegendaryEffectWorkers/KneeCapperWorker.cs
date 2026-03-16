@@ -4,11 +4,10 @@ public class KneeCapperWorker : LegendaryEffectWorker
 {
     public override void Notify_ApplyToPawn(ref DamageInfo damageInfo, Pawn pawn)
     {
-        // 20% of the time
-        if (pawn == null || Rand.Range(0, 4) != 0)
-        {
+        // Only do it 20% of the time
+        bool randomChance = Rand.Range(0, 5) == 0;
+        if (pawn == null || !randomChance)
             return;
-        }
 
         IEnumerable<BodyPartRecord> legs = pawn.def.race.body.AllParts.Where(part => part.Label.ToLower().Contains("leg"));
 
