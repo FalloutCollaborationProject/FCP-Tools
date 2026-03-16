@@ -19,8 +19,8 @@ namespace FCP.Core.Ghouls
         {
             if (!ModsConfig.BiotechActive || pawnKindDef == null) return;
 
-            if (feralityGeneDef == null) feralityGeneDef = DefDatabase<GeneDef>.GetNamed("FCP_Gene_Ferality", false);
-            if (berserkDef == null) berserkDef = DefDatabase<MentalStateDef>.GetNamed("FCP_PermanentBerserk", false);
+            feralityGeneDef ??= DefDatabase<GeneDef>.GetNamed("FCP_Gene_Ferality", false);
+            berserkDef ??= DefDatabase<MentalStateDef>.GetNamed("FCP_MentalState_PermanentBerserk", false);
 
             int count = Rand.RangeInclusive(minGhouls, maxGhouls);
             IntVec3 center = map.Center;
@@ -66,9 +66,9 @@ namespace FCP.Core.Ghouls
         {
             if (!ModsConfig.BiotechActive || pawnKindDef == null) return;
 
-            if (feralityGeneDef == null) feralityGeneDef = DefDatabase<GeneDef>.GetNamed("FCP_Gene_Ferality", false);
-            if (berserkDef == null) berserkDef = DefDatabase<MentalStateDef>.GetNamed("FCP_PermanentBerserk", false);
-            if (feralKindDef == null) feralKindDef = DefDatabase<PawnKindDef>.GetNamed("FCP_Pawnkind_Ghoul_Feral", false);
+            feralityGeneDef ??= DefDatabase<GeneDef>.GetNamed("FCP_Gene_Ferality", false);
+            berserkDef ??= DefDatabase<MentalStateDef>.GetNamed("FCP_MentalState_PermanentBerserk", false);
+            feralKindDef ??= DefDatabase<PawnKindDef>.GetNamed("FCP_Pawnkind_Ghoul_Feral", false);
 
             if (!CellFinder.TryFindRandomCellNear(map.Center, map, 15, c => c.Standable(map) && !c.Fogged(map), out IntVec3 loc)) 
                 return;
