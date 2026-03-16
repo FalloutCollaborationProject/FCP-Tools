@@ -62,12 +62,12 @@ namespace FCP.Core.RadiantQuests
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
             yield return Toils_General.DoAtomic(delegate
             {
-                Log.Message(__instance.OtherPawn.NameFullColored);
-                Log.Message(__instance.pawn.NameFullColored);
-                Log.Message(__instance.OtherPawn.mindState.WillJoinColonyIfRescued);
+                FCPLog.Verbose(__instance.OtherPawn.NameFullColored);
+                FCPLog.Verbose(__instance.pawn.NameFullColored);
+                FCPLog.Verbose(__instance.OtherPawn.mindState.WillJoinColonyIfRescued);
                 if (__instance.OtherPawn.mindState.WillJoinColonyIfRescued || PawnRescueUtility.prisonersWillingJoin.Contains(__instance.OtherPawn))
                 {
-                    Log.Message("Joining colony");
+                    FCPLog.Verbose("Joining colony");
                     InteractionWorker_RecruitAttempt.DoRecruit(__instance.pawn, __instance.OtherPawn, useAudiovisualEffects: false);
                     if (__instance.OtherPawn.needs != null && __instance.OtherPawn.needs.mood != null)
                     {

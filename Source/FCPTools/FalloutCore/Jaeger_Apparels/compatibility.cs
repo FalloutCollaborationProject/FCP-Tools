@@ -35,11 +35,11 @@ namespace FCP.Core
 
                 PatchFalloutCore(FCPCoreMod.Harmony);
 
-                Log.Message("[TemperatureApparelPreference] Applied FalloutCore ApparelExtension thread-safety compatibility patch.");
+                FCPLog.Message("[TemperatureApparelPreference] Applied FalloutCore ApparelExtension thread-safety compatibility patch.");
             }
             catch (Exception ex)
             {
-                Log.Error("[TemperatureApparelPreference] FalloutCore compat init failed:\n" + ex);
+                FCPLog.Error("[TemperatureApparelPreference] FalloutCore compat init failed:\n" + ex);
             }
         }
 

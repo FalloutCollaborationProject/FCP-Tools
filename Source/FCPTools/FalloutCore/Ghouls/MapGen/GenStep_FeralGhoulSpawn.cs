@@ -45,7 +45,7 @@ namespace FCP.Core.Ghouls
 
                 GenSpawn.Spawn(ghoul, loc, map);
                 
-                var mentalState = DefDatabase<MentalStateDef>.GetNamed("FCP_PermanentBerserk", false);
+                var mentalState = DefDatabase<MentalStateDef>.GetNamed("FCP_MentalState_PermanentBerserk", false);
                 if (mentalState != null)
                 {
                     ghoul.mindState.mentalStateHandler.TryStartMentalState(mentalState, forceWake: true);

@@ -23,7 +23,7 @@ public class ThingDefFloatClass
     {
         if (xmlRoot.ChildNodes.Count != 1)
         {
-            Log.Error("Misconfigured ThingDefFloatClass: " + xmlRoot.OuterXml);
+            FCPLog.Error("Misconfigured ThingDefFloatClass: " + xmlRoot.OuterXml);
             return;
         }
         DirectXmlCrossRefLoader.RegisterObjectWantsCrossRef(this, "thingDef", xmlRoot.Name);

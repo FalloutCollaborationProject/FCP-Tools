@@ -19,13 +19,13 @@ namespace FCP.Core.RadiantQuests
         public SlateRef<bool> spawnOnEdge;
         protected override bool TestRunInt(Slate slate)
         {
-            Log.Message("SpawnRaiders test");
+            FCPLog.Verbose("SpawnRaiders test");
             if (pawns.GetValue(slate) == null)
             {
-                Log.Message("Pawns are null");
+                FCPLog.Verbose("Pawns are null");
                 return false;
             }
-            Log.Message("Pawns are not null");
+            FCPLog.Verbose("Pawns are not null");
             return true;
         }
         protected override void RunInt()

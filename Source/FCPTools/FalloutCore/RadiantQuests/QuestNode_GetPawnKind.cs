@@ -20,11 +20,11 @@ namespace FCP.Core.RadiantQuests
         {
             if (DefDatabase<PawnKindDef>.AllDefsListForReading.Any(c => c.defName == pawnKindDef.GetValue(slate)))
             {
-                Log.Message("pawnkind exist");
+                FCPLog.Verbose("pawnkind exist");
                 SetVars(slate);
                 return true;
             }
-            Log.Message("pawnkind dont exist");
+            FCPLog.Verbose("pawnkind dont exist");
             return false;
         }
 
@@ -36,7 +36,7 @@ namespace FCP.Core.RadiantQuests
         private void SetVars(Slate slate)
         {
             PawnKindDef def = DefDatabase<PawnKindDef>.AllDefsListForReading.Where(c => c.defName == pawnKindDef.GetValue(slate)).First();
-            Log.Message(def.defName);
+            FCPLog.Verbose(def.defName);
             slate.Set(storeAs.GetValue(slate), def);
         }
     }

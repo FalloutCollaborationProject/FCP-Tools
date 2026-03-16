@@ -15,7 +15,7 @@ public class JobDriver_EquipFromStation : JobDriver_PowerArmorStation
 		{
 			if (!StationComp.EquipApparel(pawn, apparel))
 			{
-				Log.Error(pawn?.ToString() + " could not equip " + apparel.ToStringSafe());
+				FCPLog.Error(pawn?.ToString() + " could not equip " + apparel.ToStringSafe());
 				EndJobWith(JobCondition.Errored);
 				return;
 			}

@@ -219,7 +219,7 @@ public class TentsSettings : SettingsTab
             var tent = DefDatabase<ThingDef>.GetNamed(effect.tentDefName, false);
             if (tent == null)
             {
-                Log.Warning($"Tent {effect.tentDefName} was null");
+                FCPLog.Warning($"Tent {effect.tentDefName} was null");
                 continue;
             }
 

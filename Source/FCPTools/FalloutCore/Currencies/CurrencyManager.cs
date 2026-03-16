@@ -5,36 +5,39 @@ namespace FCP.Currencies;
 [StaticConstructorOnStartup]
 public static class CurrencyManager
 {
-    public static ThingDef defaultCurrencyDef;
-    public static HashSet<StockGenerator_SingleDef> silverStockGenerators = new HashSet<StockGenerator_SingleDef>();
+    public static readonly ThingDef defaultCurrencyDef;
+    public static readonly HashSet<StockGenerator_SingleDef> silverStockGenerators = [];
+
+    private static readonly AccessTools.FieldRef<StockGenerator_SingleDef, ThingDef> ThingDefRef =
+        AccessTools.FieldRefAccess<StockGenerator_SingleDef, ThingDef>("thingDef");
+
     static CurrencyManager()
     {
         defaultCurrencyDef = ThingDefOf.Silver;
-        foreach (var traderKind in DefDatabase<TraderKindDef>.AllDefs)
+        foreach (TraderKindDef traderKind in DefDatabase<TraderKindDef>.AllDefs)
         {
-            var stock = traderKind.stockGenerators.FirstOrDefault(x => x is StockGenerator_SingleDef singleDef
-                                                                       && singleDef.thingDef == ThingDefOf.Gold);
-            if (stock != null)
+            StockGenerator goldStock = traderKind.stockGenerators.FirstOrDefault(x => x is StockGenerator_SingleDef singleDef
+                                                                       && ThingDefRef(singleDef) == ThingDefOf.Gold);
+            if (goldStock != null)
             {
                 var silverStock = new StockGenerator_SingleDef
                 {
-                    thingDef = defaultCurrencyDef,
-                    countRange = new IntRange(stock.countRange.min * 2, stock.countRange.max * 2)
+                    countRange = new IntRange(goldStock.countRange.min * 2, goldStock.countRange.max * 2)
                 };
+                ThingDefRef(silverStock) = defaultCurrencyDef;
                 silverStockGenerators.Add(silverStock);
                 traderKind.stockGenerators.Add(silverStock);
             }
         }
-        new Harmony("FCPCurrencies").PatchAll();
     }
 
     public static bool TryGetCurrency(this ITrader trader, out ThingDef currency)
     {
-        if (TryGetCurrency(trader.TraderKind, out currency))
+        if (trader.TraderKind.TryGetCurrency(out currency))
         {
             return true;
         }
-        if (TryGetCurrency(trader.Faction, out currency))
+        if (trader.Faction.TryGetCurrency(out currency))
         {
             return true;
         }

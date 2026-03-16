@@ -23,11 +23,11 @@ namespace FCP.Core.RadiantQuests
         {
             if (Find.FactionManager.GetFactions().Any(c => factionDefs.GetValue(slate).Any(x => x.defName == c.def.defName)))
             {
-                Log.Message("factions exist");
+                FCPLog.Verbose("factions exist");
                 SetVars(slate);
                 return true;
             }
-            Log.Message("factions dont exist");
+            FCPLog.Verbose("factions dont exist");
             return false;
         }
 
@@ -39,7 +39,7 @@ namespace FCP.Core.RadiantQuests
         private void SetVars(Slate slate)
         {
             Find.FactionManager.GetFactions().Where(c => factionDefs.GetValue(slate).Any(x => x.defName == c.def.defName)).TryRandomElement(out Faction faction);
-            Log.Message(faction.def.label);
+            FCPLog.Verbose(faction.def.label);
             slate.Set(storeAs.GetValue(slate), faction);
         }
     }

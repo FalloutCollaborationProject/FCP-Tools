@@ -24,8 +24,7 @@ namespace FCP.Core.RadiantQuests
                 {
                     foreach (Thing item in Find.CurrentMap.listerBuildings.allBuildingsColonist.Where(c=> c.HasComp<CompAnimalCage>()))
                     {
-                        CompAnimalCage compAnimalCage;
-                        if (!item.TryGetComp(out compAnimalCage) && animal != compAnimalCage.Occupant)
+                        if (!item.TryGetComp(out CompAnimalCage compAnimalCage) || animal != compAnimalCage.Occupant)
                         {
                             Messages.Message("MessageHolderReserved".Translate(t.Thing.Label), MessageTypeDefOf.RejectInput);
                             return;
@@ -33,7 +32,7 @@ namespace FCP.Core.RadiantQuests
                     }
                     if (carrier != null)
                     {
-                        Log.Message("Issuing job");
+                        FCPLog.Verbose("Issuing job");
                         Job job = (transferBetweenCages ? JobMaker.MakeJob(DefOfs.FCP_TransferAnimalBetweenCages, sourceCage, t, animal) : JobMaker.MakeJob(DefOfs.FCP_CarryAnimalToCage, t, animal));
                         job.count = 1;
                         carrier.jobs.TryTakeOrderedJob(job, JobTag.Misc);
@@ -93,7 +92,7 @@ namespace FCP.Core.RadiantQuests
 
         public static bool TryGetCagesThatFitBodySize(float bodySize, Map map, out List<CompAnimalCage> cages)
         {
-            Log.Message(bodySize);
+            FCPLog.Verbose(bodySize);
             if(bodySize == 0 || map == null)
             {
                 cages = null;

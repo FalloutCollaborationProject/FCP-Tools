@@ -41,18 +41,18 @@ namespace FCP.Core.RadiantQuests
         {
             if (!TrySetVars(QuestGen.slate))
             {
-                Log.Error("Could not resolve site parts.");
+                FCPLog.Error("Could not resolve site parts.");
             }
         }
 
         private bool TrySetVars(Slate slate)
         {
-            Log.Message("Setting vars");
+            FCPLog.Verbose("Setting vars");
             float points = slate.Get("points", 0f);
-            Log.Message(points);
+            FCPLog.Verbose(points);
             for (int i = 0; i < 2; i++)
             {
-                Log.Message("Loop "+ i );
+                FCPLog.Verbose("Loop "+ i );
                 tmpTags.Clear();
                 foreach (SitePartOption item in sitePartsTags.GetValue(slate))
                 {

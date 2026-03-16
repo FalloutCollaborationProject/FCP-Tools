@@ -22,14 +22,14 @@ namespace FCP.Core.RadiantQuests
 
         protected override bool TestRunInt(Slate slate)
         {
-            Log.Message("Test running GeneratePawns");
+            FCPLog.Verbose("Test running GeneratePawns");
             if (Find.FactionManager.GetFactions().Any(c => c == faction.GetValue(slate)))
             {
-                Log.Message("faction exists");
+                FCPLog.Verbose("faction exists");
                 SetVars(slate);
                 return true;
             }
-            Log.Message("faction doesn't exist");
+            FCPLog.Verbose("faction doesn't exist");
             return false;
         }
 
@@ -43,28 +43,28 @@ namespace FCP.Core.RadiantQuests
             Faction settlementFaction = faction.GetValue(slate);
             float points = slate.Get<int>("points", 100);
             pointsToUse.TryGetValue(slate, out string pointsString);
-            Log.Message(pointsString);
+            FCPLog.Verbose(pointsString);
             float.TryParse(pointsString, out points);
             
             //Map map = site.GetValue(slate).Map;
             PawnGroupKindDef pawnGroup = DefDatabase<PawnGroupKindDef>.GetNamed(pawnGroupKind.GetValue(slate), false);
             foreach(PawnGroupMaker maker in settlementFaction.def.pawnGroupMakers)
             {
-                Log.Message(maker.kindDef.defName);
+                FCPLog.Verbose(maker.kindDef.defName);
             }
             if(!settlementFaction.def.pawnGroupMakers.Any(c => c.kindDef.defName == pawnGroup.defName))
             {
-                Log.Message("Faction does not contain the inputted pawnGroupKind");
+                FCPLog.Verbose("Faction does not contain the inputted pawnGroupKind");
                 pawnGroup = PawnGroupKindDefOf.Combat;
             }
-            Log.Message(points);
+            FCPLog.Verbose(points);
             List<Pawn> Pawns = PawnGroupMakerUtility.GeneratePawns(new PawnGroupMakerParms
             {
                 groupKind = pawnGroup != null ? pawnGroup : PawnGroupKindDefOf.Peaceful,
                 points = points,
                 faction = settlementFaction
             }).ToList();
-            Log.Message(Pawns.Count);
+            FCPLog.Verbose(Pawns.Count);
             slate.Set(storeAs.GetValue(slate), Pawns);
         }
     }

@@ -18,13 +18,13 @@ namespace FCP.Core.RadiantQuests
         public SlateRef<int> radius;
         protected override bool TestRunInt(Slate slate)
         {
-            Log.Message("SpawnSettlers test");
+            FCPLog.Verbose("SpawnSettlers test");
             if (pawns.GetValue(slate) == null)
             {
-                Log.Message("Pawns are null");
+                FCPLog.Verbose("Pawns are null");
                 return false;
             }
-            Log.Message("Pawns are not null");
+            FCPLog.Verbose("Pawns are not null");
             return true;
         }
         protected override void RunInt()

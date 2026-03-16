@@ -26,7 +26,7 @@ namespace taranchuk_homingprojectiles
                     var newDest = __instance.ExactPosition + offset;
                     __instance.SetDestination(newDest);
                 }
-                if (__instance.Destroyed is false && comp.Props.lifetimeTicks > 0 & Find.TickManager.TicksGame - comp.launchTick > comp.Props.lifetimeTicks)
+                if (__instance.Destroyed is false && comp.Props.lifetimeTicks > 0 && Find.TickManager.TicksGame - comp.launchTick > comp.Props.lifetimeTicks)
                 {
                     __instance.ImpactSomething();
                 }
