@@ -24,8 +24,7 @@ namespace FCP.Core.RadiantQuests
                 {
                     foreach (Thing item in Find.CurrentMap.listerBuildings.allBuildingsColonist.Where(c=> c.HasComp<CompAnimalCage>()))
                     {
-                        CompAnimalCage compAnimalCage;
-                        if (!item.TryGetComp(out compAnimalCage) && animal != compAnimalCage.Occupant)
+                        if (!item.TryGetComp(out CompAnimalCage compAnimalCage) || animal != compAnimalCage.Occupant)
                         {
                             Messages.Message("MessageHolderReserved".Translate(t.Thing.Label), MessageTypeDefOf.RejectInput);
                             return;
