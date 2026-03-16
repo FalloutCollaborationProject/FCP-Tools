@@ -6,19 +6,16 @@ public class CompMechDetonator : ThingComp
 
     public override IEnumerable<Gizmo> CompGetGizmosExtra()
     {
-
-        if (parent.Faction == Faction.OfPlayer)
+        if (parent.Faction != Faction.OfPlayer) 
+            yield break;
+        
+        Gizmo detonateAction = new Command_Action
         {
-            Command_Action command_Action = new Command_Action();
-            command_Action.icon = Props.GetUiIcon();
-            command_Action.defaultLabel = "FCP_MechDetonate".Translate();
-            command_Action.action = delegate
-            {
-                //Log.Message("BOOM");
-                parent.Kill();
-            };
-            yield return command_Action;
-        }
+            icon = Props.GetUiIcon(),
+            defaultLabel = "FCP_MechDetonate".Translate(),
+            action = () => { parent.Kill(); }
+        };
+        yield return detonateAction;
 
     }
 }
