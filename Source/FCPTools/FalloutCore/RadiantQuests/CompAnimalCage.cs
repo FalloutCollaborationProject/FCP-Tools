@@ -138,27 +138,27 @@ namespace FCP.Core.RadiantQuests
         public void CaptureAnimal()
         {
 
-            Log.Message(ShouldCapture);
+            FCPLog.Verbose(ShouldCapture);
             if (Props.animalsThatGetCaught == null)
             {
-                Log.Message("animals that get caught list is empty");
+                FCPLog.Verbose("animals that get caught list is empty");
                 return;
             }
             foreach (var item in parent.Map.Biome.AllWildAnimals)
             {
-                Log.Message(item.defName);
+                FCPLog.Verbose(item.defName);
             }
-            Log.Message("Props animals");
+            FCPLog.Verbose("Props animals");
             foreach (var item in Props.animalsThatGetCaught)
             {
-                Log.Message(item.defName);
+                FCPLog.Verbose(item.defName);
             }
             if (!parent.Map.Biome.AllWildAnimals.Any(c => Props.animalsThatGetCaught.Any(x => c.defName == x.defName)))
             {
-                Log.Message("no animals catchable that exist in this biome");
+                FCPLog.Verbose("no animals catchable that exist in this biome");
                 return;
             }
-            Log.Message("Generating and inserting animal");
+            FCPLog.Verbose("Generating and inserting animal");
             PawnKindDef def = parent.Map.Biome.AllWildAnimals.Where(c => Props.animalsThatGetCaught.Any(x => c == x)).RandomElement();
             Pawn pawn = PawnGenerator.GeneratePawn(def);
             Letter letter = LetterMaker.MakeLetter("FCP_CageAnimalCapturedLabel".Translate(), "FCP_CageAnimalCapturedText".Translate(pawn), LetterDefOf.PositiveEvent, base.parent);

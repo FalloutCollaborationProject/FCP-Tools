@@ -43,21 +43,21 @@ namespace FCP.Core.RadiantQuests
         {
             mapParent = Find.World.worldObjects.MapParentAt(mapTile);
             base.Notify_QuestSignalReceived(signal);
-            Log.Message("Testing notify quest signal received");
+            FCPLog.Verbose("Testing notify quest signal received");
             if (!(signal.tag == inSignal) || !mapParent.HasMap)
             {
                 return;
             }
             IntVec3 location = IntVec3.Invalid;
-            Log.Message(mapParent.Map == null);
-            Log.Message(pawns.Count);
+            FCPLog.Verbose(mapParent.Map == null);
+            FCPLog.Verbose(pawns.Count);
             if (cell.IsValid)
             {
                 location = cell;
             }
             else
             {
-                Log.Message(spawnOnEdge);
+                FCPLog.Verbose(spawnOnEdge);
                 if (spawnOnEdge)
                 {
                     TryFindWalkInSpot(mapParent.Map, out location);

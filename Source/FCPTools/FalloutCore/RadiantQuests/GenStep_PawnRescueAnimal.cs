@@ -23,7 +23,7 @@ namespace FCP.Core.RadiantQuests
             Pawn singlePawnToSpawn;
             foreach(Thing thing in parms.sitePart.things)
             {
-                Log.Message(thing.def.defName);
+                FCPLog.Verbose(thing.def.defName);
             }
             singlePawnToSpawn = (Pawn)parms.sitePart.things.Take(parms.sitePart.things[0]);
             Building building =(Building)parms.sitePart.things.Take(parms.sitePart.things[0]);

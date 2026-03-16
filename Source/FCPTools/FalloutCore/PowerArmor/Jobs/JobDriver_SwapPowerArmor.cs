@@ -15,7 +15,7 @@ public class JobDriver_SwapPowerArmor : JobDriver_PowerArmorStation
 		{
 			if (!StationComp.StoreApparel(pawn, apparel))
 			{
-				Log.Error(pawn?.ToString() + " could not store " + apparel.ToStringSafe());
+				FCPLog.Error(pawn?.ToString() + " could not store " + apparel.ToStringSafe());
 				EndJobWith(JobCondition.Errored);
 				return;
 			}
@@ -24,7 +24,7 @@ public class JobDriver_SwapPowerArmor : JobDriver_PowerArmorStation
 		{
 			if (!StationComp.EquipApparel(pawn, apparel))
 			{
-				Log.Error(pawn?.ToString() + " could not equip " + apparel.ToStringSafe());
+				FCPLog.Error(pawn?.ToString() + " could not equip " + apparel.ToStringSafe());
 				EndJobWith(JobCondition.Errored);
 				return;
 			}

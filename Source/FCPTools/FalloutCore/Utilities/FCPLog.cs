@@ -1,4 +1,4 @@
-﻿using System.Runtime.CompilerServices;
+using System.Runtime.CompilerServices;
 
 namespace FCP.Core;
 
@@ -16,32 +16,32 @@ public static class FCPLog
         FCPCoreMod.SettingsTab<DebugSettings>()?.verboseLogging ?? false;
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static void Error(string msg)
+    public static void Error(object msg)
     {
         Log.Error(ErrorPrefix + msg);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static void Warning(string msg)
+    public static void Warning(object msg)
     {
         Log.Warning(WarnPrefix + msg);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static void Message(string msg)
+    public static void Message(object msg)
     {
         Log.Message(MsgPrefix + msg);
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static void Verbose(string msg)
+    public static void Verbose(object msg)
     {
         if (!VerboseEnabled || verboseCount++ >= VerboseLogMax) return;
         Log.Message(VerbosePrefix + msg);
     }
-    
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static void VerboseQuick(string msg)
+    public static void VerboseQuick(object msg)
     {
         if (verboseCount++ >= VerboseLogMax) return;
         Log.Message(VerbosePrefix + msg);

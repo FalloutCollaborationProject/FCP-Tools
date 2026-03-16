@@ -128,7 +128,7 @@ public abstract class JobDriver_PowerArmorStation : JobDriver
 					bool forbid = pawn.Faction != null && pawn.Faction.HostileTo(Faction.OfPlayer);
 					if (!pawn.apparel.TryDrop(wornApparel[num], out var _, pawn.PositionHeld, forbid))
 					{
-						Log.Error(pawn?.ToString() + " could not drop " + wornApparel[num].ToStringSafe());
+						FCPLog.Error(pawn?.ToString() + " could not drop " + wornApparel[num].ToStringSafe());
 						EndJobWith(JobCondition.Errored);
 					}
 				}

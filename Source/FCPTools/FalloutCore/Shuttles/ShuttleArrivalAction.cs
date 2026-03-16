@@ -38,7 +38,7 @@ namespace FCP.Core.Shuttles
                     tries++;
                     if (tries > 1000)
                     {
-                        Log.Error("FCP.Core.Shuttles: Could not find a suitable landing spot after 1000 tries.");
+                        FCPLog.Error("FCP.Core.Shuttles: Could not find a suitable landing spot after 1000 tries.");
                         landingSpot = MapGenerator.PlayerStartSpot;
                         break;
                     }
