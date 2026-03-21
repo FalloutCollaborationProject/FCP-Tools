@@ -56,6 +56,7 @@
     <FCP_ApparelRequirement.RequiresTrait>Requires Trait: {0}</FCP_ApparelRequirement.RequiresTrait>
     <FCP_ApparelRequirement.RequiresApparel>Requires: {0}</FCP_ApparelRequirement.RequiresApparel>
     <FCP_ApparelRequirement.RequiresAnyOfApparel>Requires any of: {0}</FCP_ApparelRequirement.RequiresAnyOfApparel>
+    <FCP_ApparelRequirement.RequiresPowerArmorTraining>Requires Power Armor Training</FCP_ApparelRequirement.RequiresPowerArmorTraining>
 
 	<!-- Enlistment - Hostile Factions -->
 	<FCP_Enemy_Of_Enlist_Faction>New Enemy</FCP_Enemy_Of_Enlist_Faction>

@@ -20,6 +20,7 @@ public class CompApparelRequirement : ThingComp
         public const string RequiresTrait = "FCP_ApparelRequirement.RequiresTrait";
         public const string RequiresApparel = "FCP_ApparelRequirement.RequiresApparel";
         public const string AnyOfApparel = "FCP_ApparelRequirement.RequiresAnyOfApparel";
+        public const string RequiresPowerArmorTraining = "FCP_ApparelRequirement.RequiresPowerArmorTraining";
     }
     
     public CompProperties_ApparelRequirement Props => base.props as CompProperties_ApparelRequirement;
@@ -54,6 +55,9 @@ public class CompApparelRequirement : ThingComp
     {
         if (!HasRequiredTrait(pawn))
         {
+            if (Props.requiredTrait == PowerArmorDefOf.FCP_Trait_Power_Armor_Trained)
+                return Keys.RequiresPowerArmorTraining.Translate();
+            
             return Keys.RequiresTrait.Translate(Props.requiredTrait.degreeDatas[0].label);
         }
         if (!HasRequiredApparel(pawn))
