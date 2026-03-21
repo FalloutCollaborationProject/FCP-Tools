@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <LanguageData>
-    <RR.RequiresTrait>Requires Power Armor Training</RR.RequiresTrait>
-    <RR.RequiresApparel>Requires Power Armor Frame</RR.RequiresApparel>
     <FCP_CannotUsePowerArmorStation>Cannot use power armor station</FCP_CannotUsePowerArmorStation>
     <FCP_StorePowerArmor>Store power armor</FCP_StorePowerArmor>
     <FCP_EquipFromStation>Equip from station</FCP_EquipFromStation>
