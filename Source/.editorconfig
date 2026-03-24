@@ -1,0 +1,51 @@
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 4
+
+[*.cs]
+
+# Namespaces
+csharp_style_namespace_declarations = file_scoped:suggestion
+
+# Braces — Allman style (next line)
+csharp_new_line_before_open_brace = all
+
+# var usage — use when type is apparent from RHS
+csharp_style_var_for_built_in_types = false:suggestion
+csharp_style_var_when_type_is_apparent = true:suggestion
+csharp_style_var_elsewhere = false:suggestion
+
+# this. qualification — no preference enforced
+# (left unset intentionally)
+
+# Expression-bodied members — prefer for properties only
+csharp_style_expression_bodied_properties = true:suggestion
+csharp_style_expression_bodied_indexers = true:suggestion
+csharp_style_expression_bodied_methods = false:silent
+csharp_style_expression_bodied_constructors = false:silent
+csharp_style_expression_bodied_operators = false:silent
+csharp_style_expression_bodied_accessors = false:silent
+
+# Using directives — outside namespace
+csharp_using_directive_placement = outside_namespace:suggestion
+
+# Access modifiers — always explicit
+dotnet_style_require_accessibility_modifiers = always:suggestion
+
+# Naming: private fields = camelCase (no prefix)
+dotnet_naming_rule.private_fields_rule.symbols = private_fields
+dotnet_naming_rule.private_fields_rule.style = camel_case_style
+dotnet_naming_rule.private_fields_rule.severity = suggestion
+
+dotnet_naming_symbols.private_fields.applicable_kinds = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private, private_protected
+
+dotnet_naming_style.camel_case_style.capitalization = camel_case
+
+# Diagnostics
+dotnet_diagnostic.IDE0058.severity = none        # Expression value never used
+dotnet_diagnostic.IDE0002.severity = error        # Simplify member access
+dotnet_diagnostic.CA1812.severity = none          # Internal class never instantiated (XML reflection)
