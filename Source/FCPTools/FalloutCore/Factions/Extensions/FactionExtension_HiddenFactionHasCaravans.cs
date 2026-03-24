@@ -3,6 +3,7 @@
 /// <summary>
 /// Allows Hidden factions to show up in Caravan Meetings & Arrivals, as long as they are otherwise valid.
 /// </summary>
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 public class FactionExtension_HiddenFactionHasCaravans : DefModExtension
 {
     public static bool FactionHas(Faction faction)

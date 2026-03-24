@@ -1,0 +1,99 @@
+<assembly name="Assembly-CSharp">
+
+  <!-- [DefOf] — all decorated classes and their members are used implicitly (set by RimWorld reflection) -->
+  <member name="T:RimWorld.DefOf">
+    <attribute ctor="M:JetBrains.Annotations.MeansImplicitUseAttribute.#ctor(JetBrains.Annotations.ImplicitUseTargetFlags)">
+      <argument>5</argument>
+    </attribute>
+  </member>
+
+  <!-- [StaticConstructorOnStartup] — classes are instantiated by RimWorld at startup -->
+  <member name="T:Verse.StaticConstructorOnStartup">
+    <attribute ctor="M:JetBrains.Annotations.MeansImplicitUseAttribute.#ctor">
+    </attribute>
+  </member>
+
+  <!-- ThingWithComps.GetComp<T>() — returns null if comp not found -->
+  <member name="M:Verse.ThingWithComps.GetComp``1">
+    <attribute ctor="M:JetBrains.Annotations.CanBeNullAttribute.#ctor" />
+  </member>
+
+  <!-- HediffWithComps.GetComp<T>() — returns null if comp not found -->
+  <member name="M:Verse.HediffWithComps.GetComp``1">
+    <attribute ctor="M:JetBrains.Annotations.CanBeNullAttribute.#ctor" />
+  </member>
+
+  <!-- ThingCompUtility.TryGetComp<T>(Thing) — returns null if comp not found -->
+  <member name="M:Verse.ThingCompUtility.TryGetComp``1(Verse.Thing)">
+    <attribute ctor="M:JetBrains.Annotations.CanBeNullAttribute.#ctor" />
+  </member>
+
+  <!-- ThingCompUtility.TryGetComp(Thing, CompProperties) — returns null if comp not found -->
+  <member name="M:Verse.ThingCompUtility.TryGetComp(Verse.Thing,Verse.CompProperties)">
+    <attribute ctor="M:JetBrains.Annotations.CanBeNullAttribute.#ctor" />
+  </member>
+
+  <!-- Def.GetModExtension<T>() — returns null if extension not present -->
+  <member name="M:Verse.Def.GetModExtension``1">
+    <attribute ctor="M:JetBrains.Annotations.CanBeNullAttribute.#ctor" />
+  </member>
+
+  <!-- Pawn.equipment — null on non-humanlike pawns -->
+  <member name="F:Verse.Pawn.equipment">
+    <attribute ctor="M:JetBrains.Annotations.CanBeNullAttribute.#ctor" />
+  </member>
+
+  <!-- Pawn.apparel — null on non-humanlike pawns -->
+  <member name="F:Verse.Pawn.apparel">
+    <attribute ctor="M:JetBrains.Annotations.CanBeNullAttribute.#ctor" />
+  </member>
+
+  <!-- Pawn.abilities — null without Royalty -->
+  <member name="F:Verse.Pawn.abilities">
+    <attribute ctor="M:JetBrains.Annotations.CanBeNullAttribute.#ctor" />
+  </member>
+
+  <!-- Find.CurrentMap — null on world map -->
+  <member name="P:Verse.Find.CurrentMap">
+    <attribute ctor="M:JetBrains.Annotations.CanBeNullAttribute.#ctor" />
+  </member>
+
+  <!-- ThingComp.parent — always set after Initialize -->
+  <member name="F:Verse.ThingComp.parent">
+    <attribute ctor="M:JetBrains.Annotations.NotNullAttribute.#ctor" />
+  </member>
+
+  <!-- DefDatabase<T>.GetNamed — throws on null defName; returns null only when errorOnFail=false -->
+  <member name="M:Verse.DefDatabase`1.GetNamed(System.String,System.Boolean)">
+    <attribute ctor="M:JetBrains.Annotations.ContractAnnotationAttribute.#ctor(System.String)">
+      <argument>defName:null =&gt; halt</argument>
+    </attribute>
+  </member>
+
+  <!-- DefDatabase<T>.GetNamedSilentFail — can return null -->
+  <member name="M:Verse.DefDatabase`1.GetNamedSilentFail(System.String)">
+    <attribute ctor="M:JetBrains.Annotations.CanBeNullAttribute.#ctor" />
+  </member>
+
+  <!-- GenCollection.TryRandomElement<T>(IEnumerable<T>, out T) — result valid only when true -->
+  <member name="M:Verse.GenCollection.TryRandomElement``1(System.Collections.Generic.IEnumerable{``0},``0@)">
+    <attribute ctor="M:JetBrains.Annotations.ContractAnnotationAttribute.#ctor(System.String)">
+      <argument>=&gt; true, result: notnull; =&gt; false, result: null</argument>
+    </attribute>
+  </member>
+
+  <!-- GenCollection.TryRandomElement<T>(HashSet<T>, out T) -->
+  <member name="M:Verse.GenCollection.TryRandomElement``1(System.Collections.Generic.HashSet{``0},``0@)">
+    <attribute ctor="M:JetBrains.Annotations.ContractAnnotationAttribute.#ctor(System.String)">
+      <argument>=&gt; true, result: notnull; =&gt; false, result: null</argument>
+    </attribute>
+  </member>
+
+  <!-- GenCollection.TryRandomElementByWeight<T> -->
+  <member name="M:Verse.GenCollection.TryRandomElementByWeight``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Single},``0@)">
+    <attribute ctor="M:JetBrains.Annotations.ContractAnnotationAttribute.#ctor(System.String)">
+      <argument>=&gt; true, result: notnull; =&gt; false, result: null</argument>
+    </attribute>
+  </member>
+
+</assembly>

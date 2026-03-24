@@ -1,8 +1,6 @@
-﻿// ReSharper disable UnassignedField.Global
-// ReSharper disable ClassNeverInstantiated.Global
+﻿namespace FCP.Core;
 
-namespace FCP.Core;
-
+[UsedImplicitly]
 public class ModExtension_Shader : DefModExtension
 {
 }

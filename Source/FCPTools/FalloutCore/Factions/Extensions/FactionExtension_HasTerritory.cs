@@ -2,6 +2,7 @@
 
 namespace FCP.Factions;
 
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 public class FactionExtension_HasTerritory : DefModExtension
 {
     public Color territoryColor = new();

@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace FCP.Core.PowerArmor;
 
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 public class CompProperties_PowerArmorStation : CompProperties
 {
 	public Vector3 armorDrawOffset;

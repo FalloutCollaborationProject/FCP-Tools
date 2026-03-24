@@ -11,6 +11,7 @@ using Verse;
 
 namespace FCP.Core.Shuttles
 {
+	[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 	public class FactionModExtension : DefModExtension
 	{
 		public bool replaceShuttle;

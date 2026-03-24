@@ -2,6 +2,7 @@
 
 public static class AnimalUtilities
 {
+    [Pure]
     public static bool IsFlyingPawn(this Pawn pawn, out CompFlyingPawn comp)
     {
         comp = pawn?.TryGetComp<CompFlyingPawn>();

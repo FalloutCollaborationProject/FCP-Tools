@@ -31,6 +31,7 @@ public static class CurrencyManager
         }
     }
 
+    [Pure]
     public static bool TryGetCurrency(this ITrader trader, out ThingDef currency)
     {
         if (trader.TraderKind.TryGetCurrency(out currency))
@@ -45,6 +46,7 @@ public static class CurrencyManager
         return false;
     }
 
+    [Pure]
     public static bool TryGetCurrency(this Faction faction, out ThingDef currency)
     {
         var extension = faction?.def.GetModExtension<CurrencyReplacement>();
@@ -57,6 +59,7 @@ public static class CurrencyManager
         return false;
     }
 
+    [Pure]
     public static bool TryGetCurrency(this TraderKindDef traderKind, out ThingDef currency)
     {
         var extension = traderKind?.GetModExtension<CurrencyReplacement>();

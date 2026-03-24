@@ -130,6 +130,7 @@ namespace FCP.Core.Ghouls
         }
     }
 
+    [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
     public class FeralityGene_ModExtension : DefModExtension
     {
         public int increaseIntervalTicks = 60000; // 1 in-game day

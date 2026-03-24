@@ -2,7 +2,6 @@
 namespace FCP.Core.PowerArmor;
 
 [DefOf]
-[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 public static class PowerArmorDefOf
 {
     public static WorkGiverDef Refuel;

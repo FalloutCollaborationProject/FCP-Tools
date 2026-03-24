@@ -8,6 +8,7 @@ using Verse;
 
 namespace FCP.Core.RadiantQuests
 {
+    [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
     public class CompProperties_AnimalCage : CompProperties_Refuelable
     {
         public float maxBodySize = 1f;

@@ -1,5 +1,6 @@
 ﻿namespace FCP.Core;
 
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 public class CompProperties_FlyingPawn : CompProperties
 {
     public readonly float evadeChanceWhenFlying = 1f;

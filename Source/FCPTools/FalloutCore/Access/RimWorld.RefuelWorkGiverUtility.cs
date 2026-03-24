@@ -22,9 +22,11 @@ internal static class AccessExtensions_RefuelWorkGiverUtility
 
     extension(RefuelWorkGiverUtility)
     {
+        [CanBeNull]
         internal static Thing P_FindBestFuel(Pawn pawn, Thing refuelable)
             => FindBestFuel(pawn, refuelable);
 
+        [CanBeNull]
         internal static List<Thing> P_FindAllFuel(Pawn pawn, Thing refuelable)
             => FindAllFuel(pawn, refuelable);
     }
