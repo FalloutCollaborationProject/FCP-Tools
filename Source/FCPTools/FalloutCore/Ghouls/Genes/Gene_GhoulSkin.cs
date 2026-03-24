@@ -1,6 +1,3 @@
-using RimWorld;
-using Verse;
-
 namespace FCP.Core.Ghouls
 {
     public class Gene_GhoulSkin : Gene

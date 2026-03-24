@@ -1,6 +1,3 @@
-using Verse;
-using RimWorld;
-
 namespace FCP.Core
 {
     public class CharacterUniqueItemDefinition : CharacterBaseDefinition

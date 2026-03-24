@@ -1,7 +1,3 @@
-using RimWorld;
-using System.Linq;
-using Verse;
-
 namespace FCP.Core.Ghouls
 {
     public class Gene_Ghoul_GlowingOne : Gene

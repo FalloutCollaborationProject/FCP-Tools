@@ -1,4 +1,3 @@
-using Verse;
 using Verse.AI;
 
 namespace FCP.Core.Ghouls

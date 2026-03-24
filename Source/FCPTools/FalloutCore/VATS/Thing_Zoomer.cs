@@ -1,6 +1,4 @@
-﻿using FCP.Core;
-
-namespace FCP.Core.VATS;
+﻿namespace FCP.Core.VATS;
 
 public class Thing_Zoomer : ThingWithComps
 {

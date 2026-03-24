@@ -1,13 +1,3 @@
-using RimWorld.BaseGen;
-using RimWorld.Planet;
-using RimWorld;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Verse;
-
 namespace FCP.Core.RadiantQuests
 {
     public class GenStep_PawnRescueAnimal : GenStep

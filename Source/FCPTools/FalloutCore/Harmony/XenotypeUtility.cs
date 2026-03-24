@@ -1,6 +1,3 @@
-using RimWorld;
-using Verse;
-
 namespace FCP.Core
 {
 	public static class XenotypeUtility

@@ -1,5 +1,4 @@
-﻿using FCP.Core;
-using HarmonyLib;
+﻿using HarmonyLib;
 using UnityEngine;
 using Verse.AI;
 

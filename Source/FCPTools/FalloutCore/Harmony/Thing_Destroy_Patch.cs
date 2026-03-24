@@ -1,6 +1,4 @@
 using HarmonyLib;
-using Verse;
-using RimWorld.Planet;
 
 namespace FCP.Core
 {

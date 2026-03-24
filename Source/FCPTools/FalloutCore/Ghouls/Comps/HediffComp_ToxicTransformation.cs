@@ -1,5 +1,3 @@
-using Verse;
-
 namespace FCP.Core.Ghouls
 {
     public class HediffComp_ToxicTransformation : HediffComp

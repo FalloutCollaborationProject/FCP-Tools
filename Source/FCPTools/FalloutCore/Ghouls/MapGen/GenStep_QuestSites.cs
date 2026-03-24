@@ -2,114 +2,113 @@ using RimWorld;
 using RimWorld.Planet;
 using Verse;
 
-namespace FCP.Core.Ghouls
+namespace FCP.Core.Ghouls;
+
+public class GenStep_FeralGhoulNest : GenStep
 {
-    public class GenStep_FeralGhoulNest : GenStep
+    public PawnKindDef pawnKindDef;
+    public int minGhouls = 8;
+    public int maxGhouls = 16;
+
+    private static GeneDef feralityGeneDef;
+    private static MentalStateDef berserkDef;
+
+    public override int SeedPart => 982347123;
+
+    public override void Generate(Map map, GenStepParams parms)
     {
-        public PawnKindDef pawnKindDef;
-        public int minGhouls = 8;
-        public int maxGhouls = 16;
+        if (!ModsConfig.BiotechActive || pawnKindDef == null) return;
 
-        private static GeneDef feralityGeneDef;
-        private static MentalStateDef berserkDef;
+        feralityGeneDef ??= DefDatabase<GeneDef>.GetNamed("FCP_Gene_Ferality", false);
+        berserkDef ??= DefDatabase<MentalStateDef>.GetNamed("FCP_MentalState_PermanentBerserk", false);
 
-        public override int SeedPart => 982347123;
+        int count = Rand.RangeInclusive(minGhouls, maxGhouls);
+        IntVec3 center = map.Center;
 
-        public override void Generate(Map map, GenStepParams parms)
+        for (int i = 0; i < count; i++)
         {
-            if (!ModsConfig.BiotechActive || pawnKindDef == null) return;
+            if (!CellFinder.TryFindRandomCellNear(center, map, 30, c => c.Standable(map) && !c.Fogged(map), out IntVec3 loc)) 
+                continue;
 
-            feralityGeneDef ??= DefDatabase<GeneDef>.GetNamed("FCP_Gene_Ferality", false);
-            berserkDef ??= DefDatabase<MentalStateDef>.GetNamed("FCP_MentalState_PermanentBerserk", false);
-
-            int count = Rand.RangeInclusive(minGhouls, maxGhouls);
-            IntVec3 center = map.Center;
-
-            for (int i = 0; i < count; i++)
-            {
-                if (!CellFinder.TryFindRandomCellNear(center, map, 30, c => c.Standable(map) && !c.Fogged(map), out IntVec3 loc)) 
-                    continue;
-
-                Pawn ghoul = PawnGenerator.GeneratePawn(pawnKindDef, null);
-                EnsureFeralityGene(ghoul);
-                GenSpawn.Spawn(ghoul, loc, map);
+            Pawn ghoul = PawnGenerator.GeneratePawn(pawnKindDef, null);
+            EnsureFeralityGene(ghoul);
+            GenSpawn.Spawn(ghoul, loc, map);
                 
-                if (berserkDef != null)
-                    ghoul.mindState.mentalStateHandler.TryStartMentalState(berserkDef, forceWake: true);
-            }
-        }
-
-        private void EnsureFeralityGene(Pawn pawn)
-        {
-            var gene = pawn.genes?.GetFirstGeneOfType<Gene_Ferality>();
-            if (gene == null && feralityGeneDef != null && pawn.genes != null)
-            {
-                pawn.genes.AddGene(feralityGeneDef, false);
-                gene = pawn.genes.GetFirstGeneOfType<Gene_Ferality>();
-            }
-            gene?.SetFerality(100f);
+            if (berserkDef != null)
+                ghoul.mindState.mentalStateHandler.TryStartMentalState(berserkDef, forceWake: true);
         }
     }
 
-    public class GenStep_GlowingOne : GenStep
+    private void EnsureFeralityGene(Pawn pawn)
     {
-        public PawnKindDef pawnKindDef;
-        public bool glowingOneIsBerserk;
-
-        private static GeneDef feralityGeneDef;
-        private static MentalStateDef berserkDef;
-        private static PawnKindDef feralKindDef;
-
-        public override int SeedPart => 723491823;
-
-        public override void Generate(Map map, GenStepParams parms)
+        var gene = pawn.genes?.GetFirstGeneOfType<Gene_Ferality>();
+        if (gene == null && feralityGeneDef != null && pawn.genes != null)
         {
-            if (!ModsConfig.BiotechActive || pawnKindDef == null) return;
+            pawn.genes.AddGene(feralityGeneDef, false);
+            gene = pawn.genes.GetFirstGeneOfType<Gene_Ferality>();
+        }
+        gene?.SetFerality(100f);
+    }
+}
 
-            feralityGeneDef ??= DefDatabase<GeneDef>.GetNamed("FCP_Gene_Ferality", false);
-            berserkDef ??= DefDatabase<MentalStateDef>.GetNamed("FCP_MentalState_PermanentBerserk", false);
-            feralKindDef ??= DefDatabase<PawnKindDef>.GetNamed("FCP_Pawnkind_Ghoul_Feral", false);
+public class GenStep_GlowingOne : GenStep
+{
+    public PawnKindDef pawnKindDef;
+    public bool glowingOneIsBerserk;
 
-            if (!CellFinder.TryFindRandomCellNear(map.Center, map, 15, c => c.Standable(map) && !c.Fogged(map), out IntVec3 loc)) 
-                return;
+    private static GeneDef feralityGeneDef;
+    private static MentalStateDef berserkDef;
+    private static PawnKindDef feralKindDef;
 
-            Pawn glowingOne = PawnGenerator.GeneratePawn(pawnKindDef, null);
-            EnsureFeralityGene(glowingOne);
-            GenSpawn.Spawn(glowingOne, loc, map);
+    public override int SeedPart => 723491823;
+
+    public override void Generate(Map map, GenStepParams parms)
+    {
+        if (!ModsConfig.BiotechActive || pawnKindDef == null) return;
+
+        feralityGeneDef ??= DefDatabase<GeneDef>.GetNamed("FCP_Gene_Ferality", false);
+        berserkDef ??= DefDatabase<MentalStateDef>.GetNamed("FCP_MentalState_PermanentBerserk", false);
+        feralKindDef ??= DefDatabase<PawnKindDef>.GetNamed("FCP_Pawnkind_Ghoul_Feral", false);
+
+        if (!CellFinder.TryFindRandomCellNear(map.Center, map, 15, c => c.Standable(map) && !c.Fogged(map), out IntVec3 loc)) 
+            return;
+
+        Pawn glowingOne = PawnGenerator.GeneratePawn(pawnKindDef, null);
+        EnsureFeralityGene(glowingOne);
+        GenSpawn.Spawn(glowingOne, loc, map);
             
-            if (glowingOneIsBerserk && berserkDef != null)
-                glowingOne.mindState.mentalStateHandler.TryStartMentalState(berserkDef, forceWake: true);
+        if (glowingOneIsBerserk && berserkDef != null)
+            glowingOne.mindState.mentalStateHandler.TryStartMentalState(berserkDef, forceWake: true);
 
-            SpawnGuards(loc, map);
-        }
+        SpawnGuards(loc, map);
+    }
 
-        private void SpawnGuards(IntVec3 center, Map map)
+    private void SpawnGuards(IntVec3 center, Map map)
+    {
+        if (feralKindDef == null) return;
+
+        for (int i = 0; i < Rand.RangeInclusive(2, 4); i++)
         {
-            if (feralKindDef == null) return;
+            if (!CellFinder.TryFindRandomCellNear(center, map, 8, c => c.Standable(map) && !c.Fogged(map), out IntVec3 guardLoc)) 
+                continue;
 
-            for (int i = 0; i < Rand.RangeInclusive(2, 4); i++)
-            {
-                if (!CellFinder.TryFindRandomCellNear(center, map, 8, c => c.Standable(map) && !c.Fogged(map), out IntVec3 guardLoc)) 
-                    continue;
-
-                Pawn guard = PawnGenerator.GeneratePawn(feralKindDef, null);
-                EnsureFeralityGene(guard);
-                GenSpawn.Spawn(guard, guardLoc, map);
+            Pawn guard = PawnGenerator.GeneratePawn(feralKindDef, null);
+            EnsureFeralityGene(guard);
+            GenSpawn.Spawn(guard, guardLoc, map);
                 
-                if (berserkDef != null)
-                    guard.mindState.mentalStateHandler.TryStartMentalState(berserkDef, forceWake: true);
-            }
+            if (berserkDef != null)
+                guard.mindState.mentalStateHandler.TryStartMentalState(berserkDef, forceWake: true);
         }
+    }
 
-        private void EnsureFeralityGene(Pawn pawn)
+    private void EnsureFeralityGene(Pawn pawn)
+    {
+        var gene = pawn.genes?.GetFirstGeneOfType<Gene_Ferality>();
+        if (gene == null && feralityGeneDef != null && pawn.genes != null)
         {
-            var gene = pawn.genes?.GetFirstGeneOfType<Gene_Ferality>();
-            if (gene == null && feralityGeneDef != null && pawn.genes != null)
-            {
-                pawn.genes.AddGene(feralityGeneDef, false);
-                gene = pawn.genes.GetFirstGeneOfType<Gene_Ferality>();
-            }
-            gene?.SetFerality(100f);
+            pawn.genes.AddGene(feralityGeneDef, false);
+            gene = pawn.genes.GetFirstGeneOfType<Gene_Ferality>();
         }
+        gene?.SetFerality(100f);
     }
 }

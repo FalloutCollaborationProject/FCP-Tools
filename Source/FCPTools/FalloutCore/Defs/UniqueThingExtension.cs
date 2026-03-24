@@ -1,5 +1,3 @@
-using Verse;
-
 namespace FCP.Core
 {
     [UsedImplicitly]

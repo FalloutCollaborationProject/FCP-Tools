@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using FCP.Core;
-using RimWorld;
-using Verse;
+﻿using FCP.Core;
 
 public class CompUseEffect_ItemBox : CompUseEffect
 {

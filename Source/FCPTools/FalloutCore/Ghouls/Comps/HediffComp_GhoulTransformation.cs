@@ -1,5 +1,3 @@
-using RimWorld;
-using Verse;
 using UnityEngine;
 
 namespace FCP.Core.Ghouls

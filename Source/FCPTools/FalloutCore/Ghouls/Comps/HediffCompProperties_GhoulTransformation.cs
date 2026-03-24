@@ -1,5 +1,3 @@
-using Verse;
-
 namespace FCP.Core.Ghouls
 {
     public class HediffCompProperties_GhoulTransformation : HediffCompProperties

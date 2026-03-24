@@ -1,8 +1,6 @@
 ﻿using HarmonyLib;
-using System;
 using System.Collections.Concurrent;
 using System.Reflection;
-using Verse;
 
 namespace FCP.Core
 {
