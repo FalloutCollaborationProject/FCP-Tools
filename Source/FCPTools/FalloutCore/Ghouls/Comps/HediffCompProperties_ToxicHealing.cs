@@ -1,12 +1,9 @@
-using Verse;
+namespace FCP.Core.Ghouls;
 
-namespace FCP.Core.Ghouls
+public class HediffCompProperties_ToxicHealing : HediffCompProperties
 {
-    public class HediffCompProperties_ToxicHealing : HediffCompProperties
+    public HediffCompProperties_ToxicHealing()
     {
-        public HediffCompProperties_ToxicHealing()
-        {
-            compClass = typeof(HediffComp_ToxicHealing);
-        }
+        compClass = typeof(HediffComp_ToxicHealing);
     }
 }

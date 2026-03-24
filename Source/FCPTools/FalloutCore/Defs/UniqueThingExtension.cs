@@ -1,9 +1,6 @@
-using Verse;
+namespace FCP.Core;
 
-namespace FCP.Core
+[UsedImplicitly]
+public class UniqueThingExtension : DefModExtension
 {
-    [UsedImplicitly]
-    public class UniqueThingExtension : DefModExtension
-    {
-    }
 }

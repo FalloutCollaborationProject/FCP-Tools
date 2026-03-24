@@ -6,20 +6,18 @@ using System.Text;
 using System.Threading.Tasks;
 using Verse;
 
-namespace FCP.Core.RadiantQuests
+namespace FCP.Core.RadiantQuests;
+
+[UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
+public class CompProperties_AnimalCage : CompProperties_Refuelable
 {
-    [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-    public class CompProperties_AnimalCage : CompProperties_Refuelable
+    public float maxBodySize = 1f;
+    public float minBodySize = 0f;
+    public int ticksForCaptureChance = 60000;
+    public float captureChance = 0.5f; 
+    public List<PawnKindDef> animalsThatGetCaught = new List<PawnKindDef>();
+    public CompProperties_AnimalCage()
     {
-        public float maxBodySize = 1f;
-        public float minBodySize = 0f;
-        public int ticksForCaptureChance = 60000;
-        public float captureChance = 0.5f; 
-        public List<PawnKindDef> animalsThatGetCaught = new List<PawnKindDef>();
-        public CompProperties_AnimalCage()
-        {
-            compClass = typeof(CompAnimalCage);
-        }
+        compClass = typeof(CompAnimalCage);
     }
 }
-

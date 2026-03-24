@@ -1,5 +1,4 @@
 using System.Globalization;
-using UnityEngine;
 
 namespace FCP.Core.Stims;
 

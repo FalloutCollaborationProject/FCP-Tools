@@ -1,5 +1,4 @@
-﻿using FCP.Core;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace FCP.Core.VATS;
 
