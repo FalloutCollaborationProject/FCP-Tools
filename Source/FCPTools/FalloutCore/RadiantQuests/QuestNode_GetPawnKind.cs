@@ -1,37 +1,35 @@
 using RimWorld.QuestGen;
 
-namespace FCP.Core.RadiantQuests
+namespace FCP.Core.RadiantQuests;
+
+public class QuestNode_GetPawnKind : QuestNode
 {
-    public class QuestNode_GetPawnKind : QuestNode
+    [NoTranslate]
+    public SlateRef<string> storeAs;
+
+    public SlateRef<string> pawnKindDef;
+
+    protected override bool TestRunInt(Slate slate)
     {
-        [NoTranslate]
-        public SlateRef<string> storeAs;
-
-        public SlateRef<string> pawnKindDef;
-
-        protected override bool TestRunInt(Slate slate)
+        if (DefDatabase<PawnKindDef>.AllDefsListForReading.Any(c => c.defName == pawnKindDef.GetValue(slate)))
         {
-            if (DefDatabase<PawnKindDef>.AllDefsListForReading.Any(c => c.defName == pawnKindDef.GetValue(slate)))
-            {
-                FCPLog.Verbose("pawnkind exist");
-                SetVars(slate);
-                return true;
-            }
-            FCPLog.Verbose("pawnkind dont exist");
-            return false;
+            FCPLog.Verbose("pawnkind exist");
+            SetVars(slate);
+            return true;
         }
+        FCPLog.Verbose("pawnkind dont exist");
+        return false;
+    }
 
-        protected override void RunInt()
-        {
-            SetVars(QuestGen.slate);
-        }
+    protected override void RunInt()
+    {
+        SetVars(QuestGen.slate);
+    }
 
-        private void SetVars(Slate slate)
-        {
-            PawnKindDef def = DefDatabase<PawnKindDef>.AllDefsListForReading.Where(c => c.defName == pawnKindDef.GetValue(slate)).First();
-            FCPLog.Verbose(def.defName);
-            slate.Set(storeAs.GetValue(slate), def);
-        }
+    private void SetVars(Slate slate)
+    {
+        PawnKindDef def = DefDatabase<PawnKindDef>.AllDefsListForReading.Where(c => c.defName == pawnKindDef.GetValue(slate)).First();
+        FCPLog.Verbose(def.defName);
+        slate.Set(storeAs.GetValue(slate), def);
     }
 }
-

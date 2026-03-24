@@ -4,33 +4,33 @@ using Verse.Grammar;
 using UnityEngine;
 
 
-namespace FCP.Core.RadiantQuests
+namespace FCP.Core.RadiantQuests;
+
+public class SitePartWorker_PawnRescueAnimal : SitePartWorker
 {
-    public class SitePartWorker_PawnRescueAnimal : SitePartWorker
+    public override void Notify_GeneratedByQuestGen(SitePart part, Slate slate, List<Rule> outExtraDescriptionRules, Dictionary<string, string> outExtraDescriptionConstants)
     {
-        public override void Notify_GeneratedByQuestGen(SitePart part, Slate slate, List<Rule> outExtraDescriptionRules, Dictionary<string, string> outExtraDescriptionConstants)
+        base.Notify_GeneratedByQuestGen(part, slate, outExtraDescriptionRules, outExtraDescriptionConstants);
+        int enemiesCount = GetEnemiesCount(part.site, part.parms);
+        outExtraDescriptionRules.Add(new Rule_String("enemiesCount", enemiesCount.ToString()));
+        outExtraDescriptionRules.Add(new Rule_String("enemiesLabel", GetEnemiesLabel(part.site, enemiesCount)));
+        Pawn pawn = PawnRescueUtility.GeneratePrisonerAnimal(part.site.Tile, slate.Get<PawnKindDef>("prisonerPawnKind", PawnKindDefOf.Slave), slate.Get<Faction>("prisonerFaction"));
+        FCPLog.Verbose(slate.Get<float>("chanceToJoin"));
+        FCPLog.Verbose(slate.Get<float>("chanceToJoinVal"));
+        if (slate.Get<float>("chanceToJoin") >= slate.Get<float>("chanceToJoinVal"))
         {
-            base.Notify_GeneratedByQuestGen(part, slate, outExtraDescriptionRules, outExtraDescriptionConstants);
-            int enemiesCount = GetEnemiesCount(part.site, part.parms);
-            outExtraDescriptionRules.Add(new Rule_String("enemiesCount", enemiesCount.ToString()));
-            outExtraDescriptionRules.Add(new Rule_String("enemiesLabel", GetEnemiesLabel(part.site, enemiesCount)));
-            Pawn pawn = PawnRescueUtility.GeneratePrisonerAnimal(part.site.Tile, slate.Get<PawnKindDef>("prisonerPawnKind", PawnKindDefOf.Slave), slate.Get<Faction>("prisonerFaction"));
-            FCPLog.Verbose(slate.Get<float>("chanceToJoin"));
-            FCPLog.Verbose(slate.Get<float>("chanceToJoinVal"));
-            if (slate.Get<float>("chanceToJoin") >= slate.Get<float>("chanceToJoinVal"))
-            {
-                FCPLog.Verbose("Pawn will join");
-                PawnRescueUtility.prisonersWillingJoin.Add(pawn);
-            }
-            part.things = new ThingOwner<Thing>(part, false);
-            part.things.TryAdd(pawn);
-            part.things.TryAdd(ThingMaker.MakeThing(slate.Get<ThingDef>("cageDef")), false);
-            PawnRelationUtility.Notify_PawnsSeenByPlayer(Gen.YieldSingle(pawn), out var pawnRelationsInfo, informEvenIfSeenBefore: true, writeSeenPawnsNames: false);
-            string output = (pawnRelationsInfo.NullOrEmpty() ? "" : ((string)("\n\n" + "PawnHasTheseRelationshipsWithColonists".Translate(pawn.LabelShort, pawn) + "\n\n" + pawnRelationsInfo)));
-            slate.Set("prisoner", pawn);
-            outExtraDescriptionRules.Add(new Rule_String("prisonerFullRelationInfo", output));
+            FCPLog.Verbose("Pawn will join");
+            PawnRescueUtility.prisonersWillingJoin.Add(pawn);
         }
-        public static readonly SimpleCurve ThreatPointsLootMarketValue = new SimpleCurve
+        part.things = new ThingOwner<Thing>(part, false);
+        part.things.TryAdd(pawn);
+        part.things.TryAdd(ThingMaker.MakeThing(slate.Get<ThingDef>("cageDef")), false);
+        PawnRelationUtility.Notify_PawnsSeenByPlayer(Gen.YieldSingle(pawn), out var pawnRelationsInfo, informEvenIfSeenBefore: true, writeSeenPawnsNames: false);
+        string output = (pawnRelationsInfo.NullOrEmpty() ? "" : ((string)("\n\n" + "PawnHasTheseRelationshipsWithColonists".Translate(pawn.LabelShort, pawn) + "\n\n" + pawnRelationsInfo)));
+        slate.Set("prisoner", pawn);
+        outExtraDescriptionRules.Add(new Rule_String("prisonerFullRelationInfo", output));
+    }
+    public static readonly SimpleCurve ThreatPointsLootMarketValue = new SimpleCurve
     {
         new CurvePoint(100f, 200f),
         new CurvePoint(250f, 450f),
@@ -38,59 +38,57 @@ namespace FCP.Core.RadiantQuests
         new CurvePoint(10000f, 2000f)
     };
 
-        public override string GetArrivedLetterPart(Map map, out LetterDef preferredLetterDef, out LookTargets lookTargets)
+    public override string GetArrivedLetterPart(Map map, out LetterDef preferredLetterDef, out LookTargets lookTargets)
+    {
+        string arrivedLetterPart = base.GetArrivedLetterPart(map, out preferredLetterDef, out lookTargets);
+        lookTargets = new LookTargets(map.Parent);
+        return arrivedLetterPart;
+    }
+    public override string GetPostProcessedThreatLabel(Site site, SitePart sitePart)
+    {
+        string text = base.GetPostProcessedThreatLabel(site, sitePart) + ": " + "KnownSiteThreatEnemyCountAppend".Translate(GetEnemiesCount(site, sitePart.parms), "Enemies".Translate());
+        if (sitePart.things != null && sitePart.things.Any)
         {
-            string arrivedLetterPart = base.GetArrivedLetterPart(map, out preferredLetterDef, out lookTargets);
-            lookTargets = new LookTargets(map.Parent);
-            return arrivedLetterPart;
+            text = text + "\nPrisoners: " + sitePart.things[0].LabelShortCap;
         }
-        public override string GetPostProcessedThreatLabel(Site site, SitePart sitePart)
+        if (site.HasWorldObjectTimeout)
         {
-            string text = base.GetPostProcessedThreatLabel(site, sitePart) + ": " + "KnownSiteThreatEnemyCountAppend".Translate(GetEnemiesCount(site, sitePart.parms), "Enemies".Translate());
-            if (sitePart.things != null && sitePart.things.Any)
-            {
-                text = text + "\nPrisoners: " + sitePart.things[0].LabelShortCap;
-            }
-            if (site.HasWorldObjectTimeout)
-            {
-                text += " (" + "DurationLeft".Translate(site.WorldObjectTimeoutTicksLeft.ToStringTicksToPeriod()) + ")";
-            }
-            return text;
+            text += " (" + "DurationLeft".Translate(site.WorldObjectTimeoutTicksLeft.ToStringTicksToPeriod()) + ")";
         }
+        return text;
+    }
 
-        public override SitePartParams GenerateDefaultParams(float myThreatPoints, PlanetTile tile, Faction faction)
-        {
-            SitePartParams sitePartParams = base.GenerateDefaultParams(myThreatPoints, tile, faction);
-            sitePartParams.threatPoints = Mathf.Max(sitePartParams.threatPoints, faction.def.MinPointsToGeneratePawnGroup(PawnGroupKindDefOf.Settlement));
-            sitePartParams.lootMarketValue = ThreatPointsLootMarketValue.Evaluate(sitePartParams.threatPoints);
-            return sitePartParams;
-        }
+    public override SitePartParams GenerateDefaultParams(float myThreatPoints, PlanetTile tile, Faction faction)
+    {
+        SitePartParams sitePartParams = base.GenerateDefaultParams(myThreatPoints, tile, faction);
+        sitePartParams.threatPoints = Mathf.Max(sitePartParams.threatPoints, faction.def.MinPointsToGeneratePawnGroup(PawnGroupKindDefOf.Settlement));
+        sitePartParams.lootMarketValue = ThreatPointsLootMarketValue.Evaluate(sitePartParams.threatPoints);
+        return sitePartParams;
+    }
 
-        protected int GetEnemiesCount(Site site, SitePartParams parms)
+    protected int GetEnemiesCount(Site site, SitePartParams parms)
+    {
+        return PawnGroupMakerUtility.GeneratePawnKindsExample(new PawnGroupMakerParms
         {
-            return PawnGroupMakerUtility.GeneratePawnKindsExample(new PawnGroupMakerParms
-            {
-                tile = site.Tile,
-                faction = site.Faction,
-                groupKind = PawnGroupKindDefOf.Settlement,
-                points = parms.threatPoints,
-                inhabitants = true,
-                seed = OutpostSitePartUtility.GetPawnGroupMakerSeed(parms)
-            }).Count();
-        }
+            tile = site.Tile,
+            faction = site.Faction,
+            groupKind = PawnGroupKindDefOf.Settlement,
+            points = parms.threatPoints,
+            inhabitants = true,
+            seed = OutpostSitePartUtility.GetPawnGroupMakerSeed(parms)
+        }).Count();
+    }
 
-        protected string GetEnemiesLabel(Site site, int enemiesCount)
+    protected string GetEnemiesLabel(Site site, int enemiesCount)
+    {
+        if (site.Faction == null)
         {
-            if (site.Faction == null)
-            {
-                return (enemiesCount == 1) ? "Enemy".Translate() : "Enemies".Translate();
-            }
-            if (enemiesCount != 1)
-            {
-                return site.Faction.def.pawnsPlural;
-            }
-            return site.Faction.def.pawnSingular;
+            return (enemiesCount == 1) ? "Enemy".Translate() : "Enemies".Translate();
         }
+        if (enemiesCount != 1)
+        {
+            return site.Faction.def.pawnsPlural;
+        }
+        return site.Faction.def.pawnSingular;
     }
 }
-

@@ -1,16 +1,15 @@
 using HarmonyLib;
 
-namespace FCP.Core
+namespace FCP.Core;
+
+[HarmonyPatch(typeof(Thing), nameof(Thing.Destroy))]
+public static class Thing_Destroy_Patch
 {
-    [HarmonyPatch(typeof(Thing), nameof(Thing.Destroy))]
-    public static class Thing_Destroy_Patch
+    public static void Prefix(Thing __instance)
     {
-        public static void Prefix(Thing __instance)
+        if (__instance.def.HasModExtension<UniqueThingExtension>())
         {
-            if (__instance.def.HasModExtension<UniqueThingExtension>())
-            {
-                UniqueCharactersTracker.Instance.Notify_UniqueThingDestroyed(__instance.def);
-            }
+            UniqueCharactersTracker.Instance.Notify_UniqueThingDestroyed(__instance.def);
         }
     }
 }

@@ -1,33 +1,32 @@
-namespace FCP.Core.Ghouls
-{
-    public class Gene_ToxicHealing : Gene
-    {
-        public override void PostAdd()
-        {
-            base.PostAdd();
-            
-            // Add a hediff that does the actual work
-            if (!pawn.health.hediffSet.HasHediff(HediffDefOf_Ghoul.ToxicHealing))
-            {
-                pawn.health.AddHediff(HediffDefOf_Ghoul.ToxicHealing);
-            }
-        }
+namespace FCP.Core.Ghouls;
 
-        public override void PostRemove()
-        {
-            base.PostRemove();
+public class Gene_ToxicHealing : Gene
+{
+    public override void PostAdd()
+    {
+        base.PostAdd();
             
-            var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf_Ghoul.ToxicHealing);
-            if (hediff != null)
-            {
-                pawn.health.RemoveHediff(hediff);
-            }
+        // Add a hediff that does the actual work
+        if (!pawn.health.hediffSet.HasHediff(HediffDefOf_Ghoul.ToxicHealing))
+        {
+            pawn.health.AddHediff(HediffDefOf_Ghoul.ToxicHealing);
         }
     }
-    
-    [DefOf]
-    public static class HediffDefOf_Ghoul
+
+    public override void PostRemove()
     {
-        public static HediffDef ToxicHealing;
+        base.PostRemove();
+            
+        var hediff = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf_Ghoul.ToxicHealing);
+        if (hediff != null)
+        {
+            pawn.health.RemoveHediff(hediff);
+        }
     }
+}
+    
+[DefOf]
+public static class HediffDefOf_Ghoul
+{
+    public static HediffDef ToxicHealing;
 }

@@ -1,7 +1,6 @@
-﻿namespace FCP.Core
+﻿namespace FCP.Core;
+
+public class CompTemperatureApparelPreference : ThingComp
 {
-    public class CompTemperatureApparelPreference : ThingComp
-    {
-        public CompProperties_TemperatureApparelPreference Props => (CompProperties_TemperatureApparelPreference)props;
-    }
+    public CompProperties_TemperatureApparelPreference Props => (CompProperties_TemperatureApparelPreference)props;
 }

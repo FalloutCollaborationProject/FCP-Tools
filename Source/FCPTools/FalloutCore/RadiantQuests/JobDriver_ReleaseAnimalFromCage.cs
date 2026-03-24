@@ -1,46 +1,44 @@
 using Verse.AI;
 
-namespace FCP.Core.RadiantQuests
+namespace FCP.Core.RadiantQuests;
+
+public class JobDriver_ReleaseAnimalFromCage : JobDriver
 {
-    public class JobDriver_ReleaseAnimalFromCage : JobDriver
+    private const TargetIndex CasketInd = TargetIndex.A;
+
+    public CompAnimalCage Cage => job.targetA.Thing.TryGetComp<CompAnimalCage>();
+
+    public override bool TryMakePreToilReservations(bool errorOnFailed)
     {
-        private const TargetIndex CasketInd = TargetIndex.A;
+        return pawn.Reserve(Cage.parent, job, 1, -1, null, errorOnFailed);
+    }
 
-        public CompAnimalCage Cage => job.targetA.Thing.TryGetComp<CompAnimalCage>();
-
-        public override bool TryMakePreToilReservations(bool errorOnFailed)
+    protected override IEnumerable<Toil> MakeNewToils()
+    {
+        this.FailOnDestroyedOrNull(TargetIndex.A);
+        yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.InteractionCell);
+        yield return PrepareToReleaseToil(TargetIndex.A);
+        Toil enter = ToilMaker.MakeToil("MakeNewToils");
+        enter.initAction = delegate
         {
-            return pawn.Reserve(Cage.parent, job, 1, -1, null, errorOnFailed);
-        }
-
-        protected override IEnumerable<Toil> MakeNewToils()
-        {
-            this.FailOnDestroyedOrNull(TargetIndex.A);
-            yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.InteractionCell);
-            yield return PrepareToReleaseToil(TargetIndex.A);
-            Toil enter = ToilMaker.MakeToil("MakeNewToils");
-            enter.initAction = delegate
+            if (PawnRescueUtility.prisonersWillingJoin.Contains(Cage.Occupant))
             {
-                if (PawnRescueUtility.prisonersWillingJoin.Contains(Cage.Occupant))
-                {
-                    InteractionWorker_RecruitAttempt.DoRecruit(pawn, Cage.Occupant, useAudiovisualEffects: false);
-                    PawnRescueUtility.prisonersWillingJoin.Remove(Cage.Occupant);
+                InteractionWorker_RecruitAttempt.DoRecruit(pawn, Cage.Occupant, useAudiovisualEffects: false);
+                PawnRescueUtility.prisonersWillingJoin.Remove(Cage.Occupant);
 
-                }
-                Cage.EjectContents(Map);
-            };
-            enter.defaultCompleteMode = ToilCompleteMode.Instant;
+            }
+            Cage.EjectContents(Map);
+        };
+        enter.defaultCompleteMode = ToilCompleteMode.Instant;
 
-            yield return enter;
-        }
+        yield return enter;
+    }
 
-        public static Toil PrepareToReleaseToil(TargetIndex CageIndex)
-        {
-            Toil toil = Toils_General.Wait(70);
-            toil.FailOnCannotTouch(CageIndex, PathEndMode.InteractionCell);
-            toil.WithProgressBarToilDelay(CageIndex);
-            return toil;
-        }
+    public static Toil PrepareToReleaseToil(TargetIndex CageIndex)
+    {
+        Toil toil = Toils_General.Wait(70);
+        toil.FailOnCannotTouch(CageIndex, PathEndMode.InteractionCell);
+        toil.WithProgressBarToilDelay(CageIndex);
+        return toil;
     }
 }
-

@@ -1,87 +1,85 @@
 using RimWorld.Planet;
 using RimWorld.QuestGen;
 
-namespace FCP.Core.RadiantQuests
+namespace FCP.Core.RadiantQuests;
+
+public class QuestNode_GetSitePartDefsByTagsAndFaction : QuestNode
 {
-    public class QuestNode_GetSitePartDefsByTagsAndFaction : QuestNode
+    public class SitePartOption
     {
-        public class SitePartOption
-        {
-            [NoTranslate]
-            public string tag;
-
-            public float chance = 1f;
-        }
-
-        public SlateRef<IEnumerable<SitePartOption>> sitePartsTags;
-        public SlateRef<Faction> factionToUse;
-
         [NoTranslate]
-        public SlateRef<string> storeAs;
+        public string tag;
 
-        [NoTranslate]
-        public SlateRef<string> storeFactionAs;
+        public float chance = 1f;
+    }
+
+    public SlateRef<IEnumerable<SitePartOption>> sitePartsTags;
+    public SlateRef<Faction> factionToUse;
+
+    [NoTranslate]
+    public SlateRef<string> storeAs;
+
+    [NoTranslate]
+    public SlateRef<string> storeFactionAs;
 
 
-        private static List<string> tmpTags = new List<string>();
+    private static List<string> tmpTags = new List<string>();
 
-        protected override bool TestRunInt(Slate slate)
+    protected override bool TestRunInt(Slate slate)
+    {
+        return TrySetVars(slate);
+    }
+
+    protected override void RunInt()
+    {
+        if (!TrySetVars(QuestGen.slate))
         {
-            return TrySetVars(slate);
+            FCPLog.Error("Could not resolve site parts.");
         }
+    }
 
-        protected override void RunInt()
+    private bool TrySetVars(Slate slate)
+    {
+        FCPLog.Verbose("Setting vars");
+        float points = slate.Get("points", 0f);
+        FCPLog.Verbose(points);
+        for (int i = 0; i < 2; i++)
         {
-            if (!TrySetVars(QuestGen.slate))
+            FCPLog.Verbose("Loop "+ i );
+            tmpTags.Clear();
+            foreach (SitePartOption item in sitePartsTags.GetValue(slate))
             {
-                FCPLog.Error("Could not resolve site parts.");
-            }
-        }
-
-        private bool TrySetVars(Slate slate)
-        {
-            FCPLog.Verbose("Setting vars");
-            float points = slate.Get("points", 0f);
-            FCPLog.Verbose(points);
-            for (int i = 0; i < 2; i++)
-            {
-                FCPLog.Verbose("Loop "+ i );
-                tmpTags.Clear();
-                foreach (SitePartOption item in sitePartsTags.GetValue(slate))
+                if (Rand.Chance(item.chance) && (i != 1 || !(item.chance < 1f)))
                 {
-                    if (Rand.Chance(item.chance) && (i != 1 || !(item.chance < 1f)))
-                    {
-                        tmpTags.Add(item.tag);
-                    }
+                    tmpTags.Add(item.tag);
                 }
-                if (!SiteMakerHelper.TryFindSiteParams_MultipleSiteParts(tmpTags.Where((string x) => x != null).Select(delegate (string x)
+            }
+            if (!SiteMakerHelper.TryFindSiteParams_MultipleSiteParts(tmpTags.Where((string x) => x != null).Select(delegate (string x)
                 {
                     IEnumerable<SitePartDef> enumerable = SiteMakerHelper.SitePartDefsWithTag(x);
                     IEnumerable<SitePartDef> enumerable2 = enumerable.Where((SitePartDef y) => points >= y.minThreatPoints);
                     return (!enumerable2.Any()) ? enumerable : enumerable2;
                 }), out var siteParts, out var faction, factionToUse.GetValue(slate), disallowNonHostileFactions: false, null))
-                {
-                    continue;
-                }
-                slate.Set(storeAs.GetValue(slate), siteParts);
-                slate.Set("sitePartCount", siteParts.Count);
-                if (QuestGen.Working)
-                {
-                    Dictionary<string, string> dictionary = new Dictionary<string, string>();
-                    for (int j = 0; j < siteParts.Count; j++)
-                    {
-                        dictionary[siteParts[j].defName + "_exists"] = "True";
-                    }
-                    QuestGen.AddQuestDescriptionConstants(dictionary);
-                }
-                if (!storeFactionAs.GetValue(slate).NullOrEmpty())
-                {
-                    slate.Set(storeFactionAs.GetValue(slate), faction);
-                }
-                return true;
+            {
+                continue;
             }
-            return false;
+            slate.Set(storeAs.GetValue(slate), siteParts);
+            slate.Set("sitePartCount", siteParts.Count);
+            if (QuestGen.Working)
+            {
+                Dictionary<string, string> dictionary = new Dictionary<string, string>();
+                for (int j = 0; j < siteParts.Count; j++)
+                {
+                    dictionary[siteParts[j].defName + "_exists"] = "True";
+                }
+                QuestGen.AddQuestDescriptionConstants(dictionary);
+            }
+            if (!storeFactionAs.GetValue(slate).NullOrEmpty())
+            {
+                slate.Set(storeFactionAs.GetValue(slate), faction);
+            }
+            return true;
         }
+        return false;
     }
 }
-

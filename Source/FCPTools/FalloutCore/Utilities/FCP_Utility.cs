@@ -1,12 +1,11 @@
-﻿namespace FCP.Core
+﻿namespace FCP.Core;
+
+public static class FCP_Utility
 {
-    public static class FCP_Utility
-    {
-        #region Global Constants
+    #region Global Constants
 
-        public const float MaxArmorValue = 8f;
+    public const float MaxArmorValue = 8f;
 
-        #endregion
+    #endregion
 
-    }
 }

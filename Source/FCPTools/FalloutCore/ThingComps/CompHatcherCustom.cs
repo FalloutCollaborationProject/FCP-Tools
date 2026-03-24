@@ -1,135 +1,134 @@
 ﻿using RimWorld.Planet;
 using UnityEngine;
-namespace FCP.Core
+namespace FCP.Core;
+
+public class CompHatcherCustom : CompHatcher
 {
-	public class CompHatcherCustom : CompHatcher
-	{
-		private float gestateProgress;
-		private new CompProperties_HatcherCustom Props => (CompProperties_HatcherCustom)props;
+    private float gestateProgress;
+    private new CompProperties_HatcherCustom Props => (CompProperties_HatcherCustom)props;
 
-		public override void CompTick()
-		{
-			if (!TemperatureDamaged)
-			{
-				float num = 1f / (Props.hatcherDaystoHatch * 60000f);
-				gestateProgress += num;
-				if (gestateProgress > 1f)
-				{
-					Hatch();
-				}
-				return;
-			}
-			CompProperties_EggLayer compProperties_EggLayer = Props.hatcherPawn?.race?.GetCompProperties<CompProperties_EggLayer>();
-			if (compProperties_EggLayer != null)
-			{
-				if (parent.ParentHolder is Pawn_CarryTracker pawn_CarryTracker)
-				{
-					pawn_CarryTracker.TryDropCarriedThing(parent.Position, ThingPlaceMode.Near, out var _);
-				}
-				if (parent.ParentHolder is CompEggContainer compEggContainer)
-				{
-					int stackCount = parent.stackCount;
-					compEggContainer.innerContainer.Remove(parent);
-					parent.Destroy();
-					Thing thing = ThingMaker.MakeThing(compProperties_EggLayer.eggUnfertilizedDef);
-					thing.stackCount = stackCount;
-					compEggContainer.innerContainer.TryAdd(thing);
-				}
-				else
-				{
-					Map mapHeld = parent.MapHeld;
-					IntVec3 positionHeld = parent.PositionHeld;
-					int stackCount2 = parent.stackCount;
-					parent.Destroy();
-					GenSpawn.Spawn(compProperties_EggLayer.eggUnfertilizedDef, positionHeld, mapHeld).stackCount = stackCount2;
-				}
-			}
-		}
+    public override void CompTick()
+    {
+        if (!TemperatureDamaged)
+        {
+            float num = 1f / (Props.hatcherDaystoHatch * 60000f);
+            gestateProgress += num;
+            if (gestateProgress > 1f)
+            {
+                Hatch();
+            }
+            return;
+        }
+        CompProperties_EggLayer compProperties_EggLayer = Props.hatcherPawn?.race?.GetCompProperties<CompProperties_EggLayer>();
+        if (compProperties_EggLayer != null)
+        {
+            if (parent.ParentHolder is Pawn_CarryTracker pawn_CarryTracker)
+            {
+                pawn_CarryTracker.TryDropCarriedThing(parent.Position, ThingPlaceMode.Near, out var _);
+            }
+            if (parent.ParentHolder is CompEggContainer compEggContainer)
+            {
+                int stackCount = parent.stackCount;
+                compEggContainer.innerContainer.Remove(parent);
+                parent.Destroy();
+                Thing thing = ThingMaker.MakeThing(compProperties_EggLayer.eggUnfertilizedDef);
+                thing.stackCount = stackCount;
+                compEggContainer.innerContainer.TryAdd(thing);
+            }
+            else
+            {
+                Map mapHeld = parent.MapHeld;
+                IntVec3 positionHeld = parent.PositionHeld;
+                int stackCount2 = parent.stackCount;
+                parent.Destroy();
+                GenSpawn.Spawn(compProperties_EggLayer.eggUnfertilizedDef, positionHeld, mapHeld).stackCount = stackCount2;
+            }
+        }
+    }
 
-		public new void Hatch()
-		{
-			try
-			{
-				PawnGenerationRequest request;
-				if (Rand.Chance(Props.secondaryOverrideChance))
-				{
-					request = new PawnGenerationRequest(Props.secondaryPawn, hatcheeFaction, PawnGenerationContext.NonPlayer, null, forceGenerateNewPawn: false, allowDead: false, allowDowned: false, canGeneratePawnRelations: true, mustBeCapableOfViolence: false, 1f, forceAddFreeWarmLayerIfNeeded: false, allowGay: true, allowPregnant: false, allowFood: true, allowAddictions: true, inhabitant: false, certainlyBeenInCryptosleep: false,
-					                                    forceRedressWorldPawnIfFormerColonist: false, worldPawnFactionDoesntMatter: false, 0f, 0f, null, 1f, null, null, null, null, null, null, null, null, null, null, null, null, forceNoIdeo: false, forceNoBackstory: false, forbidAnyTitle: false, forceDead: false, null, null, null, null, null, 0f, DevelopmentalStage.Newborn);
-				}
-				else
-				{
-					request = new PawnGenerationRequest(Props.hatcherPawn, hatcheeFaction, PawnGenerationContext.NonPlayer, null, forceGenerateNewPawn: false, allowDead: false, allowDowned: false, canGeneratePawnRelations: true, mustBeCapableOfViolence: false, 1f, forceAddFreeWarmLayerIfNeeded: false, allowGay: true, allowPregnant: false, allowFood: true, allowAddictions: true, inhabitant: false, certainlyBeenInCryptosleep: false,
-					                                    forceRedressWorldPawnIfFormerColonist: false, worldPawnFactionDoesntMatter: false, 0f, 0f, null, 1f, null, null, null, null, null, null, null, null, null, null, null, null, forceNoIdeo: false, forceNoBackstory: false, forbidAnyTitle: false, forceDead: false, null, null, null, null, null, 0f, DevelopmentalStage.Newborn);
-				}
-				if (parent.ParentHolder is Pawn_CarryTracker pawn_CarryTracker)
-				{
-					pawn_CarryTracker.TryDropCarriedThing(parent.PositionHeld, ThingPlaceMode.Near, out var _);
-				}
-				for (int i = 0; i < parent.stackCount; i++)
-				{
-					Pawn pawn = PawnGenerator.GeneratePawn(request);
-					if (PawnUtility.TrySpawnHatchedOrBornPawn(pawn, parent))
-					{
-						if (pawn != null)
-						{
-							if (hatcheeParent != null)
-							{
-								if (pawn.playerSettings != null && hatcheeParent.playerSettings != null && hatcheeParent.Faction == hatcheeFaction)
-								{
-									pawn.playerSettings.AreaRestrictionInPawnCurrentMap = hatcheeParent.playerSettings.AreaRestrictionInPawnCurrentMap;
-								}
-								if (pawn.RaceProps.IsFlesh)
-								{
-									pawn.relations.AddDirectRelation(PawnRelationDefOf.Parent, hatcheeParent);
-								}
-							}
-							if (otherParent != null && (hatcheeParent == null || hatcheeParent.gender != otherParent.gender) && pawn.RaceProps.IsFlesh)
-							{
-								pawn.relations.AddDirectRelation(PawnRelationDefOf.Parent, otherParent);
-							}
-						}
-						if (parent.Spawned)
-						{
-							FilthMaker.TryMakeFilth(parent.Position, parent.Map, ThingDefOf.Filth_AmnioticFluid);
-						}
-					}
-					else
-					{
-						Find.WorldPawns.PassToWorld(pawn, PawnDiscardDecideMode.Discard);
-					}
-				}
-			}
-			finally
-			{
-				parent.Destroy();
-			}
-		}
+    public new void Hatch()
+    {
+        try
+        {
+            PawnGenerationRequest request;
+            if (Rand.Chance(Props.secondaryOverrideChance))
+            {
+                request = new PawnGenerationRequest(Props.secondaryPawn, hatcheeFaction, PawnGenerationContext.NonPlayer, null, forceGenerateNewPawn: false, allowDead: false, allowDowned: false, canGeneratePawnRelations: true, mustBeCapableOfViolence: false, 1f, forceAddFreeWarmLayerIfNeeded: false, allowGay: true, allowPregnant: false, allowFood: true, allowAddictions: true, inhabitant: false, certainlyBeenInCryptosleep: false,
+                    forceRedressWorldPawnIfFormerColonist: false, worldPawnFactionDoesntMatter: false, 0f, 0f, null, 1f, null, null, null, null, null, null, null, null, null, null, null, null, forceNoIdeo: false, forceNoBackstory: false, forbidAnyTitle: false, forceDead: false, null, null, null, null, null, 0f, DevelopmentalStage.Newborn);
+            }
+            else
+            {
+                request = new PawnGenerationRequest(Props.hatcherPawn, hatcheeFaction, PawnGenerationContext.NonPlayer, null, forceGenerateNewPawn: false, allowDead: false, allowDowned: false, canGeneratePawnRelations: true, mustBeCapableOfViolence: false, 1f, forceAddFreeWarmLayerIfNeeded: false, allowGay: true, allowPregnant: false, allowFood: true, allowAddictions: true, inhabitant: false, certainlyBeenInCryptosleep: false,
+                    forceRedressWorldPawnIfFormerColonist: false, worldPawnFactionDoesntMatter: false, 0f, 0f, null, 1f, null, null, null, null, null, null, null, null, null, null, null, null, forceNoIdeo: false, forceNoBackstory: false, forbidAnyTitle: false, forceDead: false, null, null, null, null, null, 0f, DevelopmentalStage.Newborn);
+            }
+            if (parent.ParentHolder is Pawn_CarryTracker pawn_CarryTracker)
+            {
+                pawn_CarryTracker.TryDropCarriedThing(parent.PositionHeld, ThingPlaceMode.Near, out var _);
+            }
+            for (int i = 0; i < parent.stackCount; i++)
+            {
+                Pawn pawn = PawnGenerator.GeneratePawn(request);
+                if (PawnUtility.TrySpawnHatchedOrBornPawn(pawn, parent))
+                {
+                    if (pawn != null)
+                    {
+                        if (hatcheeParent != null)
+                        {
+                            if (pawn.playerSettings != null && hatcheeParent.playerSettings != null && hatcheeParent.Faction == hatcheeFaction)
+                            {
+                                pawn.playerSettings.AreaRestrictionInPawnCurrentMap = hatcheeParent.playerSettings.AreaRestrictionInPawnCurrentMap;
+                            }
+                            if (pawn.RaceProps.IsFlesh)
+                            {
+                                pawn.relations.AddDirectRelation(PawnRelationDefOf.Parent, hatcheeParent);
+                            }
+                        }
+                        if (otherParent != null && (hatcheeParent == null || hatcheeParent.gender != otherParent.gender) && pawn.RaceProps.IsFlesh)
+                        {
+                            pawn.relations.AddDirectRelation(PawnRelationDefOf.Parent, otherParent);
+                        }
+                    }
+                    if (parent.Spawned)
+                    {
+                        FilthMaker.TryMakeFilth(parent.Position, parent.Map, ThingDefOf.Filth_AmnioticFluid);
+                    }
+                }
+                else
+                {
+                    Find.WorldPawns.PassToWorld(pawn, PawnDiscardDecideMode.Discard);
+                }
+            }
+        }
+        finally
+        {
+            parent.Destroy();
+        }
+    }
 
-		public override bool AllowStackWith(Thing other)
-		{
-			CompHatcherCustom comp = ((ThingWithComps)other).GetComp<CompHatcherCustom>();
-			if (TemperatureDamaged != comp.TemperatureDamaged)
-			{
-				return false;
-			}
-			return base.AllowStackWith(other);
-		}
+    public override bool AllowStackWith(Thing other)
+    {
+        CompHatcherCustom comp = ((ThingWithComps)other).GetComp<CompHatcherCustom>();
+        if (TemperatureDamaged != comp.TemperatureDamaged)
+        {
+            return false;
+        }
+        return base.AllowStackWith(other);
+    }
 
-		public override void PreAbsorbStack(Thing otherStack, int count)
-		{
-			float t = count / (float)(parent.stackCount + count);
-			float b = ((ThingWithComps)otherStack).GetComp<CompHatcherCustom>().gestateProgress;
-			gestateProgress = Mathf.Lerp(gestateProgress, b, t);
-		}
+    public override void PreAbsorbStack(Thing otherStack, int count)
+    {
+        float t = count / (float)(parent.stackCount + count);
+        float b = ((ThingWithComps)otherStack).GetComp<CompHatcherCustom>().gestateProgress;
+        gestateProgress = Mathf.Lerp(gestateProgress, b, t);
+    }
 
-		public override void PostSplitOff(Thing piece)
-		{
-			CompHatcherCustom comp = ((ThingWithComps)piece).GetComp<CompHatcherCustom>();
-			comp.gestateProgress = gestateProgress;
-			comp.hatcheeParent = hatcheeParent;
-			comp.otherParent = otherParent;
-			comp.hatcheeFaction = hatcheeFaction;
-		}
+    public override void PostSplitOff(Thing piece)
+    {
+        CompHatcherCustom comp = ((ThingWithComps)piece).GetComp<CompHatcherCustom>();
+        comp.gestateProgress = gestateProgress;
+        comp.hatcheeParent = hatcheeParent;
+        comp.otherParent = otherParent;
+        comp.hatcheeFaction = hatcheeFaction;
+    }
 
-	}
 }

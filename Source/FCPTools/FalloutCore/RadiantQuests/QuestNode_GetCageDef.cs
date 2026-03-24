@@ -1,34 +1,32 @@
 using RimWorld.QuestGen;
 
-namespace FCP.Core.RadiantQuests
+namespace FCP.Core.RadiantQuests;
+
+public class QuestNode_GetCageDef : QuestNode
 {
-    public class QuestNode_GetCageDef : QuestNode
+    [NoTranslate]
+    public SlateRef<string> storeAs;
+    public SlateRef<string> cageDef;
+
+    protected override bool TestRunInt(Slate slate)
     {
-        [NoTranslate]
-        public SlateRef<string> storeAs;
-        public SlateRef<string> cageDef;
+        SetVars(slate);
+        return true;
+    }
 
-        protected override bool TestRunInt(Slate slate)
+    protected override void RunInt()
+    {
+        SetVars(QuestGen.slate);
+    }
+
+    private void SetVars(Slate slate)
+    {
+        if (cageDef != null)
         {
-            SetVars(slate);
-            return true;
+            ThingDef def = DefDatabase<ThingDef>.AllDefsListForReading.Where(c => c.defName == cageDef.GetValue(slate)).First();
+            slate.Set(storeAs.GetValue(slate), def);
+
         }
 
-        protected override void RunInt()
-        {
-            SetVars(QuestGen.slate);
-        }
-
-        private void SetVars(Slate slate)
-        {
-            if (cageDef != null)
-            {
-                ThingDef def = DefDatabase<ThingDef>.AllDefsListForReading.Where(c => c.defName == cageDef.GetValue(slate)).First();
-                slate.Set(storeAs.GetValue(slate), def);
-
-            }
-
-        }
     }
 }
-

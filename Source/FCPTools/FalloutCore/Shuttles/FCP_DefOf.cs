@@ -1,8 +1,7 @@
-namespace FCP.Core.Shuttles
+namespace FCP.Core.Shuttles;
+
+[DefOf]
+public static class FCP_DefOf
 {
-    [DefOf]
-    public static class FCP_DefOf
-    {
-        public static ThingDef ShuttleLeaving;
-    }
+    public static ThingDef ShuttleLeaving;
 }
