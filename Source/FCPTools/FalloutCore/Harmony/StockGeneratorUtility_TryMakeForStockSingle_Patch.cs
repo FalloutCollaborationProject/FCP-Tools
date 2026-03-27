@@ -16,6 +16,6 @@ public static class StockGeneratorUtility_TryMakeForStockSingle_Patch
 
     public static bool IsUniqueItemAndCreatedAlready( this ThingDef thingDef)
     {
-        return thingDef.HasModExtension<UniqueThingExtension>() && UniqueCharactersTracker.Instance.IsUniqueThingCreated(thingDef);
+        return UniqueCharactersTracker.Instance != null && thingDef.HasModExtension<UniqueThingExtension>() && UniqueCharactersTracker.Instance.IsUniqueThingCreated(thingDef);
     }
 }
