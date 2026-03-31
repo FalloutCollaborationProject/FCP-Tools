@@ -115,8 +115,7 @@ public static class CageTradeDealPatch
 
     private static void Postfix(ref bool __result, TradeDeal __instance, Thing t, out string reason)
     {
-        //Log.Message(t.ParentHolder);
-        if (!__result && !t.Spawned && t.holdingOwner != null &&  ((Pawn)t).health.capacities.CanBeAwake && !((Pawn)t).DeadOrDowned)
+        if (!__result && !t.Spawned && t is Pawn pawn && t.holdingOwner != null && pawn.health.capacities.CanBeAwake && !pawn.DeadOrDowned)
         {
             __result = true;
         }
