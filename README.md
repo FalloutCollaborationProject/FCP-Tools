@@ -11,6 +11,9 @@
 > [!WARNING]
 > This mod is in an **unstable early testing phase**. It may break saves, cause errors, or not work at all. Use at your own risk and keep backups of your saves.
 
+> [!WARNING]
+> The Steam Workshop versions of FCP mods are significantly out of date. **Do not mix Steam and GitHub versions** across the FCP, either use GitHub or Steam versions for all of them.
+
 ---
 
 ## Requirements
