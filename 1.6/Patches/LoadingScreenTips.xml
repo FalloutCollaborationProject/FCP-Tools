@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <!-- FCP Loading Screen Tips -->
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/TipSetDef[defName="GameplayTips"]/tips</xpath>
+        <value>
+            <li>Bottle caps are the currency of the wasteland. Traders across the factions will accept them in exchange for goods and services.</li>
+            <li>VATS slows time and lets you target specific body parts. Aim for the legs to cripple enemies, or the head for maximum damage.</li>
+            <li>Brahmin are two-headed mutated cattle that can serve as pack animals and provide milk, a rare luxury in the wasteland.</li>
+            <li>Pre-war technology is scattered across the wasteland. Researching pre-war advancements can unlock powerful equipment your enemies won't expect.</li>
+            <li MayRequire="Rick.FCP.EnergyWeapons">Energy weapons deal high damage but require specialized ammunition. Establish a supply chain before arming your colony with laser rifles.</li>
+            <li MayRequire="Rick.FCP.Enclave">The Enclave considers itself the true continuation of the United States government. They will use that authority to justify anything.</li>
+        </value>
+    </Operation>
+
+</Patch>
