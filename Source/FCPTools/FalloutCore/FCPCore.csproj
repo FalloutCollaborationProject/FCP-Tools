@@ -18,6 +18,12 @@
     <Optimize>true</Optimize>
     <DebugType>embedded</DebugType>
   </PropertyGroup>
+    
+  <!-- Makes FCP.Core.Logging available project-wide without explicit using directives -->
+  <ItemGroup>
+    <Using Include="FCP.Core.Logging"/>
+  </ItemGroup>
+
   <ItemGroup>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />

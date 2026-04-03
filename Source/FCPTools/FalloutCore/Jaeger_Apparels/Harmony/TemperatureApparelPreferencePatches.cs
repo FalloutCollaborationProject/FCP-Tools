@@ -259,9 +259,8 @@ public static class TemperatureApparelPreferencePatches
 
         EnsureCachesBuilt();
 
-        bool verbose = FCPLog.VerboseEnabled;
         Stopwatch sw = null;
-        if (verbose)
+        if (FCPLog.VerboseEnabled)
             sw = Stopwatch.StartNew();
 
         try
@@ -271,22 +270,18 @@ public static class TemperatureApparelPreferencePatches
             HashSet<ThingDef> forcedNow = BuildForcedNow(tempC, pawn, protectedDefs, avoidedNow);
             HashSet<ThingDef> incompatibleNow = BuildIncompatibleWithForced(pawn, protectedDefs, avoidedNow, forcedNow);
 
-            if (verbose)
-            {
-                FCPLog.VerboseQuick($"Apply RUN pawn={SafePawnLabel(pawn)} temp={tempC:F1} protected={protectedDefs.Count} avoided={avoidedNow.Count} forced={forcedNow.Count} incompatible={incompatibleNow.Count} ctx={state.request.Context} tile={state.request.Tile}");
+            FCPLog.Verbose($"Apply RUN pawn={SafePawnLabel(pawn)} temp={tempC:F1} protected={protectedDefs.Count} avoided={avoidedNow.Count} forced={forcedNow.Count} incompatible={incompatibleNow.Count} ctx={state.request.Context} tile={state.request.Tile}");
 
-                if (forcedNow.Count > 0)
-                    FCPLog.VerboseQuick($"Apply forced sample pawn={SafePawnLabel(pawn)} forced={JoinDefNames(forcedNow, 6)}");
+            if (forcedNow.Count > 0)
+                FCPLog.Verbose($"Apply forced sample pawn={SafePawnLabel(pawn)} forced={JoinDefNames(forcedNow, 6)}");
 
-                FCPLog.VerboseQuick($"Apply worn BEFORE pawn={SafePawnLabel(pawn)} worn={DescribeWornApparel(pawn)}");
-            }
+            FCPLog.Verbose($"Apply worn BEFORE pawn={SafePawnLabel(pawn)} worn={DescribeWornApparel(pawn)}");
 
             int removedCount;
             int lockedSkippedCount;
             RemoveAllApparelExceptLocked(pawn, out removedCount, out lockedSkippedCount);
 
-            if (verbose)
-                FCPLog.VerboseQuick($"Apply strip pawn={SafePawnLabel(pawn)} removed={removedCount} lockedSkipped={lockedSkippedCount} wornAfterStrip={DescribeWornApparel(pawn)}");
+            FCPLog.Verbose($"Apply strip pawn={SafePawnLabel(pawn)} removed={removedCount} lockedSkipped={lockedSkippedCount} wornAfterStrip={DescribeWornApparel(pawn)}");
 
             var ctx = new GenerationContext
             {
@@ -305,22 +300,19 @@ public static class TemperatureApparelPreferencePatches
                 tlsContext = null;
             }
 
-            if (verbose)
-            {
-                FCPLog.VerboseQuick($"Apply worn AFTER pawn={SafePawnLabel(pawn)} worn={DescribeWornApparel(pawn)}");
+            FCPLog.Verbose($"Apply worn AFTER pawn={SafePawnLabel(pawn)} worn={DescribeWornApparel(pawn)}");
 
-                if (forcedNow.Count > 0)
+            if (forcedNow.Count > 0)
+            {
+                bool anyForcedWorn = IsAnyForcedWorn(pawn, forcedNow);
+                if (!anyForcedWorn)
                 {
-                    bool anyForcedWorn = IsAnyForcedWorn(pawn, forcedNow);
-                    if (!anyForcedWorn)
-                    {
-                        FCPLog.VerboseQuick($"Apply WARNING pawn={SafePawnLabel(pawn)} forcedCount={forcedNow.Count} but none worn. pawnKind={pawn.kindDef?.defName ?? "null"} pawnKindApparelTags={DescribeKindApparelTags(pawn.kindDef)}");
-                        FCPLog.VerboseQuick($"Apply WARNING forced def details={DescribeForcedDefs(forcedNow)}");
-                    }
-                    else
-                    {
-                        FCPLog.VerboseQuick($"Apply forced OK pawn={SafePawnLabel(pawn)} forcedWorn=1");
-                    }
+                    FCPLog.Verbose($"Apply WARNING pawn={SafePawnLabel(pawn)} forcedCount={forcedNow.Count} but none worn. pawnKind={pawn.kindDef?.defName ?? "null"} pawnKindApparelTags={DescribeKindApparelTags(pawn.kindDef)}");
+                    FCPLog.Verbose($"Apply WARNING forced def details={DescribeForcedDefs(forcedNow)}");
+                }
+                else
+                {
+                    FCPLog.Verbose($"Apply forced OK pawn={SafePawnLabel(pawn)} forcedWorn=1");
                 }
             }
 
