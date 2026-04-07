@@ -236,6 +236,7 @@ public class CompPowerArmorStation : ThingComp, IThingHolder, ISearchableContent
 		{
 			graphicsDirty = true;
 			pawn.apparel.Wear(apparel);
+            pawn.outfits?.forcedHandler?.SetForced(apparel, true);
 			return true;
 		}
 		return false;
