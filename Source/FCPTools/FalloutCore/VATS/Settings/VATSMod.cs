@@ -13,11 +13,12 @@ public class VATSMod : Mod
         Instance = this;
     }
 
+    private AssetBundle mainBundle;
     public AssetBundle MainBundle
     {
         get
         {
-            if (field != null) return field;
+            if (mainBundle != null) return mainBundle;
 
             string text = "";
             if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
@@ -42,9 +43,9 @@ public class VATSMod : Mod
                 FCPLog.Error("Failed to load bundle at path: " + bundlePath);
             }
 
-            field = bundle;
+            mainBundle = bundle;
 
-            return field;
+            return mainBundle;
         }
     }
 }

@@ -12,9 +12,10 @@ public class FCPSettings : ModSettings
     public DebugSettings Debug = new DebugSettings();
 
     public IReadOnlyList<SettingsTab> Tabs => [General, VATS, Enlist, Tents, Debug];
-
+    
+    private Dictionary<Type, SettingsTab> _tabsByType;
     private Dictionary<Type, SettingsTab> TabsByType
-        => field ??= Tabs.ToDictionary(tab => tab.GetType());
+        => _tabsByType ??= Tabs.ToDictionary(tab => tab.GetType());
 
     public T GetTab<T>() where T : SettingsTab
         => TabsByType.TryGetValue(typeof(T), out SettingsTab tab) ? (T)tab : null;

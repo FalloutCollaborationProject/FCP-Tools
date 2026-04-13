@@ -18,9 +18,9 @@ public class CompProperties_PowerArmor : CompProperties
 [HotSwappable]
 public class CompPowerArmor : ThingComp
 {
-    public CompProperties_PowerArmor Props => base.props as CompProperties_PowerArmor;
-
-    public CompRefuelable CompRefuelable => field ??= parent.GetComp<CompRefuelable>();
+    public CompProperties_PowerArmor Props => props as CompProperties_PowerArmor;
+    
+    public CompRefuelable CompRefuelable => parent.GetComp<CompRefuelable>();
 
     public override void CompTick()
     {
@@ -31,7 +31,7 @@ public class CompPowerArmor : ThingComp
         if (CompRefuelable == null) 
             return;
                 
-        CompRefuelable.ConsumeFuel(CompRefuelable.P_ConsumptionRatePerTick);
+        CompRefuelable.ConsumeFuel(CompRefuelable.GetConsumptionRatePerTick());
         if (Props.hediffOnEmptyFuel == null || CompRefuelable.HasFuel) 
             return;
         

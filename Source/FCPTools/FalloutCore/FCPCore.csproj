@@ -4,7 +4,7 @@
     <RootNamespace>FCP.Core</RootNamespace>
     <AssemblyName>FCP_Core</AssemblyName>
     <AssemblyTitle>Fallout Core Module</AssemblyTitle>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>13</LangVersion>
     <OutputPath>..\..\..\1.6\Assemblies\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

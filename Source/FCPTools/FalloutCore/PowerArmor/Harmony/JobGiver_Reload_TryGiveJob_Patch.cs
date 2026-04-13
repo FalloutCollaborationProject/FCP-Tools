@@ -87,13 +87,13 @@ public static class JobGiver_Reload_TryGiveJob_Patch
             JobFailReason.Is(compActivable.Props.onCooldownString.CapitalizeFirst());
             return false;
         }
-        if (RefuelWorkGiverUtility.P_FindBestFuel(pawn, t) == null)
+        if (RefuelWorkGiverUtility_Access.FindBestFuel(pawn, t) == null)
         {
             ThingFilter fuelFilter = t.TryGetComp<CompRefuelable>().Props.fuelFilter;
             JobFailReason.Is("NoFuelToRefuel".Translate(fuelFilter.Summary));
             return false;
         }
-        if (t.TryGetComp<CompRefuelable>().Props.atomicFueling && RefuelWorkGiverUtility.P_FindAllFuel(pawn, t) == null)
+        if (t.TryGetComp<CompRefuelable>().Props.atomicFueling && RefuelWorkGiverUtility_Access.FindAllFuel(pawn, t) == null)
         {
             ThingFilter fuelFilter2 = t.TryGetComp<CompRefuelable>().Props.fuelFilter;
             JobFailReason.Is("NoFuelToRefuel".Translate(fuelFilter2.Summary));
@@ -104,7 +104,7 @@ public static class JobGiver_Reload_TryGiveJob_Patch
 
     public static Job RefuelJob(Pawn pawn, Thing t, Pawn otherPawn)
     {
-        Thing thing = RefuelWorkGiverUtility.P_FindBestFuel(pawn, t);
+        Thing thing = RefuelWorkGiverUtility_Access.FindBestFuel(pawn, t);
         return JobMaker.MakeJob(PowerArmorDefOf.RR_RefuelPowerArmor, t, thing, otherPawn);
     }
 }
