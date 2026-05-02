@@ -131,6 +131,52 @@ public class FactionEnlistOptionsDef : Def
 	public int reinforcementCallGoodwillCost;
 	public int reinforcementCallCooldownTicks;
 
+	public bool bountyHunterIsEnabled;
+	public string bountyHunterLabelKey;
+	public string bountyHunterDescKey;
+	public string bountyHunterButtonIconTexPath;
+	public TraderKindDef bountyHunterTraderKind;
+	public string bountyHunterTraderNameKey;
+	public ThoughtDef bountyHunterThought;
+	public int bountyHunterRefreshSilverInDays;
+
+	public bool exclusiveTraderIsEnabled;
+	public string exclusiveTraderLabelKey;
+	public string exclusiveTraderDescKey;
+	public string exclusiveTraderButtonIconTexPath;
+	public TraderKindDef exclusiveTraderKind;
+	public int exclusiveTraderRequiredGoodwill;
+	public RoyalTitleDef exclusiveTraderRequiredTitle;
+	public string exclusiveTraderRequirementsNotMetKey;
+	public int exclusiveTraderRefreshInDays;
+
+	public bool noSettlementProximityPenalty;
+
+	public List<TitleWageBonus> titleWageBonuses;
+
+	public bool autoFeedIsEnabled;
+	public string autoFeedLabelKey;
+	public string autoFeedDescKey;
+	public string autoFeedButtonIconTexPath;
+
+	public bool abilityTrainingIsEnabled;
+	public string abilityTrainingLabelKey;
+	public string abilityTrainingDescKey;
+	public string abilityTrainingButtonIconTexPath;
+	public string abilityTrainingCompleteLetterTitleKey;
+	public string abilityTrainingCompleteLetterLabelKey;
+	public List<AbilityTrainingOption> abilityTrainingOptions;
+
+	public bool deliveryQuestsIsEnabled;
+	public string deliveryQuestsBoardLabelKey;
+	public string deliveryQuestsBoardDescKey;
+	public string deliveryQuestsBoardButtonIconTexPath;
+	public string deliveryQuestsTurnInLabelKey;
+	public string deliveryQuestsTurnInDescKey;
+	public string deliveryQuestsTurnInButtonIconTexPath;
+	public int deliveryQuestsRerollDays = 7;
+	public List<DeliveryQuestTemplate> deliveryQuestTemplates;
+
 	public bool settlementTradingLockedBehindEnlist;
 	public string settlementTradingLockedBehindEnlistReasonKey;
 

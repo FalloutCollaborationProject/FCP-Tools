@@ -197,6 +197,31 @@ public static class TransferableUIUtility_Patch
     }
 }
 
+[HarmonyPatch(typeof(RimWorld.Planet.SettlementProximityGoodwillUtility), "CheckSettlementProximityGoodwillChange")]
+public static class Patch_CheckSettlementProximityGoodwillChange
+{
+    private static bool active;
+    public static bool IsActive => active;
+    public static void Prefix() => active = true;
+    public static void Postfix() => active = false;
+}
+
+[HarmonyPatch(typeof(Faction), "TryAffectGoodwillWith")]
+public static class Patch_TryAffectGoodwillWith_SettlePenalty
+{
+    public static bool Prefix(Faction __instance, Faction other, int goodwillChange)
+    {
+        if (!Patch_CheckSettlementProximityGoodwillChange.IsActive || goodwillChange >= 0 || other != Faction.OfPlayer)
+            return true;
+        foreach (FactionEnlistOptionsDef def in __instance.GetEnlistOptions())
+        {
+            if (def.noSettlementProximityPenalty && WorldEnlistTracker.Instance.EnlistedTo(__instance, def))
+                return false;
+        }
+        return true;
+    }
+}
+
 [HarmonyPatch(typeof(CaravanVisitUtility), nameof(CaravanVisitUtility.TradeCommand))]
 public static class CaravanVisitUtility_TradeCommand_Patch
 {
@@ -258,8 +283,7 @@ public static class GuestUtility_IsSellingToSlavery_Patch
 {
     public static bool Prefix()
     {
-        if (TradeSession.trader is PawnTrader pawnTrader 
-            && pawnTrader.factionOptionDef?.turnInTraderKind == pawnTrader.TraderKind)
+        if (TradeSession.trader is PawnTrader)
         {
             return false;
         }

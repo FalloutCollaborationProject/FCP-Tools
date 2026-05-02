@@ -9,6 +9,7 @@ public class CaravanOptions : IExposable
 	public WorkOption curWorkOption;
 	public int curEnlistOptionInd;
 	public int curWorkOptionInd;
+	public bool autoFeedEnabled;
 	public WorldObject curWorldObject;
 	public List<FactionEnlistOptionsDef> OptionsDefs => curWorldObject.GetComponent<WorldObjectCompEnlist>().OptionsDefs;
 
@@ -31,6 +32,7 @@ public class CaravanOptions : IExposable
 	{
 		Scribe_Values.Look(ref curEnlistOptionInd, "curEnlistOptionInd", -1);
 		Scribe_Values.Look(ref curWorkOptionInd, "curWorkOptionInd", -1);
+		Scribe_Values.Look(ref autoFeedEnabled, "autoFeedEnabled");
 		Scribe_References.Look(ref curWorldObject, "curSettlement");
 		if (Scribe.mode == LoadSaveMode.PostLoadInit)
 		{

@@ -14,11 +14,26 @@ public class ProvisionsInfo : IExposable
 	}
 	public void GiveProvisions(ProvisionOption option, Caravan caravan)
 	{
-		foreach (ProvisionRecord provisionData in option.provisions)
+		if (option.provisions != null)
 		{
-			Thing thing = ThingMaker.MakeThing(provisionData.thing, provisionData.stuff);
-			thing.stackCount = provisionData.amountRange.RandomInRange;
-			CaravanInventoryUtility.GiveThing(caravan, thing);
+			foreach (ProvisionRecord provisionData in option.provisions)
+			{
+				Thing thing = ThingMaker.MakeThing(provisionData.thing, provisionData.stuff);
+				thing.stackCount = provisionData.amountRange.RandomInRange;
+				CaravanInventoryUtility.GiveThing(caravan, thing);
+			}
+		}
+		if (option.recruits != null)
+		{
+			foreach (RecruitRecord recruit in option.recruits)
+			{
+				int num = recruit.count.RandomInRange;
+				for (int i = 0; i < num; i++)
+				{
+					Pawn pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(recruit.pawnKind, Faction.OfPlayer, PawnGenerationContext.NonPlayer, forceGenerateNewPawn: true));
+					caravan.AddPawn(pawn, false);
+				}
+			}
 		}
 		givenProvisionsLastTick = Find.TickManager.TicksGame;
 	}

@@ -22,6 +22,10 @@ public class PawnTrader : IExposable, ITrader, IThingHolder
     public Caravan caravan;
 
     private int randomPriceFactorSeed = -1;
+
+    public bool isBountyHunter;
+    public int refreshDays;
+
     public int Silver
     {
         get
@@ -34,7 +38,7 @@ public class PawnTrader : IExposable, ITrader, IThingHolder
     public IThingHolder ParentHolder => null;
 
     public FactionEnlistOptionsDef factionOptionDef;
-    public TraderKindDef TraderKind => factionOptionDef.turnInTraderKind;
+    public TraderKindDef TraderKind => isBountyHunter ? factionOptionDef.bountyHunterTraderKind : factionOptionDef.turnInTraderKind;
     public int RandomPriceFactorSeed => randomPriceFactorSeed;
     public float TradePriceImprovementOffsetForPlayer => 0f;
     public IEnumerable<Thing> Goods
@@ -51,7 +55,7 @@ public class PawnTrader : IExposable, ITrader, IThingHolder
             }
         }
     }
-    public string TraderName => Faction.Name + "\n" + factionOptionDef.turnInTraderNameKey.Translate();
+    public string TraderName => Faction.Name + "\n" + (isBountyHunter ? factionOptionDef.bountyHunterTraderNameKey.Translate() : factionOptionDef.turnInTraderNameKey.Translate());
     public bool CanTradeNow => true;
 
     public Faction faction;
@@ -111,6 +115,8 @@ public class PawnTrader : IExposable, ITrader, IThingHolder
         Scribe_Deep.Look(ref things, "things", this);
         Scribe_Collections.Look(ref soldPrisoners, "soldPrisoners", LookMode.Reference);
         Scribe_Values.Look(ref randomPriceFactorSeed, "randomPriceFactorSeed", 0);
+        Scribe_Values.Look(ref isBountyHunter, "isBountyHunter");
+        Scribe_Values.Look(ref refreshDays, "refreshDays");
         Scribe_References.Look(ref faction, "faction");
         Scribe_Defs.Look(ref factionOptionDef, "factionOptionDef");
         if (Scribe.mode == LoadSaveMode.PostLoadInit)
@@ -141,11 +147,12 @@ public class PawnTrader : IExposable, ITrader, IThingHolder
         {
             var caravan = playerNegotiator.GetCaravan();
             CaravanInventoryUtility.MoveAllInventoryToSomeoneElse(pawn, caravan.PawnsListForReading.Where(x => x.IsColonist).Except(pawn).ToList());
+            ThoughtDef thought = isBountyHunter ? factionOptionDef.bountyHunterThought : factionOptionDef.turnInThought;
             foreach (Pawn otherPawn in PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive_FreeColonistsAndPrisoners)
             {
-                if (factionOptionDef.turnInThought != null && pawn != otherPawn && otherPawn.IsColonist && otherPawn.needs.mood != null)
+                if (thought != null && pawn != otherPawn && otherPawn.IsColonist && otherPawn.needs.mood != null)
                 {
-                    otherPawn.needs.mood.thoughts.memories.TryGainMemory(factionOptionDef.turnInThought);
+                    otherPawn.needs.mood.thoughts.memories.TryGainMemory(thought);
                 }
             }
         }

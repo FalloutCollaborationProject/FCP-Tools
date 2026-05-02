@@ -11,6 +11,7 @@ public class FactionOptions : IExposable
     public Dictionary<FactionEnlistOptionsDef, int> factionsReinforcementsLastTick = new Dictionary<FactionEnlistOptionsDef, int>();
     public Dictionary<FactionEnlistOptionsDef, QuestContainer> factionsWithQuests = new Dictionary<FactionEnlistOptionsDef, QuestContainer>();
     public Dictionary<FactionEnlistOptionsDef, FactionState> factionsBought = new Dictionary<FactionEnlistOptionsDef, FactionState>();
+    public Dictionary<FactionEnlistOptionsDef, DeliveryQuestList> activeDeliveries = new Dictionary<FactionEnlistOptionsDef, DeliveryQuestList>();
 
     public void ExposeData()
     {
@@ -21,6 +22,7 @@ public class FactionOptions : IExposable
         Scribe_Collections.Look(ref factionsWithQuests, "factionsWithQuests", LookMode.Def, LookMode.Deep, ref factionKeys5, ref questContainerValues);
         Scribe_Collections.Look(ref factionsBought, "factionsBought", LookMode.Def, LookMode.Deep, 
             ref factionKeys6, ref boughtValues);
+        Scribe_Collections.Look(ref activeDeliveries, "activeDeliveries", LookMode.Def, LookMode.Deep, ref factionKeys7, ref deliveryValues);
         if (Scribe.mode == LoadSaveMode.PostLoadInit)
         {
             factionsRecruiters ??= new Dictionary<FactionEnlistOptionsDef, bool>();
@@ -29,6 +31,7 @@ public class FactionOptions : IExposable
             factionsReinforcementsLastTick ??= new Dictionary<FactionEnlistOptionsDef, int>();
             factionsWithQuests ??= new Dictionary<FactionEnlistOptionsDef, QuestContainer>();
             factionsBought = new Dictionary<FactionEnlistOptionsDef, FactionState>();
+            activeDeliveries ??= new Dictionary<FactionEnlistOptionsDef, DeliveryQuestList>();
         }
     }
 
@@ -49,4 +52,7 @@ public class FactionOptions : IExposable
 
     private List<FactionEnlistOptionsDef> factionKeys6;
     private List<FactionState> boughtValues;
+
+    private List<FactionEnlistOptionsDef> factionKeys7;
+    private List<DeliveryQuestList> deliveryValues;
 }

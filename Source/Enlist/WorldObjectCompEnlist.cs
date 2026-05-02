@@ -33,7 +33,11 @@ public class WorldObjectCompEnlist : WorldObjectComp
 	public Dictionary<int, ProvisionsInfo> promotedProvisionInfos;
 	private Dictionary<Caravan, CaravanOptions> caravanOptions;
 	private Dictionary<FactionEnlistOptionsDef, PawnTrader> pawnTraders;
+	private Dictionary<FactionEnlistOptionsDef, PawnTrader> bountyHunterTraders;
+	private Dictionary<FactionEnlistOptionsDef, ExclusiveTrader> exclusiveTraders;
 	private Dictionary<FactionEnlistOptionsDef, bool> promotedByOptions;
+	public Dictionary<FactionEnlistOptionsDef, AbilityTrainingSession> activeTrainingSessions;
+	public Dictionary<FactionEnlistOptionsDef, DeliveryQuestList> deliveryBoards;
 
 	private List<FactionEnlistOptionsDef> optionDefs;
 	public List<FactionEnlistOptionsDef> OptionsDefs => optionDefs ??= parent.Faction.GetEnlistOptions();
@@ -48,6 +52,26 @@ public class WorldObjectCompEnlist : WorldObjectComp
 	}
 	public override void CompTick()
 	{
+		if (activeTrainingSessions != null)
+		{
+			foreach (FactionEnlistOptionsDef def in activeTrainingSessions.Keys.ToList())
+			{
+				AbilityTrainingSession session = activeTrainingSessions[def];
+				if (session.IsDone)
+				{
+					session.Complete();
+					if (!def.abilityTrainingCompleteLetterTitleKey.NullOrEmpty())
+					{
+						Find.LetterStack.ReceiveLetter(
+							def.abilityTrainingCompleteLetterTitleKey.Translate(parent.Faction.Named("FACTION")),
+							def.abilityTrainingCompleteLetterLabelKey.Translate(session.trainee.Named("PAWN"), parent.Faction.Named("FACTION")),
+							LetterDefOf.PositiveEvent,
+							session.trainee);
+					}
+					activeTrainingSessions.Remove(def);
+				}
+			}
+		}
 		List<Caravan> caravans = new List<Caravan>();
 		Find.World.worldObjects.GetPlayerControlledCaravansAt(parent.Tile, caravans);
 		if (caravans.Any())
@@ -118,12 +142,21 @@ public class WorldObjectCompEnlist : WorldObjectComp
 						{
 							if (WorldEnlistTracker.Instance.EnlistedTo(parent.Faction, optionDef))
 							{
-								foreach (Pawn pawn in caravan.PawnsListForReading.Where(x => x.Faction == Faction.OfPlayer && !x.IsPrisoner && x.RaceProps.Humanlike))
+								CaravanOptions caravanOpts = GetCaravanOptions(caravan);
+																foreach (Pawn pawn in caravan.PawnsListForReading.Where(x => x.Faction == Faction.OfPlayer && !x.IsPrisoner && x.RaceProps.Humanlike))
 								{
 									if (pawn.needs?.joy != null)
 									{
 										pawn.needs.joy.CurLevel += optionDef.recreationGainPerTick;
 										pawn.needs.joy.lastGainTick = Find.TickManager.TicksGame;
+									}
+								}
+								if (optionDef.autoFeedIsEnabled && caravanOpts.autoFeedEnabled && Find.TickManager.TicksGame % GenDate.TicksPerHour == 0)
+								{
+									foreach (Pawn pawn in caravan.PawnsListForReading)
+									{
+										if (pawn.IsColonist && !pawn.IsPrisoner && pawn.needs?.food != null)
+											pawn.needs.food.CurLevel = Mathf.Max(pawn.needs.food.CurLevel, 0.7f);
 									}
 								}
 							}
@@ -138,9 +171,31 @@ public class WorldObjectCompEnlist : WorldObjectComp
 				{
 
 					PawnTrader pawnTrader = pawnTraders.TryGetValue(optionDefs, out PawnTrader value) ? value : null;
-					if (pawnTrader != null && Find.TickManager.TicksGame % (optionDefs.turnInRefreshSilverInDays * GenDate.TicksPerDay) == 0)
+					if (pawnTrader != null && pawnTrader.refreshDays > 0 && Find.TickManager.TicksGame % (pawnTrader.refreshDays * GenDate.TicksPerDay) == 0)
 					{
 						pawnTrader.GenerateThings();
+					}
+				}
+			}
+			if (bountyHunterTraders != null && optionsDefs != null)
+			{
+				foreach (FactionEnlistOptionsDef def in optionsDefs)
+				{
+					if (bountyHunterTraders.TryGetValue(def, out PawnTrader bountyTrader) && bountyTrader != null && bountyTrader.refreshDays > 0)
+					{
+						if (Find.TickManager.TicksGame % (bountyTrader.refreshDays * GenDate.TicksPerDay) == 0)
+							bountyTrader.GenerateThings();
+					}
+				}
+			}
+			if (exclusiveTraders != null && optionsDefs != null)
+			{
+				foreach (FactionEnlistOptionsDef def in optionsDefs)
+				{
+					if (exclusiveTraders.TryGetValue(def, out ExclusiveTrader exTrader) && exTrader != null && def.exclusiveTraderRefreshInDays > 0)
+					{
+						if (Find.TickManager.TicksGame % (def.exclusiveTraderRefreshInDays * GenDate.TicksPerDay) == 0)
+							exTrader.GenerateThings();
 					}
 				}
 			}
@@ -275,6 +330,38 @@ public class WorldObjectCompEnlist : WorldObjectComp
 						}
 						yield return command_Enlist;
 						order++;
+
+						if (optionDef.bountyHunterIsEnabled && optionDef.bountyHunterTraderKind != null)
+						{
+							bountyHunterTraders ??= new Dictionary<FactionEnlistOptionsDef, PawnTrader>();
+							Command_Action command_Bounty = new Command_Action
+							{
+								defaultLabel = optionDef.bountyHunterLabelKey.Translate(faction.Named("FACTION")),
+								defaultDesc = optionDef.bountyHunterDescKey.Translate(faction.Named("FACTION")),
+								icon = ContentFinder<Texture2D>.Get(optionDef.bountyHunterButtonIconTexPath),
+								action = delegate
+								{
+									if (!bountyHunterTraders.TryGetValue(optionDef, out PawnTrader bountyTrader))
+									{
+										bountyTrader = new PawnTrader
+										{
+											faction = parent.Faction,
+											factionOptionDef = optionDef,
+											isBountyHunter = true,
+											refreshDays = optionDef.bountyHunterRefreshSilverInDays
+										};
+										bountyTrader.GenerateThings();
+										bountyHunterTraders[optionDef] = bountyTrader;
+									}
+									bountyTrader.caravan = caravan;
+									Pawn bestNegotiator = BestCaravanPawnUtility.FindBestNegotiator(caravan, faction, optionDef.bountyHunterTraderKind);
+									Find.WindowStack.Add(new Dialog_Trade(bestNegotiator, bountyTrader));
+								},
+								order = order
+							};
+							yield return command_Bounty;
+							order++;
+						}
 					}
 					else
 					{
@@ -306,7 +393,7 @@ public class WorldObjectCompEnlist : WorldObjectComp
 								icon = ContentFinder<Texture2D>.Get(optionDef.salaryButtonIconTexPath),
 								action = delegate
 								{
-									worldTracker.factionOptionsContainer[faction].factionsSalaries[optionDef].GiveMoney(optionDef, caravan);
+									worldTracker.factionOptionsContainer[faction].factionsSalaries[optionDef].GiveMoney(optionDef, caravan, faction);
 								},
 								order = order
 							};
@@ -327,6 +414,46 @@ public class WorldObjectCompEnlist : WorldObjectComp
 								yield return button;
 								order++;
 							}
+						}
+
+						if (optionDef.exclusiveTraderIsEnabled && optionDef.exclusiveTraderKind != null)
+						{
+							exclusiveTraders ??= new Dictionary<FactionEnlistOptionsDef, ExclusiveTrader>();
+							Command_Action command_ExclusiveTrader = new Command_Action
+							{
+								defaultLabel = optionDef.exclusiveTraderLabelKey.Translate(faction.Named("FACTION")),
+								defaultDesc = optionDef.exclusiveTraderDescKey.Translate(faction.Named("FACTION")),
+								icon = ContentFinder<Texture2D>.Get(optionDef.exclusiveTraderButtonIconTexPath),
+								action = delegate
+								{
+									if (!exclusiveTraders.TryGetValue(optionDef, out ExclusiveTrader exTrader))
+									{
+										exTrader = new ExclusiveTrader
+										{
+											faction = parent.Faction,
+											factionOptionDef = optionDef
+										};
+										exTrader.GenerateThings();
+										exclusiveTraders[optionDef] = exTrader;
+									}
+									exTrader.caravan = caravan;
+									Pawn bestNegotiator = BestCaravanPawnUtility.FindBestNegotiator(caravan, faction, optionDef.exclusiveTraderKind);
+									Find.WindowStack.Add(new Dialog_Trade(bestNegotiator, exTrader));
+								},
+								order = order
+							};
+							bool meetsGoodwill = faction.GoodwillWith(Faction.OfPlayer) >= optionDef.exclusiveTraderRequiredGoodwill;
+							bool meetsTitle = optionDef.exclusiveTraderRequiredTitle == null ||
+								PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive_FreeColonists.Any(
+									p => p.royalty != null && p.royalty.GetCurrentTitleInFaction(faction)?.def.seniority >= optionDef.exclusiveTraderRequiredTitle.seniority);
+							if (!meetsGoodwill || !meetsTitle)
+							{
+								command_ExclusiveTrader.Disable(optionDef.exclusiveTraderRequirementsNotMetKey.Translate(
+									optionDef.exclusiveTraderRequiredGoodwill.Named("GOODWILL"),
+									faction.Named("FACTION")));
+							}
+							yield return command_ExclusiveTrader;
+							order++;
 						}
 
 						if (optionDef.storageIsEnabled)
@@ -433,6 +560,25 @@ public class WorldObjectCompEnlist : WorldObjectComp
 								yield return command_Training;
 								order++;
 							}
+						}
+
+						if (optionDef.autoFeedIsEnabled)
+						{
+							CaravanOptions caravanAutoFeedOptions = GetCaravanOptions(caravan);
+							Command_Toggle command_AutoFeed = new Command_Toggle
+							{
+								isActive = () => caravanAutoFeedOptions.autoFeedEnabled,
+								toggleAction = delegate
+								{
+									caravanAutoFeedOptions.autoFeedEnabled = !caravanAutoFeedOptions.autoFeedEnabled;
+								},
+								defaultLabel = optionDef.autoFeedLabelKey.Translate(faction.Named("FACTION")),
+								defaultDesc = optionDef.autoFeedDescKey.Translate(faction.Named("FACTION")),
+								icon = ContentFinder<Texture2D>.Get(optionDef.autoFeedButtonIconTexPath),
+								order = order
+							};
+							yield return command_AutoFeed;
+							order++;
 						}
 
 						if (optionDef.turnInIsEnabled)
@@ -580,6 +726,147 @@ public class WorldObjectCompEnlist : WorldObjectComp
 
 						}
 
+						if (optionDef.abilityTrainingIsEnabled && !optionDef.abilityTrainingOptions.NullOrEmpty())
+						{
+							activeTrainingSessions ??= new Dictionary<FactionEnlistOptionsDef, AbilityTrainingSession>();
+							Command_Action command_Training = new Command_Action
+							{
+								defaultLabel = optionDef.abilityTrainingLabelKey.Translate(faction.Named("FACTION")),
+								defaultDesc = optionDef.abilityTrainingDescKey.Translate(faction.Named("FACTION")),
+								icon = ContentFinder<Texture2D>.Get(optionDef.abilityTrainingButtonIconTexPath),
+								action = delegate
+								{
+									List<FloatMenuOption> trainingOptions = new List<FloatMenuOption>();
+									for (int idx = 0; idx < optionDef.abilityTrainingOptions.Count; idx++)
+									{
+										AbilityTrainingOption trainingOpt = optionDef.abilityTrainingOptions[idx];
+										int capturedIdx = idx;
+										trainingOptions.Add(new FloatMenuOption(trainingOpt.labelKey.Translate(), delegate
+										{
+											ThingDef currency = optionDef.currencyDef ?? ThingDefOf.Silver;
+											int available = caravan.AllThings.Where(t => t.def == currency).Sum(t => t.stackCount);
+											if (available < trainingOpt.cost)
+											{
+												Messages.Message("FCP_TrainingNotEnoughFunds".Translate(), MessageTypeDefOf.RejectInput, historical: false);
+												return;
+											}
+											List<FloatMenuOption> pawnOptions = new List<FloatMenuOption>();
+											foreach (Pawn candidate in caravan.PawnsListForReading.Where(p => p.IsColonist && !p.IsPrisoner))
+											{
+												Pawn localPawn = candidate;
+												pawnOptions.Add(new FloatMenuOption(localPawn.LabelShort, delegate
+												{
+													ExtractMoneyFromCaravan(caravan, trainingOpt.cost, optionDef);
+													activeTrainingSessions[optionDef] = new AbilityTrainingSession
+													{
+														trainee = localPawn,
+														startTick = Find.TickManager.TicksGame,
+														durationTicks = trainingOpt.trainingDurationDays * GenDate.TicksPerDay,
+														enlistOptionDef = optionDef,
+														trainingOptionIndex = capturedIdx
+													};
+												}, MenuOptionPriority.Default, null, localPawn));
+											}
+											Find.WindowStack.Add(new FloatMenu(pawnOptions));
+										}));
+									}
+									Find.WindowStack.Add(new FloatMenu(trainingOptions));
+								},
+								order = order
+							};
+							if (activeTrainingSessions.ContainsKey(optionDef))
+							{
+								AbilityTrainingSession running = activeTrainingSessions[optionDef];
+								command_Training.Disable("FCP_TrainingAlreadyActive".Translate(running.trainee.Named("PAWN")));
+							}
+							yield return command_Training;
+							order++;
+						}
+
+						if (optionDef.deliveryQuestsIsEnabled && !optionDef.deliveryQuestTemplates.NullOrEmpty())
+						{
+							deliveryBoards ??= new Dictionary<FactionEnlistOptionsDef, DeliveryQuestList>();
+							if (!deliveryBoards.ContainsKey(optionDef))
+								deliveryBoards[optionDef] = new DeliveryQuestList();
+
+							Command_Action command_DeliveryBoard = new Command_Action
+							{
+								defaultLabel = optionDef.deliveryQuestsBoardLabelKey.Translate(faction.Named("FACTION")),
+								defaultDesc = optionDef.deliveryQuestsBoardDescKey.Translate(faction.Named("FACTION")),
+								icon = ContentFinder<Texture2D>.Get(optionDef.deliveryQuestsBoardButtonIconTexPath),
+								action = delegate
+								{
+									DeliveryQuestList board = deliveryBoards[optionDef];
+									bool needsRefresh = board.lastRefreshTick == 0 || Find.TickManager.TicksGame > board.lastRefreshTick + (optionDef.deliveryQuestsRerollDays * GenDate.TicksPerDay);
+									if (needsRefresh)
+										RefreshDeliveryBoard(optionDef);
+									board.quests.RemoveAll(q => q.IsExpired || q.accepted);
+									if (!board.quests.Any())
+									{
+										Messages.Message("FCP_NoDeliveryQuestsAvailable".Translate(), MessageTypeDefOf.RejectInput, historical: false);
+										return;
+									}
+									List<FloatMenuOption> questOptions = new List<FloatMenuOption>();
+									foreach (DeliveryQuest quest in board.quests)
+									{
+										DeliveryQuest localQuest = quest;
+										Settlement dest = Find.WorldObjects.AllWorldObjects.OfType<Settlement>().FirstOrDefault(s => s.Tile == localQuest.destinationTile);
+										string destName = dest?.LabelShort ?? localQuest.destinationTile.ToString();
+										string stuffPart = localQuest.stuff != null ? " (" + localQuest.stuff.label + ")" : "";
+										ThingDef rewardItem = localQuest.rewardDef ?? optionDef.salaryDef ?? ThingDefOf.Silver;
+										string label = $"{localQuest.count}x {localQuest.thingToDeliver.label}{stuffPart} → {destName}: {localQuest.reward} {rewardItem.label}";
+										questOptions.Add(new FloatMenuOption(label, delegate
+										{
+											localQuest.accepted = true;
+											FactionOptions factionOpts = worldTracker.factionOptionsContainer[faction];
+											factionOpts.activeDeliveries ??= new Dictionary<FactionEnlistOptionsDef, DeliveryQuestList>();
+											if (!factionOpts.activeDeliveries.ContainsKey(optionDef))
+												factionOpts.activeDeliveries[optionDef] = new DeliveryQuestList();
+											factionOpts.activeDeliveries[optionDef].quests.Add(localQuest);
+										}));
+									}
+									Find.WindowStack.Add(new FloatMenu(questOptions));
+								},
+								order = order
+							};
+							yield return command_DeliveryBoard;
+							order++;
+
+							if (worldTracker.factionOptionsContainer.TryGetValue(faction, out FactionOptions factionOptCheck) &&
+								factionOptCheck.activeDeliveries != null &&
+								factionOptCheck.activeDeliveries.TryGetValue(optionDef, out DeliveryQuestList activeList))
+							{
+								DeliveryQuest turnInQuest = activeList.quests.FirstOrDefault(q => q.destinationTile == parent.Tile && !q.IsExpired);
+								if (turnInQuest != null)
+								{
+									DeliveryQuest localTurnIn = turnInQuest;
+									string stuffPart = localTurnIn.stuff != null ? " (" + localTurnIn.stuff.label + ")" : "";
+									Command_Action command_TurnIn = new Command_Action
+									{
+										defaultLabel = optionDef.deliveryQuestsTurnInLabelKey.Translate(faction.Named("FACTION")),
+										defaultDesc = optionDef.deliveryQuestsTurnInDescKey.Translate(
+											localTurnIn.count.Named("COUNT"),
+											localTurnIn.thingToDeliver.Named("THING")),
+										icon = ContentFinder<Texture2D>.Get(optionDef.deliveryQuestsTurnInButtonIconTexPath),
+										action = delegate
+										{
+											localTurnIn.TurnIn(caravan, optionDef);
+											activeList.quests.Remove(localTurnIn);
+										},
+										order = order
+									};
+									if (!localTurnIn.CaravanCanTurnIn(caravan))
+									{
+										command_TurnIn.Disable("FCP_DeliveryQuestNotEnoughItems".Translate(
+											localTurnIn.count.Named("COUNT"),
+											localTurnIn.thingToDeliver.Named("THING")));
+									}
+									yield return command_TurnIn;
+									order++;
+								}
+							}
+						}
+
 						Command_Action command_Resign = new Command_Action
 						{
 							defaultLabel = optionDef.resignButtonLabelKey.Translate(faction.Named("FACTION")),
@@ -601,8 +888,43 @@ public class WorldObjectCompEnlist : WorldObjectComp
 		yield break;
 	}
 
-	public IEnumerable<Command_Action> GetProvisionButtons(Dictionary<int, ProvisionsInfo> provisionInfos, List<ProvisionOption> provisionOptions, Faction faction, Caravan caravan, int order)
+	public void RefreshDeliveryBoard(FactionEnlistOptionsDef optionDef)
 	{
+		deliveryBoards ??= new Dictionary<FactionEnlistOptionsDef, DeliveryQuestList>();
+		if (!deliveryBoards.ContainsKey(optionDef))
+			deliveryBoards[optionDef] = new DeliveryQuestList();
+
+		DeliveryQuestList board = deliveryBoards[optionDef];
+		board.quests.Clear();
+
+		if (optionDef.deliveryQuestTemplates.NullOrEmpty()) return;
+
+		List<Settlement> destinations = Find.WorldObjects.AllWorldObjects
+			.OfType<Settlement>()
+			.Where(s => s.Faction == parent.Faction && s.Tile != parent.Tile)
+			.ToList();
+		if (!destinations.Any()) return;
+
+		foreach (DeliveryQuestTemplate template in optionDef.deliveryQuestTemplates)
+		{
+			Settlement dest = destinations.RandomElement();
+			board.quests.Add(new DeliveryQuest
+			{
+				thingToDeliver = template.thingToDeliver,
+				stuff = template.stuff,
+				count = template.countRange.RandomInRange,
+				reward = template.rewardRange.RandomInRange,
+				rewardDef = template.rewardDef,
+				sourceTile = parent.Tile,
+				destinationTile = dest.Tile,
+				createdTick = Find.TickManager.TicksGame,
+				durationTicks = template.durationDays * GenDate.TicksPerDay
+			});
+		}
+		board.lastRefreshTick = Find.TickManager.TicksGame;
+	}
+
+	public IEnumerable<Command_Action> GetProvisionButtons(Dictionary<int, ProvisionsInfo> provisionInfos, List<ProvisionOption> provisionOptions, Faction faction, Caravan caravan, int order)	{
 		for (int i = 0; i < provisionOptions.Count; i++)
 		{
 			ProvisionOption provisionOption = provisionOptions[i];
@@ -641,14 +963,17 @@ public class WorldObjectCompEnlist : WorldObjectComp
 		}
 		Scribe_Collections.Look(ref caravanOptions, "caravanOptions", LookMode.Reference, LookMode.Deep, ref caravanKeys, ref caravanOptionsValues);
 		Scribe_Collections.Look(ref pawnTraders, "pawnTraders", LookMode.Def, LookMode.Deep);
+		Scribe_Collections.Look(ref bountyHunterTraders, "bountyHunterTraders", LookMode.Def, LookMode.Deep);
+		Scribe_Collections.Look(ref exclusiveTraders, "exclusiveTraders", LookMode.Def, LookMode.Deep);
 		Scribe_Collections.Look(ref provisionInfos, "provisionInfos", LookMode.Value, LookMode.Deep);
 		Scribe_Collections.Look(ref promotedProvisionInfos, "promotedProvisionInfos", LookMode.Value, LookMode.Deep);
 		Scribe_Collections.Look(ref promotedByOptions, "promotedByOptions", LookMode.Def, LookMode.Value);
+		Scribe_Collections.Look(ref activeTrainingSessions, "activeTrainingSessions", LookMode.Def, LookMode.Deep);
+		Scribe_Collections.Look(ref deliveryBoards, "deliveryBoards", LookMode.Def, LookMode.Deep);
 		if (Scribe.mode == LoadSaveMode.PostLoadInit)
 		{
 			generatedQuests ??= new List<Quest>();
 			promotedByOptions ??= new Dictionary<FactionEnlistOptionsDef, bool>();
-
 		}
 	}
 	private List<Caravan> caravanKeys;

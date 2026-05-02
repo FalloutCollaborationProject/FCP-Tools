@@ -107,34 +107,53 @@ public class WorldEnlistTracker : WorldComponent
     {
         factionOptionsContainer[otherFaction].factionsReinforcementsLastTick[options] = Find.TickManager.TicksGame + options.reinforcementCallCooldownTicks;
         int curGoodwill = otherFaction.GoodwillWith(caller.Faction);
-        float reinforcementPoints = GetReinforcementPoints(curGoodwill, options);
+        ReinforcementOption reinforcementOption = GetReinforcementOption(curGoodwill, options);
         IncidentParms parms = new IncidentParms
         {
             target = caller.Map,
             spawnCenter = cell,
-            points = reinforcementPoints,
+            points = reinforcementOption?.pointsRange.RandomInRange ?? 0f,
             faction = otherFaction
         };
-        PawnsArrivalModeDef obj = PawnsArrivalModeDefOf.CenterDrop;
-        obj.Worker.TryResolveRaidSpawnCenter(parms);
-        PawnGroupMakerParms defaultPawnGroupMakerParms = IncidentParmsUtility.GetDefaultPawnGroupMakerParms(PawnGroupKindDefOf.Combat, parms);
-        defaultPawnGroupMakerParms.generateFightersOnly = true;
-        List<Pawn> pawns = PawnGroupMakerUtility.GeneratePawns(defaultPawnGroupMakerParms).ToList();
-        obj.Worker.Arrive(pawns, parms);
+        PawnsArrivalModeDef arrivalMode = PawnsArrivalModeDefOf.CenterDrop;
+        arrivalMode.Worker.TryResolveRaidSpawnCenter(parms);
+        List<Pawn> pawns;
+        if (reinforcementOption?.specificPawnKinds != null && reinforcementOption.specificPawnKinds.Count > 0)
+        {
+            pawns = new List<Pawn>();
+            int count = reinforcementOption.specificPawnCount.RandomInRange;
+            for (int i = 0; i < count; i++)
+            {
+                Pawn pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(reinforcementOption.specificPawnKinds.RandomElement(), otherFaction, PawnGenerationContext.NonPlayer));
+                pawns.Add(pawn);
+            }
+        }
+        else
+        {
+            PawnGroupKindDef groupKind = reinforcementOption?.groupKind ?? PawnGroupKindDefOf.Combat;
+            PawnGroupMakerParms groupParms = IncidentParmsUtility.GetDefaultPawnGroupMakerParms(groupKind, parms);
+            groupParms.generateFightersOnly = true;
+            pawns = PawnGroupMakerUtility.GeneratePawns(groupParms).ToList();
+        }
+        arrivalMode.Worker.Arrive(pawns, parms);
         LordMaker.MakeNewLord(otherFaction, new LordJob_AssistColony(parms.faction, cell), caller.Map, pawns);
         otherFaction.TryAffectGoodwillWith(Faction.OfPlayer, options.reinforcementCallGoodwillCost);
     }
 
-    public float GetReinforcementPoints(int goodwill, FactionEnlistOptionsDef options)
+    public ReinforcementOption GetReinforcementOption(int goodwill, FactionEnlistOptionsDef options)
     {
+        if (options.reinforcementOptions.NullOrEmpty()) return null;
         foreach (ReinforcementOption option in options.reinforcementOptions)
         {
             if (option.relationsRange.Includes(goodwill))
-            {
-                return option.pointsRange.RandomInRange;
-            }
+                return option;
         }
-        return 0f;
+        return null;
+    }
+
+    public float GetReinforcementPoints(int goodwill, FactionEnlistOptionsDef options)
+    {
+        return GetReinforcementOption(goodwill, options)?.pointsRange.RandomInRange ?? 0f;
     }
 
     public override void FinalizeInit(bool fromLoad)
