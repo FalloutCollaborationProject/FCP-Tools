@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+    <!-- Terminal interaction -->
+    <FCP_ExtractHolotape>Extract holotape</FCP_ExtractHolotape>
+    <FCP_ExtractHolotape_AlreadyExtracted>Already extracted</FCP_ExtractHolotape_AlreadyExtracted>
+    <FCP_ExtractedHolotape>{PAWN_nameDef} found a {1} in the terminal!</FCP_ExtractedHolotape>
+    <FCP_NoHolotapeFound>{PAWN_nameDef} found no useful data in the terminal.</FCP_NoHolotapeFound>
+    
+    <!-- Terminal status -->
+    <FCP_HolotapeStatus_Extracted>Data already extracted</FCP_HolotapeStatus_Extracted>
+    <FCP_HolotapeStatus_CanExtract>May contain data</FCP_HolotapeStatus_CanExtract>
+    
+    <!-- Placement -->
+    <MustPlaceOnWall>Must place on wall</MustPlaceOnWall>
+    
+    <!-- Hacking -->
+    <FCP_HackTerminal>Hack terminal</FCP_HackTerminal>
+    <FCP_TerminalLocked>Locked - requires hacking</FCP_TerminalLocked>
+    <FCP_TerminalHackSuccess>Terminal unlocked - received {0}</FCP_TerminalHackSuccess>
+    <FCP_TerminalLockedOut>Terminal locked out for {0} hours</FCP_TerminalLockedOut>
+    <FCP_TerminalLockedOut_Status>Locked ({0}h remaining)</FCP_TerminalLockedOut_Status>
+
+</LanguageData>

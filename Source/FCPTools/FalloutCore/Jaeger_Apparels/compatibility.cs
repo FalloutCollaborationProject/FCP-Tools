@@ -74,7 +74,7 @@ public static class TemperatureApparelPreferenceCompatibility
         shouldHideHeadField = AccessTools.Field(apparelExtensionType, "shouldHideHead");
     }
 
-    private static void PatchFalloutCore(Harmony harmony)
+    private static void PatchFalloutCore(HarmonyLib.Harmony harmony)
     {
         MethodInfo shouldHideBody = AccessTools.Method(harmonyInitType, "ShouldHideBody", new Type[] { typeof(ThingDef) });
         MethodInfo shouldHideHead = AccessTools.Method(harmonyInitType, "ShouldHideHead", new Type[] { typeof(ThingDef) });

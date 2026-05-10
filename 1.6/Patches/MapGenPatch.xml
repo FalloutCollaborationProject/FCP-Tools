@@ -49,4 +49,17 @@
         </match>
     </Operation>
 
+    <!-- Add Wall Terminal GenStep -->
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Ideology</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/MapGeneratorDef[@Name="MapCommonBase"]/genSteps</xpath>
+            <value>
+                <li MayRequire="Ludeon.RimWorld.Ideology">FCP_WallTerminals</li>
+            </value>
+        </match>
+    </Operation>
+
 </Patch>

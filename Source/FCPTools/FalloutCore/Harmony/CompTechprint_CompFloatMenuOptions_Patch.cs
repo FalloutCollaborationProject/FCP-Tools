@@ -13,9 +13,9 @@ public static class CompTechprint_CompFloatMenuOptions_Patch
         if (techprintCompProps != null && techprintCompProps.project != null)
         {
             var extension = techprintCompProps.project.GetModExtension<TechprintExtension>();
-            if (extension != null && extension.requiredBench != null)
+            if (extension != null && extension.requiredBenches != null && extension.requiredBenches.Count > 0)
             {
-                foreach (var item in CompFloatMenuOptions(__instance, selPawn, extension.requiredBench))
+                foreach (var item in CompFloatMenuOptions(__instance, selPawn, extension.requiredBenches))
                 {
                     yield return item;
                 }
@@ -31,7 +31,7 @@ public static class CompTechprint_CompFloatMenuOptions_Patch
 
 
     public static IEnumerable<FloatMenuOption> CompFloatMenuOptions(CompTechprint __instance, 
-        Pawn selPawn, ThingDef requiredBench)
+        Pawn selPawn, List<ThingDef> requiredBenches)
     {
         var parent = __instance.parent;
         if (!ModLister.CheckRoyalty("Techprint"))
@@ -65,7 +65,8 @@ public static class CompTechprint_CompFloatMenuOptions_Patch
         }
         HaulAIUtility.PawnCanAutomaticallyHaul(selPawn, parent, forced: true);
         Thing thing2 = GenClosest.ClosestThingReachable(selPawn.Position, selPawn.Map,
-            ThingRequest.ForDef(requiredBench), PathEndMode.InteractionCell, TraverseParms.For(selPawn, Danger.Some), 9999f, (Thing thing) => thing is Building_ResearchBench && !thing.IsForbidden(selPawn) && selPawn.CanReserve(thing));
+            ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial), PathEndMode.InteractionCell, TraverseParms.For(selPawn, Danger.Some), 9999f, 
+            (Thing thing) => thing is Building_ResearchBench && requiredBenches.Contains(thing.def) && !thing.IsForbidden(selPawn) && selPawn.CanReserve(thing));
         Job job = null;
         if (thing2 != null)
         {

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <GenStepDef>
+        <defName>FCP_WallTerminals</defName>
+        <order>965</order>
+        <genStep Class="FCP.Core.MapGen.GenStep_WallTerminals">
+            <spawnChance>0.4</spawnChance>
+            <minCount>1</minCount>
+            <maxCount>2</maxCount>
+        </genStep>
+    </GenStepDef>
+
+</Defs>

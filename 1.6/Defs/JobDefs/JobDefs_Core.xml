@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+    <!--__________ Jobs __________-->
+
+    <!-- Refuel Power Armor -->
+
     <JobDef>
         <defName>RR_RefuelPowerArmor</defName>
         <driverClass>FCP.Core.PowerArmor.JobDriver_RefuelPowerArmor</driverClass>
@@ -8,12 +12,16 @@
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
 
+    <!-- Train Trait -->
+
     <JobDef>
         <defName>RR_TrainTrait</defName>
         <driverClass>FCP.Core.PowerArmor.JobDriver_TrainTrait</driverClass>
         <reportString>Training at TargetA.</reportString>
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
+
+    <!-- AI Cast Ability At Target -->
 
     <JobDef>
         <defName>FCP_AICastAbilityAtTarget</defName>
@@ -23,11 +31,15 @@
         <collideWithPawns>true</collideWithPawns>
     </JobDef>
 
+    <!-- Release Animal From Cage -->
+
     <JobDef>
         <defName>FCP_ReleaseAnimalFromCage</defName>
         <driverClass>FCP.Core.RadiantQuests.JobDriver_ReleaseAnimalFromCage</driverClass>
         <reportString>Releasing animal from cage.</reportString>
     </JobDef>
+
+    <!-- Carry Animal To Cage -->
 
     <JobDef>
         <defName>FCP_CarryAnimalToCage</defName>
@@ -35,11 +47,15 @@
         <reportString>Bringing animal to cage.</reportString>
     </JobDef>
 
+    <!-- Transfer Animal Between Cages -->
+
     <JobDef>
         <defName>FCP_TransferAnimalBetweenCages</defName>
         <driverClass>FCP.Core.RadiantQuests.JobDriver_TransferAnimalBetweenCages</driverClass>
         <reportString>Transferring animal to another cage.</reportString>
     </JobDef>
+
+    <!-- Refuel Animal Cage -->
 
     <JobDef>
         <defName>FCP_RefuelAnimalCage</defName>
@@ -47,11 +63,15 @@
         <reportString>refueling cage.</reportString>
     </JobDef>
 
+    <!-- Refuel Animal Cage (Atomic) -->
+
     <JobDef>
         <defName>FCP_RefuelAnimalCage_Atomic</defName>
         <driverClass>FCP.Core.RadiantQuests.JobDriver_RefuelAnimalCage_Atomic</driverClass>
         <reportString>refueling cage.</reportString>
     </JobDef>
+
+    <!-- VATS Attack Hybrid -->
 
     <JobDef>
         <defName>FCP_VATS_AttackHybrid</defName>
@@ -62,21 +82,16 @@
         <collideWithPawns>true</collideWithPawns>
     </JobDef>
 
-    <JobDef>
-        <defName>MinePocket_Job</defName>
-        <driverClass>MinePocket.MinePocketJob</driverClass>
-        <reportString>defusing mine.</reportString>
-        <suspendable>false</suspendable>
-        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
-    </JobDef>
+    <!-- Reload Other Pawns -->
 
     <JobDef>
         <defName>BM_ReloadOtherPawns</defName>
-        <driverClass>FCP.HeavyWeapon.JobDriver_ReloadOtherPawns</driverClass>
+        <driverClass>FCP.Core.JobDriver_ReloadOtherPawns</driverClass>
         <reportString>Reloading TargetA.</reportString>
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
 
+    <!-- Store Power Armor -->
 
     <JobDef>
         <defName>FCP_StorePowerArmor</defName>
@@ -84,11 +99,15 @@
         <reportString>storing power armor at TargetA.</reportString>
     </JobDef>
 
+    <!-- Equip Power Armor From Station -->
+
     <JobDef>
         <defName>FCP_EquipFromStation</defName>
         <driverClass>FCP.Core.PowerArmor.JobDriver_EquipFromStation</driverClass>
         <reportString>equipping power armor from TargetA.</reportString>
     </JobDef>
+
+    <!-- Swap Power Armor -->
 
     <JobDef>
         <defName>FCP_SwapPowerArmor</defName>
@@ -96,14 +115,38 @@
         <reportString>swapping power armor at TargetA.</reportString>
     </JobDef>
     
+    <!-- Repair Power Armor -->
+
     <JobDef>
         <defName>RR_RepairPowerArmor</defName>
         <driverClass>FCP.Core.PowerArmor.JobDriver_RepairPowerArmor</driverClass>
         <reportString>repairing power armor at TargetA.</reportString>
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
+
+    <!-- Strap to Power Line -->
+
+    <JobDef>
+        <defName>FCP_StrapToPowerLine</defName>
+        <driverClass>FCP.Core.Buildings.JobDriver_StrapToPowerLine</driverClass>
+        <reportString>strapping TargetA to power line.</reportString>
+    </JobDef>
+
+    <!-- Remove from Power Line -->
+
+    <JobDef>
+        <defName>FCP_RemoveFromPowerLine</defName>
+        <driverClass>FCP.Core.Buildings.JobDriver_RemoveFromPowerLine</driverClass>
+        <reportString>removing TargetA from power line.</reportString>
+    </JobDef>
  
+    <!-- Extract Holotape -->
+
+    <JobDef>
+        <defName>FCP_ExtractHolotape</defName>
+        <driverClass>FCP.Core.Buildings.JobDriver_ExtractHolotape</driverClass>
+        <reportString>extracting holotape from TargetA.</reportString>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+
 </Defs>
-
-
-

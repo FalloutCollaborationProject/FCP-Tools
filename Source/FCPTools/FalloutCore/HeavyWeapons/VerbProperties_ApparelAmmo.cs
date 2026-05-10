@@ -1,0 +1,9 @@
+namespace FCP.Core;
+
+public class VerbProperties_ApparelAmmo : VerbProperties
+{
+    public int pelletCount;
+    public List<ThingDef> apparelList;
+    public string missingReason;
+    public string noAmmoReason;
+}

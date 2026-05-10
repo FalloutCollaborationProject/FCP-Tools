@@ -49,7 +49,7 @@
 
     <HediffDef>
         <defName>FCP_Hediff_ToxHeal</defName>
-        <label>sterilized</label>
+        <label>Sterilized</label>
         <description>placeholder.</description>
         <hediffClass>HediffWithComps</hediffClass>
         <defaultLabelColor>(0.9, 1.0, 0.35)</defaultLabelColor>
@@ -64,6 +64,111 @@
                 <statFactors>
                     <InjuryHealingFactor>1.5</InjuryHealingFactor>
                 </statFactors>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!-- Power Line Crucifixion -->
+
+    <HediffDef>
+        <defName>FCP_Crucified</defName>
+        <label>Crucified</label>
+        <description>This person is immobilized on a power line structure.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <initialSeverity>1</initialSeverity>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <setMax>0</setMax>
+                    </li>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <setMax>0</setMax>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!-- Crucifixion Exhaustion -->
+
+    <HediffDef>
+        <defName>FCP_CrucifixionExhaustion</defName>
+        <label>Crucifixion Exhaustion</label>
+        <description>Extreme exhaustion from prolonged immobilization. Slowly reduces consciousness.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <initialSeverity>0.1</initialSeverity>
+        <maxSeverity>1.0</maxSeverity>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>0.15</severityPerDay>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <minSeverity>0</minSeverity>
+                <label>early</label>
+            </li>
+            <li>
+                <minSeverity>0.3</minSeverity>
+                <label>moderate</label>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.10</offset>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.6</minSeverity>
+                <label>severe</label>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.25</offset>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.9</minSeverity>
+                <label>extreme</label>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.40</offset>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!-- Was Crucified -->
+
+    <HediffDef>
+        <defName>FCP_WasCrucified</defName>
+        <label>Was Crucified</label>
+        <description>This person was recently removed from crucifixion. They are weak and traumatized.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <initialSeverity>1</initialSeverity>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>300000</disappearsAfterTicks>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <capMods>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>-0.30</offset>
+                    </li>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <offset>-0.20</offset>
+                    </li>
+                </capMods>
             </li>
         </stages>
     </HediffDef>

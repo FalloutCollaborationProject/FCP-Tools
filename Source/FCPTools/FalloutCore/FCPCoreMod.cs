@@ -8,7 +8,7 @@ namespace FCP.Core;
 public class FCPCoreMod : Mod
 {
     public static FCPCoreMod Instance { get; private set; }
-    public static Harmony Harmony { get; } = new Harmony("FCP.Core.Patches");
+    public static HarmonyLib.Harmony Harmony { get; } = new HarmonyLib.Harmony("FCP.Core.Patches");
     public static FCPSettings Settings { get; private set; }
 
     // Settings Helper

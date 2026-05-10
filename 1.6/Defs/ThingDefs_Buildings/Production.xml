@@ -15,7 +15,7 @@
         <graphicData>
             <texPath>Things/Building/Production/FCP_Ammo_Press/FCP_Ammo_Press</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(4,5)</drawSize>
+            <drawSize>(3,3)</drawSize>
             <damageData>
                 <cornerTL>Damage/Corner</cornerTL>
                 <cornerTR>Damage/Corner</cornerTR>
@@ -418,7 +418,7 @@
         <graphicData>
             <texPath>Things/Building/Production/FCP_Cooking_Station_Electric/FCP_Cooking_Station_Electric</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(5,5)</drawSize>
+            <drawSize>(3,3)</drawSize>
             <damageData>
                 <cornerTL>Damage/Corner</cornerTL>
                 <cornerTR>Damage/Corner</cornerTR>
@@ -507,7 +507,7 @@
         <graphicData>
             <texPath>Things/Building/Production/FCP_Cooking_Station_Fueled_Complex/FCP_Cooking_Station_Fueled_Complex</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(5,5)</drawSize>
+            <drawSize>(3,3)</drawSize>
             <damageData>
                 <cornerTL>Damage/Corner</cornerTL>
                 <cornerTR>Damage/Corner</cornerTR>
@@ -600,7 +600,7 @@
         <graphicData>
             <texPath>Things/Building/Production/FCP_Cooking_Station_Fueled_Simple/FCP_Cooking_Station_Fueled_Simple</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(5,5)</drawSize>
+            <drawSize>(3,2)</drawSize>
             <damageData>
                 <cornerTL>Damage/Corner</cornerTL>
                 <cornerTR>Damage/Corner</cornerTR>
@@ -690,7 +690,7 @@
     <ThingDef ParentName="BenchBase">
         <defName>FCP_Production_Fabrication_Workbench</defName>
         <label>fabrication workbench</label>
-        <description>A workbench equipped with advanced tools for producing technological marvels from simpler materials.</description>        <!-- Description is the same as core's might want to change that -->
+        <description>A workbench equipped with advanced tools for producing technological marvels from simpler materials.</description>
         <thingClass>Building_WorkTable</thingClass>
         <altitudeLayer>Building</altitudeLayer>
         <passability>PassThroughOnly</passability>
@@ -891,6 +891,241 @@
         <researchPrerequisites>
             <li>FCP_Research_Crafting_Stations</li>
         </researchPrerequisites>
+    </ThingDef>
+
+    <!--__________ Pre-War Terminals __________-->
+
+    <!--_____ Terminal Base Definitions _____-->
+
+    <!-- Terminal Base -->
+
+    <ThingDef Name="TerminalBase" ParentName="BuildingBase" Abstract="True">
+        <thingClass>FCP.Core.Buildings.Building_Terminal</thingClass>
+        <castEdgeShadows>false</castEdgeShadows>
+        <passability>PassThroughOnly</passability>
+        <fillPercent>0.25</fillPercent>
+        <pathCost>30</pathCost>
+        <size>(1,1)</size>
+        <minifiedDef />
+        <clearBuildingArea>false</clearBuildingArea>
+        <building>
+            <isEdifice>false</isEdifice>
+            <workTableRoomRole>Laboratory</workTableRoomRole>
+            <workTableNotInRoomRoleFactor>0.8</workTableNotInRoomRoleFactor>
+        </building>
+        <surfaceType>Item</surfaceType>
+        <hasInteractionCell>true</hasInteractionCell>
+        <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+        <statBases>
+            <WorkToBuild>0</WorkToBuild>
+            <Flammability>0.5</Flammability>
+            <ResearchSpeedFactor>1.0</ResearchSpeedFactor>
+        </statBases>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>50</basePowerConsumption>
+                <shortCircuitInRain>false</shortCircuitInRain>
+            </li>
+            <li Class="CompProperties_Flickable"/>
+        </comps>
+    </ThingDef>
+
+    <!-- Wall Terimal Base -->
+
+    <ThingDef Name="WallTerminalBase" ParentName="TerminalBase" Abstract="True">
+        <altitudeLayer>BuildingOnTop</altitudeLayer>
+        <placeWorkers>
+            <li>FCP.Core.Buildings.PlaceWorker_OnWall</li>
+            <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+        </placeWorkers>
+        <tickerType>Normal</tickerType>
+    </ThingDef>
+
+    <!-- Table Terminal Base -->
+
+    <ThingDef Name="TableTerminalBase" ParentName="BenchBase" Abstract="True">
+        <thingClass>FCP.Core.Buildings.Building_Terminal</thingClass>
+        <castEdgeShadows>false</castEdgeShadows>
+        <staticSunShadowHeight>0.20</staticSunShadowHeight>
+        <altitudeLayer>ItemImportant</altitudeLayer>
+        <fillPercent>0</fillPercent>
+        <minifiedDef>MinifiedThing</minifiedDef>
+        <clearBuildingArea>false</clearBuildingArea>
+        <building>
+            <isEdifice>false</isEdifice>
+            <workTableRoomRole>Laboratory</workTableRoomRole>
+            <workTableNotInRoomRoleFactor>0.8</workTableNotInRoomRoleFactor>
+        </building>
+        <surfaceType>Item</surfaceType>
+        <hasInteractionCell>true</hasInteractionCell>
+        <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+        <statBases>
+            <WorkToBuild>0</WorkToBuild>
+            <Flammability>0.5</Flammability>
+            <ResearchSpeedFactor>1.0</ResearchSpeedFactor>
+            <Mass>20</Mass>
+        </statBases>
+        <placeWorkers>
+            <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+        </placeWorkers>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>100</basePowerConsumption>
+                <shortCircuitInRain>true</shortCircuitInRain>
+            </li>
+            <li Class="CompProperties_Flickable"/>
+        </comps>
+        <tickerType>Rare</tickerType>
+        <tradeTags>
+            <li>FCP_WastelandTech</li>
+        </tradeTags>
+    </ThingDef>
+
+    <!--_____ Wall Terminals _____-->
+
+    <!-- Old Wall Terminal -->
+
+    <ThingDef ParentName="WallTerminalBase">
+        <defName>FCP_Production_Old_Wall_Terminal</defName>
+        <label>Old Wall Terminal</label>
+        <description>A rusted pre-war computer terminal mounted to a wall. Can be used to research holotapes and may still contain data from before the war. Cannot be moved or claimed once placed.</description>
+        <graphicData>
+            <texPath>Things/Building/Production/FCP_Terminals/FCP_Wall_Mounted_Terminal/FCP_Old_Terminal_Wall_Off</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(1.5,1.5)</drawSize>
+            <drawOffset>(0,0.4,-0.35)</drawOffset>
+            <damageData>
+                <cornerTL>Damage/Corner</cornerTL>
+                <cornerTR>Damage/Corner</cornerTR>
+            </damageData>
+        </graphicData>
+        <statBases>
+            <MaxHitPoints>150</MaxHitPoints>
+            <Cleanliness>-5</Cleanliness>
+        </statBases>
+        <comps>
+            <li Class="FCP.Core.Buildings.CompProperties_Terminal">
+                <poweredOnTexPath>Things/Building/Production/FCP_Terminals/FCP_Wall_Mounted_Terminal/FCP_Old_Terminal_Wall_On</poweredOnTexPath>
+                <poweredOffTexPath>Things/Building/Production/FCP_Terminals/FCP_Wall_Mounted_Terminal/FCP_Old_Terminal_Wall_Off</poweredOffTexPath>
+                <canExtractHolotape>true</canExtractHolotape>
+                <holotapeDropChance>0.1</holotapeDropChance>
+            </li>
+            <li Class="FCP.Core.Buildings.CompProperties_TerminalHacking">
+                <wordLength>6</wordLength>
+                <maxAttempts>4</maxAttempts>
+                <lockoutDurationHours>6</lockoutDurationHours>
+                <wordCount>12</wordCount>
+                <rewardPool>
+                    <li>Silver</li>
+                    <li>ComponentIndustrial</li>
+                    <li>Steel</li>
+                </rewardPool>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <!-- Clean Wall Terminal -->
+
+    <ThingDef ParentName="WallTerminalBase">
+        <defName>FCP_Production_Clean_Wall_Terminal</defName>
+        <label>Clean Wall Terminal</label>
+        <description>A well-preserved pre-war computer terminal mounted to a wall. Can be used to research holotapes and may still contain data from before the war. Cannot be moved or claimed once placed.</description>
+        <graphicData>
+            <texPath>Things/Building/Production/FCP_Terminals/FCP_Wall_Mounted_Terminal/FCP_Clean_Terminal_Wall_Off</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(1.5,1.5)</drawSize>
+            <drawOffset>(0,0.4,-0.35)</drawOffset>
+            <damageData>
+                <cornerTL>Damage/Corner</cornerTL>
+                <cornerTR>Damage/Corner</cornerTR>
+            </damageData>
+        </graphicData>
+        <statBases>
+            <MaxHitPoints>200</MaxHitPoints>
+            <Cleanliness>0</Cleanliness>
+        </statBases>
+        <comps>
+            <li Class="FCP.Core.Buildings.CompProperties_Terminal">
+                <poweredOnTexPath>Things/Building/Production/FCP_Terminals/FCP_Wall_Mounted_Terminal/FCP_Clean_Terminal_Wall_On</poweredOnTexPath>
+                <poweredOffTexPath>Things/Building/Production/FCP_Terminals/FCP_Wall_Mounted_Terminal/FCP_Clean_Terminal_Wall_Off</poweredOffTexPath>
+                <canExtractHolotape>true</canExtractHolotape>
+                <holotapeDropChance>0.1</holotapeDropChance>
+            </li>
+            <li Class="FCP.Core.Buildings.CompProperties_TerminalHacking">
+                <wordLength>9</wordLength>
+                <maxAttempts>4</maxAttempts>
+                <lockoutDurationHours>12</lockoutDurationHours>
+                <wordCount>15</wordCount>
+                <rewardPool>
+                    <li>ComponentIndustrial</li>
+                    <li>ComponentSpacer</li>
+                    <li>Plasteel</li>
+                    <li>Gold</li>
+                </rewardPool>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <!--_____ Table Terminals _____-->
+
+    <!-- Old Table Terminal -->
+
+    <ThingDef ParentName="TableTerminalBase">
+        <defName>FCP_Production_Old_Table_Terminal</defName>
+        <label>Old Table Terminal</label>
+        <description>A weathered pre-war computer terminal on a stand. Can be used to research holotapes. Can be moved and claimed.</description>
+        <graphicData>
+            <texPath>Things/Building/Production/FCP_Terminals/FCP_Table_Mounted_Terminal/FCP_Old_Terminal_Table_Off</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <damageData>
+                <cornerTL>Damage/Corner</cornerTL>
+                <cornerTR>Damage/Corner</cornerTR>
+                <cornerBL>Damage/Corner</cornerBL>
+                <cornerBR>Damage/Corner</cornerBR>
+            </damageData>
+        </graphicData>
+        <statBases>
+            <MaxHitPoints>150</MaxHitPoints>
+            <Cleanliness>-5</Cleanliness>
+        </statBases>
+        <comps>
+            <li Class="FCP.Core.Buildings.CompProperties_Terminal">
+                <poweredOnTexPath>Things/Building/Production/FCP_Terminals/FCP_Table_Mounted_Terminal/FCP_Old_Terminal_Table_On</poweredOnTexPath>
+                <poweredOffTexPath>Things/Building/Production/FCP_Terminals/FCP_Table_Mounted_Terminal/FCP_Old_Terminal_Table_Off</poweredOffTexPath>
+                <canExtractHolotape>false</canExtractHolotape>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <!-- Clean Table Terminal -->
+
+    <ThingDef ParentName="TableTerminalBase">
+        <defName>FCP_Production_Clean_Table_Terminal</defName>
+        <label>Clean Table Terminal</label>
+        <description>A well-maintained pre-war computer terminal on a stand. Can be used to research holotapes. Can be moved and claimed.</description>
+        <graphicData>
+            <texPath>Things/Building/Production/FCP_Terminals/FCP_Table_Mounted_Terminal/FCP_Clean_Terminal_Table_Off</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <damageData>
+                <cornerTL>Damage/Corner</cornerTL>
+                <cornerTR>Damage/Corner</cornerTR>
+                <cornerBL>Damage/Corner</cornerBL>
+                <cornerBR>Damage/Corner</cornerBR>
+            </damageData>
+        </graphicData>
+        <statBases>
+            <MaxHitPoints>200</MaxHitPoints>
+            <Cleanliness>0</Cleanliness>
+        </statBases>
+        <comps>
+            <li Class="FCP.Core.Buildings.CompProperties_Terminal">
+                <poweredOnTexPath>Things/Building/Production/FCP_Terminals/FCP_Table_Mounted_Terminal/FCP_Clean_Terminal_Table_On</poweredOnTexPath>
+                <poweredOffTexPath>Things/Building/Production/FCP_Terminals/FCP_Table_Mounted_Terminal/FCP_Clean_Terminal_Table_Off</poweredOffTexPath>
+                <canExtractHolotape>false</canExtractHolotape>
+            </li>
+        </comps>
     </ThingDef>
 
 </Defs>
