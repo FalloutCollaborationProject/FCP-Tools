@@ -44,41 +44,54 @@ namespace FCP.Core.Buildings
             if (graphicsInitialized) 
                 return;
             
-            var props = Props;
-            if (props != null)
+            // Only load graphics on the main thread
+            if (!LongEventHandler.AnyEventNowOrWaiting)
             {
-                if (!props.poweredOnTexPath.NullOrEmpty())
+                var props = Props;
+                if (props != null)
                 {
-                    graphicPoweredOn = GraphicDatabase.Get(
-                        def.graphicData.graphicClass,
-                        props.poweredOnTexPath,
-                        def.graphicData.shaderType.Shader,
-                        def.graphicData.drawSize,
-                        def.graphicData.color,
-                        def.graphicData.colorTwo
-                    );
+                    if (!props.poweredOnTexPath.NullOrEmpty())
+                    {
+                        graphicPoweredOn = GraphicDatabase.Get(
+                            def.graphicData.graphicClass,
+                            props.poweredOnTexPath,
+                            def.graphicData.shaderType.Shader,
+                            def.graphicData.drawSize,
+                            def.graphicData.color,
+                            def.graphicData.colorTwo
+                        );
+                    }
+
+                    if (!props.poweredOffTexPath.NullOrEmpty())
+                    {
+                        graphicPoweredOff = GraphicDatabase.Get(
+                            def.graphicData.graphicClass,
+                            props.poweredOffTexPath,
+                            def.graphicData.shaderType.Shader,
+                            def.graphicData.drawSize,
+                            def.graphicData.color,
+                            def.graphicData.colorTwo
+                        );
+                    }
                 }
 
-                if (!props.poweredOffTexPath.NullOrEmpty())
-                {
-                    graphicPoweredOff = GraphicDatabase.Get(
-                        def.graphicData.graphicClass,
-                        props.poweredOffTexPath,
-                        def.graphicData.shaderType.Shader,
-                        def.graphicData.drawSize,
-                        def.graphicData.color,
-                        def.graphicData.colorTwo
-                    );
-                }
+                graphicsInitialized = true;
             }
-
-            graphicsInitialized = true;
         }
 
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
-            InitializeGraphics();
+            
+            // Defer graphics initialization to main thread if needed
+            if (LongEventHandler.AnyEventNowOrWaiting)
+            {
+                LongEventHandler.ExecuteWhenFinished(() => InitializeGraphics());
+            }
+            else
+            {
+                InitializeGraphics();
+            }
             
             if (!respawningAfterLoad)
                 holotapeExtracted = false;

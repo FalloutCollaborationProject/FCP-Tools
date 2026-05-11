@@ -106,7 +106,14 @@ namespace FCP.Core.Buildings
             if (wordPools.TryGetValue(length, out var pool) && pool.Count > 0)
                 return pool.RandomElement();
             
-            return GenText.RandomSeedString(length).ToUpper();
+            // Generate random alphanumeric string
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            char[] result = new char[length];
+            for (int i = 0; i < length; i++)
+            {
+                result[i] = chars[Rand.Range(0, chars.Length)];
+            }
+            return new string(result);
         }
 
         private int CalculateLikeness(string word1, string word2)
