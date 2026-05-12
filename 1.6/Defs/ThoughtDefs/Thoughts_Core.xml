@@ -40,4 +40,26 @@
         </replaceThoughts>
     </ThoughtDef>
 
+    <!--_____ Stealthboy Thoughts _____-->
+
+    <!-- Stealthboy Withdrawal -->
+
+    <ThoughtDef>
+        <defName>FCP_Thought_Stealthboy_Withdrawal</defName>
+        <workerClass>ThoughtWorker_Hediff</workerClass>
+        <hediff>FCP_Addiction_Stealthboy</hediff>
+        <validWhileDespawned>true</validWhileDespawned>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <stages>
+            <li>
+                <visible>false</visible>
+            </li>
+            <li>
+                <label>stealthboy withdrawal</label>
+                <description>I feel exposed without the stealth field. I need to disappear.</description>
+                <baseMoodEffect>-15</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
 </Defs>

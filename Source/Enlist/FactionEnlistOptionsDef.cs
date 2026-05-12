@@ -150,6 +150,14 @@ public class FactionEnlistOptionsDef : Def
 	public string exclusiveTraderRequirementsNotMetKey;
 	public int exclusiveTraderRefreshInDays;
 
+	public bool taxCollectorIsEnabled;
+	public string taxCollectorLabelKey;
+	public string taxCollectorDescKey;
+	public string taxCollectorButtonIconTexPath;
+	public TraderKindDef taxCollectorTraderKind;
+	public string taxCollectorTraderNameKey;
+	public int taxCollectorRefreshInDays;
+
 	public bool noSettlementProximityPenalty;
 
 	public List<TitleWageBonus> titleWageBonuses;

@@ -14,12 +14,15 @@ public class ExclusiveTrader : IExposable, ITrader, IThingHolder
 	public Faction faction;
 	public FactionEnlistOptionsDef factionOptionDef;
 
+	public TraderKindDef traderKindDef;
+	public string traderNameKey;
+
 	public TradeCurrency TradeCurrency => TraderKind.tradeCurrency;
 	public IThingHolder ParentHolder => null;
-	public TraderKindDef TraderKind => factionOptionDef.exclusiveTraderKind;
+	public TraderKindDef TraderKind => traderKindDef ?? factionOptionDef.exclusiveTraderKind;
 	public int RandomPriceFactorSeed => randomPriceFactorSeed;
 	public float TradePriceImprovementOffsetForPlayer => 0f;
-	public string TraderName => faction.Name + "\n" + factionOptionDef.exclusiveTraderLabelKey.Translate();
+	public string TraderName => faction.Name + "\n" + (traderNameKey != null ? traderNameKey.Translate() : factionOptionDef.exclusiveTraderLabelKey.Translate());
 	public bool CanTradeNow => true;
 	public Faction Faction => faction;
 
@@ -42,7 +45,7 @@ public class ExclusiveTrader : IExposable, ITrader, IThingHolder
 
 	public IEnumerable<Thing> ColonyThingsWillingToBuy(Pawn playerNegotiator)
 	{
-		return caravan.GetDirectlyHeldThings();
+		return CaravanInventoryUtility.AllInventoryItems(caravan);
 	}
 
 	public void GenerateThings()
@@ -114,5 +117,7 @@ public class ExclusiveTrader : IExposable, ITrader, IThingHolder
 		Scribe_Values.Look(ref randomPriceFactorSeed, "randomPriceFactorSeed");
 		Scribe_References.Look(ref faction, "faction");
 		Scribe_Defs.Look(ref factionOptionDef, "factionOptionDef");
+		Scribe_Defs.Look(ref traderKindDef, "traderKindDef");
+		Scribe_Values.Look(ref traderNameKey, "traderNameKey");
 	}
 }

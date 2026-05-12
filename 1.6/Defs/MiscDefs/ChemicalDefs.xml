@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ChemicalDef>
+        <defName>FCP_Chemical_Stealthboy</defName>
+        <label>stealthboy</label>
+        <addictionHediff>FCP_Addiction_Stealthboy</addictionHediff>
+        <toleranceHediff>FCP_Tolerance_Stealthboy</toleranceHediff>
+        <onGeneratedAddictedToleranceChance>0.8</onGeneratedAddictedToleranceChance>
+        <generateAddictionGenes>false</generateAddictionGenes>
+    </ChemicalDef>
+
+    <NeedDef ParentName="DrugAddictionNeedBase">
+        <defName>FCP_Chemical_Stealthboy</defName>
+        <needClass>Need_Chemical</needClass>
+        <label>stealthboy</label>
+        <description>Because of a stealthboy addiction, this person needs to regularly use stealthboys to avoid withdrawal symptoms.</description>
+        <listPriority>45</listPriority>
+    </NeedDef>
+
+</Defs>

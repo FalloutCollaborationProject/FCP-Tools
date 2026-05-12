@@ -3,6 +3,8 @@
 
     <!--__________ Core Hediffs __________-->
 
+    <!--_____ VATS Hediffs _____-->
+
     <!-- V.A.T.S. -->
 
     <HediffDef>
@@ -22,6 +24,8 @@
             <solid>true</solid>
         </addedPartProps>
     </HediffDef>
+
+    <!--_____ Power Armor Hediffs _____-->
 
     <!-- Power Armor Empty Fuel -->
 
@@ -45,6 +49,8 @@
         </stages>
     </HediffDef>
 
+    <!--_____ Ghoul Hediffs _____-->
+
     <!-- Ghoul Toxic Heal -->
 
     <HediffDef>
@@ -67,6 +73,8 @@
             </li>
         </stages>
     </HediffDef>
+
+    <!--_____ Crucifixion Hediffs _____-->
 
     <!-- Power Line Crucifixion -->
 
@@ -169,6 +177,87 @@
                         <offset>-0.20</offset>
                     </li>
                 </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!--_____ Stealthboy Hediffs _____-->
+
+    <!-- Stealthboy 3001A field -->
+
+    <HediffDef>
+        <defName>FCP_Hediff_Stealthboy_3001A</defName>
+        <label>Stealthboy Field (3001A)</label>
+        <hediffClass>HediffWithComps</hediffClass>
+        <description>A modulating stealth field bending light around the user.</description>
+        <isBad>false</isBad>
+        <comps>
+            <li Class="HediffCompProperties_Invisibility">
+                <visibleToPlayer>true</visibleToPlayer>
+            </li>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>600</disappearsAfterTicks>
+                <showRemainingTime>True</showRemainingTime>
+            </li>
+            <li Class="HediffCompProperties_DisappearsOnDeath"/>
+        </comps>
+    </HediffDef>
+
+    <!-- Stealthboy 3001B field -->
+
+    <HediffDef>
+        <defName>FCP_Hediff_Stealthboy_3001B</defName>
+        <label>Stealthboy Field (3001B)</label>
+        <hediffClass>HediffWithComps</hediffClass>
+        <description>An improved modulating stealth field with extended duration.</description>
+        <isBad>false</isBad>
+        <comps>
+            <li Class="HediffCompProperties_Invisibility">
+                <visibleToPlayer>true</visibleToPlayer>
+            </li>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>1200</disappearsAfterTicks>
+                <showRemainingTime>True</showRemainingTime>
+            </li>
+            <li Class="HediffCompProperties_DisappearsOnDeath"/>
+        </comps>
+    </HediffDef>
+
+    <!-- Tolerance -->
+
+    <HediffDef ParentName="DrugToleranceBase">
+        <defName>FCP_Tolerance_Stealthboy</defName>
+        <label>Stealthboy Tolerance</label>
+        <description>A built-up tolerance to stealthboy use. The more severe this tolerance is, the more stealthboy use it takes to get the same effect.</description>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-0.015</severityPerDay>
+            </li>
+            <li Class="HediffCompProperties_DrugEffectFactor">
+                <chemical>FCP_Chemical_Stealthboy</chemical>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <!-- Addiction -->
+
+    <HediffDef ParentName="AddictionBase">
+        <defName>FCP_Addiction_Stealthboy</defName>
+        <label>Stealthboy Addiction</label>
+        <description>A chemical addiction to stealthboy use. Long-term presence of the field has caused neurological adaptations at the cellular level, so the brain can no longer function properly without it.\n\nWithout regular stealthboy use, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.</description>
+        <hediffClass>Hediff_Addiction</hediffClass>
+        <chemicalNeed>FCP_Chemical_Stealthboy</chemicalNeed>
+        <comps>
+            <li Class="HediffCompProperties_SeverityPerDay">
+                <severityPerDay>-0.08</severityPerDay>
+                <showDaysToRecover>true</showDaysToRecover>
+            </li>
+        </comps>
+        <stages>
+            <li>
+            </li>
+            <li>
+                <label>withdrawal</label>
             </li>
         </stages>
     </HediffDef>

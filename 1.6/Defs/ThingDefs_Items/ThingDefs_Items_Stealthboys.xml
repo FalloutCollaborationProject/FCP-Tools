@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Stealthboy 3001A -->
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>FCP_Item_Stealthboy_3001A</defName>
+        <label>Stealthboy 3001A</label>
+        <description>A portable stealth device from before the war. Generates a modulating field that renders the user nearly invisible for a brief time. Early model with short operational duration.
+
+Can be addictive with regular use.</description>
+        <descriptionHyperlinks>
+            <HediffDef>FCP_Hediff_Stealthboy_3001A</HediffDef>
+            <HediffDef>FCP_Tolerance_Stealthboy</HediffDef>
+            <HediffDef>FCP_Addiction_Stealthboy</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>Things/Items/Misc/Stealthboys/FCP_Stealthboy_3001_A</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.75</drawSize>
+        </graphicData>
+        <rotatable>false</rotatable>
+        <techLevel>Spacer</techLevel>
+        <stackLimit>10</stackLimit>
+        <statBases>
+            <MarketValue>450</MarketValue>
+            <Mass>0.3</Mass>
+            <MaxHitPoints>50</MaxHitPoints>
+            <Flammability>0.4</Flammability>
+        </statBases>
+        <thingCategories>
+            <li>ItemsMisc</li>
+        </thingCategories>
+        <ingestible>
+            <foodType>Processed</foodType>
+            <baseIngestTicks>30</baseIngestTicks>
+            <nurseable>false</nurseable>
+            <drugCategory>Medical</drugCategory>
+            <preferability>NeverForNutrition</preferability>
+            <ingestSound>Ingest_Inject</ingestSound>
+            <ingestHoldUsesTable>false</ingestHoldUsesTable>
+            <ingestCommandString>Activate {0}</ingestCommandString>
+            <ingestReportString>Activating {0}.</ingestReportString>
+            <useEatingSpeedStat>false</useEatingSpeedStat>
+            <outcomeDoers>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>FCP_Hediff_Stealthboy_3001A</hediffDef>
+                    <severity>1.0</severity>
+                    <toleranceChemical>FCP_Chemical_Stealthboy</toleranceChemical>
+                </li>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>FCP_Tolerance_Stealthboy</hediffDef>
+                    <severity>0.04</severity>
+                    <toleranceChemical>FCP_Chemical_Stealthboy</toleranceChemical>
+                    <divideByBodySize>true</divideByBodySize>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+            <li Class="CompProperties_Drug">
+                <chemical>FCP_Chemical_Stealthboy</chemical>
+                <addictiveness>0.025</addictiveness>
+                <minToleranceToAddict>0.15</minToleranceToAddict>
+                <existingAddictionSeverityOffset>0.20</existingAddictionSeverityOffset>
+                <needLevelOffset>0.85</needLevelOffset>
+                <listOrder>200</listOrder>
+            </li>
+        </comps>
+        <tradeTags>
+            <li>ExoticMisc</li>
+        </tradeTags>
+        <tradeability>Sellable</tradeability>
+    </ThingDef>
+
+    <!-- Stealthboy 3001B -->
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>FCP_Item_Stealthboy_3001B</defName>
+        <label>Stealthboy 3001B</label>
+        <description>An improved portable stealth device from before the war. More efficient than the 3001A model, providing significantly longer invisibility duration.
+
+Can be addictive with regular use.</description>
+        <descriptionHyperlinks>
+            <HediffDef>FCP_Hediff_Stealthboy_3001B</HediffDef>
+            <HediffDef>FCP_Tolerance_Stealthboy</HediffDef>
+            <HediffDef>FCP_Addiction_Stealthboy</HediffDef>
+        </descriptionHyperlinks>
+        <graphicData>
+            <texPath>Things/Items/Misc/Stealthboys/FCP_Stealthboy_3001_B</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.75</drawSize>
+        </graphicData>
+        <rotatable>false</rotatable>
+        <techLevel>Spacer</techLevel>
+        <stackLimit>10</stackLimit>
+        <statBases>
+            <MarketValue>750</MarketValue>
+            <Mass>0.3</Mass>
+            <MaxHitPoints>60</MaxHitPoints>
+            <Flammability>0.4</Flammability>
+        </statBases>
+        <thingCategories>
+            <li>ItemsMisc</li>
+        </thingCategories>
+        <ingestible>
+            <foodType>Processed</foodType>
+            <baseIngestTicks>30</baseIngestTicks>
+            <nurseable>false</nurseable>
+            <drugCategory>Medical</drugCategory>
+            <preferability>NeverForNutrition</preferability>
+            <ingestSound>Ingest_Inject</ingestSound>
+            <ingestHoldUsesTable>false</ingestHoldUsesTable>
+            <ingestCommandString>Activate {0}</ingestCommandString>
+            <ingestReportString>Activating {0}.</ingestReportString>
+            <useEatingSpeedStat>false</useEatingSpeedStat>
+            <outcomeDoers>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>FCP_Hediff_Stealthboy_3001B</hediffDef>
+                    <severity>1.0</severity>
+                    <toleranceChemical>FCP_Chemical_Stealthboy</toleranceChemical>
+                </li>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>FCP_Tolerance_Stealthboy</hediffDef>
+                    <severity>0.04</severity>
+                    <toleranceChemical>FCP_Chemical_Stealthboy</toleranceChemical>
+                    <divideByBodySize>true</divideByBodySize>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+        <comps>
+            <li Class="FCP.Core.CompProperties_LabelColored">
+                <rarity>Rare</rarity>
+            </li>
+            <li Class="CompProperties_Drug">
+                <chemical>FCP_Chemical_Stealthboy</chemical>
+                <addictiveness>0.025</addictiveness>
+                <minToleranceToAddict>0.15</minToleranceToAddict>
+                <existingAddictionSeverityOffset>0.20</existingAddictionSeverityOffset>
+                <needLevelOffset>0.85</needLevelOffset>
+                <listOrder>201</listOrder>
+            </li>
+        </comps>
+        <tradeTags>
+            <li>ExoticMisc</li>
+        </tradeTags>
+        <tradeability>Sellable</tradeability>
+    </ThingDef>
+
+</Defs>

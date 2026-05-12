@@ -35,6 +35,7 @@ public class WorldObjectCompEnlist : WorldObjectComp
 	private Dictionary<FactionEnlistOptionsDef, PawnTrader> pawnTraders;
 	private Dictionary<FactionEnlistOptionsDef, PawnTrader> bountyHunterTraders;
 	private Dictionary<FactionEnlistOptionsDef, ExclusiveTrader> exclusiveTraders;
+	private Dictionary<FactionEnlistOptionsDef, ExclusiveTrader> taxCollectorTraders;
 	private Dictionary<FactionEnlistOptionsDef, bool> promotedByOptions;
 	public Dictionary<FactionEnlistOptionsDef, AbilityTrainingSession> activeTrainingSessions;
 	public Dictionary<FactionEnlistOptionsDef, DeliveryQuestList> deliveryBoards;
@@ -196,6 +197,17 @@ public class WorldObjectCompEnlist : WorldObjectComp
 					{
 						if (Find.TickManager.TicksGame % (def.exclusiveTraderRefreshInDays * GenDate.TicksPerDay) == 0)
 							exTrader.GenerateThings();
+					}
+				}
+			}
+			if (taxCollectorTraders != null && optionsDefs != null)
+			{
+				foreach (FactionEnlistOptionsDef def in optionsDefs)
+				{
+					if (taxCollectorTraders.TryGetValue(def, out ExclusiveTrader tcTrader) && tcTrader != null && def.taxCollectorRefreshInDays > 0)
+					{
+						if (Find.TickManager.TicksGame % (def.taxCollectorRefreshInDays * GenDate.TicksPerDay) == 0)
+							tcTrader.GenerateThings();
 					}
 				}
 			}
@@ -453,6 +465,38 @@ public class WorldObjectCompEnlist : WorldObjectComp
 									faction.Named("FACTION")));
 							}
 							yield return command_ExclusiveTrader;
+							order++;
+						}
+
+						if (optionDef.taxCollectorIsEnabled && optionDef.taxCollectorTraderKind != null)
+						{
+							taxCollectorTraders ??= new Dictionary<FactionEnlistOptionsDef, ExclusiveTrader>();
+							Command_Action command_TaxCollector = new Command_Action
+							{
+								defaultLabel = optionDef.taxCollectorLabelKey.Translate(faction.Named("FACTION")),
+								defaultDesc = optionDef.taxCollectorDescKey.Translate(faction.Named("FACTION")),
+								icon = ContentFinder<Texture2D>.Get(optionDef.taxCollectorButtonIconTexPath),
+								action = delegate
+								{
+									if (!taxCollectorTraders.TryGetValue(optionDef, out ExclusiveTrader tcTrader))
+									{
+										tcTrader = new ExclusiveTrader
+										{
+											faction = parent.Faction,
+											factionOptionDef = optionDef,
+											traderKindDef = optionDef.taxCollectorTraderKind,
+											traderNameKey = optionDef.taxCollectorTraderNameKey
+										};
+										tcTrader.GenerateThings();
+										taxCollectorTraders[optionDef] = tcTrader;
+									}
+									tcTrader.caravan = caravan;
+									Pawn bestNegotiator = BestCaravanPawnUtility.FindBestNegotiator(caravan, faction, optionDef.taxCollectorTraderKind);
+									Find.WindowStack.Add(new Dialog_Trade(bestNegotiator, tcTrader));
+								},
+								order = order
+							};
+							yield return command_TaxCollector;
 							order++;
 						}
 
@@ -965,6 +1009,7 @@ public class WorldObjectCompEnlist : WorldObjectComp
 		Scribe_Collections.Look(ref pawnTraders, "pawnTraders", LookMode.Def, LookMode.Deep);
 		Scribe_Collections.Look(ref bountyHunterTraders, "bountyHunterTraders", LookMode.Def, LookMode.Deep);
 		Scribe_Collections.Look(ref exclusiveTraders, "exclusiveTraders", LookMode.Def, LookMode.Deep);
+		Scribe_Collections.Look(ref taxCollectorTraders, "taxCollectorTraders", LookMode.Def, LookMode.Deep);
 		Scribe_Collections.Look(ref provisionInfos, "provisionInfos", LookMode.Value, LookMode.Deep);
 		Scribe_Collections.Look(ref promotedProvisionInfos, "promotedProvisionInfos", LookMode.Value, LookMode.Deep);
 		Scribe_Collections.Look(ref promotedByOptions, "promotedByOptions", LookMode.Def, LookMode.Value);
