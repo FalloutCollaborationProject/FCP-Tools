@@ -18,4 +18,10 @@ public static class ApparelExtensionUtility
         var extension = CachedExtensions.GetOrAdd(def, static d => d.GetModExtension<ApparelExtension>());
         return extension != null && extension.shouldHideHead;
     }
+
+    public static BodyTypeDef GetDisplayBodyType(this ThingDef def)
+    {
+        var extension = CachedExtensions.GetOrAdd(def, static d => d.GetModExtension<ApparelExtension>());
+        return extension?.displayBodyType;
+    }
 }

@@ -13,9 +13,10 @@ public static class CompTechprint_CompFloatMenuOptions_Patch
         if (techprintCompProps != null && techprintCompProps.project != null)
         {
             var extension = techprintCompProps.project.GetModExtension<TechprintExtension>();
-            if (extension != null && extension.requiredBenches != null && extension.requiredBenches.Count > 0)
+            var benches = extension?.AllRequiredBenches;
+            if (benches != null && benches.Count > 0)
             {
-                foreach (var item in CompFloatMenuOptions(__instance, selPawn, extension.requiredBenches))
+                foreach (var item in CompFloatMenuOptions(__instance, selPawn, benches))
                 {
                     yield return item;
                 }

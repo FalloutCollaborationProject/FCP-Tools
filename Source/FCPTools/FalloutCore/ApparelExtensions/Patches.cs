@@ -4,8 +4,21 @@ using System.Collections.Generic;
 using System.Reflection.Emit;
 using JetBrains.Annotations;
 using Verse;
+using Verse.AI;
 
 namespace FCP.Core;
+
+[UsedImplicitly]
+[HarmonyPatch(typeof(ApparelGraphicRecordGetter), nameof(ApparelGraphicRecordGetter.TryGetGraphicApparel))]
+public static class ApparelGraphicRecordGetter_TryGetGraphicApparel_Patch
+{
+    public static void Prefix(Apparel apparel, ref BodyTypeDef bodyType)
+    {
+        var overrideType = apparel.def.GetDisplayBodyType();
+        if (overrideType != null)
+            bodyType = overrideType;
+    }
+}
 
 [UsedImplicitly]
 [HarmonyPatch(typeof(PawnRenderNodeWorker), "AppendDrawRequests")]

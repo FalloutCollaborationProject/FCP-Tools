@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
+	<!-- Tools -->
+
 	<FCP_Settings_Category>FCP Tools</FCP_Settings_Category>
 	<FCP_Settings.General>General</FCP_Settings.General>
 	<FCP_Settings.General.tt>Options that affect the whole mod or don't fit anywhere else.</FCP_Settings.General.tt>
 
 	<!-- Stims Settings -->
+
 	<FCP_Settings_Stims>Stims</FCP_Settings_Stims>
 	<FCP_Settings_Stims_AutoStim>Auto-inject stimpaks</FCP_Settings_Stims_AutoStim>
 	<FCP_Settings_Stims_AutoStim_Desc>Pawns will automatically use stimpaks from their inventory when damaged.</FCP_Settings_Stims_AutoStim_Desc>
@@ -13,20 +16,23 @@
 	<FCP_Settings_Stims_TeetotalerAutoStim_Desc>Allow pawns with the teetotaler trait to automatically use stimpaks.</FCP_Settings_Stims_TeetotalerAutoStim_Desc>
 
 	<!-- Enlistment Settings -->
+
 	<FCP_Settings_Enlistment>Enlistment</FCP_Settings_Enlistment>
 	<FCP_Settings_Enlistment_ActiveTypes>Active Enlistment Types</FCP_Settings_Enlistment_ActiveTypes>
 
 	<!-- Debug Settings-->
+
 	<FCP_Settings_Debug>Debug</FCP_Settings_Debug>
 	<FCP_Settings_Debug_tt>Options to help with the diagnosis of issues or modify behaviour for debugging</FCP_Settings_Debug_tt>
-
 	<FCP_Settings_Debug_Logging>Logging</FCP_Settings_Debug_Logging>
 	<FCP_Settings_Debug_VerboseLogging>Verbose Logging</FCP_Settings_Debug_VerboseLogging>
 
 	<!-- Permits -->
+
 	<FCP_MessagePermitLostOnPromotion>Due to {0_possessive} promotion to {1}, {0_labelShort} has lost {0_possessive} {2} permit</FCP_MessagePermitLostOnPromotion>
 
 	<!-- Storyteller Joiner -->
+
 	<FCP_LetterLabel_SpecialWandererJoins>Special Wanderer: {PAWN_nameDef}</FCP_LetterLabel_SpecialWandererJoins>
 	<FCP_Letter_SpecialWandererJoins>A pawn {PAWN_title} named {PAWN_nameDef} has arrived and wants to join the colony.</FCP_Letter_SpecialWandererJoins>
 	<FCP_RarityCommon>Common</FCP_RarityCommon>
@@ -46,6 +52,7 @@
 	<FCP_WrongXenotype>Wrong xenotype</FCP_WrongXenotype>
 
 	<!-- Weapon Requirements -->
+
 	<FCP_WeaponReq_RequirementsNotMet>Requirements not met</FCP_WeaponReq_RequirementsNotMet>
 	<FCP_WeaponReq_NoXenotype>Requires a xenotype</FCP_WeaponReq_NoXenotype>
 	<FCP_WeaponReq_BannedXenotype>Banned xenotype: {0}</FCP_WeaponReq_BannedXenotype>
@@ -53,13 +60,92 @@
 	<FCP_WeaponReq_RequiresApparel>Requires apparel: {0}</FCP_WeaponReq_RequiresApparel>
 
 	<!-- Apparel Requirements -->
-    <FCP_ApparelRequirement.RequiresTrait>Requires Trait: {0}</FCP_ApparelRequirement.RequiresTrait>
-    <FCP_ApparelRequirement.RequiresApparel>Requires: {0}</FCP_ApparelRequirement.RequiresApparel>
-    <FCP_ApparelRequirement.RequiresAnyOfApparel>Requires any of: {0}</FCP_ApparelRequirement.RequiresAnyOfApparel>
-    <FCP_ApparelRequirement.RequiresPowerArmorTraining>Requires Power Armor Training</FCP_ApparelRequirement.RequiresPowerArmorTraining>
+
+	<FCP_ApparelRequirement.RequiresTrait>Requires Trait: {0}</FCP_ApparelRequirement.RequiresTrait>
+	<FCP_ApparelRequirement.RequiresApparel>Requires: {0}</FCP_ApparelRequirement.RequiresApparel>
+	<FCP_ApparelRequirement.RequiresAnyOfApparel>Requires any of: {0}</FCP_ApparelRequirement.RequiresAnyOfApparel>
+	<FCP_ApparelRequirement.RequiresPowerArmorTraining>Requires Power Armor Training</FCP_ApparelRequirement.RequiresPowerArmorTraining>
 
 	<!-- Enlistment - Hostile Factions -->
+
 	<FCP_Enemy_Of_Enlist_Faction>New Enemy</FCP_Enemy_Of_Enlist_Faction>
 	<FCP_Enemy_Of_Enlist_Faction_Desc>By enlisting with {ENLISTED_name}, you have become an enemy of {HOSTILE_name}. They are now hostile toward your colony.</FCP_Enemy_Of_Enlist_Faction_Desc>
+
+	<!-- Goodwill Recipe -->
+
+	<GoodwillUnmet>not enough goodwill with {0}, require {1} minimum</GoodwillUnmet>
+	<Goodwill_FactionDefeated>{0} has beed defeated</Goodwill_FactionDefeated>
+	<Goodwill_FactionDontExist>Faction {0} doesn't exist</Goodwill_FactionDontExist>
+
+	<!-- Power Armor -->
+
+	<FCP_CannotUsePowerArmorStation>Cannot use power armor station</FCP_CannotUsePowerArmorStation>
+	<FCP_StorePowerArmor>Store power armor</FCP_StorePowerArmor>
+	<FCP_EquipFromStation>Equip from station</FCP_EquipFromStation>
+	<FCP_SwapPowerArmor>Swap power armor</FCP_SwapPowerArmor>
+	<FCP_StoredApparel>Stored apparel</FCP_StoredApparel>
+
+	<!-- Terminal -->
+
+	<FCP_ExtractHolotape>Extract holotape</FCP_ExtractHolotape>
+	<FCP_ExtractHolotape_AlreadyExtracted>Already extracted</FCP_ExtractHolotape_AlreadyExtracted>
+	<FCP_ExtractedHolotape>{PAWN_nameDef} found a {1} in the terminal!</FCP_ExtractedHolotape>
+	<FCP_NoHolotapeFound>{PAWN_nameDef} found no useful data in the terminal.</FCP_NoHolotapeFound>
+	<FCP_HolotapeStatus_Extracted>Data already extracted</FCP_HolotapeStatus_Extracted>
+	<FCP_HolotapeStatus_CanExtract>May contain data</FCP_HolotapeStatus_CanExtract>
+	<MustPlaceOnWall>Must place on wall</MustPlaceOnWall>
+	<FCP_HackTerminal>Hack terminal</FCP_HackTerminal>
+	<FCP_TerminalLocked>Locked - requires hacking</FCP_TerminalLocked>
+	<FCP_TerminalHackSuccess>Terminal unlocked - received {0}</FCP_TerminalHackSuccess>
+	<FCP_TerminalLockedOut>Terminal locked out for {0} hours</FCP_TerminalLockedOut>
+	<FCP_TerminalLockedOut_Status>Locked ({0}h remaining)</FCP_TerminalLockedOut_Status>
+
+	<!-- V.A.T.S. -->
+
+	<FCP_Settings_VATS>V.A.T.S.</FCP_Settings_VATS>
+	<FCP_Settings_VATS_header>V.A.T.S. Settings</FCP_Settings_VATS_header>
+	<FCP_VATS_Settings_EnableSlowDownTime>Enable time slowdown</FCP_VATS_Settings_EnableSlowDownTime>
+	<FCP_VATS_Settings_EnableZoom>Enable the zoom shader</FCP_VATS_Settings_EnableZoom>
+	<FCP_VATS_Settings_ZoomTimeout>How many ticks after creation until we force remove the zoom (in case of bugs): {0} ticks</FCP_VATS_Settings_ZoomTimeout>
+	<FCP_VATS_Settings_CooldownTicks>How many ticks the VATS cooldown is: {0} ticks</FCP_VATS_Settings_CooldownTicks>
+	<FCP_VATS_Settings_BodyPartMultipliers>Accuracy multipliers for various body parts.</FCP_VATS_Settings_BodyPartMultipliers>
+	<FCP_VATS_Settings_Gain_Per_Level>Accuracy Gain Per Level Multiplier [{0}].</FCP_VATS_Settings_Gain_Per_Level>
+	<FCP_VATS_Settings_Gain_Per_Level_Mouseover>Values less than 1 exponentially scale to zero gain per level. Values greater than 1 exponentially scale to infinity.</FCP_VATS_Settings_Gain_Per_Level_Mouseover>
+	<FCP_VATS_Settings_FlatHitChanceBoost>Flat boost to aiming with VATS [{0}].</FCP_VATS_Settings_FlatHitChanceBoost>
+	<FCP_VATS_Settings_FlatHitChanceBoost_Mouseover>Adds a flat boost to aiming, as the calculation for hit chance at lower levels is very not fun.</FCP_VATS_Settings_FlatHitChanceBoost_Mouseover>
+	<FCP_VATS_Settings_ClampingFactor>Clamping Factor for accuracy scaling [{0}]</FCP_VATS_Settings_ClampingFactor>
+	<FCP_VATS_Settings_ClampingFactor_Mouseover>Clamps the max accuracy boost, and scales appropriately</FCP_VATS_Settings_ClampingFactor_Mouseover>
+	<FCP_VATS_Settings_Reset>Reset</FCP_VATS_Settings_Reset>
+	<FCP_VATS_LegendaryStats>Legendary effects:</FCP_VATS_LegendaryStats>
+	<FCP_VATS_MessageReceivedDamageFromHediff>{PAWN_labelShort} has a crippled {1}.</FCP_VATS_MessageReceivedDamageFromHediff>
+
+	<!-- Cages -->
+
+	<FCP_ReleaseAnimalFromCage>Release {0}</FCP_ReleaseAnimalFromCage>
+	<FCP_CarryAnimalToCage>Carry {0} to cage</FCP_CarryAnimalToCage>
+	<FCP_ShouldCaptureCommand>Will this cage capture wild animals.</FCP_ShouldCaptureCommand>
+	<FCP_ShouldCaptureTrue>Will capture wild animals.</FCP_ShouldCaptureTrue>
+	<FCP_ShouldCaptureFalse>Will not capture wild animals.</FCP_ShouldCaptureFalse>
+	<FCP_CageAnimalCapturedLabel>Animal captured!</FCP_CageAnimalCapturedLabel>
+	<FCP_CageAnimalCapturedText>You have captured {0} in your cage.</FCP_CageAnimalCapturedText>
+	<FCP_ChooseAnimalCage>Choose new cage</FCP_ChooseAnimalCage>
+	<FCP_SelectThisCage>Select this cage.</FCP_SelectThisCage>
+	<FCP_TransferAnimalBetweenCages>Transfer {0} to another cage.</FCP_TransferAnimalBetweenCages>
+
+	<!-- Music Expanded -->
+
+	<ME_MusicExpanded>Music Expanded</ME_MusicExpanded>
+	<ME_Theme>Theme</ME_Theme>
+	<ME_ThemeDescription>Theme</ME_ThemeDescription>
+	<ME_SelectTheme>Select Theme</ME_SelectTheme>
+	<ME_ShowNowPlaying>Show Now Playing</ME_ShowNowPlaying>
+	<ME_ShowNowPlayingDescription>When on, a message will appear with the title of the currently selected track.</ME_ShowNowPlayingDescription>
+	<ME_VanillaMusicUpdate>Vanilla Music Update</ME_VanillaMusicUpdate>
+	<ME_VanillaMusicUpdateDescription>When on, RimWorld will play music periodically, rather than constantly.</ME_VanillaMusicUpdateDescription>
+	<ME_SelectSounds>Select Sounds</ME_SelectSounds>
+	<ME_SelectSoundsDescription>This theme will be used for sounds when possible. Any sounds not replaced will use vanilla sounds.</ME_SelectSoundsDescription>
+	<ME_NowPlaying>Now Playing: {0}</ME_NowPlaying>
+	<ME_Vanilla_Label>Music Expanded: Vanilla</ME_Vanilla_Label>
+	<ME_Vanilla_Description>All vanilla SongDefs implemented with the features of MusicExpanded!</ME_Vanilla_Description>
 
 </LanguageData>
