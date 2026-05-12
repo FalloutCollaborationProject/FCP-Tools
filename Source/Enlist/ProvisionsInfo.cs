@@ -32,8 +32,7 @@ public class ProvisionsInfo : IExposable
 				{
 					Pawn pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(recruit.pawnKind, Faction.OfPlayer, PawnGenerationContext.NonPlayer, forceGenerateNewPawn: true));
 					pawn.SetFaction(Faction.OfPlayer);
-					if (pawn.guest != null)
-						pawn.guest.joinStatus = JoinStatus.JoinAsColonist;
+					pawn.guest?.SetGuestStatus(null);
 					Find.WorldPawns.PassToWorld(pawn);
 					caravan.AddPawn(pawn, false);
 				}
