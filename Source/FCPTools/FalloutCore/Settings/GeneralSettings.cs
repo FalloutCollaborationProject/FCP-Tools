@@ -11,6 +11,9 @@ public class GeneralSettings : SettingsTab
     public bool autoStim = true;
     public bool teetotalerAutoStim = false;
 
+    // Weapon Condition
+    public bool weaponConditionEnabled = true;
+
     public override void DoTabWindowContents(Rect tabRect)
     {
         var list = new Listing_Standard();
@@ -26,6 +29,15 @@ public class GeneralSettings : SettingsTab
         list.CheckboxLabeled("FCP_Settings_Stims_TeetotalerAutoStim".Translate(), ref teetotalerAutoStim,
             "FCP_Settings_Stims_TeetotalerAutoStim_Desc".Translate());
 
+        // Weapon Condition
+        list.Gap();
+        Text.Font = GameFont.Medium;
+        list.Label("FCP_Settings_WeaponCondition".Translate());
+        Text.Font = GameFont.Small;
+        list.GapLine();
+        list.CheckboxLabeled("FCP_Settings_WeaponCondition_Enabled".Translate(), ref weaponConditionEnabled,
+            "FCP_Settings_WeaponCondition_Enabled_Desc".Translate());
+
         list.End();
     }
 
@@ -34,5 +46,8 @@ public class GeneralSettings : SettingsTab
         // Stimpacks
         Scribe_Values.Look(ref autoStim, nameof(autoStim), defaultValue: true);
         Scribe_Values.Look(ref teetotalerAutoStim, nameof(teetotalerAutoStim), defaultValue: false);
+
+        // Weapon Condition
+        Scribe_Values.Look(ref weaponConditionEnabled, nameof(weaponConditionEnabled), defaultValue: true);
     }
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <TraitDef>
+        <defName>FCP_Trait_JuryRigging</defName>
+        <label>jury rigger</label>
+        <description>This pawn has a knack for improvised repairs. Right-click any damaged FCP weapon and select "Jury rig" to cannibalize a matching weapon from the map, instantly restoring condition in the field without a bench.</description>
+        <degreeDatas>
+            <li>
+                <label>jury rigger</label>
+                <description>This pawn has a knack for improvised repairs. Right-click any damaged FCP weapon and select "Jury rig" to cannibalize a matching weapon from the map, instantly restoring condition in the field without a bench.</description>
+                <degree>0</degree>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+</Defs>

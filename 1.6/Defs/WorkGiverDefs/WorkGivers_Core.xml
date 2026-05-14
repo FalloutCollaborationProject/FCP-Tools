@@ -28,7 +28,44 @@
 		</requiredCapacities>
 		<prioritizeSustains>true</prioritizeSustains>
 	</WorkGiverDef>
-	
+
+	<WorkGiverDef>
+		<defName>FCP_DoBillsPortableToolBench</defName>
+		<label>repair weapons at repair bench</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Crafting</workType>
+		<priorityInType>85</priorityInType>
+		<fixedBillGiverDefs>
+			<li>FCP_Production_Repair_Bench</li>
+			<li>FCP_Production_Complex_Weapons_Workbench</li>
+		</fixedBillGiverDefs>
+		<verb>repair at</verb>
+		<gerund>repairing at</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+
+	<WorkGiverDef>
+		<defName>FCP_DoBillsApparelBenches</defName>
+		<label>repair apparel at workbench</label>
+		<giverClass>WorkGiver_DoBill</giverClass>
+		<workType>Crafting</workType>
+		<priorityInType>85</priorityInType>
+		<fixedBillGiverDefs>
+			<li>FCP_Production_Armor_Workbench</li>
+			<li>FCP_Production_Tailoring_Workbench</li>
+			<li>FCP_Production_Repair_Bench</li>
+		</fixedBillGiverDefs>
+		<verb>repair apparel at</verb>
+		<gerund>repairing apparel at</gerund>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+		<prioritizeSustains>true</prioritizeSustains>
+	</WorkGiverDef>
+
 </Defs>
 
 

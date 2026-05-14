@@ -149,4 +149,40 @@
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
 
+    <!-- Clear Weapon Jam -->
+
+    <JobDef>
+        <defName>FCP_Job_ClearWeaponJam</defName>
+        <driverClass>FCP.Core.WeaponCondition.JobDriver_ClearWeaponJam</driverClass>
+        <reportString>clearing weapon jam.</reportString>
+        <playerInterruptible>true</playerInterruptible>
+    </JobDef>
+
+    <!-- Jury Rig Weapon -->
+
+    <JobDef>
+        <defName>FCP_Job_JuryRigWeapon</defName>
+        <driverClass>FCP.Core.WeaponCondition.JobDriver_JuryRigWeapon</driverClass>
+        <reportString>jury-rigging TargetA.</reportString>
+        <playerInterruptible>true</playerInterruptible>
+    </JobDef>
+
+    <!-- Load Weapon To Bench -->
+
+    <JobDef>
+        <defName>FCP_Job_LoadWeaponToBench</defName>
+        <driverClass>FCP.Core.WeaponCondition.JobDriver_LoadWeaponToBench</driverClass>
+        <reportString>hauling TargetB to TargetA.</reportString>
+        <playerInterruptible>true</playerInterruptible>
+    </JobDef>
+
+    <!-- Load Apparel To Bench -->
+
+    <JobDef>
+        <defName>FCP_Job_LoadApparelToBench</defName>
+        <driverClass>FCP.Core.WeaponCondition.JobDriver_LoadApparelToBench</driverClass>
+        <reportString>hauling TargetB to TargetA.</reportString>
+        <playerInterruptible>true</playerInterruptible>
+    </JobDef>
+
 </Defs>

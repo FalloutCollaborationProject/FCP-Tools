@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Repair Weapon -->
+
+    <RecipeDef>
+        <defName>FCP_Recipe_RepairWeapon</defName>
+        <label>repair weapon</label>
+        <description>Disassemble, clean, and reassemble a damaged FCP weapon, restoring it to full condition.</description>
+        <workerClass>FCP.Core.WeaponCondition.RecipeWorker_RepairWeapon</workerClass>
+        <jobString>Repairing weapon.</jobString>
+        <workAmount>3000</workAmount>
+        <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+        <workSkill>Crafting</workSkill>
+        <workSkillLearnFactor>1</workSkillLearnFactor>
+        <effectWorking>ConstructMetal</effectWorking>
+        <soundWorking>Recipe_Machining</soundWorking>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Steel</li>
+                    </thingDefs>
+                </filter>
+                <count>10</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>ComponentIndustrial</li>
+                    </thingDefs>
+                </filter>
+                <count>1</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>Steel</li>
+                <li>ComponentIndustrial</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <recipeUsers>
+            <li>FCP_Production_Repair_Bench</li>
+        </recipeUsers>
+    </RecipeDef>
+
+    <!-- Repair Weapon (Complex Bench) -->
+
+    <RecipeDef>
+        <defName>FCP_Recipe_RepairWeapon_Complex</defName>
+        <label>repair weapon (complex)</label>
+        <description>Fully overhaul a damaged FCP weapon using advanced tools and quality parts, restoring it faster than a basic bench at the cost of more materials.</description>
+        <workerClass>FCP.Core.WeaponCondition.RecipeWorker_RepairWeapon</workerClass>
+        <jobString>Repairing weapon.</jobString>
+        <workAmount>1500</workAmount>
+        <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+        <workSkill>Crafting</workSkill>
+        <workSkillLearnFactor>1</workSkillLearnFactor>
+        <effectWorking>ConstructMetal</effectWorking>
+        <soundWorking>Recipe_Machining</soundWorking>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Steel</li>
+                    </thingDefs>
+                </filter>
+                <count>25</count>
+            </li>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>ComponentIndustrial</li>
+                    </thingDefs>
+                </filter>
+                <count>3</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>Steel</li>
+                <li>ComponentIndustrial</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <recipeUsers>
+            <li>FCP_Production_Complex_Weapons_Workbench</li>
+        </recipeUsers>
+    </RecipeDef>
+
+</Defs>

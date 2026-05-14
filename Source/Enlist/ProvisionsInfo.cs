@@ -30,8 +30,7 @@ public class ProvisionsInfo : IExposable
 				int num = recruit.count.RandomInRange;
 				for (int i = 0; i < num; i++)
 				{
-					Pawn pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(recruit.pawnKind, Faction.OfPlayer, PawnGenerationContext.NonPlayer, forceGenerateNewPawn: true));
-					pawn.SetFaction(Faction.OfPlayer);
+					Pawn pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(recruit.pawnKind, Faction.OfPlayer, PawnGenerationContext.PlayerStarter, forceGenerateNewPawn: true));
 					pawn.guest?.SetGuestStatus(null);
 					Find.WorldPawns.PassToWorld(pawn);
 					caravan.AddPawn(pawn, false);

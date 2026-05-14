@@ -15,6 +15,51 @@
 	<FCP_Settings_Stims_TeetotalerAutoStim>Teetotalers can auto-inject</FCP_Settings_Stims_TeetotalerAutoStim>
 	<FCP_Settings_Stims_TeetotalerAutoStim_Desc>Allow pawns with the teetotaler trait to automatically use stimpaks.</FCP_Settings_Stims_TeetotalerAutoStim_Desc>
 
+	<!-- Weapon Condition Settings -->
+
+	<FCP_Settings_WeaponCondition>Weapon Condition</FCP_Settings_WeaponCondition>
+	<FCP_Settings_WeaponCondition_Enabled>Enable weapon condition and jamming</FCP_Settings_WeaponCondition_Enabled>
+	<FCP_Settings_WeaponCondition_Enabled_Desc>FCP weapons degrade with each shot. Below 30 condition they may jam mid-combat, causing a shot to fail and penalising shooting accuracy until cleared. At 1 condition the weapon is completely locked and must be repaired at a repair bench before it can fire again.</FCP_Settings_WeaponCondition_Enabled_Desc>
+
+	<!-- Weapon Condition Inspect Strings -->
+
+	<FCP_WeaponCondition_Condition>Condition: {0}/100</FCP_WeaponCondition_Condition>
+	<FCP_WeaponCondition_Jammed>JAMMED - clearing...</FCP_WeaponCondition_Jammed>
+	<FCP_WeaponCondition_JamMessage>{0}'s {1} has jammed!</FCP_WeaponCondition_JamMessage>
+	<FCP_WeaponCondition_Disabled>BROKEN - must be repaired before use</FCP_WeaponCondition_Disabled>
+	<FCP_JuryRig_FloatMenu>Jury rig: {0}</FCP_JuryRig_FloatMenu>
+	<FCP_JuryRig_MessageDone>{0} jury-rigged {1}. Condition: {2}/100.</FCP_JuryRig_MessageDone>
+
+	<!-- Repair Bench -->
+
+	<FCP_RepairBench_Empty>Weapon slot: empty</FCP_RepairBench_Empty>
+	<FCP_RepairBench_Loaded>Weapon slot: {0}</FCP_RepairBench_Loaded>
+	<FCP_RepairBench_Load>Load weapon</FCP_RepairBench_Load>
+	<FCP_RepairBench_Load_Desc>Select an FCP weapon from the map to load onto the bench for repair.</FCP_RepairBench_Load_Desc>
+	<FCP_RepairBench_Eject>Remove: {0}</FCP_RepairBench_Eject>
+	<FCP_RepairBench_Eject_Desc>Remove the loaded weapon from the bench and drop it at the interaction cell.</FCP_RepairBench_Eject_Desc>
+	<FCP_RepairBench_NoWeapons>No FCP weapons found on the map.</FCP_RepairBench_NoWeapons>
+	<FCP_RepairBench_NoHauler>No colonist available to haul the weapon to the bench.</FCP_RepairBench_NoHauler>
+	<FCP_RepairBench_Done>{0} has repaired {1}.</FCP_RepairBench_Done>
+
+	<!-- Apparel Bench -->
+
+	<FCP_ApparelBench_Empty>Apparel slot: empty</FCP_ApparelBench_Empty>
+	<FCP_ApparelBench_Loaded>Apparel slot: {0}</FCP_ApparelBench_Loaded>
+	<FCP_ApparelBench_Load>Load apparel</FCP_ApparelBench_Load>
+	<FCP_ApparelBench_Load_Desc>Select an FCP garment or armor from the map to load onto the bench for repair.</FCP_ApparelBench_Load_Desc>
+	<FCP_ApparelBench_Eject>Remove: {0}</FCP_ApparelBench_Eject>
+	<FCP_ApparelBench_Eject_Desc>Remove the loaded item from the bench and drop it at the interaction cell.</FCP_ApparelBench_Eject_Desc>
+	<FCP_ApparelBench_NoApparel>No FCP apparel found on the map.</FCP_ApparelBench_NoApparel>
+	<FCP_ApparelBench_NoHauler>No colonist available to haul the item to the bench.</FCP_ApparelBench_NoHauler>
+	<FCP_ApparelBench_Done>{0} has repaired {1}.</FCP_ApparelBench_Done>
+
+	<!-- Delivery Quests -->
+
+	<FCP_NoDeliveryQuestsAvailable>No delivery contracts available at this outpost right now.</FCP_NoDeliveryQuestsAvailable>
+	<FCP_DeliveryQuestAccepted>Delivery contract accepted: bring {COUNT}x {THING} to {DEST}.</FCP_DeliveryQuestAccepted>
+	<FCP_DeliveryQuestNotEnoughItems>Need {COUNT}x {THING} to complete this delivery.</FCP_DeliveryQuestNotEnoughItems>
+
 	<!-- Enlistment Settings -->
 
 	<FCP_Settings_Enlistment>Enlistment</FCP_Settings_Enlistment>

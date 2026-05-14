@@ -26,6 +26,7 @@ public class Dialog_Missions : Dialog_NodeTree
         : base(startNode, radioMode)
     {
         this.caravan = caravan;
+        this.options = options;
         if (settlementComp.generatedQuests is null ||  settlementComp.generatedQuestsLastTick == 0 ||
             Find.TickManager.TicksGame > settlementComp.generatedQuestsLastTick + (30 * GenDate.TicksPerDay))
         {
@@ -63,7 +64,6 @@ public class Dialog_Missions : Dialog_NodeTree
             startQuest.Disable(options.missionsMenuStartQuestNoEnoughMoneyKey.Translate());
         }
         this.backgroundMenu = backgroundMenu;
-        this.options = options;
         this.absorbInputAroundWindow = true;
         if (this.options.missionsMenuAmbientSoundDef != null)
         {

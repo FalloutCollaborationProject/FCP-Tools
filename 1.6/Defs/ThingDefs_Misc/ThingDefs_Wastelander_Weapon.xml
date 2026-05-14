@@ -17,6 +17,15 @@
             </recipeUsers>
             <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
         </recipeMaker>
+        <comps>
+            <li Class="FCP.Core.WeaponCondition.CompProperties_WeaponCondition">
+                <conditionLossPerShot>0.15</conditionLossPerShot>
+                <jamThreshold>30</jamThreshold>
+                <maxJamChance>0.20</maxJamChance>
+                <spawnConditionMin>20</spawnConditionMin>
+                <spawnConditionMax>80</spawnConditionMax>
+            </li>
+        </comps>
     </ThingDef>
 
     <ThingDef Name="FCP_Complex_Gun_Base" Abstract="True" ParentName="BaseHumanMakeableGun">
@@ -31,6 +40,15 @@
             </recipeUsers>
             <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
         </recipeMaker>
+        <comps>
+            <li Class="FCP.Core.WeaponCondition.CompProperties_WeaponCondition">
+                <conditionLossPerShot>0.12</conditionLossPerShot>
+                <jamThreshold>30</jamThreshold>
+                <maxJamChance>0.15</maxJamChance>
+                <spawnConditionMin>30</spawnConditionMin>
+                <spawnConditionMax>90</spawnConditionMax>
+            </li>
+        </comps>
     </ThingDef>
 
     <ThingDef Name="FCP_Machining_Gun_Base" Abstract="True" ParentName="BaseHumanMakeableGun">
@@ -45,6 +63,15 @@
             </recipeUsers>
             <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
         </recipeMaker>
+        <comps>
+            <li Class="FCP.Core.WeaponCondition.CompProperties_WeaponCondition">
+                <conditionLossPerShot>0.10</conditionLossPerShot>
+                <jamThreshold>25</jamThreshold>
+                <maxJamChance>0.10</maxJamChance>
+                <spawnConditionMin>40</spawnConditionMin>
+                <spawnConditionMax>100</spawnConditionMax>
+            </li>
+        </comps>
     </ThingDef>
 
     <ThingDef Name="FCP_Makeshift_Weapon_Base" Abstract="True" ParentName="BaseHumanMakeableGun">
@@ -59,6 +86,15 @@
             </recipeUsers>
             <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
         </recipeMaker>
+        <comps>
+            <li Class="FCP.Core.WeaponCondition.CompProperties_WeaponCondition">
+                <conditionLossPerShot>0.25</conditionLossPerShot>
+                <jamThreshold>40</jamThreshold>
+                <maxJamChance>0.35</maxJamChance>
+                <spawnConditionMin>10</spawnConditionMin>
+                <spawnConditionMax>65</spawnConditionMax>
+            </li>
+        </comps>
     </ThingDef>
     
     <ThingDef Name="FCP_Melee_Blunt_Base" ParentName="BaseMeleeWeapon_Blunt_Quality" Abstract="true">
@@ -99,6 +135,13 @@
         </tradeTags>
         <comps>
             <li Class="CompProperties_Biocodable"/>
+            <li Class="FCP.Core.WeaponCondition.CompProperties_WeaponCondition">
+                <conditionLossPerShot>0.12</conditionLossPerShot>
+                <jamThreshold>30</jamThreshold>
+                <maxJamChance>0.20</maxJamChance>
+                <spawnConditionMin>25</spawnConditionMin>
+                <spawnConditionMax>100</spawnConditionMax>
+            </li>
         </comps>
     </ThingDef>
 </Defs>

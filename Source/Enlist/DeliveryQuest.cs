@@ -28,6 +28,7 @@ public class DeliveryQuest : IExposable
 	public int count;
 	public int reward;
 	public ThingDef rewardDef;
+	public string destinationLabel;
 	public int sourceTile;
 	public int destinationTile;
 	public int createdTick;
@@ -65,6 +66,7 @@ public class DeliveryQuest : IExposable
 		Scribe_Values.Look(ref count, "count");
 		Scribe_Values.Look(ref reward, "reward");
 		Scribe_Defs.Look(ref rewardDef, "rewardDef");
+		Scribe_Values.Look(ref destinationLabel, "destinationLabel");
 		Scribe_Values.Look(ref sourceTile, "sourceTile");
 		Scribe_Values.Look(ref destinationTile, "destinationTile");
 		Scribe_Values.Look(ref createdTick, "createdTick");

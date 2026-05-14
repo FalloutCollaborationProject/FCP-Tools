@@ -959,6 +959,7 @@ public class WorldObjectCompEnlist : WorldObjectComp
 				count = template.countRange.RandomInRange,
 				reward = template.rewardRange.RandomInRange,
 				rewardDef = template.rewardDef,
+				destinationLabel = dest.LabelCap,
 				sourceTile = parent.Tile,
 				destinationTile = dest.Tile,
 				createdTick = Find.TickManager.TicksGame,
