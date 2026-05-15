@@ -943,11 +943,17 @@ public class WorldObjectCompEnlist : WorldObjectComp
 
 		if (optionDef.deliveryQuestTemplates.NullOrEmpty()) return;
 
+		Faction faction = parent.Faction;
 		List<Settlement> destinations = Find.WorldObjects.AllWorldObjects
 			.OfType<Settlement>()
-			.Where(s => s.Faction == parent.Faction && s.Tile != parent.Tile)
+			.Where(s => s.Faction == faction && s.Tile != parent.Tile)
 			.ToList();
-		if (!destinations.Any()) return;
+		if (destinations.NullOrEmpty())
+			destinations = Find.WorldObjects.AllWorldObjects
+				.OfType<Settlement>()
+				.Where(s => s.Faction != null && !s.Faction.HostileTo(Faction.OfPlayer) && s.Tile != parent.Tile)
+				.ToList();
+		if (destinations.NullOrEmpty()) return;
 
 		foreach (DeliveryQuestTemplate template in optionDef.deliveryQuestTemplates)
 		{

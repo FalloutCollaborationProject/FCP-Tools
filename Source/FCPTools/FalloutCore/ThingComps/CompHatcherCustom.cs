@@ -46,21 +46,22 @@ public class CompHatcherCustom : CompHatcher
         }
     }
 
+    private PawnKindDef PickKind()
+    {
+        if (!Props.weightedPawns.NullOrEmpty())
+            return Props.weightedPawns.RandomElementByWeight(e => e.weight).pawnKind;
+        if (Props.secondaryPawn != null && Rand.Chance(Props.secondaryOverrideChance))
+            return Props.secondaryPawn;
+        return Props.hatcherPawn;
+    }
+
     public new void Hatch()
     {
         try
         {
-            PawnGenerationRequest request;
-            if (Rand.Chance(Props.secondaryOverrideChance))
-            {
-                request = new PawnGenerationRequest(Props.secondaryPawn, hatcheeFaction, PawnGenerationContext.NonPlayer, null, forceGenerateNewPawn: false, allowDead: false, allowDowned: false, canGeneratePawnRelations: true, mustBeCapableOfViolence: false, 1f, forceAddFreeWarmLayerIfNeeded: false, allowGay: true, allowPregnant: false, allowFood: true, allowAddictions: true, inhabitant: false, certainlyBeenInCryptosleep: false,
-                    forceRedressWorldPawnIfFormerColonist: false, worldPawnFactionDoesntMatter: false, 0f, 0f, null, 1f, null, null, null, null, null, null, null, null, null, null, null, null, forceNoIdeo: false, forceNoBackstory: false, forbidAnyTitle: false, forceDead: false, null, null, null, null, null, 0f, DevelopmentalStage.Newborn);
-            }
-            else
-            {
-                request = new PawnGenerationRequest(Props.hatcherPawn, hatcheeFaction, PawnGenerationContext.NonPlayer, null, forceGenerateNewPawn: false, allowDead: false, allowDowned: false, canGeneratePawnRelations: true, mustBeCapableOfViolence: false, 1f, forceAddFreeWarmLayerIfNeeded: false, allowGay: true, allowPregnant: false, allowFood: true, allowAddictions: true, inhabitant: false, certainlyBeenInCryptosleep: false,
-                    forceRedressWorldPawnIfFormerColonist: false, worldPawnFactionDoesntMatter: false, 0f, 0f, null, 1f, null, null, null, null, null, null, null, null, null, null, null, null, forceNoIdeo: false, forceNoBackstory: false, forbidAnyTitle: false, forceDead: false, null, null, null, null, null, 0f, DevelopmentalStage.Newborn);
-            }
+            PawnKindDef kind = PickKind();
+            PawnGenerationRequest request = new PawnGenerationRequest(kind, hatcheeFaction, PawnGenerationContext.NonPlayer, null, forceGenerateNewPawn: false, allowDead: false, allowDowned: false, canGeneratePawnRelations: true, mustBeCapableOfViolence: false, 1f, forceAddFreeWarmLayerIfNeeded: false, allowGay: true, allowPregnant: false, allowFood: true, allowAddictions: true, inhabitant: false, certainlyBeenInCryptosleep: false,
+                forceRedressWorldPawnIfFormerColonist: false, worldPawnFactionDoesntMatter: false, 0f, 0f, null, 1f, null, null, null, null, null, null, null, null, null, null, null, null, forceNoIdeo: false, forceNoBackstory: false, forbidAnyTitle: false, forceDead: false, null, null, null, null, null, 0f, DevelopmentalStage.Newborn);
             if (parent.ParentHolder is Pawn_CarryTracker pawn_CarryTracker)
             {
                 pawn_CarryTracker.TryDropCarriedThing(parent.PositionHeld, ThingPlaceMode.Near, out var _);
