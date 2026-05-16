@@ -1558,6 +1558,110 @@
         </subSounds>
     </SoundDef>
 
+    <!--___ Brahmin ___-->
+
+    <!-- Brahmin Call -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Brahmin_Call</defName>
+        <context>MapOnly</context>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Animals/Brahmin/FCP_Pawn_Brahmin_Call</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>20~20</volumeRange>
+                <pitchRange>0.95~1.05</pitchRange>
+                <distRange>0~55</distRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Brahmin Injured -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Brahmin_Wounded</defName>
+        <context>MapOnly</context>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Animals/Brahmin/FCP_Pawn_Brahmin_Injured</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>22~22</volumeRange>
+                <pitchRange>0.95~1.05</pitchRange>
+                <distRange>0~60</distRange>
+                <repeatMode>NeverTwice</repeatMode>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Brahmin Death -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Brahmin_Death</defName>
+        <context>MapOnly</context>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Animals/Brahmin/FCP_Pawn_Brahmin_Death</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>28~28</volumeRange>
+                <pitchRange>0.95~1.05</pitchRange>
+                <distRange>0~65</distRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Brahmin Angry -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Brahmin_Angry</defName>
+        <context>MapOnly</context>
+        <maxVoices>2</maxVoices>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Animals/Brahmin/FCP_Pawn_Brahmin_Attack</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>24~24</volumeRange>
+                <pitchRange>0.95~1.05</pitchRange>
+                <distRange>0~65</distRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!-- Brahmin Eating -->
+
+    <SoundDef>
+        <defName>FCP_Sound_Brahmin_Eating</defName>
+        <context>MapOnly</context>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Animals/Brahmin/FCP_Pawn_Brahmin_Eating</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>16~16</volumeRange>
+                <pitchRange>0.95~1.05</pitchRange>
+                <distRange>0~30</distRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
     <!--_____ Misc _____-->
 
     <!-- Game Start Line -->
