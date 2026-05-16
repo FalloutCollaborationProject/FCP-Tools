@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
@@ -22,18 +21,22 @@ static class NamedSettlement_FinalizeInit_Patch
 {
     static void Postfix()
     {
-        var grid = Find.WorldGrid;
-        var factionSettlements = Find.WorldObjects.Settlements
-            .ToList()
-            .GroupBy(s => s.Faction)
-            .ToDictionary(g => g.Key, g => g.ToList());
+        WorldGrid grid = Find.WorldGrid;
+        List<Settlement> allSettlements = Find.WorldObjects.Settlements;
 
-        foreach (var kvp in factionSettlements)
+        foreach (Faction faction in Find.FactionManager.AllFactions)
         {
-            var faction = kvp.Key;
-            var settlements = kvp.Value;
-            var ext = faction?.def.GetModExtension<FactionExtension_NamedSettlement>();
+            FactionExtension_NamedSettlement ext = faction.def.GetModExtension<FactionExtension_NamedSettlement>();
             if (ext == null) continue;
+
+            List<Settlement> settlements = new List<Settlement>();
+            for (int i = 0; i < allSettlements.Count; i++)
+            {
+                if (allSettlements[i].Faction == faction)
+                    settlements.Add(allSettlements[i]);
+            }
+
+            if (settlements.Count == 0) continue;
 
             if (ext.maxSettlements > 0 && settlements.Count > ext.maxSettlements)
             {
@@ -44,14 +47,14 @@ static class NamedSettlement_FinalizeInit_Patch
 
             for (int i = 0; i < settlements.Count; i++)
             {
-                var settlement = settlements[i];
-                
+                Settlement settlement = settlements[i];
+
                 string name = null;
                 if (!ext.settlementNames.NullOrEmpty() && i < ext.settlementNames.Count)
                     name = ext.settlementNames[i];
                 else if (!ext.settlementName.NullOrEmpty())
                     name = ext.settlementName;
-                
+
                 if (!name.NullOrEmpty())
                     settlement.Name = name;
 
@@ -70,9 +73,9 @@ static class NamedSettlement_FinalizeInit_Patch
 
     static int FindValidTile(int origin, List<Hilliness> hilliness, int radius, WorldGrid grid)
     {
-        var visited = new HashSet<int> { origin };
-        var queue = new Queue<int>();
-        var neighbors = new List<PlanetTile>();
+        HashSet<int> visited = new HashSet<int> { origin };
+        Queue<int> queue = new Queue<int>();
+        List<PlanetTile> neighbors = new List<PlanetTile>();
         queue.Enqueue(origin);
 
         while (queue.Count > 0)
@@ -82,9 +85,9 @@ static class NamedSettlement_FinalizeInit_Patch
             int tile = queue.Dequeue();
             grid.GetTileNeighbors(new PlanetTile(tile), neighbors);
 
-            foreach (var neighborTile in neighbors)
+            for (int i = 0; i < neighbors.Count; i++)
             {
-                int neighbor = neighborTile.tileId;
+                int neighbor = neighbors[i].tileId;
                 if (!visited.Add(neighbor)) continue;
 
                 if (hilliness.Contains(grid[neighbor].hilliness)
