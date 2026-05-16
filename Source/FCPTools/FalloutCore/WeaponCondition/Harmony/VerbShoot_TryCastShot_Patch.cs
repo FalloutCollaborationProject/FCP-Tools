@@ -26,6 +26,8 @@ public static class VerbShoot_TryCastShot_Patch
         }
 
         Pawn wielder = __instance.CasterPawn;
+        if (comp.IsJammed && comp.Condition >= comp.Props.jamThreshold)
+            comp.ClearJam();
         if (comp.IsJammed || comp.TryJam(wielder))
         {
             __result = false;

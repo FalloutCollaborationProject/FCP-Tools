@@ -19,10 +19,10 @@
         </recipeMaker>
         <comps>
             <li Class="FCP.Core.WeaponCondition.CompProperties_WeaponCondition">
-                <conditionLossPerShot>0.15</conditionLossPerShot>
+                <conditionLossPerShot>0.04</conditionLossPerShot>
                 <jamThreshold>30</jamThreshold>
                 <maxJamChance>0.20</maxJamChance>
-                <spawnConditionMin>20</spawnConditionMin>
+                <spawnConditionMin>35</spawnConditionMin>
                 <spawnConditionMax>80</spawnConditionMax>
             </li>
         </comps>
@@ -42,10 +42,10 @@
         </recipeMaker>
         <comps>
             <li Class="FCP.Core.WeaponCondition.CompProperties_WeaponCondition">
-                <conditionLossPerShot>0.12</conditionLossPerShot>
+                <conditionLossPerShot>0.03</conditionLossPerShot>
                 <jamThreshold>30</jamThreshold>
                 <maxJamChance>0.15</maxJamChance>
-                <spawnConditionMin>30</spawnConditionMin>
+                <spawnConditionMin>35</spawnConditionMin>
                 <spawnConditionMax>90</spawnConditionMax>
             </li>
         </comps>
@@ -65,7 +65,7 @@
         </recipeMaker>
         <comps>
             <li Class="FCP.Core.WeaponCondition.CompProperties_WeaponCondition">
-                <conditionLossPerShot>0.10</conditionLossPerShot>
+                <conditionLossPerShot>0.025</conditionLossPerShot>
                 <jamThreshold>25</jamThreshold>
                 <maxJamChance>0.10</maxJamChance>
                 <spawnConditionMin>40</spawnConditionMin>
@@ -88,10 +88,10 @@
         </recipeMaker>
         <comps>
             <li Class="FCP.Core.WeaponCondition.CompProperties_WeaponCondition">
-                <conditionLossPerShot>0.25</conditionLossPerShot>
+                <conditionLossPerShot>0.06</conditionLossPerShot>
                 <jamThreshold>40</jamThreshold>
                 <maxJamChance>0.35</maxJamChance>
-                <spawnConditionMin>10</spawnConditionMin>
+                <spawnConditionMin>45</spawnConditionMin>
                 <spawnConditionMax>65</spawnConditionMax>
             </li>
         </comps>
@@ -136,10 +136,10 @@
         <comps>
             <li Class="CompProperties_Biocodable"/>
             <li Class="FCP.Core.WeaponCondition.CompProperties_WeaponCondition">
-                <conditionLossPerShot>0.12</conditionLossPerShot>
+                <conditionLossPerShot>0.03</conditionLossPerShot>
                 <jamThreshold>30</jamThreshold>
                 <maxJamChance>0.20</maxJamChance>
-                <spawnConditionMin>25</spawnConditionMin>
+                <spawnConditionMin>35</spawnConditionMin>
                 <spawnConditionMax>100</spawnConditionMax>
             </li>
         </comps>
