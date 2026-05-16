@@ -134,7 +134,6 @@ Factions/
   FactionExtension_FlavorOverride.cs
   FactionExtension_HasTerritory.cs
   FactionExtension_HiddenFactionHasCaravans.cs
-  FactionExtension_NamedSettlement.cs
   FactionExtension_PermanentlyHostileTo.cs
   FactionExtension_SpawnConfig.cs
   FactionExtension_TaxCollector.cs
@@ -348,6 +347,7 @@ Shotgunz/
  Verb_Properties_Shotgunz.cs
  Verb_Shoot_Shotgunz.cs
 Shuttles/
+ CompAtmosphericOnly.cs
  CompRotatingBlades.cs
  FactionModExtension.cs
  FCP_DefOf.cs

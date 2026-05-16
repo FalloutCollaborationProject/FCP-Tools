@@ -193,4 +193,8 @@
 	<ME_Vanilla_Label>Music Expanded: Vanilla</ME_Vanilla_Label>
 	<ME_Vanilla_Description>All vanilla SongDefs implemented with the features of MusicExpanded!</ME_Vanilla_Description>
 
+	<!-- Vertibird Atmospheric Only -->
+
+	<FCP_CannotLaunchToOrbit>This vertibird is designed for atmospheric flight only and cannot reach orbital altitudes.</FCP_CannotLaunchToOrbit>
+
 </LanguageData>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Vertibird Engine __________-->
+
+    <ThingDef ParentName="ResourceBase" MayRequire="Ludeon.RimWorld.Odyssey">
+        <defName>VertibirdEngine</defName>
+        <label>vertibird engine</label>
+        <description>A powerful turbine engine designed specifically for VTOL aircraft. This pre-war engine combines thrust vectoring with vertical take-off capabilities, allowing vertibirds to hover and maneuver with precision. Due to its atmospheric-only design, it cannot reach orbital altitudes like spacer shuttle engines.\n\nThese engines are extremely rare and valuable, typically salvaged from crashed vertibirds or obtained through military contacts.</description>
+        <graphicData>
+            <texPath>Things/Item/Resource/ComponentIndustrial</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+        </graphicData>
+        <resourceReadoutPriority>Middle</resourceReadoutPriority>
+        <soundInteract>Metal_Drop</soundInteract>
+        <soundDrop>Metal_Drop</soundDrop>
+        <stackLimit>1</stackLimit>
+        <healthAffectsPrice>false</healthAffectsPrice>
+        <statBases>
+            <MarketValue>1800</MarketValue>
+            <MaxHitPoints>150</MaxHitPoints>
+            <Mass>25</Mass>
+            <Flammability>0.2</Flammability>
+        </statBases>
+        <thingCategories>
+            <li>ItemsMisc</li>
+        </thingCategories>
+        <tradeTags>
+            <li>ExoticMisc</li>
+        </tradeTags>
+        <tradeability>Buyable</tradeability>
+        <techLevel>Industrial</techLevel>
+    </ThingDef>
+
+</Defs>

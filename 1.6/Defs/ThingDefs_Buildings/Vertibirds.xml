@@ -262,4 +262,470 @@
         </skyfaller>
     </ThingDef>
 
+    <!--_____ Craftable Vertibird (Odyssey DLC) _____-->
+
+    <!-- Craftable Vertibird Parent Base -->
+
+    <ThingDef ParentName="BuildingBase" Name="FCP_CraftableVertibirdBase" Abstract="True" MayRequire="Ludeon.RimWorld.Odyssey">
+        <thingClass>Building_PassengerShuttle</thingClass>
+        <preventDroppingThingsOn>true</preventDroppingThingsOn>
+        <altitudeLayer>Building</altitudeLayer>
+        <pathCost>50</pathCost>
+        <blockWind>true</blockWind>
+        <passability>PassThroughOnly</passability>
+        <fillPercent>0.5</fillPercent>
+        <size>(10,8)</size>
+        <drawHighlight>true</drawHighlight>
+        <highlightColor>(0.56, 0.62, 0.9)</highlightColor>
+        <uiIconScale>1.4</uiIconScale>
+        <statBases>
+            <MaxHitPoints>1000</MaxHitPoints>
+            <Flammability>0.5</Flammability>
+            <WorkToBuild>55000</WorkToBuild>
+            <Mass>150</Mass>
+            <Comfort>0.65</Comfort>
+        </statBases>
+        <tickerType>Normal</tickerType>
+        <designationCategory>Odyssey</designationCategory>
+        <constructionSkillPrerequisite>6</constructionSkillPrerequisite>
+        <costList>
+            <Steel>500</Steel>
+            <ComponentIndustrial>15</ComponentIndustrial>
+            <VertibirdEngine>1</VertibirdEngine>
+        </costList>
+        <canOverlapZones>true</canOverlapZones>
+        <killedLeavings>
+            <Steel>100</Steel>
+            <ChunkSlagSteel>4</ChunkSlagSteel>
+            <ComponentIndustrial>7</ComponentIndustrial>
+        </killedLeavings>
+        <rotatable>false</rotatable>
+        <hasInteractionCell>true</hasInteractionCell>
+        <interactionCellOffset>(5, 0, 0)</interactionCellOffset>
+        <selectable>true</selectable>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+        <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+        <preventSkyfallersLandingOn>true</preventSkyfallersLandingOn>
+        <drawerType>RealtimeOnly</drawerType>
+        <repairEffect>ConstructMetal</repairEffect>
+        <forceDebugSpawnable>true</forceDebugSpawnable>
+        <building>
+            <claimable>false</claimable>
+            <destroySound>BuildingDestroyed_Metal_Big</destroySound>
+            <paintable>true</paintable>
+            <isInert>true</isInert>
+            <forcedCostLeavings>
+                <li>VertibirdEngine</li>
+            </forcedCostLeavings>
+        </building>
+        <inspectorTabs>
+            <li>ITab_ContentsTransporter</li>
+        </inspectorTabs>
+        <researchPrerequisites>
+            <li>FCP_Vertibird_Construction</li>
+        </researchPrerequisites>
+        <comps>
+            <li Class="CompProperties_Transporter">
+                <massCapacity>1000</massCapacity>
+                <max1PerGroup>true</max1PerGroup>
+                <canChangeAssignedThingsAfterStarting>true</canChangeAssignedThingsAfterStarting>
+                <pawnLoadedSound>Shuttle_PawnLoaded</pawnLoadedSound>
+                <pawnExitSound>Shuttle_PawnExit</pawnExitSound>
+                <showMassInInspectString>true</showMassInInspectString>
+            </li>
+            <li Class="CompProperties_Refuelable">
+                <fuelCapacity>500</fuelCapacity>
+                <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+                <initialConfigurableTargetFuelLevel>500</initialConfigurableTargetFuelLevel>
+                <fuelFilter>
+                    <thingDefs>
+                        <li>Chemfuel</li>
+                    </thingDefs>
+                </fuelFilter>
+                <fuelLabel>Chemfuel</fuelLabel>
+                <fuelGizmoLabel>Chemfuel</fuelGizmoLabel>
+                <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+                <autoRefuelPercent>1</autoRefuelPercent>
+                <showFuelGizmo>true</showFuelGizmo>
+                <drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+                <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+                <canEjectFuel>true</canEjectFuel>
+            </li>
+            <li Class="CompProperties_AmbientSound">
+                <sound>ShuttleIdle_Ambience</sound>
+            </li>
+            <li Class="FCP.Core.Shuttles.CompProperties_AtmosphericOnly" />
+        </comps>
+        <placeWorkers>
+            <li>PlaceWorker_NotUnderRoof</li>
+        </placeWorkers>
+        <uiOrder>2610</uiOrder>
+    </ThingDef>
+
+    <!-- FCP Light Vertibird (Fallout 4) -->
+
+    <ThingDef ParentName="FCP_CraftableVertibirdBase" MayRequire="Ludeon.RimWorld.Odyssey">
+        <defName>FCP_CraftableVertibird</defName>
+        <label>light vertibird</label>
+        <description>A pre-war military VTOL transport. The VB-01 was the workhorse of the US Armed Forces, serving in countless operations before the Great War. Its twin tiltrotor design allows vertical takeoff and high-speed forward flight through atmospheric conditions. The vertibird's turbine engines burn chemfuel efficiently but lack the power to reach orbit. What it loses in altitude, it makes up for in reliability and cargo space - these birds could haul a full squad anywhere on the continent.</description>
+        <graphicData>
+            <texPath>Things/Vehicles/FCP_Light_Vertibird_east</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+            <drawSize>(8,8)</drawSize>
+            <shadowData>
+                <volume>(4.1, 1.0, 1.8)</volume>
+                <offset>(0, 0, -0.1)</offset>
+            </shadowData>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_Shuttle">
+                <shipDef>Ship_CraftableVertibird</shipDef>
+            </li>
+            <li Class="CompProperties_Launchable">
+                <fuelPerTile>2.0</fuelPerTile>
+                <minFuelCost>40</minFuelCost>
+                <skyfallerLeaving>FCP_CraftableVertibirdLeaving</skyfallerLeaving>
+                <worldObjectDef>FCP_TravelingCraftableVertibird</worldObjectDef>
+                <cooldownTicks>3750</cooldownTicks>
+                <fixedLaunchDistanceMax>50</fixedLaunchDistanceMax>
+                <cooldownEndedMessage>{0} is ready to launch again.</cooldownEndedMessage>
+            </li>
+            <li Class="FCP.Core.Shuttles.CompProperties_RotatingBlades">
+                <bladeGraphicsData>
+                    <li>
+                        <bladeGraphic>
+                            <texPath>Things/Vehicles/FCP_Vertibird_Light_Propeller</texPath>
+                            <graphicClass>Graphic_Single</graphicClass>
+                            <drawSize>(6,6)</drawSize>
+                        </bladeGraphic>
+                        <positionOffset>(1, 0, -2.5)</positionOffset>
+                        <spinRate>1.5</spinRate>
+                    </li>
+                    <li>
+                        <bladeGraphic>
+                            <texPath>Things/Vehicles/FCP_Vertibird_Light_Propeller</texPath>
+                            <graphicClass>Graphic_Single</graphicClass>
+                            <drawSize>(6,6)</drawSize>
+                        </bladeGraphic>
+                        <positionOffset>(1, 0, 3.7)</positionOffset>
+                        <spinRate>1.5</spinRate>
+                    </li>
+                </bladeGraphicsData>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <!-- Craftable Vertibird Ship Def -->
+
+    <TransportShipDef MayRequire="Ludeon.RimWorld.Odyssey">
+        <defName>Ship_CraftableVertibird</defName>
+        <label>vertibird</label>
+        <shipThing>FCP_CraftableVertibird</shipThing>
+        <arrivingSkyfaller>FCP_CraftableVertibirdIncoming</arrivingSkyfaller>
+        <leavingSkyfaller>FCP_CraftableVertibirdLeaving</leavingSkyfaller>
+        <worldObject>FCP_TravelingCraftableVertibird</worldObject>
+        <playerShuttle>true</playerShuttle>
+    </TransportShipDef>
+
+    <!-- Craftable Vertibird WorldObject -->
+
+    <WorldObjectDef MayRequire="Ludeon.RimWorld.Odyssey">
+        <defName>FCP_TravelingCraftableVertibird</defName>
+        <label>vertibird</label>
+        <description>A vertibird in flight.</description>
+        <worldObjectClass>TravellingTransporters</worldObjectClass>
+        <texture>World/WorldObjects/Caravan</texture>
+        <useDynamicDrawer>true</useDynamicDrawer>
+        <expandingIcon>true</expandingIcon>
+        <expandingIconTexture>Things/Vehicles/FCP_Light_Vertibird_east</expandingIconTexture>
+        <expandingIconPriority>60</expandingIconPriority>
+        <expandMore>true</expandMore>
+        <expandingIconDrawSize>1.6</expandingIconDrawSize>
+        <allowCaravanIncidentsWhichGenerateMap>true</allowCaravanIncidentsWhichGenerateMap>
+        <rotateGraphicWhenTraveling>true</rotateGraphicWhenTraveling>
+    </WorldObjectDef>
+
+    <!-- Craftable Vertibird Skyfallers -->
+
+    <ThingDef ParentName="FCP_VertibirdSkyfallerBase" MayRequire="Ludeon.RimWorld.Odyssey">
+        <defName>FCP_CraftableVertibirdIncoming</defName>
+        <label>vertibird (incoming)</label>
+        <thingClass>PassengerShuttleIncoming</thingClass>
+        <skyfaller>
+            <anticipationSound>Shuttle_Landing</anticipationSound>
+            <anticipationSoundTicks>250</anticipationSoundTicks>
+            <ticksToImpactRange>200~250</ticksToImpactRange>
+            <angleCurve>
+                <points>
+                    <li>(0,-60)</li>
+                    <li>(1,-90)</li>
+                </points>
+            </angleCurve>
+            <rotationCurve>
+                <points>
+                    <li>(0,30)</li>
+                    <li>(0.5,5)</li>
+                    <li>(0.9,-5)</li>
+                    <li>(0.95,0)</li>
+                </points>
+            </rotationCurve>
+            <zPositionCurve>
+                <points>
+                    <li>(0.95,2.5)</li>
+                    <li>(1,0)</li>
+                </points>
+            </zPositionCurve>
+            <speedCurve>
+                <points>
+                    <li>(0.6,0.6)</li>
+                    <li>(0.95,0.1)</li>
+                </points>
+            </speedCurve>
+        </skyfaller>
+    </ThingDef>
+
+    <ThingDef ParentName="FCP_VertibirdSkyfallerBase" MayRequire="Ludeon.RimWorld.Odyssey">
+        <defName>FCP_CraftableVertibirdLeaving</defName>
+        <label>vertibird (leaving)</label>
+        <thingClass>PassengerShuttleLeaving</thingClass>
+        <skyfaller>
+            <reversed>true</reversed>
+            <anticipationSound>Shuttle_Leaving</anticipationSound>
+            <anticipationSoundTicks>-10</anticipationSoundTicks>
+            <ticksToImpactRange>-40~-15</ticksToImpactRange>
+            <moteSpawnTime>0.05</moteSpawnTime>
+            <shadow>Things/Skyfaller/SkyfallerShadowRectangle</shadow>
+            <shadowSize>(5.5,3.5)</shadowSize>
+            <motesPerCell>1</motesPerCell>
+            <angleCurve>
+                <points>
+                    <li>(0,90)</li>
+                    <li>(1,70)</li>
+                </points>
+            </angleCurve>
+            <rotationCurve>
+                <points>
+                    <li>(0,0)</li>
+                    <li>(0.15,10)</li>
+                    <li>(0.5,-5)</li>
+                </points>
+            </rotationCurve>
+            <zPositionCurve>
+                <points>
+                    <li>(0,0)</li>
+                    <li>(0.08,2)</li>
+                </points>
+            </zPositionCurve>
+            <speedCurve>
+                <points>
+                    <li>(0,0.2)</li>
+                    <li>(0.4,0.7)</li>
+                </points>
+            </speedCurve>
+        </skyfaller>
+    </ThingDef>
+
+    <!-- FCP Cargo Vertibird -->
+
+    <ThingDef ParentName="FCP_CraftableVertibirdBase" MayRequire="Ludeon.RimWorld.Odyssey">
+        <defName>FCP_CraftableVertibird_Cargo</defName>
+        <label>cargo vertibird</label>
+        <description>A heavy-lift variant of the VB-01 platform. Pre-war logistics corps used these to move artillery pieces, construction equipment, and supply pallets across war zones. The enlarged fuselage and reinforced airframe can haul twice the payload of standard models. The extra bulk means shorter range and slower response times, but when you need to move a generator or twenty crates of ammunition, nothing else will do. Military quartermasters loved these birds - until they saw the fuel bills.</description>
+        <size>(14,12)</size>
+        <interactionCellOffset>(7, 0, 0)</interactionCellOffset>
+        <costList>
+            <Steel>700</Steel>
+            <ComponentIndustrial>20</ComponentIndustrial>
+            <VertibirdEngine>1</VertibirdEngine>
+        </costList>
+        <statBases>
+            <WorkToBuild>65000</WorkToBuild>
+            <Mass>180</Mass>
+        </statBases>
+        <killedLeavings>
+            <Steel>140</Steel>
+            <ChunkSlagSteel>5</ChunkSlagSteel>
+            <ComponentIndustrial>8</ComponentIndustrial>
+        </killedLeavings>
+        <graphicData>
+            <texPath>Things/Vehicles/FCP_Cargo_Vertibird_east</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+            <drawSize>(12,12)</drawSize>
+            <shadowData>
+                <volume>(6.0, 1.0, 2.6)</volume>
+                <offset>(0, 0, -0.1)</offset>
+            </shadowData>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_Shuttle">
+                <shipDef>Ship_CraftableVertibird_Cargo</shipDef>
+            </li>
+            <li Class="CompProperties_Transporter">
+                <massCapacity>2000</massCapacity>
+                <max1PerGroup>true</max1PerGroup>
+                <canChangeAssignedThingsAfterStarting>true</canChangeAssignedThingsAfterStarting>
+                <pawnLoadedSound>Shuttle_PawnLoaded</pawnLoadedSound>
+                <pawnExitSound>Shuttle_PawnExit</pawnExitSound>
+                <showMassInInspectString>true</showMassInInspectString>
+            </li>
+            <li Class="CompProperties_Refuelable">
+                <fuelCapacity>750</fuelCapacity>
+                <targetFuelLevelConfigurable>true</targetFuelLevelConfigurable>
+                <initialConfigurableTargetFuelLevel>750</initialConfigurableTargetFuelLevel>
+                <fuelFilter>
+                    <thingDefs>
+                        <li>Chemfuel</li>
+                    </thingDefs>
+                </fuelFilter>
+                <fuelLabel>Chemfuel</fuelLabel>
+                <fuelGizmoLabel>Chemfuel</fuelGizmoLabel>
+                <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+                <autoRefuelPercent>1</autoRefuelPercent>
+                <showFuelGizmo>true</showFuelGizmo>
+                <drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+                <showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+                <canEjectFuel>true</canEjectFuel>
+            </li>
+            <li Class="CompProperties_Launchable">
+                <fuelPerTile>2.8</fuelPerTile>
+                <minFuelCost>40</minFuelCost>
+                <skyfallerLeaving>FCP_CraftableVertibirdLeaving</skyfallerLeaving>
+                <worldObjectDef>FCP_TravelingCraftableVertibird</worldObjectDef>
+                <cooldownTicks>4500</cooldownTicks>
+                <fixedLaunchDistanceMax>45</fixedLaunchDistanceMax>
+                <cooldownEndedMessage>{0} is ready to launch again.</cooldownEndedMessage>
+            </li>
+            <li Class="FCP.Core.Shuttles.CompProperties_RotatingBlades">
+                <bladeGraphicsData>
+                    <li>
+                        <bladeGraphic>
+                            <texPath>Things/Vehicles/FCP_Vertibird_Cargo_Propeller</texPath>
+                            <graphicClass>Graphic_Single</graphicClass>
+                            <drawSize>(9,9)</drawSize>
+                        </bladeGraphic>
+                        <positionOffset>(2, 0, -3)</positionOffset>
+                        <spinRate>1.5</spinRate>
+                    </li>
+                    <li>
+                        <bladeGraphic>
+                            <texPath>Things/Vehicles/FCP_Vertibird_Cargo_Propeller</texPath>
+                            <graphicClass>Graphic_Single</graphicClass>
+                            <drawSize>(9,9)</drawSize>
+                        </bladeGraphic>
+                        <positionOffset>(2, 0, 5.5)</positionOffset>
+                        <spinRate>1.5</spinRate>
+                    </li>
+                </bladeGraphicsData>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <!-- Cargo Vertibird Ship Def -->
+
+    <TransportShipDef MayRequire="Ludeon.RimWorld.Odyssey">
+        <defName>Ship_CraftableVertibird_Cargo</defName>
+        <label>cargo vertibird</label>
+        <shipThing>FCP_CraftableVertibird_Cargo</shipThing>
+        <arrivingSkyfaller>FCP_CraftableVertibirdIncoming</arrivingSkyfaller>
+        <leavingSkyfaller>FCP_CraftableVertibirdLeaving</leavingSkyfaller>
+        <worldObject>FCP_TravelingCraftableVertibird</worldObject>
+        <playerShuttle>true</playerShuttle>
+    </TransportShipDef>
+
+    <!-- FCP Gunship Vertibird -->
+
+    <ThingDef ParentName="FCP_CraftableVertibirdBase" MayRequire="Ludeon.RimWorld.Odyssey">
+        <defName>FCP_CraftableVertibird_Gunship</defName>
+        <label>gunship vertibird</label>
+        <description>An armed attack variant commissioned during the Resource Wars. The VB-01G traded cargo space for armor plating and weapon hardpoints, turning a transport into a flying gun platform. Infantry called them in for close air support when things got ugly. Steel-reinforced hull panels protect against small arms fire, while the weapons systems can suppress enemy positions before landing troops. Not subtle, not quiet, but incredibly effective at keeping soldiers alive.</description>
+        <size>(11,9)</size>
+        <interactionCellOffset>(6, 0, 0)</interactionCellOffset>
+        <costList>
+            <Steel>550</Steel>
+            <Plasteel>80</Plasteel>
+            <ComponentIndustrial>20</ComponentIndustrial>
+            <VertibirdEngine>1</VertibirdEngine>
+        </costList>
+        <statBases>
+            <WorkToBuild>60000</WorkToBuild>
+            <Mass>170</Mass>
+            <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+            <ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+        </statBases>
+        <killedLeavings>
+            <Steel>110</Steel>
+            <Plasteel>30</Plasteel>
+            <ChunkSlagSteel>4</ChunkSlagSteel>
+            <ComponentIndustrial>7</ComponentIndustrial>
+        </killedLeavings>
+        <graphicData>
+            <texPath>Things/Vehicles/FCP_Gunship_Vertibird_east</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+            <drawSize>(9,9)</drawSize>
+            <shadowData>
+                <volume>(4.6, 1.0, 2.0)</volume>
+                <offset>(0, 0, -0.1)</offset>
+            </shadowData>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_Shuttle">
+                <shipDef>Ship_CraftableVertibird_Gunship</shipDef>
+            </li>
+            <li Class="CompProperties_Transporter">
+                <massCapacity>700</massCapacity>
+                <max1PerGroup>true</max1PerGroup>
+                <canChangeAssignedThingsAfterStarting>true</canChangeAssignedThingsAfterStarting>
+                <pawnLoadedSound>Shuttle_PawnLoaded</pawnLoadedSound>
+                <pawnExitSound>Shuttle_PawnExit</pawnExitSound>
+                <showMassInInspectString>true</showMassInInspectString>
+            </li>
+            <li Class="CompProperties_Launchable">
+                <fuelPerTile>2.0</fuelPerTile>
+                <minFuelCost>40</minFuelCost>
+                <skyfallerLeaving>FCP_CraftableVertibirdLeaving</skyfallerLeaving>
+                <worldObjectDef>FCP_TravelingCraftableVertibird</worldObjectDef>
+                <cooldownTicks>3750</cooldownTicks>
+                <fixedLaunchDistanceMax>50</fixedLaunchDistanceMax>
+                <cooldownEndedMessage>{0} is ready to launch again.</cooldownEndedMessage>
+            </li>
+            <li Class="FCP.Core.Shuttles.CompProperties_RotatingBlades">
+                <bladeGraphicsData>
+                    <li>
+                        <bladeGraphic>
+                            <texPath>Things/Vehicles/FCP_Vertibird_Gunship_Propeller</texPath>
+                            <graphicClass>Graphic_Single</graphicClass>
+                            <drawSize>(8,8)</drawSize>
+                        </bladeGraphic>
+                        <positionOffset>(1.5, 0, -1.7)</positionOffset>
+                        <spinRate>1.5</spinRate>
+                    </li>
+                    <li>
+                        <bladeGraphic>
+                            <texPath>Things/Vehicles/FCP_Vertibird_Gunship_Propeller</texPath>
+                            <graphicClass>Graphic_Single</graphicClass>
+                            <drawSize>(8,8)</drawSize>
+                        </bladeGraphic>
+                        <positionOffset>(1.5, 0, 4)</positionOffset>
+                        <spinRate>1.5</spinRate>
+                    </li>
+                </bladeGraphicsData>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <!-- Gunship Vertibird Ship Def -->
+
+    <TransportShipDef MayRequire="Ludeon.RimWorld.Odyssey">
+        <defName>Ship_CraftableVertibird_Gunship</defName>
+        <label>gunship vertibird</label>
+        <shipThing>FCP_CraftableVertibird_Gunship</shipThing>
+        <arrivingSkyfaller>FCP_CraftableVertibirdIncoming</arrivingSkyfaller>
+        <leavingSkyfaller>FCP_CraftableVertibirdLeaving</leavingSkyfaller>
+        <worldObject>FCP_TravelingCraftableVertibird</worldObject>
+        <playerShuttle>true</playerShuttle>
+    </TransportShipDef>
+
 </Defs>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
-    <!-- Ruined Vehicles addition -->
     <!-- US ARMY -->
 
     <Operation Class="PatchOperationFindMod">
@@ -14,6 +13,7 @@
                 <li>
                     <things>
                         <FCP_Pre_War_Army_Vertibird>1</FCP_Pre_War_Army_Vertibird>
+                        <FCP_Pre_War_Army_Vertibird_Gunship>1</FCP_Pre_War_Army_Vertibird_Gunship>
                         <FCP_Pre_War_Army_Truck>1</FCP_Pre_War_Army_Truck>
                     </things>
                     <indoorRuin>false</indoorRuin>
@@ -37,6 +37,7 @@
                 <li>
                     <things>
                         <FCP_Pre_War_Army_Vertibird>1</FCP_Pre_War_Army_Vertibird>
+                        <FCP_Pre_War_Army_Vertibird_Gunship>1</FCP_Pre_War_Army_Vertibird_Gunship>
                     </things>
                     <indoorRuin>false</indoorRuin>
                     <coveredCellsPer10Cells>1.25~2</coveredCellsPer10Cells>

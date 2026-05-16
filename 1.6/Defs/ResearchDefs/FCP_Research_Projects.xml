@@ -1113,4 +1113,22 @@
         <researchViewY>1</researchViewY>
     </ResearchProjectDef>
 
+    <!--__________ Vertibird Construction __________-->
+
+    <ResearchProjectDef ParentName="FCP_Pre_War_Military_Research_Base" MayRequire="Ludeon.RimWorld.Odyssey">
+        <defName>FCP_Vertibird_Construction</defName>
+        <label>Holotape File: Vertibird Construction</label>
+        <description>Military holotape containing complete schematics and engineering protocols for constructing VTOL vertibirds. These pre-war aircraft combine thrust vectoring technology with chemfuel propulsion systems. A vertibird engine is required for construction, which can be salvaged from crashed vertibirds.\n\nNote: Vertibirds are optimized for atmospheric flight and cannot reach orbital altitudes.</description>
+        <baseCost>3000</baseCost>
+        <prerequisites>
+            <li>Shuttles</li>
+            <li>Fabrication</li>
+        </prerequisites>
+        <requiredResearchFacilities>
+            <li>HiTechResearchBench</li>
+        </requiredResearchFacilities>
+        <researchViewX>6.00</researchViewX>
+        <researchViewY>3.00</researchViewY>
+    </ResearchProjectDef>
+
 </Defs>
