@@ -47,18 +47,9 @@
         </comps>
     </ThingDef>
 
-    <ThingDef Name="FCP_Machining_Gun_Base" Abstract="True" ParentName="BaseHumanMakeableGun">
+    <ThingDef Name="FCP_Machining_Gun_Base" Abstract="True" ParentName="FCP_Gun_NoRecipe_Base">
         <techLevel>Spacer</techLevel>
-        <recipeMaker Inherit="false">
-            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
-            <workSkill>Crafting</workSkill>
-            <effectWorking>Smith</effectWorking>
-            <soundWorking>Recipe_Machining</soundWorking>
-            <recipeUsers>
-                <li>FCP_Production_Fabrication_Workbench</li>
-            </recipeUsers>
-            <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
-        </recipeMaker>
+        <smeltable>false</smeltable>
         <comps>
             <li Class="FCP.Core.WeaponCondition.CompProperties_WeaponCondition">
                 <conditionLossPerShot>0.025</conditionLossPerShot>
@@ -121,8 +112,9 @@
         </recipeMaker>
     </ThingDef>
     
-    <ThingDef Name="FCP_BaseGun" Abstract="True" ParentName="BaseGunWithQuality">
+    <ThingDef Name="FCP_BaseGun" Abstract="True" ParentName="FCP_Gun_NoRecipe_Base">
         <techLevel>Industrial</techLevel>
+        <smeltable>false</smeltable>
         <weaponTags>
             <li>Gun</li>
         </weaponTags>
