@@ -31,6 +31,7 @@ public class ProvisionsInfo : IExposable
 				for (int i = 0; i < num; i++)
 				{
 					Pawn pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(recruit.pawnKind, Faction.OfPlayer, PawnGenerationContext.PlayerStarter, forceGenerateNewPawn: true));
+					Find.WorldPawns.PassToWorld(pawn, PawnDiscardDecideMode.KeepForever);
 					caravan.AddPawn(pawn, false);
 				}
 			}

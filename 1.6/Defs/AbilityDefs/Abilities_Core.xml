@@ -67,7 +67,6 @@
             <range>8.5</range>
             <warmupTime>0.5</warmupTime>
             <soundCast>FireSpew_Resolve</soundCast>
-            <soundCast MayRequire="Rick.FCP.Animals">FCP_Sound_Gecko_Flames</soundCast>
             <targetParams>
                 <canTargetLocations>true</canTargetLocations>
             </targetParams>

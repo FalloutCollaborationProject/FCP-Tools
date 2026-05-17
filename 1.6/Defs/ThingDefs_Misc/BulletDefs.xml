@@ -398,4 +398,76 @@
         </projectile>
     </ThingDef>
 
+    <!-- .50 Cal Bullet -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_50Cal</defName>
+        <label>.50 Cal Bullet</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_big</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>35</damageAmountBase>
+            <stoppingPower>2.0</stoppingPower>
+            <speed>115</speed>
+            <armorPenetrationBase>3.5</armorPenetrationBase>
+        </projectile>
+    </ThingDef>
+
+    <!-- 7.62mm Bullet -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_762mm</defName>
+        <label>7.62mm Bullet</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>15</damageAmountBase>
+            <stoppingPower>1.0</stoppingPower>
+            <speed>80</speed>
+            <armorPenetrationBase>2.0</armorPenetrationBase>
+        </projectile>
+    </ThingDef>
+
+    <!-- Autocannon Shell -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_Autocannon</defName>
+        <label>Autocannon Shell</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_big</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>45</damageAmountBase>
+            <stoppingPower>3.0</stoppingPower>
+            <speed>100</speed>
+            <armorPenetrationBase>4.5</armorPenetrationBase>
+        </projectile>
+    </ThingDef>
+
+    <!-- Shotgun Slug -->
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>FCP_Bullet_Shotgun</defName>
+        <label>Shotgun Slug</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>25</damageAmountBase>
+            <stoppingPower>1.8</stoppingPower>
+            <speed>55</speed>
+            <armorPenetrationBase>1.2</armorPenetrationBase>
+        </projectile>
+    </ThingDef>
+
 </Defs>

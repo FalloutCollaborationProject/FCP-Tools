@@ -3,20 +3,25 @@
 
     <!--__________ Wastelander Weapons __________-->
 
+    <!-- FCP Base Without Recipe Maker - inherits from BaseGunWithQuality to avoid recipeMaker -->
+    
+    <ThingDef Name="FCP_Gun_NoRecipe_Base" Abstract="True" ParentName="BaseGunWithQuality">
+        <weaponTags>
+            <li>Gun</li>
+        </weaponTags>
+        <tradeTags>
+            <li>WeaponRanged</li>
+        </tradeTags>
+        <comps>
+            <li Class="CompProperties_Biocodable"/>
+        </comps>
+    </ThingDef>
+
     <!-- FCP Simple Weapon Makeable Base -->
 
-    <ThingDef Name="FCP_Simple_Gun_Base" Abstract="True" ParentName="BaseHumanMakeableGun">
+    <ThingDef Name="FCP_Simple_Gun_Base" Abstract="True" ParentName="FCP_Gun_NoRecipe_Base">
         <techLevel>Industrial</techLevel>
-        <recipeMaker Inherit="false">
-            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
-            <workSkill>Crafting</workSkill>
-            <effectWorking>Smith</effectWorking>
-            <soundWorking>Recipe_Smith</soundWorking>
-            <recipeUsers>
-                <li>FCP_Production_Simple_Weapons_Workbench</li>
-            </recipeUsers>
-            <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
-        </recipeMaker>
+        <smeltable>false</smeltable>
         <comps>
             <li Class="FCP.Core.WeaponCondition.CompProperties_WeaponCondition">
                 <conditionLossPerShot>0.04</conditionLossPerShot>
@@ -28,18 +33,9 @@
         </comps>
     </ThingDef>
 
-    <ThingDef Name="FCP_Complex_Gun_Base" Abstract="True" ParentName="BaseHumanMakeableGun">
+    <ThingDef Name="FCP_Complex_Gun_Base" Abstract="True" ParentName="FCP_Gun_NoRecipe_Base">
         <techLevel>Industrial</techLevel>
-        <recipeMaker Inherit="false">
-            <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
-            <workSkill>Crafting</workSkill>
-            <effectWorking>Smith</effectWorking>
-            <soundWorking>Recipe_Machining</soundWorking>
-            <recipeUsers>
-                <li>FCP_Production_Complex_Weapons_Workbench</li>
-            </recipeUsers>
-            <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
-        </recipeMaker>
+        <smeltable>false</smeltable>
         <comps>
             <li Class="FCP.Core.WeaponCondition.CompProperties_WeaponCondition">
                 <conditionLossPerShot>0.03</conditionLossPerShot>

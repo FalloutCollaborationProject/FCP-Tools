@@ -170,7 +170,7 @@ namespace FCP.Core.Laser
             LockOnCaster();
             textureScroll += LaserProperties.textureScrollOffsetPerTick;
             
-            if (LaserProperties.damageTickRate > 0 && this.IsHashIntervalTick(LaserProperties.damageTickRate))
+            if (LaserProperties.damageThingsAcrossBeamLine && LaserProperties.damageTickRate > 0 && this.IsHashIntervalTick(LaserProperties.damageTickRate))
             {
                 DamageThings();
             }
