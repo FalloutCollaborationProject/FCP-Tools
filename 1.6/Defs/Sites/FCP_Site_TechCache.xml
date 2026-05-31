@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Site Defs __________-->
+
+    <!-- Site Tech Cache -->
+
+    <SitePartDef>
+        <defName>FCP_Site_TechCache</defName>
+        <label>pre-war bunker</label>
+        <description>A sealed pre-war military cache.</description>
+        <workerClass>FCP.Core.RadiantQuests.SitePartWorker_TechCache</workerClass>
+        <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
+        <expandingIconTexture>MapIcons/Sites/FCP_Generic_Quest_Site</expandingIconTexture>
+        <forceExitAndRemoveMapCountdownDurationDays>6</forceExitAndRemoveMapCountdownDurationDays>
+        <requiresFaction>true</requiresFaction>
+        <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>
+        <tags>
+            <li>FCP_Site_TechCache</li>
+        </tags>
+    </SitePartDef>
+
+    <GenStepDef>
+        <defName>FCP_Site_TechCache_Outpost</defName>
+        <linkWithSite>FCP_Site_TechCache</linkWithSite>
+        <order>450</order>
+        <genStep Class="GenStep_Outpost">
+            <pawnGroupKindDef>Combat</pawnGroupKindDef>
+        </genStep>
+    </GenStepDef>
+
+    <GenStepDef>
+        <defName>FCP_Site_TechCache_OutpostPower</defName>
+        <linkWithSite>FCP_Site_TechCache</linkWithSite>
+        <order>451</order>
+        <genStep Class="GenStep_Power"/>
+    </GenStepDef>
+
+</Defs>

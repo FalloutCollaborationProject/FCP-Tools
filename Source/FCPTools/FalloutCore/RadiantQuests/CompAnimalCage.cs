@@ -91,9 +91,13 @@ public class CompAnimalCage : CompRefuelable, IThingHolder, ISuspendableThingHol
             ConsumeFuel(ConsumptionRatePerTick);
         }
 
-        if (ShouldCapture && parent.IsHashIntervalTick(Props.ticksForCaptureChance) && Occupant == null && Fuel != 0 && Rand.Chance(Props.captureChance))
+        if (ShouldCapture && parent.IsHashIntervalTick(Props.ticksForCaptureChance) && Occupant == null && Fuel != 0)
         {
-            CaptureAnimal();
+            float actualChance = Props.captureChance * 0.95f;
+            if (Rand.Chance(actualChance))
+            {
+                CaptureAnimal();
+            }
         }
         if (parent.IsHashIntervalTick(6000))
         {
@@ -137,28 +141,13 @@ public class CompAnimalCage : CompRefuelable, IThingHolder, ISuspendableThingHol
 
     public void CaptureAnimal()
     {
-
-        FCPLog.Verbose(ShouldCapture);
-        if (Props.animalsThatGetCaught == null)
-        {
-            FCPLog.Verbose("animals that get caught list is empty");
-            return;
-        }
-        foreach (var item in parent.Map.Biome.AllWildAnimals)
-        {
-            FCPLog.Verbose(item.defName);
-        }
-        FCPLog.Verbose("Props animals");
-        foreach (var item in Props.animalsThatGetCaught)
-        {
-            FCPLog.Verbose(item.defName);
-        }
+        if (Props.animalsThatGetCaught == null) return;
+        
         if (!parent.Map.Biome.AllWildAnimals.Any(c => Props.animalsThatGetCaught.Any(x => c.defName == x.defName)))
         {
-            FCPLog.Verbose("no animals catchable that exist in this biome");
             return;
         }
-        FCPLog.Verbose("Generating and inserting animal");
+        
         PawnKindDef def = parent.Map.Biome.AllWildAnimals.Where(c => Props.animalsThatGetCaught.Any(x => c == x)).RandomElement();
         Pawn pawn = PawnGenerator.GeneratePawn(def);
         Letter letter = LetterMaker.MakeLetter("FCP_CageAnimalCapturedLabel".Translate(), "FCP_CageAnimalCapturedText".Translate(pawn), LetterDefOf.PositiveEvent, base.parent);
@@ -238,12 +227,6 @@ public class CompAnimalCage : CompRefuelable, IThingHolder, ISuspendableThingHol
     public override void PostDraw()
     {
         base.PostDraw();
-        if (Occupant != null)
-        {
-            Vector3 drawPos = parent.DrawPos;
-            drawPos.y += 10f;
-            Occupant.Drawer.renderer.DynamicDrawPhaseAt(DrawPhase.Draw, drawPos, null, neverAimWeapon: true);
-        }
     }
     public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn selPawn)
     {

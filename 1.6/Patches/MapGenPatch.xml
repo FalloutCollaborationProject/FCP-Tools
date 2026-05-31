@@ -12,39 +12,37 @@
             <value>
                 <li>
                     <things>
-                        <FCP_Pre_War_Army_Vertibird>1</FCP_Pre_War_Army_Vertibird>
-                        <FCP_Pre_War_Army_Vertibird_Gunship>1</FCP_Pre_War_Army_Vertibird_Gunship>
-                        <FCP_Pre_War_Army_Truck>1</FCP_Pre_War_Army_Truck>
+                        <FCP_Pre_War_Army_Vertibird>0.015</FCP_Pre_War_Army_Vertibird>
+                        <FCP_Pre_War_Army_Truck>0.02</FCP_Pre_War_Army_Truck>
                     </things>
                     <indoorRuin>false</indoorRuin>
-                    <coveredCellsPer10Cells>1.25~2</coveredCellsPer10Cells>
+                    <coveredCellsPer10Cells>0.15~0.25</coveredCellsPer10Cells>
                     <filthDef>Filth_OilSmear</filthDef>
                     <filthExpandBy>1</filthExpandBy>
                     <filthChance>0.05</filthChance>
-                    <clusterRectRadius>12~35</clusterRectRadius>
+                    <clusterRectRadius>8~15</clusterRectRadius>
                 </li>
                 <li>
                     <things>
-                        <FCP_Pre_War_Army_Truck>1</FCP_Pre_War_Army_Truck>
+                        <FCP_Pre_War_Army_Truck>0.025</FCP_Pre_War_Army_Truck>
                     </things>
                     <indoorRuin>false</indoorRuin>
-                    <coveredCellsPer10Cells>1.25~2</coveredCellsPer10Cells>
+                    <coveredCellsPer10Cells>0.15~0.25</coveredCellsPer10Cells>
                     <filthDef>Filth_OilSmear</filthDef>
                     <filthExpandBy>1</filthExpandBy>
                     <filthChance>0.05</filthChance>
-                    <clusterRectRadius>12~20</clusterRectRadius>
+                    <clusterRectRadius>8~12</clusterRectRadius>
                 </li>
                 <li>
                     <things>
-                        <FCP_Pre_War_Army_Vertibird>1</FCP_Pre_War_Army_Vertibird>
-                        <FCP_Pre_War_Army_Vertibird_Gunship>1</FCP_Pre_War_Army_Vertibird_Gunship>
+                        <FCP_Pre_War_Army_Vertibird>0.015</FCP_Pre_War_Army_Vertibird>
                     </things>
                     <indoorRuin>false</indoorRuin>
-                    <coveredCellsPer10Cells>1.25~2</coveredCellsPer10Cells>
+                    <coveredCellsPer10Cells>0.15~0.25</coveredCellsPer10Cells>
                     <filthDef>Filth_OilSmear</filthDef>
                     <filthExpandBy>1</filthExpandBy>
                     <filthChance>0.05</filthChance>
-                    <clusterRectRadius>12~30</clusterRectRadius>
+                    <clusterRectRadius>8~15</clusterRectRadius>
                 </li>
             </value>
         </match>

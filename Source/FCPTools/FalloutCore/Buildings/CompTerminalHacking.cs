@@ -206,14 +206,44 @@ public class CompTerminalHacking : ThingComp
 
     private void GiveReward()
     {
+        var terminal = parent as Building_Terminal;
+        IntVec3 dropPos = terminal?.InteractionCell ?? parent.Position;
+
+        var tracker = Holotapes.HolotapeTracker.Instance;
+        var undiscovered = tracker?.GetUndiscoveredHolotapes();
+        
+        if (undiscovered != null && undiscovered.Count > 0)
+        {
+            var holotapeDef = undiscovered.RandomElement();
+            var thingDef = DefDatabase<ThingDef>.GetNamedSilentFail(holotapeDef.defName);
+            
+            if (thingDef != null)
+            {
+                Thing holotape = ThingMaker.MakeThing(thingDef);
+                tracker.MarkAsDiscovered(holotapeDef);
+                
+                var storage = terminal?.GetComp<CompHolotapeStorage>();
+                if (storage != null)
+                {
+                    storage.TryStoreHolotape(holotape);
+                    Messages.Message("FCP_TerminalHackSuccess_Holotape".Translate(holotape.Label), 
+                        terminal, MessageTypeDefOf.PositiveEvent);
+                }
+                else
+                {
+                    GenPlace.TryPlaceThing(holotape, dropPos, parent.Map, ThingPlaceMode.Near);
+                    Messages.Message("FCP_TerminalHackSuccess".Translate(holotape.Label), 
+                        holotape, MessageTypeDefOf.PositiveEvent);
+                }
+                return;
+            }
+        }
+
         if (Props.rewardPool == null || Props.rewardPool.Count == 0)
             return;
 
         ThingDef rewardDef = Props.rewardPool.RandomElement();
         Thing reward = ThingMaker.MakeThing(rewardDef);
-            
-        var terminal = parent as Building_Terminal;
-        IntVec3 dropPos = terminal?.InteractionCell ?? parent.Position;
             
         GenPlace.TryPlaceThing(reward, dropPos, parent.Map, ThingPlaceMode.Near);
         Messages.Message("FCP_TerminalHackSuccess".Translate(reward.Label), reward, MessageTypeDefOf.PositiveEvent);

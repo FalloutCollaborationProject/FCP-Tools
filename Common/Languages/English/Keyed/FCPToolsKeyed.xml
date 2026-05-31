@@ -7,6 +7,17 @@
 	<FCP_Settings.General>General</FCP_Settings.General>
 	<FCP_Settings.General.tt>Options that affect the whole mod or don't fit anywhere else.</FCP_Settings.General.tt>
 
+	<!-- Terminal UI Settings -->
+
+	<FCP_Settings_Terminal>Terminal UI</FCP_Settings_Terminal>
+	<FCP_Settings_Terminal_ColorTheme>Color Theme</FCP_Settings_Terminal_ColorTheme>
+	<FCP_Settings_Terminal_ColorTheme_Green>Green (Fallout 3)</FCP_Settings_Terminal_ColorTheme_Green>
+	<FCP_Settings_Terminal_ColorTheme_Amber>Amber (Fallout: New Vegas)</FCP_Settings_Terminal_ColorTheme_Amber>
+	
+	<!-- Quest Icon Settings -->
+	
+	<FCP_Settings_QuestIcon_ColorTheme>Quest Icon Color</FCP_Settings_QuestIcon_ColorTheme>
+
 	<!-- Stims Settings -->
 
 	<FCP_Settings_Stims>Stims</FCP_Settings_Stims>
@@ -132,7 +143,7 @@
 
 	<!-- Terminal -->
 
-	<FCP_ExtractHolotape>Extract holotape</FCP_ExtractHolotape>
+	<FCP_ExtractHolotape>Search for anything useful</FCP_ExtractHolotape>
 	<FCP_ExtractHolotape_AlreadyExtracted>Already extracted</FCP_ExtractHolotape_AlreadyExtracted>
 	<FCP_ExtractedHolotape>{PAWN_nameDef} found a {1} in the terminal!</FCP_ExtractedHolotape>
 	<FCP_NoHolotapeFound>{PAWN_nameDef} found no useful data in the terminal.</FCP_NoHolotapeFound>
@@ -142,6 +153,7 @@
 	<FCP_HackTerminal>Hack terminal</FCP_HackTerminal>
 	<FCP_TerminalLocked>Locked - requires hacking</FCP_TerminalLocked>
 	<FCP_TerminalHackSuccess>Terminal unlocked - received {0}</FCP_TerminalHackSuccess>
+	<FCP_TerminalHackSuccess_Holotape>Terminal unlocked - {0} added to archive</FCP_TerminalHackSuccess_Holotape>
 	<FCP_TerminalLockedOut>Terminal locked out for {0} hours</FCP_TerminalLockedOut>
 	<FCP_TerminalLockedOut_Status>Locked ({0}h remaining)</FCP_TerminalLockedOut_Status>
 

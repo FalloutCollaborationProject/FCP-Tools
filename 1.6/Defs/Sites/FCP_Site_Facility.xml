@@ -10,7 +10,7 @@
         <label>facility</label>
         <description>A facility.</description>
         <siteTexture>World/WorldObjects/Sites/Outpost</siteTexture>
-        <expandingIconTexture>World/WorldObjects/Expanding/Sites/Outpost</expandingIconTexture>
+        <expandingIconTexture>MapIcons/Sites/FCP_Generic_Quest_Site</expandingIconTexture>
         <applyFactionColorToSiteTexture>true</applyFactionColorToSiteTexture>
         <showFactionInInspectString>true</showFactionInInspectString>
         <requiresFaction>true</requiresFaction>
@@ -41,15 +41,6 @@
         <linkWithSite>FCP_Site_Facility</linkWithSite>
         <order>451</order>
         <genStep Class="GenStep_Power"/>
-    </GenStepDef>
-
-    <GenStepDef>
-        <defName>FCP_FacilityBuilding</defName>
-        <linkWithSite>FCP_Site_Facility</linkWithSite>
-        <order>452</order>
-        <genStep Class="FCP.Core.RadiantQuests.GenStep_SpawnBuildingInRoom">
-            <buildingDef>FCP_Power_Armor_VR_Pod</buildingDef>
-        </genStep>
     </GenStepDef>
 
 </Defs>

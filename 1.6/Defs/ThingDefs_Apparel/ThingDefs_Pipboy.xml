@@ -45,6 +45,7 @@
             <li Class="FCP.Core.CompProperties_LabelColored">
                 <rarity>Rare</rarity>
             </li>
+            <li Class="FCP.Core.Holotapes.CompProperties_PipboyHolotapeStorage" />
         </comps>
     </ThingDef>
 

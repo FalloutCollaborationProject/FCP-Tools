@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <QuestScriptDef>
+    <defName>FCP_VertibirdCrashRescue</defName>
+    <rootSelectionWeight>1.0</rootSelectionWeight>
+    <canGiveRoyalFavor>false</canGiveRoyalFavor>
+    <expireDaysRange>4~8</expireDaysRange>
+    <questNameRules>
+      <rulesStrings>
+        <li>questName->[asker_nameDef] needs rescue</li>
+        <li>questName->Crashed vertibird</li>
+        <li>questName->Emergency rescue</li>
+      </rulesStrings>
+    </questNameRules>
+    <questDescriptionRules>
+      <rulesStrings>
+        <li>questDescription->[asker_nameDef] from [asker_faction_name] reports a crashed vertibird with survivors under heavy attack.\n\nINTEL: 3 enemy waves approaching. Each wave grows stronger. Survivors are combat-capable but casualties are expected. Hold the line until a rescue shuttle can extract them.\n\nTime is critical - the enemy is closing in fast.</li>
+      </rulesStrings>
+    </questDescriptionRules>
+    <root Class="QuestNode_Sequence">
+      <nodes>
+        <li Class="QuestNode_SubScript">
+          <def>Util_RandomizePointsChallengeRating</def>
+          <parms>
+            <pointsFactorTwoStar>2.0</pointsFactorTwoStar>
+            <pointsFactorThreeStar>3.0</pointsFactorThreeStar>
+          </parms>
+        </li>
+        
+        <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionWithVertibird">
+          <storeFactionAs>askerFaction</storeFactionAs>
+          <storeLeaderAs>asker</storeLeaderAs>
+          <allowPermanentEnemy>false</allowPermanentEnemy>
+          <allowEnemy>false</allowEnemy>
+          <allowNeutral>true</allowNeutral>
+          <allowAlly>true</allowAlly>
+        </li>
+
+        <li Class="QuestNode_GetSiteTile">
+          <storeAs>siteTile</storeAs>
+          <preferCloserTiles>true</preferCloserTiles>
+        </li>
+
+        <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionVertibird">
+          <faction>$askerFaction</faction>
+          <storeAs>vertibirdDef</storeAs>
+        </li>
+
+        <li Class="QuestNode_GetFaction">
+          <storeAs>enemyFaction</storeAs>
+          <allowEnemy>true</allowEnemy>
+          <allowNeutral>false</allowNeutral>
+          <allowAlly>false</allowAlly>
+          <allowPermanentEnemy>true</allowPermanentEnemy>
+        </li>
+
+        <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+          <storeAs>sitePartDefs</storeAs>
+          <storeFactionAs>siteFaction</storeFactionAs>
+          <sitePartsTags>
+            <li><tag>FCP_VertibirdCrash</tag></li>
+          </sitePartsTags>
+        </li>
+        
+        <li Class="QuestNode_GetDefaultSitePartsParams">
+          <tile>$siteTile</tile>
+          <faction>$siteFaction</faction>
+          <sitePartDefs>$sitePartDefs</sitePartDefs>
+          <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+        </li>
+
+        <li Class="QuestNode_GetSiteThreatPoints">
+          <storeAs>sitePoints</storeAs>
+          <sitePartsParams>$sitePartsParams</sitePartsParams>
+        </li>
+
+        <li Class="QuestNode_SubScript">
+          <def>Util_GenerateSite</def>
+        </li>
+
+        <li Class="FCP.Core.RadiantQuests.QuestNode_GenerateSurvivorGroup">
+          <faction>$askerFaction</faction>
+          <storeAs>survivors</storeAs>
+        </li>
+
+        <li Class="FCP.Core.RadiantQuests.QuestNode_SetMapComponentVertibirdDef">
+          <map>$site</map>
+          <thingDef>$vertibirdDef</thingDef>
+        </li>
+
+        <li Class="QuestNode_SpawnWorldObjects">
+          <worldObjects>$site</worldObjects>
+        </li>
+
+        <li Class="QuestNode_WorldObjectTimeout">
+          <worldObject>$site</worldObject>
+          <isQuestTimeout>true</isQuestTimeout>
+          <delayTicks>$(randInt(15,25)*60000)</delayTicks>
+          <inSignalDisable>site.MapGenerated</inSignalDisable>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Letter">
+                <label>Quest expired: [resolvedQuestName]</label>
+                <text>The crashed vertibird site has been overrun.</text>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Fail</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+        <li Class="FCP.Core.RadiantQuests.QuestNode_EnsureVertibirdCrashMap">
+          <inSignal>site.MapGenerated</inSignal>
+          <mapParent>$site</mapParent>
+          <vertibirdDef>$vertibirdDef</vertibirdDef>
+        </li>
+
+        <li Class="FCP.Core.RadiantQuests.QuestNode_SpawnCrashSurvivors">
+          <inSignal>site.MapGenerated</inSignal>
+          <pawns>$survivors</pawns>
+        </li>
+
+        <li Class="FCP.Core.RadiantQuests.QuestNode_DefendCrashSite">
+          <inSignal>site.MapGenerated</inSignal>
+          <mapParent>$site</mapParent>
+          <enemyFaction>$enemyFaction</enemyFaction>
+          <points>$points</points>
+          <waveCount>3</waveCount>
+          <ticksBetweenWaves>15000</ticksBetweenWaves>
+          <outSignalComplete>DefenseComplete</outSignalComplete>
+        </li>
+
+        <li Class="QuestNode_Signal">
+          <inSignal>DefenseComplete</inSignal>
+          <node Class="QuestNode_Delay">
+            <delayTicks>5000</delayTicks>
+            <node Class="QuestNode_Sequence">
+              <nodes>
+                <li Class="QuestNode_Letter">
+                  <label>Rescue shuttle inbound</label>
+                  <text>[asker_faction_name] is sending a shuttle to evacuate the crash survivors.</text>
+                </li>
+                <li Class="FCP.Core.RadiantQuests.QuestNode_ShuttlePickupSurvivors">
+                  <inSignal>DefenseComplete</inSignal>
+                  <pawns>$survivors</pawns>
+                  <faction>$askerFaction</faction>
+                  <outSignalSuccess>SurvivorsEvacuated</outSignalSuccess>
+                </li>
+                <li Class="QuestNode_Signal">
+                  <inSignal>SurvivorsEvacuated</inSignal>
+                  <node Class="QuestNode_Sequence">
+                    <nodes>
+                      <li Class="QuestNode_Letter">
+                        <label>Quest complete: [resolvedQuestName]</label>
+                        <text>[asker_faction_name] thanks you for rescuing their people.</text>
+                      </li>
+                      <li Class="QuestNode_ChangeFactionGoodwill">
+                        <faction>$askerFaction</faction>
+                        <change>15</change>
+                      </li>
+                      <li Class="QuestNode_End">
+                        <outcome>Success</outcome>
+                      </li>
+                    </nodes>
+                  </node>
+                </li>
+              </nodes>
+            </node>
+          </node>
+        </li>
+
+        <li Class="QuestNode_Signal">
+          <inSignal>site.Destroyed</inSignal>
+          <node Class="QuestNode_Sequence">
+            <nodes>
+              <li Class="QuestNode_Letter">
+                <label>Quest failed: [resolvedQuestName]</label>
+                <text>The survivors have been killed.</text>
+              </li>
+              <li Class="QuestNode_End">
+                <outcome>Fail</outcome>
+              </li>
+            </nodes>
+          </node>
+        </li>
+
+      </nodes>
+    </root>
+  </QuestScriptDef>
+
+</Defs>

@@ -19,6 +19,9 @@ public class GenStep_WallTerminals : GenStep
         if (!ModsConfig.IdeologyActive)
             return;
 
+        if (!HasAncientStructures(map))
+            return;
+
         if (Rand.Value > spawnChance)
             return;
 
@@ -93,5 +96,24 @@ public class GenStep_WallTerminals : GenStep
             Thing terminal = ThingMaker.MakeThing(terminalDef);
             GenSpawn.Spawn(terminal, spot, map, rotation);
         }
+    }
+
+    private bool HasAncientStructures(Map map)
+    {
+        foreach (Building edifice in map.listerBuildings.allBuildingsColonist)
+        {
+            if (edifice.def.defName.Contains("Ancient") || 
+                edifice.def.defName.Contains("Cryptosleep"))
+                return true;
+        }
+
+        foreach (Building edifice in map.listerBuildings.allBuildingsNonColonist)
+        {
+            if (edifice.def.defName.Contains("Ancient") || 
+                edifice.def.defName.Contains("Cryptosleep"))
+                return true;
+        }
+
+        return false;
     }
 }

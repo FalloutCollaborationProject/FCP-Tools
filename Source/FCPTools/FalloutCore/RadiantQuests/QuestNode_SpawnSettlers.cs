@@ -1,4 +1,5 @@
 using RimWorld.QuestGen;
+using RimWorld.Planet;
 
 namespace FCP.Core.RadiantQuests;
 
@@ -10,14 +11,7 @@ public class QuestNode_SpawnSettlers : QuestNode
     public SlateRef<int> radius;
     protected override bool TestRunInt(Slate slate)
     {
-        FCPLog.Verbose("SpawnSettlers test");
-        if (pawns.GetValue(slate) == null)
-        {
-            FCPLog.Verbose("Pawns are null");
-            return false;
-        }
-        FCPLog.Verbose("Pawns are not null");
-        return true;
+        return pawns != null;
     }
     protected override void RunInt()
     {
@@ -26,7 +20,7 @@ public class QuestNode_SpawnSettlers : QuestNode
         questPart.inSignal = QuestGenUtility.HardcodedSignalWithQuestID(inSignal.GetValue(slate)) ?? QuestGen.slate.Get<string>("inSignal");
         questPart.pawns = pawns.GetValue(slate).ToList();
         questPart.radius = radius.TryGetValue(slate, out int rad) ? rad : 20;
-        questPart.mapTile = slate.Get<int>("siteTile");
+        questPart.mapTile = slate.Get<PlanetTile>("siteTile");
         QuestGen.quest.AddPart(questPart);
     }
 

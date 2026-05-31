@@ -2,20 +2,6 @@
 <Defs>
 
 	<WorkGiverDef>
-		<defName>FCP_RefuelCages</defName>
-		<label>refueling cages</label>
-		<giverClass>FCP.Core.RadiantQuests.WorkGiver_AnimalCageRefuel</giverClass>
-		<workType>Hauling</workType>
-		<verb>refuel</verb>
-		<gerund>refueling</gerund>
-		<priorityInType>141</priorityInType>
-		<requiredCapacities>
-			<li>Manipulation</li>
-		</requiredCapacities>
-		 <prioritizeSustains>true</prioritizeSustains>
-	</WorkGiverDef>
-
-	<WorkGiverDef>
 		<defName>RR_RepairPowerArmor</defName>
 		<label>repair power armor</label>
 		<giverClass>FCP.Core.PowerArmor.WorkGiver_RepairPowerArmor</giverClass>

@@ -934,18 +934,9 @@
                 <shortCircuitInRain>false</shortCircuitInRain>
             </li>
             <li Class="CompProperties_Flickable"/>
+            <li Class="FCP.Core.Buildings.CompProperties_HolotapeStorage"/>
         </comps>
-    </ThingDef>
-
-    <!-- Wall Terimal Base -->
-
-    <ThingDef Name="WallTerminalBase" ParentName="TerminalBase" Abstract="True">
-        <altitudeLayer>BuildingOnTop</altitudeLayer>
-        <placeWorkers>
-            <li>FCP.Core.Buildings.PlaceWorker_OnWall</li>
-            <li>PlaceWorker_PreventInteractionSpotOverlap</li>
-        </placeWorkers>
-        <tickerType>Normal</tickerType>
+        <tickerType>Rare</tickerType>
     </ThingDef>
 
     <!-- Table Terminal Base -->
@@ -967,7 +958,6 @@
         <hasInteractionCell>true</hasInteractionCell>
         <interactionCellOffset>(0,0,-1)</interactionCellOffset>
         <statBases>
-            <WorkToBuild>0</WorkToBuild>
             <Flammability>0.5</Flammability>
             <ResearchSpeedFactor>1.0</ResearchSpeedFactor>
             <Mass>20</Mass>
@@ -982,96 +972,12 @@
                 <shortCircuitInRain>true</shortCircuitInRain>
             </li>
             <li Class="CompProperties_Flickable"/>
+            <li Class="FCP.Core.Buildings.CompProperties_HolotapeStorage"/>
         </comps>
         <tickerType>Rare</tickerType>
         <tradeTags>
             <li>FCP_WastelandTech</li>
         </tradeTags>
-    </ThingDef>
-
-    <!--_____ Wall Terminals _____-->
-
-    <!-- Old Wall Terminal -->
-
-    <ThingDef ParentName="WallTerminalBase">
-        <defName>FCP_Production_Old_Wall_Terminal</defName>
-        <label>Old Wall Terminal</label>
-        <description>A rusted pre-war computer terminal mounted to a wall. Can be used to research holotapes and may still contain data from before the war. Cannot be moved or claimed once placed.</description>
-        <graphicData>
-            <texPath>Things/Building/Production/FCP_Terminals/FCP_Wall_Mounted_Terminal/FCP_Old_Terminal_Wall_Off</texPath>
-            <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(1.5,1.5)</drawSize>
-            <drawOffset>(0,0.4,-0.35)</drawOffset>
-            <damageData>
-                <cornerTL>Damage/Corner</cornerTL>
-                <cornerTR>Damage/Corner</cornerTR>
-            </damageData>
-        </graphicData>
-        <statBases>
-            <MaxHitPoints>150</MaxHitPoints>
-            <Cleanliness>-5</Cleanliness>
-        </statBases>
-        <comps>
-            <li Class="FCP.Core.Buildings.CompProperties_Terminal">
-                <poweredOnTexPath>Things/Building/Production/FCP_Terminals/FCP_Wall_Mounted_Terminal/FCP_Old_Terminal_Wall_On</poweredOnTexPath>
-                <poweredOffTexPath>Things/Building/Production/FCP_Terminals/FCP_Wall_Mounted_Terminal/FCP_Old_Terminal_Wall_Off</poweredOffTexPath>
-                <canExtractHolotape>true</canExtractHolotape>
-                <holotapeDropChance>0.1</holotapeDropChance>
-            </li>
-            <li Class="FCP.Core.Buildings.CompProperties_TerminalHacking">
-                <wordLength>6</wordLength>
-                <maxAttempts>4</maxAttempts>
-                <lockoutDurationHours>6</lockoutDurationHours>
-                <wordCount>12</wordCount>
-                <rewardPool>
-                    <li>Silver</li>
-                    <li>ComponentIndustrial</li>
-                    <li>Steel</li>
-                </rewardPool>
-            </li>
-        </comps>
-    </ThingDef>
-
-    <!-- Clean Wall Terminal -->
-
-    <ThingDef ParentName="WallTerminalBase">
-        <defName>FCP_Production_Clean_Wall_Terminal</defName>
-        <label>Clean Wall Terminal</label>
-        <description>A well-preserved pre-war computer terminal mounted to a wall. Can be used to research holotapes and may still contain data from before the war. Cannot be moved or claimed once placed.</description>
-        <graphicData>
-            <texPath>Things/Building/Production/FCP_Terminals/FCP_Wall_Mounted_Terminal/FCP_Clean_Terminal_Wall_Off</texPath>
-            <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(1.5,1.5)</drawSize>
-            <drawOffset>(0,0.4,-0.35)</drawOffset>
-            <damageData>
-                <cornerTL>Damage/Corner</cornerTL>
-                <cornerTR>Damage/Corner</cornerTR>
-            </damageData>
-        </graphicData>
-        <statBases>
-            <MaxHitPoints>200</MaxHitPoints>
-            <Cleanliness>0</Cleanliness>
-        </statBases>
-        <comps>
-            <li Class="FCP.Core.Buildings.CompProperties_Terminal">
-                <poweredOnTexPath>Things/Building/Production/FCP_Terminals/FCP_Wall_Mounted_Terminal/FCP_Clean_Terminal_Wall_On</poweredOnTexPath>
-                <poweredOffTexPath>Things/Building/Production/FCP_Terminals/FCP_Wall_Mounted_Terminal/FCP_Clean_Terminal_Wall_Off</poweredOffTexPath>
-                <canExtractHolotape>true</canExtractHolotape>
-                <holotapeDropChance>0.1</holotapeDropChance>
-            </li>
-            <li Class="FCP.Core.Buildings.CompProperties_TerminalHacking">
-                <wordLength>9</wordLength>
-                <maxAttempts>4</maxAttempts>
-                <lockoutDurationHours>12</lockoutDurationHours>
-                <wordCount>15</wordCount>
-                <rewardPool>
-                    <li>ComponentIndustrial</li>
-                    <li>ComponentSpacer</li>
-                    <li>Plasteel</li>
-                    <li>Gold</li>
-                </rewardPool>
-            </li>
-        </comps>
     </ThingDef>
 
     <!--_____ Table Terminals _____-->
@@ -1080,8 +986,8 @@
 
     <ThingDef ParentName="TableTerminalBase">
         <defName>FCP_Production_Old_Table_Terminal</defName>
-        <label>Old Table Terminal</label>
-        <description>A weathered pre-war computer terminal on a stand. Can be used to research holotapes. Can be moved and claimed.</description>
+        <label>Wasteland Terminal</label>
+        <description>A rebuilt computer terminal on a stand. Assembled from salvaged pre-war components and scrap electronics. Can store and read holotapes, and be used to research techprints.</description>
         <graphicData>
             <texPath>Things/Building/Production/FCP_Terminals/FCP_Table_Mounted_Terminal/FCP_Old_Terminal_Table_Off</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
@@ -1094,8 +1000,17 @@
         </graphicData>
         <statBases>
             <MaxHitPoints>150</MaxHitPoints>
-            <Cleanliness>-5</Cleanliness>
+            <WorkToBuild>8000</WorkToBuild>
+            <Cleanliness>-2</Cleanliness>
         </statBases>
+        <costList>
+            <Steel>80</Steel>
+            <ComponentIndustrial>4</ComponentIndustrial>
+        </costList>
+        <designationCategory>Production</designationCategory>
+        <researchPrerequisites>
+            <li>FCP_Research_Wasteland_Electronics</li>
+        </researchPrerequisites>
         <comps>
             <li Class="FCP.Core.Buildings.CompProperties_Terminal">
                 <poweredOnTexPath>Things/Building/Production/FCP_Terminals/FCP_Table_Mounted_Terminal/FCP_Old_Terminal_Table_On</poweredOnTexPath>
@@ -1109,8 +1024,8 @@
 
     <ThingDef ParentName="TableTerminalBase">
         <defName>FCP_Production_Clean_Table_Terminal</defName>
-        <label>Clean Table Terminal</label>
-        <description>A well-maintained pre-war computer terminal on a stand. Can be used to research holotapes. Can be moved and claimed.</description>
+        <label>Advanced Terminal</label>
+        <description>A carefully constructed computer terminal built to pre-war specifications. Features improved components and cleaner assembly. Can store and read holotapes, and be used to research techprints.</description>
         <graphicData>
             <texPath>Things/Building/Production/FCP_Terminals/FCP_Table_Mounted_Terminal/FCP_Clean_Terminal_Table_Off</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
@@ -1123,8 +1038,18 @@
         </graphicData>
         <statBases>
             <MaxHitPoints>200</MaxHitPoints>
+            <WorkToBuild>12000</WorkToBuild>
             <Cleanliness>0</Cleanliness>
         </statBases>
+        <costList>
+            <Steel>100</Steel>
+            <ComponentIndustrial>6</ComponentIndustrial>
+            <ComponentSpacer>1</ComponentSpacer>
+        </costList>
+        <designationCategory>Production</designationCategory>
+        <researchPrerequisites>
+            <li>FCP_Research_Radiation_King_Electronics</li>
+        </researchPrerequisites>
         <comps>
             <li Class="FCP.Core.Buildings.CompProperties_Terminal">
                 <poweredOnTexPath>Things/Building/Production/FCP_Terminals/FCP_Table_Mounted_Terminal/FCP_Clean_Terminal_Table_On</poweredOnTexPath>

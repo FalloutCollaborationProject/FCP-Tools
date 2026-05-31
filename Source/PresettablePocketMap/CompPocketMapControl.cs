@@ -99,7 +99,7 @@ namespace FCP.PocketMaps
 
             var colonists = map.mapPawns.AllPawnsSpawned.Where(p => p.IsColonist).ToList();
             var parentMap = entrancePortal.Map;
-            var exitPos = entrancePortal.Position;
+            var exitPos = entrancePortal.InteractionCell;
 
             foreach (var pawn in colonists)
             {

@@ -291,7 +291,7 @@
         <costList>
             <Steel>500</Steel>
             <ComponentIndustrial>15</ComponentIndustrial>
-            <VertibirdEngine>1</VertibirdEngine>
+            <FCP_Vertibird_Engine>1</FCP_Vertibird_Engine>
         </costList>
         <canOverlapZones>true</canOverlapZones>
         <killedLeavings>
@@ -315,7 +315,7 @@
             <paintable>true</paintable>
             <isInert>true</isInert>
             <forcedCostLeavings>
-                <li>VertibirdEngine</li>
+                <li>FCP_Vertibird_Engine</li>
             </forcedCostLeavings>
         </building>
         <inspectorTabs>
@@ -537,7 +537,7 @@
         <costList>
             <Steel>700</Steel>
             <ComponentIndustrial>20</ComponentIndustrial>
-            <VertibirdEngine>1</VertibirdEngine>
+            <FCP_Vertibird_Engine>1</FCP_Vertibird_Engine>
         </costList>
         <statBases>
             <WorkToBuild>65000</WorkToBuild>
@@ -646,7 +646,7 @@
             <Steel>550</Steel>
             <Plasteel>80</Plasteel>
             <ComponentIndustrial>20</ComponentIndustrial>
-            <VertibirdEngine>1</VertibirdEngine>
+            <FCP_Vertibird_Engine>1</FCP_Vertibird_Engine>
         </costList>
         <statBases>
             <WorkToBuild>60000</WorkToBuild>

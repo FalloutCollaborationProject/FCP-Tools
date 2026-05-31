@@ -15,11 +15,8 @@ public class SitePartWorker_PawnRescueAnimal : SitePartWorker
         outExtraDescriptionRules.Add(new Rule_String("enemiesCount", enemiesCount.ToString()));
         outExtraDescriptionRules.Add(new Rule_String("enemiesLabel", GetEnemiesLabel(part.site, enemiesCount)));
         Pawn pawn = PawnRescueUtility.GeneratePrisonerAnimal(part.site.Tile, slate.Get<PawnKindDef>("prisonerPawnKind", PawnKindDefOf.Slave), slate.Get<Faction>("prisonerFaction"));
-        FCPLog.Verbose(slate.Get<float>("chanceToJoin"));
-        FCPLog.Verbose(slate.Get<float>("chanceToJoinVal"));
         if (slate.Get<float>("chanceToJoin") >= slate.Get<float>("chanceToJoinVal"))
         {
-            FCPLog.Verbose("Pawn will join");
             PawnRescueUtility.prisonersWillingJoin.Add(pawn);
         }
         part.things = new ThingOwner<Thing>(part, false);

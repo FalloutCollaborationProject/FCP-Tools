@@ -125,7 +125,7 @@
     <ResearchProjectDef>
         <defName>FCP_Research_Advanced_Agriculture</defName>
         <label>Advanced Agriculture</label>
-        <description>Research into advanced techniques for improving agricultural productivity and crop yields.</description>
+        <description>Research into advanced techniques for improving agricultural productivity and crop yields. Unlocks methods for domesticating and containing wasteland creatures for sustainable food production and companionship.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>

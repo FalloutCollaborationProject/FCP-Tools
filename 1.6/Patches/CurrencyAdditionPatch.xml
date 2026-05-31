@@ -27,6 +27,7 @@
 	</Operation>
 	
 	<!-- Patch to replace scenarios that start with silver, to instead start with caps -->
+
 	<Operation Class="PatchOperationReplace">
 		<xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="Silver"]/thingDef</xpath>
 		<value>
@@ -35,11 +36,59 @@
 	</Operation>
 
 	<!-- Add a honor value to silver -->
+
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="Silver"]/statBases</xpath>
 		<value>
 			<RoyalFavorValue>0.0015</RoyalFavorValue>
 		</value>
 	</Operation>
-	
+
+	<!-- Caps drop for royal titles -->
+
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>Defs/RoyalTitlePermitDef[defName="SilverDrop"]</xpath>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/RoyalTitlePermitDef[defName="SilverDrop"]/defName</xpath>
+				<value><defName>CapsDrop</defName></value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/RoyalTitlePermitDef[defName="CapsDrop"]/label</xpath>
+				<value><label>caps drop</label></value>
+			</li>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/RoyalTitlePermitDef[defName="CapsDrop"]/description</xpath>
+				<value><description>Call for a drop of 500 caps.</description></value>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>Defs/RoyalTitlePermitDef[defName="CapsDrop"]/royalAid/itemsToDrop/Silver</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/RoyalTitlePermitDef[defName="CapsDrop"]/royalAid/itemsToDrop</xpath>
+				<value><FCP_Currency_Caps>500</FCP_Currency_Caps></value>
+			</li>
+		</operations>
+	</Operation>
+
+	<!-- Tribute collector accepts caps -->
+
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="PatchOperationTest">
+				<xpath>Defs/TraderKindDef[defName="Empire_Caravan_TributeCollector"]</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/TraderKindDef[defName="Empire_Caravan_TributeCollector"]/stockGenerators</xpath>
+				<value>
+					<li Class="StockGenerator_BuySingleDef">
+						<thingDef>FCP_Currency_Caps</thingDef>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
 </Patch>

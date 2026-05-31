@@ -30,7 +30,7 @@
             <ChunkSlagSteel>2</ChunkSlagSteel>
         </killedLeavings>
         <comps>
-            <li Class="CompProperties_Usable">
+            <li Class="FCP.Core.CompProperties_UsableOnce">
                 <useJob>UseItem</useJob>
                 <useLabel>Collect {0}</useLabel>
                 <showUseGizmo>true</showUseGizmo>
@@ -80,8 +80,8 @@
         <description>An old, destroyed military Vertibid. Used by the great nations before the bombs droped.</description>
         <rotatable>false</rotatable>
         <graphicData>
-            <texPath>Things/Building/Ruins/PreWarArmyVertibirdDestroyed/FCP_Pre_War_Army_Vertibird_Destroyed0</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
+            <texPath>Things/Building/Ruins/PreWarArmyVertibirdDestroyed</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
             <drawSize>(8,8)</drawSize>
             <shadowData>
                 <volume>(0.8, 0.7, 3.4)</volume>
@@ -98,7 +98,7 @@
             <ChunkSlagSteel>2</ChunkSlagSteel>
         </killedLeavings>
         <comps>
-            <li Class="CompProperties_Usable">
+            <li Class="FCP.Core.CompProperties_UsableOnce">
                 <useJob>UseItem</useJob>
                 <useLabel>Collect {0}</useLabel>
                 <showUseGizmo>true</showUseGizmo>
@@ -113,7 +113,7 @@
                         <countRange>50~100</countRange>
                     </li>
                     <li MayRequire="Ludeon.RimWorld.Odyssey">
-                        <thingDef>VertibirdEngine</thingDef>
+                        <thingDef>FCP_Vertibird_Engine</thingDef>
                         <countRange>1</countRange>
                         <weight>0.15</weight>
                     </li>
@@ -141,80 +141,6 @@
                         <thingDef>FCP_Apparel_Army_Uniform</thingDef>
                         <countRange>1~3</countRange>
                         <!-- <weight>0.4</weight> -->
-                    </li>
-                </weightedDrops>
-            </li>
-            <li Class="FCP.Core.CompProperties_LabelColored">
-                <rarity>Rare</rarity>
-            </li>
-        </comps>
-    </ThingDef>
-
-    <!-- Pre-War US Army Vertibird Gunship -->
-
-    <ThingDef ParentName="NonDeconstructibleAncientBuildingBase">
-        <defName>FCP_Pre_War_Army_Vertibird_Gunship</defName>
-        <label>Pre-War US Army Vertibird Gunship</label>
-        <description>An old, destroyed military Vertibird gunship. This heavily armed variant was used by the USA for combat operations before the bombs dropped.</description>
-        <rotatable>false</rotatable>
-        <graphicData>
-            <texPath>Things/Building/Ruins/PreWarArmyVertibirdDestroyed/FCP_Pre_War_Army_Vertibird_Destroyed1</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>(9,9)</drawSize>
-            <shadowData>
-                <volume>(0.9, 0.7, 3.8)</volume>
-            </shadowData>
-        </graphicData>
-        <size>(11,9)</size>
-        <fillPercent>0.5</fillPercent>
-        <passability>PassThroughOnly</passability>
-        <pathCost>50</pathCost>
-        <statBases>
-            <MaxHitPoints>600</MaxHitPoints>
-        </statBases>
-        <killedLeavings>
-            <ChunkSlagSteel>2</ChunkSlagSteel>
-        </killedLeavings>
-        <comps>
-            <li Class="CompProperties_Usable">
-                <useJob>UseItem</useJob>
-                <useLabel>Collect {0}</useLabel>
-                <showUseGizmo>true</showUseGizmo>
-            </li>
-            <li Class="FCP.Core.CompProperties_UseEffectItemBox">
-                <numWeightedDrops>3</numWeightedDrops>
-                <guaranteedDrops>
-                </guaranteedDrops>
-                <weightedDrops>
-                    <li>
-                        <thingDef>FCP_Currency_Caps</thingDef>
-                        <countRange>50~100</countRange>
-                    </li>
-                    <li MayRequire="Ludeon.RimWorld.Odyssey">
-                        <thingDef>VertibirdEngine</thingDef>
-                        <countRange>1</countRange>
-                        <weight>0.15</weight>
-                    </li>
-                    <li MayRequire="Ludeon.RimWorld.Odyssey">
-                        <thingDef>Techprint_FCP_Vertibird_Construction</thingDef>
-                        <countRange>1</countRange>
-                        <weight>0.01</weight>
-                    </li>
-                    <li MayRequire="Rick.FCP.Wastelanders">
-                        <thingDef>FCP_Apparel_Army_Helmet</thingDef>
-                        <countRange>1~3</countRange>
-                    </li>
-                    <li MayRequire="Rick.FCP.Wastelanders">
-                        <thingDef>FCP_Apparel_Gas_Ranger_Gas_Mask</thingDef>
-                        <countRange>1</countRange>
-                    </li>
-                    <li MayRequire="Rick.FCP.Wastelanders">
-                        <thingDef>FCP_Apparel_Military_Fatigues</thingDef>
-                        <countRange>1~3</countRange>
-                    </li>
-                    <li MayRequire="Rick.FCP.Wastelanders">
-                        <thingDef>FCP_Apparel_Army_Uniform</thingDef>
-                        <countRange>1~3</countRange>
                     </li>
                 </weightedDrops>
             </li>

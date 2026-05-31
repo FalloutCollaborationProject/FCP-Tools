@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using RimWorld;
 using RimWorld.Planet;
 using Verse;
@@ -64,6 +63,9 @@ namespace FCP.PocketMaps
             }
             
             Map map = PocketMapUtility.GeneratePocketMap(new IntVec3(size.x, 1, size.z), mapGen, GetExtraGenSteps(), Map);
+            
+            var entranceComp = new MapComponent_PocketMapEntrance(map) { portal = this };
+            map.components.Add(entranceComp);
             
             ApplyFloor(map, prefab.floorDef);
             SpawnThings(map, prefab.things);

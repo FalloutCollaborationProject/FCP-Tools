@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <QuestScriptDef>
+        <defName>FCP_Quest_TechCache</defName>
+        <rootSelectionWeight>0.9</rootSelectionWeight>
+        <rootMinPoints>200</rootMinPoints>
+        <defaultChallengeRating>1</defaultChallengeRating>
+        <canGiveRoyalFavor>true</canGiveRoyalFavor>
+        <expireDaysRange>5~9</expireDaysRange>
+        <questNameRules>
+            <rulesStrings>
+                <li>questName->Pre-War Bunker Breach</li>
+                <li>questName->Sealed Armory</li>
+                <li>questName->Cache Discovery</li>
+                <li>questName->Forgotten Stockpile</li>
+                <li>questName->Operation: Supply Drop</li>
+                <li>questName->Military Installation</li>
+                <li>questName->Lost Arsenal</li>
+            </rulesStrings>
+        </questNameRules>
+        <questDescriptionRules>
+            <rulesStrings>
+                <li>questDescription->[asker_faction_name] has uncovered coordinates to a sealed pre-war military cache. The terminal locks are degraded enough to crack, but the location sits in raider territory. [asker_nameFull] needs a combat team to secure the site while their tech specialist breaks the encryption. Intel suggests the bunker contains military-grade equipment - power armor components, advanced weapons, and medical supplies that didn't decay in the sealed environment. The raiders will respond once they realize what's being extracted.</li>
+                <li>questDescription->A salvage team from [asker_faction_name] has located an intact pre-war supply depot. The security systems are still active but vulnerable to override. [asker_nameFull] is requesting protection while their people bypass the locks and haul out the contents. The registry indicates high-value military equipment: fusion cores, combat armor, and preserved chemical compounds. Expect heavy resistance - everyone in the wasteland wants what's in that bunker.</li>
+                <li>questDescription->[asker_nameFull] forwards a promising lead: "We've found a sealed military installation from before the bombs fell. The manifest shows power armor frames, advanced weaponry, and intact medical supplies. Our tech can crack it, but we need guns on site. Raiders have scouts in the area - once that door opens, they'll come running. Standard hazard pay plus salvage rights to anything our people can't haul."</li>
+                <li>questDescription->Priority contract from [asker_faction_name]: [asker_nameFull] has access codes to a pre-war munitions bunker. The facility's been sealed since the war, meaning everything inside is pristine - military equipment that's actually worth the wear. The job is straightforward: hold the site while their crew loads the good stuff. The complication? The bunker's location is no secret. Every raider gang within radio range will want a piece once word spreads.</li>
+            </rulesStrings>
+        </questDescriptionRules>
+        <root Class="QuestNode_Sequence">
+            <nodes>
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
+                    <storeAs>askerFaction</storeAs>
+                    <factionDefs>
+                        <li>OutlanderCivil</li>
+                        <li MayRequire="Rick.FCP.Wastelanders">FCP_Faction_Hidden_Wastelanders</li>
+                        <li MayRequire="Rick.FCP.Enclave">FCP_Faction_Enclave</li>
+                        <li MayRequire="Rick.FCP.BoS">FCP_Faction_BoS</li>
+                        <li MayRequire="Rick.FCP.BoS">FCP_Faction_BoS_Midwest</li>
+                        <li MayRequire="Rick.FCP.BoS">FCP_Faction_BoS_Lost_Hills</li>
+                        <li MayRequire="Rick.FCP.BoS">FCP_Faction_BoS_Outcast_Remnants</li>
+                        <li MayRequire="Rick.FCP.BoS">FCP_Faction_BoS_Lyons_Pride_Remnants</li>
+                    </factionDefs>
+                </li>
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetLeaderOfFaction">
+                    <storeAs>asker</storeAs>
+                    <factionToUse>$askerFaction</factionToUse>
+                </li>
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
+                    <storeAs>enemyFaction</storeAs>
+                    <factionDefs>
+                        <li>PirateWaster</li>
+                    </factionDefs>
+                </li>
+                <li Class="QuestNode_SubScript">
+                    <def>Util_RandomizePointsChallengeRating</def>
+                    <parms>
+                        <pointsFactorTwoStar>1.5</pointsFactorTwoStar>
+                        <pointsFactorThreeStar>2</pointsFactorThreeStar>
+                    </parms>
+                </li>
+                <li Class="QuestNode_SubScript">
+                    <def>Util_AdjustPointsForDistantFight</def>
+                </li>
+                <li Class="QuestNode_GetMap" />
+                <li Class="QuestNode_GetSiteTile">
+                    <storeAs>siteTile</storeAs>
+                    <preferCloserTiles>true</preferCloserTiles>
+                </li>
+                <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+                    <storeAs>sitePartDefs</storeAs>
+                    <storeFactionAs>siteFaction</storeFactionAs>
+                    <sitePartsTags>
+                        <li>
+                            <tag>FCP_Site_TechCache</tag>
+                        </li>
+                    </sitePartsTags>
+                </li>
+                <li Class="QuestNode_GetDefaultSitePartsParams">
+                    <tile>$siteTile</tile>
+                    <faction>$siteFaction</faction>
+                    <sitePartDefs>$sitePartDefs</sitePartDefs>
+                    <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+                </li>
+                <li Class="QuestNode_SubScript">
+                    <def>Util_GenerateSite</def>
+                    <parms>
+                        <hiddenSitePartsPossible>true</hiddenSitePartsPossible>
+                    </parms>
+                </li>
+                <li Class="QuestNode_SpawnWorldObjects">
+                    <worldObjects>$site</worldObjects>
+                    <defsToExcludeFromHyperlinks>Human</defsToExcludeFromHyperlinks>
+                </li>
+                <li Class="QuestNode_Signal">
+                    <inSignal>site.MapGenerated</inSignal>
+                    <node Class="FCP.Core.RadiantQuests.QuestNode_AddCacheSecuredPart">
+                        <mapTile>$siteTile</mapTile>
+                        <completeSignal>cacheSecured</completeSignal>
+                    </node>
+                </li>
+                <li Class="QuestNode_WorldObjectTimeout">
+                    <worldObject>$site</worldObject>
+                    <isQuestTimeout>true</isQuestTimeout>
+                    <delayTicks>$(randInt(20,35)*60000)</delayTicks>
+                    <inSignalDisable>site.MapGenerated</inSignalDisable>
+                    <node Class="QuestNode_End">
+                        <outcome>Fail</outcome>
+                        <sendStandardLetter>true</sendStandardLetter>
+                    </node>
+                </li>
+                <li Class="QuestNode_Signal">
+                    <inSignal>cacheSecured</inSignal>
+                    <node Class="QuestNode_Sequence">
+                        <nodes>
+                            <li Class="QuestNode_Notify_PlayerRaidedSomeone">
+                                <getRaidersFromMapParent>$site</getRaidersFromMapParent>
+                            </li>
+                            <li Class="QuestNode_GiveRewards">
+                                <parms>
+                                    <allowGoodwill>true</allowGoodwill>
+                                    <allowRoyalFavor>true</allowRoyalFavor>
+                                    <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+                                </parms>
+                                <addCampLootReward>true</addCampLootReward>
+                                <customLetterLabel TKey="LetterLabelCacheSecured">Cache secured</customLetterLabel>
+                                <customLetterText TKey="LetterTextCacheSecured">The pre-war cache has been successfully breached and secured. [asker_faction_name] has transferred payment and your salvage share.</customLetterText>
+                                <nodeIfChosenPawnSignalUsed Class="QuestNode_Letter">
+                                    <letterDef>ChoosePawn</letterDef>
+                                    <label TKey="LetterLabelFavorReceiver">[asker_faction_royalFavorLabel]</label>
+                                    <text TKey="LetterTextFavorReceiver">These colonists participated in the victory for the quest [resolvedQuestName]. [asker_definite] wants to know who should receive the [royalFavorReward_amount] [asker_faction_royalFavorLabel] for this service.</text>
+                                    <useColonistsOnMap>$site</useColonistsOnMap>
+                                    <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+                                </nodeIfChosenPawnSignalUsed>
+                            </li>
+                            <li Class="QuestNode_GetRandomInRangeInt">
+                                <storeAs>specialRewardType</storeAs>
+                                <range>0~2</range>
+                            </li>
+                            <li Class="QuestNode_Equal">
+                                <value1>$specialRewardType</value1>
+                                <value2>0</value2>
+                                <node Class="QuestNode_Letter">
+                                    <letterDef>PositiveEvent</letterDef>
+                                    <label TKey="LetterLabelPowerArmorFrame">Power armor frame recovered</label>
+                                    <text TKey="LetterTextPowerArmorFrame">An intact power armor frame has been pulled from the cache.</text>
+                                </node>
+                            </li>
+                            <li Class="QuestNode_Equal">
+                                <value1>$specialRewardType</value1>
+                                <value2>1</value2>
+                                <node Class="QuestNode_Letter">
+                                    <letterDef>PositiveEvent</letterDef>
+                                    <label TKey="LetterLabelFusionCores">Fusion cores recovered</label>
+                                    <text TKey="LetterTextFusionCores">Several pristine fusion cores have been recovered from the cache.</text>
+                                </node>
+                            </li>
+                            <li Class="QuestNode_Equal">
+                                <value1>$specialRewardType</value1>
+                                <value2>2</value2>
+                                <node Class="QuestNode_Letter">
+                                    <letterDef>PositiveEvent</letterDef>
+                                    <label TKey="LetterLabelMedicalCache">Medical supplies recovered</label>
+                                    <text TKey="LetterTextMedicalCache">The cache contained sealed pre-war medical supplies in pristine condition.</text>
+                                </node>
+                            </li>
+                        </nodes>
+                    </node>
+                </li>
+                <li Class="QuestNode_End">
+                    <inSignal>cacheSecured</inSignal>
+                    <outcome>Success</outcome>
+                </li>
+            </nodes>
+        </root>
+    </QuestScriptDef>
+
+</Defs>

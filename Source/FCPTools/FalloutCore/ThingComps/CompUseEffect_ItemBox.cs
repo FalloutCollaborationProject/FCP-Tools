@@ -6,6 +6,8 @@ public class CompUseEffect_ItemBox : CompUseEffect
 
     private bool lootClaimed;
 
+    public bool LootClaimed => lootClaimed;
+
     public override void PostExposeData()
     {
         base.PostExposeData();

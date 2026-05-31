@@ -35,10 +35,25 @@
         </questDescriptionRules>
         <root Class="QuestNode_Sequence">
             <nodes>
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
+                    <storeAs>askerFaction</storeAs>
+                    <factionDefs>
+                        <li>OutlanderCivil</li>
+                        <li MayRequire="Rick.FCP.Wastelanders">FCP_Faction_Hidden_Wastelanders</li>
+                        <li MayRequire="Rick.FCP.NCR">FCP_Faction_NCR</li>
+                        <li MayRequire="Rick.FCP.NCR">FCP_Faction_NCR_Deserters</li>
+                        <li MayRequire="Rick.FCP.Legion">FCP_Faction_Caesars_Legion</li>
+                        <li MayRequire="Rick.FCP.Enclave">FCP_Faction_Enclave</li>
+                        <li MayRequire="Rick.FCP.BoS">FCP_Faction_BoS</li>
+                        <li MayRequire="Rick.FCP.BoS">FCP_Faction_BoS_Midwest</li>
+                        <li MayRequire="Rick.FCP.BoS">FCP_Faction_BoS_Lost_Hills</li>
+                        <li MayRequire="Rick.FCP.BoS">FCP_Faction_BoS_Outcast_Remnants</li>
+                        <li MayRequire="Rick.FCP.BoS">FCP_Faction_BoS_Lyons_Pride_Remnants</li>
+                    </factionDefs>
+                </li>
                 <li Class="FCP.Core.RadiantQuests.QuestNode_GetLeaderOfFaction">
                     <storeAs>asker</storeAs>
-                    <!--The faction def that issues the quest-->
-                    <factionDef>OutlanderCivil</factionDef>
+                    <factionToUse>$askerFaction</factionToUse>
                 </li>
                 <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>enemyFaction</storeAs>
@@ -52,7 +67,7 @@
                     <!--The faction def that will be the prisoner-->
                     <factionDefs>
                         <li>OutlanderCivil</li>
-                        <li>FCP_Faction_Hidden_Wastelanders</li>
+                        <li MayRequire="Rick.FCP.Wastelanders">FCP_Faction_Hidden_Wastelanders</li>
                     </factionDefs>
                 </li>
                 <li Class="FCP.Core.RadiantQuests.QuestNode_GetPawnKind">

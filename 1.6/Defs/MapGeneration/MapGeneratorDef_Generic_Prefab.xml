@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<MapGeneratorDef ParentName="MapCommonBase">
+		<defName>FCP_MapGen_Settlement_Prefab</defName>
+		<genSteps>
+			<li>ElevationFertility</li>
+			<li>Terrain</li>
+			<li>RocksFromGrid</li>
+			<li>FCP_GenStep_DynamicPrefab</li>
+			<li>FCP_GenStep_SpawnSettlementPawns</li>
+			<li>SettlementPower</li>
+		</genSteps>
+	</MapGeneratorDef>
+
+	<GenStepDef>
+		<defName>FCP_GenStep_DynamicPrefab</defName>
+		<order>450</order>
+		<genStep Class="FCP.Factions.GenStep_DynamicPrefab" />
+	</GenStepDef>
+
+	<GenStepDef>
+		<defName>FCP_GenStep_SpawnSettlementPawns</defName>
+		<order>460</order>
+		<genStep Class="FCP.Factions.GenStep_SpawnSettlementPawns" />
+	</GenStepDef>
+
+</Defs>

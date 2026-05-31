@@ -11,14 +11,7 @@ public class QuestNode_SpawnRaiders : QuestNode
     public SlateRef<bool> spawnOnEdge;
     protected override bool TestRunInt(Slate slate)
     {
-        FCPLog.Verbose("SpawnRaiders test");
-        if (pawns.GetValue(slate) == null)
-        {
-            FCPLog.Verbose("Pawns are null");
-            return false;
-        }
-        FCPLog.Verbose("Pawns are not null");
-        return true;
+        return pawns.GetValue(slate) != null;
     }
     protected override void RunInt()
     {

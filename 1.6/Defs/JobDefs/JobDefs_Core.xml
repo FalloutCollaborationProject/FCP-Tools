@@ -114,7 +114,7 @@
         <driverClass>FCP.Core.PowerArmor.JobDriver_SwapPowerArmor</driverClass>
         <reportString>swapping power armor at TargetA.</reportString>
     </JobDef>
-    
+
     <!-- Repair Power Armor -->
 
     <JobDef>
@@ -139,7 +139,45 @@
         <driverClass>FCP.Core.Buildings.JobDriver_RemoveFromPowerLine</driverClass>
         <reportString>removing TargetA from power line.</reportString>
     </JobDef>
- 
+
+    <!-- Insert Holotape -->
+
+    <JobDef>
+        <defName>FCP_InsertHolotape</defName>
+        <driverClass>FCP.Core.JobDrivers.JobDriver_InsertHolotape</driverClass>
+        <reportString>inserting holotape into TargetB.</reportString>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+
+    <!-- Read Holotape At Terminal -->
+
+    <JobDef>
+        <defName>FCP_ReadHolotapeAtTerminal</defName>
+        <driverClass>FCP.Core.JobDrivers.JobDriver_ReadHolotapeAtTerminal</driverClass>
+        <reportString>reading holotape at TargetA.</reportString>
+        <joyDuration>4000</joyDuration>
+        <joyMaxParticipants>1</joyMaxParticipants>
+        <joySkill>Intellectual</joySkill>
+        <joyXpPerTick>0.000001</joyXpPerTick>
+        <joyKind>Reading</joyKind>
+    </JobDef>
+
+    <!-- Link Pip-Boy To Terminal -->
+
+    <JobDef>
+        <defName>FCP_LinkPipboyToTerminal</defName>
+        <driverClass>FCP.Core.JobDrivers.JobDriver_LinkPipboyToTerminal</driverClass>
+        <reportString>syncing Pip-Boy with TargetA.</reportString>
+    </JobDef>
+
+    <!-- Load Holotape Into Pip-Boy -->
+
+    <JobDef>
+        <defName>FCP_LoadHolotapeIntoPipboy</defName>
+        <driverClass>FCP.Core.JobDrivers.JobDriver_LoadHolotapeIntoPipboy</driverClass>
+        <reportString>loading holotape into Pip-Boy.</reportString>
+    </JobDef>
+
     <!-- Extract Holotape -->
 
     <JobDef>
@@ -147,6 +185,15 @@
         <driverClass>FCP.Core.Buildings.JobDriver_ExtractHolotape</driverClass>
         <reportString>extracting holotape from TargetA.</reportString>
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+
+    <!-- Hack Terminal -->
+
+    <JobDef>
+        <defName>FCP_HackTerminal</defName>
+        <driverClass>FCP.Core.Buildings.JobDriver_HackTerminal</driverClass>
+        <reportString>hacking TargetA.</reportString>
+        <playerInterruptible>true</playerInterruptible>
     </JobDef>
 
     <!-- Clear Weapon Jam -->

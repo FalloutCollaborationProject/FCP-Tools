@@ -61,9 +61,9 @@ public static class TileFinder_RandomSettlementTileFor_LayerPatch
 
 internal static class SpawnConfigHelper
 {
-	internal static bool TryBuild(Faction faction, out FactionExtension_SpawnConfig ext, out bool hasBiomeFilter, out List<PlanetTile> anchors)
+	internal static bool TryBuild(Faction faction, out FactionExtension_SettlementControl ext, out bool hasBiomeFilter, out List<PlanetTile> anchors)
 	{
-		ext = faction?.def.GetModExtension<FactionExtension_SpawnConfig>();
+		ext = faction?.def.GetModExtension<FactionExtension_SettlementControl>();
 		hasBiomeFilter = false;
 		anchors = null;
 
@@ -88,7 +88,7 @@ internal static class SpawnConfigHelper
 		return hasBiomeFilter || anchors != null;
 	}
 
-	internal static Predicate<PlanetTile> MakePredicate(FactionExtension_SpawnConfig ext, bool hasBiomeFilter, List<PlanetTile> anchors)
+	internal static Predicate<PlanetTile> MakePredicate(FactionExtension_SettlementControl ext, bool hasBiomeFilter, List<PlanetTile> anchors)
 	{
 		return tile =>
 		{

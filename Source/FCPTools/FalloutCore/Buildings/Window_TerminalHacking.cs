@@ -144,38 +144,63 @@ namespace FCP.Core.Buildings
             for (int i = 0; i < pairsToAdd; i++)
             {
                 var bracket = brackets[Rand.Range(0, brackets.Length)];
-                int line = Rand.Range(0, LINES_PER_COLUMN);
-                string lineText = column[line];
                 
-                int openPos = -1;
-                for (int j = 0; j < lineText.Length; j++)
+                for (int attempt = 0; attempt < 50; attempt++)
                 {
-                    if (lineText[j] == bracket.Item1 && Rand.Bool)
+                    int line = Rand.Range(0, LINES_PER_COLUMN);
+                    string lineText = column[line];
+                    
+                    int openPos = -1;
+                    for (int j = 0; j < lineText.Length; j++)
                     {
-                        openPos = j;
-                        break;
-                    }
-                }
-
-                if (openPos >= 0)
-                {
-                    for (int j = openPos + 1; j < lineText.Length; j++)
-                    {
-                        if (lineText[j] == bracket.Item2)
+                        if (lineText[j] == bracket.Item1)
                         {
-                            hackableElements.Add(new HackableElement
-                            {
-                                type = HackType.BracketPair,
-                                text = lineText.Substring(openPos, j - openPos + 1),
-                                line = startLine + line,
-                                startPos = openPos,
-                                endPos = j + 1
-                            });
+                            openPos = j;
                             break;
                         }
                     }
+
+                    if (openPos >= 0)
+                    {
+                        for (int j = openPos + 1; j < lineText.Length; j++)
+                        {
+                            if (lineText[j] == bracket.Item2)
+                            {
+                                bool allSymbols = true;
+                                for (int k = openPos; k <= j; k++)
+                                {
+                                    if (!SYMBOLS.Contains(lineText[k]))
+                                    {
+                                        allSymbols = false;
+                                        break;
+                                    }
+                                }
+                                
+                                if (allSymbols)
+                                {
+                                    hackableElements.Add(new HackableElement
+                                    {
+                                        type = HackType.BracketPair,
+                                        text = lineText.Substring(openPos, j - openPos + 1),
+                                        line = startLine + line,
+                                        startPos = openPos,
+                                        endPos = j + 1
+                                    });
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    
+                    if (hackableElements.Count > i + GetWordCount())
+                        break;
                 }
             }
+        }
+
+        private int GetWordCount()
+        {
+            return hackableElements.Count(e => e.type == HackType.Word);
         }
 
         private string GenerateGibberishLine()
@@ -208,6 +233,8 @@ namespace FCP.Core.Buildings
 
         private void DrawHeader(Rect rect)
         {
+            Color oldColor = GUI.color;
+            GUI.color = TerminalColors.PrimaryColor;
             Text.Font = GameFont.Medium;
             Widgets.Label(rect, "ROBCO INDUSTRIES (TM) TERMLINK PROTOCOL");
             Text.Font = GameFont.Small;
@@ -223,10 +250,13 @@ namespace FCP.Core.Buildings
                 attemptsText += "░ ";
             
             Widgets.Label(attemptsRect, attemptsText);
+            GUI.color = oldColor;
         }
 
         private void DrawColumn(Rect rect, List<string> column, int startLine)
         {
+            Color oldColor = GUI.color;
+            GUI.color = TerminalColors.PrimaryColor;
             float lineHeight = 20f;
             int address = baseAddress + (startLine * 12);
 
@@ -243,53 +273,44 @@ namespace FCP.Core.Buildings
                 
                 address += 12;
             }
+            GUI.color = oldColor;
         }
 
         private void DrawInteractiveLine(Rect rect, string lineText, int lineIndex)
         {
-            float charWidth = 10f;
-            int currentPos = 0;
+            Text.Font = GameFont.Tiny;
+            float charWidth = Text.CalcSize("A").x;
             
             for (int i = 0; i < hackableElements.Count; i++)
             {
                 var element = hackableElements[i];
                 if (element.line != lineIndex)
                     continue;
-                
-                if (currentPos < element.startPos)
-                {
-                    Rect normalRect = new Rect(rect.x + currentPos * charWidth, rect.y, (element.startPos - currentPos) * charWidth, rect.height);
-                    Widgets.Label(normalRect, lineText.Substring(currentPos, element.startPos - currentPos));
-                }
 
-                Rect elementRect = new Rect(rect.x + element.startPos * charWidth, rect.y, (element.endPos - element.startPos) * charWidth, rect.height);
+                Rect elementRect = new Rect(
+                    rect.x + element.startPos * charWidth, 
+                    rect.y, 
+                    element.text.Length * charWidth, 
+                    rect.height);
                 
-                Color oldColor = GUI.color;
                 if (Mouse.IsOver(elementRect))
                 {
-                    GUI.color = Color.green;
+                    Widgets.DrawHighlight(elementRect);
                 }
-                
-                Widgets.Label(elementRect, element.text);
                 
                 if (Widgets.ButtonInvisible(elementRect))
                 {
                     OnElementClicked(element);
                 }
-                
-                GUI.color = oldColor;
-                currentPos = element.endPos;
             }
-
-            if (currentPos < lineText.Length)
-            {
-                Rect remainingRect = new Rect(rect.x + currentPos * charWidth, rect.y, (lineText.Length - currentPos) * charWidth, rect.height);
-                Widgets.Label(remainingRect, lineText.Substring(currentPos));
-            }
+            
+            Widgets.Label(rect, lineText);
         }
 
         private void DrawFeedback(Rect rect)
         {
+            Color oldColor = GUI.color;
+            GUI.color = TerminalColors.PrimaryColor;
             Text.Font = GameFont.Tiny;
             float y = rect.y;
             float lineHeight = 18f;
@@ -303,6 +324,7 @@ namespace FCP.Core.Buildings
                 Widgets.Label(entryRect, attemptHistory[i]);
                 y += lineHeight;
             }
+            GUI.color = oldColor;
         }
 
         private void OnElementClicked(HackableElement element)

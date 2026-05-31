@@ -4,7 +4,7 @@
     <!--__________ Vertibird Engine __________-->
 
     <ThingDef ParentName="ResourceBase" MayRequire="Ludeon.RimWorld.Odyssey">
-        <defName>VertibirdEngine</defName>
+        <defName>FCP_Vertibird_Engine</defName>
         <label>vertibird engine</label>
         <description>A powerful turbine engine designed specifically for VTOL aircraft. This pre-war engine combines thrust vectoring with vertical take-off capabilities, allowing vertibirds to hover and maneuver with precision. Due to its atmospheric-only design, it cannot reach orbital altitudes like spacer shuttle engines.\n\nThese engines are extremely rare and valuable, typically salvaged from crashed vertibirds or obtained through military contacts.</description>
         <graphicData>

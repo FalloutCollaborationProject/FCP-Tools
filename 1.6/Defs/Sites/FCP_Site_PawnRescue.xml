@@ -11,7 +11,7 @@
         <description>A prisoner being held by enemies.</description>
         <workerClass>FCP.Core.RadiantQuests.SitePartWorker_PawnRescue</workerClass>
         <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
-        <expandingIconTexture>World/WorldObjects/Expanding/Sites/Prisoner</expandingIconTexture>
+        <expandingIconTexture>MapIcons/Sites/FCP_Generic_Quest_Site</expandingIconTexture>
         <forceExitAndRemoveMapCountdownDurationDays>6</forceExitAndRemoveMapCountdownDurationDays>
         <requiresFaction>true</requiresFaction>
         <handlesWorldObjectTimeoutInspectString>true</handlesWorldObjectTimeoutInspectString>

@@ -34,31 +34,15 @@ public class QuestPart_SpawnRaiders : QuestPart
     {
         mapParent = Find.World.worldObjects.MapParentAt(mapTile);
         base.Notify_QuestSignalReceived(signal);
-        FCPLog.Verbose("Testing notify quest signal received");
         if (!(signal.tag == inSignal) || !mapParent.HasMap)
         {
             return;
         }
-        IntVec3 location = IntVec3.Invalid;
-        FCPLog.Verbose(mapParent.Map == null);
-        FCPLog.Verbose(pawns.Count);
-        if (cell.IsValid)
+        
+        IntVec3 location = cell.IsValid ? cell : (spawnOnEdge ? default : mapParent.Map.Center);
+        if (spawnOnEdge && !cell.IsValid)
         {
-            location = cell;
-        }
-        else
-        {
-            FCPLog.Verbose(spawnOnEdge);
-            if (spawnOnEdge)
-            {
-                TryFindWalkInSpot(mapParent.Map, out location);
-            }
-            else
-            {
-                location = mapParent.Map.Center;
-            }
-                
-            
+            TryFindWalkInSpot(mapParent.Map, out location);
         }
         foreach (Pawn pawn in pawns)
         {

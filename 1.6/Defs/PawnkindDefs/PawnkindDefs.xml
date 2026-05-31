@@ -20,6 +20,7 @@
         <apparelTags>
             <li>FCP_Vault_Tec</li>
         </apparelTags>
+        <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
     </PawnKindDef>
 
     <!--___ Enclave Base ___-->
@@ -37,6 +38,7 @@
         <apparelTags>
             <li>FCP_Enclave</li>
         </apparelTags>
+        <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
     </PawnKindDef>
 
     <!--___ NCR Base ___-->
@@ -55,6 +57,7 @@
         <apparelTags>
             <li>FCP_NCR</li>
         </apparelTags>
+        <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
     </PawnKindDef>
 
     <!--___ BoS Base ___-->
@@ -84,6 +87,7 @@
 			</li>
 		</backstoryFiltersOverride>
 		<pawnGroupDevelopmentStage>Adult</pawnGroupDevelopmentStage>
+        <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
 	</PawnKindDef>
 
 	<!-- BoS Power Armor Base -->
@@ -98,6 +102,7 @@
 		<forcedTraits>
 			<FCP_Power_Armor_Trained />
 		</forcedTraits>
+        <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
 	</PawnKindDef>
 
     <!--___ Legion Base ___-->
@@ -133,6 +138,7 @@
                 </categoriesChildhood>
             </li>
         </backstoryFiltersOverride>
+        <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
     </PawnKindDef>
 
     <!--___ Wastelander Base ___-->
@@ -146,7 +152,7 @@
             </xenotypeChances>
         </xenotypeSet>
         <useFactionXenotypes>false</useFactionXenotypes>
-        <defaultFactionDef>FCP_Faction_Hidden_Wastelanders</defaultFactionDef>
+        <defaultFactionDef MayRequire="Rick.FCP.Wastelanders">FCP_Faction_Hidden_Wastelanders</defaultFactionDef>
         <maxGenerationAge>60</maxGenerationAge>
         <chemicalAddictionChance>0</chemicalAddictionChance>
         <invNutrition>2.7</invNutrition>

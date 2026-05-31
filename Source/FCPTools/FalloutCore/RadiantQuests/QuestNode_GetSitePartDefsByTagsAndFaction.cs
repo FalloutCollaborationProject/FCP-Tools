@@ -40,12 +40,9 @@ public class QuestNode_GetSitePartDefsByTagsAndFaction : QuestNode
 
     private bool TrySetVars(Slate slate)
     {
-        FCPLog.Verbose("Setting vars");
         float points = slate.Get("points", 0f);
-        FCPLog.Verbose(points);
         for (int i = 0; i < 2; i++)
         {
-            FCPLog.Verbose("Loop "+ i );
             tmpTags.Clear();
             foreach (SitePartOption item in sitePartsTags.GetValue(slate))
             {

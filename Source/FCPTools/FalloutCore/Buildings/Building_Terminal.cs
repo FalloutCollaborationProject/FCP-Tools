@@ -23,6 +23,15 @@ namespace FCP.Core.Buildings
                 return cachedProps;
             }
         }
+
+        private bool IsPowered
+        {
+            get
+            {
+                var powerComp = GetComp<CompPowerTrader>();
+                return powerComp == null || powerComp.PowerOn;
+            }
+        }
         
         public override Graphic Graphic
         {
@@ -103,11 +112,35 @@ namespace FCP.Core.Buildings
             Scribe_Values.Look(ref holotapeExtracted, "holotapeExtracted", false);
         }
 
+        private bool lastPowerState;
+
+        protected override void Tick()
+        {
+            base.Tick();
+            
+            if (this.IsHashIntervalTick(60))
+            {
+                bool currentPowerState = IsPowered;
+                if (currentPowerState != lastPowerState)
+                {
+                    lastPowerState = currentPowerState;
+                    if (Spawned && Map != null)
+                        Map.mapDrawer.MapMeshDirty(Position, MapMeshFlagDefOf.Things);
+                }
+            }
+        }
+
         public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn selPawn)
         {
             var hackComp = GetComp<CompTerminalHacking>();
             if (hackComp != null)
             {
+                if (!IsPowered)
+                {
+                    yield return new FloatMenuOption("Terminal has no power", null);
+                    yield break;
+                }
+
                 if (hackComp.IsLockedOut)
                 {
                     yield return new FloatMenuOption("FCP_TerminalLockedOut_Status".Translate(hackComp.LockoutHoursRemaining), null);
@@ -122,37 +155,103 @@ namespace FCP.Core.Buildings
                         yield break;
                     }
 
+                    if (!selPawn.CanReserve(this))
+                    {
+                        yield return new FloatMenuOption("CannotUseReserved".Translate(), null);
+                        yield break;
+                    }
+
                     yield return new FloatMenuOption("FCP_HackTerminal".Translate(), 
-                        () => Find.WindowStack.Add(new Window_TerminalHacking(hackComp)));
+                        () => selPawn.jobs.TryTakeOrderedJob(JobMaker.MakeJob(JobDefOf_Terminal.FCP_HackTerminal, this)));
                     yield break;
                 }
+            }
+
+            if (!IsPowered)
+            {
+                yield return new FloatMenuOption("Cannot use (no power)", null);
+                yield break;
             }
 
             foreach (var option in base.GetFloatMenuOptions(selPawn))
                 yield return option;
 
+            var storage = GetComp<CompHolotapeStorage>();
+            if (storage != null)
+            {
+                bool isWallTerminal = hackComp != null;
+                
+                var carried = selPawn.carryTracker?.CarriedThing;
+                if (carried?.TryGetComp<Holotapes.CompHolotape>() != null && !isWallTerminal)
+                {
+                    if (!selPawn.CanReach(this, PathEndMode.InteractionCell, Danger.Deadly))
+                        yield return new FloatMenuOption("CannotUseNoPath".Translate(), null);
+                    else if (!selPawn.CanReserve(this))
+                        yield return new FloatMenuOption("CannotUseReserved".Translate(), null);
+                    else
+                        yield return new FloatMenuOption("Insert holotape", () =>
+                            selPawn.jobs.TryTakeOrderedJob(JobMaker.MakeJob(JobDefOf_Terminal.FCP_InsertHolotape, carried, this)));
+                }
+
+                if (storage.Count > 0)
+                {
+                    if (!selPawn.CanReach(this, PathEndMode.InteractionCell, Danger.Deadly))
+                        yield return new FloatMenuOption("CannotUseNoPath".Translate(), null);
+                    else if (!selPawn.CanReserve(this))
+                        yield return new FloatMenuOption("CannotUseReserved".Translate(), null);
+                    else
+                    {
+                        var job = JobMaker.MakeJob(JobDefOf_Terminal.FCP_ReadHolotapeAtTerminal, this);
+                        job.targetB = storage.StoredHolotapes[0];
+                        yield return new FloatMenuOption("Read holotape", () => selPawn.jobs.TryTakeOrderedJob(job));
+                        
+                        yield return new FloatMenuOption("Eject holotape", () =>
+                        {
+                            var holotape = storage.TryRemoveHolotape(storage.StoredHolotapes[0]);
+                            if (holotape != null)
+                            {
+                                GenPlace.TryPlaceThing(holotape, selPawn.Position, selPawn.Map, ThingPlaceMode.Near);
+                                Messages.Message($"{selPawn.LabelShort} removed {holotape.Label} from terminal.", 
+                                    selPawn, MessageTypeDefOf.NeutralEvent);
+                            }
+                        });
+                    }
+                }
+                
+                var pipboy = selPawn.apparel?.WornApparel?.Find(a => a.TryGetComp<Holotapes.CompPipboyHolotapeStorage>() != null);
+                if (pipboy != null && storage != null)
+                {
+                    if (!selPawn.CanReach(this, PathEndMode.InteractionCell, Danger.Deadly))
+                        yield return new FloatMenuOption("CannotUseNoPath".Translate(), null);
+                    else if (!selPawn.CanReserve(this))
+                        yield return new FloatMenuOption("CannotUseReserved".Translate(), null);
+                    else
+                        yield return new FloatMenuOption("Link Pip-Boy", () =>
+                            selPawn.jobs.TryTakeOrderedJob(JobMaker.MakeJob(JobDefOf_Terminal.FCP_LinkPipboyToTerminal, this)));
+                }
+            }
+
             var props = Props;
-            if (props == null || !props.canExtractHolotape || props.holotapeDropChance <= 0 || holotapeExtracted)
+            if (props != null && props.canExtractHolotape && props.holotapeDropChance > 0)
             {
                 if (holotapeExtracted)
+                {
                     yield return new FloatMenuOption("FCP_ExtractHolotape_AlreadyExtracted".Translate(), null);
-                yield break;
+                }
+                else if (!selPawn.CanReach(this, PathEndMode.InteractionCell, Danger.Deadly))
+                {
+                    yield return new FloatMenuOption("CannotUseNoPath".Translate(), null);
+                }
+                else if (!selPawn.CanReserve(this))
+                {
+                    yield return new FloatMenuOption("CannotUseReserved".Translate(), null);
+                }
+                else
+                {
+                    yield return new FloatMenuOption("FCP_ExtractHolotape".Translate(), 
+                        () => selPawn.jobs.TryTakeOrderedJob(JobMaker.MakeJob(JobDefOf_Terminal.FCP_ExtractHolotape, this)));
+                }
             }
-
-            if (!selPawn.CanReach(this, PathEndMode.InteractionCell, Danger.Deadly))
-            {
-                yield return new FloatMenuOption("CannotUseNoPath".Translate(), null);
-                yield break;
-            }
-
-            if (!selPawn.CanReserve(this))
-            {
-                yield return new FloatMenuOption("CannotUseReserved".Translate(), null);
-                yield break;
-            }
-
-            yield return new FloatMenuOption("FCP_ExtractHolotape".Translate(), 
-                () => selPawn.jobs.TryTakeOrderedJob(JobMaker.MakeJob(JobDefOf_Terminal.FCP_ExtractHolotape, this)));
         }
 
         public void TryExtractHolotape(Pawn extractor)

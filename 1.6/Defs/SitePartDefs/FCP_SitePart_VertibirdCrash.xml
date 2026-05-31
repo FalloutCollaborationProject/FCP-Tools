@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <SitePartDef>
+        <defName>FCP_VertibirdCrash</defName>
+        <label>vertibird crash site</label>
+        <description>A crashed vertibird with survivors under heavy attack. Multiple enemy waves are converging on the location. You must defend the survivors through all waves until a rescue shuttle can extract them.</description>
+        <workerClass>FCP.Core.RadiantQuests.SitePartWorker_VertibirdCrash</workerClass>
+        <tags>
+            <li>FCP_VertibirdCrash</li>
+        </tags>
+        <applyFactionColorToSiteTexture>false</applyFactionColorToSiteTexture>
+        <expandingIconTexture>MapIcons/Sites/FCP_Aerial_Vehicle_Site</expandingIconTexture>
+        <siteTexture>Things/Building/Ruins/PreWarArmyVertibirdDestroyed/FCP_Pre_War_Army_Vertibird_Destroyed_b</siteTexture>
+    </SitePartDef>
+
+    <GenStepDef>
+        <defName>FCP_GenStep_VertibirdCrash</defName>
+        <order>400</order>
+        <genStep Class="FCP.Core.RadiantQuests.GenStep_VertibirdCrash" />
+    </GenStepDef>
+
+</Defs>

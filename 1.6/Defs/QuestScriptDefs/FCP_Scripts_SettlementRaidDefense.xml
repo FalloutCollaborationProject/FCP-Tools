@@ -39,10 +39,16 @@
         </questDescriptionRules>
         <root Class="QuestNode_Sequence">
             <nodes>
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
+                    <storeAs>askerFaction</storeAs>
+                    <factionDefs>
+                        <li MayRequire="Rick.FCP.Wastelanders">FCP_Faction_Hidden_Wastelanders</li>
+                        <li>OutlanderCivil</li>
+                    </factionDefs>
+                </li>
                 <li Class="FCP.Core.RadiantQuests.QuestNode_GetLeaderOfFaction">
                     <storeAs>asker</storeAs>
-                    <!--The faction def that issues the quest-->
-                    <factionDef>FCP_Faction_Hidden_Wastelanders</factionDef>
+                    <factionToUse>$askerFaction</factionToUse>
                 </li>
                 <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>enemyFaction</storeAs>
@@ -55,7 +61,8 @@
                     <storeAs>settlementFaction</storeAs>
                     <!--The faction def that will be raided-->
                     <factionDefs>
-                        <li>FCP_Faction_Hidden_Wastelanders</li>
+                        <li MayRequire="Rick.FCP.Wastelanders">FCP_Faction_Hidden_Wastelanders</li>
+                        <li>OutlanderCivil</li>
                     </factionDefs>
                 </li>
                 <li Class="QuestNode_SubScript">

@@ -13,11 +13,9 @@ public class QuestNode_GetPawnKind : QuestNode
     {
         if (DefDatabase<PawnKindDef>.AllDefsListForReading.Any(c => c.defName == pawnKindDef.GetValue(slate)))
         {
-            FCPLog.Verbose("pawnkind exist");
             SetVars(slate);
             return true;
         }
-        FCPLog.Verbose("pawnkind dont exist");
         return false;
     }
 
@@ -28,8 +26,7 @@ public class QuestNode_GetPawnKind : QuestNode
 
     private void SetVars(Slate slate)
     {
-        PawnKindDef def = DefDatabase<PawnKindDef>.AllDefsListForReading.Where(c => c.defName == pawnKindDef.GetValue(slate)).First();
-        FCPLog.Verbose(def.defName);
+        PawnKindDef def = DefDatabase<PawnKindDef>.AllDefsListForReading.First(c => c.defName == pawnKindDef.GetValue(slate));
         slate.Set(storeAs.GetValue(slate), def);
     }
 }

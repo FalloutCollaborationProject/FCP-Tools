@@ -32,7 +32,6 @@ public static class AnimalCageUtility
                 }
                 if (carrier != null)
                 {
-                    FCPLog.Verbose("Issuing job");
                     Job job = (transferBetweenCages ? JobMaker.MakeJob(DefOfs.FCP_TransferAnimalBetweenCages, sourceCage, t, animal) : JobMaker.MakeJob(DefOfs.FCP_CarryAnimalToCage, t, animal));
                     job.count = 1;
                     carrier.jobs.TryTakeOrderedJob(job, JobTag.Misc);
@@ -92,7 +91,6 @@ public static class AnimalCageUtility
 
     public static bool TryGetCagesThatFitBodySize(float bodySize, Map map, out List<CompAnimalCage> cages)
     {
-        FCPLog.Verbose(bodySize);
         if(bodySize == 0 || map == null)
         {
             cages = null;

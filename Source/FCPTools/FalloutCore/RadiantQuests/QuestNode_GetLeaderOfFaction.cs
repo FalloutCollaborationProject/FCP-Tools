@@ -9,28 +9,23 @@ public class QuestNode_GetLeaderOfFaction : QuestNode
 
     public SlateRef<FactionDef> factionDef = null;
     public SlateRef<Faction> faction = null;
+    public SlateRef<Faction> factionToUse = null;
 
     public SlateRef<bool> factionMustBePermanent = true;
 
     protected override bool TestRunInt(Slate slate)
     {
-        FCPLog.Verbose("Testing");
-        FCPLog.Verbose("factionDef is null: ");
-        FCPLog.Verbose(factionDef == null);
-        FCPLog.Verbose("faction is null: ");
-        FCPLog.Verbose(faction == null);
-        if (factionDef != null || faction != null)
-        {
-            SetVars(QuestGen.slate);
-            return true;
-        }
-        return false;
+        return factionDef != null || faction != null || factionToUse != null;
     }
 
-    private bool TryFindFaction(out Faction faction, Slate slate)
+    private bool TryFindFaction(out Faction outFaction, Slate slate)
     {
-        FCPLog.Verbose(factionDef.GetValue(slate).defName);
-        return Find.FactionManager.GetFactions().Where(c => c.def.defName == factionDef.GetValue(slate).defName).TryRandomElement(out faction);
+        outFaction = null;
+        if (!factionDef.TryGetValue(slate, out FactionDef def) || def == null)
+        {
+            return false;
+        }
+        return Find.FactionManager.GetFactions().Where(c => c.def == def).TryRandomElement(out outFaction);
     }
 
     protected override void RunInt()
@@ -40,40 +35,43 @@ public class QuestNode_GetLeaderOfFaction : QuestNode
 
     private void SetVars(Slate slate)
     {
-        FCPLog.Verbose("trying to get faction");
         Faction lfaction = null;
-        if (faction != null)
+        if (factionToUse != null && factionToUse.TryGetValue(slate, out Faction ftu))
         {
-            lfaction = faction.GetValue(slate);
+            lfaction = ftu;
         }
-        else
+        else if (faction != null && faction.TryGetValue(slate, out Faction f))
+        {
+            lfaction = f;
+        }
+        else if (factionDef != null)
         {
             TryFindFaction(out lfaction, slate);
         }
 
-        FCPLog.Verbose(lfaction.def.defName);
+        if (lfaction == null)
+        {
+            FCPLog.Error("Failed to find faction for quest");
+            return;
+        }
 
         Pawn pawn = GetFactionLeader(lfaction);
-        FCPLog.Verbose(pawn.Label);
-/*            QuestPart_InvolvedFactions questPart_InvolvedFactions = new QuestPart_InvolvedFactions();
-            FCPLog.Verbose(1);
-            questPart_InvolvedFactions.factions.Add(lfaction);
-            FCPLog.Verbose(2);
-            QuestGen.quest.AddPart(questPart_InvolvedFactions);*/
-        FCPLog.Verbose(3);
+        if (pawn == null)
+        {
+            FCPLog.Error("Failed to get faction leader");
+            return;
+        }
+
         QuestGen.slate.Set(storeAs.GetValue(slate), pawn);
-        //Log.Message(4);
-        //Log.Message(pawn.Label);
     }
     private Pawn GetFactionLeader(Faction faction)
     {
-        FCPLog.Verbose(faction.def.label);
-        FCPLog.Verbose(faction.leader.LabelCap);
-        if (faction != null)
+        if (faction?.leader != null)
         {
-            FCPLog.Verbose("Faction is NOT null");
             return faction.leader;
         }
+
+        FCPLog.Error($"Faction {faction?.def?.label ?? "null"} has no leader");
         return null;
     }
 
