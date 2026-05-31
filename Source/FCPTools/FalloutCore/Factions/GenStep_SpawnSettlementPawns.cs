@@ -21,7 +21,7 @@ public class GenStep_SpawnSettlementPawns : GenStep
 
 		GameComponent_SettlementMapGenerators comp = Current.Game.GetComponent<GameComponent_SettlementMapGenerators>();
 		List<CharacterDef> guaranteedCharacters = comp?.GetGuaranteedCharacters(settlement);
-		List<PawnKindDef> guaranteedPawns = comp?.GetGuaranteedPawns(settlement);
+		List<PawnKindCount> guaranteedPawns = comp?.GetGuaranteedPawns(settlement);
 		int num = Rand.RangeInclusive(8, 16);
 		int num2 = 0;
 		Lord lord = LordMaker.MakeNewLord(settlement.Faction, new LordJob_DefendBase(settlement.Faction, map.Center, 0, false), map);
@@ -43,12 +43,19 @@ public class GenStep_SpawnSettlementPawns : GenStep
 
 		if (guaranteedPawns != null)
 		{
-			for (int j = 0; j < guaranteedPawns.Count; j++)
+			for (int i = 0; i < guaranteedPawns.Count; i++)
 			{
-				Pawn pawn2 = PawnGenerator.GeneratePawn(guaranteedPawns[j], settlement.Faction);
-				GenSpawn.Spawn(pawn2, GetSpawnPosition(map), map);
-				lord.AddPawn(pawn2);
-				num2++;
+				PawnKindCount pawnKindCount = guaranteedPawns[i];
+				if (pawnKindCount.pawnKindDef != null)
+				{
+					for (int j = 0; j < pawnKindCount.count; j++)
+					{
+						Pawn pawn2 = PawnGenerator.GeneratePawn(pawnKindCount.pawnKindDef, settlement.Faction);
+						GenSpawn.Spawn(pawn2, GetSpawnPosition(map), map);
+						lord.AddPawn(pawn2);
+						num2++;
+					}
+				}
 			}
 		}
 

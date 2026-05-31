@@ -93,7 +93,7 @@ public class Gene_Ghoul_GlowingOne : Gene
                 if (injury != null)
                     injury.Heal(HealAmount);
             }
-            else
+            else if (target.RaceProps.IsFlesh)
             {
                 Hediff toxicBuildup = target.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ToxicBuildup);
                 if (toxicBuildup != null)

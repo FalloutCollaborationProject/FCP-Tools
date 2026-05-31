@@ -11,7 +11,7 @@ public class GameComponent_SettlementMapGenerators : GameComponent
 	private Dictionary<int, MapGeneratorDef> mapGenerators = new Dictionary<int, MapGeneratorDef>();
 	private Dictionary<int, IntVec3> mapSizes = new Dictionary<int, IntVec3>();
 	private Dictionary<int, PrefabDef> prefabs = new Dictionary<int, PrefabDef>();
-	private Dictionary<int, List<PawnKindDef>> guaranteedPawns = new Dictionary<int, List<PawnKindDef>>();
+	private Dictionary<int, List<PawnKindCount>> guaranteedPawns = new Dictionary<int, List<PawnKindCount>>();
 	private Dictionary<int, List<CharacterDef>> guaranteedCharacters = new Dictionary<int, List<CharacterDef>>();
 	private Dictionary<int, List<SettlementTrader>> traders = new Dictionary<int, List<SettlementTrader>>();
 
@@ -29,7 +29,7 @@ public class GameComponent_SettlementMapGenerators : GameComponent
 			mapSizes[settlement.ID] = mapSize;
 	}
 
-	public void RegisterSettlementWithPrefab(Settlement settlement, PrefabDef prefab, IntVec3 mapSize, List<PawnKindDef> guaranteedPawnKinds = null, List<CharacterDef> guaranteedCharacterDefs = null, List<SettlementTrader> settlementTraders = null)
+	public void RegisterSettlementWithPrefab(Settlement settlement, PrefabDef prefab, IntVec3 mapSize, List<PawnKindCount> guaranteedPawnKinds = null, List<CharacterDef> guaranteedCharacterDefs = null, List<SettlementTrader> settlementTraders = null)
 	{
 		if (settlement == null || prefab == null)
 			return;
@@ -78,12 +78,12 @@ public class GameComponent_SettlementMapGenerators : GameComponent
 		return IntVec3.Invalid;
 	}
 
-	public List<PawnKindDef> GetGuaranteedPawns(Settlement settlement)
+	public List<PawnKindCount> GetGuaranteedPawns(Settlement settlement)
 	{
 		if (settlement == null)
 			return null;
 
-		guaranteedPawns.TryGetValue(settlement.ID, out List<PawnKindDef> result);
+		guaranteedPawns.TryGetValue(settlement.ID, out List<PawnKindCount> result);
 		return result;
 	}
 
@@ -112,7 +112,7 @@ public class GameComponent_SettlementMapGenerators : GameComponent
 		Scribe_Collections.Look(ref mapGenerators, "mapGenerators", LookMode.Value, LookMode.Def);
 		Scribe_Collections.Look(ref mapSizes, "mapSizes", LookMode.Value, LookMode.Value);
 		Scribe_Collections.Look(ref prefabs, "prefabs", LookMode.Value, LookMode.Def);
-		Scribe_Collections.Look(ref guaranteedPawns, "guaranteedPawns", LookMode.Value, LookMode.Def);
+		Scribe_Collections.Look(ref guaranteedPawns, "guaranteedPawns", LookMode.Value, LookMode.Deep);
 		Scribe_Collections.Look(ref guaranteedCharacters, "guaranteedCharacters", LookMode.Value, LookMode.Def);
 		Scribe_Collections.Look(ref traders, "traders", LookMode.Value, LookMode.Deep);
 
@@ -125,7 +125,7 @@ public class GameComponent_SettlementMapGenerators : GameComponent
 			if (prefabs == null)
 				prefabs = new Dictionary<int, PrefabDef>();
 			if (guaranteedPawns == null)
-				guaranteedPawns = new Dictionary<int, List<PawnKindDef>>();
+				guaranteedPawns = new Dictionary<int, List<PawnKindCount>>();
 			if (guaranteedCharacters == null)
 				guaranteedCharacters = new Dictionary<int, List<CharacterDef>>();
 			if (traders == null)
