@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingDef Name="RadioactiveBarrelBase" ParentName="BuildingBase" Abstract="True">
+        <thingClass>Building</thingClass>
+        <category>Building</category>
+        <tickerType>Normal</tickerType>
+        <altitudeLayer>Building</altitudeLayer>
+        <passability>PassThroughOnly</passability>
+        <fillPercent>0.35</fillPercent>
+        <pathCost>30</pathCost>
+        <rotatable>false</rotatable>
+        <canOverlapZones>false</canOverlapZones>
+        <statBases>
+            <MaxHitPoints>150</MaxHitPoints>
+            <Flammability>0</Flammability>
+            <Mass>25</Mass>
+        </statBases>
+        <size>(1,1)</size>
+        <building>
+            <isInert>true</isInert>
+            <ai_chillDestination>false</ai_chillDestination>
+        </building>
+        <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+        <resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
+        <killedLeavings>
+            <Steel>5</Steel>
+        </killedLeavings>
+    </ThingDef>
+
+    <ThingDef ParentName="RadioactiveBarrelBase">
+        <defName>FCP_RadioactiveWasteBarrel_Single</defName>
+        <label>nuclear waste barrel</label>
+        <description>A sealed yellow barrel marked with pre-war hazard symbols. Contains irradiated waste from Old World nuclear facilities. Two centuries of decay have compromised the seals, allowing radioactive material to seep into the surrounding area.</description>
+        <graphicData>
+            <texPath>Things/Building/Misc/Radioactive_Waste_Barrels/Radioactive_Waste_Barrel_Single</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <drawSize>(1,1)</drawSize>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_PollutionPump">
+                <radius>4.9</radius>
+                <pumpsPerWastepack>0</pumpsPerWastepack>
+                <intervalTicks>30000</intervalTicks>
+            </li>
+            <li Class="FCP.Core.CompProperties_RadioactiveBarrel">
+                <radius>3</radius>
+                <tickInterval>600</tickInterval>
+                <toxicBuildupAmount>0.005</toxicBuildupAmount>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="RadioactiveBarrelBase">
+        <defName>FCP_RadioactiveWasteBarrel_Single_Exposed</defName>
+        <label>breached nuclear waste barrel</label>
+        <description>A corroded pre-war barrel with its containment completely failed. Highly radioactive sludge leaks freely from rusted holes, poisoning the ground for yards around. The faded radiation trefoil is barely visible through decades of rust.</description>
+        <graphicData>
+            <texPath>Things/Building/Misc/Radioactive_Waste_Barrels/Radioactive_Waste_Barrel_Single_Exposed</texPath>
+            <graphicClass>Graphic_Random</graphicClass>
+            <drawSize>(1,1)</drawSize>
+        </graphicData>
+        <comps>
+            <li Class="CompProperties_Glower">
+                <glowRadius>3</glowRadius>
+                <glowColor>(115,230,100,0)</glowColor>
+            </li>
+            <li Class="CompProperties_PollutionPump">
+                <radius>7.9</radius>
+                <pumpsPerWastepack>0</pumpsPerWastepack>
+                <intervalTicks>15000</intervalTicks>
+            </li>
+            <li Class="FCP.Core.CompProperties_RadioactiveBarrel">
+                <radius>5</radius>
+                <tickInterval>300</tickInterval>
+                <toxicBuildupAmount>0.025</toxicBuildupAmount>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="RadioactiveBarrelBase">
+        <defName>FCP_RadioactiveWasteBarrel_Stack</defName>
+        <label>stacked nuclear waste barrels</label>
+        <description>Several yellow barrels stacked together, each marked with pre-war government hazard warnings. The combined radioactive payload slowly contaminates the wasteland soil, creating another poisoned patch in the post-nuclear landscape.</description>
+        <graphicData>
+            <texPath>Things/Building/Misc/Radioactive_Waste_Barrels/Radioactive_Waste_Barrel_Stack/FCP_Radioactive_Barrel_Stack_a</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(1.5,1.5)</drawSize>
+        </graphicData>
+        <size>(1,1)</size>
+        <fillPercent>0.45</fillPercent>
+        <statBases>
+            <MaxHitPoints>200</MaxHitPoints>
+            <Mass>50</Mass>
+        </statBases>
+        <comps>
+            <li Class="CompProperties_PollutionPump">
+                <radius>5.9</radius>
+                <pumpsPerWastepack>0</pumpsPerWastepack>
+                <intervalTicks>25000</intervalTicks>
+            </li>
+            <li Class="FCP.Core.CompProperties_RadioactiveBarrel">
+                <radius>3.5</radius>
+                <tickInterval>600</tickInterval>
+                <toxicBuildupAmount>0.008</toxicBuildupAmount>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="RadioactiveBarrelBase">
+        <defName>FCP_RadioactiveWasteBarrel_Stack_Exposed</defName>
+        <label>breached waste barrel stack</label>
+        <description>Multiple damaged barrels leaking radioactive waste. The integrity of each container has failed over centuries of neglect, creating a hazardous pile of toxic sludge. Anyone foolish enough to approach will regret it quickly.</description>
+        <graphicData>
+            <texPath>Things/Building/Misc/Radioactive_Waste_Barrels/Radioactive_Waste_Barrel_Stack_Exposed/FCP_Radioactive_Barrel_Stack_Exposed_a</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(1.5,1.5)</drawSize>
+        </graphicData>
+        <size>(1,1)</size>
+        <fillPercent>0.45</fillPercent>
+        <statBases>
+            <MaxHitPoints>200</MaxHitPoints>
+            <Mass>50</Mass>
+        </statBases>
+        <comps>
+            <li Class="CompProperties_Glower">
+                <glowRadius>4</glowRadius>
+                <glowColor>(115,230,100,0)</glowColor>
+            </li>
+            <li Class="CompProperties_PollutionPump">
+                <radius>9.9</radius>
+                <pumpsPerWastepack>0</pumpsPerWastepack>
+                <intervalTicks>12000</intervalTicks>
+            </li>
+            <li Class="FCP.Core.CompProperties_RadioactiveBarrel">
+                <radius>6</radius>
+                <tickInterval>250</tickInterval>
+                <toxicBuildupAmount>0.035</toxicBuildupAmount>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="RadioactiveBarrelBase">
+        <defName>FCP_RadioactiveWasteBarrel_Pallet</defName>
+        <label>pallet of nuclear waste</label>
+        <description>An industrial pallet loaded with pre-war nuclear waste barrels. The shipping labels have long since faded, but the radiation trefoils remain visible. This much radioactive material in one place creates a persistent radiation field even through the containment.</description>
+        <graphicData>
+            <texPath>Things/Building/Misc/Radioactive_Waste_Barrels/Radioactive_Waste_Barrel_Pallet/FCP_Radioactive_Barrel_Pallet_a</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(2,2)</drawSize>
+        </graphicData>
+        <size>(2,2)</size>
+        <fillPercent>0.55</fillPercent>
+        <statBases>
+            <MaxHitPoints>300</MaxHitPoints>
+            <Mass>150</Mass>
+        </statBases>
+        <comps>
+            <li Class="CompProperties_PollutionPump">
+                <radius>6.9</radius>
+                <pumpsPerWastepack>0</pumpsPerWastepack>
+                <intervalTicks>20000</intervalTicks>
+            </li>
+            <li Class="FCP.Core.CompProperties_RadioactiveBarrel">
+                <radius>4</radius>
+                <tickInterval>600</tickInterval>
+                <toxicBuildupAmount>0.01</toxicBuildupAmount>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="RadioactiveBarrelBase">
+        <defName>FCP_RadioactiveWasteBarrel_Pallet_Exposed</defName>
+        <label>breached waste pallet</label>
+        <description>A pallet of compromised nuclear waste barrels leaking toxic sludge. Two hundred years of weathering have reduced the industrial containment to rusted husks. The ground around it glows faintly at night - a sure sign of lethal radiation poisoning the area.</description>
+        <graphicData>
+            <texPath>Things/Building/Misc/Radioactive_Waste_Barrels/Radioactive_Waste_Barrel_Pallet_Exposed/FCP_Radioactive_Barrel_Pallet_Exposed_a</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(2,2)</drawSize>
+        </graphicData>
+        <size>(2,2)</size>
+        <fillPercent>0.55</fillPercent>
+        <statBases>
+            <MaxHitPoints>300</MaxHitPoints>
+            <Mass>150</Mass>
+        </statBases>
+        <comps>
+            <li Class="CompProperties_Glower">
+                <glowRadius>5</glowRadius>
+                <glowColor>(115,230,100,0)</glowColor>
+            </li>
+            <li Class="CompProperties_PollutionPump">
+                <radius>11.9</radius>
+                <pumpsPerWastepack>0</pumpsPerWastepack>
+                <intervalTicks>10000</intervalTicks>
+            </li>
+            <li Class="FCP.Core.CompProperties_RadioactiveBarrel">
+                <radius>7</radius>
+                <tickInterval>200</tickInterval>
+                <toxicBuildupAmount>0.05</toxicBuildupAmount>
+            </li>
+        </comps>
+    </ThingDef>
+
+</Defs>

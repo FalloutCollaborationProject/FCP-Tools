@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <GenStepDef>
+        <defName>FCP_RadioactiveBarrelScatter</defName>
+        <order>962</order>
+        <genStep Class="GenStep_ScatterGroup">
+            <allowInWaterBiome>false</allowInWaterBiome>
+            <minPollution>0.1</minPollution>
+            <minSpacing>15</minSpacing>
+            <countPer10kCellsRange>0.5~1.5</countPer10kCellsRange>
+            <spotMustBeStandable>true</spotMustBeStandable>
+            <allowRoofed>false</allowRoofed>
+            <groups>
+                <li>
+                    <things>
+                        <FCP_RadioactiveWasteBarrel_Single>0.3</FCP_RadioactiveWasteBarrel_Single>
+                        <FCP_RadioactiveWasteBarrel_Single_Exposed>0.2</FCP_RadioactiveWasteBarrel_Single_Exposed>
+                        <FCP_RadioactiveWasteBarrel_Stack>0.2</FCP_RadioactiveWasteBarrel_Stack>
+                        <FCP_RadioactiveWasteBarrel_Stack_Exposed>0.15</FCP_RadioactiveWasteBarrel_Stack_Exposed>
+                        <FCP_RadioactiveWasteBarrel_Pallet>0.1</FCP_RadioactiveWasteBarrel_Pallet>
+                        <FCP_RadioactiveWasteBarrel_Pallet_Exposed>0.05</FCP_RadioactiveWasteBarrel_Pallet_Exposed>
+                    </things>
+                </li>
+            </groups>
+        </genStep>
+    </GenStepDef>
+
+</Defs>
