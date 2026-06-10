@@ -16,6 +16,7 @@
 
     <GenStepDef>
         <defName>FCP_GenStep_VertibirdCrash</defName>
+        <linkWithSite>FCP_VertibirdCrash</linkWithSite>
         <order>400</order>
         <genStep Class="FCP.Core.RadiantQuests.GenStep_VertibirdCrash" />
     </GenStepDef>

@@ -15,7 +15,7 @@ public class QuestPart_SpawnCrashSurvivors : QuestPart
     public override void Notify_QuestSignalReceived(Signal signal)
     {
         base.Notify_QuestSignalReceived(signal);
-        if (signal.tag != inSignal || pawns == null || mapParent?.Map == null) return;
+        if (signal.tag != inSignal || mapParent.Map == null) return;
 
         Map map = mapParent.Map;
         MapComponent_VertibirdCrash crash = map.GetComponent<MapComponent_VertibirdCrash>();
@@ -56,10 +56,17 @@ public class QuestPart_SpawnCrashSurvivors : QuestPart
             }
         }
 
-        if (livingPawns.Count > 0 && pawns[0].Faction != null)
+        if (livingPawns.Count > 0)
         {
             LordMaker.MakeNewLord(pawns[0].Faction, new LordJob_DefendBase(pawns[0].Faction, center, 0, false), map, livingPawns);
         }
+        
+        int survivorCount = livingPawns.Count;
+        string text = survivorCount > 0 
+            ? string.Format("{0} survivors located at the crash site. Enemy forces are closing in.", survivorCount)
+            : "No survivors detected. Enemy forces are closing in.";
+        
+        Find.LetterStack.ReceiveLetter("Crash Site", text, LetterDefOf.NeutralEvent, new LookTargets(center, map));
     }
 
     public override void ExposeData()

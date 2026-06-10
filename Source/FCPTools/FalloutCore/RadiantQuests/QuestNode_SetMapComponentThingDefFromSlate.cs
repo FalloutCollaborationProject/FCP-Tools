@@ -71,7 +71,13 @@ public class GameComponent_QuestVertibirdDefs : GameComponent
     public override void FinalizeInit()
     {
         base.FinalizeInit();
-        foreach (var kvp in defs)
+        if (defs == null)
+        {
+            defs = new Dictionary<MapParent, ThingDef>();
+            return;
+        }
+        defs.RemoveAll((KeyValuePair<MapParent, ThingDef> kvp) => kvp.Key == null || !kvp.Key.Spawned);
+        foreach (KeyValuePair<MapParent, ThingDef> kvp in defs)
         {
             ApplyToMap(kvp.Key);
         }
@@ -80,6 +86,10 @@ public class GameComponent_QuestVertibirdDefs : GameComponent
     public override void ExposeData()
     {
         base.ExposeData();
+        if (Scribe.mode == LoadSaveMode.Saving)
+        {
+            defs.RemoveAll((KeyValuePair<MapParent, ThingDef> kvp) => kvp.Key == null || !kvp.Key.Spawned);
+        }
         Scribe_Collections.Look(ref defs, "defs", LookMode.Reference, LookMode.Def, ref defsKeys, ref defsValues);
         if (Scribe.mode == LoadSaveMode.LoadingVars && defs == null)
         {
