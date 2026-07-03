@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
+    <!--__________ Player Faction Names __________-->
+
+    <RulePackDef>
+        <defName>FCP_Namer_Faction_BoS_Player</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>r_name->Brotherhood Chapter</li>
+                <li>r_name->New Expedition</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+    <RulePackDef>
+        <defName>FCP_Namer_Faction_NCR_Player</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>r_name->NCR Outpost</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+    <RulePackDef>
+        <defName>FCP_Namer_Faction_Enclave_Player</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>r_name->Enclave Cell</li>
+                <li>r_name->Enclave Command</li>
+                <li>r_name->Enclave Expedition</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
     <!--__________ Settlement Names __________-->
 
     <!--_____ Pre-War USA Settlement Names _____-->
