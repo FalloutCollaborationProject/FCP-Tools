@@ -35,8 +35,8 @@ public class FCPCoreMod : Mod
         {
             Harmony.PatchCategory(LatePatchesCategory);
         });
-        FCPLog.Warning("Beta version: bugs likely, if not guaranteed! " +
-                       "Report bugs on steam workshop page or on discord: 3HEXN3Qbn4");
+        FCPLog.Message("Beta version: bugs likely, if not guaranteed! " +
+                   "Report bugs on steam workshop page or on discord: 3HEXN3Qbn4");
     }
 
     public override void WriteSettings()

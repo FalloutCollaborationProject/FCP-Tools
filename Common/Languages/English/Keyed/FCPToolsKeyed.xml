@@ -32,6 +32,12 @@
 	<FCP_Settings_WeaponCondition_Enabled>Enable weapon condition and jamming</FCP_Settings_WeaponCondition_Enabled>
 	<FCP_Settings_WeaponCondition_Enabled_Desc>FCP weapons degrade with each shot. Below 30 condition they may jam mid-combat, causing a shot to fail and penalising shooting accuracy until cleared. At 1 condition the weapon is completely locked and must be repaired at a repair bench before it can fire again.</FCP_Settings_WeaponCondition_Enabled_Desc>
 
+	<!-- Grenade Settings -->
+
+	<FCP_Settings_Grenades>Grenades</FCP_Settings_Grenades>
+	<FCP_Settings_Grenades_Consumable>Consumable grenades</FCP_Settings_Grenades_Consumable>
+	<FCP_Settings_Grenades_Consumable_Desc>Grenades are consumed when thrown. Each grenade counts as 1 throw. When equipped grenades run out, they'll auto-reload from inventory. When disabled, both FCP and vanilla grenades can be thrown infinitely like vanilla behavior.</FCP_Settings_Grenades_Consumable_Desc>
+
 	<!-- Weapon Condition Inspect Strings -->
 
 	<FCP_WeaponCondition_Condition>Condition: {0}/100</FCP_WeaponCondition_Condition>

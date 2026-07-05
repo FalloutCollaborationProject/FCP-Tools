@@ -24,6 +24,9 @@ public class GeneralSettings : SettingsTab
     // Weapon Condition
     public bool weaponConditionEnabled = true;
 
+    // Grenades
+    public bool consumableGrenades = true;
+
     public override void DoTabWindowContents(Rect tabRect)
     {
         var list = new Listing_Standard();
@@ -81,6 +84,15 @@ public class GeneralSettings : SettingsTab
         list.CheckboxLabeled("FCP_Settings_WeaponCondition_Enabled".Translate(), ref weaponConditionEnabled,
             "FCP_Settings_WeaponCondition_Enabled_Desc".Translate());
 
+        // Grenades
+        list.Gap();
+        Text.Font = GameFont.Medium;
+        list.Label("FCP_Settings_Grenades".Translate());
+        Text.Font = GameFont.Small;
+        list.GapLine();
+        list.CheckboxLabeled("FCP_Settings_Grenades_Consumable".Translate(), ref consumableGrenades,
+            "FCP_Settings_Grenades_Consumable_Desc".Translate());
+
         list.End();
     }
 
@@ -98,5 +110,8 @@ public class GeneralSettings : SettingsTab
 
         // Weapon Condition
         Scribe_Values.Look(ref weaponConditionEnabled, nameof(weaponConditionEnabled), defaultValue: true);
+
+        // Grenades
+        Scribe_Values.Look(ref consumableGrenades, nameof(consumableGrenades), defaultValue: true);
     }
 }

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+	<!-- Add stack limits to vanilla grenades -->
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="Weapon_GrenadeFrag" or defName="Weapon_GrenadeMolotov" or defName="Weapon_GrenadeEMP" or defName="Weapon_GrenadeTox"]</xpath>
+		<value>
+			<stackLimit>15</stackLimit>
+		</value>
+	</Operation>
+
+	<!-- Replace vanilla grenade verbs with consumable version -->
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="Weapon_GrenadeFrag" or defName="Weapon_GrenadeMolotov" or defName="Weapon_GrenadeEMP" or defName="Weapon_GrenadeTox"]/verbs/li/verbClass</xpath>
+		<value>
+			<verbClass>FCP.Core.Verb_LaunchProjectileConsumable</verbClass>
+		</value>
+	</Operation>
+
+</Patch>

@@ -22,8 +22,8 @@
         <minDamageToFragment>15</minDamageToFragment>
         <explosionHeatEnergyPerCell>15</explosionHeatEnergyPerCell>
         <explosionCellFleck>BlastFlame</explosionCellFleck>
-        <explosionColorCenter>(1, 0.7, 0.7)</explosionColorCenter>
-        <explosionColorEdge>(1, 1, 0.7)</explosionColorEdge>
+        <explosionColorCenter>(0.3, 1, 0.4)</explosionColorCenter>
+        <explosionColorEdge>(0.7, 1, 0.8)</explosionColorEdge>
         <soundExplosion>Explosion_Flame</soundExplosion>
         <combatLogRules>Damage_Flame</combatLogRules>
         <canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>

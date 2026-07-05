@@ -15,11 +15,18 @@ public static class DebugActionsHolotapes
             .Where(def => def.comps != null && def.comps.Any(c => c is CompProperties_Holotape))
             .OrderBy(def => def.label);
 
-        return holotapes.Select(def =>
-            new DebugActionNode(def.label, DebugActionType.ToolMap, () =>
+        return holotapes
+            .Where(def => def != null)
+            .Select(def =>
             {
-                GenPlace.TryPlaceThing(ThingMaker.MakeThing(def), UI.MouseCell(), Find.CurrentMap, ThingPlaceMode.Near);
+                string label = def.label.NullOrEmpty() ? def.defName : def.label;
+                return new DebugActionNode(label, DebugActionType.ToolMap, () =>
+                {
+                    var map = Find.CurrentMap;
+                    if (map == null) return;
+                    GenPlace.TryPlaceThing(ThingMaker.MakeThing(def), UI.MouseCell(), map, ThingPlaceMode.Near);
+                });
             })
-        ).ToList();
+            .ToList();
     }
 }
