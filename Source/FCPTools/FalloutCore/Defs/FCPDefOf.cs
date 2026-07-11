@@ -5,10 +5,16 @@ public class FCPDefOf
 {
     [MayRequire("Rick.FCP.Legion")]
     public static FactionDef FCP_Faction_Caesars_Legion;
-        
+
     [MayRequire("Rick.FCP.NCR")]
     public static FactionDef FCP_Faction_NCR;
-    
+
+    [MayRequire("Rick.FCP.COA")]
+    public static TraitDef FCP_Trait_ZealotOfAtom;
+
+    [MayRequire("Rick.FCP.COA")]
+    public static TraitDef FCP_Trait_CongregantOfAtom;
+
     public static PawnGroupKindDef FCP_PawnGroupKind_TaxCollector;
     public static LetterDef FCP_Letter_AcceptStoryteller;
     public static JobDef FCP_AICastAbilityAtTarget;

@@ -88,6 +88,39 @@
         </comps>
     </AbilityDef>
 
+    <!-- Canine Takedown -->
+
+    <AbilityDef>
+        <defName>FCP_Ability_Canine_Takedown</defName>
+        <label>takedown</label>
+        <description>The dog lunges at its target, knocking them down and pinning them in place, leaving them stunned and unable to act for a few seconds.</description>
+        <iconPath>UI/Abilities/Stun</iconPath>
+        <aiCanUse>true</aiCanUse>
+        <hostile>true</hostile>
+        <targetRequired>true</targetRequired>
+        <casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+        <cooldownTicksRange>1800</cooldownTicksRange>
+        <statBases>
+            <Ability_Duration>3</Ability_Duration>
+        </statBases>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+            <warmupTime>0.5</warmupTime>
+            <range>1.9</range>
+            <requireLineOfSight>true</requireLineOfSight>
+            <targetParams>
+                <canTargetPawns>true</canTargetPawns>
+                <canTargetAnimals>true</canTargetAnimals>
+                <canTargetMechs>false</canTargetMechs>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="CompProperties_AbilityEffectWithDuration">
+                <compClass>CompAbilityEffect_Stun</compClass>
+            </li>
+        </comps>
+    </AbilityDef>
+
     <!-- Nightstalker Shadow Cloak -->
 
     <AbilityDef>

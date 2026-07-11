@@ -937,6 +937,23 @@
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 
+    <!-- Cyberdog Conversion -->
+
+    <ResearchProjectDef>
+        <defName>FCP_Research_Cyberdog_Conversion</defName>
+        <label>Cyberdog Conversion</label>
+        <description>Research into adapting salvaged pre-War cyberdog chassis technology for use in live surgery, allowing a dog's body to be rebuilt around a robotic frame.</description>
+        <baseCost>1200</baseCost>
+        <techLevel>Industrial</techLevel>
+        <prerequisites>
+            <li>FCP_Research_Auto_Doc</li>
+            <li>Bionics</li>
+        </prerequisites>
+        <researchViewX>8.00</researchViewX>
+        <researchViewY>5.50</researchViewY>
+        <tab>FCP_Research</tab>
+    </ResearchProjectDef>
+
     <!-- Wasteland Security -->
 
     <ResearchProjectDef>
