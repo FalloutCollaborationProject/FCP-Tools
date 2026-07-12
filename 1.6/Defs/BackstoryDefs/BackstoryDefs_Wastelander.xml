@@ -1367,7 +1367,7 @@
         <slot>Adulthood</slot>
         <title>Wasteland Quack</title>
         <titleShort>Wasteland Quack</titleShort>
-        <description>[PAWN_nameDef] wasn’t among the most honest people wandering around the wasteland. [PAWN_pronoun] made a living traveling from one backwater settlement to the text, selling elixirs and concoctions of wondrous qualities, or so [PAWN_pronoun] claimed… It was quite important that [PAWN_pronoun already left a settlement before its inhabitants caught on to the scheme.</description>
+        <description>[PAWN_nameDef] wasn’t among the most honest people wandering around the wasteland. [PAWN_pronoun] made a living traveling from one backwater settlement to the next, selling elixirs and concoctions of wondrous qualities, or so [PAWN_pronoun] claimed… It was quite important that [PAWN_pronoun] already left a settlement before its inhabitants caught on to the scheme.</description>
         <skillGains>
             <Shooting>2</Shooting>
             <Cooking>2</Cooking>

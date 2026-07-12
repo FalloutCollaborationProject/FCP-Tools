@@ -28,15 +28,32 @@
         </killedLeavings>
     </ThingDef>
 
-    <ThingDef ParentName="RadioactiveBarrelBase">
+    <!-- Sealed single barrels are haulable: found scattered in the wasteland like the rest of
+         this family, but portable enough to bring home and load into an FEV vat. -->
+
+    <ThingDef ParentName="ResourceBase">
         <defName>FCP_RadioactiveWasteBarrel_Single</defName>
         <label>nuclear waste barrel</label>
-        <description>A sealed yellow barrel marked with pre-war hazard symbols. Contains irradiated waste from Old World nuclear facilities. Two centuries of decay have compromised the seals, allowing radioactive material to seep into the surrounding area.</description>
+        <description>A sealed yellow barrel marked with pre-war hazard symbols. Contains irradiated waste from Old World nuclear facilities. Two centuries of decay have compromised the seals, allowing radioactive material to seep into the surrounding area. Heavy enough that only powered armor or a pack animal can move one.</description>
+        <thingClass>ThingWithComps</thingClass>
         <graphicData>
             <texPath>Things/Building/Misc/Radioactive_Waste_Barrels/Radioactive_Waste_Barrel_Single</texPath>
             <graphicClass>Graphic_Random</graphicClass>
-            <drawSize>(1,1)</drawSize>
+            <drawSize>1.0</drawSize>
         </graphicData>
+        <statBases>
+            <MaxHitPoints>150</MaxHitPoints>
+            <Mass>25</Mass>
+            <Flammability>0</Flammability>
+            <DeteriorationRate>0.5</DeteriorationRate>
+        </statBases>
+        <stackLimit>10</stackLimit>
+        <thingCategories>
+            <li>FCP_Wasteland_Resources</li>
+        </thingCategories>
+        <tradeTags>
+            <li>ExoticMisc</li>
+        </tradeTags>
         <comps>
             <li Class="CompProperties_PollutionPump">
                 <radius>4.9</radius>
@@ -49,6 +66,11 @@
                 <toxicBuildupAmount>0.005</toxicBuildupAmount>
             </li>
         </comps>
+        <modExtensions>
+            <li Class="FCP.Core.ModExtension_HeavyCargo">
+                <minCarryingCapacity>150</minCarryingCapacity>
+            </li>
+        </modExtensions>
     </ThingDef>
 
     <ThingDef ParentName="RadioactiveBarrelBase">
@@ -85,14 +107,18 @@
         <graphicData>
             <texPath>Things/Building/Misc/Radioactive_Waste_Barrels/Radioactive_Waste_Barrel_Stack/FCP_Radioactive_Barrel_Stack_a</texPath>
             <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>(1.5,1.5)</drawSize>
+            <drawSize>(1.8,1.8)</drawSize>
         </graphicData>
         <size>(1,1)</size>
         <fillPercent>0.45</fillPercent>
         <statBases>
             <MaxHitPoints>200</MaxHitPoints>
-            <Mass>50</Mass>
+            <Mass>150</Mass>
         </statBases>
+        <costList>
+            <FCP_RadioactiveWasteBarrel_Single>6</FCP_RadioactiveWasteBarrel_Single>
+        </costList>
+        <resourcesFractionWhenDeconstructed>1</resourcesFractionWhenDeconstructed>
         <comps>
             <li Class="CompProperties_PollutionPump">
                 <radius>5.9</radius>
@@ -114,7 +140,7 @@
         <graphicData>
             <texPath>Things/Building/Misc/Radioactive_Waste_Barrels/Radioactive_Waste_Barrel_Stack_Exposed/FCP_Radioactive_Barrel_Stack_Exposed_a</texPath>
             <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>(1.5,1.5)</drawSize>
+            <drawSize>(1.8,1.8)</drawSize>
         </graphicData>
         <size>(1,1)</size>
         <fillPercent>0.45</fillPercent>
@@ -147,14 +173,18 @@
         <graphicData>
             <texPath>Things/Building/Misc/Radioactive_Waste_Barrels/Radioactive_Waste_Barrel_Pallet/FCP_Radioactive_Barrel_Pallet_a</texPath>
             <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>(2,2)</drawSize>
+            <drawSize>(2.3,2.3)</drawSize>
         </graphicData>
         <size>(2,2)</size>
         <fillPercent>0.55</fillPercent>
         <statBases>
             <MaxHitPoints>300</MaxHitPoints>
-            <Mass>150</Mass>
+            <Mass>300</Mass>
         </statBases>
+        <costList>
+            <FCP_RadioactiveWasteBarrel_Single>12</FCP_RadioactiveWasteBarrel_Single>
+        </costList>
+        <resourcesFractionWhenDeconstructed>1</resourcesFractionWhenDeconstructed>
         <comps>
             <li Class="CompProperties_PollutionPump">
                 <radius>6.9</radius>
@@ -176,7 +206,7 @@
         <graphicData>
             <texPath>Things/Building/Misc/Radioactive_Waste_Barrels/Radioactive_Waste_Barrel_Pallet_Exposed/FCP_Radioactive_Barrel_Pallet_Exposed_a</texPath>
             <graphicClass>Graphic_Single</graphicClass>
-            <drawSize>(2,2)</drawSize>
+            <drawSize>(2.3,2.3)</drawSize>
         </graphicData>
         <size>(2,2)</size>
         <fillPercent>0.55</fillPercent>

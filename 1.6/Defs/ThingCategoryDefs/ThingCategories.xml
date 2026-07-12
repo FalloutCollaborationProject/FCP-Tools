@@ -13,4 +13,14 @@
 		<resourceReadoutRoot>true</resourceReadoutRoot>
 	</ThingCategoryDef>
 
+	<!--__________ Wasteland Salvage ___________-->
+
+	<ThingCategoryDef>
+		<defName>FCP_Wasteland_Resources</defName>
+		<label>wasteland salvage</label>
+		<parent>ResourcesRaw</parent>
+		<iconPath>UI/Icons/Wasteland</iconPath>
+		<resourceReadoutRoot>true</resourceReadoutRoot>
+	</ThingCategoryDef>
+
 </Defs>
