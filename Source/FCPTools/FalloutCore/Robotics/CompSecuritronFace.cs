@@ -20,6 +20,8 @@ namespace FCP.Core.Robotics
         public static ThingDef FCP_Apparel_Securitron_Face_Male;
         [MayRequire("Rick.FCP.Robotics")]
         public static ThingDef FCP_Apparel_Securitron_Face_Smily;
+        [MayRequire("Rick.FCP.Robotics")]
+        public static ThingDef FCP_Apparel_Securitron_Face_Victor;
 
         static ThingDefOf_SecuritronFace()
         {
@@ -51,6 +53,7 @@ namespace FCP.Core.Robotics
             ThingDefOf_SecuritronFace.FCP_Apparel_Securitron_Face_Female,
             ThingDefOf_SecuritronFace.FCP_Apparel_Securitron_Face_Male,
             ThingDefOf_SecuritronFace.FCP_Apparel_Securitron_Face_Smily,
+            ThingDefOf_SecuritronFace.FCP_Apparel_Securitron_Face_Victor,
         };
 
         public static ThingDef[] PlayerSelectableFaces => new[]
@@ -59,7 +62,6 @@ namespace FCP.Core.Robotics
             ThingDefOf_SecuritronFace.FCP_Apparel_Securitron_Face_Cop,
             ThingDefOf_SecuritronFace.FCP_Apparel_Securitron_Face_Female,
             ThingDefOf_SecuritronFace.FCP_Apparel_Securitron_Face_Male,
-            ThingDefOf_SecuritronFace.FCP_Apparel_Securitron_Face_Smily,
         };
 
         public override void PostSpawnSetup(bool respawningAfterLoad)

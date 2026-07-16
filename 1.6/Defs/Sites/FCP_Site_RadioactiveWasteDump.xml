@@ -7,7 +7,7 @@
         <description>A pre-war nuclear waste storage facility. The government buried tons of radioactive byproducts here before the bombs fell. Two centuries later, the containment is failing and deadly radiation seeps into the wasteland.</description>
         <workerClass>SitePartWorker</workerClass>
         <siteTexture>World/WorldObjects/Sites/GenericSite</siteTexture>
-        <expandingIconTexture>MapIcons/Sites/FCP_Radiactive_Site</expandingIconTexture>
+        <expandingIconTexture>MapIcons/Sites/FCP_Radioactive_Site</expandingIconTexture>
         <forceExitAndRemoveMapCountdownDurationDays>3</forceExitAndRemoveMapCountdownDurationDays>
         <tags>
             <li>FCP_Site_RadioactiveWasteDump</li>
