@@ -559,29 +559,51 @@ public static class Patches
 
     #region Forced TraderKindDef for PawnGroupMaker
 
-    public static void PawnGroupKindWorker_Trader_GeneratePawns_Prefix(PawnGroupMakerParms parms, PawnGroupMaker groupMaker)
+    public static bool PawnGroupKindWorker_Trader_GeneratePawns_Prefix(PawnGroupMakerParms parms, PawnGroupMaker groupMaker)
     {
-        if (groupMaker is not GroupMakerWithTraderKind groupMakerWithTrader) return;
+        if (groupMaker is GroupMakerWithCustomTraderChar dedicatedTrader)
+        {
+            var tracker = UniqueCharactersTracker.Instance;
+            return dedicatedTrader.characterDefs.Any(c => !tracker.CharacterPawnDead(c));
+        }
+
+        if (groupMaker is not GroupMakerWithTraderKind groupMakerWithTrader) return true;
         if (groupMakerWithTrader.traderKinds.Empty())
         {
             FCPLog.Warning("A GroupMakerWithTraderKind was defined without any traderKindDefs assigned");
-            return;
+            return true;
         }
-        
+
         parms.traderKind = groupMakerWithTrader.traderKinds.RandomElement();
+        return true;
     }
 
     #endregion
-    
+
     #region Custom NPC Traders
 
     public static bool PawnGroupKindWorker_Trader_GenerateTrader_Prefix(ref Pawn __result, PawnGroupMakerParms parms, PawnGroupMaker groupMaker, TraderKindDef traderKind)
     {
+        if (groupMaker is GroupMakerWithCustomTraderChar dedicatedTrader)
+        {
+            var tracker = UniqueCharactersTracker.Instance;
+            var dedicatedCharacter = dedicatedTrader.characterDefs.FirstOrDefault(c => !tracker.CharacterPawnDead(c) && !tracker.CharacterPawnSpawned(c));
+            if (dedicatedCharacter == null) return false;
+            var dedicatedPawn = tracker.GetOrGenPawn(dedicatedCharacter, null, parms.faction);
+            dedicatedPawn.mindState.wantsToTradeWithColony = true;
+            PawnComponentsUtility.AddAndRemoveDynamicComponents(dedicatedPawn, true);
+            dedicatedPawn.trader.traderKind = dedicatedTrader.traderKind;
+            parms.points -= dedicatedPawn.kindDef.combatPower;
+            __result = dedicatedPawn;
+            return false;
+        }
+
         if (groupMaker is not GroupMakerWithTraderKind groupMakerWithTrader || groupMakerWithTrader.characterDefs.Empty()) return true;
         if (!Rand.Chance(groupMakerWithTrader.characterChance)) return true;
         var list = groupMakerWithTrader.characterDefs.ToList();
         var uniqueCharTracker = UniqueCharactersTracker.Instance;
         Pawn customPawn = null;
+        CharacterDef chosenCharacter = null;
         var faction = parms.faction;
         while (list.Count > 0)
         {
@@ -590,14 +612,15 @@ public static class Patches
             if (!uniqueCharTracker.CharacterPawnDead(characterCustom) && !uniqueCharTracker.CharacterPawnSpawned(characterCustom))
             {
                 customPawn = uniqueCharTracker.GetOrGenPawn(characterCustom, null, faction);
+                chosenCharacter = characterCustom;
                 break;
-            } 
+            }
             list.RemoveAt(index);
         }
         if (customPawn == null) return true;
         customPawn.mindState.wantsToTradeWithColony = true;
         PawnComponentsUtility.AddAndRemoveDynamicComponents(customPawn, true);
-        customPawn.trader.traderKind = traderKind;
+        customPawn.trader.traderKind = groupMakerWithTrader.characterTraderKinds.TryGetValue(chosenCharacter, out var boundTraderKind) ? boundTraderKind : traderKind;
         parms.points -= customPawn.kindDef.combatPower;
         // Skip the original method
         __result = customPawn;

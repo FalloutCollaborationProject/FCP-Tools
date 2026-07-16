@@ -123,6 +123,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Angela_Staley_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Trader_Angela_Staley_Child</identifier>
         <slot>Childhood</slot>
         <title>Helpful Scavenger</title>
@@ -171,6 +173,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Banon_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Trader_Banon_Child</identifier>
         <slot>Childhood</slot>
         <title>Resourceful Youth</title>
@@ -271,6 +275,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Crow_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Trader_Crow_Child</identifier>
         <slot>Childhood</slot>
         <title>Crows' Childhood</title>
@@ -320,6 +326,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Crazy_Wolfgang_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Trader_Crazy_Wolfgang_Child</identifier>
         <slot>Childhood</slot>
         <title>Crazy Wolfgangs' Childhood</title>
@@ -369,6 +377,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Doc_Hoff_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Trader_Doc_Hoff_Child</identifier>
         <slot>Childhood</slot>
         <title>Curious Tinkerer</title>
@@ -417,6 +427,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trader_Lucky_Harith_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Trader_Lucky_Harith_Child</identifier>
         <slot>Childhood</slot>
         <title>Wasteland Gambler</title>
@@ -1651,6 +1663,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Child_Entrepreneur</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Child_Entrepreneur</identifier>
         <slot>Childhood</slot>
         <title>Child Entrepreneur</title>
@@ -1672,6 +1686,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Curious_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Curious_Child</identifier>
         <slot>Childhood</slot>
         <title>Curious Child</title>
@@ -1694,6 +1710,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Bully</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Bully</identifier>
         <slot>Childhood</slot>
         <title>Bully</title>
@@ -1715,6 +1733,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Apprentice</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Apprentice</identifier>
         <slot>Childhood</slot>
         <title>Apprentice</title>
@@ -1740,6 +1760,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_BB_Gun_Crack_shot</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_BB_Gun_Crack_shot</identifier>
         <slot>Childhood</slot>
         <title>BB Gun Crack shot</title>
@@ -1761,6 +1783,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Ruin_Dweller</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Ruin_Dweller</identifier>
         <slot>Childhood</slot>
         <title>Ruin Dweller</title>
@@ -1785,6 +1809,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Gas_Station_Inhabitant</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Gas_Station_Inhabitant</identifier>
         <slot>Childhood</slot>
         <title>Gas Station Inhabitant</title>
@@ -1807,6 +1833,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Caravan_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Caravan_Child</identifier>
         <slot>Childhood</slot>
         <title>Caravan Child</title>
@@ -1828,6 +1856,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Street_Kid</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Street_Kid</identifier>
         <slot>Childhood</slot>
         <title>Street Kid</title>
@@ -1850,6 +1880,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Cannibalistic_Youth</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Cannibalistic_Youth</identifier>
         <slot>Childhood</slot>
         <title>Cannibalistic Youth</title>
@@ -1872,6 +1904,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Cryostasis_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Cryostasis_Child</identifier>
         <slot>Childhood</slot>
         <title>Cryostasis Child</title>
@@ -1896,6 +1930,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Wild_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Wild_Child</identifier>
         <slot>Childhood</slot>
         <title>Wild Child</title>
@@ -1920,6 +1956,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Stung_by_Radscorpion</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Stung_by_Radscorpion</identifier>
         <slot>Childhood</slot>
         <title>Stung by Radscorpion</title>
@@ -1943,6 +1981,8 @@
 
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Eco_Cultist</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Eco_Cultist</identifier>
         <slot>Childhood</slot>
         <title>Eco-Cultist</title>
@@ -1966,6 +2006,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Whorehouse_Kid</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Whorehouse_Kid</identifier>
         <slot>Childhood</slot>
         <title>Whorehouse Kid</title>
@@ -1988,6 +2030,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Gamblers_Kid</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Gamblers_Kid</identifier>
         <slot>Childhood</slot>
         <title>Gambler’s Kid</title>
@@ -2013,6 +2057,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Child_Sheriff</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Child_Sheriff</identifier>
         <slot>Childhood</slot>
         <title>Child Sheriff</title>
@@ -2035,6 +2081,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Surviving_Mormon</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Surviving_Mormon</identifier>
         <slot>Childhood</slot>
         <title>Surviving Mormon</title>
@@ -2059,6 +2107,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Advanced_Student</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Advanced_Student</identifier>
         <slot>Childhood</slot>
         <title>Advanced Student</title>
@@ -2083,6 +2133,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Livestock_Herder</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Livestock_Herder</identifier>
         <slot>Childhood</slot>
         <title>Livestock Herder</title>
@@ -2105,6 +2157,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Nomad_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Nomad_Child</identifier>
         <slot>Childhood</slot>
         <title>Nomad Child</title>
@@ -2129,6 +2183,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Abducted_by_Aliens</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Abducted_by_Aliens</identifier>
         <slot>Childhood</slot>
         <title>Abducted by Aliens</title>
@@ -2152,6 +2208,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Swamp_Dweller</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Swamp_Dweller</identifier>
         <slot>Childhood</slot>
         <title>Swamp Dweller</title>
@@ -2175,6 +2233,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Pit_Refugee</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Pit_Refugee</identifier>
         <slot>Childhood</slot>
         <title>Pit Refugee</title>
@@ -2198,6 +2258,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Greenhorn</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Greenhorn</identifier>
         <slot>Childhood</slot>
         <title>Greenhorn</title>
@@ -2220,6 +2282,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Megaton_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Megaton_Child</identifier>
         <slot>Childhood</slot>
         <title>Megaton Child</title>
@@ -2242,6 +2306,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Rivet_City_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Rivet_City_Child</identifier>
         <slot>Childhood</slot>
         <title>Rivet City Child</title>
@@ -2267,6 +2333,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Children_of_Atom_Novice</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Children_of_Atom_Novice</identifier>
         <slot>Childhood</slot>
         <title>Children of Atom Novice</title>
@@ -2291,6 +2359,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Diamond_City_Kid</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Diamond_City_Kid</identifier>
         <slot>Childhood</slot>
         <title>Diamond City Kid</title>
@@ -2313,6 +2383,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Novac_Kid</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Novac_Kid</identifier>
         <slot>Childhood</slot>
         <title>Novac Kid</title>
@@ -2335,6 +2407,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Westside_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Westside_Child</identifier>
         <slot>Childhood</slot>
         <title>Westside Child</title>
@@ -2357,6 +2431,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Goodsprings_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Goodsprings_Child</identifier>
         <slot>Childhood</slot>
         <title>Goodsprings Child</title>
@@ -2379,6 +2455,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Trapper_Offspring</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Trapper_Offspring</identifier>
         <slot>Childhood</slot>
         <title>Trapper Offspring</title>
@@ -2401,6 +2479,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Primm_Kid</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Primm_Kid</identifier>
         <slot>Childhood</slot>
         <title>Primm Kid</title>
@@ -2423,6 +2503,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Tribal_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Tribal_Child</identifier>
         <slot>Childhood</slot>
         <title>Tribal Child</title>
@@ -2446,6 +2528,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Gunslinger_Juvie</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Gunslinger_Juvie</identifier>
         <slot>Childhood</slot>
         <title>Gunslinger Juvie</title>
@@ -2468,6 +2552,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Frontier_Kid</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Frontier_Kid</identifier>
         <slot>Childhood</slot>
         <title>Frontier Kid</title>
@@ -2492,6 +2578,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Displaced_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Displaced_Child</identifier>
         <slot>Childhood</slot>
         <title>Displaced Child</title>
@@ -2514,6 +2602,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Born_Miner</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Born_Miner</identifier>
         <slot>Childhood</slot>
         <title>Born Miner</title>
@@ -2536,6 +2626,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Apothecarys_Apprentice</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Apothecarys_Apprentice</identifier>
         <slot>Childhood</slot>
         <title>Apothecary’s Apprentice</title>
@@ -2558,6 +2650,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Entitled_Youth</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Entitled_Youth</identifier>
         <slot>Childhood</slot>
         <title>Entitled Youth</title>
@@ -2580,6 +2674,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Drug_Courier</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Drug_Courier</identifier>
         <slot>Childhood</slot>
         <title>Drug Courier</title>
@@ -2602,6 +2698,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Junior_Mechanic</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Junior_Mechanic</identifier>
         <slot>Childhood</slot>
         <title>Junior Mechanic</title>
@@ -2623,6 +2721,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Little_Lamplight_Kid</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Little_Lamplight_Kid</identifier>
         <slot>Childhood</slot>
         <title>Little Lamplight Kid</title>
@@ -2645,6 +2745,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Goodneighbour_Juvie</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Goodneighbour_Juvie</identifier>
         <slot>Childhood</slot>
         <title>Goodneighbour Juvie</title>
@@ -2667,6 +2769,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Shopkeepers_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Shopkeepers_Child</identifier>
         <slot>Childhood</slot>
         <title>Shopkeeper’s Child</title>
@@ -2689,6 +2793,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Aspiring_Treasure_Hunter</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Aspiring_Treasure_Hunter</identifier>
         <slot>Childhood</slot>
         <title>Aspiring Treasure Hunter</title>
@@ -2712,6 +2818,8 @@
     
     <BackstoryDef>
         <defName>FCP_Backstory_Wastelander_Mercs_Kid</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Mercs_Kid</identifier>
         <slot>Childhood</slot>
         <title>Merc’s Kid</title>

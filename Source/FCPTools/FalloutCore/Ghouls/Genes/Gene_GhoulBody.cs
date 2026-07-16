@@ -22,8 +22,8 @@ public class Gene_GhoulBody : Gene
 
     public Graphic GetBodyOverlay(Pawn pawn)
     {
-        string bodyType = pawn.story.bodyType.defName;
-        Color skinColor = pawn.story.SkinColor;
+        string bodyType = (pawn.story?.bodyType ?? BodyTypeDefOf.Male).defName;
+        Color skinColor = pawn.story?.SkinColor ?? Color.white;
             
         if (cachedGraphic != null && cachedBodyType == bodyType && cachedSkinColor == skinColor)
             return cachedGraphic;

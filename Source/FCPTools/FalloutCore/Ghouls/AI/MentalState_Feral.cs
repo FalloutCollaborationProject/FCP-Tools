@@ -14,14 +14,17 @@ public class MentalState_Feral : MentalState_Berserk
         
     public override bool ForceHostileTo(Thing t)
     {
+        if (t.def.HasModExtension<TurnFeral_ModExtension>())
+            return false;
+
         if (t.def.race?.Humanlike != true || t.def.race.IsMechanoid || t.def.race.IsAnomalyEntity)
             return true;
-            
+
         Pawn p = t as Pawn;
-            
+
         if (p?.genes?.Xenotype?.HasModExtension<TurnFeral_ModExtension>() == true)
             return false;
-            
+
         return base.ForceHostileTo(t);
     }
         

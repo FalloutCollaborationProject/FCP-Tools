@@ -31,7 +31,7 @@ public class QuestPart_DefendCrashSite : QuestPart
 
     public void SpawnWave(int waveNum)
     {
-        if (mapParent.Map == null)
+        if (mapParent?.Map == null)
         {
             return;
         }

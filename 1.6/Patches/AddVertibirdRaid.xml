@@ -42,6 +42,15 @@
 					</points>
 				</selectionWeightPerPointsCurve>
 			</li>
+			<!-- Enclave -->
+			<li MayRequire="Rick.FCP.Enclave">
+				<faction>FCP_Faction_Enclave</faction>
+				<selectionWeightPerPointsCurve>
+					<points>
+						<li>(0, 1)</li>						<!-- Constant 1 -->
+					</points>
+				</selectionWeightPerPointsCurve>
+			</li>
 		</value>
 	</Operation>
 

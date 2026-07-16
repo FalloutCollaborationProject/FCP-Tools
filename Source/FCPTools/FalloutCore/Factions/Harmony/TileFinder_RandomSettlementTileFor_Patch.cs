@@ -23,8 +23,10 @@ public static class TileFinder_RandomSettlementTileFor_Patch
 		Active = true;
 		try
 		{
-			__result = TileFinder.RandomSettlementTileFor(faction, mustBeAutoChoosable,
-				SpawnConfigHelper.MakePredicate(ext, hasBiomeFilter, anchors));
+			Predicate<PlanetTile> predicate = SpawnConfigHelper.MakePredicate(ext, hasBiomeFilter, anchors);
+			__result = SpawnConfigHelper.AnyValidTile(Find.WorldGrid.Surface, predicate)
+				? TileFinder.RandomSettlementTileFor(faction, mustBeAutoChoosable, predicate)
+				: TileFinder.RandomSettlementTileFor(faction, mustBeAutoChoosable);
 		}
 		finally
 		{
@@ -48,8 +50,10 @@ public static class TileFinder_RandomSettlementTileFor_LayerPatch
 		TileFinder_RandomSettlementTileFor_Patch.Active = true;
 		try
 		{
-			__result = TileFinder.RandomSettlementTileFor(layer, faction, mustBeAutoChoosable,
-				SpawnConfigHelper.MakePredicate(ext, hasBiomeFilter, anchors));
+			Predicate<PlanetTile> predicate = SpawnConfigHelper.MakePredicate(ext, hasBiomeFilter, anchors);
+			__result = SpawnConfigHelper.AnyValidTile(layer, predicate)
+				? TileFinder.RandomSettlementTileFor(layer, faction, mustBeAutoChoosable, predicate)
+				: TileFinder.RandomSettlementTileFor(layer, faction, mustBeAutoChoosable);
 		}
 		finally
 		{
@@ -109,5 +113,20 @@ internal static class SpawnConfigHelper
 			}
 			return true;
 		};
+	}
+
+	// Cheap existence check so we never invoke vanilla's real search (and its internal error log)
+	// against a predicate that can't possibly be satisfied anywhere on the map.
+	internal static bool AnyValidTile(PlanetLayer layer, Predicate<PlanetTile> predicate)
+	{
+		for (int i = 0; i < layer.TilesCount; i++)
+		{
+			Tile tile = layer[i];
+			if (!tile.PrimaryBiome.canBuildBase || !tile.PrimaryBiome.implemented || tile.hilliness == Hilliness.Impassable)
+				continue;
+			if (predicate(tile.tile))
+				return true;
+		}
+		return false;
 	}
 }

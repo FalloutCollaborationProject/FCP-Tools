@@ -232,4 +232,37 @@
         <playerInterruptible>true</playerInterruptible>
     </JobDef>
 
+    <!-- Robot Dock -->
+
+    <JobDef>
+        <defName>FCP_RobotDock</defName>
+        <driverClass>FCP.Core.Robotics.JobDriver_RobotDock</driverClass>
+        <reportString>waiting at TargetA.</reportString>
+        <casualInterruptible>false</casualInterruptible>
+    </JobDef>
+
+    <!-- Upgrade Robot -->
+
+    <JobDef>
+        <defName>FCP_UpgradeRobot</defName>
+        <driverClass>FCP.Core.Robotics.JobDriver_UpgradeRobot</driverClass>
+        <reportString>upgrading TargetB at TargetA.</reportString>
+    </JobDef>
+
+    <!-- Control Robots -->
+
+    <JobDef>
+        <defName>FCP_ControlRobots</defName>
+        <driverClass>FCP.Core.Robotics.JobDriver_ControlRobots</driverClass>
+        <reportString>using TargetA.</reportString>
+    </JobDef>
+
+    <!-- Hack Robot -->
+
+    <JobDef>
+        <defName>FCP_HackRobot</defName>
+        <driverClass>FCP.Core.Robotics.JobDriver_HackRobot</driverClass>
+        <reportString>hacking TargetA.</reportString>
+    </JobDef>
+
 </Defs>

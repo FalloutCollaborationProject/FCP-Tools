@@ -902,7 +902,7 @@
             <li>
                 <grains>
                     <li Class="AudioGrain_Clip">
-                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_Assault_Carbine</clipPath>
+                        <clipPath>Weapon_Sounds/Ballistic_Weapon_Sounds/FCP_Sound_Shot_MInigun</clipPath>
                     </li>
                 </grains>
                 <volumeRange>
@@ -1698,6 +1698,430 @@
                 <volumeRange>
                     <min>48</min>
                     <max>52</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!--__________ Fallout-Sourced Additions __________-->
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Gauss_Pistol</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Gauss_Weapon_Sounds/FCP_Sound_Shot_Gauss_Pistol_2D</clipPath>
+                    </li>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Gauss_Weapon_Sounds/FCP_Sound_Shot_Gauss_Pistol_3D</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>48</min>
+                    <max>52</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Pulse</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Pulse_Weapon_Sounds/FCP_Sound_Shot_Pulse_2D</clipPath>
+                    </li>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Pulse_Weapon_Sounds/FCP_Sound_Shot_Pulse_3D</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>45</min>
+                    <max>49</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef>
+        <defName>FCP_Sound_Shot_Flamer</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Flame_Weapon_Sounds/FCP_Sound_Shot_Flamer_2D</clipPath>
+                    </li>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Energy_Weapon_Sounds/Flame_Weapon_Sounds/FCP_Sound_Shot_Flamer_3D</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>45</min>
+                    <max>49</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <!--__________ Melee Weapon Sounds (Fallout-Sourced) __________-->
+
+    <SoundDef>
+        <defName>FCP_Sound_Interact_Melee_Generic</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Generic/FCP_Sound_Interact_Melee_Equip</clipPath>
+                    </li>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Generic/FCP_Sound_Interact_Melee_Unequip</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>50</min>
+                    <max>55</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef>
+        <defName>FCP_Sound_Interact_BaseballBat</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Baseball_Bat/FCP_Sound_Interact_BaseballBat_Equip</clipPath>
+                    </li>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Baseball_Bat/FCP_Sound_Interact_BaseballBat_Unequip</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>50</min>
+                    <max>55</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef>
+        <defName>FCP_Sound_Interact_RollingPin</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Rolling_Pin/FCP_Sound_Interact_RollingPin_Equip</clipPath>
+                    </li>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Rolling_Pin/FCP_Sound_Interact_RollingPin_Unequip</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>50</min>
+                    <max>55</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef>
+        <defName>FCP_Sound_Interact_Sword</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Sword/FCP_Sound_Interact_Sword_Equip</clipPath>
+                    </li>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Sword/FCP_Sound_Interact_Sword_Unequip</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>50</min>
+                    <max>55</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef>
+        <defName>FCP_Sound_Hit_Sledge_Wood</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Sledgehammer/FCP_Sound_Hit_Sledge_Wood_01</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>55</min>
+                    <max>60</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef>
+        <defName>FCP_Sound_Hit_PoolCue</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Pool_Cue/FCP_Sound_Hit_PoolCue_Flesh_01</clipPath>
+                    </li>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Pool_Cue/FCP_Sound_Hit_PoolCue_Metal_01</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>50</min>
+                    <max>55</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef>
+        <defName>FCP_Sound_Hit_GolfClub</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Golf_Club/FCP_Sound_Hit_GolfClub_01</clipPath>
+                    </li>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Golf_Club/FCP_Sound_Hit_GolfClub_02</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>55</min>
+                    <max>60</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef>
+        <defName>FCP_Sound_Hit_RebarClub</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Rebar_Club/FCP_Sound_Hit_RebarClub_01</clipPath>
+                    </li>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Rebar_Club/FCP_Sound_Hit_RebarClub_02</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>50</min>
+                    <max>55</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef>
+        <defName>FCP_Sound_Hit_Sledgehammer</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Sledgehammer/FCP_Sound_Hit_Sledge_Metal_01</clipPath>
+                    </li>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Sledgehammer/FCP_Sound_Hit_Sledge_Metal_02</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>60</min>
+                    <max>65</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef>
+        <defName>FCP_Sound_Hit_SuperSledge</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Super_Sledge/FCP_Sound_Hit_SuperSledge_01</clipPath>
+                    </li>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Super_Sledge/FCP_Sound_Hit_SuperSledge_02</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>65</min>
+                    <max>70</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef>
+        <defName>FCP_Sound_Hit_Sword</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Sword/FCP_Sound_Hit_Sword_Other_01</clipPath>
+                    </li>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Sword/FCP_Sound_Hit_Sword_Flesh_01</clipPath>
+                    </li>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Sword/FCP_Sound_Hit_Sword_Flesh_02</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>50</min>
+                    <max>55</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef>
+        <defName>FCP_Sound_Hit_Ripper</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Ripper/FCP_Sound_Hit_Ripper</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>55</min>
+                    <max>60</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef>
+        <defName>FCP_Sound_Hit_Shishkebab</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Shishkebab/FCP_Sound_Hit_Shishkebab_01</clipPath>
+                    </li>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Shishkebab/FCP_Sound_Hit_Shishkebab_02</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>55</min>
+                    <max>60</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef>
+        <defName>FCP_Sound_Hit_PowerFist</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Power_Fist/FCP_Sound_Hit_PowerFist_Flesh_01</clipPath>
+                    </li>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Power_Fist/FCP_Sound_Hit_PowerFist_Flesh_02</clipPath>
+                    </li>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Power_Fist/FCP_Sound_Hit_PowerFist_Metal_01</clipPath>
+                    </li>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Power_Fist/FCP_Sound_Hit_PowerFist_Conc_01</clipPath>
+                    </li>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Power_Fist/FCP_Sound_Hit_PowerFist_Conc_02</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>55</min>
+                    <max>60</max>
+                </volumeRange>
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef>
+        <defName>FCP_Sound_Hit_ZapGlove</defName>
+        <context>MapOnly</context>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Zap_Glove/FCP_Sound_Hit_ZapGlove_01</clipPath>
+                    </li>
+                    <li Class="AudioGrain_Clip">
+                        <clipPath>Weapon_Sounds/Melee_Weapon_Sounds/Zap_Glove/FCP_Sound_Hit_ZapGlove_02</clipPath>
+                    </li>
+                </grains>
+                <volumeRange>
+                    <min>55</min>
+                    <max>60</max>
                 </volumeRange>
                 <sustainLoop>False</sustainLoop>
             </li>

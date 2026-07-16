@@ -1,4 +1,5 @@
-﻿using Verse.AI;
+﻿using UnityEngine;
+using Verse.AI;
 
 namespace FCP.Core;
 
@@ -35,7 +36,7 @@ public class JobDriver_AICastAbilityAtTarget : JobDriver
             initAction = () =>
             {
                 float maxRange = job.ability.verb.verbProps.range;
-                const float minRange = 4f;
+                float minRange = Mathf.Min(4f, Mathf.Max(0f, maxRange - 1f));
                     
                 IntVec3 targetPos = TargetA.Cell;
                 IntVec3 destination = GetValidPositionNearTarget(targetPos, maxRange, minRange);

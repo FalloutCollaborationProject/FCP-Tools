@@ -45,7 +45,7 @@ public class JobGiver_ReactToDistantThreat : ThinkNode_JobGiver
     {
         return (Pawn)AttackTargetFinder.BestAttackTarget(pawn,
             TargetScanFlags.NeedThreat | TargetScanFlags.NeedLOSToPawns | TargetScanFlags.NeedAutoTargetable,
-            thing => thing is Pawn enemyPawn && enemyPawn.HostileTo(pawn),
+            thing => thing is Pawn enemyPawn && pawn.HostileTo(enemyPawn),
             minEnemySearchDist, maxEnemySearchDist, pawn.Position, maxTravelRadius,
             false, false);
     }

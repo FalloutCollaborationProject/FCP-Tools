@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Fusion Core __________-->
+
+    <!-- Fusion Core -->
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>FCP_Item_Fusion_Core</defName>
+        <label>fusion core</label>
+        <description>A compact nuclear battery used to power pre-war technology, most notably power armor. These cylindrical power cells contain a highly efficient fusion reaction that can provide energy for extended periods. Extremely valuable and sought after by those who maintain pre-war equipment. Cannot be recharged with current technology.</description>
+        <graphicData>
+            <texPath>Things/Items/FusionCores</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+            <drawSize>0.65</drawSize>
+        </graphicData>
+        <size>(1,1)</size>
+        <resourceReadoutPriority>Middle</resourceReadoutPriority>
+        <soundInteract>Metal_Drop</soundInteract>
+        <soundDrop>Metal_Drop</soundDrop>
+        <stackLimit>10</stackLimit>
+        <useHitPoints>true</useHitPoints>
+        <statBases>
+            <MarketValue>450</MarketValue>
+            <MaxHitPoints>80</MaxHitPoints>
+            <Mass>2.5</Mass>
+            <Flammability>0.0</Flammability>
+            <DeteriorationRate>0</DeteriorationRate>
+        </statBases>
+        <thingCategories>
+            <li>ItemsMisc</li>
+        </thingCategories>
+        <drawGUIOverlay>true</drawGUIOverlay>
+        <tradeability>All</tradeability>
+        <techLevel>Spacer</techLevel>
+        <tradeTags>
+            <li>ExoticMisc</li>
+        </tradeTags>
+    </ThingDef>
+
+</Defs>
