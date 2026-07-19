@@ -265,4 +265,13 @@
         <reportString>hacking TargetA.</reportString>
     </JobDef>
 
+    <!-- Robot Power Down -->
+
+    <JobDef>
+        <defName>FCP_RobotPowerDown</defName>
+        <driverClass>FCP.Core.Robotics.JobDriver_RobotPowerDown</driverClass>
+        <reportString>powered down at TargetA.</reportString>
+        <casualInterruptible>false</casualInterruptible>
+    </JobDef>
+
 </Defs>

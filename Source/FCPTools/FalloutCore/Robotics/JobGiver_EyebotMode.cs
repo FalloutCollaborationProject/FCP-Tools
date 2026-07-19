@@ -34,6 +34,11 @@ namespace FCP.Core.Robotics
                 return null;
             }
 
+            if (!RobotUtility.IsPoweredOn(pawn))
+            {
+                return null;
+            }
+
             if (pawn.Faction == null)
             {
                 return null;

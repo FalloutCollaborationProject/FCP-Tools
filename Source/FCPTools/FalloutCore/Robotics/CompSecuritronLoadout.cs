@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
 using Verse;
 using Verse.AI;
@@ -57,13 +58,22 @@ namespace FCP.Core.Robotics
 
         private void DoInitialSetup()
         {
-            SecuritronPresetExtension preset = Pawn?.kindDef.GetModExtension<SecuritronPresetExtension>();
+            Pawn pawn = Pawn;
+            if (pawn == null)
+            {
+                return;
+            }
+
+            SecuritronPresetExtension preset = pawn.kindDef.GetModExtension<SecuritronPresetExtension>();
             if (preset != null)
             {
                 weapon = preset.weapon;
             }
 
-            EquipWeapon(Pawn, WeaponDefFor(weapon));
+            pawn.SetColor(RobotUtility.GetBodyColor(pawn));
+            RobotUtility.TouchBodyColor(pawn);
+
+            EquipWeapon(pawn, WeaponHediffFor(weapon));
 
             if (preset != null && Rand.Chance(preset.rocketsChance))
             {
@@ -79,41 +89,54 @@ namespace FCP.Core.Robotics
             Scribe_Values.Look(ref didInitialSetup, "securitronLoadoutInitialSetupDone");
         }
 
-        private static ThingDef WeaponDefFor(SecuritronWeapon w)
+        private static HediffDef WeaponHediffFor(SecuritronWeapon w)
         {
             return w == SecuritronWeapon.Gun
-                ? ThingDefOf_SecuritronLoadout.FCP_Gun_Securitron_Arm
-                : ThingDefOf_SecuritronLoadout.FCP_Gun_Securitron_GrenadeLauncher;
+                ? HediffDefOf_Securitron.FCP_Hediff_Securitron_Gun
+                : HediffDefOf_Securitron.FCP_Hediff_Securitron_GrenadeLauncher;
         }
 
-        private static void EquipWeapon(Pawn pawn, ThingDef weaponDef)
+        private static BodyPartRecord FindWeaponMount(Pawn pawn)
         {
-            if (pawn?.equipment == null)
+            return pawn.RaceProps.body.AllParts.FirstOrDefault(p => p.groups.Contains(BodyPartGroupDefOf_Securitron.SecuritronWeaponMount));
+        }
+
+        private static void EquipWeapon(Pawn pawn, HediffDef weaponDef)
+        {
+            if (pawn?.health == null)
             {
                 return;
             }
 
-            if (pawn.equipment.Primary != null)
+            BodyPartRecord part = FindWeaponMount(pawn);
+            if (part == null)
             {
-                pawn.equipment.DestroyEquipment(pawn.equipment.Primary);
+                return;
             }
 
-            ThingWithComps newWeapon = (ThingWithComps)ThingMaker.MakeThing(weaponDef);
-            CompColorableUtility.SetColor(newWeapon, RobotUtility.GetBodyColor(pawn), reportFailure: false);
-            pawn.equipment.AddEquipment(newWeapon);
-            RobotUtility.TouchGraphic(newWeapon);
+            Hediff existing = pawn.health.hediffSet.hediffs.FirstOrDefault(h => h.Part == part && h.def.GetModExtension<RobotHediffGraphic>() != null);
+            if (existing != null)
+            {
+                if (existing.def == weaponDef)
+                {
+                    return;
+                }
+                pawn.health.RemoveHediff(existing);
+            }
+            pawn.health.AddHediff(weaponDef, part);
+            pawn.Drawer.renderer.SetAllGraphicsDirty();
         }
 
         private void SwitchWeapon(SecuritronWeapon newWeapon)
         {
             Pawn pawn = Pawn;
-            if (pawn?.equipment == null || newWeapon == weapon)
+            if (pawn?.health == null || newWeapon == weapon)
             {
                 return;
             }
 
             weapon = newWeapon;
-            EquipWeapon(pawn, WeaponDefFor(weapon));
+            EquipWeapon(pawn, WeaponHediffFor(weapon));
         }
 
         private void InstallRockets()
@@ -126,12 +149,12 @@ namespace FCP.Core.Robotics
 
             hasRockets = true;
             pawn.abilities.GainAbility(AbilityDefOf_Securitron.FCP_Ability_Securitron_Rockets);
-            if (pawn.apparel != null)
+
+            BodyPartRecord part = pawn.RaceProps.body.AllParts.FirstOrDefault(p => p.groups.Contains(BodyPartGroupDefOf_Securitron.SecuritronShoulder));
+            if (part != null)
             {
-                Apparel rocketPod = (Apparel)ThingMaker.MakeThing(ThingDefOf_SecuritronLoadout.FCP_Apparel_Securitron_RocketPod);
-                CompColorableUtility.SetColor(rocketPod, RobotUtility.GetBodyColor(pawn), reportFailure: false);
-                pawn.apparel.Wear(rocketPod, dropReplacedApparel: false);
-                RobotUtility.TouchGraphic(rocketPod);
+                pawn.health.AddHediff(HediffDefOf_Securitron.FCP_Hediff_Securitron_RocketPod, part);
+                pawn.Drawer.renderer.SetAllGraphicsDirty();
             }
         }
 
@@ -148,11 +171,23 @@ namespace FCP.Core.Robotics
                 yield break;
             }
 
+            yield return new FloatMenuOption("FCP_RobotUpgradeDialog_Open".Translate(), delegate
+            {
+                Find.WindowStack.Add(new Dialog_RobotUpgrade(pawn, BuildUpgradeOptions));
+            });
+        }
+
+        private List<RobotUpgradeOption> BuildUpgradeOptions()
+        {
+            List<RobotUpgradeOption> options = new List<RobotUpgradeOption>();
+
             if (weapon != SecuritronWeapon.Gun)
             {
-                yield return new FloatMenuOption("FCP_SecuritronLoadout_InstallGun".Translate(), delegate
+                options.Add(new RobotUpgradeOption
                 {
-                    SwitchWeapon(SecuritronWeapon.Gun);
+                    category = "Weapon",
+                    label = "FCP_SecuritronLoadout_InstallGun".Translate(),
+                    install = () => SwitchWeapon(SecuritronWeapon.Gun),
                 });
             }
 
@@ -160,20 +195,30 @@ namespace FCP.Core.Robotics
             {
                 if (Props.grenadeLauncherResearch != null && !Props.grenadeLauncherResearch.IsFinished)
                 {
-                    yield return new FloatMenuOption($"{"FCP_SecuritronLoadout_InstallGrenadeLauncher".Translate()}: {"FCP_UpgradeRobot_NeedsResearch".Translate(Props.grenadeLauncherResearch.LabelCap)}", null);
-                }
-                else if (!RobotUpgradeUtility.CanAffordCost(parent.Map, Props.grenadeLauncherCost))
-                {
-                    yield return new FloatMenuOption("FCP_SecuritronLoadout_InstallGrenadeLauncher".Translate() + ": " + "FCP_UpgradeRobot_MissingMaterials".Translate(), null);
+                    options.Add(new RobotUpgradeOption
+                    {
+                        category = "Weapon",
+                        label = "FCP_SecuritronLoadout_InstallGrenadeLauncher".Translate(),
+                        disabledReason = "FCP_UpgradeRobot_NeedsResearch".Translate(Props.grenadeLauncherResearch.LabelCap),
+                    });
                 }
                 else
                 {
-                    yield return new FloatMenuOption("FCP_SecuritronLoadout_InstallGrenadeLauncher".Translate(), delegate
+                    List<ThingDefCountClass> cost = Props.grenadeLauncherCost;
+                    bool afford = RobotUpgradeUtility.CanAffordCost(parent.Map, cost);
+                    options.Add(new RobotUpgradeOption
                     {
-                        if (RobotUpgradeUtility.TryConsumeCost(parent.Map, Props.grenadeLauncherCost))
+                        category = "Weapon",
+                        label = "FCP_SecuritronLoadout_InstallGrenadeLauncher".Translate(),
+                        cost = cost,
+                        disabledReason = afford ? null : "FCP_UpgradeRobot_MissingMaterials".Translate(),
+                        install = delegate
                         {
-                            SwitchWeapon(SecuritronWeapon.GrenadeLauncher);
-                        }
+                            if (RobotUpgradeUtility.TryConsumeCost(parent.Map, cost))
+                            {
+                                SwitchWeapon(SecuritronWeapon.GrenadeLauncher);
+                            }
+                        },
                     });
                 }
             }
@@ -182,23 +227,35 @@ namespace FCP.Core.Robotics
             {
                 if (Props.rocketsResearch != null && !Props.rocketsResearch.IsFinished)
                 {
-                    yield return new FloatMenuOption($"{"FCP_SecuritronLoadout_InstallRockets".Translate()}: {"FCP_UpgradeRobot_NeedsResearch".Translate(Props.rocketsResearch.LabelCap)}", null);
-                }
-                else if (!RobotUpgradeUtility.CanAffordCost(parent.Map, Props.rocketsCost))
-                {
-                    yield return new FloatMenuOption("FCP_SecuritronLoadout_InstallRockets".Translate() + ": " + "FCP_UpgradeRobot_MissingMaterials".Translate(), null);
+                    options.Add(new RobotUpgradeOption
+                    {
+                        category = "Rockets",
+                        label = "FCP_SecuritronLoadout_InstallRockets".Translate(),
+                        disabledReason = "FCP_UpgradeRobot_NeedsResearch".Translate(Props.rocketsResearch.LabelCap),
+                    });
                 }
                 else
                 {
-                    yield return new FloatMenuOption("FCP_SecuritronLoadout_InstallRockets".Translate(), delegate
+                    List<ThingDefCountClass> cost = Props.rocketsCost;
+                    bool afford = RobotUpgradeUtility.CanAffordCost(parent.Map, cost);
+                    options.Add(new RobotUpgradeOption
                     {
-                        if (RobotUpgradeUtility.TryConsumeCost(parent.Map, Props.rocketsCost))
+                        category = "Rockets",
+                        label = "FCP_SecuritronLoadout_InstallRockets".Translate(),
+                        cost = cost,
+                        disabledReason = afford ? null : "FCP_UpgradeRobot_MissingMaterials".Translate(),
+                        install = delegate
                         {
-                            InstallRockets();
-                        }
+                            if (RobotUpgradeUtility.TryConsumeCost(parent.Map, cost))
+                            {
+                                InstallRockets();
+                            }
+                        },
                     });
                 }
             }
+
+            return options;
         }
     }
 }

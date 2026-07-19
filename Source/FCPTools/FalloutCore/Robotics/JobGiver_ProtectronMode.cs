@@ -8,8 +8,26 @@ namespace FCP.Core.Robotics
     {
         protected override Job TryGiveJob(Pawn pawn)
         {
+            CompRobotUpgrade upgradeComp = pawn.GetComp<CompRobotUpgrade>();
+            if (upgradeComp?.PendingBench != null)
+            {
+                if (!upgradeComp.PendingBench.Spawned)
+                {
+                    upgradeComp.PendingBench = null;
+                }
+                else
+                {
+                    return JobMaker.MakeJob(JobDefOf_Robotics.FCP_RobotDock, upgradeComp.PendingBench);
+                }
+            }
+
             CompRefuelable fuel = pawn.GetComp<CompRefuelable>();
             if (fuel != null && !fuel.HasFuel)
+            {
+                return null;
+            }
+
+            if (!RobotUtility.IsPoweredOn(pawn))
             {
                 return null;
             }
@@ -28,15 +46,15 @@ namespace FCP.Core.Robotics
             switch (modeComp.Mode)
             {
                 case ProtectronMode.Guard:
-                    return CompProtectronLoadout.HasHand(pawn, ThingDefOf_ProtectronLoadout.FCP_Apparel_Protectron_Hand_Gun)
+                    return CompProtectronLoadout.HasHand(pawn, HediffDefOf_Protectron.FCP_Hediff_Protectron_Hand_Gun)
                         ? base.TryGiveJob(pawn)
                         : null;
                 case ProtectronMode.Construct:
-                    bool hasConstructHead = CompProtectronLoadout.HasHead(pawn, ThingDefOf_ProtectronLoadout.FCP_Apparel_Protectron_Head_Construct);
-                    bool hasWorkHand = CompProtectronLoadout.HasHand(pawn, ThingDefOf_ProtectronLoadout.FCP_Apparel_Protectron_Hand_Work);
+                    bool hasConstructHead = CompProtectronLoadout.HasHead(pawn, HediffDefOf_Protectron.FCP_Hediff_Protectron_Head_Construct);
+                    bool hasWorkHand = CompProtectronLoadout.HasHand(pawn, HediffDefOf_Protectron.FCP_Hediff_Protectron_Hand_Work);
                     return hasConstructHead && hasWorkHand ? TryConstruct(pawn) : null;
                 case ProtectronMode.Haul:
-                    return CompProtectronLoadout.HasHand(pawn, ThingDefOf_ProtectronLoadout.FCP_Apparel_Protectron_Hand_Default)
+                    return CompProtectronLoadout.HasHand(pawn, HediffDefOf_Protectron.FCP_Hediff_Protectron_Hand_Default)
                         ? TryHaul(pawn)
                         : null;
                 default:

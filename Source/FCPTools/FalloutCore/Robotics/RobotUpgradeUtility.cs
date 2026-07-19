@@ -12,6 +12,17 @@ namespace FCP.Core.Robotics
         public List<ThingDefCountClass> upgradeCost = new List<ThingDefCountClass>();
     }
 
+    public class RobotUpgradeOption
+    {
+        public string category;
+        public string label;
+        public List<ThingDefCountClass> cost = new List<ThingDefCountClass>();
+        public string disabledReason;
+        public Action install;
+
+        public bool Enabled => disabledReason == null;
+    }
+
     public static class RobotUpgradeUtility
     {
         public static bool CanAffordCost(Map map, List<ThingDefCountClass> cost)

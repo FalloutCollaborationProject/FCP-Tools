@@ -46,18 +46,50 @@ namespace FCP.Core.Robotics
     }
 
     [DefOf]
-    public static class ThingDefOf_SecuritronLoadout
+    public static class HediffDefOf_Securitron
     {
         [MayRequire("Rick.FCP.Robotics")]
-        public static ThingDef FCP_Apparel_Securitron_RocketPod;
+        public static HediffDef FCP_Hediff_Securitron_Face_Empty;
         [MayRequire("Rick.FCP.Robotics")]
-        public static ThingDef FCP_Gun_Securitron_Arm;
+        public static HediffDef FCP_Hediff_Securitron_Face_Corrupt;
         [MayRequire("Rick.FCP.Robotics")]
-        public static ThingDef FCP_Gun_Securitron_GrenadeLauncher;
+        public static HediffDef FCP_Hediff_Securitron_Face_Army;
+        [MayRequire("Rick.FCP.Robotics")]
+        public static HediffDef FCP_Hediff_Securitron_Face_Cop;
+        [MayRequire("Rick.FCP.Robotics")]
+        public static HediffDef FCP_Hediff_Securitron_Face_Female;
+        [MayRequire("Rick.FCP.Robotics")]
+        public static HediffDef FCP_Hediff_Securitron_Face_Male;
+        [MayRequire("Rick.FCP.Robotics")]
+        public static HediffDef FCP_Hediff_Securitron_Face_Smily;
+        [MayRequire("Rick.FCP.Robotics")]
+        public static HediffDef FCP_Hediff_Securitron_Face_Victor;
+        [MayRequire("Rick.FCP.Robotics")]
+        public static HediffDef FCP_Hediff_Securitron_Gun;
+        [MayRequire("Rick.FCP.Robotics")]
+        public static HediffDef FCP_Hediff_Securitron_GrenadeLauncher;
+        [MayRequire("Rick.FCP.Robotics")]
+        public static HediffDef FCP_Hediff_Securitron_RocketPod;
 
-        static ThingDefOf_SecuritronLoadout()
+        static HediffDefOf_Securitron()
         {
-            DefOfHelper.EnsureInitializedInCtor(typeof(ThingDefOf_SecuritronLoadout));
+            DefOfHelper.EnsureInitializedInCtor(typeof(HediffDefOf_Securitron));
+        }
+    }
+
+    [DefOf]
+    public static class BodyPartGroupDefOf_Securitron
+    {
+        [MayRequire("Rick.FCP.Robotics")]
+        public static BodyPartGroupDef SecuritronScreen;
+        [MayRequire("Rick.FCP.Robotics")]
+        public static BodyPartGroupDef SecuritronShoulder;
+        [MayRequire("Rick.FCP.Robotics")]
+        public static BodyPartGroupDef SecuritronWeaponMount;
+
+        static BodyPartGroupDefOf_Securitron()
+        {
+            DefOfHelper.EnsureInitializedInCtor(typeof(BodyPartGroupDefOf_Securitron));
         }
     }
 }

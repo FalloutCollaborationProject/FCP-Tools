@@ -3,7 +3,7 @@ using Verse.AI;
 
 namespace FCP.Core.Robotics
 {
-    public class ThinkNode_ConditionalHasFuel : ThinkNode_Conditional
+    public class ThinkNode_ConditionalShouldMeleeReflex : ThinkNode_Conditional
     {
         protected override bool Satisfied(Pawn pawn)
         {
@@ -13,7 +13,12 @@ namespace FCP.Core.Robotics
             }
 
             CompRefuelable fuel = pawn.GetComp<CompRefuelable>();
-            return fuel == null || fuel.HasFuel;
+            if (fuel != null && !fuel.HasFuel)
+            {
+                return false;
+            }
+
+            return !RobotUtility.HasRangedAttack(pawn);
         }
     }
 }

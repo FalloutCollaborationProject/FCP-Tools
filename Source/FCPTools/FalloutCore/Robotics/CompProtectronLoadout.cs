@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -10,6 +11,8 @@ namespace FCP.Core.Robotics
     {
         public List<ThingDefCountClass> headSwapCost = new List<ThingDefCountClass>();
         public List<ThingDefCountClass> handSwapCost = new List<ThingDefCountClass>();
+        public ResearchProjectDef gunHandResearch;
+        public List<ThingDefCountClass> gunHandCost = new List<ThingDefCountClass>();
 
         public CompProperties_ProtectronLoadout()
         {
@@ -27,23 +30,23 @@ namespace FCP.Core.Robotics
 
         private Pawn Pawn => parent as Pawn;
 
-        public static bool HasHead(Pawn pawn, ThingDef headDef) => HasApparel(pawn, headDef);
-        public static bool HasHand(Pawn pawn, ThingDef handDef) => HasApparel(pawn, handDef);
+        public static bool HasHead(Pawn pawn, HediffDef headDef) => HasHediffOnGroup(pawn, BodyPartGroupDefOf_Protectron.ProtectronHead, headDef);
+        public static bool HasHand(Pawn pawn, HediffDef handDef) => HasHediffOnGroup(pawn, BodyPartGroupDefOf_Protectron.ProtectronHands, handDef);
 
-        private static bool HasApparel(Pawn pawn, ThingDef apparelDef)
+        private static bool HasHediffOnGroup(Pawn pawn, BodyPartGroupDef group, HediffDef hediffDef)
         {
-            if (pawn?.apparel == null)
+            if (pawn?.health?.hediffSet == null)
             {
                 return false;
             }
-            foreach (Apparel apparel in pawn.apparel.WornApparel)
-            {
-                if (apparel.def == apparelDef)
-                {
-                    return true;
-                }
-            }
-            return false;
+            BodyPartRecord part = FindParts(pawn, group).FirstOrDefault();
+            return part != null && !pawn.health.hediffSet.PartIsMissing(part)
+                && pawn.health.hediffSet.hediffs.Any(h => h.def == hediffDef && h.Part == part);
+        }
+
+        private static IEnumerable<BodyPartRecord> FindParts(Pawn pawn, BodyPartGroupDef group)
+        {
+            return pawn.RaceProps.body.AllParts.Where(p => p.groups.Contains(group));
         }
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -74,97 +77,58 @@ namespace FCP.Core.Robotics
         private void DoInitialSetup()
         {
             Pawn pawn = Pawn;
-            if (pawn?.apparel == null)
+            if (pawn?.health == null)
             {
                 return;
             }
 
             ProtectronPresetExtension preset = pawn.kindDef.GetModExtension<ProtectronPresetExtension>();
             bool wearHead = preset?.hasHead ?? true;
-            ThingDef headDef = preset?.head ?? ThingDefOf_ProtectronLoadout.FCP_Apparel_Protectron_Head_Default;
-            ThingDef handDef = preset?.hand ?? ThingDefOf_ProtectronLoadout.FCP_Apparel_Protectron_Hand_Default;
+            HediffDef headDef = preset?.head ?? HediffDefOf_Protectron.FCP_Hediff_Protectron_Head_Default;
+            HediffDef handDef = preset?.hand ?? HediffDefOf_Protectron.FCP_Hediff_Protectron_Hand_Default;
 
-            if (wearHead && !HasApparel(pawn, headDef))
+            if (wearHead)
             {
-                Wear(pawn, headDef);
+                SwapOnGroup(pawn, BodyPartGroupDefOf_Protectron.ProtectronHead, headDef);
             }
-            if (!HasApparel(pawn, handDef))
-            {
-                Wear(pawn, handDef);
-            }
-            if (handDef == ThingDefOf_ProtectronLoadout.FCP_Apparel_Protectron_Hand_Gun)
-            {
-                EquipGun(pawn);
-            }
+            SwapOnGroup(pawn, BodyPartGroupDefOf_Protectron.ProtectronHands, handDef);
 
             pawn.SetColor(preset?.color ?? DefaultColor);
-
             RobotUtility.TouchBodyColor(pawn);
+            TouchHediffGraphic(pawn, headDef);
+            TouchHediffGraphic(pawn, handDef);
             pawn.Drawer.renderer.SetAllGraphicsDirty();
-            RetintApparel(pawn);
         }
 
-        public static void RetintApparel(Pawn pawn)
+        private static void TouchHediffGraphic(Pawn pawn, HediffDef hediffDef)
         {
-            if (pawn == null)
+            Graphic graphic = hediffDef != null ? RobotHediffGraphicCache.GetFor(hediffDef) : null;
+            CompColorable colorable = pawn.GetComp<CompColorable>();
+            if (graphic != null && colorable != null && colorable.Active)
+            {
+                _ = graphic.GetColoredVersion(graphic.Shader, colorable.Color, graphic.ColorTwo);
+            }
+        }
+
+        private static void SwapOnGroup(Pawn pawn, BodyPartGroupDef group, HediffDef newHediff)
+        {
+            if (newHediff == null)
             {
                 return;
             }
 
-            Color color = RobotUtility.GetBodyColor(pawn);
-
-            if (pawn.equipment?.Primary != null)
+            foreach (BodyPartRecord part in FindParts(pawn, group))
             {
-                CompColorableUtility.SetColor(pawn.equipment.Primary, color, reportFailure: false);
-                RobotUtility.TouchGraphic(pawn.equipment.Primary);
-            }
-
-            if (pawn.apparel == null)
-            {
-                return;
-            }
-
-            foreach (Apparel apparel in pawn.apparel.WornApparel)
-            {
-                if (apparel.TryGetComp<CompColorable>() != null)
+                Hediff existing = pawn.health.hediffSet.hediffs.FirstOrDefault(h => h.Part == part && h.def.GetModExtension<RobotHediffGraphic>() != null);
+                if (existing != null)
                 {
-                    CompColorableUtility.SetColor(apparel, color, reportFailure: false);
-                    RobotUtility.TouchGraphic(apparel);
+                    if (existing.def == newHediff)
+                    {
+                        continue;
+                    }
+                    pawn.health.RemoveHediff(existing);
                 }
-            }
-
-            pawn.Drawer.renderer.SetAllGraphicsDirty();
-        }
-
-        private static void Wear(Pawn pawn, ThingDef apparelDef)
-        {
-            Apparel newApparel = (Apparel)ThingMaker.MakeThing(apparelDef);
-            pawn.apparel.Wear(newApparel, dropReplacedApparel: false);
-            RobotUtility.TouchGraphic(newApparel);
-        }
-
-        private static void EquipGun(Pawn pawn)
-        {
-            if (pawn?.equipment == null)
-            {
-                return;
-            }
-
-            if (pawn.equipment.Primary != null)
-            {
-                pawn.equipment.DestroyEquipment(pawn.equipment.Primary);
-            }
-
-            ThingWithComps gun = (ThingWithComps)ThingMaker.MakeThing(ThingDefOf_ProtectronLoadout.FCP_Gun_Protectron_Arm);
-            pawn.equipment.AddEquipment(gun);
-            RobotUtility.TouchGraphic(gun);
-        }
-
-        private static void UnequipGun(Pawn pawn)
-        {
-            if (pawn?.equipment?.Primary != null)
-            {
-                pawn.equipment.DestroyEquipment(pawn.equipment.Primary);
+                pawn.health.AddHediff(newHediff, part);
             }
         }
 
@@ -181,86 +145,79 @@ namespace FCP.Core.Robotics
                 yield break;
             }
 
-            foreach (FloatMenuOption option in HeadOptions(pawn))
+            yield return new FloatMenuOption("FCP_RobotUpgradeDialog_Open".Translate(), delegate
             {
-                yield return option;
-            }
-            foreach (FloatMenuOption option in HandOptions(pawn))
-            {
-                yield return option;
-            }
-        }
-
-        private IEnumerable<FloatMenuOption> HeadOptions(Pawn pawn)
-        {
-            if (!HasHead(pawn, ThingDefOf_ProtectronLoadout.FCP_Apparel_Protectron_Head_Default))
-            {
-                yield return InstallOption(pawn, "FCP_ProtectronLoadout_InstallDefaultHead", ThingDefOf_ProtectronLoadout.FCP_Apparel_Protectron_Head_Default, Props.headSwapCost);
-            }
-            if (!HasHead(pawn, ThingDefOf_ProtectronLoadout.FCP_Apparel_Protectron_Head_Construct))
-            {
-                yield return InstallOption(pawn, "FCP_ProtectronLoadout_InstallConstructHead", ThingDefOf_ProtectronLoadout.FCP_Apparel_Protectron_Head_Construct, Props.headSwapCost);
-            }
-        }
-
-        private IEnumerable<FloatMenuOption> HandOptions(Pawn pawn)
-        {
-            if (!HasHand(pawn, ThingDefOf_ProtectronLoadout.FCP_Apparel_Protectron_Hand_Default))
-            {
-                yield return InstallHandOption(pawn, "FCP_ProtectronLoadout_InstallDefaultHand", ThingDefOf_ProtectronLoadout.FCP_Apparel_Protectron_Hand_Default);
-            }
-            if (!HasHand(pawn, ThingDefOf_ProtectronLoadout.FCP_Apparel_Protectron_Hand_Work))
-            {
-                yield return InstallHandOption(pawn, "FCP_ProtectronLoadout_InstallWorkHand", ThingDefOf_ProtectronLoadout.FCP_Apparel_Protectron_Hand_Work);
-            }
-            if (!HasHand(pawn, ThingDefOf_ProtectronLoadout.FCP_Apparel_Protectron_Hand_Gun))
-            {
-                yield return InstallHandOption(pawn, "FCP_ProtectronLoadout_InstallGunHand", ThingDefOf_ProtectronLoadout.FCP_Apparel_Protectron_Hand_Gun);
-            }
-        }
-
-        private FloatMenuOption InstallOption(Pawn pawn, string labelKey, ThingDef apparelDef, List<ThingDefCountClass> cost)
-        {
-            if (!RobotUpgradeUtility.CanAffordCost(parent.Map, cost))
-            {
-                return new FloatMenuOption(labelKey.Translate() + ": " + "FCP_UpgradeRobot_MissingMaterials".Translate(), null);
-            }
-
-            return new FloatMenuOption(labelKey.Translate(), delegate
-            {
-                if (RobotUpgradeUtility.TryConsumeCost(parent.Map, cost))
-                {
-                    Wear(pawn, apparelDef);
-                }
+                Find.WindowStack.Add(new Dialog_RobotUpgrade(pawn, () => BuildUpgradeOptions(pawn)));
             });
         }
 
-        private FloatMenuOption InstallHandOption(Pawn pawn, string labelKey, ThingDef handDef)
+        private List<RobotUpgradeOption> BuildUpgradeOptions(Pawn pawn)
         {
-            List<ThingDefCountClass> cost = Props.handSwapCost;
-            if (!RobotUpgradeUtility.CanAffordCost(parent.Map, cost))
+            List<RobotUpgradeOption> options = new List<RobotUpgradeOption>();
+            options.AddRange(HeadOptions(pawn));
+            options.AddRange(HandOptions(pawn));
+            return options;
+        }
+
+        private IEnumerable<RobotUpgradeOption> HeadOptions(Pawn pawn)
+        {
+            if (!HasHead(pawn, HediffDefOf_Protectron.FCP_Hediff_Protectron_Head_Default))
             {
-                return new FloatMenuOption(labelKey.Translate() + ": " + "FCP_UpgradeRobot_MissingMaterials".Translate(), null);
+                yield return InstallOption(pawn, "Head", "FCP_ProtectronLoadout_InstallDefaultHead", BodyPartGroupDefOf_Protectron.ProtectronHead, HediffDefOf_Protectron.FCP_Hediff_Protectron_Head_Default, Props.headSwapCost);
             }
-
-            return new FloatMenuOption(labelKey.Translate(), delegate
+            if (!HasHead(pawn, HediffDefOf_Protectron.FCP_Hediff_Protectron_Head_Construct))
             {
-                if (!RobotUpgradeUtility.TryConsumeCost(parent.Map, cost))
-                {
-                    return;
-                }
+                yield return InstallOption(pawn, "Head", "FCP_ProtectronLoadout_InstallConstructHead", BodyPartGroupDefOf_Protectron.ProtectronHead, HediffDefOf_Protectron.FCP_Hediff_Protectron_Head_Construct, Props.headSwapCost);
+            }
+        }
 
-                Wear(pawn, handDef);
-                if (handDef == ThingDefOf_ProtectronLoadout.FCP_Apparel_Protectron_Hand_Gun)
+        private IEnumerable<RobotUpgradeOption> HandOptions(Pawn pawn)
+        {
+            if (!HasHand(pawn, HediffDefOf_Protectron.FCP_Hediff_Protectron_Hand_Default))
+            {
+                yield return InstallOption(pawn, "Hands", "FCP_ProtectronLoadout_InstallDefaultHand", BodyPartGroupDefOf_Protectron.ProtectronHands, HediffDefOf_Protectron.FCP_Hediff_Protectron_Hand_Default, Props.handSwapCost);
+            }
+            if (!HasHand(pawn, HediffDefOf_Protectron.FCP_Hediff_Protectron_Hand_Work))
+            {
+                yield return InstallOption(pawn, "Hands", "FCP_ProtectronLoadout_InstallWorkHand", BodyPartGroupDefOf_Protectron.ProtectronHands, HediffDefOf_Protectron.FCP_Hediff_Protectron_Hand_Work, Props.handSwapCost);
+            }
+            if (!HasHand(pawn, HediffDefOf_Protectron.FCP_Hediff_Protectron_Hand_Gun))
+            {
+                if (Props.gunHandResearch != null && !Props.gunHandResearch.IsFinished)
                 {
-                    EquipGun(pawn);
+                    yield return new RobotUpgradeOption
+                    {
+                        category = "Hands",
+                        label = "FCP_ProtectronLoadout_InstallGunHand".Translate(),
+                        disabledReason = "FCP_UpgradeRobot_NeedsResearch".Translate(Props.gunHandResearch.LabelCap),
+                    };
                 }
                 else
                 {
-                    UnequipGun(pawn);
+                    yield return InstallOption(pawn, "Hands", "FCP_ProtectronLoadout_InstallGunHand", BodyPartGroupDefOf_Protectron.ProtectronHands, HediffDefOf_Protectron.FCP_Hediff_Protectron_Hand_Gun, Props.gunHandCost);
                 }
-                RetintApparel(pawn);
-            });
+            }
+        }
+
+        private RobotUpgradeOption InstallOption(Pawn pawn, string category, string labelKey, BodyPartGroupDef group, HediffDef hediffDef, List<ThingDefCountClass> cost)
+        {
+            bool afford = RobotUpgradeUtility.CanAffordCost(parent.Map, cost);
+            return new RobotUpgradeOption
+            {
+                category = category,
+                label = labelKey.Translate(),
+                cost = cost,
+                disabledReason = afford ? null : "FCP_UpgradeRobot_MissingMaterials".Translate(),
+                install = delegate
+                {
+                    if (RobotUpgradeUtility.TryConsumeCost(parent.Map, cost))
+                    {
+                        SwapOnGroup(pawn, group, hediffDef);
+                        TouchHediffGraphic(pawn, hediffDef);
+                        pawn.Drawer.renderer.SetAllGraphicsDirty();
+                    }
+                },
+            };
         }
     }
 }

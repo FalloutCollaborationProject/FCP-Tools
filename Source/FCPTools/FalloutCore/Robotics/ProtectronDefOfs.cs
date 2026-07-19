@@ -34,24 +34,36 @@ namespace FCP.Core.Robotics
     }
 
     [DefOf]
-    public static class ThingDefOf_ProtectronLoadout
+    public static class HediffDefOf_Protectron
     {
         [MayRequire("Rick.FCP.Robotics")]
-        public static ThingDef FCP_Apparel_Protectron_Head_Default;
+        public static HediffDef FCP_Hediff_Protectron_Head_Default;
         [MayRequire("Rick.FCP.Robotics")]
-        public static ThingDef FCP_Apparel_Protectron_Head_Construct;
+        public static HediffDef FCP_Hediff_Protectron_Head_Construct;
         [MayRequire("Rick.FCP.Robotics")]
-        public static ThingDef FCP_Apparel_Protectron_Hand_Default;
+        public static HediffDef FCP_Hediff_Protectron_Hand_Default;
         [MayRequire("Rick.FCP.Robotics")]
-        public static ThingDef FCP_Apparel_Protectron_Hand_Work;
+        public static HediffDef FCP_Hediff_Protectron_Hand_Work;
         [MayRequire("Rick.FCP.Robotics")]
-        public static ThingDef FCP_Apparel_Protectron_Hand_Gun;
-        [MayRequire("Rick.FCP.Robotics")]
-        public static ThingDef FCP_Gun_Protectron_Arm;
+        public static HediffDef FCP_Hediff_Protectron_Hand_Gun;
 
-        static ThingDefOf_ProtectronLoadout()
+        static HediffDefOf_Protectron()
         {
-            DefOfHelper.EnsureInitializedInCtor(typeof(ThingDefOf_ProtectronLoadout));
+            DefOfHelper.EnsureInitializedInCtor(typeof(HediffDefOf_Protectron));
+        }
+    }
+
+    [DefOf]
+    public static class BodyPartGroupDefOf_Protectron
+    {
+        [MayRequire("Rick.FCP.Robotics")]
+        public static BodyPartGroupDef ProtectronHead;
+        [MayRequire("Rick.FCP.Robotics")]
+        public static BodyPartGroupDef ProtectronHands;
+
+        static BodyPartGroupDefOf_Protectron()
+        {
+            DefOfHelper.EnsureInitializedInCtor(typeof(BodyPartGroupDefOf_Protectron));
         }
     }
 }

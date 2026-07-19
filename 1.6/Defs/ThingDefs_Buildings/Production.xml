@@ -224,7 +224,7 @@
         <graphicData>
             <texPath>Things/Building/Production/FCP_Chemistry_Workbench/FCP_Chemistry_Workbench</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(3,3)</drawSize>
+            <drawSize>(3,2)</drawSize>
             <damageData>
                 <cornerTL>Damage/Corner</cornerTL>
                 <cornerTR>Damage/Corner</cornerTR>
@@ -288,7 +288,7 @@
         <graphicData>
             <texPath>Things/Building/Production/FCP_Simple_Weapons_Workbench/FCP_Simple_Weapons_Workbench</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(3,4)</drawSize>
+            <drawSize>(3,2)</drawSize>
             <damageData>
                 <cornerTL>Damage/Corner</cornerTL>
                 <cornerTR>Damage/Corner</cornerTR>
@@ -312,7 +312,7 @@
             <Flammability>1.0</Flammability>
             <WorkTableWorkSpeedFactor>0.5</WorkTableWorkSpeedFactor>
         </statBases>
-        <size>(3,3)</size>
+        <size>(3,2)</size>
         <designationCategory>Production</designationCategory>
         <passability>PassThroughOnly</passability>
         <pathCost>50</pathCost>
@@ -778,7 +778,7 @@
         <graphicData>
             <texPath>Things/Building/Production/FCP_Portable_Tool_Bench/FCP_Portable_Tool_Bench</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>(3,3)</drawSize>
+            <drawSize>(3,2)</drawSize>
             <damageData>
                 <cornerTL>Damage/Corner</cornerTL>
                 <cornerTR>Damage/Corner</cornerTR>

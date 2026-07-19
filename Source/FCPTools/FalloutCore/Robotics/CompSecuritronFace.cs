@@ -1,34 +1,10 @@
+using System;
+using System.Linq;
 using RimWorld;
 using Verse;
 
 namespace FCP.Core.Robotics
 {
-    [DefOf]
-    public static class ThingDefOf_SecuritronFace
-    {
-        [MayRequire("Rick.FCP.Robotics")]
-        public static ThingDef FCP_Apparel_Securitron_Face_Empty;
-        [MayRequire("Rick.FCP.Robotics")]
-        public static ThingDef FCP_Apparel_Securitron_Face_Corrupt;
-        [MayRequire("Rick.FCP.Robotics")]
-        public static ThingDef FCP_Apparel_Securitron_Face_Army;
-        [MayRequire("Rick.FCP.Robotics")]
-        public static ThingDef FCP_Apparel_Securitron_Face_Cop;
-        [MayRequire("Rick.FCP.Robotics")]
-        public static ThingDef FCP_Apparel_Securitron_Face_Female;
-        [MayRequire("Rick.FCP.Robotics")]
-        public static ThingDef FCP_Apparel_Securitron_Face_Male;
-        [MayRequire("Rick.FCP.Robotics")]
-        public static ThingDef FCP_Apparel_Securitron_Face_Smily;
-        [MayRequire("Rick.FCP.Robotics")]
-        public static ThingDef FCP_Apparel_Securitron_Face_Victor;
-
-        static ThingDefOf_SecuritronFace()
-        {
-            DefOfHelper.EnsureInitializedInCtor(typeof(ThingDefOf_SecuritronFace));
-        }
-    }
-
     public class CompProperties_SecuritronFace : CompProperties
     {
         public CompProperties_SecuritronFace()
@@ -39,29 +15,29 @@ namespace FCP.Core.Robotics
 
     public class CompSecuritronFace : ThingComp
     {
-        private ThingDef chosenFace = ThingDefOf_SecuritronFace.FCP_Apparel_Securitron_Face_Army;
+        private HediffDef chosenFace = HediffDefOf_Securitron.FCP_Hediff_Securitron_Face_Army;
         private bool didInitialSetup;
 
         public CompProperties_SecuritronFace Props => (CompProperties_SecuritronFace)props;
 
-        public static ThingDef[] AllFaces => new[]
+        public static HediffDef[] AllFaces => new[]
         {
-            ThingDefOf_SecuritronFace.FCP_Apparel_Securitron_Face_Empty,
-            ThingDefOf_SecuritronFace.FCP_Apparel_Securitron_Face_Corrupt,
-            ThingDefOf_SecuritronFace.FCP_Apparel_Securitron_Face_Army,
-            ThingDefOf_SecuritronFace.FCP_Apparel_Securitron_Face_Cop,
-            ThingDefOf_SecuritronFace.FCP_Apparel_Securitron_Face_Female,
-            ThingDefOf_SecuritronFace.FCP_Apparel_Securitron_Face_Male,
-            ThingDefOf_SecuritronFace.FCP_Apparel_Securitron_Face_Smily,
-            ThingDefOf_SecuritronFace.FCP_Apparel_Securitron_Face_Victor,
+            HediffDefOf_Securitron.FCP_Hediff_Securitron_Face_Empty,
+            HediffDefOf_Securitron.FCP_Hediff_Securitron_Face_Corrupt,
+            HediffDefOf_Securitron.FCP_Hediff_Securitron_Face_Army,
+            HediffDefOf_Securitron.FCP_Hediff_Securitron_Face_Cop,
+            HediffDefOf_Securitron.FCP_Hediff_Securitron_Face_Female,
+            HediffDefOf_Securitron.FCP_Hediff_Securitron_Face_Male,
+            HediffDefOf_Securitron.FCP_Hediff_Securitron_Face_Smily,
+            HediffDefOf_Securitron.FCP_Hediff_Securitron_Face_Victor,
         };
 
-        public static ThingDef[] PlayerSelectableFaces => new[]
+        public static HediffDef[] PlayerSelectableFaces => new[]
         {
-            ThingDefOf_SecuritronFace.FCP_Apparel_Securitron_Face_Army,
-            ThingDefOf_SecuritronFace.FCP_Apparel_Securitron_Face_Cop,
-            ThingDefOf_SecuritronFace.FCP_Apparel_Securitron_Face_Female,
-            ThingDefOf_SecuritronFace.FCP_Apparel_Securitron_Face_Male,
+            HediffDefOf_Securitron.FCP_Hediff_Securitron_Face_Army,
+            HediffDefOf_Securitron.FCP_Hediff_Securitron_Face_Cop,
+            HediffDefOf_Securitron.FCP_Hediff_Securitron_Face_Female,
+            HediffDefOf_Securitron.FCP_Hediff_Securitron_Face_Male,
         };
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -88,8 +64,8 @@ namespace FCP.Core.Robotics
                 else
                 {
                     chosenFace = Rand.Bool
-                        ? ThingDefOf_SecuritronFace.FCP_Apparel_Securitron_Face_Male
-                        : ThingDefOf_SecuritronFace.FCP_Apparel_Securitron_Face_Female;
+                        ? HediffDefOf_Securitron.FCP_Hediff_Securitron_Face_Male
+                        : HediffDefOf_Securitron.FCP_Hediff_Securitron_Face_Female;
                 }
 
                 RefreshFace();
@@ -112,19 +88,19 @@ namespace FCP.Core.Robotics
             }
         }
 
-        public ThingDef CurrentDisplayedFace(Pawn pawn)
+        public HediffDef CurrentDisplayedFace(Pawn pawn)
         {
-            foreach (Apparel apparel in pawn.apparel.WornApparel)
+            BodyPartRecord part = FindScreenPart(pawn);
+            if (part == null || pawn.health?.hediffSet == null)
             {
-                if (System.Array.IndexOf(AllFaces, apparel.def) >= 0)
-                {
-                    return apparel.def;
-                }
+                return null;
             }
-            return null;
+
+            Hediff hediff = pawn.health.hediffSet.hediffs.FirstOrDefault(h => h.Part == part && Array.IndexOf(AllFaces, h.def) >= 0);
+            return hediff?.def;
         }
 
-        public void SetFace(ThingDef faceDef)
+        public void SetFace(HediffDef faceDef)
         {
             chosenFace = faceDef;
             RefreshFace();
@@ -138,21 +114,22 @@ namespace FCP.Core.Robotics
         public void RefreshFace()
         {
             Pawn pawn = parent as Pawn;
-            if (pawn?.apparel == null)
+            if (pawn?.health == null)
             {
                 return;
             }
 
-            ThingDef display;
+            HediffDef display;
             if (pawn.Faction != null && pawn.Faction != Faction.OfPlayer)
             {
-                display = ThingDefOf_SecuritronFace.FCP_Apparel_Securitron_Face_Corrupt;
+                display = HediffDefOf_Securitron.FCP_Hediff_Securitron_Face_Corrupt;
             }
             else
             {
                 CompRefuelable fuel = pawn.GetComp<CompRefuelable>();
-                display = (fuel != null && !fuel.HasFuel)
-                    ? ThingDefOf_SecuritronFace.FCP_Apparel_Securitron_Face_Empty
+                bool poweredOff = !RobotUtility.IsPoweredOn(pawn) || (fuel != null && !fuel.HasFuel);
+                display = poweredOff
+                    ? HediffDefOf_Securitron.FCP_Hediff_Securitron_Face_Empty
                     : chosenFace;
             }
 
@@ -161,9 +138,24 @@ namespace FCP.Core.Robotics
                 return;
             }
 
-            Apparel newFace = (Apparel)ThingMaker.MakeThing(display);
-            pawn.apparel.Wear(newFace, dropReplacedApparel: false);
-            RobotUtility.TouchGraphic(newFace);
+            BodyPartRecord part = FindScreenPart(pawn);
+            if (part == null)
+            {
+                return;
+            }
+
+            Hediff existing = pawn.health.hediffSet.hediffs.FirstOrDefault(h => h.Part == part && Array.IndexOf(AllFaces, h.def) >= 0);
+            if (existing != null)
+            {
+                pawn.health.RemoveHediff(existing);
+            }
+            pawn.health.AddHediff(display, part);
+            pawn.Drawer.renderer.SetAllGraphicsDirty();
+        }
+
+        private static BodyPartRecord FindScreenPart(Pawn pawn)
+        {
+            return pawn.RaceProps.body.AllParts.FirstOrDefault(p => p.groups.Contains(BodyPartGroupDefOf_Securitron.SecuritronScreen));
         }
     }
 }

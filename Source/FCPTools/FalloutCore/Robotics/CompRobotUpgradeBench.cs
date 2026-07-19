@@ -40,16 +40,14 @@ namespace FCP.Core.Robotics
             {
                 IRobotTierProvider provider = RobotUtility.GetProvider(robot);
                 PawnKindDef nextTier = provider?.GetNextTier(robot.kindDef);
-                if (nextTier == null)
+                if (nextTier != null)
                 {
-                    continue;
-                }
-
-                RobotTierExtension tierExt = nextTier.GetModExtension<RobotTierExtension>();
-                if (tierExt?.researchPrerequisite != null && !tierExt.researchPrerequisite.IsFinished)
-                {
-                    options.Add(new FloatMenuOption($"{robot.LabelShort}: {"FCP_UpgradeRobot_NeedsResearch".Translate(tierExt.researchPrerequisite.LabelCap)}", null));
-                    continue;
+                    RobotTierExtension tierExt = nextTier.GetModExtension<RobotTierExtension>();
+                    if (tierExt?.researchPrerequisite != null && !tierExt.researchPrerequisite.IsFinished)
+                    {
+                        options.Add(new FloatMenuOption($"{robot.LabelShort}: {"FCP_UpgradeRobot_NeedsResearch".Translate(tierExt.researchPrerequisite.LabelCap)}", null));
+                        continue;
+                    }
                 }
 
                 options.Add(new FloatMenuOption(robot.LabelShort, () => CallToBench(robot)));

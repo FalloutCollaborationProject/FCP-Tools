@@ -11,8 +11,26 @@ namespace FCP.Core.Robotics
 
         protected override Job TryGiveJob(Pawn pawn)
         {
+            CompRobotUpgrade upgradeComp = pawn.GetComp<CompRobotUpgrade>();
+            if (upgradeComp?.PendingBench != null)
+            {
+                if (!upgradeComp.PendingBench.Spawned)
+                {
+                    upgradeComp.PendingBench = null;
+                }
+                else
+                {
+                    return JobMaker.MakeJob(JobDefOf_Robotics.FCP_RobotDock, upgradeComp.PendingBench);
+                }
+            }
+
             CompRefuelable fuel = pawn.GetComp<CompRefuelable>();
             if (fuel != null && !fuel.HasFuel)
+            {
+                return null;
+            }
+
+            if (!RobotUtility.IsPoweredOn(pawn))
             {
                 return null;
             }
@@ -42,6 +60,20 @@ namespace FCP.Core.Robotics
                 return null;
             }
 
+            if (modeComp.Mode == SecuritronMode.GuardPoint && modeComp.GuardedPoint.IsValid)
+            {
+                Job fightJob = base.TryGiveJob(pawn);
+                if (fightJob != null)
+                {
+                    return fightJob;
+                }
+                if (!pawn.Position.InHorDistOf(modeComp.GuardedPoint, FollowRadius))
+                {
+                    return JobMaker.MakeJob(JobDefOf.Goto, modeComp.GuardedPoint);
+                }
+                return null;
+            }
+
             return base.TryGiveJob(pawn);
         }
 
@@ -56,6 +88,11 @@ namespace FCP.Core.Robotics
             if (modeComp?.Mode == SecuritronMode.GuardPawn && modeComp.GuardedPawn != null)
             {
                 return target.Position.InHorDistOf(modeComp.GuardedPawn.Position, GuardEngageRadius);
+            }
+
+            if (modeComp?.Mode == SecuritronMode.GuardPoint && modeComp.GuardedPoint.IsValid)
+            {
+                return target.Position.InHorDistOf(modeComp.GuardedPoint, GuardEngageRadius);
             }
 
             return pawn.Map.areaManager.Home[target.Position];

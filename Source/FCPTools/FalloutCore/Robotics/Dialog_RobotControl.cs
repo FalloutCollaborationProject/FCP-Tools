@@ -57,15 +57,15 @@ namespace FCP.Core.Robotics
                 return;
             }
 
-            var viewRect = new Rect(0f, 0f, rect.width - 20f, robots.Count * 90f);
+            var viewRect = new Rect(0f, 0f, rect.width - 20f, robots.Count * 120f);
             Widgets.BeginScrollView(rect, ref scrollPosition, viewRect);
 
             float y = 0f;
             foreach (Pawn robot in robots)
             {
-                var rowRect = new Rect(0f, y, viewRect.width, 85f);
+                var rowRect = new Rect(0f, y, viewRect.width, 115f);
                 DrawRobotRow(rowRect, robot);
-                y += 90f;
+                y += 120f;
             }
 
             Widgets.EndScrollView();
@@ -90,12 +90,14 @@ namespace FCP.Core.Robotics
 
             var modeLabelRect = new Rect(labelRect.x, labelRect.yMax, labelRect.width, 20f);
             var buttonsRect = new Rect(rect.x, rect.y + 55f, rect.width - 10f, 28f);
+            var sharedButtonsRect = new Rect(rect.x, rect.y + 87f, rect.width - 10f, 28f);
 
             CompEyebotMode eyebotMode = robot.GetComp<CompEyebotMode>();
             if (eyebotMode != null)
             {
                 DrawModeLabel(modeLabelRect, eyebotMode.Mode.ToString());
                 DrawEyebotButtons(buttonsRect, eyebotMode);
+                DrawSharedButtons(sharedButtonsRect, robot);
                 return;
             }
 
@@ -107,6 +109,7 @@ namespace FCP.Core.Robotics
                     : "FCP_SecuritronMode_GuardPawn".Translate(securitronMode.GuardedPawn?.LabelShort ?? "?");
                 DrawModeLabel(modeLabelRect, modeLabel);
                 DrawSecuritronButtons(buttonsRect, securitronMode);
+                DrawSharedButtons(sharedButtonsRect, robot);
                 return;
             }
 
@@ -115,6 +118,60 @@ namespace FCP.Core.Robotics
             {
                 DrawModeLabel(modeLabelRect, protectronMode.Mode.ToString());
                 DrawProtectronButtons(buttonsRect, protectronMode);
+                DrawSharedButtons(sharedButtonsRect, robot);
+                return;
+            }
+
+            CompMrHandyMode mrHandyMode = robot.GetComp<CompMrHandyMode>();
+            if (mrHandyMode != null)
+            {
+                string modeLabel = mrHandyMode.Mode == MrHandyMode.GuardPawn
+                    ? "FCP_SecuritronMode_GuardPawn".Translate(mrHandyMode.GuardedPawn?.LabelShort ?? "?")
+                    : mrHandyMode.Mode.ToString();
+                DrawModeLabel(modeLabelRect, modeLabel);
+                DrawMrHandyButtons(buttonsRect, robot, mrHandyMode);
+                DrawSharedButtons(sharedButtonsRect, robot);
+            }
+        }
+
+        private void DrawSharedButtons(Rect rect, Pawn robot)
+        {
+            CompRobotManualPower power = robot.GetComp<CompRobotManualPower>();
+            if (power == null)
+            {
+                return;
+            }
+
+            bool canPaint = robot.GetComp<CompColorable>() != null;
+            float buttonWidth = canPaint ? (rect.width - 5f) / 2f : rect.width;
+            var powerRect = new Rect(rect.x, rect.y, buttonWidth, rect.height);
+
+            string powerLabel = power.PoweredOn
+                ? "FCP_RobotPower_TurnOff".Translate()
+                : "FCP_RobotPower_TurnOn".Translate();
+            if (Widgets.ButtonText(powerRect, powerLabel))
+            {
+                power.TogglePower();
+            }
+
+            if (!canPaint)
+            {
+                return;
+            }
+
+            var paintRect = new Rect(powerRect.xMax + 5f, rect.y, buttonWidth, rect.height);
+            if (Widgets.ButtonText(paintRect, "FCP_RobotPaint_Pick".Translate()))
+            {
+                List<FloatMenuOption> options = new List<FloatMenuOption>();
+                foreach (RobotPaintOption paint in RobotPaintOptions.General)
+                {
+                    options.Add(new FloatMenuOption(paint.label.Translate(), () => robot.SetColor(paint.color)));
+                }
+                foreach (RobotPaintOption paint in RobotPaintOptions.Factional)
+                {
+                    options.Add(new FloatMenuOption(paint.label.Translate(), () => robot.SetColor(paint.color)));
+                }
+                Find.WindowStack.Add(new FloatMenu(options));
             }
         }
 
@@ -150,10 +207,13 @@ namespace FCP.Core.Robotics
 
         private void DrawSecuritronButtons(Rect rect, CompSecuritronMode modeComp)
         {
-            float buttonWidth = (rect.width - 10f) / 3f;
+            Pawn robot = (Pawn)modeComp.parent;
+            CompSecuritronFace faceComp = robot.GetComp<CompSecuritronFace>();
+            int columns = faceComp != null ? 4 : 3;
+            float buttonWidth = (rect.width - (columns - 1) * 5f) / columns;
             var guardHomeRect = new Rect(rect.x, rect.y, buttonWidth, rect.height);
             var guardPawnRect = new Rect(guardHomeRect.xMax + 5f, rect.y, buttonWidth, rect.height);
-            var faceRect = new Rect(guardPawnRect.xMax + 5f, rect.y, buttonWidth, rect.height);
+            var guardPointRect = new Rect(guardPawnRect.xMax + 5f, rect.y, buttonWidth, rect.height);
 
             if (Widgets.ButtonText(guardHomeRect, "FCP_SecuritronMode_GuardHome".Translate()))
             {
@@ -172,17 +232,40 @@ namespace FCP.Core.Robotics
                 }
                 Find.WindowStack.Add(new FloatMenu(options));
             }
+            if (Widgets.ButtonText(guardPointRect, "FCP_SecuritronMode_GuardPoint_Pick".Translate()))
+            {
+                BeginGuardPointTargeting(modeComp);
+            }
+
+            if (faceComp == null)
+            {
+                return;
+            }
+
+            var faceRect = new Rect(guardPointRect.xMax + 5f, rect.y, buttonWidth, rect.height);
             if (Widgets.ButtonText(faceRect, "FCP_SecuritronFace_Pick".Translate()))
             {
-                Pawn securitron = (Pawn)modeComp.parent;
-                CompSecuritronFace faceComp = securitron.GetComp<CompSecuritronFace>();
                 List<FloatMenuOption> options = new List<FloatMenuOption>();
-                foreach (ThingDef faceDef in CompSecuritronFace.PlayerSelectableFaces)
+                foreach (HediffDef faceDef in CompSecuritronFace.PlayerSelectableFaces)
                 {
                     options.Add(new FloatMenuOption(faceDef.LabelCap, () => faceComp.SetFace(faceDef)));
                 }
                 Find.WindowStack.Add(new FloatMenu(options));
             }
+        }
+
+        private void BeginGuardPointTargeting(CompSecuritronMode modeComp)
+        {
+            Close();
+            TargetingParameters targetParams = new TargetingParameters
+            {
+                canTargetLocations = true,
+                canTargetPawns = false,
+                canTargetBuildings = false,
+                canTargetItems = false,
+                mustBeSelectable = false,
+            };
+            Find.Targeter.BeginTargeting(targetParams, target => modeComp.SetGuardPoint(target.Cell), requiresCastedSelected: false);
         }
 
         private static void DrawProtectronButtons(Rect rect, CompProtectronMode modeComp)
@@ -203,6 +286,61 @@ namespace FCP.Core.Robotics
             if (Widgets.ButtonText(haulRect, "FCP_ProtectronMode_Haul".Translate()))
             {
                 modeComp.SetMode(ProtectronMode.Haul);
+            }
+        }
+
+        private void DrawMrHandyButtons(Rect rect, Pawn robot, CompMrHandyMode modeComp)
+        {
+            CompMrHandyLoadout loadout = robot.GetComp<CompMrHandyLoadout>();
+            if (loadout == null)
+            {
+                return;
+            }
+
+            var candidates = new List<(MrHandyMode mode, string labelKey)>
+            {
+                (MrHandyMode.Guard, "FCP_MrHandyMode_Guard"),
+                (MrHandyMode.GuardPawn, "FCP_MrHandyMode_GuardPawn_Pick"),
+                (MrHandyMode.Cook, "FCP_MrHandyMode_Cook"),
+                (MrHandyMode.Clean, "FCP_MrHandyMode_Clean"),
+                (MrHandyMode.Garden, "FCP_MrHandyMode_Garden"),
+                (MrHandyMode.BasicCare, "FCP_MrHandyMode_BasicCare"),
+                (MrHandyMode.Tend, "FCP_MrHandyMode_Tend"),
+                (MrHandyMode.Childcare, "FCP_MrHandyMode_Childcare"),
+            };
+
+            List<(MrHandyMode mode, string labelKey)> visible = candidates.Where(c => loadout.SupportsMode(c.mode)).ToList();
+            if (visible.Count == 0)
+            {
+                return;
+            }
+
+            float buttonWidth = (rect.width - (visible.Count - 1) * 5f) / visible.Count;
+            float x = rect.x;
+            foreach ((MrHandyMode mode, string labelKey) in visible)
+            {
+                var buttonRect = new Rect(x, rect.y, buttonWidth, rect.height);
+                if (Widgets.ButtonText(buttonRect, labelKey.Translate()))
+                {
+                    if (mode == MrHandyMode.GuardPawn)
+                    {
+                        List<FloatMenuOption> options = new List<FloatMenuOption>();
+                        foreach (Pawn colonist in map.mapPawns.FreeColonists)
+                        {
+                            options.Add(new FloatMenuOption(colonist.LabelShort, () => modeComp.SetGuardPawn(colonist)));
+                        }
+                        if (options.Count == 0)
+                        {
+                            options.Add(new FloatMenuOption("FCP_ControlRobots_None".Translate(), null));
+                        }
+                        Find.WindowStack.Add(new FloatMenu(options));
+                    }
+                    else
+                    {
+                        modeComp.SetMode(mode);
+                    }
+                }
+                x = buttonRect.xMax + 5f;
             }
         }
     }

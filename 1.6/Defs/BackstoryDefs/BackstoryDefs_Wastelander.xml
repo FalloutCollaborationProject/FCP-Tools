@@ -91,7 +91,7 @@
 
     <!--___ Uniques ___-->
 
-    <!--__ Traders (Fallout 3) __-->
+    <!--__ Traders __-->
 
     <!--_ Angela Staley _-->
     <!-- Adult -->
@@ -212,7 +212,7 @@
         <workDisables>Violent</workDisables>
         <requiredWorkTags>Social</requiredWorkTags>
         <spawnCategories>
-            <li>FCP_Backstory_Wasteland_Belle_Bonny</li>
+            <li>FCP_Backstory_Wasteland_Trader_Belle_Bonny</li>
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Female</bodyTypeMale>
@@ -236,14 +236,14 @@
         <workDisables>None</workDisables>
         <requiredWorkTags>Social</requiredWorkTags>
         <spawnCategories>
-            <li>FCP_Backstory_Wasteland_Belle_Bonny_Child</li>
+            <li>FCP_Backstory_Wasteland_Trader_Belle_Bonny_Child</li>
         </spawnCategories>
         <bodyTypeFemale>Female</bodyTypeFemale>
         <bodyTypeMale>Female</bodyTypeMale>
         <possessions></possessions>
     </BackstoryDef>
 
-    <!--__ Caravan Traders (Fallout 3) __-->
+    <!--__ Caravan Traders __-->
 
     <!--_ Crow _-->
     <!-- Adult -->
@@ -443,6 +443,206 @@
         <requiredWorkTags>Social</requiredWorkTags>
         <spawnCategories>
             <li>FCP_Backstory_Wasteland_Trader_Lucky_Harith_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--__ Caravan Traders __-->
+
+    <!--_ Trashcan Carla _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Trader_Trashcan_Carla</defName>
+        <identifier>FCP_Backstory_Wastelander_Trader_Trashcan_Carla</identifier>
+        <slot>Adulthood</slot>
+        <title>Solitary Scrap Trader</title>
+        <titleShort>Scrap Trader</titleShort>
+        <description>[PAWN_nameDef] hauls a battered cart of salvage across the wasteland alone, trusting nothing but [PAWN_possessive] own two hands and a loyal brahmin to watch [PAWN_possessive] back. Too stubborn to travel with guards and too sharp-tongued to need them, [PAWN_nameDef] has turned other people's trash into a business that's outlasted merchants twice [PAWN_possessive] size. Settlements know [PAWN_objective] as gruff, blunt, and always fair on a trade.</description>
+        <skillGains>
+            <Crafting>6</Crafting>
+            <Social>4</Social>
+            <Animals>3</Animals>
+            <Melee>2</Melee>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Trader_Trashcan_Carla</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Female</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Trader_Trashcan_Carla_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Trader_Trashcan_Carla_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Junkyard Upbringing</title>
+        <titleShort>Carla's Childhood</titleShort>
+        <description>[PAWN_nameDef] grew up picking through scrapyards and collapsed buildings, learning to spot the one usable part in a heap of ruin. Nobody looked out for [PAWN_objective] but [PAWN_pronoun] never seemed to need it—[PAWN_pronoun] could talk [PAWN_possessive] way out of trouble as easily as [PAWN_pronoun] could fix a broken axle.</description>
+        <skillGains>
+            <Crafting>3</Crafting>
+            <Social>1</Social>
+            <Animals>1</Animals>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Trader_Trashcan_Carla_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Cricket _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Trader_Cricket</defName>
+        <identifier>FCP_Backstory_Wastelander_Trader_Cricket</identifier>
+        <slot>Adulthood</slot>
+        <title>Arms Dealer</title>
+        <titleShort>Arms Dealer</titleShort>
+        <description>[PAWN_nameDef] deals guns and ammunition to whoever can pay, and doesn't much care to be lectured about it. Loud, foul-mouthed, and quick to anger, [PAWN_pronoun] has survived raiders, super mutants, and worse by never being caught without a loaded weapon in reach. Despite the temper, [PAWN_possessive] prices are honest and [PAWN_possessive] stock is always current.</description>
+        <skillGains>
+            <Shooting>6</Shooting>
+            <Social>4</Social>
+            <Melee>3</Melee>
+            <Crafting>1</Crafting>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Trader_Cricket</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Female</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Trader_Cricket_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Trader_Cricket_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Raider Camp Runaway</title>
+        <titleShort>Cricket's Childhood</titleShort>
+        <description>[PAWN_nameDef] was raised in a raider camp and learned to strip and load a gun before [PAWN_pronoun] learned to read. [PAWN_pronoun] fled the first chance [PAWN_pronoun] got, taking a bag of ammunition with [PAWN_objective] and a grudge against anyone who tries to push [PAWN_objective] around.</description>
+        <skillGains>
+            <Shooting>3</Shooting>
+            <Melee>2</Melee>
+            <Social>1</Social>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Trader_Cricket_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Lucas Miller _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Trader_Lucas_Miller</defName>
+        <identifier>FCP_Backstory_Wastelander_Trader_Lucas_Miller</identifier>
+        <slot>Adulthood</slot>
+        <title>Traveling Peddler</title>
+        <titleShort>Peddler</titleShort>
+        <description>[PAWN_nameDef] took up [PAWN_possessive] mother's trade route after she passed, and has been nervously making the rounds ever since. Still young and still learning the trade, [PAWN_pronoun] makes up for [PAWN_possessive] inexperience with earnest honesty and a genuine want to help settlers get what they need, even if it means haggling badly against [PAWN_possessive] own interest.</description>
+        <skillGains>
+            <Social>5</Social>
+            <Cooking>3</Cooking>
+            <Plants>2</Plants>
+            <Intellectual>1</Intellectual>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Trader_Lucas_Miller</li>
+        </spawnCategories>
+        <bodyTypeFemale>Male</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Trader_Lucas_Miller_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Trader_Lucas_Miller_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Caravan Child</title>
+        <titleShort>Lucas's Childhood</titleShort>
+        <description>[PAWN_nameDef] grew up riding on the back of a supply cart, watching [PAWN_possessive] mother trade with every settlement along the route. [PAWN_pronoun] learned [PAWN_possessive] numbers counting caps and [PAWN_possessive] manners greeting strangers at gunpoint with a smile instead of a weapon.</description>
+        <skillGains>
+            <Social>2</Social>
+            <Cooking>1</Cooking>
+            <Plants>1</Plants>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Trader_Lucas_Miller_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Doc Weathers _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Trader_Doc_Weathers</defName>
+        <identifier>FCP_Backstory_Wastelander_Trader_Doc_Weathers</identifier>
+        <slot>Adulthood</slot>
+        <title>Traveling Chem Dealer</title>
+        <titleShort>Chem Dealer</titleShort>
+        <description>[PAWN_nameDef] roams the wasteland with a case of medicine and a well-worn bedside manner, tending to whoever can pay and quietly helping the ones who can't. Calm under pressure and slow to judge, [PAWN_pronoun] has patched up settlers, raiders, and everything between, and asks few questions in return.</description>
+        <skillGains>
+            <Medicine>6</Medicine>
+            <Social>5</Social>
+            <Intellectual>2</Intellectual>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Caring</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Trader_Doc_Weathers</li>
+        </spawnCategories>
+        <bodyTypeFemale>Male</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Trader_Doc_Weathers_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Trader_Doc_Weathers_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Settlement Healer's Apprentice</title>
+        <titleShort>Doc Weathers' Childhood</titleShort>
+        <description>[PAWN_nameDef] spent [PAWN_possessive] childhood fetching bandages and boiling water for the settlement healer, soaking up every lesson [PAWN_pronoun] could. By the time [PAWN_pronoun] was old enough to travel, [PAWN_pronoun] already knew more about stitching a wound than most grown wastelanders ever would.</description>
+        <skillGains>
+            <Medicine>3</Medicine>
+            <Social>1</Social>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Caring</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Trader_Doc_Weathers_Child</li>
         </spawnCategories>
         <possessions></possessions>
     </BackstoryDef>
