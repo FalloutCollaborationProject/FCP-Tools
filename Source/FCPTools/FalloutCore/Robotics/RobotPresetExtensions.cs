@@ -22,9 +22,13 @@ namespace FCP.Core.Robotics
         public HediffDef hand;
         public Color color = new Color32(200, 200, 200, 255);
 
+        public List<Color> colorOptions = new List<Color>();
+
         // >0 makes this preset eligible for the random roll wild-spawned protectrons get.
         // Presets reserved for builds/quests/characters (picked explicitly by id) leave this at 0.
         public float wildSpawnWeight;
+
+        public Color RollColor() => colorOptions.Count > 0 ? colorOptions.RandomElement() : color;
     }
 
     public class ProtectronPresetExtension : DefModExtension

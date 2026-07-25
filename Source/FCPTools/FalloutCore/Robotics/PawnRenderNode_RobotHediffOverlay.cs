@@ -92,6 +92,19 @@ namespace FCP.Core.Robotics
                 {
                     colors.Add(bodyGraphicData.color);
                 }
+
+                ProtectronPresetExtension presetExt = kindDef.GetModExtension<ProtectronPresetExtension>();
+                if (presetExt != null)
+                {
+                    foreach (ProtectronLoadoutPreset preset in presetExt.presets)
+                    {
+                        colors.Add(preset.color);
+                        foreach (Color option in preset.colorOptions)
+                        {
+                            colors.Add(option);
+                        }
+                    }
+                }
             }
 
             return colors.ToList();
