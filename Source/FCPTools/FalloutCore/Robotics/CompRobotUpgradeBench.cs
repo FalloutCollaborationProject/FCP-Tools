@@ -28,6 +28,13 @@ namespace FCP.Core.Robotics
                 icon = ContentFinder<Texture2D>.Get("Things/Items/Techprints/FCP_Techprint_Holotape_Orange"),
                 action = OpenUpgradeSelectMenu,
             };
+            yield return new Command_Action
+            {
+                defaultLabel = "FCP_RobotInfo_Gizmo".Translate(),
+                defaultDesc = "FCP_RobotInfo_GizmoDesc".Translate(),
+                icon = TexButton.Info,
+                action = () => Find.WindowStack.Add(new Dialog_RobotInfo()),
+            };
         }
 
         private void OpenUpgradeSelectMenu()

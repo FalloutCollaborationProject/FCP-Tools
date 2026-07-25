@@ -29,6 +29,16 @@ namespace FCP.Core.Robotics
                 return;
             }
 
+            // Claim a random paired attachment preset (e.g. construction head+claw+color, never
+            // mixed) before the pawn ever ticks, so CompProtectronLoadout's own fallback doesn't
+            // overwrite it with the plain default loadout.
+            ProtectronPresetExtension presetExt = kindDef.GetModExtension<ProtectronPresetExtension>();
+            ProtectronLoadoutPreset wildPreset = presetExt?.RandomWildPreset();
+            if (wildPreset != null)
+            {
+                __result.GetComp<CompProtectronLoadout>()?.ApplyPreset(wildPreset.id);
+            }
+
             CompRefuelable fuel = __result.GetComp<CompRefuelable>();
             if (fuel != null && fuel.Fuel > 0f)
             {

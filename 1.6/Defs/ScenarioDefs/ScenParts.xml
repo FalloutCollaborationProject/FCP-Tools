@@ -13,4 +13,14 @@
         <summaryPriority>470</summaryPriority>
     </ScenPartDef>
 
+    <!--_____ Start Enlisted _____-->
+
+    <ScenPartDef>
+        <defName>FCP_StartEnlisted</defName>
+        <label>start enlisted</label>
+        <category>Misc</category>
+        <scenPartClass>FCP.Enlist.ScenPart_StartEnlisted</scenPartClass>
+        <summaryPriority>50</summaryPriority>
+    </ScenPartDef>
+
 </Defs>

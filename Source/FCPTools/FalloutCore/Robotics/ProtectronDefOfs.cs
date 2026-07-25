@@ -7,13 +7,7 @@ namespace FCP.Core.Robotics
     public static class PawnKindDefOf_Protectron
     {
         [MayRequire("Rick.FCP.Robotics")]
-        public static PawnKindDef FCP_Pawnkind_Protectron_VersionA;
-        [MayRequire("Rick.FCP.Robotics")]
-        public static PawnKindDef FCP_Pawnkind_Protectron_VersionB;
-        [MayRequire("Rick.FCP.Robotics")]
-        public static PawnKindDef FCP_Pawnkind_Protectron_Construction;
-        [MayRequire("Rick.FCP.Robotics")]
-        public static PawnKindDef FCP_Pawnkind_Protectron_Police;
+        public static PawnKindDef FCP_Pawnkind_Protectron;
 
         static PawnKindDefOf_Protectron()
         {

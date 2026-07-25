@@ -122,6 +122,20 @@ namespace FCP.Core.Robotics
                 return;
             }
 
+            CompAssaultronMode assaultronMode = robot.GetComp<CompAssaultronMode>();
+            if (assaultronMode != null)
+            {
+                string modeLabel = assaultronMode.Mode == AssaultronMode.GuardPawn
+                    ? "FCP_SecuritronMode_GuardPawn".Translate(assaultronMode.GuardedPawn?.LabelShort ?? "?")
+                    : assaultronMode.Mode == AssaultronMode.Assault
+                        ? "FCP_AssaultronMode_Assault".Translate()
+                        : "FCP_SecuritronMode_GuardHome".Translate();
+                DrawModeLabel(modeLabelRect, modeLabel);
+                DrawAssaultronButtons(buttonsRect, assaultronMode);
+                DrawSharedButtons(sharedButtonsRect, robot);
+                return;
+            }
+
             CompMrHandyMode mrHandyMode = robot.GetComp<CompMrHandyMode>();
             if (mrHandyMode != null)
             {
@@ -270,10 +284,11 @@ namespace FCP.Core.Robotics
 
         private static void DrawProtectronButtons(Rect rect, CompProtectronMode modeComp)
         {
-            float buttonWidth = (rect.width - 10f) / 3f;
+            float buttonWidth = (rect.width - 15f) / 4f;
             var guardRect = new Rect(rect.x, rect.y, buttonWidth, rect.height);
             var constructRect = new Rect(guardRect.xMax + 5f, rect.y, buttonWidth, rect.height);
             var haulRect = new Rect(constructRect.xMax + 5f, rect.y, buttonWidth, rect.height);
+            var cleanRect = new Rect(haulRect.xMax + 5f, rect.y, buttonWidth, rect.height);
 
             if (Widgets.ButtonText(guardRect, "FCP_ProtectronMode_Guard".Translate()))
             {
@@ -286,6 +301,40 @@ namespace FCP.Core.Robotics
             if (Widgets.ButtonText(haulRect, "FCP_ProtectronMode_Haul".Translate()))
             {
                 modeComp.SetMode(ProtectronMode.Haul);
+            }
+            if (Widgets.ButtonText(cleanRect, "FCP_ProtectronMode_Clean".Translate()))
+            {
+                modeComp.SetMode(ProtectronMode.Clean);
+            }
+        }
+
+        private void DrawAssaultronButtons(Rect rect, CompAssaultronMode modeComp)
+        {
+            float buttonWidth = (rect.width - 10f) / 3f;
+            var guardHomeRect = new Rect(rect.x, rect.y, buttonWidth, rect.height);
+            var guardPawnRect = new Rect(guardHomeRect.xMax + 5f, rect.y, buttonWidth, rect.height);
+            var assaultRect = new Rect(guardPawnRect.xMax + 5f, rect.y, buttonWidth, rect.height);
+
+            if (Widgets.ButtonText(guardHomeRect, "FCP_SecuritronMode_GuardHome".Translate()))
+            {
+                modeComp.SetGuardHome();
+            }
+            if (Widgets.ButtonText(guardPawnRect, "FCP_SecuritronMode_GuardPawn_Pick".Translate()))
+            {
+                List<FloatMenuOption> options = new List<FloatMenuOption>();
+                foreach (Pawn colonist in map.mapPawns.FreeColonists)
+                {
+                    options.Add(new FloatMenuOption(colonist.LabelShort, () => modeComp.SetGuardPawn(colonist)));
+                }
+                if (options.Count == 0)
+                {
+                    options.Add(new FloatMenuOption("FCP_ControlRobots_None".Translate(), null));
+                }
+                Find.WindowStack.Add(new FloatMenu(options));
+            }
+            if (Widgets.ButtonText(assaultRect, "FCP_AssaultronMode_Assault".Translate()))
+            {
+                modeComp.SetAssault();
             }
         }
 

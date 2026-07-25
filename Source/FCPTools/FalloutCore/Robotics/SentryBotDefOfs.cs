@@ -20,9 +20,9 @@ namespace FCP.Core.Robotics
     [DefOf]
     public static class HediffDefOf_SentryBot
     {
-        [MayRequire("Rick.FCP.Robotics")]
+        [MayRequire("Rick.FCP.BallisticWeapons")]
         public static HediffDef FCP_Hediff_SentryBot_Minigun;
-        [MayRequire("Rick.FCP.Robotics")]
+        [MayRequire("Rick.FCP.ExplosiveWeapons")]
         public static HediffDef FCP_Hediff_SentryBot_Rocket;
 
         static HediffDefOf_SentryBot()

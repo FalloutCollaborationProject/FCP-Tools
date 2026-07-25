@@ -161,6 +161,7 @@
         <disallowedTraits>
             <li>Nudist</li>
         </disallowedTraits>
+        <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
         <apparelTags>
             <li>FCP_Wastelander_Apparel</li>
         </apparelTags>
@@ -186,13 +187,16 @@
             </xenotypeChances>
         </xenotypeSet>
         <useFactionXenotypes>false</useFactionXenotypes>
-        <maxGenerationAge>60</maxGenerationAge>
+        <minGenerationAge>80</minGenerationAge>
+        <maxGenerationAge>250</maxGenerationAge>
+        <allowOldAgeInjuries>false</allowOldAgeInjuries>
         <chemicalAddictionChance>0.25</chemicalAddictionChance>
         <invNutrition>2.7</invNutrition>
         <invFoodDef>MealSurvivalPack</invFoodDef>
         <disallowedTraits>
             <li>Nudist</li>
         </disallowedTraits>
+        <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
         <apparelTags>
             <li>FCP_Wastelander_Apparel</li>
         </apparelTags>
@@ -218,13 +222,16 @@
             </xenotypeChances>
         </xenotypeSet>
         <useFactionXenotypes>false</useFactionXenotypes>
-        <maxGenerationAge>60</maxGenerationAge>
+        <minGenerationAge>80</minGenerationAge>
+        <maxGenerationAge>250</maxGenerationAge>
+        <allowOldAgeInjuries>false</allowOldAgeInjuries>
         <chemicalAddictionChance>0.25</chemicalAddictionChance>
         <invNutrition>2.7</invNutrition>
         <invFoodDef>MealSurvivalPack</invFoodDef>
         <disallowedTraits>
             <li>Nudist</li>
         </disallowedTraits>
+        <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
         <apparelTags>
             <li>FCP_Wastelander_Apparel</li>
         </apparelTags>

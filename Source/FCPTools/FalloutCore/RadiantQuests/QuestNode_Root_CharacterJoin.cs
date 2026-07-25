@@ -3,9 +3,9 @@ using RimWorld.Planet;
 using RimWorld.QuestGen;
 using Verse;
 
-namespace FCP.Core.Robotics
+namespace FCP.Core.RadiantQuests
 {
-    public class QuestNode_Root_RobotCharacterJoin : QuestNode_Root_RobotJoin
+    public class QuestNode_Root_CharacterJoin : QuestNode_Root_WandererJoin_WalkIn
     {
         public SlateRef<CharacterDef> characterDef;
 
@@ -23,17 +23,7 @@ namespace FCP.Core.Robotics
         public override Pawn GeneratePawn()
         {
             CharacterDef charDef = characterDef.GetValue(QuestGen.slate);
-            Pawn pawn;
-            WildRobotSpawn_Patch.Suppress = true;
-            try
-            {
-                pawn = UniqueCharactersTracker.Instance.GetOrGenPawn(charDef);
-            }
-            finally
-            {
-                WildRobotSpawn_Patch.Suppress = false;
-            }
-
+            Pawn pawn = UniqueCharactersTracker.Instance.GetOrGenPawn(charDef);
             if (!pawn.IsWorldPawn())
             {
                 Find.WorldPawns.PassToWorld(pawn);

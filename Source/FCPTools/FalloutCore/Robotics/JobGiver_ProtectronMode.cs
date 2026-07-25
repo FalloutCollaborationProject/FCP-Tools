@@ -57,6 +57,12 @@ namespace FCP.Core.Robotics
                     return CompProtectronLoadout.HasHand(pawn, HediffDefOf_Protectron.FCP_Hediff_Protectron_Hand_Default)
                         ? TryHaul(pawn)
                         : null;
+                case ProtectronMode.Clean:
+                    bool hasDefaultHead = CompProtectronLoadout.HasHead(pawn, HediffDefOf_Protectron.FCP_Hediff_Protectron_Head_Default);
+                    bool hasDefaultHand = CompProtectronLoadout.HasHand(pawn, HediffDefOf_Protectron.FCP_Hediff_Protectron_Hand_Default);
+                    return hasDefaultHead && hasDefaultHand
+                        ? TryWorkGiver(pawn, "CleanFilth", ThingRequestGroup.Filth)
+                        : null;
                 default:
                     return null;
             }

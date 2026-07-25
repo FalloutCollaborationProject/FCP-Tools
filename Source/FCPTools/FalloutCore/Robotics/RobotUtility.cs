@@ -48,6 +48,13 @@ namespace FCP.Core.Robotics
         public void UpgradeTo(Pawn robot, PawnKindDef nextTier) { }
     }
 
+    public class AssaultronTierProvider : IRobotTierProvider
+    {
+        public bool IsThisRace(Pawn pawn) => pawn?.kindDef?.race == ThingDefOf_Assaultron.FCP_Assaultron;
+        public PawnKindDef GetNextTier(PawnKindDef current) => null;
+        public void UpgradeTo(Pawn robot, PawnKindDef nextTier) { }
+    }
+
     public static class RobotUtility
     {
         private static readonly List<IRobotTierProvider> Providers = new List<IRobotTierProvider>
@@ -57,6 +64,7 @@ namespace FCP.Core.Robotics
             new ProtectronTierProvider(),
             new MrHandyTierProvider(),
             new SentryBotTierProvider(),
+            new AssaultronTierProvider(),
         };
 
         public static bool IsAnyRobot(Pawn pawn) => Providers.Any(p => p.IsThisRace(pawn));

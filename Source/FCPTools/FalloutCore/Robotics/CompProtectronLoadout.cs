@@ -22,7 +22,7 @@ namespace FCP.Core.Robotics
 
     public class CompProtectronLoadout : ThingComp
     {
-        private static readonly Color DefaultColor = new Color32(200, 200, 200, 255);
+        public const string DefaultPresetId = "Default";
 
         private bool didInitialSetup;
 
@@ -63,7 +63,6 @@ namespace FCP.Core.Robotics
             base.CompTick();
             if (!didInitialSetup)
             {
-                didInitialSetup = true;
                 DoInitialSetup();
             }
         }
@@ -76,24 +75,40 @@ namespace FCP.Core.Robotics
 
         private void DoInitialSetup()
         {
+            // Unforced fallback for pawns nothing else has claimed a preset for yet (e.g. a robot
+            // that ticks before a recipe/quest/character definition got a chance to call ApplyPreset).
+            // Wild spawns are claimed synchronously by WildRobotSpawn_Patch before they ever tick,
+            // so by the time this runs it's a no-op for them.
+            ApplyPreset(DefaultPresetId);
+        }
+
+        public void ApplyPreset(string presetId)
+        {
             Pawn pawn = Pawn;
-            if (pawn?.health == null)
+            if (pawn?.health == null || didInitialSetup && presetId == DefaultPresetId)
             {
                 return;
             }
 
-            ProtectronPresetExtension preset = pawn.kindDef.GetModExtension<ProtectronPresetExtension>();
-            bool wearHead = preset?.hasHead ?? true;
-            HediffDef headDef = preset?.head ?? HediffDefOf_Protectron.FCP_Hediff_Protectron_Head_Default;
-            HediffDef handDef = preset?.hand ?? HediffDefOf_Protectron.FCP_Hediff_Protectron_Hand_Default;
+            ProtectronPresetExtension ext = pawn.kindDef.GetModExtension<ProtectronPresetExtension>();
+            ProtectronLoadoutPreset preset = ext?.GetPreset(presetId);
+            if (preset == null)
+            {
+                return;
+            }
 
-            if (wearHead)
+            didInitialSetup = true;
+
+            HediffDef headDef = preset.head ?? HediffDefOf_Protectron.FCP_Hediff_Protectron_Head_Default;
+            HediffDef handDef = preset.hand ?? HediffDefOf_Protectron.FCP_Hediff_Protectron_Hand_Default;
+
+            if (preset.hasHead)
             {
                 SwapOnGroup(pawn, BodyPartGroupDefOf_Protectron.ProtectronHead, headDef);
             }
             SwapOnGroup(pawn, BodyPartGroupDefOf_Protectron.ProtectronHands, handDef);
 
-            pawn.SetColor(preset?.color ?? DefaultColor);
+            pawn.SetColor(preset.color);
             RobotUtility.TouchBodyColor(pawn);
             TouchHediffGraphic(pawn, headDef);
             TouchHediffGraphic(pawn, handDef);

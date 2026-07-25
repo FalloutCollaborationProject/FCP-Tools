@@ -8,6 +8,9 @@ namespace FCP.Core.Robotics
     public class RobotBuildExtension : DefModExtension
     {
         public PawnKindDef kindDef;
+
+        // Only meaningful for robots with a CompProtectronLoadout (e.g. protectrons); ignored otherwise.
+        public string presetId;
     }
 
     public class RecipeWorker_BuildRobot : RecipeWorker
@@ -25,6 +28,10 @@ namespace FCP.Core.Robotics
 
             PawnGenerationRequest request = new PawnGenerationRequest(ext.kindDef, Faction.OfPlayer);
             Pawn robot = PawnGenerator.GeneratePawn(request);
+            if (!ext.presetId.NullOrEmpty())
+            {
+                robot.GetComp<CompProtectronLoadout>()?.ApplyPreset(ext.presetId);
+            }
             GenSpawn.Spawn(robot, spawnCell, billDoer.Map);
 
             CompRefuelable fuel = robot.GetComp<CompRefuelable>();

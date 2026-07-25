@@ -38,7 +38,7 @@ public class CompHomingProjectile : ThingComp
     public override void PostDestroy(DestroyMode mode, Map previousMap)
     {
         base.PostDestroy(mode, previousMap);
-        Log.Message("Destroyed: " + this);
+        FCPLog.Verbose($"Destroyed: {this}");
     }
 
     public bool CanChangeTrajectory(out bool delayTurning)
@@ -115,7 +115,7 @@ public class CompHomingProjectile : ThingComp
         
         if (new FloatRange(targetAngle - Props.turnRate, targetAngle + Props.turnRate).Includes(curAngle))
         {
-            Log.Message($"Projectile.ExactRotation: {Projectile.ExactRotation.eulerAngles.y} - Not Rotating: Diff: {diff} - targetAngle: {targetAngle} - {curAngle} - destination: {destinationRotated} - ExactPosition: {Projectile.ExactPosition}");
+            FCPLog.Verbose($"Projectile.ExactRotation: {Projectile.ExactRotation.eulerAngles.y} - Not Rotating: Diff: {diff} - targetAngle: {targetAngle} - {curAngle} - destination: {destinationRotated} - ExactPosition: {Projectile.ExactPosition}");
             return false;
         }
 
@@ -124,12 +124,12 @@ public class CompHomingProjectile : ThingComp
         if (diff > 0 ? diff > 180f : diff >= -180f)
         {
             destinationRotated = newTarget.RotatedBy(-Props.turnRate);
-            Log.Message($"Projectile.ExactRotation: {Projectile.ExactRotation.eulerAngles.y} - Rotating counterclock: Diff: {diff} - targetAngle: {targetAngle} - {curAngle} - destinationRotated: {destinationRotated} - ExactPosition: {Projectile.ExactPosition}");
+            FCPLog.Verbose($"Projectile.ExactRotation: {Projectile.ExactRotation.eulerAngles.y} - Rotating counterclock: Diff: {diff} - targetAngle: {targetAngle} - {curAngle} - destinationRotated: {destinationRotated} - ExactPosition: {Projectile.ExactPosition}");
         }
         else
         {
             destinationRotated = newTarget.RotatedBy(Props.turnRate);
-            Log.Message($"Projectile.ExactRotation: {Projectile.ExactRotation.eulerAngles.y} - Rotating clock: Diff: {diff} - targetAngle: {targetAngle} - {curAngle} - destinationRotated: {destinationRotated} - ExactPosition: {Projectile.ExactPosition}");
+            FCPLog.Verbose($"Projectile.ExactRotation: {Projectile.ExactRotation.eulerAngles.y} - Rotating clock: Diff: {diff} - targetAngle: {targetAngle} - {curAngle} - destinationRotated: {destinationRotated} - ExactPosition: {Projectile.ExactPosition}");
         }
         Projectile.Map.debugDrawer.FlashCell(destinationRotated.ToIntVec3());
         return true;

@@ -19,7 +19,7 @@ public class WorldEnlistTracker : WorldComponent
 
     public IEnumerable<Faction> EnlistedFactions(FactionEnlistOptionsDef optionsDef)
     {
-        if (EnlistMod.settings.enlistStates[optionsDef.defName])
+        if (EnlistUtils.EnlistStates[optionsDef.defName])
         {
             foreach (KeyValuePair<Faction, FactionOptions> data in factionOptionsContainer)
             {
@@ -37,7 +37,7 @@ public class WorldEnlistTracker : WorldComponent
         {
             foreach (KeyValuePair<FactionEnlistOptionsDef, bool> subData in data.Value.factionsRecruiters)
             {
-                if (EnlistMod.settings.enlistStates[subData.Key.defName] && subData.Value)
+                if (EnlistUtils.EnlistStates[subData.Key.defName] && subData.Value)
                 {
                     yield return data.Key;
                 }

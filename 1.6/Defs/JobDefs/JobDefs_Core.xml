@@ -274,4 +274,31 @@
         <casualInterruptible>false</casualInterruptible>
     </JobDef>
 
+    <!-- Radio -->
+
+    <JobDef>
+        <defName>FCP_RadioTuneStation</defName>
+        <driverClass>FCP.Core.Radio.JobDriver_RadioTuneStation</driverClass>
+        <reportString>tuning TargetA.</reportString>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+
+    <JobDef>
+        <defName>FCP_RadioCallCaravan</defName>
+        <driverClass>FCP.Core.Radio.JobDriver_RadioCallCaravan</driverClass>
+        <reportString>calling a caravan on TargetA.</reportString>
+    </JobDef>
+
+    <JobDef>
+        <defName>FCP_RadioCallReinforcements</defName>
+        <driverClass>FCP.Core.Radio.JobDriver_RadioCallReinforcements</driverClass>
+        <reportString>calling for reinforcements on TargetA.</reportString>
+    </JobDef>
+
+    <JobDef>
+        <defName>FCP_RadioGatherIntel</defName>
+        <driverClass>FCP.Core.Radio.JobDriver_RadioGatherIntel</driverClass>
+        <reportString>gathering intel on TargetA.</reportString>
+    </JobDef>
+
 </Defs>

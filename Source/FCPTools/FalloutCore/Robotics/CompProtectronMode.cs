@@ -6,7 +6,8 @@ namespace FCP.Core.Robotics
     {
         Guard,
         Construct,
-        Haul
+        Haul,
+        Clean
     }
 
     public class CompProperties_ProtectronMode : CompProperties

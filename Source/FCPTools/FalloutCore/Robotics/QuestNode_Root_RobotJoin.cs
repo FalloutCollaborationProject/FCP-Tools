@@ -11,6 +11,9 @@ namespace FCP.Core.Robotics
 
         public SlateRef<PawnKindDef> kindDef;
 
+        // Only meaningful for robots with a CompProtectronLoadout (e.g. protectrons); ignored otherwise.
+        public SlateRef<string> presetId;
+
         private string signalAccept;
         private string signalReject;
 
@@ -36,6 +39,12 @@ namespace FCP.Core.Robotics
             finally
             {
                 WildRobotSpawn_Patch.Suppress = false;
+            }
+
+            string preset = presetId.GetValue(QuestGen.slate);
+            if (!preset.NullOrEmpty())
+            {
+                pawn.GetComp<CompProtectronLoadout>()?.ApplyPreset(preset);
             }
 
             if (!pawn.IsWorldPawn())

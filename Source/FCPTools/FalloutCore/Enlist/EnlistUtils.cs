@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using FCP.Core;
+using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 using Verse;
@@ -8,17 +9,17 @@ namespace FCP.Enlist;
 [StaticConstructorOnStartup]
 public static class EnlistUtils
 {
+    public static Dictionary<string, bool> EnlistStates => FCPCoreMod.SettingsTab<EnlistSettings>().enlistStates;
+
     static EnlistUtils()
     {
+        FCPCoreMod.SettingsTab<EnlistSettings>().OnSaved = DoDefsRemoval;
+
         foreach (var factionEnlistOptionsDef in DefDatabase<FactionEnlistOptionsDef>.AllDefs)
         {
-            if (EnlistMod.settings.enlistStates == null) EnlistMod.settings.enlistStates = new Dictionary<string, bool>();
-            if (!EnlistMod.settings.enlistStates.ContainsKey(factionEnlistOptionsDef.defName))
-            {
-                EnlistMod.settings.enlistStates[factionEnlistOptionsDef.defName] = true;
-            }
+            EnlistStates.TryAdd(factionEnlistOptionsDef.defName, true);
 
-            if (EnlistMod.settings.enlistStates[factionEnlistOptionsDef.defName] && factionEnlistOptionsDef.autoAssignToAllFactions)
+            if (EnlistStates[factionEnlistOptionsDef.defName] && factionEnlistOptionsDef.autoAssignToAllFactions)
             {
                 foreach (var factionDef in DefDatabase<FactionDef>.AllDefs)
                 {
@@ -126,7 +127,7 @@ public static class EnlistUtils
                 }
             }
         }
-        return optionDefs.Where(x => EnlistMod.settings.enlistStates[x.defName]).ToList();
+        return optionDefs.Where(x => EnlistStates[x.defName]).ToList();
     }
 
     private static void AssignModExtension(FactionDef factionDef, FactionEnlistOptionsDef factionEnlistOptionsDef)
@@ -162,7 +163,7 @@ public static class EnlistUtils
     }
     public static void DoDefsRemoval()
     {
-        foreach (var enlistState in EnlistMod.settings.enlistStates)
+        foreach (var enlistState in EnlistStates)
         {
             if (!enlistState.Value)
             {

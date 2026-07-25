@@ -6,6 +6,17 @@
 	<FCP_Settings_Category>FCP Tools</FCP_Settings_Category>
 	<FCP_Settings.General>General</FCP_Settings.General>
 	<FCP_Settings.General.tt>Options that affect the whole mod or don't fit anywhere else.</FCP_Settings.General.tt>
+	<FCP_Settings.Scenarios>Scenarios</FCP_Settings.Scenarios>
+	<FCP_Settings.Scenarios.tt>Options that affect new-game scenarios, like starting already enlisted with a faction.</FCP_Settings.Scenarios.tt>
+
+	<!-- Scenario Settings -->
+
+	<FCP_Settings_Scenarios_Enlistment>Enlistment</FCP_Settings_Scenarios_Enlistment>
+	<FCP_Settings_Scenarios_EnableEnlistedStart>Allow scenarios to start already enlisted</FCP_Settings_Scenarios_EnableEnlistedStart>
+	<FCP_Settings_Scenarios_EnableEnlistedStart_Desc>When enabled, scenarios that include a "start enlisted" part will automatically enlist your colony with that faction's enlistment program at game start, granting immediate access to salary, provisions, and other enlistment benefits. Disable this to make such scenarios start unenlisted instead.</FCP_Settings_Scenarios_EnableEnlistedStart_Desc>
+	<FCP_Settings_Scenarios_Calendar>Calendar</FCP_Settings_Scenarios_Calendar>
+	<FCP_Settings_Scenarios_StartingYear>Starting year</FCP_Settings_Scenarios_StartingYear>
+	<FCP_Settings_Scenarios_StartingYear_Desc>The in-fiction calendar year your playthrough is set in. Purely cosmetic - it's used in opening narration text where scenarios reference it, but doesn't change game mechanics.</FCP_Settings_Scenarios_StartingYear_Desc>
 
 	<!-- Terminal UI Settings -->
 
@@ -133,6 +144,10 @@
 	<FCP_Enemy_Of_Enlist_Faction>New Enemy</FCP_Enemy_Of_Enlist_Faction>
 	<FCP_Enemy_Of_Enlist_Faction_Desc>By enlisting with {ENLISTED_name}, you have become an enemy of {HOSTILE_name}. They are now hostile toward your colony.</FCP_Enemy_Of_Enlist_Faction_Desc>
 
+	<!-- Enlistment - Start Enlisted ScenPart -->
+
+	<FCP_ScenPart_StartEnlisted>start already enlisted with {0}</FCP_ScenPart_StartEnlisted>
+
 	<!-- Goodwill Recipe -->
 
 	<GoodwillUnmet>not enough goodwill with {0}, require {1} minimum</GoodwillUnmet>
@@ -215,5 +230,21 @@
 
 	<FCP_CannotLaunchToOrbit>This vertibird is designed for atmospheric flight only and cannot reach orbital altitudes.</FCP_CannotLaunchToOrbit>
 
+	<!-- Radio -->
+
+	<FCP_Radio_Use>Use radio</FCP_Radio_Use>
+	<FCP_Radio_TuneStation>Tune radio station</FCP_Radio_TuneStation>
+	<FCP_Radio_NowPlaying>Now playing: {0}</FCP_Radio_NowPlaying>
+	<FCP_Radio_CallCaravan>Call {0} ({1} {2})</FCP_Radio_CallCaravan>
+	<FCP_Radio_CallReinforcements>Call reinforcements from {0}</FCP_Radio_CallReinforcements>
+	<FCP_Radio_GatherIntel>Gather intel about the wastes</FCP_Radio_GatherIntel>
+	<FCP_Radio_OnCooldown>ready in {0}d</FCP_Radio_OnCooldown>
+	<FCP_Radio_IntelFoundTitle>Intel Gathered</FCP_Radio_IntelFoundTitle>
+	<FCP_Radio_IntelFoundText>{0} picked up chatter on the radio and pinpointed a nearby location worth investigating: {1}.</FCP_Radio_IntelFoundText>
+	<FCP_Radio_IntelNothingFound>{0} found nothing useful on the radio waves.</FCP_Radio_IntelNothingFound>
+	<FCP_Radio_TraderDead>{0} is dead</FCP_Radio_TraderDead>
+	<FCP_Radio_TraderBusy>{0} is already out and about</FCP_Radio_TraderBusy>
+	<FCP_Radio_TraderArrivedTitle>Trader Arrived</FCP_Radio_TraderArrivedTitle>
+	<FCP_Radio_TraderArrivedText>{0} answered the call over the radio and has arrived to trade, courtesy of {1}.</FCP_Radio_TraderArrivedText>
 
 </LanguageData>

@@ -66,7 +66,7 @@ namespace FCP.Core.Robotics
         public static HediffDef FCP_Hediff_Securitron_Face_Victor;
         [MayRequire("Rick.FCP.Robotics")]
         public static HediffDef FCP_Hediff_Securitron_Gun;
-        [MayRequire("Rick.FCP.Robotics")]
+        [MayRequire("Rick.FCP.ExplosiveWeapons")]
         public static HediffDef FCP_Hediff_Securitron_GrenadeLauncher;
         [MayRequire("Rick.FCP.Robotics")]
         public static HediffDef FCP_Hediff_Securitron_RocketPod;

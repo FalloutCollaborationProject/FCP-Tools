@@ -91,9 +91,13 @@ namespace FCP.Core.Robotics
 
         private static HediffDef WeaponHediffFor(SecuritronWeapon w)
         {
-            return w == SecuritronWeapon.Gun
-                ? HediffDefOf_Securitron.FCP_Hediff_Securitron_Gun
-                : HediffDefOf_Securitron.FCP_Hediff_Securitron_GrenadeLauncher;
+            // Falls back to the always-available gun arm if the grenade launcher hediff didn't
+            // bind (e.g. Explosive Weapons isn't loaded) rather than handing EquipWeapon a null def.
+            if (w == SecuritronWeapon.GrenadeLauncher && HediffDefOf_Securitron.FCP_Hediff_Securitron_GrenadeLauncher != null)
+            {
+                return HediffDefOf_Securitron.FCP_Hediff_Securitron_GrenadeLauncher;
+            }
+            return HediffDefOf_Securitron.FCP_Hediff_Securitron_Gun;
         }
 
         private static BodyPartRecord FindWeaponMount(Pawn pawn)
@@ -103,7 +107,7 @@ namespace FCP.Core.Robotics
 
         private static void EquipWeapon(Pawn pawn, HediffDef weaponDef)
         {
-            if (pawn?.health == null)
+            if (pawn?.health == null || weaponDef == null)
             {
                 return;
             }
