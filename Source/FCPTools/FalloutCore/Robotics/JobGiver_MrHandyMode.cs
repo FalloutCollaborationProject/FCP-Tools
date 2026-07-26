@@ -40,6 +40,11 @@ namespace FCP.Core.Robotics
                 return null;
             }
 
+            if (pawn.Faction != Faction.OfPlayer)
+            {
+                return base.TryGiveJob(pawn);
+            }
+
             CompMrHandyMode modeComp = pawn.GetComp<CompMrHandyMode>();
             CompMrHandyLoadout loadout = pawn.GetComp<CompMrHandyLoadout>();
             if (modeComp == null || loadout == null || !loadout.SupportsMode(modeComp.Mode))

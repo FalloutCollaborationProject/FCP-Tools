@@ -44,6 +44,11 @@ namespace FCP.Core.Robotics
                 return null;
             }
 
+            if (pawn.Faction != Faction.OfPlayer)
+            {
+                return base.TryGiveJob(pawn);
+            }
+
             CompEyebotMode modeComp = pawn.GetComp<CompEyebotMode>();
             if (modeComp == null)
             {

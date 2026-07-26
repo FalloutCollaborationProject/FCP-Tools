@@ -40,6 +40,11 @@ namespace FCP.Core.Robotics
                 return null;
             }
 
+            if (pawn.Faction != Faction.OfPlayer)
+            {
+                return base.TryGiveJob(pawn);
+            }
+
             CompAssaultronMode modeComp = pawn.GetComp<CompAssaultronMode>();
             if (modeComp == null)
             {
