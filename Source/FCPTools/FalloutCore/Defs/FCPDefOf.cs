@@ -30,6 +30,9 @@ public class FCPDefOf
 
     public static HediffDef FCP_VATSCrippledHediff;
     public static HediffDef FCP_VATSPoisoning;
+
+    [MayRequire("Rick.FCP.Animals")]
+    public static ThingDef FCP_PawnFlyer_BurrowAmbush;
     static FCPDefOf()
     {
         DefOfHelper.EnsureInitializedInCtor(typeof(FCPDefOf));
