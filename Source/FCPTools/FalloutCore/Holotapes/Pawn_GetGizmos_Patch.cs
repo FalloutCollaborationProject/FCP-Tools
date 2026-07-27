@@ -6,17 +6,6 @@ using UnityEngine;
 
 namespace FCP.Core.Holotapes
 {
-    [StaticConstructorOnStartup]
-    public static class HolotapesHarmonyInit
-    {
-        static HolotapesHarmonyInit()
-        {
-            Log.Message("[FCP.Core] Holotapes Harmony patches initializing...");
-            new HarmonyLib.Harmony("FCP.Core.Holotapes").PatchAll();
-            Log.Message("[FCP.Core] Holotapes Harmony patches complete!");
-        }
-    }
-
     [HarmonyPatch(typeof(Pawn), "GetGizmos")]
     public static class Pawn_GetGizmos_Patch
     {

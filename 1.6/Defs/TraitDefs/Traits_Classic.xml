@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Traits __________-->
+
+    <!--_____ Classic (Fallout 1/2) _____-->
+
+    <!-- Bruiser - stronger, but slower and clumsier -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Bruiser</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Bruiser</label>
+                <description>{PAWN_nameDef} is built like a brick outhouse, able to carry far more than most, but {PAWN_possessive} bulk slows {PAWN_objective} down.</description>
+                <statOffsets>
+                    <CarryingCapacity>0.20</CarryingCapacity>
+                    <MoveSpeed>-0.15</MoveSpeed>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Finesse - more likely to land a hit, but pulls the blow -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Finesse</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Finesse</label>
+                <description>{PAWN_nameDef} fights with precision over power, landing hits far more often but pulling them short of full force.</description>
+                <statOffsets>
+                    <MeleeHitChance>0.10</MeleeHitChance>
+                    <ShootingAccuracyPawn>0.06</ShootingAccuracyPawn>
+                    <MeleeDamageFactor>-0.20</MeleeDamageFactor>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Gifted - broadly capable from the start, but slower to grow -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Gifted</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Gifted</label>
+                <description>{PAWN_nameDef} was simply born with more to work with - stronger, sharper, and steadier than most. {PAWN_pronoun} already has so much natural talent that {PAWN_pronoun} struggles to improve further.</description>
+                <statOffsets>
+                    <MoveSpeed>0.05</MoveSpeed>
+                    <ShootingAccuracyPawn>0.05</ShootingAccuracyPawn>
+                    <MeleeHitChance>0.05</MeleeHitChance>
+                    <ImmunityGainSpeed>0.10</ImmunityGainSpeed>
+                    <GlobalLearningFactor>-0.20</GlobalLearningFactor>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Good Natured - a healer and talker first, a fighter last -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Good_Natured</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Good Natured</label>
+                <description>{PAWN_nameDef} would rather patch a wound or talk a deal than throw a punch. {PAWN_pronoun} is a capable healer and negotiator, but noticeably worse in a fight.</description>
+                <statOffsets>
+                    <MedicalTendQuality>0.08</MedicalTendQuality>
+                    <MedicalTendSpeed>0.15</MedicalTendSpeed>
+                    <TradePriceImprovement>0.08</TradePriceImprovement>
+                    <MeleeDamageFactor>-0.15</MeleeDamageFactor>
+                    <ShootingAccuracyPawn>-0.08</ShootingAccuracyPawn>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Jinxed - bad luck follows this pawn everywhere, especially their gear -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Jinxed</defName>
+        <commonality>0.6</commonality>
+        <degreeDatas>
+            <li>
+                <label>Jinxed</label>
+                <description>Nothing ever seems to go right around {PAWN_nameDef}. Weapons jam, gear breaks, and misfortune finds {PAWN_objective} at the worst possible moment.</description>
+                <statOffsets>
+                    <FCP_WeaponConditionLossFactor>0.50</FCP_WeaponConditionLossFactor>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Kamikaze - acts fast, defends slow -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Kamikaze</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Kamikaze</label>
+                <description>{PAWN_nameDef} throws caution to the wind, acting before anyone else can - at the cost of leaving {PAWN_objective}self wide open.</description>
+                <statOffsets>
+                    <AimingDelayFactor>-0.25</AimingDelayFactor>
+                    <ArmorRating_Sharp>-0.08</ArmorRating_Sharp>
+                    <ArmorRating_Blunt>-0.08</ArmorRating_Blunt>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- One Hander - deadly with a pistol, clumsy with anything bigger -->
+
+    <TraitDef>
+        <defName>FCP_Trait_One_Hander</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>One Hander</label>
+                <description>{PAWN_nameDef} favors weapons {PAWN_pronoun} can wield in a single hand, and handles heavier two-handed arms noticeably worse.</description>
+                <statOffsets>
+                    <ShootingAccuracyPawn>0.10</ShootingAccuracyPawn>
+                    <AimingDelayFactor>0.12</AimingDelayFactor>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Skilled - a broad head start that levels off early -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Skilled</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Skilled</label>
+                <description>{PAWN_nameDef} arrived already well-rounded and capable, but {PAWN_pronoun} has hit a plateau - {PAWN_pronoun} picks up new skills more slowly than most.</description>
+                <statOffsets>
+                    <ConstructionSpeed>0.15</ConstructionSpeed>
+                    <ResearchSpeed>0.15</ResearchSpeed>
+                    <GlobalLearningFactor>-0.20</GlobalLearningFactor>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Small Frame - nimble, but easier to cripple -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Small_Frame</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Small Frame</label>
+                <description>{PAWN_nameDef} is lighter on {PAWN_possessive} feet than most, but {PAWN_possessive} smaller frame can't take a beating the way a bigger build can.</description>
+                <statOffsets>
+                    <MoveSpeed>0.08</MoveSpeed>
+                    <CarryingCapacity>-0.15</CarryingCapacity>
+                    <PainShockThreshold>-0.10</PainShockThreshold>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Sex Appeal (FO2) - charming, but it can rub people the wrong way -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Sex_Appeal</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Sex Appeal</label>
+                <description>{PAWN_nameDef} has an easy charm that opens doors, though {PAWN_possessive} confidence occasionally comes across as arrogance.</description>
+                <statOffsets>
+                    <SocialImpact>0.12</SocialImpact>
+                    <ArrestSuccessChance>0.05</ArrestSuccessChance>
+                    <NegotiationAbility>-0.08</NegotiationAbility>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+</Defs>

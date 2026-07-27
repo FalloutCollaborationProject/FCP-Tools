@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using FCP.Core.Traits;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -40,6 +41,11 @@ namespace FCP.Core.Robotics
             }
         }
 
+        public static bool HackerQualified(Pawn hacker)
+        {
+            return hacker?.story?.traits?.HasTrait(TraitsDefOf.FCP_Trait_Robotics_Expert) == true;
+        }
+
         public float GetSuccessChance(Pawn hacker)
         {
             float skillLevel = hacker.skills?.GetSkill(SkillDefOf.Intellectual).Level ?? 0f;
@@ -73,6 +79,12 @@ namespace FCP.Core.Robotics
         {
             if (!CanBeHacked)
             {
+                yield break;
+            }
+
+            if (!HackerQualified(selPawn))
+            {
+                yield return new FloatMenuOption("FCP_HackRobot_Perform".Translate() + ": " + "FCP_HackRobot_NeedsRoboticsExpert".Translate(), null);
                 yield break;
             }
 

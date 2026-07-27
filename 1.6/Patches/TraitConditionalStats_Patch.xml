@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+    <!-- Night Person: +INT/+PER at night, -INT/-PER during the day -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/StatDef[defName="GlobalLearningFactor"]</xpath>
+        <value>
+            <parts>
+                <li Class="FCP.Core.Traits.StatPart_TraitConditional">
+                    <trait>FCP_Trait_Night_Person</trait>
+                    <condition>NightTime</condition>
+                    <offset>0.10</offset>
+                </li>
+                <li Class="FCP.Core.Traits.StatPart_TraitConditional">
+                    <trait>FCP_Trait_Night_Person</trait>
+                    <condition>DayTime</condition>
+                    <offset>-0.10</offset>
+                </li>
+            </parts>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/StatDef[defName="ShootingAccuracyPawn"]</xpath>
+        <value>
+            <parts>
+                <li Class="FCP.Core.Traits.StatPart_TraitConditional">
+                    <trait>FCP_Trait_Night_Person</trait>
+                    <condition>NightTime</condition>
+                    <offset>0.05</offset>
+                </li>
+                <li Class="FCP.Core.Traits.StatPart_TraitConditional">
+                    <trait>FCP_Trait_Night_Person</trait>
+                    <condition>DayTime</condition>
+                    <offset>-0.05</offset>
+                </li>
+            </parts>
+        </value>
+    </Operation>
+
+    <!-- Solar Powered: rest/recovery bonus while outdoors in daylight -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/StatDef[defName="RestRateMultiplier"]</xpath>
+        <value>
+            <parts>
+                <li Class="FCP.Core.Traits.StatPart_TraitConditional">
+                    <trait>FCP_Trait_Solar_Powered</trait>
+                    <condition>DayTime</condition>
+                    <offset>0.15</offset>
+                    <requireUnroofed>true</requireUnroofed>
+                </li>
+            </parts>
+        </value>
+    </Operation>
+
+    <!-- Rooted: sturdier while standing still -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/StatDef[defName="ArmorRating_Sharp"]</xpath>
+        <value>
+            <parts>
+                <li Class="FCP.Core.Traits.StatPart_TraitConditional">
+                    <trait>FCP_Trait_Rooted</trait>
+                    <condition>Stationary</condition>
+                    <offset>0.08</offset>
+                </li>
+            </parts>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/StatDef[defName="ArmorRating_Blunt"]</xpath>
+        <value>
+            <parts>
+                <li Class="FCP.Core.Traits.StatPart_TraitConditional">
+                    <trait>FCP_Trait_Rooted</trait>
+                    <condition>Stationary</condition>
+                    <offset>0.08</offset>
+                </li>
+            </parts>
+        </value>
+    </Operation>
+
+    <!-- Serendipity: much harder to hit when badly wounded -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>Defs/StatDef[defName="IncomingDamageFactor"]</xpath>
+        <value>
+            <parts>
+                <li Class="FCP.Core.Traits.StatPart_TraitConditional">
+                    <trait>FCP_Trait_Serendipity</trait>
+                    <condition>LowHealth</condition>
+                    <healthThreshold>0.3</healthThreshold>
+                    <offset>-0.35</offset>
+                </li>
+            </parts>
+        </value>
+    </Operation>
+
+</Patch>

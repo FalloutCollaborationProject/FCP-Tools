@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <StatDef>
+        <defName>FCP_WeaponConditionLossFactor</defName>
+        <label>weapon wear factor</label>
+        <description>A multiplier on how quickly this pawn's equipped weapon loses condition when fired.</description>
+        <category>PawnCombat</category>
+        <defaultBaseValue>1.0</defaultBaseValue>
+        <toStringStyle>PercentZero</toStringStyle>
+        <showOnAnimals>false</showOnAnimals>
+        <showOnEntities>false</showOnEntities>
+        <hideAtValue>1</hideAtValue>
+        <minValue>0.1</minValue>
+        <displayPriorityInCategory>0</displayPriorityInCategory>
+    </StatDef>
+
+</Defs>

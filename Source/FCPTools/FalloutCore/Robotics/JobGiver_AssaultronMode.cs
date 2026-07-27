@@ -35,11 +35,6 @@ namespace FCP.Core.Robotics
                 return null;
             }
 
-            if (pawn.Faction == null)
-            {
-                return null;
-            }
-
             if (pawn.Faction != Faction.OfPlayer)
             {
                 return base.TryGiveJob(pawn);

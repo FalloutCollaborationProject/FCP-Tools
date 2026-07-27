@@ -18,14 +18,14 @@
         </degreeDatas>
     </TraitDef>
 
-    <!-- Tough -->
+    <!-- Toughness -->
 
     <TraitDef>
         <defName>FCP_Trait_Tough</defName>
         <commonality>1</commonality>
         <degreeDatas>
             <li>
-                <label>Tough</label>
+                <label>Toughness</label>
                 <description>{PAWN_nameDef} is exceptionally tough, taking less damage from all sources.</description>
                 <statOffsets>
                     <ArmorRating_Sharp>0.10</ArmorRating_Sharp>
@@ -36,7 +36,7 @@
         </degreeDatas>
     </TraitDef>
 
-    <!-- Fast Metabolism -->
+    <!-- Fast Metabolism (FO1/2/NV trait) - faster healing, but rad and poison resistance suffer -->
 
     <TraitDef>
         <defName>FCP_Trait_Fast_Metabolism</defName>
@@ -44,31 +44,33 @@
         <degreeDatas>
             <li>
                 <label>Fast Metabolism</label>
-                <description>{PAWN_nameDef} heals wounds faster.</description>
+                <description>{PAWN_nameDef} heals wounds and shakes off disease faster than most, but their body has no reserves left to resist toxins or radiation.</description>
                 <statOffsets>
+                    <InjuryHealingFactor>0.25</InjuryHealingFactor>
                     <ImmunityGainSpeed>0.20</ImmunityGainSpeed>
+                    <ToxicResistance>-0.30</ToxicResistance>
                 </statOffsets>
             </li>
         </degreeDatas>
     </TraitDef>
 
-    <!-- Sharpshooter -->
+    <!-- Sniper (NV perk) -->
 
     <TraitDef>
         <defName>FCP_Trait_Sharpshooter</defName>
         <commonality>1</commonality>
         <degreeDatas>
             <li>
-                <label>Sharpshooter</label>
-                <description>{PAWN_nameDef} is a master of ranged weapons, rarely missing a shot.</description>
+                <label>Sniper</label>
+                <description>{PAWN_nameDef} has a gift for placing shots exactly where they need to go, rarely missing at range.</description>
                 <statOffsets>
-                    <ShootingAccuracyPawn>0.10</ShootingAccuracyPawn>
+                    <ShootingAccuracyPawn>0.12</ShootingAccuracyPawn>
                 </statOffsets>
             </li>
         </degreeDatas>
     </TraitDef>
 
-    <!-- Heavy Handed -->
+    <!-- Heavy Handed (FO1/2/NV trait) - harder hits, weaker precision -->
 
     <TraitDef>
         <defName>FCP_Trait_Heavy_Handed</defName>
@@ -76,32 +78,33 @@
         <degreeDatas>
             <li>
                 <label>Heavy Handed</label>
-                <description>{PAWN_nameDef} hits harder in melee combat, but is less precise.</description>
+                <description>{PAWN_nameDef} swings and strikes with real force, but overcommits, leaving {PAWN_objective} easier to dodge or block.</description>
                 <statOffsets>
-                    <MeleeDPS>0.20</MeleeDPS>
-                    <MeleeHitChance>-0.10</MeleeHitChance>
+                    <MeleeDamageFactor>0.20</MeleeDamageFactor>
+                    <MeleeHitChance>-0.12</MeleeHitChance>
                 </statOffsets>
             </li>
         </degreeDatas>
     </TraitDef>
 
-    <!-- Quick Draw -->
+    <!-- Fast Shot (FNV trait) - fires faster, but far less accurate -->
 
     <TraitDef>
         <defName>FCP_Trait_Quick_Draw</defName>
         <commonality>1</commonality>
         <degreeDatas>
             <li>
-                <label>Quick Draw</label>
-                <description>{PAWN_nameDef} draws and aims weapons faster than most.</description>
+                <label>Fast Shot</label>
+                <description>{PAWN_nameDef} snaps off shots and draws weapons quickly without lining up the shot, trading accuracy for speed.</description>
                 <statOffsets>
-                    <AimingDelayFactor>-0.15</AimingDelayFactor>
+                    <AimingDelayFactor>-0.20</AimingDelayFactor>
+                    <ShootingAccuracyPawn>-0.15</ShootingAccuracyPawn>
                 </statOffsets>
             </li>
         </degreeDatas>
     </TraitDef>
 
-    <!-- Night Person -->
+    <!-- Night Person (FO1/2/NV trait) - sharper at night, duller by day -->
 
     <TraitDef>
         <defName>FCP_Trait_Night_Person</defName>
@@ -109,16 +112,12 @@
         <degreeDatas>
             <li>
                 <label>Night Person</label>
-                <description>{PAWN_nameDef} is more alert and productive at night.</description>
-                <statOffsets>
-                    <GlobalLearningFactor>0.10</GlobalLearningFactor>
-                    <MoveSpeed>0.10</MoveSpeed>
-                </statOffsets>
+                <description>{PAWN_nameDef} thinks and shoots straighter after dark, and is noticeably duller during the day.</description>
             </li>
         </degreeDatas>
     </TraitDef>
 
-    <!-- Bloody Mess -->
+    <!-- Bloody Mess (FO1/2/3/NV trait) - purely cosmetic, no combat benefit -->
 
     <TraitDef>
         <defName>FCP_Trait_Bloody_Mess</defName>
@@ -126,16 +125,12 @@
         <degreeDatas>
             <li>
                 <label>Bloody Mess</label>
-                <description>{PAWN_nameDef} causes more violent deaths and destruction in combat.</description>
-                <statOffsets>
-                    <MeleeDPS>0.10</MeleeDPS>
-                    <ShootingAccuracyPawn>0.05</ShootingAccuracyPawn>
-                </statOffsets>
+                <description>Everything {PAWN_nameDef} kills comes apart at the seams - limbs gone, viscera everywhere. It has no bearing on {PAWN_possessive} combat ability whatsoever - {PAWN_pronoun} is just unlucky like that.</description>
             </li>
         </degreeDatas>
     </TraitDef>
 
-    <!-- Lead Belly -->
+    <!-- Lead Belly (FO3/NV/4 perk) -->
 
     <TraitDef>
         <defName>FCP_Trait_Lead_Belly</defName>
@@ -143,15 +138,15 @@
         <degreeDatas>
             <li>
                 <label>Lead Belly</label>
-                <description>{PAWN_nameDef} is resistant to food poisoning.</description>
+                <description>{PAWN_nameDef} has learned the hard way how to keep food and water safe to consume, rarely spoiling a meal {PAWN_pronoun} prepares.</description>
                 <statOffsets>
-                    <FoodPoisonChance>-0.25</FoodPoisonChance>
+                    <FoodPoisonChance>-0.35</FoodPoisonChance>
                 </statOffsets>
             </li>
         </degreeDatas>
     </TraitDef>
 
-    <!-- Iron Fist -->
+    <!-- Iron Fist (FO4 perk) -->
 
     <TraitDef>
         <defName>FCP_Trait_Iron_Fist</defName>
@@ -161,13 +156,13 @@
                 <label>Iron Fist</label>
                 <description>{PAWN_nameDef} is skilled in unarmed combat, dealing more damage with fists.</description>
                 <statOffsets>
-                    <MeleeDPS>0.15</MeleeDPS>
+                    <MeleeDamageFactor>0.15</MeleeDamageFactor>
                 </statOffsets>
             </li>
         </degreeDatas>
     </TraitDef>
 
-    <!-- Swift Learner -->
+    <!-- Swift Learner (FO3/NV/4 perk) -->
 
     <TraitDef>
         <defName>FCP_Trait_Swift_Learner</defName>
@@ -183,7 +178,7 @@
         </degreeDatas>
     </TraitDef>
 
-    <!-- Action Boy/Girl -->
+    <!-- Action Boy/Girl (FO3/NV perk) -->
 
     <TraitDef>
         <defName>FCP_Trait_Action_Boy</defName>
@@ -200,7 +195,7 @@
         </degreeDatas>
     </TraitDef>
 
-    <!-- Fortune Finder -->
+    <!-- Fortune Finder (NV/4 perk) -->
 
     <TraitDef>
         <defName>FCP_Trait_Fortune_Finder</defName>
@@ -216,7 +211,7 @@
         </degreeDatas>
     </TraitDef>
 
-    <!-- Animal Friend -->
+    <!-- Animal Friend (FO3/NV/4 perk) -->
 
     <TraitDef>
         <defName>FCP_Trait_Animal_Friend</defName>
@@ -224,15 +219,17 @@
         <degreeDatas>
             <li>
                 <label>Animal Friend</label>
-                <description>{PAWN_nameDef} is naturally good with animals and less likely to be attacked by them.</description>
+                <description>{PAWN_nameDef} is naturally good with animals, calming and winning over even wild and skittish ones.</description>
                 <statOffsets>
                     <AnimalGatherYield>0.15</AnimalGatherYield>
+                    <TameAnimalChance>0.15</TameAnimalChance>
+                    <TrainAnimalChance>0.15</TrainAnimalChance>
                 </statOffsets>
             </li>
         </degreeDatas>
     </TraitDef>
 
-    <!-- Commando -->
+    <!-- Commando (NV/4 perk) -->
 
     <TraitDef>
         <defName>FCP_Trait_Commando</defName>
@@ -249,7 +246,7 @@
         </degreeDatas>
     </TraitDef>
 
-    <!-- Gunslinger -->
+    <!-- Gunslinger (NV/4 perk) -->
 
     <TraitDef>
         <defName>FCP_Trait_Gunslinger</defName>
@@ -266,7 +263,7 @@
         </degreeDatas>
     </TraitDef>
 
-    <!-- Scrounger -->
+    <!-- Scrounger (NV perk) -->
 
     <TraitDef>
         <defName>FCP_Trait_Scrounger</defName>
@@ -274,7 +271,7 @@
         <degreeDatas>
             <li>
                 <label>Scrounger</label>
-                <description>{PAWN_nameDef} finds more resources when foraging or salvaging.</description>
+                <description>{PAWN_nameDef} has a knack for finding usable salvage that everyone else walks past.</description>
                 <statOffsets>
                     <PlantHarvestYield>0.10</PlantHarvestYield>
                     <MiningYield>0.10</MiningYield>
@@ -283,7 +280,7 @@
         </degreeDatas>
     </TraitDef>
 
-    <!-- Solar Powered -->
+    <!-- Solar Powered (NV/4 perk) - only helps outdoors during the day -->
 
     <TraitDef>
         <defName>FCP_Trait_Solar_Powered</defName>
@@ -291,25 +288,22 @@
         <degreeDatas>
             <li>
                 <label>Solar Powered</label>
-                <description>{PAWN_nameDef} is energized by sunlight, recovering faster during the day.</description>
-                <statOffsets>
-                    <RestRateMultiplier>0.10</RestRateMultiplier>
-                </statOffsets>
+                <description>The sun puts a spring in {PAWN_nameDef}'s step. Standing under open sky between dawn and dusk speeds {PAWN_possessive} recovery; it does nothing indoors or after dark.</description>
             </li>
         </degreeDatas>
     </TraitDef>
 
-    <!-- Rad Resistant -->
+    <!-- Rad Resistance (NV perk) -->
 
     <TraitDef>
         <defName>FCP_Trait_Rad_Resistant</defName>
         <commonality>1</commonality>
         <degreeDatas>
             <li>
-                <label>Rad Resistant</label>
-                <description>{PAWN_nameDef} is less affected by toxins.</description>
+                <label>Rad Resistance</label>
+                <description>{PAWN_nameDef} is unusually resistant to radiation and toxins.</description>
                 <statOffsets>
-                    <ToxicResistance>0.20</ToxicResistance>
+                    <ToxicResistance>0.25</ToxicResistance>
                 </statOffsets>
             </li>
         </degreeDatas>

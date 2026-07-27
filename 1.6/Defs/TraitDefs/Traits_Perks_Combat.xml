@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Traits __________-->
+
+    <!--_____ Perks - Combat _____-->
+
+    <!-- Rifleman (FO4 perk) -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Rifleman</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Rifleman</label>
+                <description>{PAWN_nameDef} has spent years behind a rifle, shouldering and firing it with practiced speed and accuracy.</description>
+                <statOffsets>
+                    <ShootingAccuracyPawn>0.10</ShootingAccuracyPawn>
+                    <AimingDelayFactor>-0.05</AimingDelayFactor>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Shotgun Surgeon (NV perk) -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Shotgun_Surgeon</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Shotgun Surgeon</label>
+                <description>{PAWN_nameDef} knows exactly where to aim a shotgun blast to punch clean through armor at close range.</description>
+                <statOffsets>
+                    <ShootingAccuracyPawn>0.08</ShootingAccuracyPawn>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Basher (FO4 perk) -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Basher</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Basher</label>
+                <description>{PAWN_nameDef} isn't shy about clubbing an enemy with whatever's in {PAWN_possessive} hands, gun included.</description>
+                <statOffsets>
+                    <MeleeDamageFactor>0.12</MeleeDamageFactor>
+                    <MeleeHitChance>0.05</MeleeHitChance>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Demolition Expert (FO3/NV/4 perk) -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Demolition_Expert</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Demolition Expert</label>
+                <description>{PAWN_nameDef} has a practiced hand with explosives, rigging and placing charges quickly and safely.</description>
+                <statOffsets>
+                    <ConstructionSpeed>0.15</ConstructionSpeed>
+                    <MiningYield>0.05</MiningYield>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Piercing Strike (NV perk) -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Piercing_Strike</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Piercing Strike</label>
+                <description>{PAWN_nameDef} knows how to drive a blade or fist past armor plating that would stop a lesser blow.</description>
+                <statOffsets>
+                    <MeleeDamageFactor>0.10</MeleeDamageFactor>
+                    <MeleeHitChance>0.08</MeleeHitChance>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Slayer (NV perk) -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Slayer</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Slayer</label>
+                <description>{PAWN_nameDef} attacks in melee with blinding speed, chaining strikes faster than {PAWN_possessive} opponents can react.</description>
+                <statOffsets>
+                    <MeleeCooldownFactor>-0.20</MeleeCooldownFactor>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Better Criticals (FO3/NV perk) -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Better_Criticals</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Better Criticals</label>
+                <description>When {PAWN_nameDef} finds an opening, {PAWN_pronoun} makes it count - {PAWN_possessive} best hits land noticeably harder.</description>
+                <statOffsets>
+                    <MeleeDamageFactor>0.10</MeleeDamageFactor>
+                    <ShootingAccuracyPawn>0.05</ShootingAccuracyPawn>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Ninja (FO3/NV/4 perk) -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Ninja</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Ninja</label>
+                <description>{PAWN_nameDef} moves like a ghost and strikes like a viper, closing the distance before an opponent knows what's happening.</description>
+                <statOffsets>
+                    <MeleeHitChance>0.10</MeleeHitChance>
+                    <MeleeDamageFactor>0.10</MeleeDamageFactor>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Mister Sandman (FO3/NV perk) -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Mister_Sandman</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Mister Sandman</label>
+                <description>{PAWN_nameDef} is unnervingly good at ending a fight before it starts, slipping in close and striking without a sound.</description>
+                <statOffsets>
+                    <MeleeHitChance>0.08</MeleeHitChance>
+                    <MeleeDamageFactor>0.12</MeleeDamageFactor>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Silent Running (FO3/NV perk) -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Silent_Running</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Silent Running</label>
+                <description>{PAWN_nameDef} has learned to move quickly without giving {PAWN_objective}self away.</description>
+                <statOffsets>
+                    <MoveSpeed>0.08</MoveSpeed>
+                    <AimingDelayFactor>-0.05</AimingDelayFactor>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Nerves of Steel (FO3/NV perk) -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Nerves_Of_Steel</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Nerves of Steel</label>
+                <description>{PAWN_nameDef} stays composed under fire, recovering {PAWN_possessive} footing and lining up the next shot faster than most.</description>
+                <statOffsets>
+                    <RestRateMultiplier>0.15</RestRateMultiplier>
+                    <AimingDelayFactor>-0.10</AimingDelayFactor>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Robotics Expert (NV/4 perk) - deals extra damage to mechanoids -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Robotics_Expert</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Robotics Expert</label>
+                <description>{PAWN_nameDef} knows exactly where a mechanoid's chassis is weakest, and hits it there - {PAWN_pronoun} deals noticeably more damage to mechanoids than to anything else.</description>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Rooted (FO4 perk) - sturdier while standing {PAWN_possessive} ground -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Rooted</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Rooted</label>
+                <description>{PAWN_nameDef} braces and holds {PAWN_possessive} ground, taking noticeably less damage while standing still.</description>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Blocker (FO76 perk) -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Blocker</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Blocker</label>
+                <description>{PAWN_nameDef} has an instinct for turning a blow into a glancing one, softening damage from every direction.</description>
+                <statOffsets>
+                    <IncomingDamageFactor>-0.10</IncomingDamageFactor>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Serendipity (FO76 perk) - much harder to hit when badly wounded -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Serendipity</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Serendipity</label>
+                <description>Just when it looks like {PAWN_nameDef} is finished, {PAWN_pronoun} isn't - when badly wounded, {PAWN_pronoun} shrugs off far more incoming harm than {PAWN_pronoun} has any right to.</description>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+</Defs>

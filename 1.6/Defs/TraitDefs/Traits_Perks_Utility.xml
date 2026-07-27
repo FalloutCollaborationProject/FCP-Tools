@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Traits __________-->
+
+    <!--_____ Perks - Utility _____-->
+
+    <!-- Adamantium Skeleton (FO4 perk) -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Adamantium_Skeleton</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Adamantium Skeleton</label>
+                <description>{PAWN_nameDef} has an unusually high tolerance for pain and trauma, staying on {PAWN_possessive} feet through injuries that would drop most people.</description>
+                <statOffsets>
+                    <PainShockThreshold>0.15</PainShockThreshold>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Pack Rat (FO4 perk) -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Pack_Rat</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Pack Rat</label>
+                <description>{PAWN_nameDef} has a knack for packing gear efficiently, carrying more than {PAWN_possessive} frame would suggest.</description>
+                <statOffsets>
+                    <CarryingCapacity>0.15</CarryingCapacity>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Infiltrator (FO3/NV perk) -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Infiltrator</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Infiltrator</label>
+                <description>{PAWN_nameDef} has a gift for bypassing locks and terminals quickly and quietly.</description>
+                <statOffsets>
+                    <HackingSpeed>0.20</HackingSpeed>
+                    <HackingStealth>0.15</HackingStealth>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Intimidation (FO4 perk) -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Intimidation</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Intimidation</label>
+                <description>{PAWN_nameDef} has a hard look that takes the fight out of people, making it easier to subdue rather than kill.</description>
+                <statOffsets>
+                    <ArrestSuccessChance>0.15</ArrestSuccessChance>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Scrapper (FO4 perk) - salvages noticeably more material when deconstructing -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Scrapper</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Scrapper</label>
+                <description>{PAWN_nameDef} knows how to break something down without wrecking the good parts, recovering noticeably more material when deconstructing.</description>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+</Defs>

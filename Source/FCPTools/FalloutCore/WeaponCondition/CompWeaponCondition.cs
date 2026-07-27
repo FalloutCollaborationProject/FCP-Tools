@@ -40,9 +40,10 @@ public class CompWeaponCondition : ThingComp
         condition = Rand.Range(Props.spawnConditionMin, Props.spawnConditionMax);
     }
 
-    public void NotifyShot()
+    public void NotifyShot(Pawn wielder = null)
     {
-        condition = Mathf.Max(1f, condition - Props.conditionLossPerShot);
+        float lossFactor = wielder != null ? wielder.GetStatValue(WeaponConditionDefOf.FCP_WeaponConditionLossFactor) : 1f;
+        condition = Mathf.Max(1f, condition - Props.conditionLossPerShot * lossFactor);
     }
 
     public void AddCondition(float amount)

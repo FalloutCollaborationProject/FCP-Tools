@@ -17,6 +17,7 @@ namespace FCP.Core.Robotics
         {
             this.FailOnDestroyedOrNull(TargetIndex.A);
             this.FailOn(() => Target.GetComp<CompHackable>()?.CanBeHacked != true);
+            this.FailOn(() => !CompHackable.HackerQualified(pawn));
 
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
 

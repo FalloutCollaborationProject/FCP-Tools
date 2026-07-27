@@ -47,6 +47,6 @@ public static class VerbShoot_TryCastShot_Patch
         if (!__result || !FCPCoreMod.Settings.General.weaponConditionEnabled)
             return;
 
-        (__instance.EquipmentSource as ThingWithComps)?.GetComp<CompWeaponCondition>()?.NotifyShot();
+        (__instance.EquipmentSource as ThingWithComps)?.GetComp<CompWeaponCondition>()?.NotifyShot(__instance.CasterPawn);
     }
 }

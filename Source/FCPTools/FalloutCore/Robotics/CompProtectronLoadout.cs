@@ -109,10 +109,13 @@ namespace FCP.Core.Robotics
             SwapOnGroup(pawn, BodyPartGroupDefOf_Protectron.ProtectronHands, handDef);
 
             pawn.SetColor(preset.RollColor());
-            RobotUtility.TouchBodyColor(pawn);
-            TouchHediffGraphic(pawn, headDef);
-            TouchHediffGraphic(pawn, handDef);
-            pawn.Drawer.renderer.SetAllGraphicsDirty();
+            LongEventHandler.ExecuteWhenFinished(delegate
+            {
+                RobotUtility.TouchBodyColor(pawn);
+                TouchHediffGraphic(pawn, headDef);
+                TouchHediffGraphic(pawn, handDef);
+                pawn.Drawer.renderer.SetAllGraphicsDirty();
+            });
         }
 
         private static void TouchHediffGraphic(Pawn pawn, HediffDef hediffDef)

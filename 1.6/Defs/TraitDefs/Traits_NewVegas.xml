@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Traits __________-->
+
+    <!--_____ New Vegas _____-->
+
+    <!-- Built to Destroy - a knack for landing the shot that counts, hell on equipment -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Built_To_Destroy</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Built to Destroy</label>
+                <description>{PAWN_nameDef} has a knack for finding a weak point to exploit, but runs {PAWN_possessive} gear ragged doing it - {PAWN_possessive} weapons wear out well before their time.</description>
+                <statOffsets>
+                    <ShootingAccuracyPawn>0.04</ShootingAccuracyPawn>
+                    <MeleeHitChance>0.04</MeleeHitChance>
+                    <FCP_WeaponConditionLossFactor>0.35</FCP_WeaponConditionLossFactor>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Loose Cannon - throws fast and hard, but wild -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Loose_Cannon</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Loose Cannon</label>
+                <description>{PAWN_nameDef} throws grenades and improvised weapons with real speed, but they don't always land where intended.</description>
+                <statOffsets>
+                    <AimingDelayFactor>-0.15</AimingDelayFactor>
+                    <ShootingAccuracyPawn>-0.08</ShootingAccuracyPawn>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <!-- Trigger Discipline - controlled and accurate, but deliberate -->
+
+    <TraitDef>
+        <defName>FCP_Trait_Trigger_Discipline</defName>
+        <commonality>1</commonality>
+        <degreeDatas>
+            <li>
+                <label>Trigger Discipline</label>
+                <description>{PAWN_nameDef} takes the extra half-second to line up every shot properly. It shows in {PAWN_possessive} accuracy, but not in {PAWN_possessive} rate of fire.</description>
+                <statOffsets>
+                    <ShootingAccuracyPawn>0.15</ShootingAccuracyPawn>
+                    <AimingDelayFactor>0.20</AimingDelayFactor>
+                </statOffsets>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+</Defs>
