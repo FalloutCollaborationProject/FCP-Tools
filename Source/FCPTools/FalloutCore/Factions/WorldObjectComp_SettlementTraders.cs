@@ -9,6 +9,8 @@ public class WorldObjectComp_SettlementTraders : WorldObjectComp
 {
 	private List<SettlementTrader> traders;
 
+	public bool HasTraders => !traders.NullOrEmpty();
+
 	public void SetTraders(List<SettlementTrader> traderList)
 	{
 		traders = traderList;

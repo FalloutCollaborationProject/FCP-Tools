@@ -69,9 +69,21 @@ static class Settlement_FinalizeInit_Patch
 					}
 				}
 
+				if (namedSettlement.oceanPlacement)
+				{
+					int oceanTile = FindOceanTile(settlement.Tile, ext.searchRadius, grid);
+					if (oceanTile >= 0)
+					{
+						Find.WorldObjects.Remove(settlement);
+						settlement.Tile = oceanTile;
+						Find.WorldObjects.Add(settlement);
+					}
+					continue;
+				}
+
 				List<Hilliness> hilliness = namedSettlement.preferredHilliness ?? ext.preferredHilliness;
 				List<BiomeDef> biomes = namedSettlement.allowedBiomes;
-				
+
 				bool needsRelocation = false;
 				Tile settlementTile = grid[settlement.Tile];
 				
@@ -144,6 +156,39 @@ static class Settlement_FinalizeInit_Patch
 		}
 		return -1;
 	}
+
+	static int FindOceanTile(int origin, int radius, WorldGrid grid)
+	{
+		HashSet<int> visited = new HashSet<int>();
+		Queue<int> queue = new Queue<int>();
+		List<PlanetTile> neighbors = new List<PlanetTile>();
+
+		visited.Add(origin);
+		queue.Enqueue(origin);
+
+		while (queue.Count > 0)
+		{
+			if (visited.Count > radius * radius)
+				break;
+
+			int tile = queue.Dequeue();
+			grid.GetTileNeighbors(new PlanetTile(tile), neighbors);
+
+			for (int i = 0; i < neighbors.Count; i++)
+			{
+				int neighborTile = neighbors[i].tileId;
+				if (!visited.Add(neighborTile))
+					continue;
+
+				Tile neighborTileData = grid[neighborTile];
+				if (neighborTileData.PrimaryBiome == BiomeDefOf.Ocean && !Find.WorldObjects.AnyWorldObjectAt(neighborTile))
+					return neighborTile;
+
+				queue.Enqueue(neighborTile);
+			}
+		}
+		return -1;
+	}
 }
 
 [HarmonyPatch(typeof(MapGenerator), nameof(MapGenerator.GenerateMap))]
@@ -168,5 +213,19 @@ static class MapGenerator_GenerateMap_Patch
 			if (customSize != IntVec3.Invalid)
 				mapSize = customSize;
 		}
+	}
+}
+
+[HarmonyPatch(typeof(Settlement), nameof(Settlement.CanTradeNow), MethodType.Getter)]
+static class Settlement_CanTradeNow_Patch
+{
+	static void Postfix(Settlement __instance, ref bool __result)
+	{
+		if (!__result)
+			return;
+
+		WorldObjectComp_SettlementTraders comp = __instance.GetComponent<WorldObjectComp_SettlementTraders>();
+		if (comp != null && comp.HasTraders)
+			__result = false;
 	}
 }

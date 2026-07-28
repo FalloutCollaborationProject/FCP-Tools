@@ -50,6 +50,7 @@ public class NamedSettlement
 	public List<PawnKindCount> guaranteedPawnKinds;
 	public List<CharacterDef> guaranteedCharacters;
 	public List<SettlementTrader> traders;
+	public bool oceanPlacement;
 
 	public void LoadDataFromXmlCustom(XmlNode xmlRoot)
 	{
@@ -90,6 +91,10 @@ public class NamedSettlement
 			else if (childNode.Name == "traders")
 			{
 				traders = DirectXmlToObject.ObjectFromXml<List<SettlementTrader>>(childNode, true);
+			}
+			else if (childNode.Name == "oceanPlacement")
+			{
+				oceanPlacement = ParseHelper.FromString<bool>(childNode.InnerText);
 			}
 		}
 	}
