@@ -43,7 +43,8 @@ public class CompWeaponCondition : ThingComp
     public void NotifyShot(Pawn wielder = null)
     {
         float lossFactor = wielder != null ? wielder.GetStatValue(WeaponConditionDefOf.FCP_WeaponConditionLossFactor) : 1f;
-        condition = Mathf.Max(1f, condition - Props.conditionLossPerShot * lossFactor);
+        float loss = Props.conditionLossPerShot * lossFactor * FCPCoreMod.Settings.General.weaponDegradationRate;
+        condition = Mathf.Max(1f, condition - loss);
     }
 
     public void AddCondition(float amount)

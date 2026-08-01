@@ -1,13 +1,127 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 
 	<!-- Tools -->
 
 	<FCP_Settings_Category>FCP Tools</FCP_Settings_Category>
+	<FCP_Settings.Info>Info</FCP_Settings.Info>
+	<FCP_Settings.Info.tt>An explanation of what this mod changes and adds, written for players rather than modders.</FCP_Settings.Info.tt>
 	<FCP_Settings.General>General</FCP_Settings.General>
 	<FCP_Settings.General.tt>Options that affect the whole mod or don't fit anywhere else.</FCP_Settings.General.tt>
 	<FCP_Settings.Scenarios>Scenarios</FCP_Settings.Scenarios>
 	<FCP_Settings.Scenarios.tt>Options that affect new-game scenarios, like starting already enlisted with a faction.</FCP_Settings.Scenarios.tt>
+
+	<!-- Info Tab -->
+
+	<FCP_Settings_Info_Intro>Some of the changes and information about what the FCP does.</FCP_Settings_Info_Intro>
+
+	<FCP_Settings_Info_Group_Combat.Title>Combat &amp; Weapons</FCP_Settings_Info_Group_Combat.Title>
+	<FCP_Settings_Info_VATS.Title>VATS (Targeted Combat)</FCP_Settings_Info_VATS.Title>
+	<FCP_Settings_Info_VATS.Desc>Certain weapons give you a VATS button mid-fight that lets you line up shots against a specific body part, like a leg or an arm, instead of leaving it all to RimWorld's usual hit roll.</FCP_Settings_Info_VATS.Desc>
+	<FCP_Settings_Info_WeaponCondition.Title>Weapon Jamming &amp; Condition</FCP_Settings_Info_WeaponCondition.Title>
+	<FCP_Settings_Info_WeaponCondition.Desc>Guns wear down the more they're used and can jam at the worst possible moment, so a colonist has to clear it before firing again. Bring a backup or keep gear maintained. Tune or turn this off in the General tab if it's not your thing.</FCP_Settings_Info_WeaponCondition.Desc>
+	<FCP_Settings_Info_WeaponRepair.Title>Repairing Weapons</FCP_Settings_Info_WeaponRepair.Title>
+	<FCP_Settings_Info_WeaponRepair.Desc>A worn-down or jammed weapon isn't stuck that way. Load it onto a Repair Bench and queue the repair job, and a colonist works it back up to full condition. There's also a rougher field repair option for patching a weapon up on the spot without a bench.</FCP_Settings_Info_WeaponRepair.Desc>
+	<FCP_Settings_Info_ItemRarity.Title>Item Rarity Tiers</FCP_Settings_Info_ItemRarity.Title>
+	<FCP_Settings_Info_ItemRarity.Desc>A handful of items carry a rarity tier, shown as a colored name in the inspect panel. White is Common, blue is Rare, gold is Unique. Not limited to weapons.</FCP_Settings_Info_ItemRarity.Desc>
+	<FCP_Settings_Info_Legendary.Title>Legendary Weapons</FCP_Settings_Info_Legendary.Title>
+	<FCP_Settings_Info_Legendary.Desc>Some weapons roll a legendary prefix on top of their normal stats, giving them an actual combat perk instead of just bigger numbers. Basically Fallout 4's legendary system.</FCP_Settings_Info_Legendary.Desc>
+	<FCP_Settings_Info_HeavyWeapons.Title>Heavy Weapon Ammo Packs</FCP_Settings_Info_HeavyWeapons.Title>
+	<FCP_Settings_Info_HeavyWeapons.Desc>Miniguns and other belt-fed weapons pull ammo from a backpack instead of a magazine. Run dry and you're reloading a pack, not swapping a clip, so keep it topped up before the fight starts.</FCP_Settings_Info_HeavyWeapons.Desc>
+	<FCP_Settings_Info_Homing.Title>Homing &amp; Explosive Projectiles</FCP_Settings_Info_Homing.Title>
+	<FCP_Settings_Info_Homing.Desc>Rockets, grenades, and some energy weapons don't act like a normal RimWorld bullet. A few track their target, others scatter shrapnel or leave scorch marks where they land.</FCP_Settings_Info_Homing.Desc>
+	<FCP_Settings_Info_LaserWeapons.Title>Beam Weapons</FCP_Settings_Info_LaserWeapons.Title>
+	<FCP_Settings_Info_LaserWeapons.Desc>Some energy weapons fire an actual sweeping beam instead of a single shot. It can track a moving target and damages everything it crosses, not just the first thing it hits, with its own droning hum while it fires.</FCP_Settings_Info_LaserWeapons.Desc>
+	<FCP_Settings_Info_Grenades.Title>Grenades</FCP_Settings_Info_Grenades.Title>
+	<FCP_Settings_Info_Grenades.Desc>Grenades work as a real equipped weapon with a stack instead of vanilla's separate throw button. Throw one and it's gone, with the next one from the stack or your inventory automatically swapped in. Turn it off in the General tab to go back to normal RimWorld grenade behavior.</FCP_Settings_Info_Grenades.Desc>
+
+	<FCP_Settings_Info_Group_PowerArmor.Title>Power Armor &amp; Robots</FCP_Settings_Info_Group_PowerArmor.Title>
+	<FCP_Settings_Info_PowerArmor.Title>Power Armor Frames &amp; Stations</FCP_Settings_Info_PowerArmor.Title>
+	<FCP_Settings_Info_PowerArmor.Desc>Power armor isn't one suit you throw on. It's a frame you climb into at a power armor station, and other armor pieces attach to it, with a fusion core needed to actually run it. Before a colonist can wear one at all they need Power Armor Training, which comes from a training pod you get through a quest, not from the frame itself. A handful of heavy weapons, like miniguns and the K9000 Cyberdog Gun, won't equip unless power armor is already worn, and wearing a frame blocks fine work like cooking, crafting, and art since the gloves aren't built for it.</FCP_Settings_Info_PowerArmor.Desc>
+	<FCP_Settings_Info_Robotics.Title>Robotic Companions</FCP_Settings_Info_Robotics.Title>
+	<FCP_Settings_Info_Robotics.Desc>Protectrons, Mister Handies, and other robots can join the colony and work or fight alongside everyone else. Basically animals that happen to be made of scrap metal instead of fur.</FCP_Settings_Info_Robotics.Desc>
+	<FCP_Settings_Info_Cyberdogs.Title>Cyberdog Surgery</FCP_Settings_Info_Cyberdogs.Title>
+	<FCP_Settings_Info_Cyberdogs.Desc>A bench surgery lets you rebuild a tamed dog around a salvaged cyberdog chassis instead of just training it normally. It comes out with a metal look, better armor, and more pain tolerance, but loses a bit of speed and dodge. Its personality and bond with its owner stay the same.</FCP_Settings_Info_Cyberdogs.Desc>
+
+	<FCP_Settings_Info_Group_Mutation.Title>Mutation &amp; Transformation</FCP_Settings_Info_Group_Mutation.Title>
+	<FCP_Settings_Info_Ghoulification.Title>Ghoulification</FCP_Settings_Info_Ghoulification.Title>
+	<FCP_Settings_Info_Ghoulification.Desc>Take on enough radiation and a colonist can turn ghoul instead of just getting sick or dying outright. They come out rad-resistant, with the usual ghoul trade-offs that come with it.</FCP_Settings_Info_Ghoulification.Desc>
+	<FCP_Settings_Info_Gooification.Title>Gooification</FCP_Settings_Info_Gooification.Title>
+	<FCP_Settings_Info_Gooification.Desc>Land the wrong (or right) energy weapon kill and the target can go straight to a puddle of goo instead of leaving a corpse behind. Same as a critical laser or plasma hit in the games.</FCP_Settings_Info_Gooification.Desc>
+	<FCP_Settings_Info_SuperMutants.Title>Super Mutant Vats</FCP_Settings_Info_SuperMutants.Title>
+	<FCP_Settings_Info_SuperMutants.Desc>Build an FEV vat, feed it radioactive waste and an FEV sample, and dunk a colonist in. Wait it out and they come out a super mutant, if they come out at all. There's a real risk of death, and a smaller chance the vat produces a rampaging Behemoth instead of a usable recruit. Mutants who get hooked on Stealth Boys can mutate further into a Nightkin.</FCP_Settings_Info_SuperMutants.Desc>
+	<FCP_Settings_Info_Mutations.Title>Radiation Mutations</FCP_Settings_Info_Mutations.Title>
+	<FCP_Settings_Info_Mutations.Desc>Some pawns carry mutation genes born from radiation exposure. One shocks anyone who hits them in melee, another can inflict radiation sickness right back on an attacker, and others change how much a pawn needs to eat meat versus plants or buff them in specific situations.</FCP_Settings_Info_Mutations.Desc>
+	<FCP_Settings_Info_Xenotypes.Title>Ghoul &amp; Super Mutant Xenotypes</FCP_Settings_Info_Xenotypes.Title>
+	<FCP_Settings_Info_Xenotypes.Desc>If you'd rather not wait for it to happen in-game, Ghoul, Feral Ghoul, Glowing One, Super Mutant, and Nightkin are all available as xenotypes at character creation. Same genes as the vat and radiation systems, just chosen upfront instead of earned. FEV monsters like Centaurs and Behemoths only recognize certain super mutant strains as friendly, so which xenotype a mutant pawn has actually matters around them.</FCP_Settings_Info_Xenotypes.Desc>
+
+	<FCP_Settings_Info_Group_Survival.Title>Survival &amp; Health</FCP_Settings_Info_Group_Survival.Title>
+	<FCP_Settings_Info_AutoStim.Title>Auto-Stims</FCP_Settings_Info_AutoStim.Title>
+	<FCP_Settings_Info_AutoStim.Desc>Colonists carrying stimpacks will jab themselves the moment they're badly hurt, so you're not micromanaging every injury mid-fight. Turn it off in the General tab if you'd rather handle it by hand.</FCP_Settings_Info_AutoStim.Desc>
+	<FCP_Settings_Info_Radiation.Title>Radiation Hazards</FCP_Settings_Info_Radiation.Title>
+	<FCP_Settings_Info_Radiation.Desc>Certain zones, weapons, and events dose colonists with radiation that builds up over time. Ignore it long enough and health problems start stacking, or depending on your luck, it tips over into ghoulification instead.</FCP_Settings_Info_Radiation.Desc>
+
+	<FCP_Settings_Info_Group_Settlements.Title>Settlements, Trade &amp; Travel</FCP_Settings_Info_Group_Settlements.Title>
+	<FCP_Settings_Info_NamedSettlements.Title>Named Settlements &amp; Faction Trading</FCP_Settings_Info_NamedSettlements.Title>
+	<FCP_Settings_Info_NamedSettlements.Desc>Major factions can generate at their actual lore locations, like Shady Sands for the NCR or Lost Hills for the Brotherhood, complete with named shops stocked to match, instead of generic random settlements. Turn it off in the General tab for plain vanilla settlement generation instead.</FCP_Settings_Info_NamedSettlements.Desc>
+	<FCP_Settings_Info_FactionCurrencies.Title>Faction Currencies</FCP_Settings_Info_FactionCurrencies.Title>
+	<FCP_Settings_Info_FactionCurrencies.Desc>Some factions don't deal in silver or Caps. NCR settlements and Desert Rangers price things in NCR Dollars, the Legion uses its own Denarius, the Brotherhood pays in Scrip, and the old United States, the Enclave, and the PRC each have their own currency too. Trade with them and that's what shows up in the deal.</FCP_Settings_Info_FactionCurrencies.Desc>
+	<FCP_Settings_Info_FactionBehavior.Title>Faction Behavior &amp; Leadership</FCP_Settings_Info_FactionBehavior.Title>
+	<FCP_Settings_Info_FactionBehavior.Desc>Some factions are boxed into raiding you only from certain biomes, so don't expect a desert raider gang to show up at an arctic base. Lose a faction leader and a specific named replacement steps up instead of a random pawn. A few factions carry their own grim habits too, like Legion raiders harvesting ears off the humanlikes they kill.</FCP_Settings_Info_FactionBehavior.Desc>
+	<FCP_Settings_Info_HiddenFactions.Title>Hidden Factions</FCP_Settings_Info_HiddenFactions.Title>
+	<FCP_Settings_Info_HiddenFactions.Desc>Not everything with a faction behind it shows up in your faction list. Feral ghouls, mirelurks, and molerats are each grouped under their own hidden faction, since that's how the game handles a mob of mindless hostiles without cluttering your diplomacy screen. Wandering caravan traders work the same way, including ones carrying named characters like Crow or Doc Hoff: real traders you can deal with, just not factions you'll ever negotiate with directly.</FCP_Settings_Info_HiddenFactions.Desc>
+	<FCP_Settings_Info_Vertibird.Title>Vertibird &amp; Shuttle Arrivals</FCP_Settings_Info_Vertibird.Title>
+	<FCP_Settings_Info_Vertibird.Desc>Some factions arrive by air instead of walking in from the map edge. You'll actually see the Vertibird or shuttle land and take off again.</FCP_Settings_Info_Vertibird.Desc>
+	<FCP_Settings_Info_VertibirdConstruction.Title>Building Your Own Vertibird</FCP_Settings_Info_VertibirdConstruction.Title>
+	<FCP_Settings_Info_VertibirdConstruction.Desc>With the right research, and the Odyssey DLC content it needs, you can build a Vertibird out of steel, components, and a salvaged engine. Fuel it up and it works as your own passenger shuttle.</FCP_Settings_Info_VertibirdConstruction.Desc>
+	<FCP_Settings_Info_VertibirdCrash.Title>Vertibird Crash Sites</FCP_Settings_Info_VertibirdCrash.Title>
+	<FCP_Settings_Info_VertibirdCrash.Desc>Downed Vertibirds turn up on the map with survivors to rescue or salvage to pick over. RimWorld's crashed-ship event, reskinned and reused.</FCP_Settings_Info_VertibirdCrash.Desc>
+	<FCP_Settings_Info_FactionOutposts.Title>Faction Outposts</FCP_Settings_Info_FactionOutposts.Title>
+	<FCP_Settings_Info_FactionOutposts.Desc>Factions aren't limited to their main settlement. Smaller outposts can pop up on the map over the course of a game, giving you more chances to run into them or trade.</FCP_Settings_Info_FactionOutposts.Desc>
+	<FCP_Settings_Info_Radio.Title>Radio Stations</FCP_Settings_Info_Radio.Title>
+	<FCP_Settings_Info_Radio.Desc>A working radio picks up in-world stations broadcasting Fallout-style chatter and music. Pure flavor, but a nice one.</FCP_Settings_Info_Radio.Desc>
+
+	<FCP_Settings_Info_Group_Story.Title>Story &amp; Characters</FCP_Settings_Info_Group_Story.Title>
+	<FCP_Settings_Info_Enlistment.Title>Enlistment &amp; Faction Work Contracts</FCP_Settings_Info_Enlistment.Title>
+	<FCP_Settings_Info_Enlistment.Desc>Enlist a colonist with a faction and they can take on paid contracts and missions instead of that faction only ever being someone to trade with or fight.</FCP_Settings_Info_Enlistment.Desc>
+	<FCP_Settings_Info_UniqueCharacters.Title>Unique Named Characters</FCP_Settings_Info_UniqueCharacters.Title>
+	<FCP_Settings_Info_UniqueCharacters.Desc>Named characters pulled straight from Fallout lore can turn up in the world with their own backstory, and some can be recruited, rather than every pawn being a random roll.</FCP_Settings_Info_UniqueCharacters.Desc>
+	<FCP_Settings_Info_UniqueItems.Title>Collectible Loot &amp; Caps</FCP_Settings_Info_UniqueItems.Title>
+	<FCP_Settings_Info_UniqueItems.Desc>Vault-Tec lunchboxes are one-shot loot boxes. Crack one open and it's gone, but it rolls you Collectors Cards and, rarely, something better. Those cards are consumable too, and cash out for Bottle Caps or faction gear. Caps work as an actual tradeable currency alongside silver, not just a reskinned number.</FCP_Settings_Info_UniqueItems.Desc>
+	<FCP_Settings_Info_CustomTraits.Title>Conditional &amp; Rivalry Traits</FCP_Settings_Info_CustomTraits.Title>
+	<FCP_Settings_Info_CustomTraits.Desc>A few traits only kick in under specific conditions. Solar Powered needs sunlight and open sky, Rooted needs the pawn standing still, and you can check whether one's currently active from the pawn's info. A couple of traits cause friction on their own too, since Atom's faithful and the Congregation that opposes them don't get along.</FCP_Settings_Info_CustomTraits.Desc>
+	<FCP_Settings_Info_FactionIdeology.Title>Faction Ideologies</FCP_Settings_Info_FactionIdeology.Title>
+	<FCP_Settings_Info_FactionIdeology.Desc>Several factions come with their own custom ideoligion rather than a reskinned vanilla belief. Children of Atom worship radiation itself and treat Glowing Ones as living saints, and other factions carry their own precepts and deity naming to match.</FCP_Settings_Info_FactionIdeology.Desc>
+	<FCP_Settings_Info_CustomQuests.Title>Custom Radiant Quests</FCP_Settings_Info_CustomQuests.Title>
+	<FCP_Settings_Info_CustomQuests.Desc>Beyond the usual text-swapped fetch quest, there are original questlines. Defending or rescuing survivors at a Vertibird crash site, recovering captured animals, talking a robot or unique character into joining you, running supply deliveries for a faction you're enlisted with.</FCP_Settings_Info_CustomQuests.Desc>
+	<FCP_Settings_Info_Gauntlet.Title>Large-Scale Ambush Events</FCP_Settings_Info_Gauntlet.Title>
+	<FCP_Settings_Info_Gauntlet.Desc>A handful of events throw a long, sustained wave of enemies at you instead of one raid and done. Treat it like a siege you need to prep for, not something you improvise through.</FCP_Settings_Info_Gauntlet.Desc>
+
+	<FCP_Settings_Info_Group_World.Title>World, Tech &amp; Comfort</FCP_Settings_Info_Group_World.Title>
+	<FCP_Settings_Info_Holotapes.Title>Holotapes &amp; Pip-Boy</FCP_Settings_Info_Holotapes.Title>
+	<FCP_Settings_Info_Holotapes.Desc>Holotapes are collectible reads that stand in for RimWorld's books, Fallout-flavored lore included, and some can be studied once through the Pip-Boy for a flat shot of skill experience.</FCP_Settings_Info_Holotapes.Desc>
+	<FCP_Settings_Info_Terminal_Hacking.Title>Terminal Hacking Minigame</FCP_Settings_Info_Terminal_Hacking.Title>
+	<FCP_Settings_Info_Terminal_Hacking.Desc>Locked terminals run a RobCo-style password-guessing minigame instead of a flat skill check. Click a matched bracket pair mid-hack for a coin flip that either resets your attempts or blacks out a wrong guess, and cracking a terminal rewards a random lore holotape you haven't found yet.</FCP_Settings_Info_Terminal_Hacking.Desc>
+	<FCP_Settings_Info_ResearchTrees.Title>Faction Research Trees</FCP_Settings_Info_ResearchTrees.Title>
+	<FCP_Settings_Info_ResearchTrees.Desc>Most factions run their own tiered research chain gating faction-specific gear. The NCR's runs from Civilian Outfitters up through the Presidential Suite, for example, instead of everything sharing one generic tech tree. Robotics has its own separate line per robot type.</FCP_Settings_Info_ResearchTrees.Desc>
+	<FCP_Settings_Info_Blueprints.Title>Gun Runners Blueprints</FCP_Settings_Info_Blueprints.Title>
+	<FCP_Settings_Info_Blueprints.Desc>Some weapon and gadget schematics are Gun Runners blueprints instead of normal research. Each one needs an actual techprint item you find or buy, and can only be studied at a workbench with a terminal attached, not a plain research desk. The whole system only shows up with Wastelanders active, since that's the mod adding the caravans who actually sell the techprints.</FCP_Settings_Info_Blueprints.Desc>
+	<FCP_Settings_Info_ProductionBenches.Title>Custom Workbenches</FCP_Settings_Info_ProductionBenches.Title>
+	<FCP_Settings_Info_ProductionBenches.Desc>Beyond the terminal-equipped benches blueprints need, there's an Ammo Press for loading your own ammunition and a Power Armor Station that racks a full suit piece by piece on a mannequin frame. Dock a set there and you can swap a whole loadout in one job, and the station slowly repairs whatever's stored on it over time.</FCP_Settings_Info_ProductionBenches.Desc>
+	<FCP_Settings_Info_Tents.Title>Tents &amp; Camp Sleeping</FCP_Settings_Info_Tents.Title>
+	<FCP_Settings_Info_Tents.Desc>Tents are a lightweight, portable place to sleep for caravanning colonists or anyone without a proper bed yet. Better than the dirt, not as good as a real room.</FCP_Settings_Info_Tents.Desc>
+	<FCP_Settings_Info_PocketMaps.Title>Pocket Dimension Maps</FCP_Settings_Info_PocketMaps.Title>
+	<FCP_Settings_Info_PocketMaps.Desc>Certain quests and items drop you into a separate, self-contained map, like a vault or an Oasis-style pocket dimension, cut off from the main world map until you're done there.</FCP_Settings_Info_PocketMaps.Desc>
+
+	<FCP_Settings_Info_Group_Misc.Title>Other Changes</FCP_Settings_Info_Group_Misc.Title>
+	<FCP_Settings_Info_GearRestrictions.Title>Weapon &amp; Gear Restrictions</FCP_Settings_Info_GearRestrictions.Title>
+	<FCP_Settings_Info_GearRestrictions.Desc>Factions won't sell or wear gear that doesn't fit who they are. Legion forces steer clear of energy weapons, for instance, so shops actually feel different from one another instead of selling the same generic stock.</FCP_Settings_Info_GearRestrictions.Desc>
+	<FCP_Settings_Info_LootableFurniture.Title>Searchable Furniture</FCP_Settings_Info_LootableFurniture.Title>
+	<FCP_Settings_Info_LootableFurniture.Desc>Abandoned shelves you find out in the world aren't just storage. Right-click one and choose Search, and a colonist digs through it once for a random haul of meds, food, scrap, or occasionally a weapon. Once it's searched, that's it, it won't refill.</FCP_Settings_Info_LootableFurniture.Desc>
+	<FCP_Settings_Info_FeralWildlife.Title>Feral &amp; Hostile Wildlife</FCP_Settings_Info_FeralWildlife.Title>
+	<FCP_Settings_Info_FeralWildlife.Desc>Fallout's nastier wildlife hits harder than typical RimWorld animals, and some of it fights dirty. Deathclaws can cloak and go nearly invisible for a stretch before striking, nightstalkers do the same trick more often but for shorter bursts, and fire geckos breathe fire at range instead of just biting. Molerats burrow underground and burst up next to a target for a surprise melee hit, with their burrows spawning more until you dig them out, and mirelurks nest and swarm the same way. Feral variants also carry a hediff that keeps them permanently hostile, so waiting them out or taming them isn't an option like it would be with a normal animal.</FCP_Settings_Info_FeralWildlife.Desc>
+	<FCP_Settings_Info_AnimalHerds.Title>Animal Herds &amp; Companions</FCP_Settings_Info_AnimalHerds.Title>
+	<FCP_Settings_Info_AnimalHerds.Desc>A herd of Fallout-flavored creatures occasionally wanders across the map. Hunt them or leave them be, same idea as RimWorld's thrumbo herds. Some unique characters also show up with a bonded companion animal at their side instead of arriving alone.</FCP_Settings_Info_AnimalHerds.Desc>
 
 	<!-- Scenario Settings -->
 
@@ -42,12 +156,23 @@
 	<FCP_Settings_WeaponCondition>Weapon Condition</FCP_Settings_WeaponCondition>
 	<FCP_Settings_WeaponCondition_Enabled>Enable weapon condition and jamming</FCP_Settings_WeaponCondition_Enabled>
 	<FCP_Settings_WeaponCondition_Enabled_Desc>FCP weapons degrade with each shot. Below 30 condition they may jam mid-combat, causing a shot to fail and penalising shooting accuracy until cleared. At 1 condition the weapon is completely locked and must be repaired at a repair bench before it can fire again.</FCP_Settings_WeaponCondition_Enabled_Desc>
+	<FCP_Settings_WeaponCondition_DegradationRate>Degradation rate: {0}</FCP_Settings_WeaponCondition_DegradationRate>
+	<FCP_Settings_WeaponCondition_DegradationRate_Desc>Scales how much condition FCP weapons lose per shot. 100% is the default rate; 0% stops weapons from losing condition while still allowing jamming and repairs to function.</FCP_Settings_WeaponCondition_DegradationRate_Desc>
 
 	<!-- Grenade Settings -->
 
 	<FCP_Settings_Grenades>Grenades</FCP_Settings_Grenades>
 	<FCP_Settings_Grenades_Consumable>Consumable grenades</FCP_Settings_Grenades_Consumable>
 	<FCP_Settings_Grenades_Consumable_Desc>Grenades are consumed when thrown. Each grenade counts as 1 throw. When equipped grenades run out, they'll auto-reload from inventory. When disabled, both FCP and vanilla grenades can be thrown infinitely like vanilla behavior.</FCP_Settings_Grenades_Consumable_Desc>
+
+	<!-- Named Settlement Settings -->
+
+	<FCP_Settings_NamedSettlements>Named Settlements</FCP_Settings_NamedSettlements>
+	<FCP_Settings_NamedSettlements_Enabled>Use lore-accurate named settlements</FCP_Settings_NamedSettlements_Enabled>
+	<FCP_Settings_NamedSettlements_Enabled_Desc>At world generation, factions with fixed lore locations (like the NCR's Shady Sands or the Enclave's Oil Rig) will rename, relocate, and cap their settlements to match those locations, and populate them with named shops. Disable this to let settlements generate the normal vanilla RimWorld way instead, with random names and placement.</FCP_Settings_NamedSettlements_Enabled_Desc>
+	<FCP_Settings_NamedTraders>Named Settlement Trading</FCP_Settings_NamedTraders>
+	<FCP_Settings_NamedTraders_Enabled>Restrict trade to named shops</FCP_Settings_NamedTraders_Enabled>
+	<FCP_Settings_NamedTraders_Enabled_Desc>Settlements with named traders (like Megaton's Craterside Supply or the NCR's Shady Sands) will hide the vanilla "Trade with settlement" option, so you must pick one of their named shops instead. Disable this to trade with the settlement's generic stock the normal RimWorld way, alongside its named shops.</FCP_Settings_NamedTraders_Enabled_Desc>
 
 	<!-- Weapon Condition Inspect Strings -->
 
@@ -122,6 +247,9 @@
 \nThe physical form of techprints can range from scraps of paper with diagrams, all the way to advanced self-contained teaching machines. Regardless of form, they play the same role. They give your researchers the confidence that an idea is possible, and a rough idea of the designs used in more established societies.
 \nYour researchers need the foundational knowledge offered by techprints to know where to start on a given technology. Only after enough techprints have been applied can your researchers work out the fine details of how to make use of the technology in your particular situation.
 \nApplying techprints to a satisfied project fulfills half the remaining research progress. In addition, researchers always gain a boost to their intellectual skills when applying techprints, even on already-completed technologies.</FCP_Techprint_Desc>
+	<FCP_GunRunnersBlueprint_Label>Gun Runners blueprint ({PROJECT_label})</FCP_GunRunnersBlueprint_Label>
+	<FCP_GunRunnersBlueprint_Desc>A weapon blueprint sold by the Gun Runners, detailing the construction specifications for '{PROJECT_label}'.
+\nThe Gun Runners are the wasteland's premier arms manufacturer, and their blueprints are prized commodities - buying and applying one grants your engineers the schematics needed to manufacture the weapon themselves.</FCP_GunRunnersBlueprint_Desc>
 	<FCP_WrongXenotype>Wrong xenotype</FCP_WrongXenotype>
 
 	<!-- Weapon Requirements -->

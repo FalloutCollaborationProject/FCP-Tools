@@ -1,3 +1,4 @@
+using FCP.Core;
 using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
@@ -83,7 +84,7 @@ internal static class SpawnConfigHelper
 		hasBiomeFilter = false;
 		anchors = null;
 
-		if (ext == null)
+		if (ext == null || !FCPCoreMod.Settings.General.namedSettlementsEnabled)
 			return false;
 
 		hasBiomeFilter = ext.allowedBiomes != null && ext.allowedBiomes.Count > 0;

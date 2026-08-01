@@ -1,0 +1,1057 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Gun Runners Weapon Blueprints - Standard Arsenal __________-->
+
+    <!--_____ Pistols _____-->
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_10mmPistol</defName>
+        <label>Blueprint: 10mm Pistol</label>
+        <description>Gun Runners blueprint detailing the construction of the 10mm pistol.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>0.00</researchViewX>
+        <researchViewY>11.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_Silenced10mmPistol</defName>
+        <label>Blueprint: Silenced 10mm Pistol</label>
+        <description>Gun Runners blueprint detailing the construction of the silenced 10mm pistol.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>1.00</researchViewX>
+        <researchViewY>11.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_ChinesePistol</defName>
+        <label>Blueprint: Chinese Pistol</label>
+        <description>Gun Runners blueprint detailing the construction of the Chinese pistol.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>2.00</researchViewX>
+        <researchViewY>11.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_9mmPistol</defName>
+        <label>Blueprint: 9mm Pistol</label>
+        <description>Gun Runners blueprint detailing the construction of the 9mm pistol.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>3.00</researchViewX>
+        <researchViewY>11.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_556Pistol</defName>
+        <label>Blueprint: 5.56mm Pistol</label>
+        <description>Gun Runners blueprint detailing the construction of the 5.56mm pistol.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>4.00</researchViewX>
+        <researchViewY>11.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_127mmPistol</defName>
+        <label>Blueprint: 12.7mm Pistol</label>
+        <description>Gun Runners blueprint detailing the construction of the 12.7mm pistol.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>5.00</researchViewX>
+        <researchViewY>11.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_Silenced22Pistol</defName>
+        <label>Blueprint: Silenced .22 Pistol</label>
+        <description>Gun Runners blueprint detailing the construction of the silenced .22 pistol.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>6.00</researchViewX>
+        <researchViewY>11.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_10mmPistolMkII</defName>
+        <label>Blueprint: 10mm Pistol MkII</label>
+        <description>Gun Runners blueprint detailing the construction of the 10mm pistol MkII.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>7.00</researchViewX>
+        <researchViewY>11.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_14mmPistol</defName>
+        <label>Blueprint: 14mm Pistol</label>
+        <description>Gun Runners blueprint detailing the construction of the 14mm pistol.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>8.00</researchViewX>
+        <researchViewY>11.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_223Pistol</defName>
+        <label>Blueprint: .223 Pistol</label>
+        <description>Gun Runners blueprint detailing the construction of the .223 pistol.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>9.00</researchViewX>
+        <researchViewY>11.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_Colt6520Pistol</defName>
+        <label>Blueprint: Colt 6520</label>
+        <description>Gun Runners blueprint detailing the construction of the Colt 6520.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>10.00</researchViewX>
+        <researchViewY>11.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_Deagle</defName>
+        <label>Blueprint: Deagle</label>
+        <description>Gun Runners blueprint detailing the construction of the Deagle.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>11.00</researchViewX>
+        <researchViewY>11.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_45AutoPistol</defName>
+        <label>Blueprint: .45 Auto Pistol</label>
+        <description>Gun Runners blueprint detailing the construction of the .45 auto pistol.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>12.00</researchViewX>
+        <researchViewY>11.00</researchViewY>
+    </ResearchProjectDef>
+
+    <!--_____ Revolvers _____-->
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_357Revolver</defName>
+        <label>Blueprint: .357 Revolver</label>
+        <description>Gun Runners blueprint detailing the construction of the .357 revolver.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>14.00</researchViewX>
+        <researchViewY>11.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_44MagnumRevolver</defName>
+        <label>Blueprint: .44 Magnum Revolver</label>
+        <description>Gun Runners blueprint detailing the construction of the .44 magnum revolver.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>15.00</researchViewX>
+        <researchViewY>11.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_HuntingRevolver</defName>
+        <label>Blueprint: Hunting Revolver</label>
+        <description>Gun Runners blueprint detailing the construction of the hunting revolver.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>16.00</researchViewX>
+        <researchViewY>11.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_PolicePistol</defName>
+        <label>Blueprint: Police Pistol</label>
+        <description>Gun Runners blueprint detailing the construction of the police pistol.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>17.00</researchViewX>
+        <researchViewY>11.00</researchViewY>
+    </ResearchProjectDef>
+
+    <!--_____ SMGs _____-->
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_10mmSMG</defName>
+        <label>Blueprint: 10mm SMG</label>
+        <description>Gun Runners blueprint detailing the construction of the 10mm SMG.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>19.00</researchViewX>
+        <researchViewY>11.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_HK10SMG</defName>
+        <label>Blueprint: HK-10 SMG</label>
+        <description>Gun Runners blueprint detailing the construction of the HK-10 SMG.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>20.00</researchViewX>
+        <researchViewY>11.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_9mmSMG</defName>
+        <label>Blueprint: 9mm SMG</label>
+        <description>Gun Runners blueprint detailing the construction of the 9mm SMG.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>21.00</researchViewX>
+        <researchViewY>11.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_127mmSMG</defName>
+        <label>Blueprint: 12.7mm SMG</label>
+        <description>Gun Runners blueprint detailing the construction of the 12.7mm SMG.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>22.00</researchViewX>
+        <researchViewY>11.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_Silenced22SMG</defName>
+        <label>Blueprint: Silenced .22 SMG</label>
+        <description>Gun Runners blueprint detailing the construction of the silenced .22 SMG.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>23.00</researchViewX>
+        <researchViewY>11.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_45AutoSMG</defName>
+        <label>Blueprint: .45 Auto Submachine Gun</label>
+        <description>Gun Runners blueprint detailing the construction of the .45 auto submachine gun.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>24.00</researchViewX>
+        <researchViewY>11.00</researchViewY>
+    </ResearchProjectDef>
+
+    <!--_____ Shotguns _____-->
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_CaravanShotgun</defName>
+        <label>Blueprint: Caravan Shotgun</label>
+        <description>Gun Runners blueprint detailing the construction of the caravan shotgun.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>0.00</researchViewX>
+        <researchViewY>12.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_HuntingShotgun</defName>
+        <label>Blueprint: Hunting Shotgun</label>
+        <description>Gun Runners blueprint detailing the construction of the hunting shotgun.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>1.00</researchViewX>
+        <researchViewY>12.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_CombatShotgun</defName>
+        <label>Blueprint: Combat Shotgun</label>
+        <description>Gun Runners blueprint detailing the construction of the combat shotgun.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>2.00</researchViewX>
+        <researchViewY>12.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_RiotShotgun</defName>
+        <label>Blueprint: Riot Shotgun</label>
+        <description>Gun Runners blueprint detailing the construction of the riot shotgun.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>3.00</researchViewX>
+        <researchViewY>12.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_SawnOffShotgun</defName>
+        <label>Blueprint: Sawn-Off Shotgun</label>
+        <description>Gun Runners blueprint detailing the construction of the sawn-off shotgun.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>4.00</researchViewX>
+        <researchViewY>12.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_LeverActionShotgun</defName>
+        <label>Blueprint: Lever-Action Shotgun</label>
+        <description>Gun Runners blueprint detailing the construction of the lever-action shotgun.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>5.00</researchViewX>
+        <researchViewY>12.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_SingleShotgun</defName>
+        <label>Blueprint: Single Shotgun</label>
+        <description>Gun Runners blueprint detailing the construction of the single shotgun.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>6.00</researchViewX>
+        <researchViewY>12.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_Citykiller</defName>
+        <label>Blueprint: Citykiller Shotgun</label>
+        <description>Gun Runners blueprint detailing the construction of the Citykiller shotgun.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>7.00</researchViewX>
+        <researchViewY>12.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_CombatShotgunMkII</defName>
+        <label>Blueprint: Combat Shotgun MkII</label>
+        <description>Gun Runners blueprint detailing the construction of the combat shotgun MkII.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>8.00</researchViewX>
+        <researchViewY>12.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_Jackhammer</defName>
+        <label>Blueprint: Jackhammer Shotgun</label>
+        <description>Gun Runners blueprint detailing the construction of the Jackhammer shotgun.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>9.00</researchViewX>
+        <researchViewY>12.00</researchViewY>
+    </ResearchProjectDef>
+
+    <!--_____ Rifles _____-->
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_CombatRifle</defName>
+        <label>Blueprint: Combat Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the combat rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>0.00</researchViewX>
+        <researchViewY>13.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_BBGun</defName>
+        <label>Blueprint: BB Gun</label>
+        <description>Gun Runners blueprint detailing the construction of the BB gun.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>1.00</researchViewX>
+        <researchViewY>13.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_BrushGun</defName>
+        <label>Blueprint: Brush Gun</label>
+        <description>Gun Runners blueprint detailing the construction of the brush gun.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>2.00</researchViewX>
+        <researchViewY>13.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_LeverActionRifle</defName>
+        <label>Blueprint: Lever Action Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the lever action rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>3.00</researchViewX>
+        <researchViewY>13.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_CowboyRepeater</defName>
+        <label>Blueprint: Cowboy Repeater</label>
+        <description>Gun Runners blueprint detailing the construction of the cowboy repeater.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>4.00</researchViewX>
+        <researchViewY>13.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_TrailCarbine</defName>
+        <label>Blueprint: Trail Carbine</label>
+        <description>Gun Runners blueprint detailing the construction of the trail carbine.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>5.00</researchViewX>
+        <researchViewY>13.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_32HuntingRifle</defName>
+        <label>Blueprint: .32 Hunting Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the .32 hunting rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>6.00</researchViewX>
+        <researchViewY>13.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_VarmintRifle</defName>
+        <label>Blueprint: Varmint Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the varmint rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>7.00</researchViewX>
+        <researchViewY>13.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_223Rangemaster</defName>
+        <label>Blueprint: .223 Rangemaster Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the .223 Rangemaster rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>8.00</researchViewX>
+        <researchViewY>13.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_223Rifle</defName>
+        <label>Blueprint: .223 Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the .223 rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>9.00</researchViewX>
+        <researchViewY>13.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_BattleRifle</defName>
+        <label>Blueprint: Battle Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the battle rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>10.00</researchViewX>
+        <researchViewY>13.00</researchViewY>
+    </ResearchProjectDef>
+
+    <!--_____ Assault Rifles _____-->
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_PowerArmorAssaultRifle</defName>
+        <label>Blueprint: Power Armor Assault Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the power armor assault rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>0.00</researchViewX>
+        <researchViewY>14.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_R91Rifle</defName>
+        <label>Blueprint: R-91 Assault Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the R-91 assault rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>1.00</researchViewX>
+        <researchViewY>14.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_ChineseAssaultRifle</defName>
+        <label>Blueprint: Chinese Assault Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the Chinese assault rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>2.00</researchViewX>
+        <researchViewY>14.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_MarksmanCarbine</defName>
+        <label>Blueprint: Marksman Carbine</label>
+        <description>Gun Runners blueprint detailing the construction of the marksman carbine.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>3.00</researchViewX>
+        <researchViewY>14.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_AssaultCarbine</defName>
+        <label>Blueprint: Assault Carbine</label>
+        <description>Gun Runners blueprint detailing the construction of the assault carbine.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>4.00</researchViewX>
+        <researchViewY>14.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_AK112AR</defName>
+        <label>Blueprint: AK-112 Assault Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the AK-112 assault rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>5.00</researchViewX>
+        <researchViewY>14.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_G11AR</defName>
+        <label>Blueprint: G11 Assault Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the G11 assault rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>6.00</researchViewX>
+        <researchViewY>14.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_Infiltrator</defName>
+        <label>Blueprint: Infiltrator</label>
+        <description>Gun Runners blueprint detailing the construction of the infiltrator.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>7.00</researchViewX>
+        <researchViewY>14.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_AutomaticRifle</defName>
+        <label>Blueprint: Automatic Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the automatic rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>8.00</researchViewX>
+        <researchViewY>14.00</researchViewY>
+    </ResearchProjectDef>
+
+    <!--_____ Sniper Rifles _____-->
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_DKS501SniperRifle</defName>
+        <label>Blueprint: DKS-501 Sniper Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the DKS-501 sniper rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>15.00</researchViewX>
+        <researchViewY>10.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_ScopedHuntingRifle</defName>
+        <label>Blueprint: Scoped Hunting Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the scoped hunting rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>16.00</researchViewX>
+        <researchViewY>10.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_AntiMaterielRifle</defName>
+        <label>Blueprint: Anti-Materiel Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the anti-materiel rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>17.00</researchViewX>
+        <researchViewY>10.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_DKS500SniperRifle</defName>
+        <label>Blueprint: DKS-500 Sniper Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the DKS-500 sniper rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Gunsmithing</li>
+        </prerequisites>
+        <researchViewX>18.00</researchViewX>
+        <researchViewY>10.00</researchViewY>
+    </ResearchProjectDef>
+
+    <!--_____ Heavy Weapons _____-->
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_Minigun</defName>
+        <label>Blueprint: Minigun</label>
+        <description>Gun Runners blueprint detailing the construction of the minigun.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>10.00</researchViewX>
+        <researchViewY>14.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_LightMachineGun</defName>
+        <label>Blueprint: Light Machine Gun</label>
+        <description>Gun Runners blueprint detailing the construction of the light machine gun.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>11.00</researchViewX>
+        <researchViewY>14.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_ChunkyBoi</defName>
+        <label>Blueprint: Chunky Boi</label>
+        <description>Gun Runners blueprint detailing the construction of the Chunky Boi.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>12.00</researchViewX>
+        <researchViewY>14.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_MkIAvenger</defName>
+        <label>Blueprint: MkI Avenger</label>
+        <description>Gun Runners blueprint detailing the construction of the MkI Avenger.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>13.00</researchViewX>
+        <researchViewY>14.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_Vindicator</defName>
+        <label>Blueprint: Vindicator</label>
+        <description>Gun Runners blueprint detailing the construction of the Vindicator.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>14.00</researchViewX>
+        <researchViewY>14.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_50CalMG</defName>
+        <label>Blueprint: .50 Cal Machine Gun</label>
+        <description>Gun Runners blueprint detailing the construction of the .50 cal machine gun.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>15.00</researchViewX>
+        <researchViewY>14.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_K9000CyberdogGun</defName>
+        <label>Blueprint: K9000 Cyberdog Gun</label>
+        <description>Gun Runners blueprint detailing the construction of the K9000 Cyberdog gun.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>16.00</researchViewX>
+        <researchViewY>14.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_RockwellCZ53Minigun</defName>
+        <label>Blueprint: Rockwell CZ53 Personal Minigun</label>
+        <description>Gun Runners blueprint detailing the construction of the Rockwell CZ53 personal minigun.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>17.00</researchViewX>
+        <researchViewY>14.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_ShoulderMountedMG</defName>
+        <label>Blueprint: Shoulder Mounted Machine Gun</label>
+        <description>Gun Runners blueprint detailing the construction of the shoulder mounted machine gun.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>18.00</researchViewX>
+        <researchViewY>14.00</researchViewY>
+    </ResearchProjectDef>
+
+    <!--_____ Explosive Launchers _____-->
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_25mmGrenadeLauncher</defName>
+        <label>Blueprint: 25mm Grenade Launcher</label>
+        <description>Gun Runners blueprint detailing the construction of the 25mm grenade launcher.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>12.00</researchViewX>
+        <researchViewY>13.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_GrenadeMachineGun</defName>
+        <label>Blueprint: Grenade Machine Gun</label>
+        <description>Gun Runners blueprint detailing the construction of the grenade machine gun.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>13.00</researchViewX>
+        <researchViewY>13.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_MissileLauncher</defName>
+        <label>Blueprint: Missile Launcher</label>
+        <description>Gun Runners blueprint detailing the construction of the missile launcher.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>14.00</researchViewX>
+        <researchViewY>13.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_RockwellBigBazooka</defName>
+        <label>Blueprint: Rockwell Big Bazooka</label>
+        <description>Gun Runners blueprint detailing the construction of the Rockwell Big Bazooka.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>15.00</researchViewX>
+        <researchViewY>13.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_FatMan</defName>
+        <label>Blueprint: Fat Man</label>
+        <description>Gun Runners blueprint detailing the construction of the Fat Man.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>16.00</researchViewX>
+        <researchViewY>13.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_AutoCannon</defName>
+        <label>Blueprint: Auto Cannon</label>
+        <description>Gun Runners blueprint detailing the construction of the auto cannon.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>17.00</researchViewX>
+        <researchViewY>13.00</researchViewY>
+    </ResearchProjectDef>
+
+    <!--_____ Laser Weapons _____-->
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_LaserPistol</defName>
+        <label>Blueprint: Laser Pistol</label>
+        <description>Gun Runners blueprint detailing the construction of the laser pistol.</description>
+        <prerequisites>
+            <li>FCP_Research_Laser_Weapon_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>0.00</researchViewX>
+        <researchViewY>15.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_LaserRifle</defName>
+        <label>Blueprint: Laser Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the laser rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Laser_Weapon_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>1.00</researchViewX>
+        <researchViewY>15.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_TriBeamLaserRifle</defName>
+        <label>Blueprint: Tri-Beam Laser Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the tri-beam laser rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Laser_Weapon_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>2.00</researchViewX>
+        <researchViewY>15.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_GatlingLaser</defName>
+        <label>Blueprint: Gatling Laser</label>
+        <description>Gun Runners blueprint detailing the construction of the gatling laser.</description>
+        <prerequisites>
+            <li>FCP_Research_Laser_Weapon_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>3.00</researchViewX>
+        <researchViewY>15.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_LaserRCW</defName>
+        <label>Blueprint: Laser RCW</label>
+        <description>Gun Runners blueprint detailing the construction of the laser RCW.</description>
+        <prerequisites>
+            <li>FCP_Research_Laser_Weapon_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>4.00</researchViewX>
+        <researchViewY>15.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_RechargerRifle</defName>
+        <label>Blueprint: Recharger Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the recharger rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Laser_Weapon_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>5.00</researchViewX>
+        <researchViewY>15.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_RechargerPistol</defName>
+        <label>Blueprint: Recharger Pistol</label>
+        <description>Gun Runners blueprint detailing the construction of the recharger pistol.</description>
+        <prerequisites>
+            <li>FCP_Research_Laser_Weapon_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>6.00</researchViewX>
+        <researchViewY>15.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_GatlingLaserMkI</defName>
+        <label>Blueprint: Gatling Laser Mk I</label>
+        <description>Gun Runners blueprint detailing the construction of the gatling laser Mk I.</description>
+        <prerequisites>
+            <li>FCP_Research_Laser_Weapon_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>7.00</researchViewX>
+        <researchViewY>15.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_LaserCarbine</defName>
+        <label>Blueprint: Laser Carbine</label>
+        <description>Gun Runners blueprint detailing the construction of the laser carbine.</description>
+        <prerequisites>
+            <li>FCP_Research_Laser_Weapon_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>8.00</researchViewX>
+        <researchViewY>15.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_Wattz1000LaserPistol</defName>
+        <label>Blueprint: Wattz 1000 Laser Pistol</label>
+        <description>Gun Runners blueprint detailing the construction of the Wattz 1000 laser pistol.</description>
+        <prerequisites>
+            <li>FCP_Research_Laser_Weapon_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>9.00</researchViewX>
+        <researchViewY>15.00</researchViewY>
+    </ResearchProjectDef>
+
+    <!--_____ Gauss Weapons _____-->
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_PPK12GaussPistol</defName>
+        <label>Blueprint: PPK12 Gauss Pistol</label>
+        <description>Gun Runners blueprint detailing the construction of the PPK12 gauss pistol.</description>
+        <prerequisites>
+            <li>FCP_Research_Gauss_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>11.00</researchViewX>
+        <researchViewY>12.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_M72GaussRifle</defName>
+        <label>Blueprint: M72 Gauss Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the M72 gauss rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Gauss_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>12.00</researchViewX>
+        <researchViewY>12.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_GaussMinigun</defName>
+        <label>Blueprint: Gauss Minigun</label>
+        <description>Gun Runners blueprint detailing the construction of the gauss minigun.</description>
+        <prerequisites>
+            <li>FCP_Research_Gauss_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>13.00</researchViewX>
+        <researchViewY>12.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_GaussSniperRifle</defName>
+        <label>Blueprint: Gauss Sniper Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the gauss sniper rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Gauss_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>14.00</researchViewX>
+        <researchViewY>12.00</researchViewY>
+    </ResearchProjectDef>
+
+    <!--_____ Flame Weapons _____-->
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_FlamerMkI</defName>
+        <label>Blueprint: Flamer Mk I</label>
+        <description>Gun Runners blueprint detailing the construction of the flamer Mk I.</description>
+        <prerequisites>
+            <li>FCP_Research_Energy_Based_Weaponry</li>
+        </prerequisites>
+        <researchViewX>16.00</researchViewX>
+        <researchViewY>12.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_FlamerMkII</defName>
+        <label>Blueprint: Flamer Mk II</label>
+        <description>Gun Runners blueprint detailing the construction of the flamer Mk II.</description>
+        <prerequisites>
+            <li>FCP_Research_Energy_Based_Weaponry</li>
+        </prerequisites>
+        <researchViewX>17.00</researchViewX>
+        <researchViewY>12.00</researchViewY>
+    </ResearchProjectDef>
+
+    <!--_____ Pulse Weapons _____-->
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_YK32PulsePistol</defName>
+        <label>Blueprint: YK32 Pulse Pistol</label>
+        <description>Gun Runners blueprint detailing the construction of the YK32 pulse pistol.</description>
+        <prerequisites>
+            <li>FCP_Research_Energy_Based_Weaponry</li>
+        </prerequisites>
+        <researchViewX>19.00</researchViewX>
+        <researchViewY>12.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_YK42BPulseRifle</defName>
+        <label>Blueprint: YK42B Pulse Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the YK42B pulse rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Energy_Based_Weaponry</li>
+        </prerequisites>
+        <researchViewX>20.00</researchViewX>
+        <researchViewY>12.00</researchViewY>
+    </ResearchProjectDef>
+
+    <!--_____ NCR Weapons _____-->
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_ServiceRifle</defName>
+        <label>Blueprint: Service Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the NCR service rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_NCR_Standard_Trooper_Corps</li>
+        </prerequisites>
+        <researchViewX>11.00</researchViewX>
+        <researchViewY>15.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_RangerSequoia</defName>
+        <label>Blueprint: Ranger Sequoia</label>
+        <description>Gun Runners blueprint detailing the construction of the Ranger Sequoia.</description>
+        <prerequisites>
+            <li>FCP_Research_NCR_Ranger_Elite_Corps</li>
+        </prerequisites>
+        <researchViewX>12.00</researchViewX>
+        <researchViewY>15.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_NCRHuntingRifle</defName>
+        <label>Blueprint: NCR Standard Hunting Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the NCR standard hunting rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_NCR_Ranger_Corps</li>
+        </prerequisites>
+        <researchViewX>13.00</researchViewX>
+        <researchViewY>15.00</researchViewY>
+    </ResearchProjectDef>
+
+</Defs>

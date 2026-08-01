@@ -23,9 +23,14 @@ public class GeneralSettings : SettingsTab
 
     // Weapon Condition
     public bool weaponConditionEnabled = true;
+    public float weaponDegradationRate = 1f;
 
     // Grenades
     public bool consumableGrenades = true;
+
+    // Named Settlements
+    public bool namedSettlementsEnabled = true;
+    public bool namedSettlementTradersOnly = true;
 
     public override void DoTabWindowContents(Rect tabRect)
     {
@@ -83,6 +88,9 @@ public class GeneralSettings : SettingsTab
         list.GapLine();
         list.CheckboxLabeled("FCP_Settings_WeaponCondition_Enabled".Translate(), ref weaponConditionEnabled,
             "FCP_Settings_WeaponCondition_Enabled_Desc".Translate());
+        weaponDegradationRate = list.SliderLabeled(
+            "FCP_Settings_WeaponCondition_DegradationRate".Translate(weaponDegradationRate.ToStringPercent()),
+            weaponDegradationRate, 0f, 3f, tooltip: "FCP_Settings_WeaponCondition_DegradationRate_Desc".Translate());
 
         // Grenades
         list.Gap();
@@ -92,6 +100,20 @@ public class GeneralSettings : SettingsTab
         list.GapLine();
         list.CheckboxLabeled("FCP_Settings_Grenades_Consumable".Translate(), ref consumableGrenades,
             "FCP_Settings_Grenades_Consumable_Desc".Translate());
+
+        // Named Settlements
+        list.Gap();
+        Text.Font = GameFont.Medium;
+        list.Label("FCP_Settings_NamedSettlements".Translate());
+        Text.Font = GameFont.Small;
+        list.GapLine();
+        list.CheckboxLabeled("FCP_Settings_NamedSettlements_Enabled".Translate(), ref namedSettlementsEnabled,
+            "FCP_Settings_NamedSettlements_Enabled_Desc".Translate());
+        if (namedSettlementsEnabled)
+        {
+            list.CheckboxLabeled("FCP_Settings_NamedTraders_Enabled".Translate(), ref namedSettlementTradersOnly,
+                "FCP_Settings_NamedTraders_Enabled_Desc".Translate());
+        }
 
         list.End();
     }
@@ -110,8 +132,13 @@ public class GeneralSettings : SettingsTab
 
         // Weapon Condition
         Scribe_Values.Look(ref weaponConditionEnabled, nameof(weaponConditionEnabled), defaultValue: true);
+        Scribe_Values.Look(ref weaponDegradationRate, nameof(weaponDegradationRate), defaultValue: 1f);
 
         // Grenades
         Scribe_Values.Look(ref consumableGrenades, nameof(consumableGrenades), defaultValue: true);
+
+        // Named Settlements
+        Scribe_Values.Look(ref namedSettlementsEnabled, nameof(namedSettlementsEnabled), defaultValue: true);
+        Scribe_Values.Look(ref namedSettlementTradersOnly, nameof(namedSettlementTradersOnly), defaultValue: true);
     }
 }

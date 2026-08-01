@@ -9,7 +9,7 @@ static class Patch_WorldObject_ExpandingIconColor
 {
     static void Postfix(WorldObject __instance, ref Color __result)
     {
-        if (__instance is Site site && site.MainSitePartDef != null && 
+        if (__instance is Site site && site.parts.Count > 0 && site.MainSitePartDef != null &&
             site.MainSitePartDef.defName.StartsWith("FCP_"))
         {
             __result = QuestIconColorManager.GetColor();

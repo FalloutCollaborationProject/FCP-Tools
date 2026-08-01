@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using FCP.Core;
 using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
@@ -12,6 +13,9 @@ static class Settlement_FinalizeInit_Patch
 	static void Postfix()
 	{
 		if (Current.Game.tickManager.TicksGame > 0)
+			return;
+
+		if (!FCPCoreMod.Settings.General.namedSettlementsEnabled)
 			return;
 
 		WorldGrid grid = Find.WorldGrid;
@@ -222,6 +226,9 @@ static class Settlement_CanTradeNow_Patch
 	static void Postfix(Settlement __instance, ref bool __result)
 	{
 		if (!__result)
+			return;
+
+		if (!FCPCoreMod.Settings.General.namedSettlementTradersOnly)
 			return;
 
 		WorldObjectComp_SettlementTraders comp = __instance.GetComponent<WorldObjectComp_SettlementTraders>();

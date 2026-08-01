@@ -63,7 +63,7 @@ public class FCPCoreMod : Mod
         Widgets.DrawMenuSection(mainRect);
 
         // Draw Tabs
-        currentTab ??= SettingsTab<GeneralSettings>();
+        currentTab ??= SettingsTab<InfoSettings>();
 
         var tabs = Settings.Tabs
             .Select(tab => new TabRecord(tab.TabName, () =>

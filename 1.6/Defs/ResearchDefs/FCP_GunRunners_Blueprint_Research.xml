@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Gun Runners Weapon Blueprints __________-->
+
+    <!--__Blueprint Base__-->
+
+    <ResearchProjectDef Name="FCP_GunRunners_Weapon_Blueprint_Base" Abstract="true">
+        <techprintCount>1</techprintCount>
+        <techprintCommonality>1</techprintCommonality>
+        <tab>FCP_Pre_War_Research</tab>
+        <tab MayRequire="Rick.FCP.Wastelanders">FCP_GunRunners_Research</tab>
+        <baseCost>500</baseCost>
+        <techLevel>Industrial</techLevel>
+        <heldByFactionCategoryTags>
+            <li>FCP_Faction_Hidden_GunRunners_Blueprint_Traders</li>
+        </heldByFactionCategoryTags>
+        <modExtensions>
+            <li Class="FCP.Core.TechprintExtension">
+                <baseLabel>FCP_GunRunnersBlueprint_Label</baseLabel>
+                <baseDescription>FCP_GunRunnersBlueprint_Desc</baseDescription>
+                <texPath>Things/Items/Techprints/FCP_Techprint_Blueprint</texPath>
+                <requiredBenches>
+                    <li>FCP_Production_Old_Table_Terminal</li>
+                    <li>FCP_Production_Clean_Table_Terminal</li>
+                </requiredBenches>
+            </li>
+        </modExtensions>
+    </ResearchProjectDef>
+
+    <!--_____ Advanced Melee Weapons _____-->
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_Chainsaw</defName>
+        <label>Blueprint: Chainsaw</label>
+        <description>Gun Runners blueprint detailing the construction of the chainsaw.</description>
+        <prerequisites>
+            <li>FCP_Research_Basic_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>0.00</researchViewX>
+        <researchViewY>10.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_MrHandyBuzzBlade</defName>
+        <label>Blueprint: Mr. Handy Buzz Blade</label>
+        <description>Gun Runners blueprint detailing the construction of the Mr. Handy buzz blade.</description>
+        <prerequisites>
+            <li>FCP_Research_Basic_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>1.00</researchViewX>
+        <researchViewY>10.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_Shishkebab</defName>
+        <label>Blueprint: Shishkebab</label>
+        <description>Gun Runners blueprint detailing the construction of the shishkebab.</description>
+        <prerequisites>
+            <li>FCP_Research_Basic_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>2.00</researchViewX>
+        <researchViewY>10.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_SuperSledge</defName>
+        <label>Blueprint: Super Sledge</label>
+        <description>Gun Runners blueprint detailing the construction of the super sledge.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>3.00</researchViewX>
+        <researchViewY>10.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_Ripper</defName>
+        <label>Blueprint: Ripper</label>
+        <description>Gun Runners blueprint detailing the construction of the ripper.</description>
+        <prerequisites>
+            <li>FCP_Research_Advanced_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>4.00</researchViewX>
+        <researchViewY>10.00</researchViewY>
+    </ResearchProjectDef>
+
+    <!--_____ Wasteland Grenades _____-->
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_TincanGrenade</defName>
+        <label>Blueprint: Tincan Grenade</label>
+        <description>Gun Runners blueprint detailing the construction of tincan grenades.</description>
+        <prerequisites>
+            <li>Machining</li>
+        </prerequisites>
+        <researchViewX>6.00</researchViewX>
+        <researchViewY>10.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_PiggybankGrenade</defName>
+        <label>Blueprint: Piggybank Grenade</label>
+        <description>Gun Runners blueprint detailing the construction of piggybank grenades.</description>
+        <prerequisites>
+            <li>Machining</li>
+        </prerequisites>
+        <researchViewX>7.00</researchViewX>
+        <researchViewY>10.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_PipebombGrenade</defName>
+        <label>Blueprint: Pipebomb</label>
+        <description>Gun Runners blueprint detailing the construction of pipebombs.</description>
+        <prerequisites>
+            <li>Machining</li>
+        </prerequisites>
+        <researchViewX>8.00</researchViewX>
+        <researchViewY>10.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_BaseballGrenade</defName>
+        <label>Blueprint: Baseball Grenade</label>
+        <description>Gun Runners blueprint detailing the construction of baseball grenades.</description>
+        <prerequisites>
+            <li>Machining</li>
+        </prerequisites>
+        <researchViewX>9.00</researchViewX>
+        <researchViewY>10.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_MolotovCocktail</defName>
+        <label>Blueprint: Molotov Cocktail</label>
+        <description>Gun Runners blueprint detailing the construction of molotov cocktails.</description>
+        <prerequisites>
+            <li>Machining</li>
+        </prerequisites>
+        <researchViewX>10.00</researchViewX>
+        <researchViewY>10.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_MFCGrenade</defName>
+        <label>Blueprint: MFC Grenade</label>
+        <description>Gun Runners blueprint detailing the construction of MFC grenades.</description>
+        <prerequisites>
+            <li>MicroelectronicsBasics</li>
+        </prerequisites>
+        <researchViewX>11.00</researchViewX>
+        <researchViewY>10.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_BoombugGrenade</defName>
+        <label>Blueprint: Boombug Grenade</label>
+        <description>Gun Runners blueprint detailing the construction of boombug grenades.</description>
+        <prerequisites>
+            <li>Machining</li>
+        </prerequisites>
+        <researchViewX>12.00</researchViewX>
+        <researchViewY>10.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_Mininuke</defName>
+        <label>Blueprint: Mininuke</label>
+        <description>Gun Runners blueprint detailing the construction of mininukes.</description>
+        <prerequisites>
+            <li>MicroelectronicsBasics</li>
+        </prerequisites>
+        <researchViewX>13.00</researchViewX>
+        <researchViewY>10.00</researchViewY>
+    </ResearchProjectDef>
+
+</Defs>

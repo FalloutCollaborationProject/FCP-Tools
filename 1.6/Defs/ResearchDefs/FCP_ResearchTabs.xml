@@ -30,4 +30,22 @@
         <generalDescription>Exploration of technologies and knowledge from before the great war, aiming to rediscover lost advancements.</generalDescription>
     </ResearchTabDef>
 
+    <!-- Gun Runners Blueprints -->
+
+    <ResearchTabDef MayRequire="Rick.FCP.Wastelanders">
+        <defName>FCP_GunRunners_Research</defName>
+        <label>FCP Gun Runners Blueprints</label>
+        <generalTitle>Gun Runners Blueprints</generalTitle>
+        <generalDescription>Weapon blueprints sold by the Gun Runners, each unlocking the schematics needed to manufacture a specific firearm.</generalDescription>
+    </ResearchTabDef>
+
+    <!-- Robotics Research -->
+
+    <ResearchTabDef>
+        <defName>FCP_Robotics_Research</defName>
+        <label>FCP Robotics</label>
+        <generalTitle>Robotics</generalTitle>
+        <generalDescription>Holotape files detailing the construction of pre-war robot chassis and their weapon attachments.</generalDescription>
+    </ResearchTabDef>
+
 </Defs>
