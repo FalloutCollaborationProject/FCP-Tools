@@ -112,7 +112,14 @@ public static class Patches
         
         harmony.Patch(original: typeof(Faction).GetDeclaredMethods().First(mi => mi.Name.Contains("GetInitialGoodwill")),
             prefix: new HarmonyMethod(typeof(Patches), nameof(Faction_TryMakeInitialRelationsWith_GetInitialGoodwill_Prefix)));
-        
+
+        // Faction Permanent Alliance
+        harmony.Patch(original: AccessTools.Method(typeof(Faction), "CanChangeGoodwillFor"),
+            postfix: new HarmonyMethod(typeof(Patches), nameof(Faction_CanChangeGoodwillFor_Alliance_Postfix)));
+
+        harmony.Patch(original: typeof(Faction).GetDeclaredMethods().First(mi => mi.Name.Contains("GetInitialGoodwill")),
+            prefix: new HarmonyMethod(typeof(Patches), nameof(Faction_TryMakeInitialRelationsWith_GetInitialGoodwill_Alliance_Prefix)));
+
         // Unique Characters
         harmony.Patch(original: AccessTools.Method(typeof(Faction), nameof(Faction.TryGenerateNewLeader)),
             prefix: new HarmonyMethod(typeof(Patches), nameof(Faction_TryGenerateNewLeader_Prefix)));
@@ -720,6 +727,40 @@ public static class Patches
             
         // They're hostile, so set to -100 and skip the original.
         __result = -100;
+        return false;
+    }
+
+    #endregion
+
+    #region Faction Permanent Alliance
+
+    /// <summary>
+    /// Mirrors Faction_CanChangeGoodwillFor_Postfix for permanent allies: locks goodwill so it
+    /// can't be changed away from the forced starting value.
+    /// </summary>
+    public static void Faction_CanChangeGoodwillFor_Alliance_Postfix(Faction other, Faction __instance, ref bool __result)
+    {
+        if (__result == false)
+            return;
+
+        FactionExtension_PermanentlyAlliedTo extension = __instance.def.GetModExtension<FactionExtension_PermanentlyAlliedTo>();
+        if (extension == null)
+            return;
+
+        __result = !extension.FactionIsAlliedTo(other.def);
+    }
+
+    /// <summary>
+    /// Mirrors Faction_TryMakeInitialRelationsWith_GetInitialGoodwill_Prefix for permanent allies:
+    /// sets initial goodwill to 100 and skips the original random roll.
+    /// </summary>
+    public static bool Faction_TryMakeInitialRelationsWith_GetInitialGoodwill_Alliance_Prefix(Faction a, Faction b, ref int __result)
+    {
+        FactionExtension_PermanentlyAlliedTo extension = a.def.GetModExtension<FactionExtension_PermanentlyAlliedTo>();
+        if (extension == null || !extension.alliedFactionDefs.Contains(b.def)) return true;
+
+        // They're allies, so set to 100 and skip the original.
+        __result = 100;
         return false;
     }
 

@@ -1,4 +1,5 @@
 using HarmonyLib;
+using RimWorld.Planet;
 
 namespace FCP.Core
 {
@@ -26,7 +27,7 @@ namespace FCP.Core
                 }
 
                 Pawn animal = tracker.GetOrGenPawn(animalDef.animalCharacterDef);
-                if (animal.Dead || animal.Spawned)
+                if (animal.Dead || animal.Spawned || animal.GetCaravan() != null)
                 {
                     continue;
                 }

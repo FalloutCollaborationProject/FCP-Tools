@@ -41,18 +41,18 @@ namespace FCP.Core.Robotics
         {
             IRobotTierProvider provider = RobotUtility.GetProvider(Robot);
             PawnKindDef nextTier = provider?.GetNextTier(Robot.kindDef);
-            if (nextTier == null)
+            if (nextTier != null)
             {
-                return;
+                RobotTierExtension tierExt = nextTier.GetModExtension<RobotTierExtension>();
+                if (tierExt == null || RobotUpgradeUtility.TryConsumeCost(pawn.Map, tierExt.upgradeCost))
+                {
+                    provider.UpgradeTo(Robot, nextTier);
+                }
+                else
+                {
+                    Messages.Message("FCP_UpgradeRobot_MissingMaterials".Translate(), Robot, MessageTypeDefOf.RejectInput, historical: false);
+                }
             }
-
-            RobotTierExtension tierExt = nextTier.GetModExtension<RobotTierExtension>();
-            if (tierExt != null && !RobotUpgradeUtility.TryConsumeCost(pawn.Map, tierExt.upgradeCost))
-            {
-                return;
-            }
-
-            provider.UpgradeTo(Robot, nextTier);
 
             CompRobotUpgrade upgradeComp = Robot.GetComp<CompRobotUpgrade>();
             if (upgradeComp != null)

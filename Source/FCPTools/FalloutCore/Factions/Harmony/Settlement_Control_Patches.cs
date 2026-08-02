@@ -69,8 +69,8 @@ static class Settlement_FinalizeInit_Patch
 						comp = new WorldObjectComp_SettlementTraders();
 						comp.parent = settlement;
 						settlement.AllComps.Add(comp);
-						comp.SetTraders(namedSettlement.traders);
 					}
+					comp.SetTraders(namedSettlement.traders);
 				}
 
 				if (namedSettlement.oceanPlacement)

@@ -166,7 +166,7 @@ public class CompWeaponBench : ThingComp, IThingHolder
             JobCondition.InterruptForced);
     }
 
-    private void Eject()
+    public void Eject()
     {
         parent.Map.dynamicDrawManager.DeRegisterDrawable(parent);
         slot.TryDropAll(parent.InteractionCell, parent.Map, ThingPlaceMode.Near);

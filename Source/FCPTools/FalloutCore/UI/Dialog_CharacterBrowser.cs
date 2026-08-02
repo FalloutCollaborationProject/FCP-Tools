@@ -632,15 +632,11 @@ public class Dialog_CharacterBrowser : Window
 
         if (Widgets.ButtonText(gotoButton, "Go to Pawn") && canGoTo)
         {
-            if (tracker != null && tracker.TryGetPawnCharacter(null, out _))
+            Pawn pawn = tracker.GetOrGenPawn(selectedCharacter);
+            if (pawn is { Spawned: true })
             {
-                // Need to get pawn differently - the tracker stores by CharacterDef
-                Pawn pawn = tracker.GetOrGenPawn(selectedCharacter);
-                if (pawn is { Spawned: true })
-                {
-                    CameraJumper.TryJumpAndSelect(pawn);
-                    Close();
-                }
+                CameraJumper.TryJumpAndSelect(pawn);
+                Close();
             }
         }
 

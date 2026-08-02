@@ -49,12 +49,12 @@ namespace FCP.PocketMaps
             yield return new Command_Action
             {
                 defaultLabel = "Abandon pocket map",
-                defaultDesc = "Abandon this pocket map permanently. All colonists will be evacuated and the map will be destroyed.",
+                defaultDesc = "Abandon this pocket map permanently. All your pawns will be evacuated and the map will be destroyed.",
                 icon = ContentFinder<Texture2D>.Get("UI/Designators/Cancel"),
                 action = () =>
                 {
                     Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation(
-                        "Abandon this pocket map? All colonists will be evacuated and you cannot re-enter.",
+                        "Abandon this pocket map? All your pawns will be evacuated and you cannot re-enter.",
                         () => Abandon(map, portal),
                         destructive: true
                     ));
@@ -97,11 +97,11 @@ namespace FCP.PocketMaps
                 presettablePortal.MarkAsAbandoned();
             }
 
-            var colonists = map.mapPawns.AllPawnsSpawned.Where(p => p.IsColonist).ToList();
+            var evacuees = map.mapPawns.AllPawnsSpawned.Where(p => p.IsColonist || p.IsPrisonerOfColony || p.Faction == Faction.OfPlayer).ToList();
             var parentMap = entrancePortal.Map;
             var exitPos = entrancePortal.InteractionCell;
 
-            foreach (var pawn in colonists)
+            foreach (var pawn in evacuees)
             {
                 var pos = CellFinder.RandomClosewalkCellNear(exitPos, parentMap, 3);
                 pawn.DeSpawn();
@@ -111,10 +111,10 @@ namespace FCP.PocketMaps
 
             if (map.info.parent != null && Find.WorldObjects.Contains(map.info.parent))
                 Find.WorldObjects.Remove(map.info.parent);
-            
+
             Current.Game.DeinitAndRemoveMap(map, false);
-            
-            Messages.Message($"{colonists.Count} colonist(s) evacuated. Pocket map abandoned.", MessageTypeDefOf.NegativeEvent);
+
+            Messages.Message($"{evacuees.Count} pawn(s) evacuated. Pocket map abandoned.", MessageTypeDefOf.NegativeEvent);
         }
     }
 }

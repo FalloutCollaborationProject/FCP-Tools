@@ -34,11 +34,11 @@ public class QuestPart_SpawnRaiders : QuestPart
     {
         mapParent = Find.World.worldObjects.MapParentAt(mapTile);
         base.Notify_QuestSignalReceived(signal);
-        if (!(signal.tag == inSignal) || !mapParent.HasMap)
+        if (!(signal.tag == inSignal) || mapParent?.Map == null || pawns.NullOrEmpty())
         {
             return;
         }
-        
+
         IntVec3 location = cell.IsValid ? cell : (spawnOnEdge ? default : mapParent.Map.Center);
         if (spawnOnEdge && !cell.IsValid)
         {

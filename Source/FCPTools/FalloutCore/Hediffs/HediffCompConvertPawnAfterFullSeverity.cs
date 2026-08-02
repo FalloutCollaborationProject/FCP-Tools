@@ -26,6 +26,7 @@ public class HediffCompConvertPawnAfterFullSeverity : HediffComp
         {
             if (Props.isUsingImmunityList)
             {
+                bool transformed = false;
                 if (ModsConfig.BiotechActive && !Props.immuneXenotypeDef.NullOrEmpty())
                 {
                     if (!Props.immuneXenotypeDef.Contains(parent.pawn.genes.Xenotype))
@@ -39,6 +40,7 @@ public class HediffCompConvertPawnAfterFullSeverity : HediffComp
                             DoTransformation(Props.pawnKindDefs.RandomElement(),
                                 Find.FactionManager.FirstFactionOfDef(Props.factionDef));
                         }
+                        transformed = true;
                     }
                     else
                     {
@@ -49,7 +51,7 @@ public class HediffCompConvertPawnAfterFullSeverity : HediffComp
                     }
                 }
 
-                if (!Props.immuneHediffDef.NullOrEmpty())
+                if (!transformed && !Props.immuneHediffDef.NullOrEmpty())
                 {
                     if (!Props.immuneHediffDef.Any(x => Pawn.health.hediffSet.HasHediff(x)))
                     {

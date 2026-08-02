@@ -73,7 +73,6 @@ public class JobDriver_StrapToPowerLine : JobDriver
                 victim.mindState.canFleeIndividual = false;
             victim.jobs?.StopAll();
             victim.pather?.StopDead();
-                victim.mindState.canFleeIndividual = false;
             if (victim.drafter != null)
                 victim.drafter.Drafted = false;
             pawn.needs?.mood?.thoughts?.memories?.TryGainMemory(ThoughtDef.Named("FCP_Legion_CrucifiedSomeone"));

@@ -249,7 +249,7 @@ public class CompPowerArmorStation : ThingComp, IThingHolder, ISearchableContent
 		Apparel existing = GetApparelForLayer(layer);
 		if (existing != null)
 		{
-			innerContainer.TryDropAll(parent.Position, parent.Map, ThingPlaceMode.Near);
+			innerContainer.TryDrop(existing, parent.Position, parent.Map, ThingPlaceMode.Near, out Thing _);
 		}
 		if (apparel.Spawned)
 		{

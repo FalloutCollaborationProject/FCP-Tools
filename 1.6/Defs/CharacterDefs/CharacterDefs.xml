@@ -49,6 +49,26 @@
             <li Class="FCP.Core.CharacterUniqueItemDefinition" MayRequire="Rick.FCP.NCR">
                 <uniqueItem>FCP_Apparel_Ranger_Ricks_Helmet</uniqueItem>
             </li>
+            <!-- Bonded Companion -->
+            <li Class="FCP.Core.CharacterAnimalCompanionDefinition" MayRequire="Rick.FCP.Animals">
+                <animalCharacterDef>FCP_Character_Ranger_Ricks_Dog_Rocket</animalCharacterDef>
+            </li>
+        </definitions>
+    </FCP.Core.CharacterDef>
+
+    <!-- Rocket -->
+
+    <FCP.Core.CharacterDef MayRequire="Rick.FCP.Animals">
+        <defName>FCP_Character_Ranger_Ricks_Dog_Rocket</defName>
+        <pawnKind>FCP_Animal_German_Shepherd_Dog</pawnKind>
+        <definitions>
+            <li Class="FCP.Core.CharacterStoryDefinition">
+                <nickname>Rocket</nickname>
+                <age>6</age>
+            </li>
+            <li Class="FCP.Core.CharacterHediffDefinition">
+                <hediffDef>FCP_Hediff_CyberdogConversion_GermanShepherdDog</hediffDef>
+            </li>
         </definitions>
     </FCP.Core.CharacterDef>
 

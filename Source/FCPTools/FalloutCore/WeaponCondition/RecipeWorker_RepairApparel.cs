@@ -21,10 +21,12 @@ public abstract class RecipeWorker_RepairApparel : RecipeWorker
     {
         CompApparelBench slot = billDoer.CurJob.GetTarget(TargetIndex.A).Thing?.TryGetComp<CompApparelBench>();
         if (slot?.LoadedApparel == null) return;
-        slot.LoadedApparel.HitPoints = slot.LoadedApparel.MaxHitPoints;
+        Thing apparel = slot.LoadedApparel;
+        apparel.HitPoints = apparel.MaxHitPoints;
         billDoer.skills.Learn(SkillDefOf.Crafting, 0.5f);
-        Messages.Message("FCP_ApparelBench_Done".Translate(billDoer.LabelShort, slot.LoadedApparel.LabelShort),
+        Messages.Message("FCP_ApparelBench_Done".Translate(billDoer.LabelShort, apparel.LabelShort),
             billDoer, MessageTypeDefOf.PositiveEvent, historical: false);
+        slot.Eject();
     }
 }
 

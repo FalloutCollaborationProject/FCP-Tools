@@ -20,6 +20,12 @@ public class HediffComp_HostileAnimal : HediffComp
 
     public HediffCompProperties_HostileAnimal HostileProps => (HediffCompProperties_HostileAnimal)props;
 
+    public override void CompExposeData()
+    {
+        base.CompExposeData();
+        Scribe_Values.Look(ref applied, "applied");
+    }
+
     public override void CompPostTick(ref float severityAdjustment)
     {
         if (applied) return;

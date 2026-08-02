@@ -32,5 +32,9 @@ public class CharacterStoryDefinition : CharacterBaseDefinition
         {
             pawn.Name = new NameTriple(firstName ?? oldName.First, nickname, lastName ?? oldName.Last);
         }
+        else if (!nickname.NullOrEmpty())
+        {
+            pawn.Name = new NameSingle(nickname);
+        }
     }
 }

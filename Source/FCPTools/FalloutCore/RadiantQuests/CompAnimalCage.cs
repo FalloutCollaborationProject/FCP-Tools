@@ -321,7 +321,8 @@ public class CompAnimalCage : CompRefuelable, IThingHolder, ISuspendableThingHol
 
             }
         }
-        QuestUtility.SendQuestTargetSignals(Occupant.questTags, "ReleasedFromCage", Occupant.Named("SUBJECT"));
+        if (Occupant != null)
+            QuestUtility.SendQuestTargetSignals(Occupant.questTags, "ReleasedFromCage", Occupant.Named("SUBJECT"));
         innerContainer.TryDropAll(parent.InteractionCell, map, ThingPlaceMode.Near);
         contentsKnown = true;
            

@@ -29,13 +29,12 @@ public class HediffComp_Stimpack : HediffComp
         var toHeal = 0f;
         if (Props.ScaleHealedAmountWithTotalHitPoints)
         {
-            toHeal = StimData.TotalHpForRace[Pawn.RaceProps.body] / StimData.AverageHitPoint;
+            toHeal = StimData.TotalHpForRace[Pawn.RaceProps.body] / StimData.AverageHitPoint * Props.HealedAmount;
         }
         else
         {
             toHeal = Props.HealedAmount;
         }
-        toHeal *= Props.HealedAmount;
         return toHeal;
     }
 
@@ -107,7 +106,7 @@ public class HediffComp_Stimpack : HediffComp
             }
             else
             {
-                healed = Math.Min(1, 3);
+                healed = Math.Min(toHeal, 3);
                 injury.Heal(healed);
             }
 

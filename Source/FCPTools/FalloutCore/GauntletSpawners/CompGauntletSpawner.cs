@@ -35,17 +35,10 @@ public class CompGauntletSpawner : ThingComp
         {
             if (Props.isOnlyActiveWhenHostileNear)
             {
-                if (parent.PositionHeld.NearbyPawnInLineOfSight(parent.MapHeld, Props.activeRadius, true).EnumerableCount() > 0)
-                {
-                    isHostileInRange = true;
-                }
-                else
-                {
-                    isHostileInRange = false;
-                }
-                if (!isHostileInRange) return;
+                isHostileInRange = parent.PositionHeld.NearbyPawnInLineOfSight(parent.MapHeld, Props.activeRadius, true).EnumerableCount() > 0;
             }
         }
+        if (Props.isOnlyActiveWhenHostileNear && !isHostileInRange) return;
         if (parent.IsHashIntervalTick(Props.interval))
         {
             CheckExistingPawns();

@@ -18,6 +18,9 @@ public class CripplingWorker : LegendaryEffectWorker
 
     private static bool ContainsLimb(DamageInfo damageInfo)
     {
+        if (damageInfo.HitPart == null)
+            return false;
+
         return damageInfo.HitPart.def.defName.ToLower().Contains("arm")
                || damageInfo.HitPart.def.defName.ToLower().Contains("tentacle")
                || damageInfo.HitPart.def.defName.ToLower().Contains("leg");

@@ -81,7 +81,7 @@ public class IncidentWorker_GautletSpawner : IncidentWorker
 
     public IEnumerable<Thing> SpawnThing(IncidentParms parms, Map map)
     {
-        float spawnerPoint = modExtension.spawnerPoint;
+        float spawnerPoint = SpawnPoints;
         float totalPointAvailable = parms.points;
         IntVec3 rootLoc = IntVec3.Invalid;
         if (TryFindSpawnLoc(map, out var cell))

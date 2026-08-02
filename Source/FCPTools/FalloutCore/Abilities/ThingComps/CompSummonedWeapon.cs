@@ -20,13 +20,14 @@ public class CompSummonedWeapon : ThingComp
         {
             FleckMaker.Static(parent.PositionHeld, mapHeld, Props.fleckWhenExpired);
         }
+        Pawn_EquipmentTracker equipmentTracker = EquipmentTracker;
         parent.Destroy();
-            
-        Thing existingWeapon = EquipmentTracker?.pawn.inventory.innerContainer?.FirstOrDefault(x => x.def.IsWeapon);
+
+        Thing existingWeapon = equipmentTracker?.pawn.inventory.innerContainer?.FirstOrDefault(x => x.def.IsWeapon);
         if (existingWeapon is ThingWithComps weapon)
         {
             existingWeapon.holdingOwner?.Remove(weapon);
-            EquipmentTracker.AddEquipment(weapon);
+            equipmentTracker.AddEquipment(weapon);
         }
     }
 

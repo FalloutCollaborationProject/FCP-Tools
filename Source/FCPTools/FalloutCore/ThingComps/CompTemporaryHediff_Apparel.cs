@@ -21,7 +21,7 @@ public class CompTemporaryHediff_Apparel : CompCauseHediff_Apparel
 
     public override void CompTickLong()
     {
-        base.CompTickRare();
+        base.CompTickLong();
         if (!HediffGiven && PrereqsComplete)
         {
             AddHediff(ParentHolder.ParentHolder as Pawn);

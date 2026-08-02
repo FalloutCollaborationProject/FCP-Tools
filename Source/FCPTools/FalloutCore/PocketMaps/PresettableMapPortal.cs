@@ -32,7 +32,7 @@ namespace FCP.PocketMaps
                 var message = ext?.abandonedMessage ?? "This pocket map has been abandoned and can no longer be entered.";
                 Messages.Message(message, this, MessageTypeDefOf.RejectInput);
                 Find.Selector.ClearSelection();
-                return Map;
+                return null;
             }
 
             if (ext?.prefabDefs == null || ext.prefabDefs.Count == 0)

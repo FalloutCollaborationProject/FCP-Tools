@@ -31,6 +31,8 @@ public class CompApparelBench : ThingComp, IThingHolder
     public override void PostExposeData()
     {
         Scribe_Deep.Look(ref slot, "apparelSlot", this);
+        if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            slot ??= new ThingOwner<Thing>(this, oneStackOnly: true);
     }
 
     public override void PostDestroy(DestroyMode mode, Map previousMap)
@@ -163,8 +165,9 @@ public class CompApparelBench : ThingComp, IThingHolder
             JobCondition.InterruptForced);
     }
 
-    private void Eject()
+    public void Eject()
     {
+        parent.Map.dynamicDrawManager.DeRegisterDrawable(parent);
         slot.TryDropAll(parent.InteractionCell, parent.Map, ThingPlaceMode.Near);
     }
 }

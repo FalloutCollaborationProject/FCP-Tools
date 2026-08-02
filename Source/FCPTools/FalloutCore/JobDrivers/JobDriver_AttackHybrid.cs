@@ -23,8 +23,9 @@ public class JobDriver_AttackHybrid : JobDriver
 
         bool allowManualCastWeapons = !pawn.IsColonist;
         Verb attackVerb = pawn.TryGetAttackVerb(target.Thing, allowManualCastWeapons);
-            
-        if (!attackVerb.TryFindShootLineFromTo(TargetThingA.Position, TargetThingB.Position, out ShootLine resultingLine) ||
+
+        if (attackVerb == null ||
+            !attackVerb.TryFindShootLineFromTo(TargetThingA.Position, TargetThingB.Position, out ShootLine resultingLine) ||
             !VATS_GameComponent.ActiveAttacks.TryGetValue(pawn, out VATS_GameComponent.VATSAction attack))
             return false;
             
