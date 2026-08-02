@@ -90,16 +90,18 @@ static class Settlement_FinalizeInit_Patch
 
 				bool needsRelocation = false;
 				Tile settlementTile = grid[settlement.Tile];
-				
+
 				if (!hilliness.NullOrEmpty() && !hilliness.Contains(settlementTile.hilliness))
 					needsRelocation = true;
 				if (!biomes.NullOrEmpty() && !biomes.Contains(settlementTile.PrimaryBiome))
+					needsRelocation = true;
+				if (namedSettlement.coastal && !IsCoastalTile(settlement.Tile, grid))
 					needsRelocation = true;
 
 				if (!needsRelocation)
 					continue;
 
-				int targetTile = FindValidTile(settlement.Tile, hilliness, biomes, ext.searchRadius, grid);
+				int targetTile = FindValidTile(settlement.Tile, hilliness, biomes, namedSettlement.coastal, ext.searchRadius, grid);
 				if (targetTile >= 0)
 				{
 					Find.WorldObjects.Remove(settlement);
@@ -121,7 +123,7 @@ static class Settlement_FinalizeInit_Patch
 		return comp;
 	}
 
-	static int FindValidTile(int origin, List<Hilliness> hilliness, List<BiomeDef> biomes, int radius, WorldGrid grid)
+	static int FindValidTile(int origin, List<Hilliness> hilliness, List<BiomeDef> biomes, bool requireCoastal, int radius, WorldGrid grid)
 	{
 		HashSet<int> visited = new HashSet<int>();
 		Queue<int> queue = new Queue<int>();
@@ -146,10 +148,12 @@ static class Settlement_FinalizeInit_Patch
 
 				Tile neighborTileData = grid[neighborTile];
 				bool valid = TileFinder.IsValidTileForNewSettlement(neighborTile) && !Find.WorldObjects.AnyWorldObjectAt(neighborTile);
-				
+
 				if (valid && !hilliness.NullOrEmpty() && !hilliness.Contains(neighborTileData.hilliness))
 					valid = false;
 				if (valid && !biomes.NullOrEmpty() && !biomes.Contains(neighborTileData.PrimaryBiome))
+					valid = false;
+				if (valid && requireCoastal && !IsCoastalTile(neighborTile, grid))
 					valid = false;
 
 				if (valid)
@@ -159,6 +163,19 @@ static class Settlement_FinalizeInit_Patch
 			}
 		}
 		return -1;
+	}
+
+	static bool IsCoastalTile(int tileId, WorldGrid grid)
+	{
+		List<PlanetTile> neighbors = new List<PlanetTile>();
+		grid.GetTileNeighbors(new PlanetTile(tileId), neighbors);
+
+		for (int i = 0; i < neighbors.Count; i++)
+		{
+			if (grid[neighbors[i].tileId].PrimaryBiome == BiomeDefOf.Ocean)
+				return true;
+		}
+		return false;
 	}
 
 	static int FindOceanTile(int origin, int radius, WorldGrid grid)

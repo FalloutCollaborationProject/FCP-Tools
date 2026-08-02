@@ -51,6 +51,7 @@ public class NamedSettlement
 	public List<CharacterDef> guaranteedCharacters;
 	public List<SettlementTrader> traders;
 	public bool oceanPlacement;
+	public bool coastal;
 
 	public void LoadDataFromXmlCustom(XmlNode xmlRoot)
 	{
@@ -95,6 +96,10 @@ public class NamedSettlement
 			else if (childNode.Name == "oceanPlacement")
 			{
 				oceanPlacement = ParseHelper.FromString<bool>(childNode.InnerText);
+			}
+			else if (childNode.Name == "coastal")
+			{
+				coastal = ParseHelper.FromString<bool>(childNode.InnerText);
 			}
 		}
 	}
