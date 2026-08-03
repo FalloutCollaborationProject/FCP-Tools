@@ -19,7 +19,7 @@ public class GameComponent_SettlementMapGenerators : GameComponent
 	{
 	}
 
-	public void RegisterSettlement(Settlement settlement, MapGeneratorDef mapGenerator, IntVec3 mapSize)
+	public void RegisterSettlement(Settlement settlement, MapGeneratorDef mapGenerator, IntVec3 mapSize, List<PawnKindCount> guaranteedPawnKinds = null, List<CharacterDef> guaranteedCharacterDefs = null)
 	{
 		if (settlement == null || mapGenerator == null)
 			return;
@@ -27,6 +27,10 @@ public class GameComponent_SettlementMapGenerators : GameComponent
 		mapGenerators[settlement.ID] = mapGenerator;
 		if (mapSize != IntVec3.Invalid)
 			mapSizes[settlement.ID] = mapSize;
+		if (guaranteedPawnKinds != null && guaranteedPawnKinds.Count > 0)
+			guaranteedPawns[settlement.ID] = guaranteedPawnKinds;
+		if (guaranteedCharacterDefs != null && guaranteedCharacterDefs.Count > 0)
+			guaranteedCharacters[settlement.ID] = guaranteedCharacterDefs;
 	}
 
 	public void RegisterSettlementWithPrefab(Settlement settlement, PrefabDef prefab, IntVec3 mapSize, List<PawnKindCount> guaranteedPawnKinds = null, List<CharacterDef> guaranteedCharacterDefs = null, List<SettlementTrader> settlementTraders = null)

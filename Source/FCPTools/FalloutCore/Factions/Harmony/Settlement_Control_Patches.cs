@@ -59,7 +59,7 @@ static class Settlement_FinalizeInit_Patch
 				if (namedSettlement.prefab != null)
 					gameComp.RegisterSettlementWithPrefab(settlement, namedSettlement.prefab, namedSettlement.forcedMapSize, namedSettlement.guaranteedPawnKinds, namedSettlement.guaranteedCharacters, namedSettlement.traders);
 				else if (namedSettlement.mapGenerator != null)
-					gameComp.RegisterSettlement(settlement, namedSettlement.mapGenerator, namedSettlement.forcedMapSize);
+					gameComp.RegisterSettlement(settlement, namedSettlement.mapGenerator, namedSettlement.forcedMapSize, namedSettlement.guaranteedPawnKinds, namedSettlement.guaranteedCharacters);
 
 				if (namedSettlement.traders != null && namedSettlement.traders.Count > 0)
 				{

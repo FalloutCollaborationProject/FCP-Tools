@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <MapGeneratorDef ParentName="MapCommonBase">
+        <defName>FCP_MapGen_Canyon</defName>
+        <genSteps>
+            <li>FCP_GenStep_CanyonElevation</li>
+            <li>RocksFromGrid</li>
+            <li>Settlement</li>
+            <li>SettlementPower</li>
+            <li>FCP_GenStep_SpawnSettlementPawns</li>
+        </genSteps>
+    </MapGeneratorDef>
+
+    <GenStepDef>
+        <defName>FCP_GenStep_CanyonElevation</defName>
+        <order>15</order>
+        <genStep Class="FCP.Factions.GenStep_CanyonElevation" />
+    </GenStepDef>
+
+</Defs>
