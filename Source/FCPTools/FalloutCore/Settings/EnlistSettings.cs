@@ -25,6 +25,7 @@ public class EnlistSettings : SettingsTab
 
     public override void DoTabWindowContents(Rect tabRect)
     {
+        GUI.color = TerminalColors.PrimaryColor;
         var keys = enlistStates.Keys.ToList().OrderByDescending(x => x).ToList();
         var viewRect = new Rect(0f, 0f, tabRect.width - 30f, 30 + (keys.Count * 24));
         Widgets.BeginScrollView(tabRect, ref scrollPosition, viewRect);
@@ -32,7 +33,9 @@ public class EnlistSettings : SettingsTab
         var listing = new Listing_Standard();
         listing.Begin(viewRect);
         Text.Font = GameFont.Medium;
+        GUI.color = TerminalColors.HighlightColor;
         listing.Label("FCP_Settings_Enlistment_ActiveTypes".Translate());
+        GUI.color = TerminalColors.PrimaryColor;
         Text.Font = GameFont.Small;
         listing.GapLine();
         for (int num = keys.Count - 1; num >= 0; num--)
@@ -43,6 +46,7 @@ public class EnlistSettings : SettingsTab
         }
         listing.End();
         Widgets.EndScrollView();
+        GUI.color = Color.white;
     }
 
     public override void OnWriteSettings()

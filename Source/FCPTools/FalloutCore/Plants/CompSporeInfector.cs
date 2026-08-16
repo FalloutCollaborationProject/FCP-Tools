@@ -24,7 +24,7 @@ public class CompSporeInfector : ThingComp
         }
     }
 
-    private void ReleaseSpores()
+    private void ReleaseSpores(bool force = false)
     {
         foreach (Thing thing in GenRadial.RadialDistinctThingsAround(parent.Position, parent.Map, Props.radius, true))
         {
@@ -35,7 +35,7 @@ public class CompSporeInfector : ThingComp
             if (pawn.health.hediffSet.HasHediff(Props.hediffDef))
                 continue;
 
-            if (!Rand.Chance(Props.infectionChance))
+            if (!force && !Rand.Chance(Props.infectionChance))
                 continue;
 
             pawn.health.AddHediff(Props.hediffDef);
@@ -46,6 +46,25 @@ public class CompSporeInfector : ThingComp
     {
         base.PostExposeData();
         Scribe_Values.Look(ref tickCounter, "tickCounter", 0);
+    }
+
+    public override IEnumerable<Gizmo> CompGetGizmosExtra()
+    {
+        foreach (Gizmo gizmo in base.CompGetGizmosExtra())
+        {
+            yield return gizmo;
+        }
+
+        if (!Prefs.DevMode)
+        {
+            yield break;
+        }
+
+        yield return new Command_Action
+        {
+            defaultLabel = "DEV: Release spores",
+            action = delegate { ReleaseSpores(force: true); }
+        };
     }
 }
 

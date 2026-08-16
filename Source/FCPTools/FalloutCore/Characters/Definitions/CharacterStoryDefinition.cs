@@ -11,9 +11,10 @@ public class CharacterStoryDefinition : CharacterBaseDefinition
     public Gender? gender = null;
     public float? age = null;
     public float? chronologicalAge = null;
+    public DevelopmentalStage developmentalStage = DevelopmentalStage.None;
 
-    public override bool AppliesPreGeneration => 
-        gender != null || age != null || chronologicalAge != null;
+    public override bool AppliesPreGeneration =>
+        gender != null || age != null || chronologicalAge != null || developmentalStage != DevelopmentalStage.None;
 
     public override bool AppliesPostGeneration =>
         !firstName.NullOrEmpty() || !lastName.NullOrEmpty() || !nickname.NullOrEmpty();
@@ -23,6 +24,14 @@ public class CharacterStoryDefinition : CharacterBaseDefinition
         request.FixedGender = gender ?? request.FixedGender;
         request.FixedBiologicalAge = age ?? request.FixedBiologicalAge;
         request.FixedChronologicalAge = chronologicalAge ?? age ?? request.FixedChronologicalAge;
+
+        // Named child characters (e.g. Maggie, Harden Simms) need the generator restricted to a
+        // non-adult stage, not just a young FixedBiologicalAge - PawnGenerationRequest otherwise
+        // defaults to Adult-only and will reject or override a childlike fixed age.
+        if (developmentalStage != DevelopmentalStage.None && Find.Storyteller.difficulty.ChildrenAllowed)
+        {
+            request.AllowedDevelopmentalStages = developmentalStage;
+        }
     }
 
     public override void ApplyToPawn(Pawn pawn)

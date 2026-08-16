@@ -46,41 +46,76 @@ public class FCPCoreMod : Mod
 
     public override string SettingsCategory() => "FCP_Settings_Category".Translate();
     
+    private const float TabBarHeight = 32f;
+
+    private static Color DimPrimary => new Color(TerminalColors.PrimaryColor.r, TerminalColors.PrimaryColor.g, TerminalColors.PrimaryColor.b, 0.5f);
+
     public override void DoSettingsWindowContents(Rect inRect)
     {
-        var tabRect = new Rect(inRect)
-        {
-            y = inRect.y + 40f
-        };
-        var mainRect = new Rect(inRect)
-        {
-            height = inRect.height - 40f,
-            y = inRect.y + 40f
-        };
-
-        Widgets.DrawMenuSection(mainRect);
+        GUI.color = TerminalColors.PrimaryColor;
 
         currentTab ??= SettingsTab<InfoSettings>();
 
-        var tabs = Settings.Tabs
-            .Select(tab => new TabRecord(tab.TabName, () =>
-            {
-                currentTab = tab;
-                WriteSettings();
-            }, currentTab == tab))
-            .ToList();
+        var tabBarRect = new Rect(inRect.x, inRect.y, inRect.width, TabBarHeight);
+        DrawTabBar(tabBarRect);
 
-        TabDrawer.DrawTabs(tabRect, tabs);
+        var mainRect = new Rect(inRect.x, tabBarRect.yMax + 8f, inRect.width, inRect.height - tabBarRect.height - 8f);
+
         if (currentTab is { Enabled: true })
-            currentTab.DoTabWindowContents(mainRect.ContractedBy(15f));
+        {
+            currentTab.DoTabWindowContents(mainRect.ContractedBy(4f, 0f));
+        }
         else if (currentTab != null)
         {
-            Rect labelRect = mainRect.ContractedBy(15f);
+            GUI.color = DimPrimary;
             Text.Font = GameFont.Medium;
             Text.Anchor = TextAnchor.UpperCenter;
-            Widgets.Label(labelRect, $"Requires the corresponding FCP module to be installed and active.");
+            Widgets.Label(mainRect, "Requires the corresponding FCP module to be installed and active.");
             Text.Anchor = TextAnchor.UpperLeft;
             Text.Font = GameFont.Small;
+        }
+
+        GUI.color = Color.white;
+    }
+
+    private void DrawTabBar(Rect rect)
+    {
+        var tabs = Settings.Tabs.ToList();
+        float tabWidth = rect.width / tabs.Count;
+
+        for (int i = 0; i < tabs.Count; i++)
+        {
+            DrawTabButton(new Rect(rect.x + tabWidth * i, rect.y, tabWidth, rect.height), tabs[i]);
+        }
+
+        GUI.color = TerminalColors.PrimaryColor;
+        Widgets.DrawLineHorizontal(rect.x, rect.yMax, rect.width);
+    }
+
+    private void DrawTabButton(Rect rect, SettingsTab tab)
+    {
+        bool selected = currentTab == tab;
+
+        GUI.color = selected ? TerminalColors.HighlightColor : DimPrimary;
+        Widgets.DrawLineHorizontal(rect.x, rect.y, rect.width);
+        if (selected)
+            Widgets.DrawLineHorizontal(rect.x, rect.yMax - 2f, rect.width);
+        if (!selected && Mouse.IsOver(rect))
+            Widgets.DrawHighlight(rect);
+
+        Text.Anchor = TextAnchor.MiddleCenter;
+        GUI.color = selected ? TerminalColors.HighlightColor : TerminalColors.PrimaryColor;
+        Widgets.Label(rect, tab.TabName);
+        Text.Anchor = TextAnchor.UpperLeft;
+        GUI.color = TerminalColors.PrimaryColor;
+
+        if (!tab.TabToolTip.NullOrEmpty())
+            TooltipHandler.TipRegion(rect, tab.TabToolTip);
+
+        if (Widgets.ButtonInvisible(rect))
+        {
+            currentTab = tab;
+            WriteSettings();
         }
     }
 }

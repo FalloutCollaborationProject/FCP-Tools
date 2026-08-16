@@ -17,6 +17,7 @@ public class VATSSettings : SettingsTab
 
     public override void DoTabWindowContents(Rect wrect)
     {
+        GUI.color = TerminalColors.PrimaryColor;
         PopulateMissingMultipliers();
         int multiplierHeight = multiplierLookup.Count * 56;
         int restHeight = 248 + 64;
@@ -25,12 +26,14 @@ public class VATSSettings : SettingsTab
         scrollPosition = GUI.BeginScrollView(new Rect(wrect.x, wrect.y, wrect.width, wrect.height - 50), scrollPosition, viewRect);
         var options = new Listing_Standard();
         options.Begin(viewRect);
-        
+
         Text.Font = GameFont.Medium;
+        GUI.color = TerminalColors.HighlightColor;
         options.Label("FCP_Settings_VATS_header".Translate());
+        GUI.color = TerminalColors.PrimaryColor;
         Text.Font = GameFont.Small;
         options.GapLine();
-        
+
         try
         {
             if (options.ButtonText("FCP_VATS_Settings_Reset".Translate()))
@@ -84,6 +87,7 @@ public class VATSSettings : SettingsTab
         {
             options.End();
             GUI.EndScrollView();
+            GUI.color = Color.white;
         }
     }
 

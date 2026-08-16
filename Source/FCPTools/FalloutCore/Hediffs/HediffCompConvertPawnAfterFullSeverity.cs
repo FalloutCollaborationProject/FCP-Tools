@@ -95,6 +95,12 @@ public class HediffCompConvertPawnAfterFullSeverity : HediffComp
 
     public void DoTransformation(PawnKindDef PawnKind, Faction faction)
     {
+        if (Props.factionDef != null && faction == null)
+        {
+            Log.Warning($"[FCP] Could not resolve a Faction instance for {Props.factionDef.defName} during pawn transformation; falling back to pirates so the result stays hostile.");
+            faction = Faction.OfPirates;
+        }
+
         for (int i = 0; i < Props.numberToSpawn; i++)
         {
             Pawn newThing = PawnGenerator.GeneratePawn(PawnKind, faction);

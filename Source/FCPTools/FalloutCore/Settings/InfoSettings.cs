@@ -12,17 +12,22 @@ public class InfoSettings : SettingsTab
     private Vector2 scrollPosition;
     private float viewHeight = 2000f;
 
+    private static Color DimPrimary => new Color(TerminalColors.PrimaryColor.r, TerminalColors.PrimaryColor.g, TerminalColors.PrimaryColor.b, 0.5f);
+
     public override void DoTabWindowContents(Rect tabRect)
     {
         Rect outRect = tabRect;
         Rect viewRect = new Rect(0f, 0f, outRect.width - 16f, viewHeight);
 
+        GUI.color = TerminalColors.PrimaryColor;
         Widgets.BeginScrollView(outRect, ref scrollPosition, viewRect);
         Listing_Standard list = new Listing_Standard { maxOneColumn = true };
         list.Begin(viewRect);
 
         Text.Font = GameFont.Small;
+        GUI.color = DimPrimary;
         list.Label("FCP_Settings_Info_Intro".Translate());
+        GUI.color = TerminalColors.PrimaryColor;
         list.Gap(12f);
 
         DrawGroup(list, "FCP_Settings_Info_Group_Combat");
@@ -39,20 +44,25 @@ public class InfoSettings : SettingsTab
         if (Event.current.type == EventType.Layout)
             viewHeight = list.CurHeight;
         Widgets.EndScrollView();
+        GUI.color = Color.white;
     }
 
     private static void DrawGroup(Listing_Standard list, string groupKey)
     {
         list.Gap(6f);
         Text.Font = GameFont.Medium;
+        GUI.color = TerminalColors.HighlightColor;
         list.Label((groupKey + ".Title").Translate());
+        GUI.color = TerminalColors.PrimaryColor;
         Text.Font = GameFont.Small;
         list.GapLine();
 
         foreach (string entryKey in EntryKeysFor(groupKey))
         {
             list.Label("<b>" + (entryKey + ".Title").Translate() + "</b>");
+            GUI.color = DimPrimary;
             list.Label((entryKey + ".Desc").Translate());
+            GUI.color = TerminalColors.PrimaryColor;
             list.Gap(10f);
         }
     }

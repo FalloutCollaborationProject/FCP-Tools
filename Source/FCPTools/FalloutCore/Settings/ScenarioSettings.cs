@@ -13,13 +13,18 @@ public class ScenarioSettings : SettingsTab
 
     [Unsaved] private string startingYearBuffer;
 
+    private static Color DimPrimary => new Color(TerminalColors.PrimaryColor.r, TerminalColors.PrimaryColor.g, TerminalColors.PrimaryColor.b, 0.5f);
+
     public override void DoTabWindowContents(Rect tabRect)
     {
+        GUI.color = TerminalColors.PrimaryColor;
         var list = new Listing_Standard();
         list.Begin(tabRect);
 
         Text.Font = GameFont.Medium;
+        GUI.color = TerminalColors.HighlightColor;
         list.Label("FCP_Settings_Scenarios_Enlistment".Translate());
+        GUI.color = TerminalColors.PrimaryColor;
         Text.Font = GameFont.Small;
         list.GapLine();
         list.CheckboxLabeled("FCP_Settings_Scenarios_EnableEnlistedStart".Translate(), ref enableEnlistedStart,
@@ -27,17 +32,20 @@ public class ScenarioSettings : SettingsTab
 
         list.Gap();
         Text.Font = GameFont.Medium;
+        GUI.color = TerminalColors.HighlightColor;
         list.Label("FCP_Settings_Scenarios_Calendar".Translate());
+        GUI.color = TerminalColors.PrimaryColor;
         Text.Font = GameFont.Small;
         list.GapLine();
         startingYearBuffer ??= startingYear.ToString();
         list.TextFieldNumericLabeled("FCP_Settings_Scenarios_StartingYear".Translate(), ref startingYear,
             ref startingYearBuffer, 1f, 9999f);
-        GUI.color = Color.gray;
+        GUI.color = DimPrimary;
         list.Label("FCP_Settings_Scenarios_StartingYear_Desc".Translate());
-        GUI.color = Color.white;
+        GUI.color = TerminalColors.PrimaryColor;
 
         list.End();
+        GUI.color = Color.white;
     }
 
     public override void ExposeData()

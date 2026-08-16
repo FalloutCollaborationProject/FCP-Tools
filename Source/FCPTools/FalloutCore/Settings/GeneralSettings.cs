@@ -26,13 +26,18 @@ public class GeneralSettings : SettingsTab
     public bool namedSettlementsEnabled = true;
     public bool namedSettlementTradersOnly = true;
 
+    private static Color DimPrimary => new Color(TerminalColors.PrimaryColor.r, TerminalColors.PrimaryColor.g, TerminalColors.PrimaryColor.b, 0.5f);
+
     public override void DoTabWindowContents(Rect tabRect)
     {
+        GUI.color = TerminalColors.PrimaryColor;
         var list = new Listing_Standard();
         list.Begin(tabRect);
 
         Text.Font = GameFont.Medium;
+        GUI.color = TerminalColors.HighlightColor;
         list.Label("FCP_Settings_Terminal".Translate());
+        GUI.color = TerminalColors.PrimaryColor;
         Text.Font = GameFont.Small;
         list.GapLine();
 
@@ -64,7 +69,9 @@ public class GeneralSettings : SettingsTab
 
         list.Gap();
         Text.Font = GameFont.Medium;
+        GUI.color = TerminalColors.HighlightColor;
         list.Label("FCP_Settings_Stims".Translate());
+        GUI.color = TerminalColors.PrimaryColor;
         Text.Font = GameFont.Small;
         list.GapLine();
         list.CheckboxLabeled("FCP_Settings_Stims_AutoStim".Translate(), ref autoStim,
@@ -74,7 +81,9 @@ public class GeneralSettings : SettingsTab
 
         list.Gap();
         Text.Font = GameFont.Medium;
+        GUI.color = TerminalColors.HighlightColor;
         list.Label("FCP_Settings_WeaponCondition".Translate());
+        GUI.color = TerminalColors.PrimaryColor;
         Text.Font = GameFont.Small;
         list.GapLine();
         list.CheckboxLabeled("FCP_Settings_WeaponCondition_Enabled".Translate(), ref weaponConditionEnabled,
@@ -85,7 +94,9 @@ public class GeneralSettings : SettingsTab
 
         list.Gap();
         Text.Font = GameFont.Medium;
+        GUI.color = TerminalColors.HighlightColor;
         list.Label("FCP_Settings_Grenades".Translate());
+        GUI.color = TerminalColors.PrimaryColor;
         Text.Font = GameFont.Small;
         list.GapLine();
         list.CheckboxLabeled("FCP_Settings_Grenades_Consumable".Translate(), ref consumableGrenades,
@@ -93,7 +104,9 @@ public class GeneralSettings : SettingsTab
 
         list.Gap();
         Text.Font = GameFont.Medium;
+        GUI.color = TerminalColors.HighlightColor;
         list.Label("FCP_Settings_NamedSettlements".Translate());
+        GUI.color = TerminalColors.PrimaryColor;
         Text.Font = GameFont.Small;
         list.GapLine();
         list.CheckboxLabeled("FCP_Settings_NamedSettlements_Enabled".Translate(), ref namedSettlementsEnabled,
@@ -105,6 +118,7 @@ public class GeneralSettings : SettingsTab
         }
 
         list.End();
+        GUI.color = Color.white;
     }
 
     public override void ExposeData()
