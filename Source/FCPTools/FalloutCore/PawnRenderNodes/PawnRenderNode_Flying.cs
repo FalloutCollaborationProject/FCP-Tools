@@ -22,7 +22,7 @@ public class PawnRenderNode_Flying : PawnRenderNode_AnimalPart
             PawnKindLifeStage curKindLifeStage = pawn.ageTracker.CurKindLifeStage;
             int curKindLifeStageInd = pawn.ageTracker.CurLifeStageIndex;
             GraphicData flyingGraphicData;
-            
+
             if (pawn.gender != Gender.Female || curKindLifeStage.femaleGraphicData == null)
             {
                 flyingGraphicData = comp.Props.flyingBodyGraphicData[curKindLifeStageInd];

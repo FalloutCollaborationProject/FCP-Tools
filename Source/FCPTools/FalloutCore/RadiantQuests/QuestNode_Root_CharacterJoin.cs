@@ -22,6 +22,11 @@ namespace FCP.Core.RadiantQuests
 
         public override Pawn GeneratePawn()
         {
+            return GeneratePawn_NewTemp(null);
+        }
+
+        public override Pawn GeneratePawn_NewTemp(Map map)
+        {
             CharacterDef charDef = characterDef.GetValue(QuestGen.slate);
             Pawn pawn = UniqueCharactersTracker.Instance.GetOrGenPawn(charDef);
             if (!pawn.IsWorldPawn())

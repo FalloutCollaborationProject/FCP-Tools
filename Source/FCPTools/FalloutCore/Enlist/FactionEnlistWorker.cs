@@ -78,7 +78,6 @@ public class FactionEnlistWorker
 		}
 	}
 
-
 	public virtual bool CanBuy(Faction toBuy, Caravan caravan, out string cannotReason)
 	{
 		cannotReason = "";

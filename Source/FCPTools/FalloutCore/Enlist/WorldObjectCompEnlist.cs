@@ -1,4 +1,4 @@
-﻿using RimWorld;
+using RimWorld;
 using RimWorld.Planet;
 using RimWorld.QuestGen;
 using System;
@@ -23,13 +23,11 @@ public class WorldObjectCompEnlist : WorldObjectComp
 {
 	public WorldObjectCompEnlist()
 	{
-		generatedQuests = new List<Quest>();
 		caravanOptions = new Dictionary<Caravan, CaravanOptions>();
 		pawnTraders = new Dictionary<FactionEnlistOptionsDef, PawnTrader>();
 	}
 
-	public List<Quest> generatedQuests;
-	public int generatedQuestsLastTick;
+	public Dictionary<FactionEnlistOptionsDef, BountyBoard> bountyBoards;
 	public Dictionary<int, ProvisionsInfo> provisionInfos;
 	public Dictionary<int, ProvisionsInfo> promotedProvisionInfos;
 	private Dictionary<Caravan, CaravanOptions> caravanOptions;
@@ -51,6 +49,119 @@ public class WorldObjectCompEnlist : WorldObjectComp
 			options = caravanOptions[caravan] = new CaravanOptions(parent);
 		}
 		return options;
+	}
+
+	public bool IsPromoted(FactionEnlistOptionsDef optionDef)
+	{
+		return promotedByOptions != null && promotedByOptions.TryGetValue(optionDef, out bool promoted) && promoted;
+	}
+
+	public void SetPromoted(FactionEnlistOptionsDef optionDef, bool promoted)
+	{
+		promotedByOptions ??= new Dictionary<FactionEnlistOptionsDef, bool>();
+		promotedByOptions[optionDef] = promoted;
+	}
+
+	public PawnTrader GetOrMakeBountyHunterTrader(FactionEnlistOptionsDef optionDef)
+	{
+		bountyHunterTraders ??= new Dictionary<FactionEnlistOptionsDef, PawnTrader>();
+		if (!bountyHunterTraders.TryGetValue(optionDef, out PawnTrader trader))
+		{
+			trader = new PawnTrader
+			{
+				faction = parent.Faction,
+				factionOptionDef = optionDef,
+				isBountyHunter = true,
+				refreshDays = optionDef.bountyHunterRefreshSilverInDays
+			};
+			trader.GenerateThings();
+			bountyHunterTraders[optionDef] = trader;
+		}
+		return trader;
+	}
+
+	public PawnTrader GetOrMakeTurnInTrader(FactionEnlistOptionsDef optionDef)
+	{
+		pawnTraders ??= new Dictionary<FactionEnlistOptionsDef, PawnTrader>();
+		if (!pawnTraders.TryGetValue(optionDef, out PawnTrader trader))
+		{
+			trader = new PawnTrader
+			{
+				faction = parent.Faction,
+				factionOptionDef = optionDef
+			};
+			trader.GenerateThings();
+			pawnTraders[optionDef] = trader;
+		}
+		return trader;
+	}
+
+	public ExclusiveTrader GetOrMakeExclusiveTrader(FactionEnlistOptionsDef optionDef)
+	{
+		exclusiveTraders ??= new Dictionary<FactionEnlistOptionsDef, ExclusiveTrader>();
+		if (!exclusiveTraders.TryGetValue(optionDef, out ExclusiveTrader trader))
+		{
+			trader = new ExclusiveTrader
+			{
+				faction = parent.Faction,
+				factionOptionDef = optionDef
+			};
+			trader.GenerateThings();
+			exclusiveTraders[optionDef] = trader;
+		}
+		return trader;
+	}
+
+	public ExclusiveTrader GetOrMakeTaxCollectorTrader(FactionEnlistOptionsDef optionDef)
+	{
+		taxCollectorTraders ??= new Dictionary<FactionEnlistOptionsDef, ExclusiveTrader>();
+		if (!taxCollectorTraders.TryGetValue(optionDef, out ExclusiveTrader trader))
+		{
+			trader = new ExclusiveTrader
+			{
+				faction = parent.Faction,
+				factionOptionDef = optionDef,
+				traderKindDef = optionDef.taxCollectorTraderKind,
+				traderNameKey = optionDef.taxCollectorTraderNameKey
+			};
+			trader.GenerateThings();
+			taxCollectorTraders[optionDef] = trader;
+		}
+		return trader;
+	}
+
+	public void UseMechSerum(Caravan caravan, FactionEnlistOptionsDef optionDef)
+	{
+		ExtractMoneyFromCaravan(caravan, optionDef.mechSerumCost, optionDef);
+		foreach (Pawn pawn in caravan.PawnsListForReading)
+		{
+			List<BodyPartRecord> list = (from x in pawn.RaceProps.body.AllParts
+				where pawn.health.hediffSet.PartIsMissing(x)
+				select x).ToList<BodyPartRecord>();
+
+			foreach (BodyPartRecord missingPart in list)
+			{
+				pawn.health.RestorePart(missingPart, null, true);
+			}
+			for (int num = pawn.health.hediffSet.hediffs.Count - 1; num >= 0; num--)
+			{
+				Hediff hediff = pawn.health.hediffSet.hediffs[num];
+				HediffComp_GetsPermanent comp = hediff.TryGetComp<HediffComp_GetsPermanent>();
+				if (comp != null && comp.IsPermanent)
+				{
+					pawn.health.hediffSet.hediffs.RemoveAt(num);
+				}
+				else if (hediff.def.isBad)
+				{
+					pawn.health.hediffSet.hediffs.RemoveAt(num);
+				}
+			}
+			if (pawn.Downed)
+			{
+				Traverse.Create(pawn.health).Method("MakeUndowned", new Type[] { typeof(Hediff) }, new object[] { null }).GetValue();
+			}
+			pawn.health.hediffSet.DirtyCache();
+		}
 	}
 	public override void CompTick()
 	{
@@ -214,32 +325,49 @@ public class WorldObjectCompEnlist : WorldObjectComp
 			}
 		}
 	}
-	public void AddQuest(Quest quest, FactionEnlistOptionsDef optionsDef)
+	public BountyBoard GetBountyBoard(FactionEnlistOptionsDef optionsDef)
 	{
-		Find.QuestManager.Add(quest);
-		generatedQuests.Remove(quest);
-		WorldEnlistTracker worldTracker = WorldEnlistTracker.Instance;
-		if (!worldTracker.factionOptionsContainer[parent.Faction].factionsWithQuests.ContainsKey(optionsDef))
+		bountyBoards ??= new Dictionary<FactionEnlistOptionsDef, BountyBoard>();
+		if (!bountyBoards.TryGetValue(optionsDef, out BountyBoard board))
 		{
-			worldTracker.factionOptionsContainer[parent.Faction].factionsWithQuests[optionsDef] = new QuestContainer();
+			board = bountyBoards[optionsDef] = new BountyBoard();
 		}
-		if (worldTracker.factionOptionsContainer[parent.Faction].factionsWithQuests[optionsDef].availableQuests.ContainsKey(parent))
-		{
-			worldTracker.factionOptionsContainer[parent.Faction].factionsWithQuests[optionsDef].availableQuests[parent].quests.Add(quest);
-		}
-		else
-		{
-			worldTracker.factionOptionsContainer[parent.Faction].factionsWithQuests[optionsDef].availableQuests[parent] = new QuestsContainer(quest);
-		}
+		return board;
 	}
-	public void GenerateQuests()
+
+	public void AcceptBounty(GeneratedBounty bounty, FactionEnlistOptionsDef optionsDef)
 	{
+		BountyBoard board = GetBountyBoard(optionsDef);
+		if (!board.available.Remove(bounty))
+			return;
+
+		Find.QuestManager.Add(bounty.quest);
+		board.accepted.Add(bounty);
+	}
+
+	public void CollectBounty(GeneratedBounty bounty, FactionEnlistOptionsDef optionsDef, Caravan caravan)
+	{
+		BountyBoard board = GetBountyBoard(optionsDef);
+		if (!board.accepted.Remove(bounty))
+			return;
+
+		Thing payment = ThingMaker.MakeThing(optionsDef.currencyDef ?? ThingDefOf.Silver);
+		payment.stackCount = bounty.reward;
+		CaravanInventoryUtility.GiveThing(caravan, payment);
+	}
+
+	public void RefreshBountyBoard(FactionEnlistOptionsDef optionsDef)
+	{
+		BountyBoard board = GetBountyBoard(optionsDef);
+		board.accepted.RemoveAll(bounty => bounty.Failed);
+		board.available.Clear();
+
 		Patch_TryFindTile.worldObject = parent;
 		int questCountToGenerate = Rand.RangeInclusive(15, 20);
 		float points = StorytellerUtility.DefaultThreatPointsNow(Find.World);
 		List<QuestScriptDef> questDefsToProcess = DefDatabase<QuestScriptDef>.AllDefs.Where(x => !x.isRootSpecial && x.IsRootAny).ToList();
 
-		while (generatedQuests.Count < questCountToGenerate)
+		while (board.available.Count < questCountToGenerate)
 		{
 
 			if (!questDefsToProcess.Any())
@@ -260,7 +388,7 @@ public class WorldObjectCompEnlist : WorldObjectComp
 				if (newQuestCandidate.CanRun(slate, Find.World))
 				{
 					Quest quest = QuestGen.Generate(newQuestCandidate, slate);
-					generatedQuests.Add(quest);
+					board.available.Add(new GeneratedBounty { quest = quest, reward = optionsDef.missionsBountyRewardRange.RandomInRange });
 				}
 			}
 			catch (Exception ex)
@@ -270,7 +398,7 @@ public class WorldObjectCompEnlist : WorldObjectComp
 		}
 
 		Patch_TryFindTile.worldObject = null;
-		generatedQuestsLastTick = Find.TickManager.TicksGame;
+		board.lastRefreshTick = Find.TickManager.TicksGame;
 	}
 
 	public override string CompInspectStringExtra()
@@ -303,629 +431,32 @@ public class WorldObjectCompEnlist : WorldObjectComp
 			{
 				foreach (FactionEnlistOptionsDef optionDef in OptionsDefs)
 				{
-					if (optionDef.buyOutOption != null && !worldTracker.Bought(faction, optionDef))
+					bool enlisted = worldTracker.EnlistedTo(faction, optionDef);
+					string label = enlisted
+						? "FCP_Enlist_OpenTerminal".Translate(faction.Named("FACTION"))
+						: optionDef.enlistButtonLabelKey.Translate(faction.Named("FACTION"));
+					string desc = enlisted
+						? "FCP_Enlist_OpenTerminalDesc".Translate(faction.Named("FACTION"))
+						: optionDef.enlistButtonDescKey.Translate(faction.Named("FACTION"));
+
+					Command_Action command_Terminal = new Command_Action
 					{
-						Command_Action command_Enlist = new Command_Action
+						defaultLabel = label,
+						defaultDesc = desc,
+						icon = ContentFinder<Texture2D>.Get(optionDef.enlistButtonIconTexPath),
+						action = delegate
 						{
-							defaultLabel = optionDef.buyOutOption.buttonLabelKey.Translate(faction.Named("FACTION")),
-							defaultDesc = optionDef.buyOutOption.buttonDescKey.Translate(faction.Named("FACTION")),
-							icon = ContentFinder<Texture2D>.Get(optionDef.buyOutOption.buttonIconTexPath),
-							action = delegate
-							{
-								optionDef.Worker.Buy(faction, caravan);
-							},
-							Order = order
-						};
-						if (!optionDef.Worker.CanBuy(faction, caravan, out string cannotBuyReason))
-						{
-							command_Enlist.Disable(cannotBuyReason);
-						}
-						yield return command_Enlist;
+							Find.WindowStack.Add(new Window_EnlistTerminal(caravan, this, optionDef));
+						},
+						Order = order
+					};
+					yield return command_Terminal;
+					order++;
+
+					foreach (var gizmo in optionDef.Worker.GetGizmos(parent.Faction, order))
+					{
+						yield return gizmo;
 						order++;
-					}
-
-					if (!worldTracker.EnlistedTo(faction, optionDef))
-					{
-						Command_Action command_Enlist = new Command_Action
-						{
-							defaultLabel = optionDef.enlistButtonLabelKey.Translate(faction.Named("FACTION")),
-							defaultDesc = optionDef.enlistButtonDescKey.Translate(faction.Named("FACTION")),
-							icon = ContentFinder<Texture2D>.Get(optionDef.enlistButtonIconTexPath),
-							action = delegate
-							{
-								optionDef.Worker.EnlistTo(faction);
-							},
-							Order = order
-						};
-						if (!worldTracker.CanEnlist(faction, optionDef, out string cannotEnlistReason))
-						{
-							command_Enlist.Disable(cannotEnlistReason);
-						}
-						yield return command_Enlist;
-						order++;
-
-						if (optionDef.bountyHunterIsEnabled && optionDef.bountyHunterTraderKind != null)
-						{
-							bountyHunterTraders ??= new Dictionary<FactionEnlistOptionsDef, PawnTrader>();
-							Command_Action command_Bounty = new Command_Action
-							{
-								defaultLabel = optionDef.bountyHunterLabelKey.Translate(faction.Named("FACTION")),
-								defaultDesc = optionDef.bountyHunterDescKey.Translate(faction.Named("FACTION")),
-								icon = ContentFinder<Texture2D>.Get(optionDef.bountyHunterButtonIconTexPath),
-								action = delegate
-								{
-									if (!bountyHunterTraders.TryGetValue(optionDef, out PawnTrader bountyTrader))
-									{
-										bountyTrader = new PawnTrader
-										{
-											faction = parent.Faction,
-											factionOptionDef = optionDef,
-											isBountyHunter = true,
-											refreshDays = optionDef.bountyHunterRefreshSilverInDays
-										};
-										bountyTrader.GenerateThings();
-										bountyHunterTraders[optionDef] = bountyTrader;
-									}
-									bountyTrader.caravan = caravan;
-									Pawn bestNegotiator = BestCaravanPawnUtility.FindBestNegotiator(caravan, faction, optionDef.bountyHunterTraderKind);
-									Find.WindowStack.Add(new Dialog_Trade(bestNegotiator, bountyTrader));
-								},
-								Order = order
-							};
-							yield return command_Bounty;
-							order++;
-						}
-					}
-					else
-					{
-						if (optionDef.missionsAreEnabled)
-						{
-							Command_Action command_Mission = new Command_Action
-							{
-								defaultLabel = optionDef.missionsLabelKey.Translate(faction.Named("FACTION")),
-								defaultDesc = optionDef.missionsDescKey.Translate(faction.Named("FACTION")),
-								icon = ContentFinder<Texture2D>.Get(optionDef.missionsButtonIconTexPath),
-								action = delegate
-								{
-									DiaNode dianode = new DiaNode("Missions");
-									Dialog_Missions missionWindow = new Dialog_Missions(dianode, false, caravan, this, ContentFinder<Texture2D>.Get(optionDef.missionsBackgroundMenuTexPath), optionDef);
-									Find.WindowStack.Add(missionWindow);
-								},
-								Order = order
-							};
-							yield return command_Mission;
-							order++;
-						}
-
-						if (optionDef.salaryIsEnabled)
-						{
-							Command_Action command_Salary = new Command_Action
-							{
-								defaultLabel = optionDef.salaryLabelKey.Translate(faction.Named("FACTION")),
-								defaultDesc = optionDef.salaryDescKey.Translate(faction.Named("FACTION")),
-								icon = ContentFinder<Texture2D>.Get(optionDef.salaryButtonIconTexPath),
-								action = delegate
-								{
-									worldTracker.factionOptionsContainer[faction].factionsSalaries[optionDef].GiveMoney(optionDef, caravan, faction);
-								},
-								Order = order
-							};
-							if (!worldTracker.factionOptionsContainer[faction].factionsSalaries.TryGetValue(optionDef, out SalaryInfo salaryInfo) || !salaryInfo.CanPayMoney(optionDef))
-							{
-								command_Salary.Disable();
-							}
-							yield return command_Salary;
-							order++;
-
-						}
-
-						if (optionDef.provisionOptions != null)
-						{
-							provisionInfos ??= new Dictionary<int, ProvisionsInfo>();
-							foreach (var button in GetProvisionButtons(provisionInfos, optionDef.provisionOptions, faction, caravan, order))
-							{
-								yield return button;
-								order++;
-							}
-						}
-
-						if (optionDef.exclusiveTraderIsEnabled && optionDef.exclusiveTraderKind != null)
-						{
-							exclusiveTraders ??= new Dictionary<FactionEnlistOptionsDef, ExclusiveTrader>();
-							Command_Action command_ExclusiveTrader = new Command_Action
-							{
-								defaultLabel = optionDef.exclusiveTraderLabelKey.Translate(faction.Named("FACTION")),
-								defaultDesc = optionDef.exclusiveTraderDescKey.Translate(faction.Named("FACTION")),
-								icon = ContentFinder<Texture2D>.Get(optionDef.exclusiveTraderButtonIconTexPath),
-								action = delegate
-								{
-									if (!exclusiveTraders.TryGetValue(optionDef, out ExclusiveTrader exTrader))
-									{
-										exTrader = new ExclusiveTrader
-										{
-											faction = parent.Faction,
-											factionOptionDef = optionDef
-										};
-										exTrader.GenerateThings();
-										exclusiveTraders[optionDef] = exTrader;
-									}
-									exTrader.caravan = caravan;
-									Pawn bestNegotiator = BestCaravanPawnUtility.FindBestNegotiator(caravan, faction, optionDef.exclusiveTraderKind);
-									Find.WindowStack.Add(new Dialog_Trade(bestNegotiator, exTrader));
-								},
-								Order = order
-							};
-							bool meetsGoodwill = faction.GoodwillWith(Faction.OfPlayer) >= optionDef.exclusiveTraderRequiredGoodwill;
-							bool meetsTitle = optionDef.exclusiveTraderRequiredTitle == null ||
-								PawnsFinder.AllMapsCaravansAndTravellingTransporters_Alive_FreeColonists.Any(
-									p => p.royalty != null && p.royalty.GetCurrentTitleInFaction(faction)?.def.seniority >= optionDef.exclusiveTraderRequiredTitle.seniority);
-							if (!meetsGoodwill || !meetsTitle)
-							{
-								command_ExclusiveTrader.Disable(optionDef.exclusiveTraderRequirementsNotMetKey.Translate(
-									optionDef.exclusiveTraderRequiredGoodwill.Named("GOODWILL"),
-									faction.Named("FACTION")));
-							}
-							yield return command_ExclusiveTrader;
-							order++;
-						}
-
-						if (optionDef.taxCollectorIsEnabled && optionDef.taxCollectorTraderKind != null)
-						{
-							taxCollectorTraders ??= new Dictionary<FactionEnlistOptionsDef, ExclusiveTrader>();
-							Command_Action command_TaxCollector = new Command_Action
-							{
-								defaultLabel = optionDef.taxCollectorLabelKey.Translate(faction.Named("FACTION")),
-								defaultDesc = optionDef.taxCollectorDescKey.Translate(faction.Named("FACTION")),
-								icon = ContentFinder<Texture2D>.Get(optionDef.taxCollectorButtonIconTexPath),
-								action = delegate
-								{
-									if (!taxCollectorTraders.TryGetValue(optionDef, out ExclusiveTrader tcTrader))
-									{
-										tcTrader = new ExclusiveTrader
-										{
-											faction = parent.Faction,
-											factionOptionDef = optionDef,
-											traderKindDef = optionDef.taxCollectorTraderKind,
-											traderNameKey = optionDef.taxCollectorTraderNameKey
-										};
-										tcTrader.GenerateThings();
-										taxCollectorTraders[optionDef] = tcTrader;
-									}
-									tcTrader.caravan = caravan;
-									Pawn bestNegotiator = BestCaravanPawnUtility.FindBestNegotiator(caravan, faction, optionDef.taxCollectorTraderKind);
-									Find.WindowStack.Add(new Dialog_Trade(bestNegotiator, tcTrader));
-								},
-								Order = order
-							};
-							yield return command_TaxCollector;
-							order++;
-						}
-
-						if (optionDef.storageIsEnabled)
-						{
-							Command_Action command_Storage = new Command_Action
-							{
-								defaultLabel = optionDef.storageLabelKey.Translate(faction.Named("FACTION")),
-								defaultDesc = optionDef.storageDescKey.Translate(faction.Named("FACTION")),
-								icon = ContentFinder<Texture2D>.Get(optionDef.storageButtonIconTexPath),
-								action = delegate
-								{
-									DiaNode dianode = new DiaNode("Storage");
-									Dialog_FactionStorage storageWindow = new Dialog_FactionStorage(dianode, false, caravan, worldTracker.factionOptionsContainer[faction].factionsStorages[optionDef]);
-									Find.WindowStack.Add(storageWindow);
-								},
-								Order = order
-							};
-							yield return command_Storage;
-							order++;
-						}
-						if (optionDef.mechSerumIsEnabled)
-						{
-							Command_Action command_MechSerum = new Command_Action
-							{
-								defaultLabel = optionDef.mechSerumLabelKey.Translate(faction.Named("FACTION")),
-								defaultDesc = optionDef.mechSerumDescKey.Translate(faction.Named("FACTION")),
-								icon = ContentFinder<Texture2D>.Get(optionDef.mechSerumButtonIconTexPath),
-								action = delegate
-								{
-									ExtractMoneyFromCaravan(caravan, optionDef.mechSerumCost, optionDef);
-									foreach (Pawn pawn in caravan.PawnsListForReading)
-									{
-										List<BodyPartRecord> list = (from x in pawn.RaceProps.body.AllParts
-
-											where pawn.health.hediffSet.PartIsMissing(x)
-
-											select x).ToList<BodyPartRecord>();
-
-										foreach (BodyPartRecord missingPart in list)
-										{
-											pawn.health.RestorePart(missingPart, null, true);
-										}
-										for (int num = pawn.health.hediffSet.hediffs.Count - 1; num >= 0; num--)
-										{
-											Hediff hediff = pawn.health.hediffSet.hediffs[num];
-											HediffComp_GetsPermanent comp = hediff.TryGetComp<HediffComp_GetsPermanent>();
-											if (comp != null && comp.IsPermanent)
-											{
-												pawn.health.hediffSet.hediffs.RemoveAt(num);
-											}
-											else if (hediff.def.isBad)
-											{
-												pawn.health.hediffSet.hediffs.RemoveAt(num);
-											}
-										}
-										if (pawn.Downed)
-										{
-											Traverse.Create(pawn.health).Method("MakeUndowned", new Type[] { typeof(Hediff) }, new object[] { null }).GetValue();
-										}
-										pawn.health.hediffSet.DirtyCache();
-									}
-								}
-							};
-							ThingDef mechSerumCurrency = optionDef.currencyDef ?? ThingDefOf.Silver;
-							if (caravan.AllThings.Where(x => x.def == mechSerumCurrency).Sum(x => x.stackCount) < optionDef.mechSerumCost)
-							{
-								command_MechSerum.Disable(optionDef.mechSerumCostRequirementKey.Translate());
-							}
-							command_MechSerum.Order = order;
-							yield return command_MechSerum;
-							order++;
-						}
-						if (optionDef.workOptions != null)
-						{
-							foreach (WorkOption workOption in optionDef.workOptions)
-							{
-								CaravanOptions caravanOptions = GetCaravanOptions(caravan);
-								Command_Toggle command_Training = new Command_Toggle
-								{
-									hotKey = KeyBindingDefOf.Misc1,
-									isActive = () => caravanOptions.curWorkOption == workOption,
-									toggleAction = delegate
-									{
-										if (caravanOptions.curWorkOption == workOption)
-										{
-											caravanOptions.Reset();
-										}
-										else
-										{
-											caravanOptions.curWorkOption = workOption;
-											caravanOptions.curEnlistOptionInd = OptionsDefs.IndexOf(optionDef);
-											caravanOptions.curWorkOptionInd = optionDef.workOptions.IndexOf(workOption);
-											if (caravan.pather.Moving)
-											{
-												caravan.pather.Paused = true;
-											}
-										}
-									},
-									defaultLabel = workOption.workLabelKey.Translate(faction.Named("FACTION")),
-									defaultDesc = workOption.workDescKey.Translate(faction.Named("FACTION")),
-									icon = ContentFinder<Texture2D>.Get(workOption.workButtonIconTexPath),
-									Order = order
-								};
-								yield return command_Training;
-								order++;
-							}
-						}
-
-						if (optionDef.autoFeedIsEnabled)
-						{
-							CaravanOptions caravanAutoFeedOptions = GetCaravanOptions(caravan);
-							Command_Toggle command_AutoFeed = new Command_Toggle
-							{
-								isActive = () => caravanAutoFeedOptions.autoFeedEnabled,
-								toggleAction = delegate
-								{
-									caravanAutoFeedOptions.autoFeedEnabled = !caravanAutoFeedOptions.autoFeedEnabled;
-								},
-								defaultLabel = optionDef.autoFeedLabelKey.Translate(faction.Named("FACTION")),
-								defaultDesc = optionDef.autoFeedDescKey.Translate(faction.Named("FACTION")),
-								icon = ContentFinder<Texture2D>.Get(optionDef.autoFeedButtonIconTexPath),
-								Order = order
-							};
-							yield return command_AutoFeed;
-							order++;
-						}
-
-						if (optionDef.turnInIsEnabled)
-						{
-							Command_Action command_TurnIn = new Command_Action
-							{
-								defaultLabel = optionDef.turnInLabelKey.Translate(faction.Named("FACTION")),
-								defaultDesc = optionDef.turnInDescKey.Translate(faction.Named("FACTION")),
-								icon = ContentFinder<Texture2D>.Get(optionDef.turnInButtonIconTexPath),
-								action = delegate
-								{
-									pawnTraders ??= new Dictionary<FactionEnlistOptionsDef, PawnTrader>();
-									if (!pawnTraders.TryGetValue(optionDef, out PawnTrader pawnTrader))
-									{
-										pawnTrader = new PawnTrader
-										{
-											faction = parent.Faction,
-											factionOptionDef = optionDef
-										};
-										pawnTrader.GenerateThings();
-										pawnTraders[optionDef] = pawnTrader;
-									}
-									pawnTrader.caravan = caravan;
-									Pawn bestPlayerNegotiator = BestCaravanPawnUtility.FindBestNegotiator(caravan, faction, optionDef.turnInTraderKind);
-									Find.WindowStack.Add(new Dialog_Trade(bestPlayerNegotiator, pawnTrader));
-								},
-								Order = order
-							};
-							yield return command_TurnIn;
-							order++;
-						}
-						if (optionDef.dropPodServiceIsEnabled)
-						{
-							Command_Action command_DropPodService = new Command_Action
-							{
-								defaultLabel = optionDef.dropPodServiceLabelKey.Translate(faction.Named("FACTION")),
-								defaultDesc = optionDef.dropPodServiceDescKey.Translate(faction.Named("FACTION")),
-								icon = ContentFinder<Texture2D>.Get(optionDef.dropPodServiceButtonIconTexPath),
-								action = delegate
-								{
-									StartChoosingDestination(caravan, optionDef);
-								},
-
-								alsoClickIfOtherInGroupClicked = false
-							};
-							ThingDef dropPodCurrency = optionDef.currencyDef ?? ThingDefOf.Silver;
-							if (caravan.AllThings.Where(x => x.def == dropPodCurrency).Sum(x => x.stackCount) < optionDef.dropPodServiceCost)
-							{
-								command_DropPodService.Disable(optionDef.dropPodServiceCostRequirementKey.Translate());
-							}
-
-							command_DropPodService.Order = order;
-							yield return command_DropPodService;
-							order++;
-						}
-						if (optionDef.shuttleServiceIsEnabled)
-						{
-							Command_Action command_ShuttleService = new Command_Action
-							{
-								defaultLabel = optionDef.shuttleServiceLabelKey.Translate(faction.Named("FACTION")),
-								defaultDesc = optionDef.shuttleServiceDescKey.Translate(faction.Named("FACTION")),
-								icon = ContentFinder<Texture2D>.Get(optionDef.shuttleServiceButtonIconTexPath, reportFailure: false) ?? BaseContent.BadTex,
-								action = delegate
-								{
-									StartChoosingShuttleDestination(caravan, optionDef);
-								},
-
-								alsoClickIfOtherInGroupClicked = false
-							};
-							ThingDef shuttleCurrency = optionDef.currencyDef ?? ThingDefOf.Silver;
-							if (caravan.AllThings.Where(x => x.def == shuttleCurrency).Sum(x => x.stackCount) < optionDef.shuttleServiceCost)
-							{
-								command_ShuttleService.Disable(optionDef.shuttleServiceCostRequirementKey.Translate());
-							}
-
-							command_ShuttleService.Order = order;
-							yield return command_ShuttleService;
-							order++;
-						}
-						if (promotedByOptions is null)
-						{
-							promotedByOptions ??= new Dictionary<FactionEnlistOptionsDef, bool>();
-						}
-						if (promotedByOptions.ContainsKey(optionDef) is false)
-						{
-							promotedByOptions[optionDef] = false;
-						}
-						var promoted = promotedByOptions[optionDef];
-						if (promoted is false && optionDef.promoteOptionEnabled)
-						{
-							Command_Action command_Promote = new Command_Action
-							{
-								defaultLabel = optionDef.promoteButtonLabelKey.Translate(faction.Named("FACTION")),
-								defaultDesc = optionDef.promoteButtonDescKey.Translate(faction.Named("FACTION")),
-								icon = ContentFinder<Texture2D>.Get(optionDef.promoteButtonIconTexPath),
-								action = delegate
-								{
-									promotedByOptions[optionDef] = true;
-								},
-								Order = order
-							};
-							if (optionDef.promoteSkillRequirements.NullOrEmpty() is false && caravan.PawnsListForReading
-								    .Where(x => x.IsColonist && EnlistUtils.PawnSatisfiesSkillRequirements(x, optionDef.promoteSkillRequirements)).Any() is false)
-							{
-								command_Promote.Disable(optionDef.promoteRequrementsNotSatisfiedKey
-									.Translate(optionDef.promoteSkillRequirements.Select((SkillRequirement x) => x.Summary).ToCommaList()));
-							}
-							yield return command_Promote;
-							order++;
-						}
-						if (promoted)
-						{
-							if (optionDef.promoteProvisionOptions != null)
-							{
-								promotedProvisionInfos ??= new Dictionary<int, ProvisionsInfo>();
-								foreach (var button in GetProvisionButtons(promotedProvisionInfos, optionDef.promoteProvisionOptions, faction, caravan, order))
-								{
-									yield return button;
-									order++;
-								}
-							}
-						}
-						if (optionDef.protocolOptions.NullOrEmpty() is false)
-						{
-							yield return new Command_Action
-							{
-								defaultLabel = optionDef.protocolButtonLabelKey.Translate(),
-								defaultDesc = optionDef.protocolButtonDescKey.Translate(),
-								icon = ContentFinder<Texture2D>.Get(optionDef.protocolButtonIconTexPath),
-								action = delegate
-								{
-									var dict = optionDef.protocolOptions.ToDictionary(x => x.protocolHashKey, x => x.action);
-									Find.WindowStack.Add(new Window_Password(dict, optionDef.protocolEnterText, optionDef.protocolInvalidWarning));
-								},
-								Order = order
-							};
-							order++;
-						}
-
-
-						foreach (var gizmo in optionDef.Worker.GetGizmos(parent.Faction, order))
-						{
-							yield return gizmo;
-							order++;
-
-						}
-
-						if (optionDef.abilityTrainingIsEnabled && !optionDef.abilityTrainingOptions.NullOrEmpty())
-						{
-							activeTrainingSessions ??= new Dictionary<FactionEnlistOptionsDef, AbilityTrainingSession>();
-							Command_Action command_Training = new Command_Action
-							{
-								defaultLabel = optionDef.abilityTrainingLabelKey.Translate(faction.Named("FACTION")),
-								defaultDesc = optionDef.abilityTrainingDescKey.Translate(faction.Named("FACTION")),
-								icon = ContentFinder<Texture2D>.Get(optionDef.abilityTrainingButtonIconTexPath),
-								action = delegate
-								{
-									List<FloatMenuOption> trainingOptions = new List<FloatMenuOption>();
-									for (int idx = 0; idx < optionDef.abilityTrainingOptions.Count; idx++)
-									{
-										AbilityTrainingOption trainingOpt = optionDef.abilityTrainingOptions[idx];
-										int capturedIdx = idx;
-										trainingOptions.Add(new FloatMenuOption(trainingOpt.labelKey.Translate(), delegate
-										{
-											ThingDef currency = optionDef.currencyDef ?? ThingDefOf.Silver;
-											int available = caravan.AllThings.Where(t => t.def == currency).Sum(t => t.stackCount);
-											if (available < trainingOpt.cost)
-											{
-												Messages.Message("FCP_TrainingNotEnoughFunds".Translate(), MessageTypeDefOf.RejectInput, historical: false);
-												return;
-											}
-											List<FloatMenuOption> pawnOptions = new List<FloatMenuOption>();
-											foreach (Pawn candidate in caravan.PawnsListForReading.Where(p => p.IsColonist && !p.IsPrisoner))
-											{
-												Pawn localPawn = candidate;
-												pawnOptions.Add(new FloatMenuOption(localPawn.LabelShort, delegate
-												{
-													ExtractMoneyFromCaravan(caravan, trainingOpt.cost, optionDef);
-													activeTrainingSessions[optionDef] = new AbilityTrainingSession
-													{
-														trainee = localPawn,
-														startTick = Find.TickManager.TicksGame,
-														durationTicks = trainingOpt.trainingDurationDays * GenDate.TicksPerDay,
-														enlistOptionDef = optionDef,
-														trainingOptionIndex = capturedIdx
-													};
-												}, MenuOptionPriority.Default, null, localPawn));
-											}
-											Find.WindowStack.Add(new FloatMenu(pawnOptions));
-										}));
-									}
-									Find.WindowStack.Add(new FloatMenu(trainingOptions));
-								},
-								Order = order
-							};
-							if (activeTrainingSessions.ContainsKey(optionDef))
-							{
-								AbilityTrainingSession running = activeTrainingSessions[optionDef];
-								command_Training.Disable("FCP_TrainingAlreadyActive".Translate(running.trainee.Named("PAWN")));
-							}
-							yield return command_Training;
-							order++;
-						}
-
-						if (optionDef.deliveryQuestsIsEnabled && !optionDef.deliveryQuestTemplates.NullOrEmpty())
-						{
-							deliveryBoards ??= new Dictionary<FactionEnlistOptionsDef, DeliveryQuestList>();
-							if (!deliveryBoards.ContainsKey(optionDef))
-								deliveryBoards[optionDef] = new DeliveryQuestList();
-
-							Command_Action command_DeliveryBoard = new Command_Action
-							{
-								defaultLabel = optionDef.deliveryQuestsBoardLabelKey.Translate(faction.Named("FACTION")),
-								defaultDesc = optionDef.deliveryQuestsBoardDescKey.Translate(faction.Named("FACTION")),
-								icon = ContentFinder<Texture2D>.Get(optionDef.deliveryQuestsBoardButtonIconTexPath),
-								action = delegate
-								{
-									DeliveryQuestList board = deliveryBoards[optionDef];
-									bool needsRefresh = board.lastRefreshTick == 0 || Find.TickManager.TicksGame > board.lastRefreshTick + (optionDef.deliveryQuestsRerollDays * GenDate.TicksPerDay);
-									if (needsRefresh)
-										RefreshDeliveryBoard(optionDef);
-									board.quests.RemoveAll(q => q.IsExpired || q.accepted);
-									if (!board.quests.Any())
-									{
-										Messages.Message("FCP_NoDeliveryQuestsAvailable".Translate(), MessageTypeDefOf.RejectInput, historical: false);
-										return;
-									}
-									List<FloatMenuOption> questOptions = new List<FloatMenuOption>();
-									foreach (DeliveryQuest quest in board.quests)
-									{
-										DeliveryQuest localQuest = quest;
-										Settlement dest = Find.WorldObjects.AllWorldObjects.OfType<Settlement>().FirstOrDefault(s => s.Tile == localQuest.destinationTile);
-										string destName = dest?.LabelShort ?? localQuest.destinationTile.ToString();
-										string stuffPart = localQuest.stuff != null ? " (" + localQuest.stuff.label + ")" : "";
-										ThingDef rewardItem = localQuest.rewardDef ?? optionDef.salaryDef ?? ThingDefOf.Silver;
-										string label = $"{localQuest.count}x {localQuest.thingToDeliver.label}{stuffPart} → {destName}: {localQuest.reward} {rewardItem.label}";
-										questOptions.Add(new FloatMenuOption(label, delegate
-										{
-											localQuest.accepted = true;
-											FactionOptions factionOpts = worldTracker.factionOptionsContainer[faction];
-											factionOpts.activeDeliveries ??= new Dictionary<FactionEnlistOptionsDef, DeliveryQuestList>();
-											if (!factionOpts.activeDeliveries.ContainsKey(optionDef))
-												factionOpts.activeDeliveries[optionDef] = new DeliveryQuestList();
-											factionOpts.activeDeliveries[optionDef].quests.Add(localQuest);
-										}));
-									}
-									Find.WindowStack.Add(new FloatMenu(questOptions));
-								},
-								Order = order
-							};
-							yield return command_DeliveryBoard;
-							order++;
-
-							if (worldTracker.factionOptionsContainer.TryGetValue(faction, out FactionOptions factionOptCheck) &&
-								factionOptCheck.activeDeliveries != null &&
-								factionOptCheck.activeDeliveries.TryGetValue(optionDef, out DeliveryQuestList activeList))
-							{
-								DeliveryQuest turnInQuest = activeList.quests.FirstOrDefault(q => q.destinationTile == parent.Tile && !q.IsExpired);
-								if (turnInQuest != null)
-								{
-									DeliveryQuest localTurnIn = turnInQuest;
-									string stuffPart = localTurnIn.stuff != null ? " (" + localTurnIn.stuff.label + ")" : "";
-									Command_Action command_TurnIn = new Command_Action
-									{
-										defaultLabel = optionDef.deliveryQuestsTurnInLabelKey.Translate(faction.Named("FACTION")),
-										defaultDesc = optionDef.deliveryQuestsTurnInDescKey.Translate(
-											localTurnIn.count.Named("COUNT"),
-											localTurnIn.thingToDeliver.Named("THING")),
-										icon = ContentFinder<Texture2D>.Get(optionDef.deliveryQuestsTurnInButtonIconTexPath),
-										action = delegate
-										{
-											localTurnIn.TurnIn(caravan, optionDef);
-											activeList.quests.Remove(localTurnIn);
-										},
-										Order = order
-									};
-									if (!localTurnIn.CaravanCanTurnIn(caravan))
-									{
-										command_TurnIn.Disable("FCP_DeliveryQuestNotEnoughItems".Translate(
-											localTurnIn.count.Named("COUNT"),
-											localTurnIn.thingToDeliver.Named("THING")));
-									}
-									yield return command_TurnIn;
-									order++;
-								}
-							}
-						}
-
-						Command_Action command_Resign = new Command_Action
-						{
-							defaultLabel = optionDef.resignButtonLabelKey.Translate(faction.Named("FACTION")),
-							defaultDesc = optionDef.resignButtonDescKey.Translate(faction.Named("FACTION")),
-							icon = ContentFinder<Texture2D>.Get(optionDef.resignButtonIconTexPath),
-							action = delegate
-							{
-								DiaNode dianode = new DiaNode("Resign");
-								Dialog_ResignConfirmation resignWindow = new Dialog_ResignConfirmation(dianode, false, this, optionDef);
-								Find.WindowStack.Add(resignWindow);
-							},
-							Order = order
-						};
-						yield return command_Resign;
 					}
 				}
 			}
@@ -976,39 +507,10 @@ public class WorldObjectCompEnlist : WorldObjectComp
 		board.lastRefreshTick = Find.TickManager.TicksGame;
 	}
 
-	public IEnumerable<Command_Action> GetProvisionButtons(Dictionary<int, ProvisionsInfo> provisionInfos, List<ProvisionOption> provisionOptions, Faction faction, Caravan caravan, int order)	{
-		for (int i = 0; i < provisionOptions.Count; i++)
-		{
-			ProvisionOption provisionOption = provisionOptions[i];
-			if (!provisionInfos.TryGetValue(i, out ProvisionsInfo provisionInfo))
-			{
-				provisionInfos[i] = provisionInfo = new ProvisionsInfo();
-			}
-
-			Command_Action command_Provisions = new Command_Action
-			{
-				defaultLabel = provisionOption.provisionsLabelKey.Translate(faction.Named("FACTION")),
-				defaultDesc = provisionOption.provisionsDescKey.Translate(faction.Named("FACTION")),
-				icon = ContentFinder<Texture2D>.Get(provisionOption.provisionsButtonIconTexPath),
-				action = delegate
-				{
-					provisionInfo.GiveProvisions(provisionOption, caravan);
-				},
-				Order = order
-			};
-			if (!provisionInfo.CanGiveProvisions(provisionOption))
-			{
-				command_Provisions.Disable();
-			}
-			yield return command_Provisions;
-			order++;
-		}
-	}
 	public override void PostExposeData()
 	{
 		base.PostExposeData();
-		Scribe_Values.Look(ref generatedQuestsLastTick, "generatedQuestsLastTick");
-		Scribe_Collections.Look(ref generatedQuests, "generatedQuests", LookMode.Deep);
+		Scribe_Collections.Look(ref bountyBoards, "bountyBoards", LookMode.Def, LookMode.Deep);
 		if (caravanOptions != null)
 		{
 			caravanOptions.RemoveAll(x => x.Key is null);
@@ -1025,7 +527,6 @@ public class WorldObjectCompEnlist : WorldObjectComp
 		Scribe_Collections.Look(ref deliveryBoards, "deliveryBoards", LookMode.Def, LookMode.Deep);
 		if (Scribe.mode == LoadSaveMode.PostLoadInit)
 		{
-			generatedQuests ??= new List<Quest>();
 			promotedByOptions ??= new Dictionary<FactionEnlistOptionsDef, bool>();
 		}
 	}
@@ -1162,13 +663,11 @@ public class WorldObjectCompEnlist : WorldObjectComp
 			}
 			ExtractMoneyFromCaravan(caravan, curFactionEnlistOptionsDef.shuttleServiceCost, curFactionEnlistOptionsDef);
 
-			// Get custom shuttle from faction extension - direct type access (no reflection)
 			FactionModExtension factionExtension = parent.Faction?.def?.GetModExtension<FactionModExtension>();
 			TransportShipDef transportShipDef = factionExtension?.transportShipDef;
 
 			if (transportShipDef != null && transportShipDef.worldObject != null)
 			{
-				// Create the shuttle thing - it's a Building with CompTransporter, not an ActiveTransporter
 				Thing shuttleThing = ThingMaker.MakeThing(transportShipDef.shipThing);
 				CompTransporter compTransporter = shuttleThing.TryGetComp<CompTransporter>();
 				
@@ -1179,21 +678,16 @@ public class WorldObjectCompEnlist : WorldObjectComp
 					return;
 				}
 				
-				// Transfer caravan contents to shuttle's transporter
 				compTransporter.GetDirectlyHeldThings().TryAddRangeOrTransfer(
 					caravan.GetDirectlyHeldThings(), 
 					canMergeWithExistingStacks: true, 
 					destroyLeftover: true);
 				
-				// Create the traveling world object - cast to TravellingTransporters for direct property access
 				TravellingTransporters travelingShuttle = (TravellingTransporters)WorldObjectMaker.MakeWorldObject(transportShipDef.worldObject);
 				travelingShuttle.Tile = parent.Tile;
 				travelingShuttle.SetFaction(Faction.OfPlayer);
 				travelingShuttle.destinationTile = destinationTile;
-				
-				// Use custom arrival action that forces map loading to show shuttle landing
 			travelingShuttle.arrivalAction = arrivalAction ?? new TransportersArrivalAction_FormCaravan();
-				// Set the transport ship def (still need reflection for this private field)
 				var transportShipField = typeof(TravellingTransporters).GetField("transportShip", 
 					System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
 				if (transportShipField != null)
@@ -1203,7 +697,6 @@ public class WorldObjectCompEnlist : WorldObjectComp
 				
 				Find.WorldObjects.Add(travelingShuttle);
 				
-				// Wrap the cargo in ActiveTransporterInfo for AddTransporter
 				ActiveTransporterInfo transporterInfo = new ActiveTransporterInfo();
 				transporterInfo.innerContainer.TryAddRangeOrTransfer(
 					compTransporter.GetDirectlyHeldThings(), 
@@ -1216,7 +709,6 @@ public class WorldObjectCompEnlist : WorldObjectComp
 				return;
 			}
 			
-			// Fallback to drop pods
 			Log.Warning("[FCP Enlist] Failed to launch shuttle, falling back to drop pods");
 			TryLaunch(destinationTile, arrivalAction, caravan);
 		}
@@ -1253,7 +745,6 @@ public class WorldObjectCompEnlist : WorldObjectComp
 	}
 	private IEnumerable<FloatMenuOption> GetTransportPodsFloatMenuOptionsAt(int tile, Caravan caravan, Action<int, TransportersArrivalAction, Caravan> launchAction = null)
 	{
-		// Default to TryLaunch if no launchAction specified (for drop pods)
 		if (launchAction == null)
 			launchAction = TryLaunch;
 		
@@ -1266,18 +757,6 @@ public class WorldObjectCompEnlist : WorldObjectComp
 				launchAction(tile, new TransportersArrivalAction_FormCaravan(), caravan);
 			});
 		}
-		//List<WorldObject> worldObjects = Find.WorldObjects.AllWorldObjects;
-		//for (int i = 0; i < worldObjects.Count; i++)
-		//{
-		//	if (worldObjects[i].Tile == tile)
-		//	{
-		//		foreach (FloatMenuOption transportPodsFloatMenuOption in worldObjects[i].GetTransportPodsFloatMenuOptions(TransportersInGroup.Cast<IThingHolder>(), this))
-		//		{
-		//			anything = true;
-		//			yield return transportPodsFloatMenuOption;
-		//		}
-		//	}
-		//}
 		if (!anything && !Find.World.Impassable(tile))
 		{
 			yield return new FloatMenuOption("TransportPodsContentsWillBeLost".Translate(), delegate

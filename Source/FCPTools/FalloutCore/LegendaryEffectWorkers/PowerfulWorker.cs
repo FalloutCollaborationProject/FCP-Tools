@@ -5,7 +5,7 @@ namespace FCP.Core.LegendaryEffectWorkers;
 public class PowerfulWorker : LegendaryEffectWorker
 {
     public static Lazy<FieldInfo> DamageInfo_AmountInt = new(() => typeof(DamageInfo).GetField("amountInt", BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic));
-    
+
     public override void Notify_ApplyToPawn(ref DamageInfo damageInfo, Pawn pawn)
     {
         if (DamageInfo_AmountInt.Value != null)

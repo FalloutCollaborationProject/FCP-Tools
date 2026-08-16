@@ -9,7 +9,6 @@ namespace FCP.Core.Robotics
     {
         public PawnKindDef kindDef;
 
-        // Only meaningful for robots with a CompProtectronLoadout (e.g. protectrons); ignored otherwise.
         public string presetId;
     }
 

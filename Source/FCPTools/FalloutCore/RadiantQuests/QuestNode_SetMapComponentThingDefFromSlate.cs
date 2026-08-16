@@ -100,5 +100,3 @@ public class GameComponent_QuestVertibirdDefs : GameComponent
     private List<MapParent> defsKeys;
     private List<ThingDef> defsValues;
 }
-
-

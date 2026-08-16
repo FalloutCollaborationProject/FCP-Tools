@@ -5,7 +5,7 @@ namespace FCP.Core;
 public class Projectile_FragExplosion : Projectile_Explosive
 {
     public ProjectileExtension_Fragmentation extension => def.GetModExtension<ProjectileExtension_Fragmentation>();
-    
+
     protected override void Tick()
     {
         base.Tick();
@@ -17,7 +17,7 @@ public class Projectile_FragExplosion : Projectile_Explosive
             }
         }
     }
-    
+
     protected override void Impact(Thing hitThing, bool blockedByShield = false)
     {
         if (extension.isSureHit)
@@ -26,11 +26,11 @@ public class Projectile_FragExplosion : Projectile_Explosive
             {
                 Launch(launcher, intendedTarget, intendedTarget, ProjectileHitFlags.IntendedTarget);
                 return;
-            }                                
+            }
         }
         base.Impact(hitThing, blockedByShield);
     }
-    
+
     protected override void Explode()
     {
         Map map = base.Map;
@@ -60,11 +60,11 @@ public class Projectile_FragExplosion : Projectile_Explosive
         float preExplosionSpawnChance = def.projectile.preExplosionSpawnChance;
         int preExplosionSpawnThingCount = def.projectile.preExplosionSpawnThingCount;
         GenExplosion.DoExplosion(positionHeld, map, explosionRadius, damageDef, thing, damageAmount, armorPenetration, soundExplode, thingDef, thingDef2, intendedThing, postExplosionSpawnThingDef, postExplosionSpawnChance, postExplosionSpawnThingCount, postExplosionGasType, null, 255, def.projectile.applyDamageToExplosionCellsNeighbors, preExplosionSpawnThingDef, preExplosionSpawnChance, preExplosionSpawnThingCount, def.projectile.explosionChanceToStartFire, def.projectile.explosionDamageFalloff, (float?)origin.AngleToFlat(destination), (List<Thing>)null, (FloatRange?)null, true, def.projectile.damageDef.expolosionPropagationSpeed, 0f, true, postExplosionSpawnThingDefWater, def.projectile.screenShakeFactor);
-        
+
         if (extension.isCone)
         {
             IntVec3 finalPos = new IntVec3(Mathf.Max(launcher.PositionHeld.x, positionHeld.x) - Mathf.Min(launcher.PositionHeld.x, positionHeld.x), 0, Mathf.Max(launcher.PositionHeld.z, positionHeld.z) - Mathf.Min(launcher.PositionHeld.z, positionHeld.z));
-                
+
             if (thing.PositionHeld.x > positionHeld.x)
             {
                 finalPos.x *= -1;
@@ -134,6 +134,6 @@ public class Projectile_FragExplosion : Projectile_Explosive
                     projectile.Launch(Launcher, possibleTargetCell[j], possibleTargetCell[j], ProjectileHitFlags.NonTargetPawns);
                 }
             }
-        }            
+        }
     }
 }

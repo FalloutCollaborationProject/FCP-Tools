@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ New Plague __________-->
+
+    <HediffDef ParentName="InfectionBase">
+        <defName>FCP_Hediff_NewPlague</defName>
+        <label>the new plague</label>
+        <description>A pre-War bioweapon that never stopped circulating. It swept through the old United States decades before the bombs fell, and pockets of it still linger in the wastes, waiting for a new host.</description>
+        <makesSickThought>true</makesSickThought>
+        <lethalSeverity>1</lethalSeverity>
+        <tendable>true</tendable>
+        <comps>
+            <li Class="HediffCompProperties_TendDuration">
+                <baseTendDurationHours>12</baseTendDurationHours>
+                <severityPerDayTended>-0.3628</severityPerDayTended>
+            </li>
+            <li Class="HediffCompProperties_Immunizable">
+                <severityPerDayNotImmune>0.666</severityPerDayNotImmune>
+                <immunityPerDaySick>0.45</immunityPerDaySick>
+                <severityPerDayImmune>-0.333</severityPerDayImmune>
+                <immunityPerDayNotSick>-0.02</immunityPerDayNotSick>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <label>minor</label>
+                <painOffset>0.2</painOffset>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.05</offset>
+                    </li>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <offset>-0.05</offset>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.333</minSeverity>
+                <label>moderate</label>
+                <painOffset>0.25</painOffset>
+                <vomitMtbDays>1.5</vomitMtbDays>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.15</offset>
+                    </li>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <offset>-0.15</offset>
+                    </li>
+                    <li>
+                        <capacity>Moving</capacity>
+                        <offset>-0.1</offset>
+                    </li>
+                </capMods>
+            </li>
+            <li>
+                <minSeverity>0.666</minSeverity>
+                <label>advanced</label>
+                <lifeThreatening>true</lifeThreatening>
+                <vomitMtbDays>0.75</vomitMtbDays>
+                <painOffset>0.3</painOffset>
+                <capMods>
+                    <li>
+                        <capacity>Consciousness</capacity>
+                        <offset>-0.3</offset>
+                    </li>
+                    <li>
+                        <capacity>Manipulation</capacity>
+                        <offset>-0.3</offset>
+                    </li>
+                    <li>
+                        <capacity>Breathing</capacity>
+                        <offset>-0.15</offset>
+                    </li>
+                </capMods>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!--__________ Rad Worms __________-->
+
+    <HediffDef ParentName="InfectionBase">
+        <defName>FCP_Hediff_RadWorms</defName>
+        <label>rad worms</label>
+        <description>Parasitic worms picked up from undercooked wasteland meat, thriving on trace radiation the way ordinary worms never could. They cause vomiting, sap the body's resistance to further exposure, and eat into whatever the victim manages to keep down.</description>
+        <makesSickThought>true</makesSickThought>
+        <tendable>true</tendable>
+        <stages>
+            <li>
+                <painOffset>0.2</painOffset>
+                <hungerRateFactorOffset>1</hungerRateFactorOffset>
+                <vomitMtbDays>1.0</vomitMtbDays>
+                <statOffsets>
+                    <ToxicResistance>-0.15</ToxicResistance>
+                </statOffsets>
+            </li>
+        </stages>
+        <comps>
+            <li Class="HediffCompProperties_TendDuration">
+                <baseTendDurationHours>48</baseTendDurationHours>
+                <disappearsAtTotalTendQuality>3</disappearsAtTotalTendQuality>
+            </li>
+        </comps>
+    </HediffDef>
+
+</Defs>

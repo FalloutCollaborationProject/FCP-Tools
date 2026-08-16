@@ -29,7 +29,6 @@ public class QuestPart_SpawnRaiders : QuestPart
         }
     }
 
-
     public override void Notify_QuestSignalReceived(Signal signal)
     {
         mapParent = Find.World.worldObjects.MapParentAt(mapTile);

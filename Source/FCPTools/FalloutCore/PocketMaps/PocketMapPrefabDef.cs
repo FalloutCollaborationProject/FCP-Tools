@@ -5,7 +5,7 @@ namespace FCP.PocketMaps;
 public class ThingsContainer
 {
     public List<PrefabItem> items = new List<PrefabItem>();
-        
+
     public void LoadDataFromXmlCustom(XmlNode xmlRoot)
     {
         foreach (XmlNode thingNode in xmlRoot.ChildNodes)
@@ -16,6 +16,7 @@ public class ThingsContainer
             string stuff = thingNode["stuff"]?.InnerText;
             string rotation = thingNode["relativeRotation"]?.InnerText;
             float chance = ParseFloat(thingNode["chance"]?.InnerText, 1f);
+            bool fullFuel = thingNode["fullFuel"]?.InnerText == "true";
 
             XmlNode rectsNode = thingNode["rects"];
             XmlNode positionsNode = thingNode["positions"];
@@ -31,7 +32,8 @@ public class ThingsContainer
                         stuffDefName = stuff,
                         rect = rectNode.InnerText,
                         relativeRotation = rotation,
-                        chance = chance
+                        chance = chance,
+                        fullFuel = fullFuel
                     });
                 }
             }
@@ -40,18 +42,18 @@ public class ThingsContainer
                 foreach (XmlNode posNode in positionsNode.ChildNodes)
                 {
                     if (posNode.NodeType != XmlNodeType.Element) continue;
-                    items.Add(CreateItem(thingNode, defName, stuff, posNode.InnerText, rotation, chance));
+                    items.Add(CreateItem(thingNode, defName, stuff, posNode.InnerText, rotation, chance, fullFuel));
                 }
             }
             else
             {
                 string pos = positionNode?.InnerText ?? "(0,0,0)";
-                items.Add(CreateItem(thingNode, defName, stuff, pos, rotation, chance));
+                items.Add(CreateItem(thingNode, defName, stuff, pos, rotation, chance, fullFuel));
             }
         }
     }
-        
-    private PrefabItem CreateItem(XmlNode node, string defName, string stuff, string pos, string rot, float chance)
+
+    private PrefabItem CreateItem(XmlNode node, string defName, string stuff, string pos, string rot, float chance, bool fullFuel)
     {
         return new PrefabItem {
             thingDefName = defName,
@@ -60,7 +62,8 @@ public class ThingsContainer
             relativeRotation = rot,
             chance = chance,
             hp = ParseInt(node["hp"]?.InnerText),
-            quality = node["quality"]?.InnerText
+            quality = node["quality"]?.InnerText,
+            fullFuel = fullFuel
         };
     }
 
@@ -74,23 +77,23 @@ public class ThingsContainer
         return float.TryParse(s, out float v) ? v : def;
     }
 }
-    
+
 public class PawnKindsContainer
 {
     public List<PrefabPawn> items = new List<PrefabPawn>();
-        
+
     public void LoadDataFromXmlCustom(XmlNode xmlRoot)
     {
         foreach (XmlNode node in xmlRoot.ChildNodes)
         {
             if (node.NodeType != XmlNodeType.Element) continue;
-                
+
             int count = int.TryParse(node.InnerText, out int c) ? c : 1;
             items.Add(new PrefabPawn { pawnKindDefName = node.Name, count = count });
         }
     }
 }
-    
+
 public class PocketMapPrefabDef : Def
 {
     public string size;
@@ -99,11 +102,11 @@ public class PocketMapPrefabDef : Def
     public FactionDef factionDef;
     public ThingsContainer things;
     public PawnKindsContainer pawnKinds;
-        
+
     public override void ResolveReferences()
     {
         base.ResolveReferences();
-            
+
         if (things?.items != null)
         {
             foreach (var item in things.items)
@@ -114,12 +117,12 @@ public class PocketMapPrefabDef : Def
                     if (item.thingDef == null)
                         Log.Warning($"{defName}: ThingDef '{item.thingDefName}' not found");
                 }
-                    
+
                 if (!string.IsNullOrEmpty(item.stuffDefName))
                     item.stuff = DefDatabase<ThingDef>.GetNamed(item.stuffDefName, false);
             }
         }
-            
+
         if (pawnKinds?.items != null)
         {
             foreach (var pawn in pawnKinds.items)
@@ -147,6 +150,7 @@ public class PrefabItem
     public string quality;
     public string relativeRotation;
     public float chance = 1f;
+    public bool fullFuel;
 }
 
 public class PrefabPawn

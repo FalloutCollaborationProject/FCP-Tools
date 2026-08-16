@@ -1,17 +1,12 @@
-﻿using System.Collections;
+using System.Collections;
 
 namespace FCP.Core;
 
 [StaticConstructorOnStartup]
 public static class CharacterRoleUtils
 {
-    // Central dictionary for CharacterDefs grouped by role type
     private static readonly Dictionary<Type, IList> RoleRegistry = new Dictionary<Type, IList>();
 
-    /// <summary>
-    /// Helper method to get all CharacterDefs with a specific role
-    /// </summary>
-    /// <typeparam name="TRole">The CharacterRole you're looking for</typeparam>
     public static IReadOnlyList<CharacterDefWithRole<TRole>> GetAllWithRole<TRole>() where TRole : CharacterRole
     {
         if (RoleRegistry.TryGetValue(typeof(TRole), out IList roleList))
@@ -19,13 +14,9 @@ public static class CharacterRoleUtils
             return (List<CharacterDefWithRole<TRole>>)roleList;
         }
 
-        // Return empty list when no characters have this role - this is expected behavior
         return new List<CharacterDefWithRole<TRole>>();
     }
     
-    /// <summary>
-    /// Return a list of all role types in the registry.
-    /// </summary>
     public static IReadOnlyList<Type> GetAllRoleTypes()
     {
         return RoleRegistry.Keys.ToList(); 
@@ -39,16 +30,13 @@ public static class CharacterRoleUtils
             {
                 Type roleType = role.GetType();
 
-                // Add the role to the registry
                 if (!RoleRegistry.ContainsKey(roleType))
                 {
-                    // List<CharacterDefWithRole<roleType>>
                     Type listType = typeof(List<>).MakeGenericType(typeof(CharacterDefWithRole<>).MakeGenericType(roleType));
                     
                     RoleRegistry[roleType] = (IList)Activator.CreateInstance(listType);
                 }
 
-                // Add the entry to the registry
                 var defWithRole = Activator.CreateInstance(
                     typeof(CharacterDefWithRole<>).MakeGenericType(roleType),
                     characterDef,

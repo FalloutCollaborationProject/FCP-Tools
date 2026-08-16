@@ -9,13 +9,13 @@ public static class Pawn_EquipmentTracker_EquipmentTrackerTick_Patch
     {
         if (Find.TickManager.TicksGame % WeaponRequirementUtility.TickInterval != 0)
             return;
-        
+
         foreach (ThingWithComps equipment in __instance.AllEquipmentListForReading)
         {
             var ext = equipment.def.GetModExtension<WeaponRequirementExtension>();
             if (ext == null)
                 continue;
-            
+
             WeaponRequirementUtility.EquipmentTrackerTick(ext, __instance.pawn, equipment);
         }
     }

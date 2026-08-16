@@ -1,4 +1,3 @@
-// ReSharper disable InconsistentNaming
 namespace FCP.Core.WeaponCondition;
 
 [DefOf]

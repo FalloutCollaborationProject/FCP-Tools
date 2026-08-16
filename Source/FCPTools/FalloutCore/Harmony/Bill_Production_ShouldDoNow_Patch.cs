@@ -13,7 +13,7 @@ public class Bill_Production_ShouldDoNow_Patch
         var modExtension = __instance.recipe.GetModExtension<RecipeExtension_FactionGoodwillCheck>();
         if (modExtension == null)
             return;
-        
+
         Faction faction = Find.FactionManager.FirstFactionOfDef(modExtension.requireFaction);
         if (faction == null)
         {

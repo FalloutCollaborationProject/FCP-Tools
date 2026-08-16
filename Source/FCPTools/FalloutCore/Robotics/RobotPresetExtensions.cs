@@ -12,8 +12,6 @@ namespace FCP.Core.Robotics
         public float rocketsChance;
     }
 
-    // A single named head+hand+color combo. Head and hand always travel together as one unit
-    // so a wild roll can never mix e.g. a construction head with a police claw.
     public class ProtectronLoadoutPreset
     {
         public string id;
@@ -24,8 +22,6 @@ namespace FCP.Core.Robotics
 
         public List<Color> colorOptions = new List<Color>();
 
-        // >0 makes this preset eligible for the random roll wild-spawned protectrons get.
-        // Presets reserved for builds/quests/characters (picked explicitly by id) leave this at 0.
         public float wildSpawnWeight;
 
         public Color RollColor() => colorOptions.Count > 0 ? colorOptions.RandomElement() : color;

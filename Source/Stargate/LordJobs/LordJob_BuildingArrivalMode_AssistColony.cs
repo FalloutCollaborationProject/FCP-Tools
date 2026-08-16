@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Verse.AI;
 using Verse.AI.Group;
 
@@ -6,9 +6,6 @@ namespace Thek_BuildingArrivalMode
 {
     public class LordJob_BuildingArrivalMode_AssistColony : LordJob_AssistColony
     {
-        // This is a copy from LordJob_AssistColony
-        // I basically change all the LordToils that make pawns leave in any way into my own custom ones
-        // I also add my own PanicFlee, ignoring vanilla's
 
         private Faction faction;
         public override bool AddFleeToil => !PawnsArrivalModeWorker_BuildingArrivalMode.modExtension?.shouldOverrideFleeToil == true;
@@ -34,7 +31,6 @@ namespace Thek_BuildingArrivalMode
             Transition transition = new(lordToil_HuntEnemies, startingToil);
             transition.AddPreAction(new TransitionAction_Message("MessageVisitorsDangerousTemperature".Translate(faction.def.pawnsPlural.CapitalizeFirst(), faction.Name)));
             transition.AddPreAction(new TransitionAction_BuildingArrivalMode_EnsureHaveExitDestination());
-            // This was changed from ensuring a path to the edge to ensuring a path to the portal
             transition.AddTrigger(new Trigger_PawnExperiencingDangerousTemperatures());
             transition.AddPostAction(new TransitionAction_EndAllJobs());
             stateGraph.AddTransition(transition);
@@ -47,13 +43,11 @@ namespace Thek_BuildingArrivalMode
             Transition transition3 = new(lordToil_ExitMap2, startingToil);
             transition3.AddTrigger(new Trigger_PawnCanReachMapEdge());
             transition3.AddPreAction(new TransitionAction_BuildingArrivalMode_EnsureHaveExitDestination());
-            // This was changed from ensuring a path to the edge to ensuring a path to the portal
             stateGraph.AddTransition(transition3);
             Transition transition4 = new(lordToil_HuntEnemies, startingToil);
             transition4.AddPreAction(new TransitionAction_Message("MessageFriendlyFightersLeaving".Translate(faction.def.pawnsPlural.CapitalizeFirst(), faction.Name)));
             transition4.AddTrigger(new Trigger_TicksPassed(25000));
             transition4.AddPreAction(new TransitionAction_BuildingArrivalMode_EnsureHaveExitDestination());
-            // This was changed from ensuring a path to the edge to ensuring a path to the portal
             stateGraph.AddTransition(transition4);
             Transition transition5 = new(startingToil, lordToil_ExitMap);
             transition5.AddTrigger(new Trigger_Memo("TravelArrived"));
@@ -61,11 +55,9 @@ namespace Thek_BuildingArrivalMode
 
             LordToil_BuildingArrivalMode_PanicFlee lordToil_PanicFlee = new()
             {
-                // The fleeing lord that happens when you defeat a bunch of the raiders changed so they go in the portal
                 useAvoidGrid = true
             };
 
-            //The for loop underneath makes all the transitions aim towards the above PanicFlee, same thing vanilla's PanicFlee does
             for (int i = 0; i < stateGraph.lordToils.Count; i++)
             {
                 Transition fleeTransition = new(stateGraph.lordToils[i], lordToil_PanicFlee);

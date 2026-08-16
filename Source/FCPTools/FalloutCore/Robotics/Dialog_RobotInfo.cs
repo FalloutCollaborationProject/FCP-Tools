@@ -30,11 +30,13 @@ namespace FCP.Core.Robotics
             var contentRect = new Rect(0f, 45f, inRect.width, inRect.height - 90f);
             DrawContent(contentRect, terminalColor);
 
+            GUI.color = terminalColor;
             var closeRect = new Rect(inRect.width - 100f, inRect.height - 40f, 90f, 35f);
             if (Widgets.ButtonText(closeRect, "Close"))
             {
                 Close();
             }
+            GUI.color = Color.white;
         }
 
         private void DrawContent(Rect rect, Color terminalColor)
@@ -46,11 +48,11 @@ namespace FCP.Core.Robotics
             float textHeight = Text.CalcHeight(text, innerRect.width - 20f);
             var viewRect = new Rect(0f, 0f, innerRect.width - 20f, textHeight + 10f);
 
-            Widgets.BeginScrollView(innerRect, ref scrollPosition, viewRect);
             GUI.color = terminalColor;
+            Widgets.BeginScrollView(innerRect, ref scrollPosition, viewRect);
             Widgets.Label(new Rect(0f, 0f, viewRect.width, textHeight), text);
-            GUI.color = Color.white;
             Widgets.EndScrollView();
+            GUI.color = Color.white;
         }
     }
 }

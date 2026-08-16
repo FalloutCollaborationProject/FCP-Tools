@@ -55,7 +55,7 @@ public static class Command_GizmoOnGUI_Patch
     {
         if (__state != null)
         {
-            Text.Font = GameFont.Tiny; 
+            Text.Font = GameFont.Tiny;
             Text.Anchor = TextAnchor.UpperRight;
 
             var butRect = new Rect(topLeft.x, topLeft.y, __instance.GetWidth(maxWidth), 75f);

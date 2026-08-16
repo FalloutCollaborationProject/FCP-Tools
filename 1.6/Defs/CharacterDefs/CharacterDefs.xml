@@ -32,10 +32,6 @@
                 <headTypeDef>Male_AverageNormal</headTypeDef>
                 <bodyTypeDef>Male</bodyTypeDef>
             </li>
-            <!-- Factional -->
-            <li Class="FCP.Core.CharacterTitleDefinition" MayRequire="Rick.FCP.NCR">
-                <title>FCP_Title_NCR_Ranger_Volunteer</title>
-            </li>
             <!-- Unique Apparels -->
             <li Class="FCP.Core.CharacterUniqueItemDefinition" MayRequire="Rick.FCP.NCR">
                 <uniqueItem>FCP_Apparel_Ranger_Ricks_Uniform</uniqueItem>

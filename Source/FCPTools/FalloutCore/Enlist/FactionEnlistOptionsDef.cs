@@ -59,8 +59,8 @@ public class FactionEnlistOptionsDef : Def
 	public string missionsMenuDescriptionKey;
 	public string missionsMenuSelectQuestKey;
 	public string missionsMenuStartQuestKey;
-	public string missionsMenuStartQuestNoEnoughMoneyKey;
-	public int missionsQuestCost;
+	public string missionsMenuCollectBountyKey;
+	public IntRange missionsBountyRewardRange = new IntRange(30, 80);
 	public SoundDef missionsMenuAmbientSoundDef;
 
 	public bool			mechSerumIsEnabled;
@@ -206,6 +206,4 @@ public class FactionEnlistOptionsDef : Def
 	public string protocolInvalidWarning;
 	public List<ProtocolOption> protocolOptions;
 	public BuyOutOption buyOutOption;
-
-
 }

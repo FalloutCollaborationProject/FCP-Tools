@@ -3,6 +3,158 @@
 
     <!--__________ Thoughts __________-->
 
+    <!--_____ Rank Training Thoughts _____-->
+
+    <!-- Trained -->
+
+    <ThoughtDef>
+        <defName>FCP_Thought_RankTrained</defName>
+        <durationDays>0.5</durationDays>
+        <stackLimit>1</stackLimit>
+        <stages>
+            <li>
+                <label>trained hard</label>
+                <description>Put in a solid training session today.</description>
+                <baseMoodEffect>2</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <!-- Drilled -->
+
+    <ThoughtDef>
+        <defName>FCP_Thought_RankDrilled</defName>
+        <durationDays>0.5</durationDays>
+        <stackLimit>1</stackLimit>
+        <stages>
+            <li>
+                <label>drilled</label>
+                <description>Had a good training drill.</description>
+                <baseMoodEffect>3</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <!-- Studied -->
+
+    <ThoughtDef>
+        <defName>FCP_Thought_RankStudied</defName>
+        <durationDays>0.5</durationDays>
+        <stackLimit>1</stackLimit>
+        <stages>
+            <li>
+                <label>studied</label>
+                <description>Had a productive study session.</description>
+                <baseMoodEffect>3</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <!-- Observed Mentor -->
+
+    <ThoughtDef>
+        <defName>FCP_Thought_ObservedMentor</defName>
+        <durationDays>0.25</durationDays>
+        <stackLimit>1</stackLimit>
+        <stages>
+            <li>
+                <label>watched a mentor</label>
+                <description>Spent some time watching my mentor work. Picked up a thing or two.</description>
+                <baseMoodEffect>1</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <!-- Mentor Died -->
+
+    <ThoughtDef>
+        <defName>FCP_Thought_MentorDied</defName>
+        <durationDays>6</durationDays>
+        <stackLimit>1</stackLimit>
+        <stages>
+            <li>
+                <label>mentor died</label>
+                <description>My mentor is gone. I'll have to find my own way now.</description>
+                <baseMoodEffect>-8</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <!-- Inspection Commended -->
+
+    <ThoughtDef>
+        <defName>FCP_Thought_Inspection_Commended</defName>
+        <durationDays>0.5</durationDays>
+        <stackLimit>1</stackLimit>
+        <stages>
+            <li>
+                <label>commended</label>
+                <description>My gear passed inspection without a single mark against it.</description>
+                <baseMoodEffect>4</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <!-- Inspection Reprimanded -->
+
+    <ThoughtDef>
+        <defName>FCP_Thought_Inspection_Reprimanded</defName>
+        <durationDays>0.5</durationDays>
+        <stackLimit>1</stackLimit>
+        <stages>
+            <li>
+                <label>reprimanded</label>
+                <description>Got called out in front of everyone over the state of my gear.</description>
+                <baseMoodEffect>-4</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <!-- Punishment Detail -->
+
+    <ThoughtDef>
+        <defName>FCP_Thought_PunishmentDetail</defName>
+        <durationDays>0.5</durationDays>
+        <stackLimit>1</stackLimit>
+        <stages>
+            <li>
+                <label>punishment detail</label>
+                <description>Got put on punishment detail. Humiliating.</description>
+                <baseMoodEffect>-5</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <!-- Promotion Ceremony -->
+
+    <ThoughtDef>
+        <defName>FCP_Thought_PromotionCeremony</defName>
+        <durationDays>1</durationDays>
+        <stackLimit>1</stackLimit>
+        <stages>
+            <li>
+                <label>promoted</label>
+                <description>Stood before the unit and got promoted. Everyone was watching.</description>
+                <baseMoodEffect>6</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <!-- Witnessed Promotion -->
+
+    <ThoughtDef>
+        <defName>FCP_Thought_WitnessedPromotion</defName>
+        <durationDays>0.5</durationDays>
+        <stackLimit>1</stackLimit>
+        <stages>
+            <li>
+                <label>witnessed a promotion</label>
+                <description>Watched one of our own get promoted. Good for morale.</description>
+                <baseMoodEffect>2</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
     <!--_____ Enlistment Thoughts _____-->
 
     <!-- Turned in an outlaw -->
@@ -58,6 +210,24 @@
                 <label>stealthboy withdrawal</label>
                 <description>I feel exposed without the stealth field. I need to disappear.</description>
                 <baseMoodEffect>-15</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <!--_____ Ghoul Thoughts _____-->
+
+    <!-- Radiation Bath -->
+
+    <ThoughtDef>
+        <defName>FCP_Thought_RadiationBath</defName>
+        <workerClass>FCP.Core.Ghouls.ThoughtWorker_RadiationBath</workerClass>
+        <validWhileDespawned>false</validWhileDespawned>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <stages>
+            <li>
+                <label>radiation bath</label>
+                <description>The toxic air outside feels like home.</description>
+                <baseMoodEffect>4</baseMoodEffect>
             </li>
         </stages>
     </ThoughtDef>

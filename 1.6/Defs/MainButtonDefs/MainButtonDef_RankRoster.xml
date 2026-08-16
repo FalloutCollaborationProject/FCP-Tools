@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <MainButtonDef>
+        <defName>FCP_MainButton_RankRoster</defName>
+        <label>ranks</label>
+        <description>Track faction rank progress for your colonists.</description>
+        <tabWindowClass>FCP.Ranks.MainTabWindow_RankRoster</tabWindowClass>
+        <order>150</order>
+        <closesWorldView>true</closesWorldView>
+    </MainButtonDef>
+
+</Defs>

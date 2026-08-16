@@ -17,15 +17,12 @@ public class Dialog_CharacterBrowser : Window
     private Vector2 listScrollPos;
     private Vector2 detailsScrollPos;
 
-    // Filters
     private string searchText = "";
     private FactionDef filterFaction;
     private StatusFilter statusFilter = StatusFilter.All;
 
-    // Cached faction list for dropdown
     private List<FactionDef> allFactions = [];
 
-    // Statuses
     private enum StatusFilter
     {
         All,
@@ -35,6 +32,8 @@ public class Dialog_CharacterBrowser : Window
     }
 
     public override Vector2 InitialSize => new Vector2(1600f, 900f);
+
+    private static Color DimPrimary => new Color(TerminalColors.PrimaryColor.r, TerminalColors.PrimaryColor.g, TerminalColors.PrimaryColor.b, 0.5f);
 
     public Dialog_CharacterBrowser()
     {
@@ -61,7 +60,7 @@ public class Dialog_CharacterBrowser : Window
             .Distinct()
             .OrderBy(factionDef => factionDef.defName)
             .ToList();
-        
+
         ApplyFilters();
     }
 
@@ -76,12 +75,10 @@ public class Dialog_CharacterBrowser : Window
 
     private bool MatchesFilters(CharacterDef charDef)
     {
-        // Text search filter
         if (!searchText.NullOrEmpty())
         {
             bool matches = charDef.defName.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0;
 
-            // Also check story definition names
             var story = charDef.definitions.OfType<CharacterStoryDefinition>().FirstOrDefault();
             if (story != null)
             {
@@ -96,11 +93,9 @@ public class Dialog_CharacterBrowser : Window
             if (!matches) return false;
         }
 
-        // Faction filter
         if (filterFaction != null && charDef.faction != filterFaction)
             return false;
 
-        // Status filter
         if (statusFilter != StatusFilter.All)
         {
             var tracker = UniqueCharactersTracker.Instance;
@@ -123,30 +118,29 @@ public class Dialog_CharacterBrowser : Window
 
     public override void DoWindowContents(Rect inRect)
     {
-        Text.Font = GameFont.Small;
-
-        // Title
-        var titleRect = new Rect(0f, 0f, inRect.width, 30f);
         Text.Font = GameFont.Medium;
-        Widgets.Label(titleRect, "Character Browser");
+        GUI.color = TerminalColors.PrimaryColor;
+        Widgets.Label(new Rect(0f, 0f, inRect.width, 30f), "Character Browser");
         Text.Font = GameFont.Small;
+        Widgets.DrawLineHorizontal(0f, 34f, inRect.width);
 
-        var contentRect = new Rect(0f, 40f, inRect.width, inRect.height - 40f);
+        var contentRect = new Rect(0f, 44f, inRect.width, inRect.height - 44f);
 
-        // Left panel (40%)
         var leftPanel = new Rect(contentRect.x, contentRect.y, contentRect.width * 0.4f - PanelMargin / 2f, contentRect.height);
         DrawLeftPanel(leftPanel);
 
-        // Right panel (60%)
+        Widgets.DrawLineVertical(leftPanel.xMax + PanelMargin / 2f, contentRect.y, contentRect.height);
+
         var rightPanel = new Rect(leftPanel.xMax + PanelMargin, contentRect.y, contentRect.width * 0.6f - PanelMargin / 2f, contentRect.height);
         DrawRightPanel(rightPanel);
+
+        GUI.color = Color.white;
     }
 
     private void DrawLeftPanel(Rect rect)
     {
         float curY = rect.y;
 
-        // Search box
         var searchRect = new Rect(rect.x, curY, rect.width, FilterHeight);
         var newSearch = Widgets.TextField(searchRect, searchText);
         if (newSearch != searchText)
@@ -156,7 +150,6 @@ public class Dialog_CharacterBrowser : Window
         }
         curY += FilterHeight + 6f;
 
-        // Faction filter
         var factionRowRect = new Rect(rect.x, curY, rect.width, FilterHeight);
         var factionLabel = new Rect(factionRowRect.x, factionRowRect.y, 60f, factionRowRect.height);
         var factionButton = new Rect(factionLabel.xMax + 4f, factionRowRect.y, factionRowRect.width - factionLabel.width - 4f, factionRowRect.height);
@@ -190,7 +183,6 @@ public class Dialog_CharacterBrowser : Window
         }
         curY += FilterHeight + 6f;
 
-        // Status filter
         var statusRowRect = new Rect(rect.x, curY, rect.width, FilterHeight);
         var statusLabel = new Rect(statusRowRect.x, statusRowRect.y, 60f, statusRowRect.height);
         var statusButton = new Rect(statusLabel.xMax + 4f, statusRowRect.y, statusRowRect.width - statusLabel.width - 4f, statusRowRect.height);
@@ -214,26 +206,24 @@ public class Dialog_CharacterBrowser : Window
         }
         curY += FilterHeight + 6f;
 
-        // Divider line
+        GUI.color = DimPrimary;
         Widgets.DrawLineHorizontal(rect.x, curY, rect.width);
+        GUI.color = TerminalColors.PrimaryColor;
         curY += 6f;
 
-        // Character count header
         var countRect = new Rect(rect.x, curY, rect.width, 20f);
-        GUI.color = new Color(0.7f, 0.7f, 0.7f);
+        GUI.color = DimPrimary;
         Text.Font = GameFont.Tiny;
         Widgets.Label(countRect, $"Characters ({filteredCharacters.Count}/{allCharacters.Count})");
         Text.Font = GameFont.Small;
-        GUI.color = Color.white;
+        GUI.color = TerminalColors.PrimaryColor;
         curY += 20f + 2f;
 
-        // Column headers
-        float listWidth = rect.width - 16f; // Account for scrollbar
+        float listWidth = rect.width - 16f;
         var headerRect = new Rect(rect.x, curY, listWidth, HeaderHeight);
         DrawListHeader(headerRect);
         curY += HeaderHeight;
 
-        // Character list
         float listHeight = rect.yMax - curY;
         var listOutRect = new Rect(rect.x, curY, rect.width, listHeight);
         var listViewRect = new Rect(0f, 0f, listWidth, filteredCharacters.Count * RowHeight);
@@ -246,7 +236,6 @@ public class Dialog_CharacterBrowser : Window
             var charDef = filteredCharacters[i];
             var rowRect = new Rect(0f, y, listViewRect.width, RowHeight);
 
-            // Only draw visible rows
             if (y + RowHeight >= listScrollPos.y && y <= listScrollPos.y + listOutRect.height)
             {
                 DrawCharacterRow(rowRect, charDef, i);
@@ -262,7 +251,6 @@ public class Dialog_CharacterBrowser : Window
     {
         var innerRect = rect.ContractedBy(4f, 0f);
 
-        // Column widths - Name (35%), Faction (40%), Status (25%)
         float nameWidth = innerRect.width * 0.35f;
         float factionWidth = innerRect.width * 0.40f;
         float statusWidth = innerRect.width * 0.25f;
@@ -271,35 +259,31 @@ public class Dialog_CharacterBrowser : Window
         var factionRect = new Rect(nameRect.xMax, innerRect.y, factionWidth, innerRect.height);
         var statusRect = new Rect(factionRect.xMax, innerRect.y, statusWidth, innerRect.height);
 
-        // Draw background
-        Widgets.DrawLightHighlight(rect);
         Widgets.DrawLineHorizontal(rect.x, rect.yMax - 1f, rect.width);
 
-        // Draw headers
         Text.Anchor = TextAnchor.MiddleLeft;
-        GUI.color = new Color(0.85f, 0.85f, 0.85f);
+        Text.Font = GameFont.Tiny;
+        GUI.color = DimPrimary;
 
         Widgets.Label(nameRect, "Name");
         Widgets.Label(factionRect, "Faction");
         Widgets.Label(statusRect, "Status");
 
-        GUI.color = Color.white;
+        GUI.color = TerminalColors.PrimaryColor;
+        Text.Font = GameFont.Small;
         Text.Anchor = TextAnchor.UpperLeft;
     }
 
     private void DrawCharacterRow(Rect rect, CharacterDef charDef, int index)
     {
-        // Alternating background
         if (index % 2 == 1)
             Widgets.DrawLightHighlight(rect);
 
-        // Selection highlight
         if (selectedCharacter == charDef)
             Widgets.DrawHighlightSelected(rect);
         else if (Mouse.IsOver(rect))
             Widgets.DrawHighlight(rect);
 
-        // Click handling
         if (Widgets.ButtonInvisible(rect))
         {
             selectedCharacter = charDef;
@@ -307,7 +291,6 @@ public class Dialog_CharacterBrowser : Window
 
         var innerRect = rect.ContractedBy(4f, 0f);
 
-        // Column widths - Name (35%), Faction (40%), Status (25%)
         float nameWidth = innerRect.width * 0.35f;
         float factionWidth = innerRect.width * 0.40f;
         float statusWidth = innerRect.width * 0.25f;
@@ -316,25 +299,20 @@ public class Dialog_CharacterBrowser : Window
         var factionRect = new Rect(nameRect.xMax, innerRect.y, factionWidth, innerRect.height);
         var statusRect = new Rect(factionRect.xMax, innerRect.y, statusWidth, innerRect.height);
 
-        // Role indicator
         bool hasRole = charDef.roles.Count > 0;
         string rolePrefix = hasRole ? "* " : "";
 
-        // Display name
         string displayName = rolePrefix + GetDisplayName(charDef);
 
-        // Status
         string statusStr = GetStatusString(charDef);
 
         Text.Anchor = TextAnchor.MiddleLeft;
+        GUI.color = selectedCharacter == charDef ? TerminalColors.HighlightColor : TerminalColors.PrimaryColor;
 
-        // Name column
         Widgets.Label(nameRect, displayName);
 
-        // Faction column with icon
         if (charDef.faction != null)
         {
-            // Draw faction icon
             float iconY = factionRect.y + (factionRect.height - IconSize) / 2f;
             var iconRect = new Rect(factionRect.x, iconY, IconSize, IconSize);
 
@@ -343,53 +321,45 @@ public class Dialog_CharacterBrowser : Window
             {
                 GUI.color = charDef.faction.DefaultColor;
                 GUI.DrawTexture(iconRect, factionIcon);
-                GUI.color = Color.white;
             }
 
-            // Faction name after icon
             var factionLabelRect = new Rect(iconRect.xMax + 4f, factionRect.y, factionRect.width - IconSize - 4f, factionRect.height);
             string factionStr = charDef.faction.LabelCap;
-            GUI.color = new Color(0.85f, 0.85f, 0.85f);
+            GUI.color = DimPrimary;
             Widgets.Label(factionLabelRect, factionStr);
         }
         else
         {
-            GUI.color = new Color(0.5f, 0.5f, 0.5f);
+            GUI.color = DimPrimary;
             Widgets.Label(factionRect, "No Faction");
         }
 
-        GUI.color = Color.white;
-
-        // Status column with color
         GUI.color = statusStr switch
         {
-            "Alive" or "Alive, Spawned" => new Color(0.5f, 1f, 0.5f),
-            "Dead" => new Color(1f, 0.5f, 0.5f),
-            _ => new Color(0.6f, 0.6f, 0.6f)
+            "Alive" or "Alive, Spawned" => new Color(0.4f, 1f, 0.4f),
+            "Dead" => new Color(1f, 0.4f, 0.4f),
+            _ => DimPrimary
         };
         Widgets.Label(statusRect, statusStr);
-        GUI.color = Color.white;
+        GUI.color = TerminalColors.PrimaryColor;
 
         Text.Anchor = TextAnchor.UpperLeft;
     }
 
     private void DrawRightPanel(Rect rect)
     {
-        Widgets.DrawMenuSection(rect);
-
         if (selectedCharacter == null)
         {
             Text.Anchor = TextAnchor.MiddleCenter;
-            GUI.color = new Color(0.6f, 0.6f, 0.6f);
+            GUI.color = DimPrimary;
             Widgets.Label(rect, "Select a character to view details");
-            GUI.color = Color.white;
+            GUI.color = TerminalColors.PrimaryColor;
             Text.Anchor = TextAnchor.UpperLeft;
             return;
         }
 
         var innerRect = rect.ContractedBy(PanelMargin);
 
-        // Action buttons at bottom
         float buttonHeight = 35f;
         var buttonRect = new Rect(innerRect.x, innerRect.yMax - buttonHeight, innerRect.width, buttonHeight);
         var detailsRect = new Rect(innerRect.x, innerRect.y, innerRect.width, innerRect.height - buttonHeight - PanelMargin);
@@ -406,23 +376,21 @@ public class Dialog_CharacterBrowser : Window
         var listing = new Listing_Standard();
         listing.Begin(viewRect);
 
-        // Header
         Text.Font = GameFont.Medium;
+        GUI.color = TerminalColors.HighlightColor;
         listing.Label(GetDisplayName(selectedCharacter));
+        GUI.color = TerminalColors.PrimaryColor;
         Text.Font = GameFont.Small;
         listing.Gap(4f);
 
-        // Basic info
         DrawSection(listing, "Basic Info", () =>
         {
-            listing.Label($"DefName: {selectedCharacter.defName}");
             listing.Label($"Faction: {selectedCharacter.faction?.LabelCap ?? "Factionless"}");
-            listing.Label($"PawnKind: {selectedCharacter.pawnKind?.defName ?? "None Set"}");
+            listing.Label($"Kind: {selectedCharacter.pawnKind?.LabelCap ?? "None Set"}");
             listing.Label($"Xenotype: {selectedCharacter.xenotype?.LabelCap ?? "None Set"}");
             listing.Label($"Status: {GetStatusString(selectedCharacter)}");
         });
 
-        // Story definition
         var story = selectedCharacter.definitions.OfType<CharacterStoryDefinition>().FirstOrDefault();
         if (story != null)
         {
@@ -444,32 +412,42 @@ public class Dialog_CharacterBrowser : Window
             });
         }
 
-        // Appearance definition
+        UniqueCharactersTracker.Instance.TryGetExistingPawn(selectedCharacter, out Pawn existingPawn);
+        if (existingPawn?.story != null && (existingPawn.story.Childhood != null || existingPawn.story.Adulthood != null))
+        {
+            DrawSection(listing, "Backstory", () =>
+            {
+                if (existingPawn.story.Childhood != null)
+                    listing.Label($"Childhood: {existingPawn.story.Childhood.TitleCapFor(existingPawn.gender)}");
+                if (existingPawn.story.Adulthood != null)
+                    listing.Label($"Adulthood: {existingPawn.story.Adulthood.TitleCapFor(existingPawn.gender)}");
+            });
+        }
+
         var appearance = selectedCharacter.definitions.OfType<CharacterAppearanceDefinition>().FirstOrDefault();
         if (appearance != null)
         {
             DrawSection(listing, "Appearance", () =>
             {
                 if (appearance.hairDef != null)
-                    listing.Label($"Hair: {appearance.hairDef.defName}");
+                    listing.Label($"Hair: {appearance.hairDef.LabelCap}");
                 if (appearance.beardDef != null)
-                    listing.Label($"Beard: {appearance.beardDef.defName}");
+                    listing.Label($"Beard: {appearance.beardDef.LabelCap}");
                 if (appearance.bodyTypeDef != null)
-                    listing.Label($"Body Type: {appearance.bodyTypeDef.defName}");
+                    listing.Label($"Body Type: {appearance.bodyTypeDef.LabelCap}");
                 if (appearance.headTypeDef != null)
-                    listing.Label($"Head Type: {appearance.headTypeDef.defName}");
+                    listing.Label($"Head Type: {appearance.headTypeDef.LabelCap}");
                 if (appearance.faceTattooDef != null)
-                    listing.Label($"Face Tattoo: {appearance.faceTattooDef.defName}");
+                    listing.Label($"Face Tattoo: {appearance.faceTattooDef.LabelCap}");
                 if (appearance.bodyTattooDef != null)
-                    listing.Label($"Body Tattoo: {appearance.bodyTattooDef.defName}");
+                    listing.Label($"Body Tattoo: {appearance.bodyTattooDef.LabelCap}");
                 if (appearance.hairColor != null)
-                    listing.Label($"Hair Color: {appearance.hairColor}");
+                    DrawColorSwatchLine(listing, "Hair Color", appearance.hairColor.Value);
                 if (appearance.skinColorOverride != null)
-                    listing.Label($"Skin Color: {appearance.skinColorOverride}");
+                    DrawColorSwatchLine(listing, "Skin Color", appearance.skinColorOverride.Value);
             });
         }
 
-        // Title definition
         var title = selectedCharacter.definitions.OfType<CharacterTitleDefinition>().FirstOrDefault();
         if (title != null)
         {
@@ -479,14 +457,13 @@ public class Dialog_CharacterBrowser : Window
             });
         }
 
-        // Roles
         if (selectedCharacter.roles.Count > 0)
         {
             DrawSection(listing, "Roles", () =>
             {
                 foreach (var role in selectedCharacter.roles)
                 {
-                    string roleName = role.GetType().Name;
+                    string roleName = PrettifyRoleName(role.GetType().Name);
                     if (role is CharacterRole_FactionLeader leader)
                     {
                         listing.Label($"{roleName} (seniority: {leader.seniority})");
@@ -499,30 +476,82 @@ public class Dialog_CharacterBrowser : Window
             });
         }
 
-        // Unique items
-        var uniqueItems = selectedCharacter.definitions.OfType<CharacterUniqueItemDefinition>().ToList();
+        var uniqueItems = selectedCharacter.definitions.OfType<CharacterUniqueItemDefinition>()
+            .Where(item => item.uniqueItem != null).ToList();
         if (uniqueItems.Count > 0)
         {
-            DrawSection(listing, "Unique Items", () =>
+            DrawSection(listing, "Equipment", () =>
             {
                 foreach (var item in uniqueItems)
                 {
-                    if (item.uniqueItem != null)
-                        listing.Label($"- {item.uniqueItem.LabelCap} ({item.uniqueItem.defName})");
+                    DrawEquipmentRow(listing, item.uniqueItem);
                 }
             });
         }
+
+        listing.Gap(12f);
+        Text.Font = GameFont.Tiny;
+        GUI.color = DimPrimary;
+        listing.Label(selectedCharacter.defName);
+        GUI.color = TerminalColors.PrimaryColor;
+        Text.Font = GameFont.Small;
 
         listing.End();
         Widgets.EndScrollView();
     }
 
+    private static void DrawColorSwatchLine(Listing_Standard listing, string label, Color color)
+    {
+        Rect rect = listing.GetRect(20f);
+        Rect labelRect = new Rect(rect.x, rect.y, rect.width - 26f, rect.height);
+        Rect swatchRect = new Rect(rect.xMax - 20f, rect.y + 2f, 16f, 16f);
+
+        Text.Anchor = TextAnchor.MiddleLeft;
+        Widgets.Label(labelRect, $"{label}:");
+        Text.Anchor = TextAnchor.UpperLeft;
+
+        Widgets.DrawBoxSolid(swatchRect, color);
+    }
+
+    private static void DrawEquipmentRow(Listing_Standard listing, ThingDef def)
+    {
+        Rect rect = listing.GetRect(28f);
+        Rect iconRect = new Rect(rect.x, rect.y, 24f, 24f);
+        Rect labelRect = new Rect(iconRect.xMax + 6f, rect.y, rect.width - iconRect.width - 6f, rect.height);
+
+        if (def.uiIcon != null)
+        {
+            GUI.color = def.uiIconColor;
+            GUI.DrawTexture(iconRect, def.uiIcon);
+            GUI.color = TerminalColors.PrimaryColor;
+        }
+
+        Text.Anchor = TextAnchor.MiddleLeft;
+        Widgets.Label(labelRect, def.LabelCap);
+        Text.Anchor = TextAnchor.UpperLeft;
+    }
+
+    private static string PrettifyRoleName(string typeName)
+    {
+        string name = typeName.StartsWith("CharacterRole_") ? typeName["CharacterRole_".Length..] : typeName;
+        string result = "";
+        foreach (char c in name)
+        {
+            if (char.IsUpper(c) && result.Length > 0)
+                result += " ";
+            result += c;
+        }
+        return result;
+    }
+
     private void DrawSection(Listing_Standard listing, string title, Action content)
     {
         listing.Gap(8f);
-        GUI.color = new Color(0.8f, 0.8f, 0.8f);
-        listing.Label($"-- {title} --");
-        GUI.color = Color.white;
+        Text.Font = GameFont.Tiny;
+        GUI.color = DimPrimary;
+        listing.Label(title);
+        GUI.color = TerminalColors.PrimaryColor;
+        Text.Font = GameFont.Small;
         listing.Gap(2f);
         content();
     }
@@ -531,12 +560,10 @@ public class Dialog_CharacterBrowser : Window
     {
         if (selectedCharacter == null) return 100f;
 
-        float height = 60f; // Header + basic spacing
+        float height = 60f;
 
-        // Basic info: always 5 lines
-        height += 30f + 5 * 24f;
+        height += 30f + 4 * 24f;
 
-        // Story
         var story = selectedCharacter.definitions.OfType<CharacterStoryDefinition>().FirstOrDefault();
         if (story != null)
         {
@@ -547,7 +574,14 @@ public class Dialog_CharacterBrowser : Window
             if (story.chronologicalAge != null && story.chronologicalAge != story.age) height += 24f;
         }
 
-        // Appearance
+        UniqueCharactersTracker.Instance.TryGetExistingPawn(selectedCharacter, out Pawn existingPawn);
+        if (existingPawn?.story != null && (existingPawn.story.Childhood != null || existingPawn.story.Adulthood != null))
+        {
+            height += 30f;
+            if (existingPawn.story.Childhood != null) height += 24f;
+            if (existingPawn.story.Adulthood != null) height += 24f;
+        }
+
         var appearance = selectedCharacter.definitions.OfType<CharacterAppearanceDefinition>().FirstOrDefault();
         if (appearance != null)
         {
@@ -562,21 +596,21 @@ public class Dialog_CharacterBrowser : Window
             if (appearance.skinColorOverride != null) height += 24f;
         }
 
-        // Title
         var title = selectedCharacter.definitions.OfType<CharacterTitleDefinition>().FirstOrDefault();
         if (title != null)
             height += 30f + 24f;
 
-        // Roles
         if (selectedCharacter.roles.Count > 0)
             height += 30f + selectedCharacter.roles.Count * 24f;
 
-        // Unique items
-        var uniqueItems = selectedCharacter.definitions.OfType<CharacterUniqueItemDefinition>().ToList();
+        var uniqueItems = selectedCharacter.definitions.OfType<CharacterUniqueItemDefinition>()
+            .Where(item => item.uniqueItem != null).ToList();
         if (uniqueItems.Count > 0)
-            height += 30f + uniqueItems.Count * 24f;
+            height += 30f + uniqueItems.Count * 28f;
 
-        return height + 20f; // Extra padding
+        height += 12f + 20f;
+
+        return height + 20f;
     }
 
     private void DrawActionButtons(Rect rect)
@@ -589,10 +623,8 @@ public class Dialog_CharacterBrowser : Window
 
         var tracker = UniqueCharactersTracker.Instance;
 
-        // Generate button - creates pawn without spawning
         bool alreadyExists = tracker?.CharacterPawnExists(selectedCharacter) ?? false;
-        if (alreadyExists)
-            GUI.color = new Color(0.5f, 0.5f, 0.5f);
+        GUI.color = alreadyExists ? DimPrimary : TerminalColors.PrimaryColor;
 
         if (Widgets.ButtonText(generateButton, "Generate Pawn"))
         {
@@ -606,9 +638,8 @@ public class Dialog_CharacterBrowser : Window
                 Messages.Message($"Generated {GetDisplayName(selectedCharacter)}", MessageTypeDefOf.PositiveEvent, false);
             }
         }
-        GUI.color = Color.white;
+        GUI.color = TerminalColors.PrimaryColor;
 
-        // Spawn button
         if (Widgets.ButtonText(spawnButton, "Spawn at Mouse"))
         {
             if (Find.CurrentMap != null)
@@ -624,11 +655,8 @@ public class Dialog_CharacterBrowser : Window
             }
         }
 
-        // Go to pawn button (only enabled if pawn exists and is spawned)
         bool canGoTo = tracker?.CharacterPawnSpawned(selectedCharacter) ?? false;
-
-        if (!canGoTo)
-            GUI.color = new Color(0.5f, 0.5f, 0.5f);
+        GUI.color = canGoTo ? TerminalColors.PrimaryColor : DimPrimary;
 
         if (Widgets.ButtonText(gotoButton, "Go to Pawn") && canGoTo)
         {
@@ -640,20 +668,20 @@ public class Dialog_CharacterBrowser : Window
             }
         }
 
-        GUI.color = Color.white;
+        GUI.color = TerminalColors.PrimaryColor;
     }
 
     private static string GetDisplayName(CharacterDef charDef)
     {
         var story = charDef.definitions.OfType<CharacterStoryDefinition>().FirstOrDefault();
-        
-        if (story == null) 
+
+        if (story == null)
             return charDef.defName;
         if (!story.nickname.NullOrEmpty())
             return story.nickname;
         if (!story.firstName.NullOrEmpty())
             return $"{story.firstName} {story.lastName}".Trim();
-        
+
         return charDef.defName;
     }
 

@@ -3038,4 +3038,1783 @@
         </spawnCategories>
         <possessions></possessions>
     </BackstoryDef>
+
+    <!--____ Notable Wastelanders ____-->
+
+    <!--__ Capital Wasteland (Fallout 3) __-->
+
+    <!--_ Sydney _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Sydney</defName>
+        <identifier>FCP_Backstory_Wastelander_Sydney</identifier>
+        <slot>Adulthood</slot>
+        <title>Relic Hunter</title>
+        <titleShort>Relic Hunter</titleShort>
+        <description>Raiders killed [PAWN_nameDef]'s mother when [PAWN_pronoun] was young, and [PAWN_possessive] gunsmith father disappeared from [PAWN_possessive] life not long after. [PAWN_pronoun] has always believed he simply walked away—in truth, he died chasing one last deal, trying to leave [PAWN_objective] something. Now [PAWN_pronoun] chases the most dangerous scores in the wasteland alone, and prefers it that way.</description>
+        <skillGains>
+            <Shooting>8</Shooting>
+            <Melee>3</Melee>
+            <Social>-3</Social>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Violent</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Sydney</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Female</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Sydney_Child</defName>
+        <bodyTypeMale>Female</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Sydney_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Left to Fend</title>
+        <titleShort>Left to Fend</titleShort>
+        <description>[PAWN_nameDef] learned to strip and clean a rifle at [PAWN_possessive] father's workbench, a skill that outlasted the man who taught it once he disappeared.</description>
+        <skillGains>
+            <Shooting>3</Shooting>
+            <Crafting>1</Crafting>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Sydney_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Tulip _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Tulip</defName>
+        <identifier>FCP_Backstory_Wastelander_Tulip</identifier>
+        <slot>Adulthood</slot>
+        <title>Ghoulified Outfitter</title>
+        <titleShort>Outfitter</titleShort>
+        <description>[PAWN_nameDef] once ran packages for an underground network moving people out of harm's way. These days [PAWN_pronoun] runs a shop instead, stocked deep with surplus gear that customers rarely seem to want, and spends the slow hours reading anything [PAWN_pronoun] can find about what waits on the other side.</description>
+        <skillGains>
+            <Social>6</Social>
+            <Intellectual>5</Intellectual>
+            <Crafting>2</Crafting>
+        </skillGains>
+        <workDisables>Violent</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Tulip</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Female</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Tulip_Child</defName>
+        <bodyTypeMale>Female</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Tulip_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Pre-War Childhood</title>
+        <titleShort>Pre-War Childhood</titleShort>
+        <description>[PAWN_nameDef]'s memories of before the bombs are faded now, worn smooth by two centuries, but [PAWN_pronoun] still remembers the smell of a corner shop and being told to mind the register.</description>
+        <skillGains>
+            <Social>2</Social>
+            <Intellectual>1</Intellectual>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Tulip_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Harkness _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Harkness</defName>
+        <identifier>FCP_Backstory_Wastelander_Harkness</identifier>
+        <slot>Adulthood</slot>
+        <title>Rebuilt Security Chief</title>
+        <titleShort>Security Chief</titleShort>
+        <description>A new face, a new set of memories, and a badge were all it took to bury who [PAWN_nameDef] used to work for. [PAWN_pronoun] runs the gate with a hard-nosed discipline that's earned real respect, whatever [PAWN_pronoun] actually is underneath it.</description>
+        <skillGains>
+            <Shooting>7</Shooting>
+            <Melee>3</Melee>
+            <Social>3</Social>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Violent</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Harkness</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Harkness_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Harkness_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Borrowed Memory</title>
+        <titleShort>Borrowed Memory</titleShort>
+        <description>The childhood [PAWN_nameDef] remembers belonged to somebody else first. [PAWN_pronoun] doesn't examine it too closely, and neither does anyone who values [PAWN_possessive] friendship.</description>
+        <skillGains>
+            <Shooting>2</Shooting>
+            <Social>1</Social>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Harkness_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Abraham Washington _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Abraham_Washington</defName>
+        <identifier>FCP_Backstory_Wastelander_Abraham_Washington</identifier>
+        <slot>Adulthood</slot>
+        <title>Museum Curator</title>
+        <titleShort>Curator</titleShort>
+        <description>[PAWN_nameDef] inherited a museum of pre-war relics from [PAWN_possessive] parents and never left it since. [PAWN_pronoun] talks to the exhibits more than to people, and honestly prefers it that way.</description>
+        <skillGains>
+            <Intellectual>8</Intellectual>
+            <Artistic>4</Artistic>
+            <Social>-5</Social>
+        </skillGains>
+        <workDisables>Violent</workDisables>
+        <requiredWorkTags>Intellectual</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Abraham_Washington</li>
+        </spawnCategories>
+        <bodyTypeFemale>Thin</bodyTypeFemale>
+        <bodyTypeMale>Thin</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Abraham_Washington_Child</defName>
+        <bodyTypeMale>Thin</bodyTypeMale>
+        <bodyTypeFemale>Thin</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Abraham_Washington_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Raised Among Relics</title>
+        <titleShort>Raised Among Relics</titleShort>
+        <description>[PAWN_nameDef] grew up dusting display cases instead of playing outside, and could recite the provenance of every artifact in the collection before [PAWN_pronoun] could tie [PAWN_possessive] own shoes.</description>
+        <skillGains>
+            <Intellectual>4</Intellectual>
+            <Artistic>2</Artistic>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Abraham_Washington_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--__ Mojave Wasteland (Fallout: New Vegas) __-->
+
+    <!--_ Sunny Smiles _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Sunny_Smiles</defName>
+        <identifier>FCP_Backstory_Wastelander_Sunny_Smiles</identifier>
+        <slot>Adulthood</slot>
+        <title>Frontier Markswoman</title>
+        <titleShort>Markswoman</titleShort>
+        <description>[PAWN_nameDef] keeps [PAWN_possessive] small town's gecko problem in check with a rifle and a loyal dog at [PAWN_possessive] side. [PAWN_pronoun] has a plain, patient way of teaching newcomers how to survive out here without getting them killed.</description>
+        <skillGains>
+            <Shooting>7</Shooting>
+            <Animals>5</Animals>
+            <Social>3</Social>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Violent</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Sunny_Smiles</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Female</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Sunny_Smiles_Child</defName>
+        <bodyTypeMale>Female</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Sunny_Smiles_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Small Town Kid</title>
+        <titleShort>Small Town Kid</titleShort>
+        <description>[PAWN_nameDef] grew up chasing geckos out of the vegetable patch with a switch, long before anyone trusted [PAWN_objective] with a real gun.</description>
+        <skillGains>
+            <Animals>2</Animals>
+            <Shooting>1</Shooting>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Sunny_Smiles_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Doc Mitchell _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Doc_Mitchell</defName>
+        <identifier>FCP_Backstory_Wastelander_Doc_Mitchell</identifier>
+        <slot>Adulthood</slot>
+        <title>Frontier Doctor</title>
+        <titleShort>Frontier Doctor</titleShort>
+        <description>[PAWN_nameDef] has pulled more bullets out of more people than [PAWN_pronoun] can count, working out of a converted house with steady hands and an old man's patience. [PAWN_pronoun] treats anyone who stumbles through the door, no questions asked.</description>
+        <skillGains>
+            <Medicine>9</Medicine>
+            <Social>3</Social>
+            <Intellectual>2</Intellectual>
+        </skillGains>
+        <workDisables>Violent</workDisables>
+        <requiredWorkTags>Caring</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Doc_Mitchell</li>
+        </spawnCategories>
+        <bodyTypeFemale>Male</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Doc_Mitchell_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Doc_Mitchell_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Apprentice Sawbones</title>
+        <titleShort>Apprentice Sawbones</titleShort>
+        <description>[PAWN_nameDef] spent [PAWN_possessive] youth handing tools to the town healer, memorizing which herbs stopped bleeding and which just smelled like they should.</description>
+        <skillGains>
+            <Medicine>3</Medicine>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Doc_Mitchell_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Trudy _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Trudy</defName>
+        <identifier>FCP_Backstory_Wastelander_Trudy</identifier>
+        <slot>Adulthood</slot>
+        <title>Saloon Matriarch</title>
+        <titleShort>Saloon Matriarch</titleShort>
+        <description>[PAWN_nameDef] took over the local saloon years back and never left, pouring drinks and mothering every stranger who wanders in whether they want it or not. The whole town leans on [PAWN_objective] more than it admits.</description>
+        <skillGains>
+            <Social>8</Social>
+            <Cooking>4</Cooking>
+            <Melee>2</Melee>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Trudy</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Female</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Trudy_Child</defName>
+        <bodyTypeMale>Female</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Trudy_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Bar-Back's Kid</title>
+        <titleShort>Bar-Back's Kid</titleShort>
+        <description>[PAWN_nameDef] grew up wiping down tables and breaking up squabbles between drunks twice [PAWN_possessive] size, learning early that a calm voice settles more fights than a fist.</description>
+        <skillGains>
+            <Social>3</Social>
+            <Cooking>1</Cooking>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Trudy_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Easy Pete _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Easy_Pete</defName>
+        <identifier>FCP_Backstory_Wastelander_Easy_Pete</identifier>
+        <slot>Adulthood</slot>
+        <title>Retired Prospector</title>
+        <titleShort>Prospector</titleShort>
+        <description>[PAWN_nameDef] spent decades digging through the wasteland for anything worth selling, and settled down once [PAWN_possessive] knees gave out. [PAWN_pronoun] still keeps a stash of dynamite handy and a story ready for anyone who'll listen.</description>
+        <skillGains>
+            <Mining>6</Mining>
+            <Social>4</Social>
+            <Crafting>3</Crafting>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Easy_Pete</li>
+        </spawnCategories>
+        <bodyTypeFemale>Thin</bodyTypeFemale>
+        <bodyTypeMale>Thin</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Easy_Pete_Child</defName>
+        <bodyTypeMale>Thin</bodyTypeMale>
+        <bodyTypeFemale>Thin</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Easy_Pete_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Claim Jumper's Kid</title>
+        <titleShort>Claim Jumper's Kid</titleShort>
+        <description>[PAWN_nameDef] tagged along on [PAWN_possessive] family's mining claims from the time [PAWN_pronoun] could walk, learning to spot good ore and bad ground in equal measure.</description>
+        <skillGains>
+            <Mining>2</Mining>
+            <Social>1</Social>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Easy_Pete_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Ringo _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Ringo</defName>
+        <identifier>FCP_Backstory_Wastelander_Ringo</identifier>
+        <slot>Adulthood</slot>
+        <title>Stranded Caravaneer</title>
+        <titleShort>Caravaneer</titleShort>
+        <description>[PAWN_nameDef]'s caravan was ambushed on the road and scattered to the wind, leaving [PAWN_objective] holed up wherever [PAWN_pronoun] can find cover. [PAWN_pronoun] hasn't lost the trader's instinct for a fair deal, even while waiting out the danger.</description>
+        <skillGains>
+            <Shooting>5</Shooting>
+            <Social>6</Social>
+            <Animals>2</Animals>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Violent</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Ringo</li>
+        </spawnCategories>
+        <bodyTypeFemale>Male</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Ringo_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Ringo_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Caravan-Born</title>
+        <titleShort>Caravan-Born</titleShort>
+        <description>[PAWN_nameDef] never had a hometown, just a rotation of trade routes and a family that taught [PAWN_objective] to read people before [PAWN_pronoun] could read letters.</description>
+        <skillGains>
+            <Social>2</Social>
+            <Shooting>1</Shooting>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Ringo_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ No-Bark Noonan _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_No_Bark_Noonan</defName>
+        <identifier>FCP_Backstory_Wastelander_No_Bark_Noonan</identifier>
+        <slot>Adulthood</slot>
+        <title>Scorpion-Stung Local</title>
+        <titleShort>Scorpion-Stung</titleShort>
+        <description>Too many radscorpion stings to the skull left [PAWN_nameDef] a little scrambled, but [PAWN_pronoun] gets by fine on odd jobs and stranger theories about who's really in charge of the wasteland.</description>
+        <skillGains>
+            <Social>2</Social>
+            <Melee>1</Melee>
+            <Intellectual>-4</Intellectual>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_No_Bark_Noonan</li>
+        </spawnCategories>
+        <bodyTypeFemale>Male</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_No_Bark_Noonan_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_No_Bark_Noonan_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Scorpion Nest Dare</title>
+        <titleShort>Scorpion Nest Dare</titleShort>
+        <description>[PAWN_nameDef] poked at a radscorpion nest on a dare and paid for it with more stings than anyone should walk away from. [PAWN_pronoun] walked away anyway, mostly.</description>
+        <skillGains>
+            <Melee>1</Melee>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_No_Bark_Noonan_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Alice McLafferty _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Alice_McLafferty</defName>
+        <identifier>FCP_Backstory_Wastelander_Alice_McLafferty</identifier>
+        <slot>Adulthood</slot>
+        <title>Caravan Executive</title>
+        <titleShort>Executive</titleShort>
+        <description>[PAWN_nameDef] runs a trading company's branch office with cold efficiency, cutting deals and cutting competitors with the same steady hand. [PAWN_pronoun] doesn't apologize for either.</description>
+        <skillGains>
+            <Social>7</Social>
+            <Intellectual>6</Intellectual>
+            <Crafting>-2</Crafting>
+        </skillGains>
+        <workDisables>Violent</workDisables>
+        <requiredWorkTags>Intellectual</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Alice_McLafferty</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Female</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Alice_McLafferty_Child</defName>
+        <bodyTypeMale>Female</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Alice_McLafferty_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Ledger Kid</title>
+        <titleShort>Ledger Kid</titleShort>
+        <description>[PAWN_nameDef] learned to balance a caravan's books before [PAWN_pronoun] learned to ride one, and took to profit margins like other kids took to games.</description>
+        <skillGains>
+            <Intellectual>3</Intellectual>
+            <Social>1</Social>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Alice_McLafferty_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Benny _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Benny</defName>
+        <identifier>FCP_Backstory_Wastelander_Benny</identifier>
+        <slot>Adulthood</slot>
+        <title>Casino Boss</title>
+        <titleShort>Casino Boss</titleShort>
+        <description>[PAWN_nameDef] clawed [PAWN_possessive] way to running a casino through charm, nerve, and a willingness to put a bullet in anyone standing between [PAWN_objective] and a bigger score. The checkered suit is a costume; the ambition underneath it is not.</description>
+        <skillGains>
+            <Social>8</Social>
+            <Shooting>4</Shooting>
+            <Melee>2</Melee>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Violent</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Benny</li>
+        </spawnCategories>
+        <bodyTypeFemale>Male</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Benny_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Benny_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Street Hustler</title>
+        <titleShort>Street Hustler</titleShort>
+        <description>[PAWN_nameDef] learned to talk [PAWN_objective]self out of trouble and into other people's pockets before [PAWN_pronoun] hit [PAWN_possessive] teens, a talent that only sharpened with age.</description>
+        <skillGains>
+            <Social>3</Social>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Benny_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Cliff Briscoe _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Cliff_Briscoe</defName>
+        <identifier>FCP_Backstory_Wastelander_Cliff_Briscoe</identifier>
+        <slot>Adulthood</slot>
+        <title>Trading Post Keeper</title>
+        <titleShort>Trading Post Keeper</titleShort>
+        <description>[PAWN_nameDef] has run the same little trading post for years, always good for a rare find if you know to ask. [PAWN_pronoun] never seems to run out of stock, and never explains why.</description>
+        <skillGains>
+            <Social>5</Social>
+            <Crafting>3</Crafting>
+            <Intellectual>2</Intellectual>
+        </skillGains>
+        <workDisables>Violent</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Cliff_Briscoe</li>
+        </spawnCategories>
+        <bodyTypeFemale>Male</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Cliff_Briscoe_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Cliff_Briscoe_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Shopkeeper's Shadow</title>
+        <titleShort>Shopkeeper's Shadow</titleShort>
+        <description>[PAWN_nameDef] grew up sweeping floors and stocking shelves in a family shop, learning the trade one customer complaint at a time.</description>
+        <skillGains>
+            <Social>2</Social>
+            <Crafting>1</Crafting>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Cliff_Briscoe_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--__ Commonwealth (Fallout 4) __-->
+
+    <!--_ Kent Connolly _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Kent_Connolly</defName>
+        <identifier>FCP_Backstory_Wastelander_Kent_Connolly</identifier>
+        <slot>Adulthood</slot>
+        <title>Radio Superfan</title>
+        <titleShort>Superfan</titleShort>
+        <description>[PAWN_nameDef] has listened to every episode of [PAWN_possessive] favorite pre-war radio serial more times than [PAWN_pronoun] can count, and built a working replica of its hero's signature weapon by hand. [PAWN_pronoun] just wishes [PAWN_pronoun] had the nerve to wear the costume [PAWN_objective]self.</description>
+        <skillGains>
+            <Crafting>5</Crafting>
+            <Social>3</Social>
+            <Intellectual>2</Intellectual>
+        </skillGains>
+        <workDisables>Violent</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Kent_Connolly</li>
+        </spawnCategories>
+        <bodyTypeFemale>Thin</bodyTypeFemale>
+        <bodyTypeMale>Thin</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Kent_Connolly_Child</defName>
+        <bodyTypeMale>Thin</bodyTypeMale>
+        <bodyTypeFemale>Thin</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Kent_Connolly_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Serial Devotee</title>
+        <titleShort>Serial Devotee</titleShort>
+        <description>[PAWN_nameDef] pressed [PAWN_possessive] ear to a cracked radio speaker every night for [PAWN_possessive] favorite show, memorizing lines [PAWN_pronoun] would repeat for decades after.</description>
+        <skillGains>
+            <Social>1</Social>
+            <Artistic>1</Artistic>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Kent_Connolly_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Daisy _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Daisy</defName>
+        <identifier>FCP_Backstory_Wastelander_Daisy</identifier>
+        <slot>Adulthood</slot>
+        <title>Ancient Shopkeeper</title>
+        <titleShort>Ancient Shopkeeper</titleShort>
+        <description>[PAWN_nameDef] was already old when the bombs fell, and two and a half centuries later [PAWN_pronoun] is still hawking guns, armor, and junk from behind the same counter. Nothing much surprises [PAWN_objective] anymore.</description>
+        <skillGains>
+            <Social>6</Social>
+            <Crafting>4</Crafting>
+            <Intellectual>3</Intellectual>
+        </skillGains>
+        <workDisables>Violent</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Daisy</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Female</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Daisy_Child</defName>
+        <bodyTypeMale>Female</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Daisy_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Last Pre-War Memory</title>
+        <titleShort>Last Pre-War Memory</titleShort>
+        <description>[PAWN_nameDef] remembers the world before the bombs only in fragments now, faded further with every decade [PAWN_pronoun] has outlived it.</description>
+        <skillGains>
+            <Social>1</Social>
+            <Intellectual>1</Intellectual>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Daisy_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Irma _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Irma</defName>
+        <identifier>FCP_Backstory_Wastelander_Irma</identifier>
+        <slot>Adulthood</slot>
+        <title>Memory Den Hostess</title>
+        <titleShort>Hostess</titleShort>
+        <description>[PAWN_nameDef] hosts a parlor where, for the right price, clients relive their happiest memories in vivid detail. [PAWN_pronoun] decides who gets in and who doesn't, and guards the secrets of the machinery as closely as the secrets of the clientele.</description>
+        <skillGains>
+            <Social>8</Social>
+            <Artistic>4</Artistic>
+            <Intellectual>2</Intellectual>
+        </skillGains>
+        <workDisables>Violent</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Irma</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Female</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Irma_Child</defName>
+        <bodyTypeMale>Female</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Irma_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Stage-Struck</title>
+        <titleShort>Stage-Struck</titleShort>
+        <description>[PAWN_nameDef] grew up chasing the glamour of old stage performers, practicing a smile and a stance meant to hold a room's attention.</description>
+        <skillGains>
+            <Social>2</Social>
+            <Artistic>2</Artistic>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Irma_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Deb _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Deb</defName>
+        <identifier>FCP_Backstory_Wastelander_Deb</identifier>
+        <slot>Adulthood</slot>
+        <title>Salvage Trader</title>
+        <titleShort>Salvage Trader</titleShort>
+        <description>[PAWN_nameDef] grew up around trade caravans and never stopped believing there's no such thing as junk, only parts waiting for the right buyer. [PAWN_pronoun] machines and builds as much as [PAWN_pronoun] sells.</description>
+        <skillGains>
+            <Crafting>6</Crafting>
+            <Social>5</Social>
+            <Construction>2</Construction>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Deb</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Female</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Deb_Child</defName>
+        <bodyTypeMale>Female</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Deb_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Caravan Tinkerer</title>
+        <titleShort>Caravan Tinkerer</titleShort>
+        <description>[PAWN_nameDef] rode with a trade caravan from town to town, taking apart broken gadgets at every stop just to see if [PAWN_pronoun] could put them back together.</description>
+        <skillGains>
+            <Crafting>2</Crafting>
+            <Social>1</Social>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Deb_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Vadim Bobrov _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Vadim_Bobrov</defName>
+        <identifier>FCP_Backstory_Wastelander_Vadim_Bobrov</identifier>
+        <slot>Adulthood</slot>
+        <title>Jovial Innkeeper</title>
+        <titleShort>Jovial Innkeeper</titleShort>
+        <description>[PAWN_nameDef] runs a bar and hotel with [PAWN_possessive] twin, pouring drinks with a booming laugh and a thick accent that gets thicker the more [PAWN_pronoun] has had. Everybody's favorite regular, whether they've met [PAWN_objective] once or a hundred times.</description>
+        <skillGains>
+            <Social>8</Social>
+            <Cooking>3</Cooking>
+            <Melee>2</Melee>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Vadim_Bobrov</li>
+        </spawnCategories>
+        <bodyTypeFemale>Fat</bodyTypeFemale>
+        <bodyTypeMale>Fat</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Vadim_Bobrov_Child</defName>
+        <bodyTypeMale>Fat</bodyTypeMale>
+        <bodyTypeFemale>Fat</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Vadim_Bobrov_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Twin Troublemaker</title>
+        <titleShort>Twin Troublemaker</titleShort>
+        <description>[PAWN_nameDef] and [PAWN_possessive] twin were inseparable and identically loud, splitting every chore and every prank right down the middle.</description>
+        <skillGains>
+            <Social>2</Social>
+            <Cooking>1</Cooking>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Vadim_Bobrov_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Yefim Bobrov _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Yefim_Bobrov</defName>
+        <identifier>FCP_Backstory_Wastelander_Yefim_Bobrov</identifier>
+        <slot>Adulthood</slot>
+        <title>Quiet Innkeeper</title>
+        <titleShort>Quiet Innkeeper</titleShort>
+        <description>[PAWN_nameDef] handles the rooms and the ledgers while [PAWN_possessive] twin handles the noise, content to let someone else hold the room's attention. [PAWN_pronoun] notices more than [PAWN_pronoun] ever says.</description>
+        <skillGains>
+            <Social>5</Social>
+            <Intellectual>4</Intellectual>
+            <Construction>2</Construction>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Yefim_Bobrov</li>
+        </spawnCategories>
+        <bodyTypeFemale>Male</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Yefim_Bobrov_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Yefim_Bobrov_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Twin's Shadow</title>
+        <titleShort>Twin's Shadow</titleShort>
+        <description>[PAWN_nameDef] let [PAWN_possessive] louder twin take the spotlight and quietly kept track of everything that actually needed doing.</description>
+        <skillGains>
+            <Intellectual>2</Intellectual>
+            <Social>1</Social>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Yefim_Bobrov_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--__ Southern California Wasteland (Fallout 1) __-->
+
+    <!--_ Aradesh _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Aradesh</defName>
+        <identifier>FCP_Backstory_Wastelander_Aradesh</identifier>
+        <slot>Adulthood</slot>
+        <title>Tribal Statesman</title>
+        <titleShort>Statesman</titleShort>
+        <description>[PAWN_nameDef] built a scattered farming settlement into something that could actually defend itself, leading through raider raids and worse with a founder's stubbornness. [PAWN_pronoun] dreams of something bigger than a single town, though [PAWN_pronoun] rarely says so out loud.</description>
+        <skillGains>
+            <Social>8</Social>
+            <Melee>4</Melee>
+            <Plants>3</Plants>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Aradesh</li>
+        </spawnCategories>
+        <bodyTypeFemale>Male</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Aradesh_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Aradesh_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Vault Descendant</title>
+        <titleShort>Vault Descendant</titleShort>
+        <description>[PAWN_nameDef] was born generations removed from the vault [PAWN_possessive] people once sheltered in, raised instead on dirt farming and the discipline it took to keep a settlement alive.</description>
+        <skillGains>
+            <Plants>2</Plants>
+            <Social>2</Social>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Aradesh_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Killian Darkwater _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Killian_Darkwater</defName>
+        <identifier>FCP_Backstory_Wastelander_Killian_Darkwater</identifier>
+        <slot>Adulthood</slot>
+        <title>Honest Shopkeeper</title>
+        <titleShort>Honest Shopkeeper</titleShort>
+        <description>[PAWN_nameDef] inherited both a general store and a town's leadership, and runs each one the same way: fairly, and without patience for the criminals trying to squeeze the place dry. [PAWN_pronoun] has made enemies for it, and doesn't regret a single one.</description>
+        <skillGains>
+            <Social>7</Social>
+            <Shooting>4</Shooting>
+            <Intellectual>3</Intellectual>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Violent</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Killian_Darkwater</li>
+        </spawnCategories>
+        <bodyTypeFemale>Male</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Killian_Darkwater_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Killian_Darkwater_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Merchant's Son</title>
+        <titleShort>Merchant's Son</titleShort>
+        <description>[PAWN_nameDef] spent [PAWN_possessive] youth traveling with trade caravans before settling back home to learn the family business from the ground up.</description>
+        <skillGains>
+            <Social>2</Social>
+            <Intellectual>1</Intellectual>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Killian_Darkwater_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Gizmo _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Gizmo</defName>
+        <identifier>FCP_Backstory_Wastelander_Gizmo</identifier>
+        <slot>Adulthood</slot>
+        <title>Casino Crime Boss</title>
+        <titleShort>Crime Boss</titleShort>
+        <description>[PAWN_nameDef] runs [PAWN_possessive] town's crooked casino with a smile and a knife behind [PAWN_possessive] back, and has spent years scheming to bury the one honest shopkeeper standing in [PAWN_possessive] way.</description>
+        <skillGains>
+            <Social>7</Social>
+            <Shooting>4</Shooting>
+            <Melee>3</Melee>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Violent</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Gizmo</li>
+        </spawnCategories>
+        <bodyTypeFemale>Fat</bodyTypeFemale>
+        <bodyTypeMale>Fat</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Gizmo_Child</defName>
+        <bodyTypeMale>Fat</bodyTypeMale>
+        <bodyTypeFemale>Fat</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Gizmo_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Card Sharp in Training</title>
+        <titleShort>Card Sharp</titleShort>
+        <description>[PAWN_nameDef] learned to cheat at cards before [PAWN_pronoun] learned to lose gracefully, and never saw much reason to bother with the second lesson.</description>
+        <skillGains>
+            <Social>2</Social>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Gizmo_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Harold _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Harold</defName>
+        <identifier>FCP_Backstory_Wastelander_Harold</identifier>
+        <slot>Adulthood</slot>
+        <title>Wandering Mutant</title>
+        <titleShort>Wandering Mutant</titleShort>
+        <description>Old-world radiation twisted [PAWN_nameDef] into something between ghoul and mutant, and left a sapling growing from [PAWN_possessive] skull that just keeps getting bigger. [PAWN_pronoun] has outlived more towns than [PAWN_pronoun] can name and still guides caravans through the worst of the wasteland.</description>
+        <skillGains>
+            <Social>5</Social>
+            <Intellectual>3</Intellectual>
+            <Plants>4</Plants>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Harold</li>
+        </spawnCategories>
+        <bodyTypeFemale>Thin</bodyTypeFemale>
+        <bodyTypeMale>Thin</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Harold_Child</defName>
+        <bodyTypeMale>Thin</bodyTypeMale>
+        <bodyTypeFemale>Thin</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Harold_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Before the Bombs</title>
+        <titleShort>Before the Bombs</titleShort>
+        <description>[PAWN_nameDef]'s childhood belongs to a world that doesn't exist anymore, remembered now only in the vaguest, oldest fragments.</description>
+        <skillGains>
+            <Social>1</Social>
+            <Plants>1</Plants>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Harold_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Set _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Set</defName>
+        <identifier>FCP_Backstory_Wastelander_Set</identifier>
+        <slot>Adulthood</slot>
+        <title>Ghoul Figurehead</title>
+        <titleShort>Figurehead</titleShort>
+        <description>[PAWN_nameDef] styles [PAWN_objective]self the leader of [PAWN_possessive] underground ghoul community, though [PAWN_pronoun] answers to interests [PAWN_pronoun] would rather not name. [PAWN_pronoun] keeps the peace through sheer force of will and the occasional convenient lie.</description>
+        <skillGains>
+            <Social>7</Social>
+            <Intellectual>3</Intellectual>
+            <Melee>2</Melee>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Set</li>
+        </spawnCategories>
+        <bodyTypeFemale>Male</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Set_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Set_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Vault Refugee</title>
+        <titleShort>Vault Refugee</titleShort>
+        <description>[PAWN_nameDef] fled underground with [PAWN_possessive] family when the bombs fell, one of the last clear memories [PAWN_pronoun] has before the radiation changed everything.</description>
+        <skillGains>
+            <Social>1</Social>
+            <Intellectual>1</Intellectual>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Set_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--__ New California Wasteland (Fallout 2) __-->
+
+    <!--_ Skeeter _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Skeeter</defName>
+        <identifier>FCP_Backstory_Wastelander_Skeeter</identifier>
+        <slot>Adulthood</slot>
+        <title>Junkyard Mechanic</title>
+        <titleShort>Junkyard Mechanic</titleShort>
+        <description>[PAWN_nameDef] keeps a ghoul settlement's junkyard running through sheer mechanical stubbornness, coaxing life out of engines everyone else had given up on. Grubby, grease-stained, and sharper than [PAWN_pronoun] looks.</description>
+        <skillGains>
+            <Crafting>8</Crafting>
+            <Intellectual>3</Intellectual>
+            <Social>-2</Social>
+        </skillGains>
+        <workDisables>Violent</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Skeeter</li>
+        </spawnCategories>
+        <bodyTypeFemale>Thin</bodyTypeFemale>
+        <bodyTypeMale>Thin</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Skeeter_Child</defName>
+        <bodyTypeMale>Thin</bodyTypeMale>
+        <bodyTypeFemale>Thin</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Skeeter_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Scrapyard Prodigy</title>
+        <titleShort>Scrapyard Prodigy</titleShort>
+        <description>[PAWN_nameDef] took apart every broken machine [PAWN_pronoun] could find as a kid, and put most of them back together working better than before.</description>
+        <skillGains>
+            <Crafting>3</Crafting>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Skeeter_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Miss Kitty _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Miss_Kitty</defName>
+        <identifier>FCP_Backstory_Wastelander_Miss_Kitty</identifier>
+        <slot>Adulthood</slot>
+        <title>Independent Madam</title>
+        <titleShort>Madam</titleShort>
+        <description>[PAWN_nameDef] runs the finest gentleman's establishment in town, and has kept it independent of every crime family that's tried to swallow it whole. Beautiful, businesslike, and sharper than anyone gives her credit for.</description>
+        <skillGains>
+            <Social>9</Social>
+            <Intellectual>4</Intellectual>
+            <Crafting>-2</Crafting>
+        </skillGains>
+        <workDisables>Violent</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Miss_Kitty</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Female</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Miss_Kitty_Child</defName>
+        <bodyTypeMale>Female</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Miss_Kitty_Child</identifier>
+        <slot>Childhood</slot>
+        <title>City Charmer</title>
+        <titleShort>City Charmer</titleShort>
+        <description>[PAWN_nameDef] learned early that charm opened doors that force never could, and spent [PAWN_possessive] childhood practicing exactly which smile worked on which stranger.</description>
+        <skillGains>
+            <Social>3</Social>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Miss_Kitty_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Mr. Bishop _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Mr_Bishop</defName>
+        <identifier>FCP_Backstory_Wastelander_Mr_Bishop</identifier>
+        <slot>Adulthood</slot>
+        <title>Crime Family Don</title>
+        <titleShort>Family Don</titleShort>
+        <description>[PAWN_nameDef] runs one of the city's two most powerful crime families, and means to drag it out of gang warfare and into legitimate power through whatever alliances it takes. Ruthless in service of ambitions bigger than the gutter [PAWN_pronoun] climbed out of.</description>
+        <skillGains>
+            <Social>7</Social>
+            <Shooting>5</Shooting>
+            <Intellectual>3</Intellectual>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Violent</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Mr_Bishop</li>
+        </spawnCategories>
+        <bodyTypeFemale>Male</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Mr_Bishop_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Mr_Bishop_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Gutter Climber</title>
+        <titleShort>Gutter Climber</titleShort>
+        <description>[PAWN_nameDef] grew up running errands for gangsters twice [PAWN_possessive] age, and decided early that [PAWN_pronoun] would rather give orders than take them.</description>
+        <skillGains>
+            <Social>2</Social>
+            <Shooting>1</Shooting>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Mr_Bishop_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Renesco _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Renesco</defName>
+        <identifier>FCP_Backstory_Wastelander_Renesco</identifier>
+        <slot>Adulthood</slot>
+        <title>Backroom Chemist</title>
+        <titleShort>Chemist</titleShort>
+        <description>[PAWN_nameDef] cooks chems and tinkers with ordnance out of a cluttered backroom lab, selling to whoever pays and asking few questions about what they intend to do with it. [PAWN_pronoun] knows exactly how dangerous [PAWN_possessive] work is and does it anyway.</description>
+        <skillGains>
+            <Intellectual>7</Intellectual>
+            <Crafting>5</Crafting>
+            <Social>-2</Social>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Intellectual</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Renesco</li>
+        </spawnCategories>
+        <bodyTypeFemale>Thin</bodyTypeFemale>
+        <bodyTypeMale>Thin</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Renesco_Child</defName>
+        <bodyTypeMale>Thin</bodyTypeMale>
+        <bodyTypeFemale>Thin</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Renesco_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Curious Tinkerer</title>
+        <titleShort>Curious Tinkerer</titleShort>
+        <description>[PAWN_nameDef] blew the eyebrows off [PAWN_possessive] own face more than once experimenting with scavenged chemicals, and never once considered stopping.</description>
+        <skillGains>
+            <Intellectual>3</Intellectual>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Renesco_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Moira Brown _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Trader_Moira_Brown</defName>
+        <identifier>FCP_Backstory_Wastelander_Trader_Moira_Brown</identifier>
+        <slot>Adulthood</slot>
+        <title>Shopkeeper and Tinkerer</title>
+        <titleShort>Tinkerer</titleShort>
+        <description>[PAWN_nameDef] runs a shop stocked with gear [PAWN_pronoun] tested personally, often on [PAWN_objective]self, in the name of a wasteland survival guide nobody asked for. Cheerful to a fault, and allergic to acknowledging danger.</description>
+        <skillGains>
+            <Crafting>8</Crafting>
+            <Intellectual>5</Intellectual>
+            <Medicine>2</Medicine>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Intellectual</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Trader_Moira_Brown</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Trader_Moira_Brown_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Trader_Moira_Brown_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Curious Tinkerer</title>
+        <titleShort>Tinkerer</titleShort>
+        <description>[PAWN_nameDef] took apart every appliance in the house by age ten, and only sometimes managed to put them back together.</description>
+        <skillGains>
+            <Crafting>3</Crafting>
+            <Intellectual>2</Intellectual>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Trader_Moira_Brown_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Three Dog _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Three_Dog</defName>
+        <identifier>FCP_Backstory_Wastelander_Three_Dog</identifier>
+        <slot>Adulthood</slot>
+        <title>Radio Voice</title>
+        <titleShort>Radio Voice</titleShort>
+        <description>[PAWN_nameDef] broadcasts news, rumor, and opinion in equal measure from behind a wall of scavenged transmitter gear, using the signal to needle tyrants and rally the desperate alike.</description>
+        <skillGains>
+            <Social>10</Social>
+            <Intellectual>4</Intellectual>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Three_Dog</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Three_Dog_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Three_Dog_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Radio Kid</title>
+        <titleShort>Radio Kid</titleShort>
+        <description>[PAWN_nameDef] grew up listening to pre-war radio recordings on a hand-cranked salvage set, memorizing every DJ's cadence long before [PAWN_pronoun] ever spoke into a mic.</description>
+        <skillGains>
+            <Social>3</Social>
+            <Intellectual>2</Intellectual>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Three_Dog_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Mr. Burke _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Mr_Burke</defName>
+        <identifier>FCP_Backstory_Wastelander_Mr_Burke</identifier>
+        <slot>Adulthood</slot>
+        <title>Smooth Schemer</title>
+        <titleShort>Schemer</titleShort>
+        <description>[PAWN_nameDef] dresses well, speaks smoothly, and plans in the long term, treating other people's towns as problems to be solved however proves most profitable.</description>
+        <skillGains>
+            <Social>9</Social>
+            <Intellectual>3</Intellectual>
+            <Melee>-3</Melee>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Mr_Burke</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Thin</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Mr_Burke_Child</defName>
+        <bodyTypeMale>Thin</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Mr_Burke_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Quiet Persuader</title>
+        <titleShort>Persuader</titleShort>
+        <description>[PAWN_nameDef] learned early that a well-placed word did more work than a well-placed fist, and never looked back.</description>
+        <skillGains>
+            <Social>3</Social>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Mr_Burke_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Gob _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Gob</defName>
+        <identifier>FCP_Backstory_Wastelander_Gob</identifier>
+        <slot>Adulthood</slot>
+        <title>Indentured Bartender</title>
+        <titleShort>Bartender</titleShort>
+        <description>Ghoulified and indentured to a bar owner who never lets [PAWN_objective] forget it, [PAWN_nameDef] pours drinks with a patience that isn't really patience, just exhaustion that learned to smile.</description>
+        <skillGains>
+            <Social>5</Social>
+            <Cooking>4</Cooking>
+            <Crafting>1</Crafting>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Gob</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Thin</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Gob_Child</defName>
+        <bodyTypeMale>Thin</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Gob_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Barroom Kid</title>
+        <titleShort>Barroom Kid</titleShort>
+        <description>[PAWN_nameDef] tended bar before [PAWN_pronoun] was old enough to legally serve a drink, and never really did anything else.</description>
+        <skillGains>
+            <Cooking>2</Cooking>
+            <Social>1</Social>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Gob_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Colin Moriarty _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Colin_Moriarty</defName>
+        <identifier>FCP_Backstory_Wastelander_Colin_Moriarty</identifier>
+        <slot>Adulthood</slot>
+        <title>Bar Owner</title>
+        <titleShort>Bar Owner</titleShort>
+        <description>[PAWN_nameDef] owns the bar and most of what passes through it, trading information, drink, and favors to whoever can afford [PAWN_possessive] price. Sentiment has never once beaten out profit.</description>
+        <skillGains>
+            <Social>7</Social>
+            <Intellectual>3</Intellectual>
+            <Melee>2</Melee>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Colin_Moriarty</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Colin_Moriarty_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Colin_Moriarty_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Smuggler's Errand Boy</title>
+        <titleShort>Errand Boy</titleShort>
+        <description>[PAWN_nameDef] grew up running errands for smugglers in exchange for protection, learning fast which favors were worth remembering.</description>
+        <skillGains>
+            <Social>2</Social>
+            <Intellectual>1</Intellectual>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Colin_Moriarty_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Dukov _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Dukov</defName>
+        <identifier>FCP_Backstory_Wastelander_Dukov</identifier>
+        <slot>Adulthood</slot>
+        <title>Wasteland Playboy</title>
+        <titleShort>Playboy</titleShort>
+        <description>[PAWN_nameDef] lives well by wasteland standards, in a home full of liquor, company, and stolen luxury, and has never once felt the need to apologize for any of it.</description>
+        <skillGains>
+            <Social>6</Social>
+            <Cooking>2</Cooking>
+            <Melee>-2</Melee>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Dukov</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Dukov_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Dukov_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Carefree Kid</title>
+        <titleShort>Carefree Kid</titleShort>
+        <description>[PAWN_nameDef] never much cared for chores, school, or authority, and grew into an adult who still doesn't.</description>
+        <skillGains>
+            <Social>2</Social>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Dukov_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Uncle Roe _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Uncle_Roe</defName>
+        <identifier>FCP_Backstory_Wastelander_Uncle_Roe</identifier>
+        <slot>Adulthood</slot>
+        <title>Bounty Hunter</title>
+        <titleShort>Bounty Hunter</titleShort>
+        <description>[PAWN_nameDef] hunts people for money, no questions asked beyond who's paying and how much. [PAWN_possessive] targets rarely see [PAWN_objective] coming.</description>
+        <skillGains>
+            <Shooting>8</Shooting>
+            <Animals>3</Animals>
+            <Social>-2</Social>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Violent</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Uncle_Roe</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Uncle_Roe_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Uncle_Roe_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Young Tracker</title>
+        <titleShort>Tracker</titleShort>
+        <description>[PAWN_nameDef] tracked game through ruined suburbs from the moment [PAWN_pronoun] could hold a rifle steady.</description>
+        <skillGains>
+            <Shooting>3</Shooting>
+            <Animals>2</Animals>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Uncle_Roe_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Mr. House _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Mr_House</defName>
+        <identifier>FCP_Backstory_Wastelander_Mr_House</identifier>
+        <slot>Adulthood</slot>
+        <title>Reclusive Tycoon</title>
+        <titleShort>Tycoon</titleShort>
+        <description>Kept alive for centuries by machines of [PAWN_possessive] own design, [PAWN_nameDef] directs vast operations from behind closed doors, trusting robots more than people and long-term plans more than either.</description>
+        <skillGains>
+            <Intellectual>10</Intellectual>
+            <Social>3</Social>
+            <Crafting>3</Crafting>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Intellectual</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Mr_House</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Thin</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Mr_House_Child</defName>
+        <bodyTypeMale>Thin</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Mr_House_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Precocious Engineer</title>
+        <titleShort>Engineer</titleShort>
+        <description>[PAWN_nameDef] built and rebuilt machines through a childhood that valued results over affection, and grew convinced [PAWN_pronoun] alone could see what was coming.</description>
+        <skillGains>
+            <Intellectual>4</Intellectual>
+            <Crafting>2</Crafting>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Mr_House_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!--_ Old Lady Gibson _-->
+    <!-- Adult -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Old_Lady_Gibson</defName>
+        <identifier>FCP_Backstory_Wastelander_Old_Lady_Gibson</identifier>
+        <slot>Adulthood</slot>
+        <title>Hotel Proprietor</title>
+        <titleShort>Proprietor</titleShort>
+        <description>[PAWN_nameDef] has run the same hotel through decades of the Strip's rise, doing the books, minding the guests, and outlasting most of the people who once looked down on the operation.</description>
+        <skillGains>
+            <Social>6</Social>
+            <Intellectual>3</Intellectual>
+            <Cooking>2</Cooking>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>Social</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Old_Lady_Gibson</li>
+        </spawnCategories>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <possessions></possessions>
+    </BackstoryDef>
+
+    <!-- Child -->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Wastelander_Old_Lady_Gibson_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <identifier>FCP_Backstory_Wastelander_Old_Lady_Gibson_Child</identifier>
+        <slot>Childhood</slot>
+        <title>Hotel Child</title>
+        <titleShort>Hotel Child</titleShort>
+        <description>[PAWN_nameDef] was raised behind a hotel counter, greeting guests before [PAWN_pronoun] could see over it.</description>
+        <skillGains>
+            <Social>2</Social>
+            <Cooking>1</Cooking>
+        </skillGains>
+        <workDisables>None</workDisables>
+        <requiredWorkTags>None</requiredWorkTags>
+        <spawnCategories>
+            <li>FCP_Backstory_Wasteland_Old_Lady_Gibson_Child</li>
+        </spawnCategories>
+        <possessions></possessions>
+    </BackstoryDef>
+
 </Defs>

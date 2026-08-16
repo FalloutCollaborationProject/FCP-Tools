@@ -17,15 +17,16 @@ public class FCPDefOf
 
     public static PawnGroupKindDef FCP_PawnGroupKind_TaxCollector;
     public static LetterDef FCP_Letter_AcceptStoryteller;
+    public static LetterDef FCP_Letter_Squatters;
 
     [MayRequire("Rick.FCP.Robotics")]
     public static LetterDef FCP_Letter_AcceptRobotJoin;
     public static JobDef FCP_AICastAbilityAtTarget;
-    
+
     public static JobDef FCP_VATS_AttackHybrid;
     public static ThingDef FCP_VATS_Zoomer;
     public static EffecterDef FCP_VATSLegendaryEffect_Explosive_Explosion;
-    
+
     public static KeyBindingDef FCP_VatsKeyBinding;
 
     public static HediffDef FCP_VATSCrippledHediff;

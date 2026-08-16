@@ -27,12 +27,12 @@ public class CompHomingProjectile : ThingComp
     public Vector3 originLaunchCell;
     public int launchTick;
     public bool isOffset;
-    
+
     public Projectile Projectile => parent as Projectile;
     public CompProperties_HomingProjectile Props => props as CompProperties_HomingProjectile;
     public Vector3 DispersionOffset => new Vector3(
-        Rand.Range(-Props.initialSpreadAngle, Props.initialSpreadAngle), 
-        0f, 
+        Rand.Range(-Props.initialSpreadAngle, Props.initialSpreadAngle),
+        0f,
         Rand.Range(-Props.initialSpreadAngle, Props.initialSpreadAngle));
 
     public override void PostDestroy(DestroyMode mode, Map previousMap)
@@ -78,10 +78,10 @@ public class CompHomingProjectile : ThingComp
         if (loc.InBounds(map))
         {
             float distCovered = Traverse.Create(Projectile).Property("DistanceCoveredFraction").GetValue<float>();
-            var solidTimeOverride = Props.effectLifetime.HasValue 
-                ? Props.effectLifetime.Value 
+            var solidTimeOverride = Props.effectLifetime.HasValue
+                ? Props.effectLifetime.Value
                 : 0.20f * (1f - (distCovered + 0.1f));
-            
+
             if (Props.tailFleck != null)
             {
                 FleckCreationData dataStatic = FleckMaker.GetDataStatic(loc, map, Props.tailFleck, size);
@@ -112,7 +112,7 @@ public class CompHomingProjectile : ThingComp
         float targetAngle = GetAngleFromTarget(target);
         var curAngle = AngleAdjusted(Projectile.ExactRotation.eulerAngles.y + 90);
         float diff = targetAngle - curAngle;
-        
+
         if (new FloatRange(targetAngle - Props.turnRate, targetAngle + Props.turnRate).Includes(curAngle))
         {
             FCPLog.Verbose($"Projectile.ExactRotation: {Projectile.ExactRotation.eulerAngles.y} - Not Rotating: Diff: {diff} - targetAngle: {targetAngle} - {curAngle} - destination: {destinationRotated} - ExactPosition: {Projectile.ExactPosition}");

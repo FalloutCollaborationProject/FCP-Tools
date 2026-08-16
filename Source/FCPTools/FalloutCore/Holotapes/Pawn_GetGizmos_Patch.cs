@@ -14,18 +14,18 @@ namespace FCP.Core.Holotapes
         {
             foreach (Gizmo gizmo in __result)
                 yield return gizmo;
-            
+
             if (!__instance.IsColonistPlayerControlled || __instance.apparel == null)
                 yield break;
-            
+
             Apparel pipboy = __instance.apparel.WornApparel.Find(a => a.TryGetComp<CompPipboyHolotapeStorage>() != null);
             if (pipboy == null)
                 yield break;
-            
+
             CompPipboyHolotapeStorage storage = pipboy.TryGetComp<CompPipboyHolotapeStorage>();
             if (storage == null)
                 yield break;
-            
+
             if (storage.Count > 0)
             {
                 yield return new Command_Action
@@ -36,7 +36,7 @@ namespace FCP.Core.Holotapes
                     action = () => Find.WindowStack.Add(new Dialog_HolotapeBrowser(storage, __instance))
                 };
             }
-            
+
             Thing carried = __instance.carryTracker?.CarriedThing;
             if (carried != null && carried.TryGetComp<CompHolotape>() != null)
             {

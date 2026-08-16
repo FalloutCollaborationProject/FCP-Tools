@@ -45,7 +45,7 @@ public static class PawnRenderUtility_DrawEquipmentAndApparelExtras_Patch
             backpackPos += comp.Props.southOffset;
         else if (facing == Rot4.East)
             backpackPos += comp.Props.eastOffset;
-        else // Rot4.West
+        else
             backpackPos += new Vector3(-comp.Props.eastOffset.x, comp.Props.eastOffset.y, comp.Props.eastOffset.z);
 
         Mesh mesh = (facing == Rot4.West) ? MeshPool.plane10Flip : MeshPool.plane10;

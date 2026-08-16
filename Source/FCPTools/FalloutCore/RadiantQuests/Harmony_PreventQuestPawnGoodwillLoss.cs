@@ -14,7 +14,7 @@ public static class Patch_Faction_Notify_MemberTookDamage
             return false;
         }
         
-        return true; // Run original method
+        return true;
     }
 }
 

@@ -1,11 +1,9 @@
-﻿// ReSharper disable UnassignedField.Global
 
 namespace FCP.Core;
 
 [UsedImplicitly]
 public class CharacterTitleDefinition : CharacterBaseDefinition
 {
-    // Todo make it able to give titles from factions other than the main one.
     public RoyalTitleDef title;
 
     public override bool AppliesPreGeneration => true;

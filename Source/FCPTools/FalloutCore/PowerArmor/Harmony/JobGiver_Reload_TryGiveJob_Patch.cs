@@ -10,26 +10,26 @@ public static class JobGiver_Reload_TryGiveJob_Patch
 {
     public static void Postfix(ref Job __result, Pawn pawn)
     {
-        if (__result != null) 
+        if (__result != null)
             return;
-        
+
         if (!pawn.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation))
             return;
 
         var factionHumanlikesByDistance = pawn.Map.mapPawns.PawnsInFaction(pawn.Faction).Where(x => x.RaceProps.Humanlike)
             .OrderBy(x => x.Position.DistanceTo(pawn.Position)).ToList();
-        
+
         foreach (Pawn other in factionHumanlikesByDistance)
         {
             foreach (Apparel apparel in other.apparel.WornApparel)
             {
                 var powerArmor = apparel.GetComp<CompPowerArmor>();
-                if (powerArmor == null) 
+                if (powerArmor == null)
                     continue;
 
-                if (!CanRefuel(pawn, apparel)) 
+                if (!CanRefuel(pawn, apparel))
                     continue;
-                
+
                 __result = RefuelJob(pawn, apparel, other);
                 return;
             }

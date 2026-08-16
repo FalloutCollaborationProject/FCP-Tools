@@ -1,4 +1,7 @@
+using RimWorld;
 using UnityEngine;
+using Verse.AI.Group;
+using Verse.Sound;
 
 namespace FCP.Core.Hediffs;
 
@@ -149,7 +152,15 @@ public class HediffCompConvertPawnAfterFullSeverity : HediffComp
             }
 
             GenSpawn.Spawn(newThing, curPos, currentMap);
+
+            if (!Props.isPlayer && faction != null && faction != Faction.OfPlayer)
+            {
+                LordJob_AssaultColony lordJob = new LordJob_AssaultColony(faction, canKidnap: false, canTimeoutOrFlee: false);
+                LordMaker.MakeNewLord(faction, lordJob, currentMap, Gen.YieldSingle(newThing));
+            }
         }
+
+        Props.transformSound?.PlayOneShot(SoundInfo.InMap(new TargetInfo(curPos, currentMap)));
 
         parent.pawn.Kill(new DamageInfo(DamageDefOf.Cut, 999f, 999f));
         parent.pawn.Corpse.Destroy();

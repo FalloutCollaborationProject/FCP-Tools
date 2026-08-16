@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Rank Work Givers __________-->
+
+    <!-- Training -->
+
+    <WorkGiverDef>
+        <defName>FCP_WorkGiver_RankTraining</defName>
+        <label>train with mentor</label>
+        <giverClass>FCP.Ranks.Jobs.WorkGiver_RankTraining</giverClass>
+        <workType>BasicWorker</workType>
+        <verb>train with</verb>
+        <gerund>training with</gerund>
+        <priorityInType>50</priorityInType>
+    </WorkGiverDef>
+
+
+</Defs>

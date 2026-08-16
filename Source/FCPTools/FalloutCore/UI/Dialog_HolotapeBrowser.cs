@@ -49,6 +49,7 @@ namespace FCP.Core.Holotapes
             var listRect = new Rect(0f, 45f, inRect.width, inRect.height - 100f);
             DrawHolotapeList(listRect);
 
+            GUI.color = TerminalColors.PrimaryColor;
             var buttonRect = new Rect(inRect.width - 200f, inRect.height - 40f, 90f, 35f);
             if (Widgets.ButtonText(buttonRect, "Close"))
             {
@@ -71,6 +72,7 @@ namespace FCP.Core.Holotapes
                     }
                 }
             }
+            GUI.color = Color.white;
         }
 
         private void DrawHolotapeList(Rect rect)
@@ -87,7 +89,9 @@ namespace FCP.Core.Holotapes
             }
 
             var viewRect = new Rect(0f, 0f, rect.width - 20f, Count * 60f);
+            GUI.color = TerminalColors.PrimaryColor;
             Widgets.BeginScrollView(rect, ref scrollPosition, viewRect);
+            GUI.color = Color.white;
 
             float y = 0f;
             foreach (var holotape in holotapes)

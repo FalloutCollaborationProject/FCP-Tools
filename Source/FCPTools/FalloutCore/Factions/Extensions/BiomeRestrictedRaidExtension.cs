@@ -5,6 +5,6 @@ namespace FCP.Factions;
 
 public class BiomeRestrictedRaidExtension : DefModExtension
 {
-	public List<string> allowedBiomes;
-	public string targetFaction;
+    public List<string> allowedBiomes;
+    public string targetFaction;
 }

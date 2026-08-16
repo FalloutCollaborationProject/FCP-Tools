@@ -1,11 +1,10 @@
-﻿using Verse.AI;
+using Verse.AI;
 using Verse.AI.Group;
 
 namespace Thek_BuildingArrivalMode
 {
     public class LordToil_BuildingArrivalMode_ExitMap : LordToil_ExitMap
     {
-        //Modified LordToil_ExitMap calling custom duties
         public override DutyDef ExitDuty => DutyDefOfs.Thek_ExitMap_BuildingArrivalMode;
 
         public LordToil_BuildingArrivalMode_ExitMap(LocomotionUrgency locomotion = LocomotionUrgency.None, bool canDig = false, bool interruptCurrentJob = false)
@@ -16,9 +15,6 @@ namespace Thek_BuildingArrivalMode
             Data.interruptCurrentJob = interruptCurrentJob;
         }
 
-        /// <summary>
-        /// As far as i understand it, changes all the duties for all the pawns from the raid into the one set in ExitDuty's overrides
-        /// </summary>
         public override void UpdateAllDuties()
         {
             LordToilData_ExitMap lordToilData_ExitMap = Data;

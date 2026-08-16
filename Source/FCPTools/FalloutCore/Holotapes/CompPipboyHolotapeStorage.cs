@@ -14,10 +14,10 @@ namespace FCP.Core.Holotapes
         public bool TryStoreHolotape(Thing holotape)
         {
             if (holotape == null) return false;
-            
+
             if (holotape.Spawned)
                 holotape.DeSpawn();
-            
+
             storedHolotapes.Add(holotape);
             return true;
         }
@@ -33,7 +33,7 @@ namespace FCP.Core.Holotapes
         {
             base.PostExposeData();
             Scribe_Collections.Look(ref storedHolotapes, "storedHolotapes", LookMode.Deep);
-            
+
             if (Scribe.mode == LoadSaveMode.PostLoadInit && storedHolotapes == null)
                 storedHolotapes = new List<Thing>();
         }
@@ -43,17 +43,17 @@ namespace FCP.Core.Holotapes
             base.PostDestroy(mode, previousMap);
             if (mode != DestroyMode.KillFinalize || previousMap == null)
                 return;
-            
+
             for (int i = storedHolotapes.Count - 1; i >= 0; i--)
             {
                 Thing holotape = storedHolotapes[i];
                 if (holotape == null)
                     continue;
-                
+
                 IntVec3 pos = parent.Position;
                 if (!pos.IsValid && parent is Apparel apparel && apparel.Wearer != null)
                     pos = apparel.Wearer.Position;
-                
+
                 if (pos.IsValid)
                     GenPlace.TryPlaceThing(holotape, pos, previousMap, ThingPlaceMode.Near);
             }

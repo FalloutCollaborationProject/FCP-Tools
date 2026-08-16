@@ -1,4 +1,3 @@
-﻿// ReSharper disable UnassignedField.Global
 namespace FCP.Core;
 
 [UsedImplicitly]
@@ -23,7 +22,6 @@ public class CharacterRole_FactionLeader : CharacterRole
         
         if (pawn.RaceProps.IsFlesh)
         {
-            // I don't know what this does, the vanilla new leader method does this so...
             pawn.relations.everSeenByPlayer = true;
         }
         if (pawn.Ideo != factionIdeo)

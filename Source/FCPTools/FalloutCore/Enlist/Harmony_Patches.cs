@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
 using RimWorld.QuestGen;
@@ -24,7 +24,6 @@ public static class Patch_AddSlateQuestTags
         slate = QuestGen.slate.DeepCopy();
     }
 }
-
 
 [HarmonyPatch(typeof(QuestNode_GetSiteTile))]
 [HarmonyPatch("TryFindTile")]
@@ -75,10 +74,6 @@ public static class Patch_TryAffectGoodwillWith
 {
     public static void Postfix(Faction __instance, Faction other, int goodwillChange, bool canSendMessage = true, bool canSendHostilityLetter = true, string reason = null, GlobalTargetInfo? lookTarget = null)
     {
-        if (__instance != null && other != null)
-        {
-
-        }
         var worldTracker = WorldEnlistTracker.Instance;
         if (__instance != Faction.OfPlayer && other == Faction.OfPlayer && other.RelationKindWith(__instance) == FactionRelationKind.Hostile)
         {
@@ -152,37 +147,6 @@ public class Pawn_DraftController_GetGizmos_Patch
         }
     }
 }
-
-/*[HarmonyPatch(typeof(StatExtension), nameof(StatExtension.GetStatValue))]
-public static class GetStatValue_Patch
-{
-    private static void Postfix(Thing thing, StatDef stat, bool applyPostProcess, ref float __result)
-    {
-        if (stat == StatDefOf.ImmunityGainSpeed && thing is Pawn pawn)
-        {
-            var caravan = pawn.GetCaravan();
-            if (caravan != null && !caravan.pather.moving && !caravan.NightResting)
-            {
-                var settlement = Find.WorldObjects.SettlementAt(caravan.Tile);
-                if (settlement != null)
-                {
-                    foreach (var def in settlement.Faction.GetEnlistOptions())
-                    {
-                        if (WorldEnlistTracker.Instance.EnlistedTo(settlement.Faction, def))
-                        {
-                            var comp = settlement.GetComponent<WorldObjectCompEnlist>();
-                            var caravanOptions = comp.GetCaravanOptions(caravan);
-                            if (caravanOptions?.curWorkOption != null && caravanOptions.curWorkOption.immunityGainSpeedMultiplier.HasValue)
-                            {
-                                __result *= caravanOptions.curWorkOption.immunityGainSpeedMultiplier.Value;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-} Removed due to replacing with Statpart */
 
 [HarmonyPatch(typeof(TransferableUIUtility), nameof(TransferableUIUtility.DrawCaptiveTradeInfo))]
 public static class TransferableUIUtility_Patch

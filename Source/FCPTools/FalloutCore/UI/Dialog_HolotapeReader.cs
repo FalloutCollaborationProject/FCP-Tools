@@ -99,6 +99,7 @@ namespace FCP.Core.Holotapes
             Rect contentRect = new Rect(0f, y, inRect.width, inRect.height - y - 50f);
             DrawEntryContent(contentRect, def);
 
+            GUI.color = terminalColor;
             Rect buttonRect = new Rect(inRect.width - 200f, inRect.height - 40f, 90f, 35f);
             if (Widgets.ButtonText(buttonRect, "Close"))
                 Close();
@@ -124,6 +125,7 @@ namespace FCP.Core.Holotapes
                     Messages.Message(reader.LabelShort + " read about " + def.skillToTeach.LabelCap, reader, MessageTypeDefOf.PositiveEvent);
                 }
             }
+            GUI.color = Color.white;
         }
 
         private void DrawEntryTabs(Rect rect, HolotapeDef def)
@@ -137,7 +139,9 @@ namespace FCP.Core.Holotapes
                 
                 if (currentEntryIndex == i)
                 {
-                    Widgets.DrawMenuSection(tabRect);
+                    GUI.color = TerminalColors.PrimaryColor;
+                    Widgets.DrawHighlightSelected(tabRect);
+                    GUI.color = Color.white;
                 }
                 else
                 {
@@ -147,7 +151,11 @@ namespace FCP.Core.Holotapes
                         scrollPosition = Vector2.zero;
                     }
                     if (Mouse.IsOver(tabRect))
+                    {
+                        GUI.color = TerminalColors.PrimaryColor;
                         Widgets.DrawHighlight(tabRect);
+                        GUI.color = Color.white;
+                    }
                 }
 
                 Text.Anchor = TextAnchor.MiddleCenter;
@@ -175,13 +183,13 @@ namespace FCP.Core.Holotapes
             float textHeight = Text.CalcHeight(entry.content, innerRect.width);
             Rect viewRect = new Rect(0f, 0f, innerRect.width - 20f, textHeight + 10f);
 
+            GUI.color = TerminalColors.PrimaryColor;
             Widgets.BeginScrollView(innerRect, ref scrollPosition, viewRect);
             
-            GUI.color = TerminalColors.PrimaryColor;
             Widgets.Label(new Rect(0f, 0f, viewRect.width, textHeight), entry.content);
-            GUI.color = Color.white;
             
             Widgets.EndScrollView();
+            GUI.color = Color.white;
         }
 
         public override void PostClose()

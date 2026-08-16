@@ -1,12 +1,10 @@
-﻿using Verse.AI;
+using Verse.AI;
 using Verse.AI.Group;
-
 
 namespace Thek_BuildingArrivalMode
 {
     public class LordToil_BuildingArrivalMode_PanicFlee : LordToil
     {
-        // This is an edited copy of vanilla's LordToil_PanicFlee, replacing whatever makes them go to the border of the map with my own things
         public override bool AllowSatisfyLongNeeds => false;
         public override bool AllowSelfTend => false;
 
@@ -23,9 +21,6 @@ namespace Thek_BuildingArrivalMode
             }
         }
 
-        /// <summary>
-        /// As far as i understand it, changes all the duties for all the pawns from the raid into the one set referenced by the defOf
-        /// </summary>
         public override void UpdateAllDuties()
         {
             for (int i = 0; i < lord.ownedPawns.Count; i++)

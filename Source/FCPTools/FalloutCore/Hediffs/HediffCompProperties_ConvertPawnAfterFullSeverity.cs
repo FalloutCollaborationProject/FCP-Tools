@@ -16,6 +16,8 @@ public class HediffCompProperties_ConvertPawnAfterFullSeverity : HediffCompPrope
 
     public float severityToTransform = 1f;
 
+    public SoundDef transformSound;
+
     public bool removeIfImmune = false;
 
     public bool isInfectiousToMechanoid = false;

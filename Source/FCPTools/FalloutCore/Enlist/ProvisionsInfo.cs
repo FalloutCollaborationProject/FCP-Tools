@@ -6,7 +6,6 @@ namespace FCP.Enlist;
 
 public class ProvisionsInfo : IExposable
 {
-
 	private int givenProvisionsLastTick;
 	public bool CanGiveProvisions(ProvisionOption option)
 	{

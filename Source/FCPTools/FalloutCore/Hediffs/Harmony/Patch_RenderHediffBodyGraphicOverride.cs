@@ -2,14 +2,13 @@ using HarmonyLib;
 
 namespace FCP.Core.Hediffs;
 
-// Replace vanilla animal body graphic with a hediff-driven override - let vanilla handle everything else
 [HarmonyPatch(typeof(PawnRenderNode_AnimalPart), "GraphicFor")]
 public static class Patch_RenderHediffBodyGraphicOverride
 {
     public static bool Prefix(PawnRenderNode_AnimalPart __instance, Pawn pawn, ref Graphic __result)
     {
         if (__instance is not PawnRenderNode_AnimalPart_Body)
-            return true; // Only affects the body node - wounds/pack overlays etc. render normally
+            return true;
 
         HediffComp_BodyGraphicOverride overrideComp = pawn?.health?.hediffSet?.hediffs
             .OfType<HediffWithComps>()
@@ -17,9 +16,9 @@ public static class Patch_RenderHediffBodyGraphicOverride
             .FirstOrDefault(c => c != null);
 
         if (overrideComp == null)
-            return true; // Run original method for unaffected pawns
+            return true;
 
         __result = overrideComp.BodyGraphic;
-        return false; // Skip original method
+        return false;
     }
 }

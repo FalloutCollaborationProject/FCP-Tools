@@ -1,4 +1,4 @@
-﻿using Verse.AI;
+using Verse.AI;
 
 namespace Thek_BuildingArrivalMode
 {
@@ -9,12 +9,8 @@ namespace Thek_BuildingArrivalMode
         protected override IEnumerable<Toil> MakeNewToils()
         {
             yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.ClosestTouch).FailOnSomeonePhysicallyInteracting(TargetIndex.B);
-            // Goes to the thing we want to steal
             yield return Toils_Haul.StartCarryThing(TargetIndex.B);
-            // Carries it
             foreach (Toil superClassToil in base.MakeNewToils())
-            // Calls for the base's toils, which are the toils inside JobDriver_GotoNoExitCellCheck
-            // Makes the pawn go back to the cell they've came from to leave
             {
                 yield return superClassToil;
             }

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <IncidentDef>
+        <defName>FCP_Incident_CaravanWastelandCache</defName>
+        <label>wasteland cache</label>
+        <category>Misc</category>
+        <targetTags>
+            <li>Caravan</li>
+        </targetTags>
+        <workerClass>FCP.Core.WastelandEncounters.IncidentWorker_CaravanWastelandCache</workerClass>
+        <letterLabel>Found a cache</letterLabel>
+        <letterText>Someone in the caravan spotted a half-buried stash off the road - a pre-War traveler's cache, or maybe just someone's rainy day fund. Whoever left it isn't coming back for it.</letterText>
+        <letterDef>PositiveEvent</letterDef>
+        <pointsScaleable>false</pointsScaleable>
+        <mtbDaysByBiome>
+            <TemperateForest>18</TemperateForest>
+            <BorealForest>18</BorealForest>
+            <TropicalRainforest>18</TropicalRainforest>
+            <AridShrubland>15</AridShrubland>
+            <Desert>15</Desert>
+            <Tundra>18</Tundra>
+            <TropicalSwamp>20</TropicalSwamp>
+            <TemperateSwamp>20</TemperateSwamp>
+            <ColdBog>20</ColdBog>
+            <ExtremeDesert>15</ExtremeDesert>
+            <IceSheet>25</IceSheet>
+            <SeaIce>40</SeaIce>
+        </mtbDaysByBiome>
+    </IncidentDef>
+
+</Defs>

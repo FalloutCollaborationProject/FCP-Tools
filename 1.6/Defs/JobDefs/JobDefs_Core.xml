@@ -223,6 +223,15 @@
         <playerInterruptible>true</playerInterruptible>
     </JobDef>
 
+    <!-- Install Turret Weapon -->
+
+    <JobDef>
+        <defName>FCP_Job_InstallTurretWeapon</defName>
+        <driverClass>FCP.Core.Turrets.JobDriver_InstallTurretWeapon</driverClass>
+        <reportString>installing TargetA into TargetB.</reportString>
+        <playerInterruptible>true</playerInterruptible>
+    </JobDef>
+
     <!-- Load Apparel To Bench -->
 
     <JobDef>

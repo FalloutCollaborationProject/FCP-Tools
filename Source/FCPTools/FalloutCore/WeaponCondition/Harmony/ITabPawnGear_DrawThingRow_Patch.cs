@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace FCP.Core.WeaponCondition;
 
+[StaticConstructorOnStartup]
 [HarmonyPatch(typeof(ITab_Pawn_Gear), "DrawThingRow")]
 public static class ITabPawnGear_DrawThingRow_Patch
 {

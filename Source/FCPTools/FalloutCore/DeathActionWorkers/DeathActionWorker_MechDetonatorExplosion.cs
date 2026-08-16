@@ -12,8 +12,8 @@ public class DeathActionWorker_MechDetonatorExplosion : DeathActionWorker
     {
         if (corpse.InnerPawn.TryGetComp(out CompMechDetonator comp))
         {
-            GenExplosion.DoExplosion(radius: comp.Props.radius, damAmount: 
-                comp.Props.damage, center: corpse.Position, map: corpse.Map, 
+            GenExplosion.DoExplosion(radius: comp.Props.radius, damAmount: comp.Props.damage,
+                center: corpse.Position, map: corpse.Map,
                 damType: DamageDefOf.Flame, instigator: corpse.InnerPawn);
         }
     }

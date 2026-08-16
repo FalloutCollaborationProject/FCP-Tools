@@ -24,17 +24,17 @@ public class Gene_GhoulBody : Gene
     {
         string bodyType = (pawn.story?.bodyType ?? BodyTypeDefOf.Male).defName;
         Color skinColor = pawn.story?.SkinColor ?? Color.white;
-            
+
         if (cachedGraphic != null && cachedBodyType == bodyType && cachedSkinColor == skinColor)
             return cachedGraphic;
-            
+
         bool isFeral = def.defName == "FCP_Gene_Ghoul_Feral_Skin";
         string path = isFeral ? $"FCP_Ghoul/Feral/Bodies/Naked_{bodyType}" : $"FCP_Ghoul/Bodies/Naked_{bodyType}";
-            
+
         cachedGraphic = GraphicDatabase.Get<Graphic_Multi>(path, ShaderDatabase.CutoutSkin, Vector2.one * 1.5f, skinColor);
         cachedBodyType = bodyType;
         cachedSkinColor = skinColor;
-            
+
         return cachedGraphic;
     }
 }

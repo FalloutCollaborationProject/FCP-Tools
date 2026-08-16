@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using System.Reflection.Emit;
 using FCP.Factions;
 using HarmonyLib;
@@ -14,130 +14,118 @@ public static class Patches
     static Patches()
     {
         var harmony = FCPCoreMod.Harmony;
-        // Biome Feature Requirements
         harmony.Patch(original: AccessTools.Method(typeof(WildAnimalSpawner), "CommonalityOfAnimalNow"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(WildAnimalSpawnerCommonalityOfAnimalNow_Postfix)));
-        
-        // Non Slaves in Traders
+
         harmony.Patch(original: AccessTools.Method(typeof(TraderCaravanUtility), "GetTraderCaravanRole"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(TraderCaravanUtilityGetTraderCaravanRole_Postfix)));
-        
+
         harmony.Patch(original: AccessTools.Method(typeof(Pawn_GuestTracker), "RandomizeJoinStatus"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(Pawn_GuestTrackerRandomizeJoinStatus_Postfix)));
-        
+
         harmony.Patch(original: AccessTools.Method(typeof(Pawn), "PreTraded"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(PawnPreTraded_Postfix)));
-        
-        // Flying Pawns
+
         harmony.Patch(original: AccessTools.Method(typeof(DamageWorker_AddInjury), "ApplyDamageToPart"),
             prefix: new HarmonyMethod(typeof(Patches), nameof(DamageWorker_AddInjuryApplyDamageToPart_Prefix)));
-        
+
         harmony.Patch(original: AccessTools.Method(typeof(JobGiver_AIDefendPawn), "FindAttackTarget"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(JobGiver_AIDefendPawnFindAttackTarget_Postfix)));
-        
+
         harmony.Patch(original: AccessTools.Method(typeof(Pawn_JobTracker), "CleanupCurrentJob"),
             prefix: new HarmonyMethod(typeof(Patches), nameof(Pawn_JobTrackerCleanupCurrentJob_Prefix)));
-        
+
         harmony.Patch(original: AccessTools.Method(typeof(Verb_MeleeAttack), "GetDodgeChance"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(Verb_MeleeAttackGetDodgeChance_Postfix)));
-        
+
         harmony.Patch(original: AccessTools.Method(typeof(Pawn_JobTracker), nameof(Pawn_JobTracker.StartJob)),
             postfix: new HarmonyMethod(typeof(Patches), nameof(Pawn_JobTrackerStartJob_Postfix)));
-        
+
         harmony.Patch(original: AccessTools.PropertyGetter(typeof(ShotReport), nameof(ShotReport.AimOnTargetChance_StandardTarget)),
             postfix: new HarmonyMethod(typeof(Patches), nameof(ShotReportAimOnTargetChance_StandardTarget_Postfix)));
-        
+
         harmony.Patch(original: AccessTools.Method(typeof(StatExtension), nameof(StatExtension.GetStatValue)),
             postfix: new HarmonyMethod(typeof(Patches), nameof(StatExtensionGetStatValue_Postfix)));
-        
-        // Faction Fixed Ideology
+
         harmony.Patch(original: AccessTools.Method(typeof(IdeoGenerator), "MakeFixedIdeo"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(IdeoGeneratorMakeFixedIdeo_Postfix)));
-        
+
         harmony.Patch(original: AccessTools.Method(typeof(IdeoFoundation), "RandomizeIcon"),
             prefix: new HarmonyMethod(typeof(Patches), nameof(IdeoFoundationRandomizeIcon_Prefix)));
-        
+
         harmony.Patch(original: AccessTools.Method(typeof(IdeoFoundation), "InitPrecepts"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(IdeoFoundationInitPrecepts_Postfix)));
-        
-        // Banned Arrival Modes
+
         harmony.Patch(original: AccessTools.Method(typeof(PawnsArrivalModeWorker), "CanUseWith"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(PawnsArrivalModeWorkerCanUseWith_Postfix)));
-        
-        // Hidden Faction Traders
+
         harmony.Patch(
             original: typeof(IncidentWorker_CaravanMeeting).GetNestedTypes(AccessTools.all)
                 .SelectMany(AccessTools.GetDeclaredMethods)
-                .First(mi => mi.ReturnType == typeof(bool) && 
+                .First(mi => mi.ReturnType == typeof(bool) &&
                              mi.GetParameters().ContainsAny(pi => pi.ParameterType == typeof(Faction))),
             transpiler: new HarmonyMethod(typeof(Patches), nameof(IncidentWorker_CaravanMeetingTryFindFaction_Linq_Transpiler)));
-        
+
         harmony.Patch(original: AccessTools.Method(typeof(IncidentWorker_NeutralGroup), "FactionCanBeGroupSource"),
             transpiler: new HarmonyMethod(typeof(Patches), nameof(IncidentWorker_NeutralGroup_FactionCanBeGroupSource_Transpiler)));
-        
-        // Max Title for Permits
+
         harmony.Patch(original: AccessTools.Method(typeof(PermitsCardUtility), "DoLeftRect"),
             transpiler: new HarmonyMethod(typeof(Patches), nameof(PermitsCardUtility_LeftRect_Transpiler)));
-        
+
         harmony.Patch(original: AccessTools.Method(typeof(RoyalTitlePermitDef), "AvailableForPawn"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(RoyalTitlePermitDef_AvailableForPawn_Postfix)));
-        
+
         harmony.Patch(original: AccessTools.Method(typeof(RoyalTitleAwardWorker), "DoAward"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(RoyalTitleAwardWorker_DoAward_Postfix)));
-        
+
         harmony.Patch(original: AccessTools.Method(typeof(RoyalTitleAwardWorker_Instant), "DoAward"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(RoyalTitleAwardWorker_DoAward_Postfix)));
-        
-        // Forced TraderKindDef for PawnGroupMaker
+
         harmony.Patch(original: AccessTools.Method(typeof(PawnGroupKindWorker_Trader), "GeneratePawns", parameters: [typeof(PawnGroupMakerParms), typeof(PawnGroupMaker), typeof(List<Pawn>), typeof(bool)]),
             prefix: new HarmonyMethod(typeof(Patches), nameof(PawnGroupKindWorker_Trader_GeneratePawns_Prefix)));
-        
-        // Forced TraderKindDef for PawnGroupMaker
+
         harmony.Patch(original: AccessTools.Method(typeof(PawnGroupKindWorker_Trader), "GenerateTrader", parameters: [typeof(PawnGroupMakerParms), typeof(PawnGroupMaker), typeof(TraderKindDef)]),
             prefix: new HarmonyMethod(typeof(Patches), nameof(PawnGroupKindWorker_Trader_GenerateTrader_Prefix)));
-        
-        // Forced TraderKindDef for PawnGroupMaker
+
         harmony.Patch(original: AccessTools.Method(typeof(PawnGroupKindWorker_Normal), "GeneratePawns", parameters: [typeof(PawnGroupMakerParms), typeof(PawnGroupMaker), typeof(List<Pawn>), typeof(bool)]),
             postfix: new HarmonyMethod(typeof(Patches), nameof(PawnGroupKindWorker_Normal_GeneratePawns_Postfix)));
-        
-        // Faction Permanent Hostility
+
         harmony.Patch(original: AccessTools.Method(typeof(GoodwillSituationWorker_PermanentEnemy), "ArePermanentEnemies"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(GoodwillSituationWorker_PermanentEnemy_ArePermanentEnemies_Postfix)));
-        
+
         harmony.Patch(original: AccessTools.Method(typeof(Faction), "CanChangeGoodwillFor"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(Faction_CanChangeGoodwillFor_Postfix)));
-        
+
         harmony.Patch(original: AccessTools.Method(typeof(FactionDef), "PermanentlyHostileTo"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(FactionDef_PermanentlyHostileTo_Postfix)));
-        
+
         harmony.Patch(original: typeof(Faction).GetDeclaredMethods().First(mi => mi.Name.Contains("GetInitialGoodwill")),
             prefix: new HarmonyMethod(typeof(Patches), nameof(Faction_TryMakeInitialRelationsWith_GetInitialGoodwill_Prefix)));
 
-        // Faction Permanent Alliance
         harmony.Patch(original: AccessTools.Method(typeof(Faction), "CanChangeGoodwillFor"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(Faction_CanChangeGoodwillFor_Alliance_Postfix)));
 
         harmony.Patch(original: typeof(Faction).GetDeclaredMethods().First(mi => mi.Name.Contains("GetInitialGoodwill")),
             prefix: new HarmonyMethod(typeof(Patches), nameof(Faction_TryMakeInitialRelationsWith_GetInitialGoodwill_Alliance_Prefix)));
 
-        // Unique Characters
         harmony.Patch(original: AccessTools.Method(typeof(Faction), nameof(Faction.TryGenerateNewLeader)),
             prefix: new HarmonyMethod(typeof(Patches), nameof(Faction_TryGenerateNewLeader_Prefix)));
-        
-        // Weapon Sprite Adjustment
+
         harmony.Patch(original: AccessTools.Method(typeof(PawnRenderUtility), nameof(PawnRenderUtility.DrawEquipmentAndApparelExtras)),
             prefix: new HarmonyMethod(typeof(Patches), nameof(WeaponDrawPosPatch)));
-        
-        //Rarity Label
+
         harmony.Patch(original: AccessTools.Method(typeof(InspectPaneUtility), nameof(InspectPaneUtility.AdjustedLabelFor)),
             postfix: new HarmonyMethod(typeof(Patches), nameof(RarityLabelPatch)));
+
+        harmony.Patch(original: AccessTools.Method(typeof(QuestPart_SetFaction), nameof(QuestPart_SetFaction.Notify_QuestSignalReceived)),
+            prefix: new HarmonyMethod(typeof(Patches), nameof(QuestPart_SetFaction_Notify_QuestSignalReceived_Prefix)));
+
+        harmony.Patch(original: AccessTools.Method(typeof(QuestPart_PawnsArrive), nameof(QuestPart_PawnsArrive.Notify_QuestSignalReceived)),
+            prefix: new HarmonyMethod(typeof(Patches), nameof(QuestPart_PawnsArrive_Notify_QuestSignalReceived_Prefix)));
     }
 
     #region Biome Feature Requirements
 
-    /// <summary>
-    /// Ensures certain environmental conditions are met before a pawn can be (naturally) spawned on the map.
-    /// </summary>
     public static void WildAnimalSpawnerCommonalityOfAnimalNow_Postfix(PawnKindDef def, ref Map ___map,
         ref float __result)
     {
@@ -159,9 +147,6 @@ public static class Patches
 
     #region Non Slaves in Traders
 
-    /// <summary>
-    /// Makes it so that custom pawnKinds can be sold as 'slaves'.
-    /// </summary>
     public static void TraderCaravanUtilityGetTraderCaravanRole_Postfix(Pawn p, ref TraderCaravanRole __result)
     {
         ModExtension_PawnKindProperties props = ModExtension_PawnKindProperties.Get(p.kindDef);
@@ -171,9 +156,6 @@ public static class Patches
         }
     }
 
-    /// <summary>
-    /// Ensures recruit pawn kinds are not sold into slavery.
-    /// </summary>
     public static void Pawn_GuestTrackerRandomizeJoinStatus_Postfix(ref Pawn ___pawn, ref JoinStatus ___joinStatus)
     {
         if (___joinStatus != JoinStatus.JoinAsColonist && PatchesUtility.CanRecruit(___pawn))
@@ -182,9 +164,6 @@ public static class Patches
         }
     }
 
-    /// <summary>
-    /// Remove the thought as recruits are not slaves.
-    /// </summary>
     public static void PawnPreTraded_Postfix(ref Pawn __instance)
     {
         if (!PatchesUtility.CanRecruit(__instance)) return;
@@ -196,10 +175,6 @@ public static class Patches
 
     #region Flying Pawns
 
-    /// <summary>
-    /// Modifies how damage is applied to a specific body part of a Pawn.
-    /// When the instigator (the entity dealing the damage) is a flying pawn.
-    /// </summary>
     public static void DamageWorker_AddInjuryApplyDamageToPart_Prefix(ref DamageInfo dinfo, Pawn pawn,
         DamageWorker.DamageResult result)
     {
@@ -216,9 +191,6 @@ public static class Patches
         }
     }
 
-    /// <summary>
-    /// Ensures flying pawns will prioritize attacking the same enemies that their master is currently engaging with.
-    /// </summary>
     public static void JobGiver_AIDefendPawnFindAttackTarget_Postfix(JobGiver_AIDefendPawn __instance,
         ref Thing __result, Pawn pawn)
     {
@@ -233,10 +205,6 @@ public static class Patches
         }
     }
 
-    /// <summary>
-    /// Ensures that whenever a flying pawn finishes its current job it will stop flying if it was flying during the job.
-    /// Pawn’s appearance will be updated to reflect its grounded status.
-    /// </summary>
     public static void Pawn_JobTrackerCleanupCurrentJob_Prefix(Pawn ___pawn)
     {
         if (!___pawn.IsFlyingPawn(out CompFlyingPawn comp)) return;
@@ -245,9 +213,6 @@ public static class Patches
         comp.ChangeGraphic();
     }
 
-    /// <summary>
-    /// Modifies the melee attack dodge chance for pawns that are currently flying.
-    /// </summary>
     public static void Verb_MeleeAttackGetDodgeChance_Postfix(ref float __result, LocalTargetInfo target)
     {
         Pawn pawn = target.Pawn;
@@ -256,9 +221,6 @@ public static class Patches
         __result *= flyingComp.Props.evadeChanceWhenFlying;
     }
 
-    /// <summary>
-    /// Controls when a flying pawn should take flight based on the current job it is assigned.
-    /// </summary>
     public static void Pawn_JobTrackerStartJob_Postfix(Pawn ___pawn)
     {
         if (!___pawn.IsFlyingPawn(out CompFlyingPawn comp)) return;
@@ -274,10 +236,6 @@ public static class Patches
         comp.ChangeGraphic(true);
     }
 
-    /// <summary>
-    /// Adjusts the hit chance when a flying pawn is targeted.
-    /// Reduces the accuracy based on the pawn's flying status.
-    /// </summary>
     public static void ShotReportAimOnTargetChance_StandardTarget_Postfix(ref float __result, TargetInfo ___target)
     {
         if (___target.Thing is not Pawn pawn) return;
@@ -289,9 +247,6 @@ public static class Patches
         }
     }
 
-    /// <summary>
-    /// Adjusts the movement speed of flying pawns based on a multiplier when they are in flight.
-    /// </summary>
     private static void StatExtensionGetStatValue_Postfix(Thing thing, StatDef stat, ref float __result)
     {
         if (stat == StatDefOf.MoveSpeed && thing is Pawn pawn &&
@@ -305,27 +260,18 @@ public static class Patches
 
     #region Faction Fixed Ideology
 
-    /// <summary>
-    /// Copy the content of FixedIdeoExtension to a newly made fixed ideo.
-    /// </summary>
     public static void IdeoGeneratorMakeFixedIdeo_Postfix(IdeoGenerationParms parms, Ideo __result)
     {
         FactionExtension_FixedIdeo extension = parms.forFaction?.GetModExtension<FactionExtension_FixedIdeo>();
         extension?.ApplyToIdeo(__result);
     }
 
-    /// <summary>
-    /// Skips idea randomization if one already exists.
-    /// </summary>
     public static bool IdeoFoundationRandomizeIcon_Prefix(IdeoFoundation __instance)
     {
         Ideo ideo = __instance.ideo;
         return ideo.iconDef == null;
     }
 
-    /// <summary>
-    /// Runs Post InitPrecepts to do our role overrides, should also work as a point for rituals in the future.
-    /// </summary>
     public static void IdeoFoundationInitPrecepts_Postfix(IdeoGenerationParms parms, IdeoFoundation __instance)
     {
         FactionExtension_FixedIdeo extension = parms.forFaction?.GetModExtension<FactionExtension_FixedIdeo>();
@@ -359,9 +305,6 @@ public static class Patches
 
     #region Banned Arrival Modes
 
-    /// <summary>
-    /// Patch for the base PawnsArrivalModeWorker to disallow certain ArrivalModes based on the faction's extension
-    /// </summary>
     public static void PawnsArrivalModeWorkerCanUseWith_Postfix(IncidentParms parms, ref bool __result,
         PawnsArrivalModeDef ___def)
     {
@@ -379,10 +322,6 @@ public static class Patches
 
     #region Hidden Faction Traders
 
-    /// <summary>
-    /// Patch for a compiler generated class for the linq code in the TryFindFaction Method,
-    /// Allows hidden factions to be selected assuming they have the appropriate extension.
-    /// </summary>
     private static IEnumerable<CodeInstruction> IncidentWorker_CaravanMeetingTryFindFaction_Linq_Transpiler(
         IEnumerable<CodeInstruction> instructions,
         ILGenerator generator)
@@ -391,11 +330,11 @@ public static class Patches
 
         CodeMatcher matcher = new CodeMatcher(instructions, generator)
             .End()
-            .MatchStartBackwards( // Find the last return when the branch fails.
+            .MatchStartBackwards(
                 new CodeMatch(OpCodes.Ldc_I4_0),
                 new CodeMatch(OpCodes.Ret)
             )
-            .MatchStartBackwards( // Find the use of get_Hidden so we can modify that branch
+            .MatchStartBackwards(
                 CodeMatch.Calls(factionGetHiddenMethod),
                 CodeMatch.Branches()
             )
@@ -406,7 +345,7 @@ public static class Patches
         matcher.CreateLabelAt(matcher.Pos + 1, out Label nextConditional)
             .InsertAndAdvance(
                 new CodeInstruction(OpCodes.Brfalse, nextConditional),
-                CodeInstruction.LoadArgument(1), // Load the Faction field
+                CodeInstruction.LoadArgument(1),
                 CodeInstruction.Call(typeof(FactionExtension_HiddenFactionHasCaravans),
                     nameof(FactionExtension_HiddenFactionHasCaravans.FactionHas))
             )
@@ -415,10 +354,6 @@ public static class Patches
         return matcher.Instructions();
     }
 
-    /// <summary>
-    /// Allow hidden factions with the ModExtension_HiddenFactionHasCaravans extension
-    /// to be chosen for random trader groups
-    /// </summary>
     private static IEnumerable<CodeInstruction> IncidentWorker_NeutralGroup_FactionCanBeGroupSource_Transpiler(
         IEnumerable<CodeInstruction> instructions, ILGenerator generator)
     {
@@ -436,7 +371,7 @@ public static class Patches
         matcher.CreateLabelWithOffsets(1, out Label nextCheckPoint)
             .SetAndAdvance(OpCodes.Brfalse, nextCheckPoint)
             .Insert(
-                CodeInstruction.LoadArgument(1), // Load Faction
+                CodeInstruction.LoadArgument(1),
                 CodeInstruction.Call(typeof(FactionExtension_HiddenFactionHasCaravans),
                     nameof(FactionExtension_HiddenFactionHasCaravans.FactionHas)),
                 new CodeInstruction(OpCodes.Brfalse, failurePoint)
@@ -448,95 +383,67 @@ public static class Patches
     #endregion
 
     #region Max Title for Permits
-        
-    /// <summary>
-    /// Lists the max title requirement of a given permitdef if one exists in the UI, using MaxTitlePermitExtension
-    /// </summary>
+
     private static IEnumerable<CodeInstruction> PermitsCardUtility_LeftRect_Transpiler(
         IEnumerable<CodeInstruction> instructions, ILGenerator generator)
     {
-        // Fields:
-        // - PermitsCardUtility
         FieldInfo permitsCardUtilitySelectedPermitField = AccessTools.Field(typeof(PermitsCardUtility), "selectedPermit");
-        // - RoyalTitlePermitDef
         FieldInfo permitDefMinTitleField = AccessTools.Field(typeof(RoyalTitlePermitDef), "minTitle");
         FieldInfo permitDefPrerequisiteField = AccessTools.Field(typeof(RoyalTitlePermitDef), "prerequisite");
 
-        // Transpiler Procedure:
-        // 1 - Find the minTitle check and the branching point after
-        // 2 - Find the next branch which uses permitdef prerequisite and selectedPermit
-        // 3 - Go back one to the end of the previous branch to check it.
-        // 4 - Move back and load the required variables
-        // 5 - Run the code and store the result
-
-        // 1 - 3
         CodeMatcher matcher = new CodeMatcher(instructions, generator)
-            // 1
             .MatchEndForward(
                 CodeMatch.LoadsField(permitDefMinTitleField),
                 CodeMatch.Branches()
             )
             .ThrowIfInvalid(
                 "PermitsCardUtility_LeftRect_Transpiler: FCPTools couldn't find the correct branch (seq 1)")
-            // 2
             .MatchStartForward(
                 CodeMatch.LoadsField(permitsCardUtilitySelectedPermitField),
                 CodeMatch.LoadsField(permitDefPrerequisiteField)
             )
             .ThrowIfInvalid(
                 "PermitsCardUtility_LeftRect_Transpiler: FCPTools couldn't find the second branch (seq 2)")
-            // 3
-            .Advance(-1) // temporarily move back
+            .Advance(-1)
             .ThrowIfNotMatch(
                 "PermitsCardUtility_LeftRect_Transpiler: instruction prior to end of second branch is not as expected (seq 4)",
                 CodeMatch.StoresLocal("storeText")
             );
 
-        // Get the index for storing text
         int textIndex = (matcher.NamedMatch("storeText").operand as LocalBuilder)!.LocalIndex;
 
-        // 4 - 5
-        matcher.Advance(1) // move back up to the insertion point
+        matcher.Advance(1)
             .Insert(
-                // 4
-                CodeInstruction.LoadLocal(textIndex), // text Field
-                CodeInstruction.LoadArgument(1), // Pawn
-                // 5
+                CodeInstruction.LoadLocal(textIndex),
+                CodeInstruction.LoadArgument(1),
                 CodeInstruction.Call(typeof(Patches), nameof(PermitsCardUtility_Util_AppendMaxTitleStatus)),
                 CodeInstruction.StoreLocal(textIndex)
             );
 
         return matcher.Instructions();
-
     }
 
-    // Retrieves the Extension and if necessary, append the max title text.
     private static string PermitsCardUtility_Util_AppendMaxTitleStatus(string text, Pawn pawn)
     {
         PermitExtension_MaxFactionTitle permitExtension = PermitsCardUtility.selectedPermit.GetModExtension<PermitExtension_MaxFactionTitle>();
         if (permitExtension?.maxTitle == null) return text;
-            
+
         bool meetsMaxTitleRequirements = pawn.royalty.GetCurrentTitle(PermitsCardUtility.selectedFaction).seniority
                                          <= permitExtension.maxTitle.seniority;
 
         return text + "\n" + "Maximum Title: " + permitExtension.maxTitle.GetLabelForBothGenders()
             .Colorize(meetsMaxTitleRequirements ? Color.white : ColorLibrary.RedReadable);
-
     }
-        
-        
-    /// <summary>
-    /// Makes a PermitDef unavailable if the current title exceeds the def's MaxTitlePermitExtension max
-    /// </summary>
+
     private static void RoyalTitlePermitDef_AvailableForPawn_Postfix(ref bool __result, RoyalTitlePermitDef __instance, Pawn pawn, Faction faction)
     {
         if (__result == false)
             return;
-        
+
         PermitExtension_MaxFactionTitle permitExtension = __instance.GetModExtension<PermitExtension_MaxFactionTitle>();
-        if (permitExtension == null) 
+        if (permitExtension == null)
             return;
-        
+
         RoyalTitleDef currentTitle = pawn.royalty.GetCurrentTitle(faction);
 
         if (currentTitle.seniority < __instance.minTitle.seniority ||
@@ -545,10 +452,7 @@ public static class Patches
             __result = false;
         }
     }
-    
-    /// <summary>
-    /// Remove permits that are no longer valid due to a new title exceeding the permit's MaxTitlePermitExtension's max
-    /// </summary>
+
     private static void RoyalTitleAwardWorker_DoAward_Postfix(Pawn pawn, Faction faction, RoyalTitleDef currentTitle, RoyalTitleDef newTitle)
     {
         foreach (FactionPermit permit in pawn.royalty.AllFactionPermits.ToList())
@@ -556,7 +460,7 @@ public static class Patches
             PermitExtension_MaxFactionTitle permitExtension = permit.Permit.GetModExtension<PermitExtension_MaxFactionTitle>();
 
             if (newTitle.seniority <= permitExtension?.maxTitle.seniority) continue;
-            
+
             Messages.Message("FCP_MessagePermitLostOnPromotion".Translate(pawn, currentTitle.GetLabelFor(pawn), permit.Permit),
                 MessageTypeDefOf.NeutralEvent);
             pawn.royalty.AllFactionPermits.Remove(permit);
@@ -629,13 +533,12 @@ public static class Patches
         PawnComponentsUtility.AddAndRemoveDynamicComponents(customPawn, true);
         customPawn.trader.traderKind = groupMakerWithTrader.characterTraderKinds.TryGetValue(chosenCharacter, out var boundTraderKind) ? boundTraderKind : traderKind;
         parms.points -= customPawn.kindDef.combatPower;
-        // Skip the original method
         __result = customPawn;
         return false;
     }
 
     #endregion
-    
+
     #region Add Custom Character to PawnGroupKindWorkers
 
     public static void PawnGroupKindWorker_Normal_GeneratePawns_Postfix(PawnGroupMakerParms parms, PawnGroupMaker groupMaker, ref List<Pawn> outPawns)
@@ -658,7 +561,6 @@ public static class Patches
             if (!uniqueCharTracker.CharacterPawnDead(characterCustom) &&
                 !uniqueCharTracker.CharacterPawnSpawned(characterCustom))
             {
-
                 customPawn = uniqueCharTracker.GetOrGenPawn(characterCustom, null, faction);
                 break;
             }
@@ -671,28 +573,21 @@ public static class Patches
     #endregion
 
     #region Faction Permanent Hostility
-        
-    /// <summary>
-    /// Patch to change the ArePermanentEnemies result to true if they are permanent enemies because of the extension.
-    /// </summary>
-    public static void GoodwillSituationWorker_PermanentEnemy_ArePermanentEnemies_Postfix(Faction a, Faction b, 
+
+    public static void GoodwillSituationWorker_PermanentEnemy_ArePermanentEnemies_Postfix(Faction a, Faction b,
         ref bool __result)
     {
-        if (__result) 
+        if (__result)
             return;
-        
+
         var aExtension = a.def.GetModExtension<FactionExtension_PermanentlyHostileTo>();
         var bExtension = b.def.GetModExtension<FactionExtension_PermanentlyHostileTo>();
 
-        // Check if either are permanently hostile with each other, but if both are null just use the existing result (false)
         __result = aExtension?.FactionIsHostileTo(b.def) ??
-                   bExtension?.FactionIsHostileTo(a.def) ?? 
+                   bExtension?.FactionIsHostileTo(a.def) ??
                    __result;
     }
-    
-    /// <summary>
-    /// Patch so that they are unable to change goodwill after the start of the game.
-    /// </summary>
+
     public static void Faction_CanChangeGoodwillFor_Postfix(Faction other, Faction __instance, ref bool __result)
     {
         if (__result == false)
@@ -704,10 +599,7 @@ public static class Patches
 
         __result = !extension.FactionIsHostileTo(other.def);
     }
-    
-    /// <summary>
-    /// I think this is used in some quests to check if two factions are permanently hostile
-    /// </summary>
+
     public static void FactionDef_PermanentlyHostileTo_Postfix(FactionDef otherFactionDef, FactionDef __instance, ref bool __result)
     {
         if (__result) return;
@@ -715,17 +607,12 @@ public static class Patches
         FactionExtension_PermanentlyHostileTo extension = __instance.GetModExtension<FactionExtension_PermanentlyHostileTo>();
         __result = extension?.FactionIsHostileTo(otherFactionDef) ?? false;
     }
-        
-    /// <summary>
-    /// Patches the initial goodwill which is run on faction generation or reset
-    /// to return -100 if they have this extension and are in the list.
-    /// </summary>
+
     public static bool Faction_TryMakeInitialRelationsWith_GetInitialGoodwill_Prefix(Faction a, Faction b, ref int __result)
     {
         FactionExtension_PermanentlyHostileTo extension = a.def.GetModExtension<FactionExtension_PermanentlyHostileTo>();
         if (extension == null || !extension.hostileFactionDefs.Contains(b.def)) return true;
-            
-        // They're hostile, so set to -100 and skip the original.
+
         __result = -100;
         return false;
     }
@@ -734,10 +621,6 @@ public static class Patches
 
     #region Faction Permanent Alliance
 
-    /// <summary>
-    /// Mirrors Faction_CanChangeGoodwillFor_Postfix for permanent allies: locks goodwill so it
-    /// can't be changed away from the forced starting value.
-    /// </summary>
     public static void Faction_CanChangeGoodwillFor_Alliance_Postfix(Faction other, Faction __instance, ref bool __result)
     {
         if (__result == false)
@@ -750,16 +633,11 @@ public static class Patches
         __result = !extension.FactionIsAlliedTo(other.def);
     }
 
-    /// <summary>
-    /// Mirrors Faction_TryMakeInitialRelationsWith_GetInitialGoodwill_Prefix for permanent allies:
-    /// sets initial goodwill to 100 and skips the original random roll.
-    /// </summary>
     public static bool Faction_TryMakeInitialRelationsWith_GetInitialGoodwill_Alliance_Prefix(Faction a, Faction b, ref int __result)
     {
         FactionExtension_PermanentlyAlliedTo extension = a.def.GetModExtension<FactionExtension_PermanentlyAlliedTo>();
         if (extension == null || !extension.alliedFactionDefs.Contains(b.def)) return true;
 
-        // They're allies, so set to 100 and skip the original.
         __result = 100;
         return false;
     }
@@ -768,9 +646,6 @@ public static class Patches
 
     #region Unique Characters
 
-    /// <summary>
-    /// Patch to leader generation to create a new leader.
-    /// </summary>
     public static bool Faction_TryGenerateNewLeader_Prefix(Faction __instance, ref bool __result)
     {
         var tracker = UniqueCharactersTracker.Instance;
@@ -778,27 +653,24 @@ public static class Patches
         var leaderDefs = CharacterRoleUtils.GetAllWithRole<CharacterRole_FactionLeader>()
             .Where(charWithRole => charWithRole.characterDef.faction == __instance.def)
             .OrderByDescending(charWithRole => charWithRole.role.seniority);
-        
+
         foreach (CharacterDefWithRole<CharacterRole_FactionLeader> charWithRole in leaderDefs)
         {
-            // Get an existing or generate pawn
-            var request = new PawnGenerationRequest(charWithRole.characterDef.pawnKind, __instance); // required since we can't get it from faction manager on the other side.
+            var request = new PawnGenerationRequest(charWithRole.characterDef.pawnKind, __instance);
             Pawn leader = tracker.GetOrGenPawn(charWithRole.characterDef, request);
-            
+
             if (leader.Faction != __instance)
-                continue; // They were likely recruited somehow.
-            
+                continue;
+
             if (!charWithRole.role.PawnIsValid(leader))
                 continue;
-            
+
             charWithRole.role.ApplyRole(leader);
-            
-            // Skip the original method
+
             __result = true;
             return false;
         }
 
-        // Probably ran out of characters, so back to random ones
         return true;
     }
 
@@ -830,15 +702,15 @@ public static class Patches
 
                 switch (facing.AsInt)
                 {
-                    case 0: //north
-                    case 2: //south
+                    case 0:
+                    case 2:
                         break;
-                    case 1: //east
+                    case 1:
                         float tmp = offset.y;
                         offset.y = -offset.x;
                         offset.x = -tmp;
                         break;
-                    case 3: //west
+                    case 3:
                         float tmp1 = offset.y;
                         offset.y = -offset.x;
                         offset.x = tmp1;
@@ -848,7 +720,6 @@ public static class Patches
                 drawPos += offset.ToVector3() + absolute.ToVector3();
             }
         }
-
     }
 
     #endregion
@@ -866,7 +737,6 @@ public static class Patches
                 primary = outerThing.GetInnerIfMinified();
                 break;
             }
-
         }
 
         if (primary == null) { return; }
@@ -875,7 +745,28 @@ public static class Patches
         {
             __result = __result.Colorize(comp.GetRarityColor());
         }
+    }
 
+    #endregion
+
+    #region Null Quest Pawn Guards
+
+    static void QuestPart_SetFaction_Notify_QuestSignalReceived_Prefix(QuestPart_SetFaction __instance)
+    {
+        int removed = __instance.things?.RemoveAll(t => t == null) ?? 0;
+        if (removed > 0)
+        {
+            FCPLog.Warning($"QuestPart_SetFaction dropped {removed} null thing(s) before processing a signal - a quest tried to hand off a pawn/thing that failed to generate.");
+        }
+    }
+
+    static void QuestPart_PawnsArrive_Notify_QuestSignalReceived_Prefix(QuestPart_PawnsArrive __instance)
+    {
+        int removed = __instance.pawns?.RemoveAll(p => p == null) ?? 0;
+        if (removed > 0)
+        {
+            FCPLog.Warning($"QuestPart_PawnsArrive dropped {removed} null pawn(s) before processing a signal - a quest tried to spawn a pawn that failed to generate.");
+        }
     }
 
     #endregion

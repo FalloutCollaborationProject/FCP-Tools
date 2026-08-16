@@ -14,10 +14,10 @@ public static class Pawn_PathFollower_StartPath_Patch
         Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
         if (pawn?.health?.hediffSet == null)
             return true;
-            
+
         if (pawn.health.hediffSet.HasHediff(Buildings.HediffDefOf.FCP_Crucified))
             return false;
-            
+
         return true;
     }
 }
@@ -31,10 +31,10 @@ public static class Pawn_JobTracker_StartJob_Patch
         Pawn pawn = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
         if (pawn?.health?.hediffSet == null)
             return true;
-            
+
         if (pawn.health.hediffSet.HasHediff(Buildings.HediffDefOf.FCP_Crucified))
             return false;
-            
+
         return true;
     }
 }

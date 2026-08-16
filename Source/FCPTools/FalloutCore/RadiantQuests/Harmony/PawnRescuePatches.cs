@@ -4,10 +4,6 @@ using Verse.AI;
 
 namespace FCP.Core.RadiantQuests;
 
-/// <summary>
-/// Patches the targeting parameters to be able to target all prisoners that dont belong to the player
-/// to free them instead of only those that have mindState.WillJoinColonyIfRescued
-/// </summary>
 [HarmonyPatch(typeof(FloatMenuOptionProvider_OfferHelp), "GetSingleOptionFor")]
 public static class FloatMenuOptionProvider_OfferHelp_GetSingleOptionFor_Patch
 {
@@ -36,9 +32,6 @@ public static class FloatMenuOptionProvider_OfferHelp_GetSingleOptionFor_Patch
     }
 }
 
-/// <summary>
-/// Patches the job driver to let the pawn run away if it doesnt have mindState.WillJoinColonyIfRescued
-/// </summary>
 [HarmonyPatch]
 public static class JobDriver_OfferHelpPatch
 {

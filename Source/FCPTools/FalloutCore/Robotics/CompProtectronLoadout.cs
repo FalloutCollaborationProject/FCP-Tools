@@ -75,10 +75,6 @@ namespace FCP.Core.Robotics
 
         private void DoInitialSetup()
         {
-            // Unforced fallback for pawns nothing else has claimed a preset for yet (e.g. a robot
-            // that ticks before a recipe/quest/character definition got a chance to call ApplyPreset).
-            // Wild spawns are claimed synchronously by WildRobotSpawn_Patch before they ever tick,
-            // so by the time this runs it's a no-op for them.
             ApplyPreset(DefaultPresetId);
         }
 

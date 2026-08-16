@@ -15,12 +15,12 @@ public class Gene_Ghoul_GlowingOne : Gene
     public override void PostAdd()
     {
         base.PostAdd();
-            
+
         if (!pawn.health.hediffSet.HasHediff(HediffDefOf_Ghoul.ToxicHealing))
         {
             pawn.health.AddHediff(HediffDefOf_Ghoul.ToxicHealing);
         }
-            
+
         if (moteDef == null)
         {
             moteDef = DefDatabase<ThingDef>.GetNamedSilentFail("FCP_Mote_GlowingOneAura");
@@ -30,7 +30,7 @@ public class Gene_Ghoul_GlowingOne : Gene
     public override void PostRemove()
     {
         base.PostRemove();
-            
+
         Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf_Ghoul.ToxicHealing);
         if (hediff != null)
         {
@@ -86,7 +86,7 @@ public class Gene_Ghoul_GlowingOne : Gene
 
             bool isGhoul = target.genes?.GetFirstGeneOfType<Gene_GhoulBody>() != null;
             bool isGlowingOne = target.genes?.GetFirstGeneOfType<Gene_Ghoul_GlowingOne>() != null;
-                
+
             if (isGhoul || isGlowingOne)
             {
                 Hediff_Injury injury = target.health.hediffSet.hediffs.OfType<Hediff_Injury>().FirstOrDefault(h => h.CanHealNaturally());

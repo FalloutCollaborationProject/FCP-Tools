@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using UnityEngine;
 using Verse.AI;
 
@@ -46,7 +46,6 @@ public class Verb_AbilityVATS : Verb_AbilityShoot
         job.targetB = currentTarget = target;
         job.endIfCantShootInMelee = true;
 
-        // Track our attacks here, so that if/when the attack lands we can match it back up in the damageworker patch
         
         if (VATS_GameComponent.ActiveAttacks.ContainsKey(CasterPawn))
         {

@@ -6,7 +6,6 @@ namespace FCP.Core;
 [HarmonyPatch(typeof(ITab_Pawn_Gear), "TryDrawOverallArmor")]
 public class ITab_Gear_TryDrawArmor_Patch
 {
-
     public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
     {
         List<CodeInstruction> code = instructions.ToList();

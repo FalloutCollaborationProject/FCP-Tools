@@ -34,13 +34,13 @@ public class HediffComp_GhoulTransformation : HediffComp
         if (Pawn.Dead || Pawn.IsGhoul()) return;
 
         float roll = Rand.Value;
-            
+
         if (roll < 0.66f)
         {
             Pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ToxicBuildup).Severity = 1f;
             return;
         }
-            
+
         if (roll < 0.86f) ApplyTransform("FCP_Xenotype_Ghoul_Feral", false, false, true);
         else if (roll < 0.93f) ApplyTransform("FCP_Xenotype_Ghoul", true, true, false);
         else if (roll < 0.98f) ApplyTransform("FCP_Xenotype_Ghoul", false, false, false);
@@ -54,13 +54,13 @@ public class HediffComp_GhoulTransformation : HediffComp
         if (xenotype == null || Pawn.genes == null) return;
 
         Pawn.genes.SetXenotype(xenotype);
-            
+
         if (addFeral)
         {
             var feralDef = DefDatabase<GeneDef>.GetNamed("FCP_Gene_Ferality", false);
             if (feralDef != null) Pawn.genes.AddGene(feralDef, false);
         }
-            
+
         if (maxFeral || randomFeral)
         {
             var gene = Pawn.genes.GetFirstGeneOfType<Gene_Ferality>();
@@ -70,10 +70,10 @@ public class HediffComp_GhoulTransformation : HediffComp
                 gene.SetFerality(val);
             }
         }
-            
+
         var toxic = Pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ToxicBuildup);
         if (toxic != null) toxic.Severity = 0.1f;
-            
+
         Pawn.Drawer.renderer.SetAllGraphicsDirty();
     }
 
@@ -91,7 +91,7 @@ public static class GhoulExtensions
         if (pawn?.genes?.Xenotype == null) return false;
 
         string name = pawn.genes.Xenotype.defName;
-        return name == "FCP_Xenotype_Ghoul" || name == "FCP_Xenotype_Ghoul_Feral" || 
+        return name == "FCP_Xenotype_Ghoul" || name == "FCP_Xenotype_Ghoul_Feral" ||
                name == "FCP_Xenotype_Ghoul_GlowingOne" || name == "FCP_Xenotype_Ghoul_GlowingOne_Feral";
     }
 }

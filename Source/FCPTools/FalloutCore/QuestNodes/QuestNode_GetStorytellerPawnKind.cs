@@ -27,9 +27,14 @@ public class QuestNode_Root_StorytellerJoin : QuestNode_Root_WandererJoin
 
 	public override Pawn GeneratePawn()
 	{
+		return GeneratePawn_NewTemp(null);
+	}
+
+	public override Pawn GeneratePawn_NewTemp(Map map)
+	{
 		var extension = Find.Storyteller.def.GetModExtension<ModExtension_StoryTellerIsJoiner>();
 		Pawn pawn = UniqueCharactersTracker.Instance.GetOrGenPawn(extension.characterDef);
-		
+
 		if (!pawn.IsWorldPawn())
 		{
 			Find.WorldPawns.PassToWorld(pawn);

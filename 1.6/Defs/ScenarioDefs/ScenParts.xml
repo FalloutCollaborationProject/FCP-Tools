@@ -23,4 +23,14 @@
         <summaryPriority>50</summaryPriority>
     </ScenPartDef>
 
+    <!--_____ G.O.A.T. Exam _____-->
+
+    <ScenPartDef>
+        <defName>FCP_GOATExam</defName>
+        <label>G.O.A.T. exam</label>
+        <category>Misc</category>
+        <scenPartClass>FCP.Core.GOAT.ScenPart_GOATExam</scenPartClass>
+        <summaryPriority>40</summaryPriority>
+    </ScenPartDef>
+
 </Defs>

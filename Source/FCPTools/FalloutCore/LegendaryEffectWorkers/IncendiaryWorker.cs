@@ -6,7 +6,7 @@ public class IncendiaryWorker : LegendaryEffectWorker
     {
         if (pawn == null || damageInfo.IntendedTarget == null)
             return;
-        
+
         if (damageInfo.IntendedTarget.CanEverAttachFire())
         {
             damageInfo.IntendedTarget.TryAttachFire(2, damageInfo.Instigator);

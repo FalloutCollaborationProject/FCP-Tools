@@ -10,7 +10,7 @@ public static class EquipmentUtility_CanEquip_WeaponRequirement_Patch
     {
         if (pawn.apparel == null)
             return;
-        
+
         var ext = thing.def.GetModExtension<WeaponRequirementExtension>();
         if (ext == null)
             return;

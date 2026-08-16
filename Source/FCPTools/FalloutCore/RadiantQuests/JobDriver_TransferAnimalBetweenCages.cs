@@ -48,7 +48,6 @@ public class JobDriver_TransferAnimalBetweenCages : JobDriver
         };
     }
 
-
     public static Toil PrepareToEnterToil(TargetIndex podIndex)
     {
         Toil toil = Toils_General.Wait(200);

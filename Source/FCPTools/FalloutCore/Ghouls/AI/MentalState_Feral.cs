@@ -5,13 +5,13 @@ namespace FCP.Core.Ghouls;
 public class MentalState_Feral : MentalState_Berserk
 {
     private IntVec3 homePosition;
-        
+
     public override void PostStart(string reason)
     {
         base.PostStart(reason);
         homePosition = pawn.Position;
     }
-        
+
     public override bool ForceHostileTo(Thing t)
     {
         if (t.def.HasModExtension<TurnFeral_ModExtension>())
@@ -27,7 +27,7 @@ public class MentalState_Feral : MentalState_Berserk
 
         return base.ForceHostileTo(t);
     }
-        
+
     public override void ExposeData()
     {
         base.ExposeData();

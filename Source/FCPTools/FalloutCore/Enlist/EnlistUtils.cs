@@ -92,7 +92,6 @@ public static class EnlistUtils
         return FactionRelationKind.Neutral;
     }
 
-
     public static bool PawnSatisfiesSkillRequirements(Pawn pawn, List<SkillRequirement> skillRequirements)
     {
         return FirstSkillRequirementPawnDoesntSatisfy(pawn, skillRequirements) == null;

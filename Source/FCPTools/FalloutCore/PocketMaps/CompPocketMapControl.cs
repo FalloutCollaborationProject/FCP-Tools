@@ -79,19 +79,18 @@ namespace FCP.PocketMaps
         private void Abandon(Map map, MapPortal portal)
         {
             var entrancePortal = portal;
-            
+
             if (portal is PocketMapExit)
             {
                 entrancePortal = FindPortalForMap(map);
             }
-            
+
             if (entrancePortal == null)
             {
                 Log.Error("Could not find entrance portal to mark as abandoned");
                 return;
             }
 
-            // Mark portal as abandoned using direct field
             if (entrancePortal is PresettableMapPortal presettablePortal)
             {
                 presettablePortal.MarkAsAbandoned();

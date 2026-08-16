@@ -13,14 +13,13 @@ public class DebugSettings : SettingsTab
     {
         var list = new Listing_Standard();
         list.Begin(tabRect);
-        
-        // Stimpacks
+
         Text.Font = GameFont.Medium;
         list.Label("FCP_Settings_Debug_Logging".Translate());
         Text.Font = GameFont.Small;
         list.GapLine();
         list.CheckboxLabeled("FCP_Settings_Debug_VerboseLogging".Translate(), ref verboseLogging);
-        
+
         list.End();
     }
 

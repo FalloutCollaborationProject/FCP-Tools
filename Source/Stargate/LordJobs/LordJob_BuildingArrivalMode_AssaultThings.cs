@@ -1,13 +1,10 @@
-﻿using System;
+using System;
 using Verse.AI.Group;
 
 namespace Thek_BuildingArrivalMode
 {
     public class LordJob_BuildingArrivalMode_AssaultThings : LordJob_AssaultThings
     {
-        // This is a copy from LordJob_AssaultThings
-        // I basically change all the LordToils that make pawns leave in any way into my own custom ones
-        // I also add my own PanicFlee, ignoring vanilla's
 
         private Faction assaulterFaction;
         private List<Thing> things;
@@ -32,7 +29,6 @@ namespace Thek_BuildingArrivalMode
             }
             stateGraph.AddToil(lordToil);
             LordToil_BuildingArrivalMode_ExitMapAndDefendSelf lordToilEscape = new()
-            // The toil used by pawns when they give up, in LordJob_AssaultColony they used one that also let them defend themselves
             {
                 useAvoidGrid = true
             };
@@ -43,11 +39,9 @@ namespace Thek_BuildingArrivalMode
 
             LordToil_BuildingArrivalMode_PanicFlee lordToil_PanicFlee = new()
             {
-                // The fleeing lord that happens when you defeat a bunch of the raiders changed so they go in the portal
                 useAvoidGrid = true
             };
 
-            //The for loop underneath makes all the transitions aim towards the above PanicFlee, same thing vanilla's PanicFlee does
             for (int i = 0; i < stateGraph.lordToils.Count; i++)
             {
                 Transition fleeTransition = new(stateGraph.lordToils[i], lordToil_PanicFlee);

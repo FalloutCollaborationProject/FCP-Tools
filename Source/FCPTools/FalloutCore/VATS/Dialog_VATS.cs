@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 namespace FCP.Core.VATS;
 
@@ -51,7 +51,6 @@ public class Dialog_VATS(Verb_AbilityVATS verb, LocalTargetInfo target, IWindowD
         {
             using (TextBlock.Default())
             {
-                // Fetch the list of parts to show in the UI
                 List<BodyPartRecord> parts = target
                     .Pawn.health.hediffSet.GetNotMissingParts()
                     .Where(p => p.def == target.Pawn.def.race.body.corePart.def || 
@@ -98,7 +97,6 @@ public class Dialog_VATS(Verb_AbilityVATS verb, LocalTargetInfo target, IWindowD
                         continue;
                     }
                     
-                    // call back to the verb to actually do the VATS attack
                     verb.VATS_Selection(target, parts[i], partAccuracy, shotReport);
                     Find.TickManager.CurTimeSpeed = TimeSpeed.Normal;
                     Close();

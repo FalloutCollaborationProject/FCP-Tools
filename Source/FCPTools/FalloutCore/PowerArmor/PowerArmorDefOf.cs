@@ -1,4 +1,3 @@
-// ReSharper disable InconsistentNaming
 namespace FCP.Core.PowerArmor;
 
 [DefOf]

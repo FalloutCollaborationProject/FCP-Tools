@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Legendary Weapon Reward __________-->
+
+    <ThingSetMakerDef MayRequire="Ludeon.RimWorld.Royalty">
+        <defName>FCP_Reward_LegendaryWeapon</defName>
+        <root Class="ThingSetMaker_Sum">
+            <resolveInOrder>true</resolveInOrder>
+            <options>
+                <li>
+                    <thingSetMaker Class="ThingSetMaker_UniqueWeapon" />
+                </li>
+            </options>
+        </root>
+    </ThingSetMakerDef>
+
+</Defs>

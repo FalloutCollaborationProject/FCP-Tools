@@ -8,7 +8,7 @@ public class WeaponRequirement_AnyApparel : WeaponRequirement
     {
         if (!requiredApparel.Any())
             return true;
-        
+
         foreach (Apparel apparel in pawn.apparel.WornApparel)
         {
             if (requiredApparel.Contains(apparel.def))

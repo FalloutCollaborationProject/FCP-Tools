@@ -26,8 +26,8 @@
 	<FCP_Settings_Info_ItemRarity.Desc>A handful of items carry a rarity tier, shown as a colored name in the inspect panel. White is Common, blue is Rare, gold is Unique. Not limited to weapons.</FCP_Settings_Info_ItemRarity.Desc>
 	<FCP_Settings_Info_Legendary.Title>Legendary Weapons</FCP_Settings_Info_Legendary.Title>
 	<FCP_Settings_Info_Legendary.Desc>Some weapons roll a legendary prefix on top of their normal stats, giving them an actual combat perk instead of just bigger numbers. Basically Fallout 4's legendary system.</FCP_Settings_Info_Legendary.Desc>
-	<FCP_Settings_Info_HeavyWeapons.Title>Heavy Weapon Ammo Packs</FCP_Settings_Info_HeavyWeapons.Title>
-	<FCP_Settings_Info_HeavyWeapons.Desc>Miniguns and other belt-fed weapons pull ammo from a backpack instead of a magazine. Run dry and you're reloading a pack, not swapping a clip, so keep it topped up before the fight starts.</FCP_Settings_Info_HeavyWeapons.Desc>
+	<FCP_Settings_Info_HeavyWeapons.Title>Heavy Weapons</FCP_Settings_Info_HeavyWeapons.Title>
+	<FCP_Settings_Info_HeavyWeapons.Desc>Miniguns and other belt-fed heavy weapons don't take ammo or need reloading, they fire like any other gun with a warmup and cooldown between shots. The backpack you see on a pawn carrying one is just a visual, not a fuel source. The real restriction is power armor: these weapons won't equip on a pawn who isn't already wearing a suit.</FCP_Settings_Info_HeavyWeapons.Desc>
 	<FCP_Settings_Info_Homing.Title>Homing &amp; Explosive Projectiles</FCP_Settings_Info_Homing.Title>
 	<FCP_Settings_Info_Homing.Desc>Rockets, grenades, and some energy weapons don't act like a normal RimWorld bullet. A few track their target, others scatter shrapnel or leave scorch marks where they land.</FCP_Settings_Info_Homing.Desc>
 	<FCP_Settings_Info_LaserWeapons.Title>Beam Weapons</FCP_Settings_Info_LaserWeapons.Title>
@@ -37,7 +37,7 @@
 
 	<FCP_Settings_Info_Group_PowerArmor.Title>Power Armor &amp; Robots</FCP_Settings_Info_Group_PowerArmor.Title>
 	<FCP_Settings_Info_PowerArmor.Title>Power Armor Frames &amp; Stations</FCP_Settings_Info_PowerArmor.Title>
-	<FCP_Settings_Info_PowerArmor.Desc>Power armor isn't one suit you throw on. It's a frame you climb into at a power armor station, and other armor pieces attach to it, with a fusion core needed to actually run it. Before a colonist can wear one at all they need Power Armor Training, which comes from a training pod you get through a quest, not from the frame itself. A handful of heavy weapons, like miniguns and the K9000 Cyberdog Gun, won't equip unless power armor is already worn, and wearing a frame blocks fine work like cooking, crafting, and art since the gloves aren't built for it.</FCP_Settings_Info_PowerArmor.Desc>
+	<FCP_Settings_Info_PowerArmor.Desc>Power armor isn't one suit you throw on. It's a frame you climb into at a power armor station, and other armor pieces attach to it, with a fusion core needed to actually run it. Before a colonist can wear one at all they need Power Armor Training, which comes from a training pod you get through a quest, not from the frame itself. A handful of heavy weapons, like miniguns and the K9000 Cyberdog Gun, won't equip unless power armor is already worn. Wearing it blocks most work that needs bare hands or real attention: growing, smithing, cooking, art, tailoring, crafting, research, doctoring, and animal handling are all off the table while suited up. It also locks a pawn out of sleeping outright, and if something forces them into bed anyway, they'll strip the suit off first rather than sleep in it. The frame's hydraulics mean a pawn missing one or both legs moves at full speed while wearing it, same as anyone else, but that stops the moment the fusion core runs dry: an empty suit goes dead weight and drags both moving and manipulation down hard until it's refueled.</FCP_Settings_Info_PowerArmor.Desc>
 	<FCP_Settings_Info_Robotics.Title>Robotic Companions</FCP_Settings_Info_Robotics.Title>
 	<FCP_Settings_Info_Robotics.Desc>Protectrons, Mister Handies, and other robots can join the colony and work or fight alongside everyone else. Basically animals that happen to be made of scrap metal instead of fur.</FCP_Settings_Info_Robotics.Desc>
 	<FCP_Settings_Info_Cyberdogs.Title>Cyberdog Surgery</FCP_Settings_Info_Cyberdogs.Title>
@@ -96,6 +96,26 @@
 	<FCP_Settings_Info_CustomQuests.Desc>Beyond the usual text-swapped fetch quest, there are original questlines. Defending or rescuing survivors at a Vertibird crash site, recovering captured animals, talking a robot or unique character into joining you, running supply deliveries for a faction you're enlisted with.</FCP_Settings_Info_CustomQuests.Desc>
 	<FCP_Settings_Info_Gauntlet.Title>Large-Scale Ambush Events</FCP_Settings_Info_Gauntlet.Title>
 	<FCP_Settings_Info_Gauntlet.Desc>A handful of events throw a long, sustained wave of enemies at you instead of one raid and done. Treat it like a siege you need to prep for, not something you improvise through.</FCP_Settings_Info_Gauntlet.Desc>
+	<FCP_Settings_Info_GOATExam.Title>The G.O.A.T. Exam</FCP_Settings_Info_GOATExam.Title>
+	<FCP_Settings_Info_GOATExam.Desc>Scenarios that include it put every starting colonist through a Vault 101-style aptitude test at game start. Whichever skill their answers lean toward the hardest gets a passion bump and a shot of experience, and the result also rolls a themed personality trait tied to that skill and quietly drops the passion on some other skill they already had, so it's a real tradeoff and not just a free stat boost.</FCP_Settings_Info_GOATExam.Desc>
+
+	<FCP_Settings_Info_Group_Ranks.Title>Ranks &amp; Chain of Command</FCP_Settings_Info_Group_Ranks.Title>
+	<FCP_Settings_Info_RankOverview.Title>Faction Rank Tracks</FCP_Settings_Info_RankOverview.Title>
+	<FCP_Settings_Info_RankOverview.Desc>Enlist with a faction that runs its own chain of command (Brotherhood of Steel, Caesar's Legion, NCR, the Enclave, Children of Atom, and others) and enlisted colonists can climb an actual rank ladder instead of enlistment just being a paycheck. Ranks tie into Royalty titles and Ideology roles where those DLCs are active, so a promotion can also hand out an official title or assign an ideoligion role on its own. The ranks button at the bottom of the screen is where you manage all of it.</FCP_Settings_Info_RankOverview.Desc>
+	<FCP_Settings_Info_RankPromotion.Title>Promotion &amp; Branching Paths</FCP_Settings_Info_RankPromotion.Title>
+	<FCP_Settings_Info_RankPromotion.Desc>Each rank has its own requirements: time served, skill thresholds, squires trained, missions completed. Meet them and a track with only one next rank promotes on its own, but a track that forks, like an officer path splitting from a scholarly or religious one, waits for you to pick a direction from the Personnel tab. Falling out of good standing with a faction suspends that rank's perks until you're back in their favor, without wiping out the progress itself.</FCP_Settings_Info_RankPromotion.Desc>
+	<FCP_Settings_Info_RankTraining.Title>Training, Drilling &amp; Mentors</FCP_Settings_Info_RankTraining.Title>
+	<FCP_Settings_Info_RankTraining.Desc>Assign a senior colonist as a mentor and a junior one trains under them automatically, picking up skill experience and watching them work in spare time. Ranked colonists can also drill together if they're on a combat path, or study together if they're on a scholarly one, through a gizmo on the initiating colonist. Once a day, pick a partner and both colonists stop, stand a couple tiles apart, draw their gear if it's a drill, and put in a session together.</FCP_Settings_Info_RankTraining.Desc>
+	<FCP_Settings_Info_RankDiscipline.Title>Inspections &amp; Punishment Detail</FCP_Settings_Info_RankDiscipline.Title>
+	<FCP_Settings_Info_RankDiscipline.Desc>Officers and NCOs on a combat rank can inspect a lower-ranked colonist's weapon and armor condition. Well-kept gear earns a commendation, neglected gear earns a reprimand, and either way the inspected colonist draws their weapon and stands for it. The same officers can sentence a subordinate to a stretch of manual labor as punishment instead, which sours their mood but leaves their rank untouched. Both only apply to colonists actually on a combat-flavored rank, never a scholarly or administrative one.</FCP_Settings_Info_RankDiscipline.Desc>
+	<FCP_Settings_Info_RankCommand.Title>Rally &amp; Fall In</FCP_Settings_Info_RankCommand.Title>
+	<FCP_Settings_Info_RankCommand.Desc>The top rank of a track can Rally every combat-ranked member of the faction on the map with a burst of speed and combat effectiveness, or call Fall In to march everyone into formation behind them, up to four ranks deep, holding there until Dismissed. Both are gizmos on the commanding colonist, and both sit on a cooldown so they can't be spammed.</FCP_Settings_Info_RankCommand.Desc>
+	<FCP_Settings_Info_RankExpeditions.Title>Expeditions</FCP_Settings_Info_RankExpeditions.Title>
+	<FCP_Settings_Info_RankExpeditions.Desc>Higher ranks unlock expeditions: a colonist walks off the map edge and comes back days later with loot, skill experience, and sometimes a nearby site revealed. Outcomes scale with the colonist's own skill and the mission's danger, so a green colonist sent on a hard mission risks coming back injured, missing a piece of gear, or busted down a rank, while a skilled one on an easy mission usually comes home clean with some bonus scavenged loot on top.</FCP_Settings_Info_RankExpeditions.Desc>
+	<FCP_Settings_Info_RankRoster.Title>The Ranks Tab</FCP_Settings_Info_RankRoster.Title>
+	<FCP_Settings_Info_RankRoster.Desc>The ranks button at the bottom of the screen opens a dedicated Personnel, Chain of Command, and Service Log window: who's enrolled and their current rank, a family-tree view of who trained whom, and a running log of promotions, demotions, and other rank history across the whole colony.</FCP_Settings_Info_RankRoster.Desc>
+	<FCP_Settings_Info_RankDevTools.Title>Developer Tools</FCP_Settings_Info_RankDevTools.Title>
+	<FCP_Settings_Info_RankDevTools.Desc>With Developer Mode on, the ranks tab gets red DEV buttons to force a promotion or enrollment that skips the normal requirements, and to force an away colonist back from their expedition right away. These are for testing, not meant for normal play.</FCP_Settings_Info_RankDevTools.Desc>
 
 	<FCP_Settings_Info_Group_World.Title>World, Tech &amp; Comfort</FCP_Settings_Info_Group_World.Title>
 	<FCP_Settings_Info_Holotapes.Title>Holotapes &amp; Pip-Boy</FCP_Settings_Info_Holotapes.Title>
@@ -112,6 +132,8 @@
 	<FCP_Settings_Info_Tents.Desc>Tents are a lightweight, portable place to sleep for caravanning colonists or anyone without a proper bed yet. Better than the dirt, not as good as a real room.</FCP_Settings_Info_Tents.Desc>
 	<FCP_Settings_Info_PocketMaps.Title>Pocket Dimension Maps</FCP_Settings_Info_PocketMaps.Title>
 	<FCP_Settings_Info_PocketMaps.Desc>Certain quests and items drop you into a separate, self-contained map, like a vault or an Oasis-style pocket dimension, cut off from the main world map until you're done there.</FCP_Settings_Info_PocketMaps.Desc>
+	<FCP_Settings_Info_VaultDoor.Title>Rolling Vault Doors</FCP_Settings_Info_VaultDoor.Title>
+	<FCP_Settings_Info_VaultDoor.Desc>The big rotating vault door is slow and heavy on purpose: it grinds open on its own timer with a mechanical groan and a burst of steam, not an instant swing like a normal door. It also won't budge for a colonist who isn't wearing a Pip-Boy, so stumbling onto a sealed vault out in the wasteland doesn't mean you're getting inside right away.</FCP_Settings_Info_VaultDoor.Desc>
 
 	<FCP_Settings_Info_Group_Misc.Title>Other Changes</FCP_Settings_Info_Group_Misc.Title>
 	<FCP_Settings_Info_GearRestrictions.Title>Weapon &amp; Gear Restrictions</FCP_Settings_Info_GearRestrictions.Title>
@@ -276,6 +298,33 @@
 
 	<FCP_ScenPart_StartEnlisted>start already enlisted with {0}</FCP_ScenPart_StartEnlisted>
 
+	<!-- G.O.A.T. Exam ScenPart -->
+
+	<FCP_ScenPart_GOATExam>take the G.O.A.T. exam</FCP_ScenPart_GOATExam>
+	<FCP_GOATExam_Title>{0}'s G.O.A.T. Exam</FCP_GOATExam_Title>
+	<FCP_GOATExam_Result>Based on {0}'s answers, the aptitude test suggests a career in {1}.</FCP_GOATExam_Result>
+	<FCP_GOATExam_ResultNone>{0} answered the test so evenly that no clear aptitude stood out.</FCP_GOATExam_ResultNone>
+	<FCP_GOATExam_ResultTrait>The test also flags a personality trait: {0} is {1}.</FCP_GOATExam_ResultTrait>
+	<FCP_GOATExam_ResultTradeoff>All that focus came at a cost - {0} has drifted on {1}, and it shows a little less passion for it now.</FCP_GOATExam_ResultTradeoff>
+	<FCP_GOATExam_Skip>Skip Exam</FCP_GOATExam_Skip>
+
+	<!-- Squatters -->
+
+	<FCP_Squatters_LetStay>Let them stay</FCP_Squatters_LetStay>
+	<FCP_Squatters_TurnAway>Turn them away</FCP_Squatters_TurnAway>
+	<FCP_Squatters_DriveOff>Drive them off</FCP_Squatters_DriveOff>
+	<FCP_Squatters_LetStay_Message>{0} squatter(s) have joined the colony.</FCP_Squatters_LetStay_Message>
+
+	<!-- Notoriety -->
+
+	<FCP_Alert_Notoriety_Label>Wasteland Notoriety</FCP_Alert_Notoriety_Label>
+	<FCP_Alert_Notoriety_Desc>Word has spread about what this colony has been doing to people. Bounty hunters may come looking for a payday.</FCP_Alert_Notoriety_Desc>
+
+	<!-- Explosive Collar -->
+
+	<FCP_Collar_Detonate>Detonate collar</FCP_Collar_Detonate>
+	<FCP_Collar_Detonate_Desc>Set off the explosive charge in this slave's collar, killing them instantly. There is no undoing this.</FCP_Collar_Detonate_Desc>
+
 	<!-- Goodwill Recipe -->
 
 	<GoodwillUnmet>not enough goodwill with {0}, require {1} minimum</GoodwillUnmet>
@@ -374,5 +423,132 @@
 	<FCP_Radio_TraderBusy>{0} is already out and about</FCP_Radio_TraderBusy>
 	<FCP_Radio_TraderArrivedTitle>Trader Arrived</FCP_Radio_TraderArrivedTitle>
 	<FCP_Radio_TraderArrivedText>{0} answered the call over the radio and has arrived to trade, courtesy of {1}.</FCP_Radio_TraderArrivedText>
+
+	<!-- Ranks -->
+
+	<FCP_Rank_TerminalTitle>Rank Terminal</FCP_Rank_TerminalTitle>
+	<FCP_Rank_Unranked>— Unranked —</FCP_Rank_Unranked>
+	<FCP_Rank_NoPawnSelected>Select a colonist to view their rank.</FCP_Rank_NoPawnSelected>
+	<FCP_Rank_NotEnrolled>No service record on file.</FCP_Rank_NotEnrolled>
+	<FCP_Rank_EnrollIn>Enroll: {0}</FCP_Rank_EnrollIn>
+	<FCP_Rank_RequiresEnlistment>{0}: enlist with them first</FCP_Rank_RequiresEnlistment>
+	<FCP_Rank_DaysInRank>Time in rank: {0}d</FCP_Rank_DaysInRank>
+	<FCP_Rank_Suspended_Title>Rank Suspended</FCP_Rank_Suspended_Title>
+	<FCP_Rank_Suspended_Text>No longer enlisted with the faction that grants this rank. Standing benefits are suspended until you re-enlist with {0}. Progress is not lost.</FCP_Rank_Suspended_Text>
+	<FCP_Rank_Mentor>Mentor:</FCP_Rank_Mentor>
+	<FCP_Rank_NoMentor>None</FCP_Rank_NoMentor>
+	<FCP_Rank_ChoosePath>Choose a path</FCP_Rank_ChoosePath>
+	<FCP_Rank_NextRank>Next rank</FCP_Rank_NextRank>
+	<FCP_Rank_Req_Days>Time in rank: {0}/{1} days</FCP_Rank_Req_Days>
+	<FCP_Rank_Req_SquiresTrained>Trainees mentored: {0}/{1}</FCP_Rank_Req_SquiresTrained>
+	<FCP_Rank_Req_MissionsCompleted>Missions completed: {0}/{1}</FCP_Rank_Req_MissionsCompleted>
+	<FCP_Rank_Promote>Promote</FCP_Rank_Promote>
+	<FCP_Rank_Promoted_Title>Promoted: {0}</FCP_Rank_Promoted_Title>
+	<FCP_Rank_Promoted_Text>{0} has been promoted to {1}.</FCP_Rank_Promoted_Text>
+	<FCP_Rank_TrainingComplete>{0} finished a training session with {1}.</FCP_Rank_TrainingComplete>
+	<FCP_Rank_DrillingComplete>{0} and {1} finished drilling.</FCP_Rank_DrillingComplete>
+	<FCP_Rank_StudyingComplete>{0} and {1} finished studying.</FCP_Rank_StudyingComplete>
+	<FCP_Rank_DrillGizmo>Drill with...</FCP_Rank_DrillGizmo>
+	<FCP_Rank_DrillGizmoDesc>Drill with any colonist. Both stop and draw their weapons for the session. Both gain skill XP. Once per day.</FCP_Rank_DrillGizmoDesc>
+	<FCP_Rank_StudyGizmo>Study with...</FCP_Rank_StudyGizmo>
+	<FCP_Rank_StudyGizmoDesc>Study with another scholarly-ranked colonist. Both gain skill XP. Once per day.</FCP_Rank_StudyGizmoDesc>
+	<FCP_Rank_SessionOnCooldown>Already done today</FCP_Rank_SessionOnCooldown>
+	<FCP_Rank_SendOnExpedition>Send on expedition: {0}</FCP_Rank_SendOnExpedition>
+	<FCP_Rank_OnExpedition>Away on expedition: {0}</FCP_Rank_OnExpedition>
+	<FCP_Rank_ExpeditionReturnsIn>Returns in {0}d</FCP_Rank_ExpeditionReturnsIn>
+	<FCP_Rank_Expedition_ReturnTitle>{0} has returned</FCP_Rank_Expedition_ReturnTitle>
+	<FCP_Rank_Expedition_FailTitle>Mission failed: {0}</FCP_Rank_Expedition_FailTitle>
+	<FCP_Rank_Expedition_FailText>{0}'s {1} went badly and ended in a demotion.</FCP_Rank_Expedition_FailText>
+	<FCP_Rank_Expedition_Injured>{0} came back from their mission injured.</FCP_Rank_Expedition_Injured>
+	<FCP_Rank_Expedition_GearLost>{0} lost their {1} out in the field.</FCP_Rank_Expedition_GearLost>
+	<FCP_Rank_Expedition_NoExit>{0} can't find a way off the map to depart on the expedition.</FCP_Rank_Expedition_NoExit>
+	<FCP_Rank_Expedition_DepartureInterrupted>{0}'s departure was interrupted before they could leave.</FCP_Rank_Expedition_DepartureInterrupted>
+	<FCP_Rank_DevForceReturn>DEV: Force Return</FCP_Rank_DevForceReturn>
+	<FCP_Rank_Demoted_Title>Demoted: {0}</FCP_Rank_Demoted_Title>
+	<FCP_Rank_Demoted_Expedition>{0} was busted down from {1} to {2} after a botched mission.</FCP_Rank_Demoted_Expedition>
+	<FCP_Rank_Demoted_KickedOut>{0} was busted down from {1} to {2} after the faction cut ties with the colony.</FCP_Rank_Demoted_KickedOut>
+	<FCP_Rank_History_Enrolled>Enrolled as {0}.</FCP_Rank_History_Enrolled>
+	<FCP_Rank_MentorDown_Message>{0}'s mentor, {1}, has fallen! {0} surges with a squire's duty.</FCP_Rank_MentorDown_Message>
+	<FCP_Rank_History_MentorDown>Mentor {0} went down in battle. Surged with a squire's duty.</FCP_Rank_History_MentorDown>
+	<FCP_Rank_History_MentorDied>Mentor {0} died in battle.</FCP_Rank_History_MentorDied>
+	<FCP_Rank_RallyGizmo>Rally</FCP_Rank_RallyGizmo>
+	<FCP_Rank_RallyGizmoDesc>Rally every member of {0} on this map with a burst of speed and morale. Once every few days.</FCP_Rank_RallyGizmoDesc>
+	<FCP_Rank_Rally_Title>{0} rallies {1}</FCP_Rank_Rally_Title>
+	<FCP_Rank_Rally_Text>{0} raises a call to arms, and every member of {1} on the map feels its pull.</FCP_Rank_Rally_Text>
+	<FCP_Rank_History_Rallied>Rallied {0}.</FCP_Rank_History_Rallied>
+	<FCP_Rank_FormUpGizmo>Fall In</FCP_Rank_FormUpGizmo>
+	<FCP_Rank_FormUpGizmoDesc>Order {0} to form up behind you in ranks, up to four deep, interrupting whatever they're doing. They'll hold formation until dismissed.</FCP_Rank_FormUpGizmoDesc>
+	<FCP_Rank_FormUp_Message>{0} calls {1} to fall in.</FCP_Rank_FormUp_Message>
+	<FCP_Rank_History_FormedUp>Called {0} to fall in.</FCP_Rank_History_FormedUp>
+	<FCP_Rank_DismissGizmo>Dismiss</FCP_Rank_DismissGizmo>
+	<FCP_Rank_DismissGizmoDesc>Dismiss {0} from formation, letting them return to what they were doing.</FCP_Rank_DismissGizmoDesc>
+	<FCP_Rank_Dismiss_Message>{0} dismisses {1}.</FCP_Rank_Dismiss_Message>
+	<FCP_Rank_History_GearMaintenance>Serviced {0}'s arms and armor at the station.</FCP_Rank_History_GearMaintenance>
+	<FCP_Rank_InspectGizmo>Inspect...</FCP_Rank_InspectGizmo>
+	<FCP_Rank_InspectGizmoDesc>Inspect a lower-ranked colonist's weapon and armor condition. They'll draw their weapon for the review. Well-kept gear earns a commendation, neglected gear earns a reprimand. Once per day per colonist.</FCP_Rank_InspectGizmoDesc>
+	<FCP_Rank_InspectionComplete_Commended>{0} commends {1} for keeping their gear in top condition.</FCP_Rank_InspectionComplete_Commended>
+	<FCP_Rank_InspectionComplete_Reprimanded>{0} reprimands {1} for the poor state of their gear.</FCP_Rank_InspectionComplete_Reprimanded>
+	<FCP_Rank_InspectionComplete_Passed>{0} looks {1} over. Nothing to report either way.</FCP_Rank_InspectionComplete_Passed>
+	<FCP_Rank_InspectionComplete_NoGear>{0} looks {1} over, but there's no weapon or armor to inspect.</FCP_Rank_InspectionComplete_NoGear>
+	<FCP_Rank_History_Inspected>Inspected {0}.</FCP_Rank_History_Inspected>
+	<FCP_Rank_PunishGizmo>Assign Punishment Detail...</FCP_Rank_PunishGizmo>
+	<FCP_Rank_PunishGizmoDesc>Sentence a lower-ranked colonist to a stretch of hard labor, souring their mood. Once per day per colonist.</FCP_Rank_PunishGizmoDesc>
+	<FCP_Rank_PunishmentAssigned>{0} assigns {1} to punishment detail.</FCP_Rank_PunishmentAssigned>
+	<FCP_Rank_PunishmentComplete>{0} finished their punishment detail.</FCP_Rank_PunishmentComplete>
+	<FCP_Rank_History_Punished>Assigned {0} to punishment detail.</FCP_Rank_History_Punished>
+	<FCP_Rank_Tab_Order>Personnel</FCP_Rank_Tab_Order>
+	<FCP_Rank_Tab_Lineage>Chain of Command</FCP_Rank_Tab_Lineage>
+	<FCP_Rank_Tab_Records>Service Log</FCP_Rank_Tab_Records>
+	<FCP_Rank_Lineage_Empty>No lines of succession on file yet. Assign a mentor to start one.</FCP_Rank_Lineage_Empty>
+	<FCP_Rank_Lineage_Founder>{0}, {1} (no mentor on record)</FCP_Rank_Lineage_Founder>
+	<FCP_Rank_Lineage_Trained>{0}, {1} (trained by {2})</FCP_Rank_Lineage_Trained>
+	<FCP_Rank_Lineage_FolderCount>{0} notable, {1} enlisted</FCP_Rank_Lineage_FolderCount>
+	<FCP_Rank_Lineage_Leader>Leader</FCP_Rank_Lineage_Leader>
+	<FCP_Rank_Lineage_Independent>Independent</FCP_Rank_Lineage_Independent>
+	<FCP_Rank_Records_Empty>No entries logged yet.</FCP_Rank_Records_Empty>
+	<FCP_Rank_Records_Entry>{0}d ago, {1}: {2}</FCP_Rank_Records_Entry>
+	<FCP_Rank_DevForcePromote>DEV: Force Promote</FCP_Rank_DevForcePromote>
+	<FCP_Rank_DevForceEnroll>DEV: Force Enroll in {0}</FCP_Rank_DevForceEnroll>
+
+	<!-- Enlist Terminal -->
+
+	<FCP_Enlist_TerminalTitle>{0} Terminal</FCP_Enlist_TerminalTitle>
+	<FCP_Enlist_OpenTerminal>Open Terminal: {0}</FCP_Enlist_OpenTerminal>
+	<FCP_Enlist_OpenTerminalDesc>Open the {0} terminal to manage missions, salary, supplies, and standing.</FCP_Enlist_OpenTerminalDesc>
+	<FCP_Enlist_Tab_Overview>Overview</FCP_Enlist_Tab_Overview>
+	<FCP_Enlist_Tab_Missions>Missions</FCP_Enlist_Tab_Missions>
+	<FCP_Enlist_Tab_Trade>Trade &amp; Supply</FCP_Enlist_Tab_Trade>
+	<FCP_Enlist_Tab_Work>Work Detail</FCP_Enlist_Tab_Work>
+	<FCP_Enlist_Tab_Command>Command</FCP_Enlist_Tab_Command>
+	<FCP_Enlist_NotEnlisted>Not enlisted with {0}.</FCP_Enlist_NotEnlisted>
+	<FCP_Enlist_Goodwill>Standing: {0}</FCP_Enlist_Goodwill>
+	<FCP_Enlist_Promotion>Promotion</FCP_Enlist_Promotion>
+	<FCP_Enlist_NotAvailable>Not available.</FCP_Enlist_NotAvailable>
+	<FCP_Enlist_NoMissions>No missions on file right now.</FCP_Enlist_NoMissions>
+	<FCP_Enlist_BountyInProgress>in progress</FCP_Enlist_BountyInProgress>
+	<FCP_Enlist_Salary>Salary</FCP_Enlist_Salary>
+	<FCP_Enlist_Provisions>Provisions</FCP_Enlist_Provisions>
+	<FCP_Enlist_PromotedProvisions>Provisions (Promoted)</FCP_Enlist_PromotedProvisions>
+	<FCP_Enlist_Storage>Storage</FCP_Enlist_Storage>
+	<FCP_Enlist_Traders>Traders</FCP_Enlist_Traders>
+	<FCP_Enlist_MechSerum>Field Repair</FCP_Enlist_MechSerum>
+	<FCP_Enlist_DeliveryQuests>Delivery Board</FCP_Enlist_DeliveryQuests>
+	<FCP_Enlist_WorkDetails>Work Details</FCP_Enlist_WorkDetails>
+	<FCP_Enlist_AbilityTraining>Ability Training</FCP_Enlist_AbilityTraining>
+
+	<!-- GECK -->
+	<FCP_GECK_Activate>Activate G.E.C.K.</FCP_GECK_Activate>
+	<FCP_GECK_ActivateDesc>Trigger the Garden of Eden Creation Kit, converting the barren ground for a wide radius around it into rich, fertile soil. The device is consumed in the process and cannot be reused.</FCP_GECK_ActivateDesc>
+	<FCP_GECK_ConfirmActivate>This will consume the G.E.C.K. permanently, reshaping the earth for a large area around it into rich soil. There is no undoing this once it starts. Proceed?</FCP_GECK_ConfirmActivate>
+	<FCP_GECK_LetterLabel>G.E.C.K. Activated</FCP_GECK_LetterLabel>
+	<FCP_GECK_LetterText>The Garden of Eden Creation Kit has discharged. Ground for a wide radius around the device has been converted to rich, fertile soil, ready for planting. The kit itself is spent, its casing left dark and empty.</FCP_GECK_LetterText>
+
+	<!-- Abolitionists -->
+	<FCP_Abolitionist_ReleaseLetterLabel>The Abolitionists Are Watching</FCP_Abolitionist_ReleaseLetterLabel>
+	<FCP_Abolitionist_ReleaseLetterText>Word travels fast in the wasteland. Freeing {PAWN_nameDef} hasn't gone unnoticed - a runner left a small payment nearby, along with a message: the Abolitionists don't forget who cuts the chains.</FCP_Abolitionist_ReleaseLetterText>
+
+	<!-- Scenario Start Letters -->
+	<FCP_ScenPart_TerminalStartDialog>Opening transmission</FCP_ScenPart_TerminalStartDialog>
+	<FCP_TerminalLetter_Continue>Continue</FCP_TerminalLetter_Continue>
 
 </LanguageData>

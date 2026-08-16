@@ -10,7 +10,7 @@ namespace FCP.Core.Holotapes
         public string author;
         public SkillDef skillToTeach;
         public float xpAmount;
-        
+
         public override IEnumerable<string> ConfigErrors()
         {
             foreach (var error in base.ConfigErrors())

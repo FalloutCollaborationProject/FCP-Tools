@@ -35,11 +35,13 @@ namespace FCP.Core.Robotics
             var listRect = new Rect(0f, 45f, inRect.width, inRect.height - 90f);
             DrawOptionList(listRect);
 
+            GUI.color = TerminalColors.PrimaryColor;
             var closeRect = new Rect(inRect.width - 100f, inRect.height - 40f, 90f, 35f);
             if (Widgets.ButtonText(closeRect, "Close"))
             {
                 Close();
             }
+            GUI.color = Color.white;
         }
 
         private void DrawOptionList(Rect rect)
@@ -71,7 +73,9 @@ namespace FCP.Core.Robotics
             }
 
             var viewRect = new Rect(0f, 0f, rect.width - 20f, totalHeight);
+            GUI.color = TerminalColors.PrimaryColor;
             Widgets.BeginScrollView(rect, ref scrollPosition, viewRect);
+            GUI.color = Color.white;
 
             float y = 0f;
             lastCategory = null;
@@ -126,10 +130,12 @@ namespace FCP.Core.Robotics
                 return;
             }
 
+            GUI.color = TerminalColors.PrimaryColor;
             if (Widgets.ButtonText(buttonRect, "FCP_RobotUpgradeDialog_Install".Translate()))
             {
                 option.install();
             }
+            GUI.color = Color.white;
         }
 
         private void DrawCost(Rect rect, List<ThingDefCountClass> cost)

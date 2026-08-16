@@ -262,4 +262,121 @@
         </stages>
     </HediffDef>
 
+    <!--_____ Rank Hediffs _____-->
+
+    <!-- Squire's Duty -->
+
+    <HediffDef>
+        <defName>FCP_Hediff_MentorDown_Duty</defName>
+        <hediffClass>HediffWithComps</hediffClass>
+        <label>squire's duty</label>
+        <description>Their mentor has fallen in the field. A surge of adrenaline and duty drives them to fight on.</description>
+        <isBad>false</isBad>
+        <tendable>false</tendable>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <maxSeverity>1</maxSeverity>
+        <initialSeverity>1</initialSeverity>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>15000</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MoveSpeed>0.5</MoveSpeed>
+                    <MeleeDodgeChance>0.1</MeleeDodgeChance>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!-- Well-Maintained Gear -->
+
+    <HediffDef>
+        <defName>FCP_Hediff_MentorWellMaintained</defName>
+        <hediffClass>HediffWithComps</hediffClass>
+        <label>well-attended gear</label>
+        <description>Their squire has spent the day servicing their arms and armor. Everything sits a little tighter, a little sharper.</description>
+        <isBad>false</isBad>
+        <tendable>false</tendable>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <maxSeverity>1</maxSeverity>
+        <initialSeverity>1</initialSeverity>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>60000</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MeleeHitChance>2</MeleeHitChance>
+                    <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+                    <ArmorRating_Sharp>0.03</ArmorRating_Sharp>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!-- Inspection Commended -->
+
+    <HediffDef>
+        <defName>FCP_Hediff_Inspection_Commended</defName>
+        <hediffClass>HediffWithComps</hediffClass>
+        <label>commended</label>
+        <description>Their kit passed inspection without a mark against it. The confidence shows.</description>
+        <isBad>false</isBad>
+        <tendable>false</tendable>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <maxSeverity>1</maxSeverity>
+        <initialSeverity>1</initialSeverity>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>60000</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <statOffsets>
+                    <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
+                    <MeleeHitChance>2</MeleeHitChance>
+                    <SocialImpact>0.05</SocialImpact>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!-- Inspection Reprimanded -->
+
+    <HediffDef>
+        <defName>FCP_Hediff_Inspection_Reprimanded</defName>
+        <hediffClass>HediffWithComps</hediffClass>
+        <label>reprimanded</label>
+        <description>Called out in front of the unit for gear that wasn't fit for service. Rattled and a little slower to react.</description>
+        <isBad>true</isBad>
+        <tendable>false</tendable>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <maxSeverity>1</maxSeverity>
+        <initialSeverity>1</initialSeverity>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>60000</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <statOffsets>
+                    <ShootingAccuracyPawn>-2</ShootingAccuracyPawn>
+                    <MeleeHitChance>-2</MeleeHitChance>
+                    <SocialImpact>-0.05</SocialImpact>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
 </Defs>

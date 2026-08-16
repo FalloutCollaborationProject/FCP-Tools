@@ -1,10 +1,9 @@
-﻿using Verse.AI;
+using Verse.AI;
 
 namespace Thek_BuildingArrivalMode
 {
     public class JobGiver_ExitMapPortal : ThinkNode_JobGiver
     {
-        // Most of this is copied from JobGiver_ExitMap
 
         protected bool forceCanDig;
         protected bool forceCanDigIfCantReachMapEdge;
@@ -14,15 +13,12 @@ namespace Thek_BuildingArrivalMode
         protected LocomotionUrgency defaultLocomotion;
         protected bool canBash;
 
-
         protected override Job TryGiveJob(Pawn pawn)
         {
             if (!pawn.CanReach(PawnsArrivalModeWorker_BuildingArrivalMode.modExtension.tileToSpawn, PathEndMode.OnCell, Danger.Unspecified))
             {
                 using PawnPath path = pawn.Map.pathFinder.FindPath(pawn.Position, PawnsArrivalModeWorker_BuildingArrivalMode.modExtension.tileToSpawn, TraverseParms.For(pawn, Danger.Deadly, TraverseMode.PassAllDestroyableThings));
-                // Tries to do a path passing through destructible things if it's faster
                 Thing thing = path.FirstBlockingBuilding(out IntVec3 cellBefore, pawn);
-                // And if it finds something that blocks that path it just destroys it
                 if (thing != null)
                 {
                     Job digThroughBlockage = DigUtility.PassBlockerJob(pawn, thing, cellBefore, true, true);
@@ -32,7 +28,6 @@ namespace Thek_BuildingArrivalMode
                     }
                 }
             }
-            // Uses the custom goto job to go to the cell where the raiders spawn from
             Job tryExit = JobMaker.MakeJob(JobDefOfs.Thek_GotoNoExitCellCheck, PawnsArrivalModeWorker_BuildingArrivalMode.modExtension.tileToSpawn);
             tryExit.exitMapOnArrival = true;
             tryExit.failIfCantJoinOrCreateCaravan = failIfCantJoinOrCreateCaravan;

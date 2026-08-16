@@ -38,7 +38,7 @@ namespace FCP.Core.JobDrivers
                     {
                         if (storage.TryStoreHolotape(Holotape))
                         {
-                            Messages.Message($"{pawn.LabelShort} inserted {Holotape.Label} into terminal.", 
+                            Messages.Message($"{pawn.LabelShort} inserted {Holotape.Label} into terminal.",
                                 Terminal, MessageTypeDefOf.TaskCompletion);
                         }
                     }

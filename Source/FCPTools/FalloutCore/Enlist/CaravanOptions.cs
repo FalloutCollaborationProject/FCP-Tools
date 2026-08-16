@@ -15,8 +15,8 @@ public class CaravanOptions : IExposable
 
 	public CaravanOptions()
 	{
-
 	}
+
 	public CaravanOptions(WorldObject worldObject)
 	{
 		curWorldObject = worldObject;

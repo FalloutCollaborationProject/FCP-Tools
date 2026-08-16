@@ -64,9 +64,9 @@ public class HediffComp_Stimpack : HediffComp
             }
         }
 
-        if (nextTickHeal > Current.Game.tickManager.TicksGame) 
+        if (nextTickHeal > Current.Game.tickManager.TicksGame)
             return;
-        
+
         RefreshTickWait();
         Hediff injury = null;
         foreach (Hediff hediff in Pawn.health.hediffSet.hediffs)
@@ -117,9 +117,9 @@ public class HediffComp_Stimpack : HediffComp
         else if(Props.HealMissingBodyParts)
         {
             var missingBodyParts = Pawn.health.hediffSet.GetMissingPartsCommonAncestors();
-            if (missingBodyParts.Count <= 0) 
+            if (missingBodyParts.Count <= 0)
                 return;
-            
+
             Hediff_MissingPart missing = missingBodyParts.First();
             Pawn.health.RemoveHediff(missing);
             Hediff toAdd = HediffMaker.MakeHediff(HediffDefOf.Cut, Pawn, missing.Part);

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <IncidentDef ParentName="DiseaseIncident">
+        <defName>FCP_Disease_NewPlague</defName>
+        <label>the new plague</label>
+        <diseaseIncident>FCP_Hediff_NewPlague</diseaseIncident>
+        <letterLabel>Disease: The New Plague</letterLabel>
+    </IncidentDef>
+
+    <IncidentDef ParentName="DiseaseIncident">
+        <defName>FCP_Disease_RadWorms</defName>
+        <label>rad worms</label>
+        <diseaseIncident>FCP_Hediff_RadWorms</diseaseIncident>
+        <letterLabel>Disease: Rad Worms</letterLabel>
+    </IncidentDef>
+
+</Defs>

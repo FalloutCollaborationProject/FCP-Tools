@@ -7,7 +7,7 @@ namespace FCP.PocketMaps
     {
         public int x;
         public int y;
-        
+
         public override int SeedPart => 928734;
 
         public override void Generate(Map map, GenStepParams parms)

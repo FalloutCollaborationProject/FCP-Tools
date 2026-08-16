@@ -25,8 +25,8 @@ public static class Projectile_Tick_Patch
                     __instance.SetDestination(newDest);
                 }
             }
-            
-            if (!__instance.Destroyed && comp.Props.lifetimeTicks > 0 && 
+
+            if (!__instance.Destroyed && comp.Props.lifetimeTicks > 0 &&
                 Find.TickManager.TicksGame - comp.launchTick > comp.Props.lifetimeTicks)
             {
                 Traverse.Create(__instance).Method("ImpactSomething").GetValue();

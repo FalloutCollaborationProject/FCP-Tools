@@ -1,6 +1,5 @@
 namespace FCP.Core.PowerArmor;
 
-// TODO look at moving this somewhere else
 [UsedImplicitly(ImplicitUseKindFlags.Assign, ImplicitUseTargetFlags.WithMembers)]
 public class CompProperties_ApparelRequirement : CompProperties
 {
@@ -22,7 +21,7 @@ public class CompApparelRequirement : ThingComp
         public const string AnyOfApparel = "FCP_ApparelRequirement.RequiresAnyOfApparel";
         public const string RequiresPowerArmorTraining = "FCP_ApparelRequirement.RequiresPowerArmorTraining";
     }
-    
+
     public CompProperties_ApparelRequirement Props => base.props as CompProperties_ApparelRequirement;
 
     public bool HasRequiredApparel(Pawn pawn)
@@ -40,9 +39,9 @@ public class CompApparelRequirement : ThingComp
         base.Notify_Unequipped(pawn);
         foreach (Apparel apparel in pawn.apparel.WornApparel.ToList())
         {
-            if (!pawn.apparel.WornApparel.Contains(apparel)) 
+            if (!pawn.apparel.WornApparel.Contains(apparel))
                 continue;
-                
+
             var comp = apparel.GetComp<CompApparelRequirement>();
             if (comp?.Props.requiredApparels != null && !comp.HasRequiredApparel(pawn))
             {
@@ -57,13 +56,13 @@ public class CompApparelRequirement : ThingComp
         {
             if (Props.requiredTrait == PowerArmorDefOf.FCP_Trait_Power_Armor_Trained)
                 return Keys.RequiresPowerArmorTraining.Translate();
-            
+
             return Keys.RequiresTrait.Translate(Props.requiredTrait.degreeDatas[0].label);
         }
         if (!HasRequiredApparel(pawn))
         {
-            return Props.requiredApparels.Count == 1 
-                ? Keys.RequiresApparel.Translate(Props.requiredApparels[0].label) 
+            return Props.requiredApparels.Count == 1
+                ? Keys.RequiresApparel.Translate(Props.requiredApparels[0].label)
                 : Keys.AnyOfApparel.Translate(Props.requiredApparels.Select(def => def.label).ToCommaListOr());
         }
 

@@ -6,7 +6,7 @@ namespace FCP.Core;
 [HarmonyPatch(typeof(CompTechprint), nameof(CompTechprint.CompFloatMenuOptions))]
 public static class CompTechprint_CompFloatMenuOptions_Patch
 {
-    public static IEnumerable<FloatMenuOption> Postfix(IEnumerable<FloatMenuOption> __result, 
+    public static IEnumerable<FloatMenuOption> Postfix(IEnumerable<FloatMenuOption> __result,
         CompTechprint __instance, Pawn selPawn)
     {
         var techprintCompProps = __instance.Props;
@@ -23,15 +23,14 @@ public static class CompTechprint_CompFloatMenuOptions_Patch
                 yield break;
             }
         }
-            
+
         foreach (var item in __result)
         {
             yield return item;
         }
     }
 
-
-    public static IEnumerable<FloatMenuOption> CompFloatMenuOptions(CompTechprint __instance, 
+    public static IEnumerable<FloatMenuOption> CompFloatMenuOptions(CompTechprint __instance,
         Pawn selPawn, List<ThingDef> requiredBenches)
     {
         var parent = __instance.parent;
@@ -66,7 +65,7 @@ public static class CompTechprint_CompFloatMenuOptions_Patch
         }
         HaulAIUtility.PawnCanAutomaticallyHaul(selPawn, parent, forced: true);
         Thing thing2 = GenClosest.ClosestThingReachable(selPawn.Position, selPawn.Map,
-            ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial), PathEndMode.InteractionCell, TraverseParms.For(selPawn, Danger.Some), 9999f, 
+            ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial), PathEndMode.InteractionCell, TraverseParms.For(selPawn, Danger.Some), 9999f,
             (Thing thing) => thing is Building_ResearchBench && requiredBenches.Contains(thing.def) && !thing.IsForbidden(selPawn) && selPawn.CanReserve(thing));
         Job job = null;
         if (thing2 != null)

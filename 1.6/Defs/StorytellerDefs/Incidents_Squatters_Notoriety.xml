@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Squatters __________-->
+
+    <LetterDef ParentName="CustomChoiceLetterBase">
+        <defName>FCP_Letter_Squatters</defName>
+        <color>(0.75, 0.75, 0.4)</color>
+        <letterClass>FCP.Core.ChoiceLetter_Squatters</letterClass>
+    </LetterDef>
+
+    <IncidentDef>
+        <defName>FCP_Incident_Squatters</defName>
+        <label>squatters</label>
+        <category>Misc</category>
+        <targetTags>
+            <li>Map_PlayerHome</li>
+        </targetTags>
+        <workerClass>FCP.Core.IncidentWorker_Squatters</workerClass>
+        <letterLabel>Squatters</letterLabel>
+        <letterText>A few wastelanders have wandered in and made themselves at home in one of your empty rooms. What do you want to do about them?</letterText>
+        <baseChance>1.0</baseChance>
+        <minRefireDays>15</minRefireDays>
+    </IncidentDef>
+
+    <!--__________ Bounty Hunters __________-->
+
+    <IncidentDef>
+        <defName>FCP_Incident_BountyHunters</defName>
+        <label>bounty hunters</label>
+        <category>ThreatBig</category>
+        <targetTags>
+            <li>Map_PlayerHome</li>
+        </targetTags>
+        <workerClass>FCP.Core.IncidentWorker_BountyHunters</workerClass>
+        <letterLabel>Bounty Hunters</letterLabel>
+        <letterText>Word of your colony's reputation has spread across the wasteland. A band of bounty hunters has come to collect.</letterText>
+        <baseChance>1.0</baseChance>
+        <minRefireDays>20</minRefireDays>
+        <pointsScaleable>true</pointsScaleable>
+    </IncidentDef>
+
+</Defs>

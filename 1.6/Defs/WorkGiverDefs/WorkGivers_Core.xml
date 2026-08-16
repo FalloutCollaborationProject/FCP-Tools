@@ -52,6 +52,19 @@
 		<prioritizeSustains>true</prioritizeSustains>
 	</WorkGiverDef>
 
+	<WorkGiverDef>
+		<defName>FCP_InstallTurretWeapon</defName>
+		<label>install turret weapon</label>
+		<giverClass>FCP.Core.Turrets.WorkGiver_InstallTurretWeapon</giverClass>
+		<workType>Construction</workType>
+		<verb>install</verb>
+		<gerund>installing</gerund>
+		<priorityInType>85</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+
 </Defs>
 
 

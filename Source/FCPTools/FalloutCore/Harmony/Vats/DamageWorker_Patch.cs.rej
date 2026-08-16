@@ -1,0 +1,23 @@
+--- Source/FCPTools/FalloutCore/Harmony/Vats/DamageWorker_Patch.cs
++++ Source/FCPTools/FalloutCore/Harmony/Vats/DamageWorker_Patch.cs
+@@ -1,4 +1,4 @@
+-﻿using HarmonyLib;
++using HarmonyLib;
+ 
+ namespace FCP.Core.Vats;
+ 
+@@ -20,14 +20,12 @@ public static class DamageWorker_Patch
+             return true;
+         }
+ 
+-        // Check if this attack is one launched from VATS
+         if (VATS_GameComponent.ActiveAttacks.TryGetValue(instigator, out VATS_GameComponent.VATSAction attack) && attack.Target == pawn)
+         {
+             HitPartRef(ref dinfo) = attack.Part;
+             AllowDamagePropagationRef(ref dinfo) = false;
+         }
+ 
+-        // Apply any applicable legendary effects
+         foreach (LegendaryWeaponTraitDef legendaryEffectDef in GetLegendaryEffectsFor(instigator))
+         {
+             legendaryEffectDef.LegendaryEffectWorker.Notify_ApplyToPawn(ref dinfo, pawn);

@@ -38,7 +38,12 @@ namespace FCP.Core
 
                 if (animal.playerSettings != null)
                 {
-                    animal.playerSettings.Master = __instance;
+                    if (animal.training != null && !animal.training.HasLearned(TrainableDefOf.Obedience))
+                    {
+                        animal.training.Train(TrainableDefOf.Obedience, __instance, complete: true);
+                    }
+
+                    animal.playerSettings.Master ??= __instance;
                 }
             }
         }

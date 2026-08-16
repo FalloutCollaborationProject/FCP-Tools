@@ -63,7 +63,6 @@ public class CompAnimalCage : CompRefuelable, IThingHolder, ISuspendableThingHol
         innerContainer = new ThingOwner<Thing>(this);
     }
 
-
     public void GetChildHolders(List<IThingHolder> outChildren)
     {
         ThingOwnerUtility.AppendThingHoldersFromThings(outChildren, GetDirectlyHeldThings());
@@ -120,10 +119,7 @@ public class CompAnimalCage : CompRefuelable, IThingHolder, ISuspendableThingHol
             }
         }
 
-
-            
     }
-
 
     public StorageSettings GetStoreSettings()
     {
@@ -205,7 +201,6 @@ public class CompAnimalCage : CompRefuelable, IThingHolder, ISuspendableThingHol
         return Occupant == null;
     }
 
-
     public override void PostExposeData()
     {
         base.PostExposeData();
@@ -222,7 +217,6 @@ public class CompAnimalCage : CompRefuelable, IThingHolder, ISuspendableThingHol
     {
         return base.CompInspectStringExtra();
     }
-
 
     public override void PostDraw()
     {
@@ -251,10 +245,8 @@ public class CompAnimalCage : CompRefuelable, IThingHolder, ISuspendableThingHol
                     Job job = JobMaker.MakeJob(jobDef, parent);
                     selPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
 
-
                 };
                 yield return FloatMenuUtility.DecoratePrioritizedTask(new FloatMenuOption(label, action), selPawn, parent);
-
 
                 string label1 = "FCP_TransferAnimalBetweenCages".Translate(pawn.Label);
                 Action action1 = delegate
@@ -326,7 +318,6 @@ public class CompAnimalCage : CompRefuelable, IThingHolder, ISuspendableThingHol
         innerContainer.TryDropAll(parent.InteractionCell, map, ThingPlaceMode.Near);
         contentsKnown = true;
            
-
     }
 
     public void EjectAndKillContents(Map map)

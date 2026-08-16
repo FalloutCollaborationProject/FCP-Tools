@@ -11,10 +11,8 @@ public class FCPCoreMod : Mod
     public static HarmonyLib.Harmony Harmony { get; } = new HarmonyLib.Harmony("FCP.Core.Patches");
     public static FCPSettings Settings { get; private set; }
 
-    // Settings Helper
     public static T SettingsTab<T>() where T : SettingsTab => Settings.GetTab<T>();
 
-    // Patch Categories
     public const string LatePatchesCategory = "FCP.Core.LatePatches";
     public const string CurrencyPatchesCategory = "FCP.Core.Currency";
     public const string TentsPatchesCategory = "FCP.Core.Tents";
@@ -26,10 +24,10 @@ public class FCPCoreMod : Mod
         Instance = this;
         Settings = GetSettings<FCPSettings>();
         
-        // PatchesUwU ~ Steve
         Harmony.PatchAllUncategorized();
         Harmony.PatchCategory(CurrencyPatchesCategory);
-        if (ModsConfig.IsActive("Rick.FCP.Tents")) Harmony.PatchCategory(TentsPatchesCategory);
+        if (ModsConfig.IsActive("Rick.FCP.Tents"))
+            Harmony.PatchCategory(TentsPatchesCategory);
         
         LongEventHandler.ExecuteWhenFinished(() =>
         {
@@ -62,7 +60,6 @@ public class FCPCoreMod : Mod
 
         Widgets.DrawMenuSection(mainRect);
 
-        // Draw Tabs
         currentTab ??= SettingsTab<InfoSettings>();
 
         var tabs = Settings.Tabs

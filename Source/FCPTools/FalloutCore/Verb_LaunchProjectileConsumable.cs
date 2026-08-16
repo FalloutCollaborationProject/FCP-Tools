@@ -7,7 +7,7 @@ public class Verb_LaunchProjectileConsumable : Verb_LaunchProjectile
         if (!base.TryCastShot()) return false;
         if (!FCPCoreMod.Settings.General.consumableGrenades) return true;
         if (EquipmentSource == null || EquipmentSource.Destroyed) return true;
-        
+
         if (EquipmentSource.stackCount > 1)
         {
             EquipmentSource.stackCount--;
@@ -23,7 +23,7 @@ public class Verb_LaunchProjectileConsumable : Verb_LaunchProjectile
         }
         return true;
     }
-    
+
     private Thing FindReplacementInInventory()
     {
         if (CasterPawn?.inventory?.innerContainer == null) return null;

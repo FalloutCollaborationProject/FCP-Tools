@@ -27,10 +27,10 @@ public static class Projectile_SetTrueOrigin
         for (var i = 0; i < codes.Count; i++)
         {
             var codeInstruction = codes[i];
-            if (codes.Count - 3 > i && codeInstruction.LoadsField(field) && 
+            if (codes.Count - 3 > i && codeInstruction.LoadsField(field) &&
                 codes[i + 2].Calls(InterceptChanceFactorFromDistanceInfo))
             {
-                yield return new CodeInstruction(OpCodes.Call, 
+                yield return new CodeInstruction(OpCodes.Call,
                     AccessTools.Method(typeof(Projectile_SetTrueOrigin), nameof(GetTrueOrigin)));
             }
             else

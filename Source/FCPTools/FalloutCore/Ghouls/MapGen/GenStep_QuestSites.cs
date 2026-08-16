@@ -27,13 +27,13 @@ public class GenStep_FeralGhoulNest : GenStep
 
         for (int i = 0; i < count; i++)
         {
-            if (!CellFinder.TryFindRandomCellNear(center, map, 30, c => c.Standable(map) && !c.Fogged(map), out IntVec3 loc)) 
+            if (!CellFinder.TryFindRandomCellNear(center, map, 30, c => c.Standable(map) && !c.Fogged(map), out IntVec3 loc))
                 continue;
 
             Pawn ghoul = PawnGenerator.GeneratePawn(pawnKindDef, null);
             EnsureFeralityGene(ghoul);
             GenSpawn.Spawn(ghoul, loc, map);
-                
+
             if (berserkDef != null)
                 ghoul.mindState.mentalStateHandler.TryStartMentalState(berserkDef, forceWake: true);
         }
@@ -70,13 +70,13 @@ public class GenStep_GlowingOne : GenStep
         berserkDef ??= DefDatabase<MentalStateDef>.GetNamed("FCP_MentalState_PermanentBerserk", false);
         feralKindDef ??= DefDatabase<PawnKindDef>.GetNamed("FCP_Pawnkind_Ghoul_Feral", false);
 
-        if (!CellFinder.TryFindRandomCellNear(map.Center, map, 15, c => c.Standable(map) && !c.Fogged(map), out IntVec3 loc)) 
+        if (!CellFinder.TryFindRandomCellNear(map.Center, map, 15, c => c.Standable(map) && !c.Fogged(map), out IntVec3 loc))
             return;
 
         Pawn glowingOne = PawnGenerator.GeneratePawn(pawnKindDef, null);
         EnsureFeralityGene(glowingOne);
         GenSpawn.Spawn(glowingOne, loc, map);
-            
+
         if (glowingOneIsBerserk && berserkDef != null)
             glowingOne.mindState.mentalStateHandler.TryStartMentalState(berserkDef, forceWake: true);
 
@@ -89,13 +89,13 @@ public class GenStep_GlowingOne : GenStep
 
         for (int i = 0; i < Rand.RangeInclusive(2, 4); i++)
         {
-            if (!CellFinder.TryFindRandomCellNear(center, map, 8, c => c.Standable(map) && !c.Fogged(map), out IntVec3 guardLoc)) 
+            if (!CellFinder.TryFindRandomCellNear(center, map, 8, c => c.Standable(map) && !c.Fogged(map), out IntVec3 guardLoc))
                 continue;
 
             Pawn guard = PawnGenerator.GeneratePawn(feralKindDef, null);
             EnsureFeralityGene(guard);
             GenSpawn.Spawn(guard, guardLoc, map);
-                
+
             if (berserkDef != null)
                 guard.mindState.mentalStateHandler.TryStartMentalState(berserkDef, forceWake: true);
         }

@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 
 namespace FCP.Core.LegendaryEffectWorkers;
 
@@ -9,10 +9,10 @@ public class CripplingWorker : LegendaryEffectWorker
 
     public override void Notify_ApplyToPawn(ref DamageInfo damageInfo, Pawn pawn)
     {
-        if (!ContainsLimb(damageInfo)) 
+        if (!ContainsLimb(damageInfo))
             return;
 
-        float damageAmount = DamageInfo_amountInt(damageInfo); //(float)DamageInfo_AmountInt.Value.GetValue(damageInfo);
+        float damageAmount = DamageInfo_amountInt(damageInfo);
         DamageInfo_amountInt(damageInfo) = damageAmount * 1.5f;
     }
 

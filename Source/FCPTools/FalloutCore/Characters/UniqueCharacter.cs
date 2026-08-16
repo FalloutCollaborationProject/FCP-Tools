@@ -1,4 +1,4 @@
-﻿namespace FCP.Core;
+namespace FCP.Core;
 
 public class UniqueCharacter : IExposable
 {
@@ -11,15 +11,11 @@ public class UniqueCharacter : IExposable
         this.def = def;
     }
     
-    /// <summary>
-    /// Check that a pawn is not null and not destroyed
-    /// </summary>
     public bool PawnExists()
     {
         if (pawn == null) return false;
         return !pawn.Discarded;
     }
-
 
     public void ExposeData()
     {

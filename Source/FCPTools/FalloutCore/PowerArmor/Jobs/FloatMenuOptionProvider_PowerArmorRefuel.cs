@@ -19,8 +19,8 @@ public class FloatMenuOptionProvider_PowerArmorRefuel : FloatMenuOptionProvider
     public override IEnumerable<FloatMenuOption> GetOptionsFor(Pawn clickedPawn, FloatMenuContext context)
     {
         Pawn selPawn = context.FirstSelectedPawn;
-        
-        if (PowerArmorDefOf.Refuel.Worker is not WorkGiver_Scanner scanner) 
+
+        if (PowerArmorDefOf.Refuel.Worker is not WorkGiver_Scanner scanner)
             yield break;
 
         foreach (Apparel apparel in clickedPawn.apparel.WornApparel)

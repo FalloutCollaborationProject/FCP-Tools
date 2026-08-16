@@ -1,4 +1,4 @@
-﻿using FCP.Core;
+using FCP.Core;
 
 public class CompUseEffect_ItemBox : CompUseEffect
 {
@@ -31,7 +31,6 @@ public class CompUseEffect_ItemBox : CompUseEffect
     {
         base.PostDestroy(mode, previousMap);
 
-        // Only drop on damage-based destruction.
         if (mode != DestroyMode.KillFinalize)
         {
             return;
@@ -60,7 +59,7 @@ public class CompUseEffect_ItemBox : CompUseEffect
             return;
         }
 
-        if (Props.thingSetMakerDef != null)
+        if (Props.thingSetMakerDef != null && Rand.Chance(Props.thingSetMakerChance))
         {
             List<Thing> list = Props.thingSetMakerDef.root.Generate();
             for (int i = 0; i < list.Count; i++)

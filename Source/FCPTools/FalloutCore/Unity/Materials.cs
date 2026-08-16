@@ -7,7 +7,7 @@ namespace FCP.Core.Unity;
 public static class Materials
 {
     private static Dictionary<string, Material> _lookupMaterials;
-    
+
     public static readonly Material ZoomMat = LoadMaterial(Path.Combine("Assets", "Shaders", "Unlit_ZoomShader.mat"));
 
     public static Material LoadMaterial(string materialName)
@@ -19,9 +19,9 @@ public static class Materials
         }
 
         Material mat = _lookupMaterials[materialName];
-        if (mat != null) 
+        if (mat != null)
             return mat;
-        
+
         FCPLog.Warning($"Could not load material: {materialName}");
         return null;
     }

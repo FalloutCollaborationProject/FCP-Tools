@@ -91,8 +91,6 @@ namespace FCP.Core.Robotics
 
         private static HediffDef WeaponHediffFor(SecuritronWeapon w)
         {
-            // Falls back to the always-available gun arm if the grenade launcher hediff didn't
-            // bind (e.g. Explosive Weapons isn't loaded) rather than handing EquipWeapon a null def.
             if (w == SecuritronWeapon.GrenadeLauncher && HediffDefOf_Securitron.FCP_Hediff_Securitron_GrenadeLauncher != null)
             {
                 return HediffDefOf_Securitron.FCP_Hediff_Securitron_GrenadeLauncher;

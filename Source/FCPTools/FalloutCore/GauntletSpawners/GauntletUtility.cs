@@ -30,7 +30,7 @@ public static class GauntletUtility
         }
         return result;
     }
-    
+
     public static IEnumerable<Pawn> NearbyPawnInLineOfSight(this IntVec3 center, Map map, float radius, bool needLoS)
     {
         IReadOnlyList<Pawn> list = map.mapPawns.AllPawnsSpawned;

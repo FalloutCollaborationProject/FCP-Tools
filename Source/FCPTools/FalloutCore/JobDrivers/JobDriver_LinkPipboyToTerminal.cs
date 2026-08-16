@@ -20,29 +20,29 @@ namespace FCP.Core.JobDrivers
             this.FailOnForbidden(TargetIndex.A);
 
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.InteractionCell);
-            
+
             Toil linkToil = Toils_General.Wait(120);
             linkToil.WithProgressBarToilDelay(TargetIndex.A);
             linkToil.defaultCompleteMode = ToilCompleteMode.Delay;
             yield return linkToil;
-            
+
             Toil syncToil = new Toil();
             syncToil.initAction = () =>
             {
                 if (pawn.apparel == null)
                     return;
-                
+
                 Apparel pipboy = pawn.apparel.WornApparel.Find(a => a.TryGetComp<Holotapes.CompPipboyHolotapeStorage>() != null);
                 if (pipboy == null)
                     return;
-                
+
                 Holotapes.CompPipboyHolotapeStorage pipboyStorage = pipboy.TryGetComp<Holotapes.CompPipboyHolotapeStorage>();
                 Buildings.CompHolotapeStorage terminalStorage = Terminal?.GetComp<Buildings.CompHolotapeStorage>();
                 if (pipboyStorage == null || terminalStorage == null)
                     return;
-                
+
                 int synced = 0;
-                
+
                 for (int i = 0; i < terminalStorage.StoredHolotapes.Count; i++)
                 {
                     Thing holotape = terminalStorage.StoredHolotapes[i];
@@ -61,7 +61,7 @@ namespace FCP.Core.JobDrivers
                         synced++;
                     }
                 }
-                
+
                 for (int i = 0; i < pipboyStorage.StoredHolotapes.Count; i++)
                 {
                     Thing holotape = pipboyStorage.StoredHolotapes[i];
@@ -80,7 +80,7 @@ namespace FCP.Core.JobDrivers
                         synced++;
                     }
                 }
-                
+
                 if (synced > 0)
                     Messages.Message(pawn.LabelShort + " synced " + synced + " holotape(s).", pawn, MessageTypeDefOf.PositiveEvent);
                 else

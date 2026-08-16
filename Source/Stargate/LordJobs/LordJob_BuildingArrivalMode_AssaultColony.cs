@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Verse.AI;
 using Verse.AI.Group;
 
@@ -6,9 +6,6 @@ namespace Thek_BuildingArrivalMode
 {
     public class LordJob_BuildingArrivalMode_AssaultColony : LordJob_AssaultColony
     {
-        // This is a copy from LordJob_AssaultColony
-        // I basically change all the LordToils that make pawns leave in any way into my own custom ones
-        // I also add my own PanicFlee, ignoring vanilla's
 
         private Faction assaulterFaction;
         private bool canKidnap = true;
@@ -73,7 +70,6 @@ namespace Thek_BuildingArrivalMode
             stateGraph.AddToil(lordToil3);
             LordToil_BuildingArrivalMode_ExitMap lordToilExit = new(LocomotionUrgency.Jog, canDig: false, interruptCurrentJob: true)
             {
-                // The giving up lord that makes them go back to the portal
                 useAvoidGrid = true
             };
             stateGraph.AddToil(lordToilExit);
@@ -102,7 +98,6 @@ namespace Thek_BuildingArrivalMode
                 if (canKidnap)
                 {
                     LordToil startingToil = stateGraph.AttachSubgraph(new LordJob_BuildingArrivalMode_Kidnap().CreateGraph()).StartingToil;
-                    // Changes kidnapping to my own since kidnap makes pawns leave from the border
                     Transition transition5 = new Transition(lordToil3, startingToil);
                     transition5.AddSources(list);
                     transition5.AddPreAction(new TransitionAction_Message("MessageRaidersKidnapping".Translate(assaulterFaction.def.pawnsPlural.CapitalizeFirst(), assaulterFaction.Name)));
@@ -112,7 +107,6 @@ namespace Thek_BuildingArrivalMode
                 if (canSteal)
                 {
                     LordToil startingToil2 = stateGraph.AttachSubgraph(new LordJob_BuildingArrivalMode_Steal().CreateGraph()).StartingToil;
-                    // Changes stealing to my own since stealing makes pawns leave from the border
                     Transition transition6 = new Transition(lordToil3, startingToil2);
                     transition6.AddSources(list);
                     transition6.AddPreAction(new TransitionAction_Message("MessageRaidersStealing".Translate(assaulterFaction.def.pawnsPlural.CapitalizeFirst(), assaulterFaction.Name)));
@@ -130,11 +124,9 @@ namespace Thek_BuildingArrivalMode
             }
             LordToil_BuildingArrivalMode_PanicFlee lordToil_PanicFlee = new()
             {
-                // The fleeing lord that happens when you defeat a bunch of the raiders changed so they go in the portal
                 useAvoidGrid = true
             };
 
-            //The for loop underneath makes all the transitions aim towards the above PanicFlee, same thing vanilla's PanicFlee does
             for (int i = 0; i < stateGraph.lordToils.Count; i++)
             {
                 Transition fleeTransition = new(stateGraph.lordToils[i], lordToil_PanicFlee);

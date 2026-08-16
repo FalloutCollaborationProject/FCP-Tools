@@ -1,10 +1,6 @@
-﻿// ReSharper disable UnassignedField.Global
 
 namespace FCP.Core;
 
-/// <summary>
-/// Configuration ModExtension for the IncidentWorker_AnimalPasses
-/// </summary>
 [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 public class ModExtension_AnimalPassesConfig : DefModExtension
 {

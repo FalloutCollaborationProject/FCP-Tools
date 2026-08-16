@@ -10,6 +10,7 @@
         <graphicData>
             <texPath>Things/Apparel/Accessories/Pipboy/Pipboy</texPath>
             <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(0.5, 0.5)</drawSize>
         </graphicData>
         <generateCommonality>0.05</generateCommonality>
         <smeltable>false</smeltable>

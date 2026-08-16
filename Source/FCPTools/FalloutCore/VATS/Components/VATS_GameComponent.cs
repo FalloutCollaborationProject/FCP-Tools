@@ -1,4 +1,4 @@
-﻿using FCP.Core.VATS;
+using FCP.Core.VATS;
 
 namespace FCP.Core;
 
@@ -30,15 +30,17 @@ public class VATS_GameComponent(Game game) : GameComponent
         SlowMoCauser = null;
     }
 
+    private static List<Pawn> activeAttackKeys;
+    private static List<VATSAction> activeAttackValues;
+
     public override void ExposeData()
     {
         ActiveAttacks ??= new Dictionary<Pawn, VATSAction>();
-        Scribe_Collections.Look(ref ActiveAttacks, "ActiveAttacks", LookMode.Reference, LookMode.Reference);
+        Scribe_Collections.Look(ref ActiveAttacks, "ActiveAttacks", LookMode.Reference, LookMode.Reference, ref activeAttackKeys, ref activeAttackValues);
     }
 
     public override void GameComponentTick()
     {
-        // Safety barrier to prevent getting stuck in slowmo
         if (SlowMoCauser == null || SlowMoCauser.Destroyed || (SlowMoStarted > 0 && SlowMoStarted + 600 < Current.Game.tickManager.TicksGame))
         {
             ResetSlowMo();

@@ -12,7 +12,6 @@ public static class FactionUIUtility_DrawFactionRow_Patch
 
         foreach (CodeInstruction instruction in instructions)
         {
-            // Both use FactionDef from the Stack
             if (instruction.Calls(labelCapGetter))
             {
                 yield return CodeInstruction.Call(typeof(FactionUIUtility_DrawFactionRow_Patch), nameof(GetLabel));

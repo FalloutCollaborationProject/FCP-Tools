@@ -1,8 +1,6 @@
 using System.Reflection;
 using HarmonyLib;
 
-// ReSharper disable InconsistentNaming
-
 namespace FCP.Core.Access;
 
 [StaticConstructorOnStartup]

@@ -2,10 +2,6 @@
 
 namespace FCP.Core;
 
-/// <summary>
-/// Generic version of the Thrumbo Passes incident.
-/// Uses ModExtension_AnimalPassesConfig as Configuration.
-/// </summary>
 public class IncidentWorker_AnimalPasses : IncidentWorker
 {
     private ModExtension_AnimalPassesConfig Config =>
@@ -57,13 +53,11 @@ public class IncidentWorker_AnimalPasses : IncidentWorker
         Pawn generatedPawn = null;
         for (int i = 0; i < animalCount; i++)
         {
-            // create and spawn the pawns
             IntVec3 enterCell = CellFinder.RandomClosewalkCellNear(cell, map, 10);
 
             generatedPawn = PawnGenerator.GeneratePawn(animalPawnKind);
             GenSpawn.Spawn(generatedPawn, enterCell, map, Rot4.Random);
 
-            // leave the map after a random amount of ticks.
             generatedPawn.mindState.exitMapAfterTick = Find.TickManager.TicksGame +
                                                        Config.ticksToLeave.RandomInRange;
             if (forcedGotoPosition.IsValid)

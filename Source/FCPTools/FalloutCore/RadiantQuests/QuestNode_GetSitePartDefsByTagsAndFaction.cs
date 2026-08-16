@@ -22,7 +22,6 @@ public class QuestNode_GetSitePartDefsByTagsAndFaction : QuestNode
     [NoTranslate]
     public SlateRef<string> storeFactionAs;
 
-
     private static List<string> tmpTags = new List<string>();
 
     protected override bool TestRunInt(Slate slate)

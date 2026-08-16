@@ -7,14 +7,13 @@ public class CompSummonedWeapon : ThingComp
     public CompProperties_SummonedWeapon Props => props as CompProperties_SummonedWeapon;
     public Pawn_EquipmentTracker EquipmentTracker => parent?.ParentHolder as Pawn_EquipmentTracker;
 
-    // Todo this could probably be further optimized.
     public override void CompTick()
     {
         base.CompTick();
 
-        if (Find.TickManager.TicksGame - ticksSummoned < Props.lifetimeDuration && EquipmentTracker is not null) 
+        if (Find.TickManager.TicksGame - ticksSummoned < Props.lifetimeDuration && EquipmentTracker is not null)
             return;
-        
+
         Map mapHeld = parent.MapHeld;
         if (mapHeld != null && Props.fleckWhenExpired != null)
         {

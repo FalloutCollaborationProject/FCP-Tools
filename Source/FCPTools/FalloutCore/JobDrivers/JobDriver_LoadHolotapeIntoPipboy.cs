@@ -17,19 +17,19 @@ namespace FCP.Core.JobDrivers
         protected override IEnumerable<Toil> MakeNewToils()
         {
             this.FailOnDespawnedOrNull(TargetIndex.A);
-            
+
             yield return Toils_Goto.GotoThing(TargetIndex.A, PathEndMode.Touch);
-            
+
             Toil loadToil = new Toil();
             loadToil.initAction = () =>
             {
                 if (pawn.apparel == null)
                     return;
-                
+
                 Apparel pipboy = pawn.apparel.WornApparel.Find(a => a.TryGetComp<Holotapes.CompPipboyHolotapeStorage>() != null);
                 if (pipboy == null)
                     return;
-                
+
                 Holotapes.CompPipboyHolotapeStorage storage = pipboy.TryGetComp<Holotapes.CompPipboyHolotapeStorage>();
                 if (storage != null && storage.TryStoreHolotape(Holotape))
                     Messages.Message(pawn.LabelShort + " loaded " + Holotape.Label + " into Pip-Boy.", pawn, MessageTypeDefOf.NeutralEvent);

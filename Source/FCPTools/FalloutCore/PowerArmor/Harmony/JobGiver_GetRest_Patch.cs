@@ -15,7 +15,7 @@ public static class JobGiver_GetRest_Patch
             var props = apparel.def.GetCompProperties<CompProperties_PowerArmor>();
             if (props == null || props.canSleep)
                 continue;
-                
+
             __result = null;
             return false;
         }

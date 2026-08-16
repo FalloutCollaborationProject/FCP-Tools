@@ -92,7 +92,7 @@
     <ResearchProjectDef>
         <defName>FCP_Research_Spore_Creation</defName>
         <label>Spore Creation</label>
-        <description>Research into advanced methods and technologies for producing high-quality food efficiently.</description>
+        <description>Research into isolating and cultivating fungal spore strains for controlled growth and distribution.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -109,7 +109,7 @@
     <ResearchProjectDef>
         <defName>FCP_Research_Spore_Carrier_Program</defName>
         <label>Spore Carrier Program</label>
-        <description>Research into advanced methods for spore distribution and carrier systems.</description>
+        <description>Research into cultivating dense spore carrier nests as a defensive hazard against intruders.</description>
         <baseCost>1000</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
@@ -1019,6 +1019,94 @@
         </prerequisites>
         <researchViewX>5.00</researchViewX>
         <researchViewY>7.00</researchViewY>
+        <tab>FCP_Research</tab>
+    </ResearchProjectDef>
+
+    <!-- Automated Defenses Mk II-IV (machinegun turret tiers) -->
+
+    <ResearchProjectDef>
+        <defName>FCP_Research_Automated_Defenses_MkII</defName>
+        <label>Automated Defenses Mk II</label>
+        <description>Refinements to automated turret mounts, unlocking the Mk III and Mk IV machinegun turrets.</description>
+        <baseCost>400</baseCost>
+        <techLevel>Industrial</techLevel>
+        <prerequisites>
+            <li>FCP_Research_Automated_Defenses</li>
+        </prerequisites>
+        <researchViewX>4.00</researchViewX>
+        <researchViewY>8.00</researchViewY>
+        <tab>FCP_Research</tab>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+        <defName>FCP_Research_Automated_Defenses_MkIII</defName>
+        <label>Automated Defenses Mk III</label>
+        <description>Further refinements to automated turret mounts, unlocking the Mk V and Mk VI machinegun turrets.</description>
+        <baseCost>650</baseCost>
+        <techLevel>Industrial</techLevel>
+        <prerequisites>
+            <li>FCP_Research_Automated_Defenses_MkII</li>
+        </prerequisites>
+        <researchViewX>4.00</researchViewX>
+        <researchViewY>9.00</researchViewY>
+        <tab>FCP_Research</tab>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+        <defName>FCP_Research_Automated_Defenses_MkIV</defName>
+        <label>Automated Defenses Mk IV</label>
+        <description>The pinnacle of scrap-built automated turret engineering, unlocking the Mk VII machinegun turret.</description>
+        <baseCost>900</baseCost>
+        <techLevel>Industrial</techLevel>
+        <prerequisites>
+            <li>FCP_Research_Automated_Defenses_MkIII</li>
+        </prerequisites>
+        <researchViewX>4.00</researchViewX>
+        <researchViewY>10.00</researchViewY>
+        <tab>FCP_Research</tab>
+    </ResearchProjectDef>
+
+    <!-- Energy Weapon Defenses Mk II-IV (laser turret tiers) -->
+
+    <ResearchProjectDef>
+        <defName>FCP_Research_Energy_Weapon_Defenses_MkII</defName>
+        <label>Energy Weapon Defenses Mk II</label>
+        <description>Refinements to automated laser turret mounts, unlocking the Mk III and Mk IV laser turrets.</description>
+        <baseCost>750</baseCost>
+        <techLevel>Industrial</techLevel>
+        <prerequisites>
+            <li>FCP_Research_Energy_Weapon_Defenses</li>
+        </prerequisites>
+        <researchViewX>5.00</researchViewX>
+        <researchViewY>8.00</researchViewY>
+        <tab>FCP_Research</tab>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+        <defName>FCP_Research_Energy_Weapon_Defenses_MkIII</defName>
+        <label>Energy Weapon Defenses Mk III</label>
+        <description>Further refinements to automated laser turret mounts, unlocking the Mk V and Mk VI laser turrets.</description>
+        <baseCost>1100</baseCost>
+        <techLevel>Industrial</techLevel>
+        <prerequisites>
+            <li>FCP_Research_Energy_Weapon_Defenses_MkII</li>
+        </prerequisites>
+        <researchViewX>5.00</researchViewX>
+        <researchViewY>9.00</researchViewY>
+        <tab>FCP_Research</tab>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+        <defName>FCP_Research_Energy_Weapon_Defenses_MkIV</defName>
+        <label>Energy Weapon Defenses Mk IV</label>
+        <description>The pinnacle of automated laser turret engineering, unlocking the Mk VII and Mk VIII laser turrets.</description>
+        <baseCost>1500</baseCost>
+        <techLevel>Industrial</techLevel>
+        <prerequisites>
+            <li>FCP_Research_Energy_Weapon_Defenses_MkIII</li>
+        </prerequisites>
+        <researchViewX>5.00</researchViewX>
+        <researchViewY>10.00</researchViewY>
         <tab>FCP_Research</tab>
     </ResearchProjectDef>
 

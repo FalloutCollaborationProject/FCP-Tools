@@ -1,4 +1,4 @@
-﻿using LudeonTK;
+using LudeonTK;
 using RimWorld;
 using RimWorld.Planet;
 using System;
@@ -241,7 +241,6 @@ public class FactionStorage : IExposable
 		}
 	}
 
-
 	public void TryAbandonSpecificCountViaInterfaceFactionStorage(TransferableImmutable t, Caravan caravan)
 	{
 		Find.WindowStack.Add(new Dialog_Slider("AbandonSliderText".Translate(t.Label), 1, t.TotalStackCount, delegate (int x)
@@ -420,12 +419,7 @@ public class FactionStorage : IExposable
 				this.storedThings.Add(thing);
 			}
 		}
-		//if (Mouse.IsOver(rect))
-		//{
-		//	TooltipHandler.TipRegion(rect, () => CaravanAbandonOrBanishUtility.GetAbandonOrBanishButtonTooltip(t, abandonSpecificCount: false), Gen.HashCombineInt(t.GetHashCode(), 8476546));
-		//}
 	}
-
 
 	public void DoAbandonSpecificCountButtonCaravan(Rect rowRect, TransferableImmutable t, Caravan caravan)
 	{
@@ -435,7 +429,6 @@ public class FactionStorage : IExposable
 			TryAbandonSpecificCountViaInterfaceCaravan(t, caravan);
 		}
 	}
-
 
 	public void TryAbandonSpecificCountViaInterfaceCaravan(TransferableImmutable t, Caravan caravan)
 	{

@@ -8,7 +8,7 @@ public static class JobGiver_AIFightEnemy_SummonWeaponPatch
 {
     private static readonly AccessTools.FieldRef<JobGiver_AICastAbility, AbilityDef> AbilityRef =
         AccessTools.FieldRefAccess<JobGiver_AICastAbility, AbilityDef>("ability");
-    
+
     private static readonly Func<JobGiver_AICastAbility, Pawn, Job> TryGiveJob =
         AccessTools.MethodDelegate<Func<JobGiver_AICastAbility, Pawn, Job>>(
             AccessTools.Method(typeof(JobGiver_AICastAbility), "TryGiveJob"));

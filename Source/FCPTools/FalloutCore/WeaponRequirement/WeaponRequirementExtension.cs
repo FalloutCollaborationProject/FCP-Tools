@@ -48,7 +48,7 @@ public static class WeaponRequirementUtility
     {
         if (ext.requirementsNotMetHediff == null)
             return;
-        
+
         Hediff hediff = pawn?.health.hediffSet.GetFirstHediffOfDef(ext.requirementsNotMetHediff);
 
         if (ext.RequirementsMet(pawn, equipment, true))

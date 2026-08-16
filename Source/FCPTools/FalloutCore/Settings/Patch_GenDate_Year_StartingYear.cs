@@ -1,7 +1,6 @@
 using HarmonyLib;
 using RimWorld;
 using UnityEngine;
-// ReSharper disable InconsistentNaming
 
 namespace FCP.Core;
 

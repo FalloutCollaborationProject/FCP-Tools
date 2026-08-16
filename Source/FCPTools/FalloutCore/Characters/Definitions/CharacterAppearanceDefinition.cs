@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-// ReSharper disable UnassignedField.Global
+using UnityEngine;
 
 namespace FCP.Core;
 

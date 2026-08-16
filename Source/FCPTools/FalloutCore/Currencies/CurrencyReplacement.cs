@@ -1,5 +1,4 @@
-﻿
-namespace FCP.Currencies;
+﻿namespace FCP.Currencies;
 
 public class CurrencyReplacement : DefModExtension
 {

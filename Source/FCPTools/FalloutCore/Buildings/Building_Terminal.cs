@@ -53,7 +53,6 @@ namespace FCP.Core.Buildings
             if (graphicsInitialized) 
                 return;
             
-            // Only load graphics on the main thread
             if (!LongEventHandler.AnyEventNowOrWaiting)
             {
                 var props = Props;
@@ -92,7 +91,6 @@ namespace FCP.Core.Buildings
         {
             base.SpawnSetup(map, respawningAfterLoad);
             
-            // Defer graphics initialization to main thread if needed
             if (LongEventHandler.AnyEventNowOrWaiting)
             {
                 LongEventHandler.ExecuteWhenFinished(() => InitializeGraphics());
@@ -190,7 +188,11 @@ namespace FCP.Core.Buildings
                         yield return new FloatMenuOption("CannotUseReserved".Translate(), null);
                     else
                         yield return new FloatMenuOption("Insert holotape", () =>
-                            selPawn.jobs.TryTakeOrderedJob(JobMaker.MakeJob(JobDefOf_Terminal.FCP_InsertHolotape, carried, this)));
+                        {
+                            Job insertJob = JobMaker.MakeJob(JobDefOf_Terminal.FCP_InsertHolotape, carried, this);
+                            insertJob.count = 1;
+                            selPawn.jobs.TryTakeOrderedJob(insertJob);
+                        });
                 }
 
                 if (storage.Count > 0)

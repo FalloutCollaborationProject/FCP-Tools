@@ -37,11 +37,13 @@ namespace FCP.Core.Robotics
             var listRect = new Rect(0f, 45f, inRect.width, inRect.height - 90f);
             DrawRobotList(listRect);
 
+            GUI.color = TerminalColors.PrimaryColor;
             var closeRect = new Rect(inRect.width - 100f, inRect.height - 40f, 90f, 35f);
             if (Widgets.ButtonText(closeRect, "Close"))
             {
                 Close();
             }
+            GUI.color = Color.white;
         }
 
         private void DrawRobotList(Rect rect)
@@ -58,7 +60,9 @@ namespace FCP.Core.Robotics
             }
 
             var viewRect = new Rect(0f, 0f, rect.width - 20f, robots.Count * 120f);
+            GUI.color = TerminalColors.PrimaryColor;
             Widgets.BeginScrollView(rect, ref scrollPosition, viewRect);
+            GUI.color = Color.white;
 
             float y = 0f;
             foreach (Pawn robot in robots)
@@ -160,6 +164,7 @@ namespace FCP.Core.Robotics
             float buttonWidth = canPaint ? (rect.width - 5f) / 2f : rect.width;
             var powerRect = new Rect(rect.x, rect.y, buttonWidth, rect.height);
 
+            GUI.color = TerminalColors.PrimaryColor;
             string powerLabel = power.PoweredOn
                 ? "FCP_RobotPower_TurnOff".Translate()
                 : "FCP_RobotPower_TurnOn".Translate();
@@ -170,6 +175,7 @@ namespace FCP.Core.Robotics
 
             if (!canPaint)
             {
+                GUI.color = Color.white;
                 return;
             }
 
@@ -187,6 +193,7 @@ namespace FCP.Core.Robotics
                 }
                 Find.WindowStack.Add(new FloatMenu(options));
             }
+            GUI.color = Color.white;
         }
 
         private static void DrawModeLabel(Rect rect, string mode)
@@ -205,6 +212,7 @@ namespace FCP.Core.Robotics
             var musicRect = new Rect(defendRect.xMax + 5f, rect.y, buttonWidth, rect.height);
             var exploreRect = new Rect(musicRect.xMax + 5f, rect.y, buttonWidth, rect.height);
 
+            GUI.color = TerminalColors.PrimaryColor;
             if (Widgets.ButtonText(defendRect, "FCP_EyebotMode_Defend".Translate()))
             {
                 modeComp.SetMode(EyebotMode.Defend);
@@ -217,6 +225,7 @@ namespace FCP.Core.Robotics
             {
                 modeComp.SetMode(EyebotMode.Explore);
             }
+            GUI.color = Color.white;
         }
 
         private void DrawSecuritronButtons(Rect rect, CompSecuritronMode modeComp)
@@ -229,6 +238,7 @@ namespace FCP.Core.Robotics
             var guardPawnRect = new Rect(guardHomeRect.xMax + 5f, rect.y, buttonWidth, rect.height);
             var guardPointRect = new Rect(guardPawnRect.xMax + 5f, rect.y, buttonWidth, rect.height);
 
+            GUI.color = TerminalColors.PrimaryColor;
             if (Widgets.ButtonText(guardHomeRect, "FCP_SecuritronMode_GuardHome".Translate()))
             {
                 modeComp.SetGuardHome();
@@ -253,6 +263,7 @@ namespace FCP.Core.Robotics
 
             if (faceComp == null)
             {
+                GUI.color = Color.white;
                 return;
             }
 
@@ -266,6 +277,7 @@ namespace FCP.Core.Robotics
                 }
                 Find.WindowStack.Add(new FloatMenu(options));
             }
+            GUI.color = Color.white;
         }
 
         private void BeginGuardPointTargeting(CompSecuritronMode modeComp)
@@ -290,6 +302,7 @@ namespace FCP.Core.Robotics
             var haulRect = new Rect(constructRect.xMax + 5f, rect.y, buttonWidth, rect.height);
             var cleanRect = new Rect(haulRect.xMax + 5f, rect.y, buttonWidth, rect.height);
 
+            GUI.color = TerminalColors.PrimaryColor;
             if (Widgets.ButtonText(guardRect, "FCP_ProtectronMode_Guard".Translate()))
             {
                 modeComp.SetMode(ProtectronMode.Guard);
@@ -306,6 +319,7 @@ namespace FCP.Core.Robotics
             {
                 modeComp.SetMode(ProtectronMode.Clean);
             }
+            GUI.color = Color.white;
         }
 
         private void DrawAssaultronButtons(Rect rect, CompAssaultronMode modeComp)
@@ -315,6 +329,7 @@ namespace FCP.Core.Robotics
             var guardPawnRect = new Rect(guardHomeRect.xMax + 5f, rect.y, buttonWidth, rect.height);
             var assaultRect = new Rect(guardPawnRect.xMax + 5f, rect.y, buttonWidth, rect.height);
 
+            GUI.color = TerminalColors.PrimaryColor;
             if (Widgets.ButtonText(guardHomeRect, "FCP_SecuritronMode_GuardHome".Translate()))
             {
                 modeComp.SetGuardHome();
@@ -336,6 +351,7 @@ namespace FCP.Core.Robotics
             {
                 modeComp.SetAssault();
             }
+            GUI.color = Color.white;
         }
 
         private void DrawMrHandyButtons(Rect rect, Pawn robot, CompMrHandyMode modeComp)
@@ -366,6 +382,7 @@ namespace FCP.Core.Robotics
 
             float buttonWidth = (rect.width - (visible.Count - 1) * 5f) / visible.Count;
             float x = rect.x;
+            GUI.color = TerminalColors.PrimaryColor;
             foreach ((MrHandyMode mode, string labelKey) in visible)
             {
                 var buttonRect = new Rect(x, rect.y, buttonWidth, rect.height);
@@ -391,6 +408,7 @@ namespace FCP.Core.Robotics
                 }
                 x = buttonRect.xMax + 5f;
             }
+            GUI.color = Color.white;
         }
     }
 }

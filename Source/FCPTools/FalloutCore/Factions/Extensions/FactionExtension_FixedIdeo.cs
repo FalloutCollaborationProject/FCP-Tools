@@ -1,6 +1,3 @@
-﻿// ReSharper disable UnassignedField.Global
-// ReSharper disable ClassNeverInstantiated.Global
-
 using FCP.Core;
 
 namespace FCP.Factions;
@@ -20,8 +17,8 @@ public class FactionExtension_FixedIdeo : DefModExtension
         ideo.memberName = memberName ?? ideo.memberName;
         ideo.adjective = adjective ?? ideo.adjective;
         ideo.WorshipRoomLabel = ritualRoomName ?? ideo.WorshipRoomLabel;
-        
-        if (!preceptDefs.NullOrEmpty()) 
+
+        if (!preceptDefs.NullOrEmpty())
             ApplyPrecepts(ideo);
 
         if (ideoIconDef != null)

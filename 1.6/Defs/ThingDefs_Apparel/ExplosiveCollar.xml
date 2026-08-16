@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Explosive Slave Collar __________-->
+
+    <ThingDef ParentName="HatMakeableBase" MayRequire="Ludeon.RimWorld.Ideology">
+        <defName>FCP_Apparel_Explosive_Collar</defName>
+        <label>explosive collar</label>
+        <description>A slave collar rigged with a chemical charge. One press of the detonator and the wearer's head is gone. Slavers use these instead of the plain kind when suppression alone isn't enough of a deterrent.</description>
+        <graphicData>
+            <texPath>Things/Pawn/Humanlike/Apparel/SlaveCollar/SlaveCollar</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>0.8</drawSize>
+        </graphicData>
+        <tickerType>Normal</tickerType>
+        <costStuffCount>25</costStuffCount>
+        <stuffCategories>
+            <li>Metallic</li>
+        </stuffCategories>
+        <costList>
+            <ComponentIndustrial>2</ComponentIndustrial>
+            <Chemfuel>10</Chemfuel>
+        </costList>
+        <statBases>
+            <MaxHitPoints>80</MaxHitPoints>
+            <WorkToMake>2400</WorkToMake>
+            <Mass>0.3</Mass>
+            <StuffEffectMultiplierArmor>0.0</StuffEffectMultiplierArmor>
+            <StuffEffectMultiplierInsulation_Cold>0.00</StuffEffectMultiplierInsulation_Cold>
+            <StuffEffectMultiplierInsulation_Heat>0.00</StuffEffectMultiplierInsulation_Heat>
+            <EquipDelay>1.5</EquipDelay>
+        </statBases>
+        <equippedStatOffsets>
+            <SlaveSuppressionOffset>0.10</SlaveSuppressionOffset>
+        </equippedStatOffsets>
+        <apparel>
+            <bodyPartGroups>
+                <li>Neck</li>
+            </bodyPartGroups>
+            <wornGraphicPath>Things/Pawn/Humanlike/Apparel/SlaveCollar/SlaveCollar</wornGraphicPath>
+            <layers>
+                <li>Overhead</li>
+            </layers>
+            <canBeDesiredForIdeo>false</canBeDesiredForIdeo>
+            <canBeGeneratedToSatisfyWarmth>false</canBeGeneratedToSatisfyWarmth>
+            <canBeGeneratedToSatisfyToxicEnvironmentResistance>false</canBeGeneratedToSatisfyToxicEnvironmentResistance>
+            <defaultOutfitTags>
+                <li>Slave</li>
+            </defaultOutfitTags>
+        </apparel>
+        <comps>
+            <li Class="FCP.Core.CompProperties_ExplosiveCollar">
+                <explosionRadius>2.5</explosionRadius>
+                <explosionDamage>50</explosionDamage>
+                <explosionDamageDef>Bomb</explosionDamageDef>
+            </li>
+        </comps>
+    </ThingDef>
+
+</Defs>

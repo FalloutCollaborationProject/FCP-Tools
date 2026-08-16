@@ -19,22 +19,22 @@ public class CompProperties_PowerArmor : CompProperties
 public class CompPowerArmor : ThingComp
 {
     public CompProperties_PowerArmor Props => props as CompProperties_PowerArmor;
-    
+
     public CompRefuelable CompRefuelable => parent.GetComp<CompRefuelable>();
 
     public override void CompTick()
     {
         base.CompTick();
-        if (parent is not Apparel apparel || apparel.Wearer is null) 
+        if (parent is not Apparel apparel || apparel.Wearer is null)
             return;
-        
-        if (CompRefuelable == null) 
+
+        if (CompRefuelable == null)
             return;
-                
+
         CompRefuelable.ConsumeFuel(CompRefuelable.GetConsumptionRatePerTick());
-        if (Props.hediffOnEmptyFuel == null || CompRefuelable.HasFuel) 
+        if (Props.hediffOnEmptyFuel == null || CompRefuelable.HasFuel)
             return;
-        
+
         Hediff hediff = apparel.Wearer.health.hediffSet.GetFirstHediffOfDef(Props.hediffOnEmptyFuel);
         if (hediff is null)
         {
@@ -45,9 +45,9 @@ public class CompPowerArmor : ThingComp
     public override void Notify_Unequipped(Pawn pawn)
     {
         base.Notify_Unequipped(pawn);
-        if (Props.hediffOnEmptyFuel == null) 
+        if (Props.hediffOnEmptyFuel == null)
             return;
-        
+
         Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(Props.hediffOnEmptyFuel);
         if (hediff != null) pawn.health.RemoveHediff(hediff);
     }
@@ -57,9 +57,9 @@ public class CompPowerArmor : ThingComp
         if (parent is not Apparel apparel)
             yield break;
 
-        if (CompRefuelable == null) 
+        if (CompRefuelable == null)
             yield break;
-        
+
         if (CompRefuelable.Props.showFuelGizmo && Find.Selector.SingleSelectedThing == apparel.Wearer)
         {
             var gizmoRefuelableFuelStatus = new Gizmo_SetFuelLevel(CompRefuelable);

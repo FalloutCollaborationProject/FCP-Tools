@@ -1,7 +1,5 @@
 using HarmonyLib;
 
-// ReSharper disable InconsistentNaming
-
 namespace FCP.Core.Access;
 
 [StaticConstructorOnStartup]
@@ -38,11 +36,11 @@ internal static class WorkGiver_DoBill_Access
 
     internal static bool TryFindBestIngredientsHelper(Predicate<Thing> thingValidator,
         Predicate<List<Thing>> foundAllIngredientsAndChoose, List<IngredientCount> ingredients, Pawn pawn,
-        Thing billGiver, List<ThingCount> chosen, float searchRadius) 
+        Thing billGiver, List<ThingCount> chosen, float searchRadius)
         => tryFindBestIngredientsHelperDelegate(thingValidator, foundAllIngredientsAndChoose, ingredients, pawn, billGiver, chosen, searchRadius);
 
     internal static bool TryFindBestIngredientsInSet_NoMixHelper(List<Thing> availableThings,
         List<IngredientCount> ingredients, List<ThingCount> chosen, IntVec3 rootCell, bool alreadySorted,
-        List<IngredientCount> missingIngredients, Bill bill = null) 
+        List<IngredientCount> missingIngredients, Bill bill = null)
         => tryFindBestIngredientsInSet_NoMixHelperDelegate(availableThings, ingredients, chosen, rootCell, alreadySorted, missingIngredients, bill);
 }

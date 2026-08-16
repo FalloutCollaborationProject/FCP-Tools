@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using FCP.Factions;
 using RimWorld.Planet;
 using UnityEngine;
@@ -15,23 +15,23 @@ public class WorldLayer_FactionTerritory : WorldDrawLayer
     private readonly HashSet<int> _processedTiles = [];
     private readonly Dictionary<int, HashSet<int>> _settlementTiles = [];
     private readonly List<WorldFeatureTextMesh_FactionLabel> _activeFactionLabels = [];
-        
+
     private Material _territoryMat;
     private Material _territoryBorderMat;
     private Color _territoryColor;
     private Color _territoryBorderColor;
     private bool _tilesDirty = true;
     private bool _renderOverWater;
-    private IntRange _territoryRadius = new(10, 50); // change later to work with whatever faction control logic we write
-        
+    private IntRange _territoryRadius = new(10, 50);
+
     public override bool ShouldRegenerate => _tilesDirty;
     public int CurrentTerritoryRadius => _territoryRadius.RandomInRange;
-        
+
     public WorldLayer_FactionTerritory()
     {
         _settlements = Find.WorldObjects.Settlements;
     }
-        
+
     private void InitMaterials()
     {
         _territoryMat = new Material(ShaderDatabase.Transparent)
@@ -40,7 +40,7 @@ public class WorldLayer_FactionTerritory : WorldDrawLayer
         };
         _territoryMat.SetTexture(MatTexture, TextureCache.FactionTerritoryTex);
         _territoryMat.SetColor(MatColor, _territoryColor);
-            
+
         _territoryBorderMat = new Material(ShaderDatabase.Transparent)
         {
             renderQueue = 3560
@@ -48,23 +48,22 @@ public class WorldLayer_FactionTerritory : WorldDrawLayer
         _territoryBorderMat.SetTexture(MatTexture, TextureCache.FactionTerritoryBorderTex);
         _territoryBorderMat.SetColor(MatColor, _territoryBorderColor);
     }
-        
+
     public override IEnumerable Regenerate()
     {
         if (!_tilesDirty)
             yield break;
-            
+
         _tilesDirty = false;
         SetDirty();
-            
+
         subMeshes.Clear();
         _processedTiles.Clear();
         _settlementTiles.Clear();
         _territoryGroups.Clear();
-            
+
         ClearFactionLabels();
-            
-        // step 1: collect settlement territories
+
         foreach (Settlement settlement in _settlements)
         {
             if (settlement.Faction.def.HasModExtension<FactionExtension_HasTerritory>())
@@ -78,65 +77,60 @@ public class WorldLayer_FactionTerritory : WorldDrawLayer
 
                 HashSet<int> tiles = TryGetTerritoryTiles(settlement.Tile);
                 _settlementTiles[settlement.Tile] = tiles;
-                    
+
                 InitMaterials();
             }
         }
-            
-        // step 2: group overlapping settlements
+
         HashSet<int> visited = [];
         foreach (var kvp in _settlementTiles)
         {
-            if (visited.Contains(kvp.Key)) 
+            if (visited.Contains(kvp.Key))
                 continue;
-                
+
             HashSet<int> cluster = [];
             Queue<int> queue = new();
             queue.Enqueue(kvp.Key);
             visited.Add(kvp.Key);
-                
+
             while (queue.Count > 0)
             {
                 int tile = queue.Dequeue();
                 cluster.UnionWith(_settlementTiles[tile]);
-                    
+
                 foreach (int other in _settlementTiles.Keys)
                 {
-                    if (visited.Contains(other) || 
+                    if (visited.Contains(other) ||
                         !_settlementTiles[other].Overlaps(_settlementTiles[tile]))
                         continue;
-                        
+
                     queue.Enqueue(other);
                     visited.Add(other);
                 }
             }
-                
+
             _territoryGroups.Add(cluster.ToList());
         }
-            
-        // step 3: generate a single mesh for each cluster
+
         foreach (List<int> territory in _territoryGroups)
         {
             TryGenerateClusterMesh(territory);
         }
-            
+
         FinalizeMesh(MeshParts.All);
         CacheFactionLabels();
     }
-        
-    /// <summary>
-    /// Finds all tiles within a settlement's territory radius.
-    /// </summary>
+
     private HashSet<int> TryGetTerritoryTiles(int centerTile)
     {
         WorldGrid worldGrid = Find.WorldGrid;
         HashSet<int> territory = [];
         Queue<int> openSet = new();
         HashSet<int> visited = [];
-            
+
         openSet.Enqueue(centerTile);
         visited.Add(centerTile);
-            
+
         int currentRadius = 0;
         while (openSet.Count > 0 && currentRadius < CurrentTerritoryRadius)
         {
@@ -144,12 +138,12 @@ public class WorldLayer_FactionTerritory : WorldDrawLayer
             for (int i = 0; i < layerSize; i++)
             {
                 int tile = openSet.Dequeue();
-                    
+
                 if (worldGrid[tile].WaterCovered && !_renderOverWater)
                     continue;
-                    
+
                 territory.Add(tile);
-                    
+
                 List<PlanetTile> neighbors = [];
                 worldGrid.GetTileNeighbors(tile, neighbors);
                 foreach (int neighbor in neighbors)
@@ -164,98 +158,89 @@ public class WorldLayer_FactionTerritory : WorldDrawLayer
         }
         return territory;
     }
-        
-    /// <summary>
-    /// Generates a single mesh for a cluster of overlapping territories.
-    /// </summary>
+
     private void TryGenerateClusterMesh(List<int> tiles)
     {
         WorldGrid worldGrid = Find.WorldGrid;
         HashSet<int> tileSet = [..tiles];
-            
+
         foreach (int tile in tiles)
         {
             if (!_processedTiles.Add(tile))
                 continue;
-                
+
             List<PlanetTile> neighbors = [];
             worldGrid.GetTileNeighbors(tile, neighbors);
             bool isBorderTile = neighbors.Any(n => !tileSet.Contains(n));
-                
+
             Material tileMat = isBorderTile ? _territoryBorderMat : _territoryMat;
             LayerSubMesh subMesh = GetSubMesh(tileMat);
             List<Vector3> verts = [];
             worldGrid.GetTileVertices(tile, verts);
-                
+
             int count = subMesh.verts.Count;
             int vertCount = verts.Count;
-                
+
             for (int i = 0; i < vertCount; i++)
             {
                 subMesh.verts.Add(verts[i] + verts[i].normalized);
                 subMesh.uvs.Add((
-                    GenGeo.RegularPolygonVertexPosition(vertCount, i) 
+                    GenGeo.RegularPolygonVertexPosition(vertCount, i)
                     + Vector2.one) / 2f);
-                    
+
                 if (i >= vertCount - 2)
                     continue;
-                    
+
                 subMesh.tris.Add(count + i + 2);
                 subMesh.tris.Add(count + i + 1);
                 subMesh.tris.Add(count);
             }
         }
     }
-        
-    /// <summary>
-    /// Finds the center tile for a given territory.
-    /// </summary>
+
     private static Vector3 TryGetTerritoryCenterTile(List<int> tiles)
     {
         WorldGrid worldGrid = Find.WorldGrid;
         Vector3 sum = Vector3.zero;
-            
+
         foreach (int tile in tiles)
         {
             sum += worldGrid.GetTileCenter(tile);
         }
         return tiles.Count > 0 ? sum / tiles.Count : Vector3.zero;
     }
-        
-    /// <summary>
-    /// Caches the faction names to be drawn later on.
-    /// </summary>
+
     private void CacheFactionLabels()
     {
         ClearFactionLabels();
-            
+
         foreach (List<int> territoryGroup in _territoryGroups)
         {
             if (territoryGroup.NullOrEmpty())
                 continue;
-                
+
             Vector3 centerWorldPos = TryGetTerritoryCenterTile(territoryGroup);
             if (centerWorldPos == Vector3.zero)
                 continue;
-                
+
             Vector3 adjustedPos = centerWorldPos + (Vector3.down * 0.5f);
             Settlement settlement = Find.WorldObjects.SettlementAt(territoryGroup[0]);
-                
+
             if (settlement == null)
                 continue;
-                
-            FactionExtension_HasTerritory ext = 
+
+            FactionExtension_HasTerritory ext =
                 settlement.Faction.def.GetModExtension<FactionExtension_HasTerritory>();
-                
+
             string factionName = settlement.Faction.def.LabelCap;
-                
+
             WorldFeatureTextMesh_FactionLabel textMesh = new();
             textMesh.Initialize(adjustedPos, factionName, 10f, ext.factionLabelColor, this.planetLayer);
             textMesh.SetActive(true);
             _activeFactionLabels.Add(textMesh);
         }
     }
-        
+
     private void ClearFactionLabels()
     {
         foreach (WorldFeatureTextMesh_FactionLabel label in _activeFactionLabels)
@@ -265,9 +250,9 @@ public class WorldLayer_FactionTerritory : WorldDrawLayer
         }
         _activeFactionLabels.Clear();
     }
-        
+
     public void MarkDirty()
-    { 
+    {
         _tilesDirty = true;
         ClearFactionLabels();
     }

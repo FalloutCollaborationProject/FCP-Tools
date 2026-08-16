@@ -1,8 +1,5 @@
-﻿namespace FCP.Core;
+namespace FCP.Core;
 
-/// <summary>
-/// Added Utility for defining if a pawn is purchasable from a trader.
-/// </summary>
 [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 public class ModExtension_PawnKindProperties : DefModExtension
 {

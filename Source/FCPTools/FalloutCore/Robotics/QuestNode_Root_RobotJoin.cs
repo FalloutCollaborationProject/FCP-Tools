@@ -11,7 +11,6 @@ namespace FCP.Core.Robotics
 
         public SlateRef<PawnKindDef> kindDef;
 
-        // Only meaningful for robots with a CompProtectronLoadout (e.g. protectrons); ignored otherwise.
         public SlateRef<string> presetId;
 
         private string signalAccept;
@@ -28,6 +27,11 @@ namespace FCP.Core.Robotics
         }
 
         public override Pawn GeneratePawn()
+        {
+            return GeneratePawn_NewTemp(null);
+        }
+
+        public override Pawn GeneratePawn_NewTemp(Map map)
         {
             PawnKindDef kind = kindDef.GetValue(QuestGen.slate);
             Pawn pawn;

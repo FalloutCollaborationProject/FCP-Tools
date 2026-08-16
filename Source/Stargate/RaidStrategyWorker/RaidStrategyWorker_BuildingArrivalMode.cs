@@ -1,10 +1,9 @@
-﻿using Verse.AI.Group;
+using Verse.AI.Group;
 
 namespace Thek_BuildingArrivalMode
 {
     public class RaidStrategyWorker_BuildingArrivalMode : RaidStrategyWorker
     {
-        // Copied from ImmediateAttack, replaced all the lordjobs with custom ones
         protected override LordJob MakeLordJob(IncidentParms parms, Map map, List<Pawn> pawns, int raidSeed)
         {
             IntVec3 originCell = PawnsArrivalModeWorker_BuildingArrivalMode.modExtension.tileToSpawn;

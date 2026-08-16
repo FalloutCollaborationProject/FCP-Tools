@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using System.Collections.Concurrent;
 using System.Reflection;
 
@@ -43,7 +43,6 @@ public static class TemperatureApparelPreferenceCompatibility
 
     private static void BindFalloutCoreHandles()
     {
-        // Def.GetModExtension<T>() (generic instance method, no parameters)
         MethodInfo openGeneric = null;
         var methods = typeof(Def).GetMethods(BindingFlags.Public | BindingFlags.Instance);
         for (int i = 0; i < methods.Length; i++)
@@ -131,7 +130,6 @@ public static class TemperatureApparelPreferenceCompatibility
 
     private static object GetExtensionThreadSafe(ThingDef def)
     {
-        // GetOrAdd ensures only one value factory wins; safe under RimWorld's parallel render path.
         return cachedExtensions.GetOrAdd(def, d =>
         {
             try

@@ -77,7 +77,7 @@ public class Gene_Ferality : Gene
         {
             Gene skinGene = null;
             bool isGlowing = false;
-                
+
             foreach (var gene in pawn.genes.GenesListForReading)
             {
                 if (gene.def.defName == "FCP_Gene_Ghoul_Skin_GlowingOne")
@@ -88,7 +88,7 @@ public class Gene_Ferality : Gene
                 if (gene.def.defName.StartsWith("FCP_Gene_Ghoul_Skin"))
                     skinGene = gene;
             }
-                
+
             if (skinGene != null && !isGlowing)
             {
                 pawn.genes.RemoveGene(skinGene);
@@ -130,9 +130,9 @@ public class Gene_Ferality : Gene
 [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 public class FeralityGene_ModExtension : DefModExtension
 {
-    public int increaseIntervalTicks = 60000; // 1 in-game day
+    public int increaseIntervalTicks = 60000;
     public float feralityIncreaseAmount = 1f;
     public float amountReducedPerDrug = 20f;
-    public float initialFerality = 0f; // Starting ferality value (0-100)
+    public float initialFerality = 0f;
     public List<ThingDef> drugs = new List<ThingDef>();
 }

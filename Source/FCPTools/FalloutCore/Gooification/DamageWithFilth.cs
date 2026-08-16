@@ -6,7 +6,7 @@ public abstract class DamageWithFilth : DamageWorker_AddInjury
 {
     public abstract string FilthToSpawn { get; }
     public static Dictionary<Thing, DamageInfo> curDinfo = new Dictionary<Thing, DamageInfo>();
-    
+
     public override DamageResult Apply(DamageInfo dinfo, Thing thing)
     {
         curDinfo[thing] = new DamageInfo(dinfo);

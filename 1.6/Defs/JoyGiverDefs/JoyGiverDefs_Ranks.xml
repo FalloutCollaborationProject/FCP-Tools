@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Rank Joy Givers __________-->
+
+    <!-- Visit Mentor -->
+
+    <JoyGiverDef>
+        <defName>FCP_JoyGiver_VisitMentor</defName>
+        <giverClass>FCP.Ranks.Jobs.JoyGiver_VisitMentor</giverClass>
+        <baseChance>3</baseChance>
+        <jobDef>FCP_Job_VisitMentor</jobDef>
+        <joyKind>Social</joyKind>
+    </JoyGiverDef>
+
+</Defs>

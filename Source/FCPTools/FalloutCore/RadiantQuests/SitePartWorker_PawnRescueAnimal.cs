@@ -3,7 +3,6 @@ using RimWorld.QuestGen;
 using Verse.Grammar;
 using UnityEngine;
 
-
 namespace FCP.Core.RadiantQuests;
 
 public class SitePartWorker_PawnRescueAnimal : SitePartWorker

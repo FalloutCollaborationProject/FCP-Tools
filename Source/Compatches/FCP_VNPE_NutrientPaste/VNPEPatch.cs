@@ -1,4 +1,4 @@
-﻿using FCP_RadiantQuests;
+using FCP_RadiantQuests;
 using HarmonyLib;
 using System.Reflection;
 using PipeSystem;
@@ -13,7 +13,6 @@ public static class CompAnimalCagePatch
         return AccessTools.Method(typeof(CompAnimalCage), nameof(CompAnimalCage.CompTick));
     }
 
-    // ReSharper disable once InconsistentNaming
     private static void Postfix(CompAnimalCage __instance)
     {
         foreach (CompResource comp in __instance.parent.GetComps<CompResource>())

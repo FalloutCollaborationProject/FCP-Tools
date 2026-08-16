@@ -25,5 +25,4 @@ public class QuestNode_SpawnRaiders : QuestNode
         QuestGen.quest.AddPart(questPart);
     }
 
-
 }

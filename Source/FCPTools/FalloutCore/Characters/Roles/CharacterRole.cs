@@ -1,4 +1,3 @@
-﻿// ReSharper disable UnassignedField.Global
 namespace FCP.Core;
 
 public class CharacterRole

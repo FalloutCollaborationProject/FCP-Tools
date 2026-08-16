@@ -24,5 +24,4 @@ public class QuestNode_SpawnSettlers : QuestNode
         QuestGen.quest.AddPart(questPart);
     }
 
-
 }

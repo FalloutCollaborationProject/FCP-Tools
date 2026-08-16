@@ -1,5 +1,4 @@
 using HarmonyLib;
-// ReSharper disable InconsistentNaming
 
 namespace FCP.Core.Access;
 

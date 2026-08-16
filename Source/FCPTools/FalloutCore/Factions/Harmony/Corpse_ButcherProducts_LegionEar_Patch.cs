@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using HarmonyLib;
-// ReSharper disable InconsistentNaming
 
 namespace FCP.Factions;
 

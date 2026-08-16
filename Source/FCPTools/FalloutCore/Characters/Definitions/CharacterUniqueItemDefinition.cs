@@ -14,6 +14,26 @@ public class CharacterUniqueItemDefinition : CharacterBaseDefinition
             return;
         }
 
+        if (uniqueItem.IsApparel)
+        {
+            Apparel existing = pawn.apparel?.WornApparel.FirstOrDefault(a => a.def == uniqueItem);
+            if (existing != null)
+            {
+                pawn.apparel.Lock(existing);
+                return;
+            }
+
+            if (pawn.apparel == null)
+            {
+                return;
+            }
+
+            var apparel = (Apparel)ThingMaker.MakeThing(uniqueItem, uniqueItem.MadeFromStuff ? GenStuff.RandomStuffFor(uniqueItem) : null);
+            pawn.apparel.Wear(apparel, dropReplacedApparel: true);
+            pawn.apparel.Lock(apparel);
+            return;
+        }
+
         var tracker = UniqueCharactersTracker.Instance;
         if (tracker.IsUniqueThingCreated(uniqueItem))
         {
@@ -21,14 +41,7 @@ public class CharacterUniqueItemDefinition : CharacterBaseDefinition
         }
 
         var item = ThingMaker.MakeThing(uniqueItem, uniqueItem.MadeFromStuff ? GenStuff.RandomStuffFor(uniqueItem) : null);
-        if (item is Apparel apparel)
-        {
-            if (pawn.apparel != null && apparel.PawnCanWear(pawn))
-            {
-                pawn.apparel.Wear(apparel, dropReplacedApparel: false);
-            }
-        }
-        else if (item is ThingWithComps weapon && weapon.def.IsWeapon)
+        if (item is ThingWithComps weapon && weapon.def.IsWeapon)
         {
             if (pawn.equipment != null && pawn.equipment.Primary == null)
             {

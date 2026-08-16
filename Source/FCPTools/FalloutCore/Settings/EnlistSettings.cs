@@ -7,9 +7,7 @@ public class EnlistSettings : SettingsTab
     public override string TabName => "FCP_Settings_Enlistment".Translate();
 
     public Dictionary<string, bool> enlistStates = new Dictionary<string, bool>();
-    
-    // To be used from the enlistment assembly until we merge it in.
-    // ReSharper disable once InconsistentNaming
+
     [UsedImplicitly] public Action OnSaved;
 
     private List<string> enlistKeys;
@@ -30,7 +28,7 @@ public class EnlistSettings : SettingsTab
         var keys = enlistStates.Keys.ToList().OrderByDescending(x => x).ToList();
         var viewRect = new Rect(0f, 0f, tabRect.width - 30f, 30 + (keys.Count * 24));
         Widgets.BeginScrollView(tabRect, ref scrollPosition, viewRect);
-        
+
         var listing = new Listing_Standard();
         listing.Begin(viewRect);
         Text.Font = GameFont.Medium;

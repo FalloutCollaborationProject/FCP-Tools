@@ -1,6 +1,5 @@
 namespace FCP.Core.Thoughts;
 
-// Base for the Zealot/Congregant rift: dislike triggers when p has SelfTrait and the other pawn has RivalTrait.
 public abstract class ThoughtWorker_AtomTraitRivalry : ThoughtWorker
 {
     protected abstract TraitDef SelfTrait { get; }

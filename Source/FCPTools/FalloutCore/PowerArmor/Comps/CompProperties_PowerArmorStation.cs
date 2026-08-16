@@ -5,18 +5,18 @@ namespace FCP.Core.PowerArmor;
 [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
 public class CompProperties_PowerArmorStation : CompProperties
 {
-	public Vector3 armorDrawOffset;
+    public Vector3 armorDrawOffset;
 
-	public List<ApparelLayerDef> allowedLayers;
+    public List<ApparelLayerDef> allowedLayers;
 
-	public int storeDuration = 120;
+    public int storeDuration = 120;
 
-	public int equipDuration = 120;
+    public int equipDuration = 120;
 
-	public int swapDuration = 240;
+    public int swapDuration = 240;
 
-	public CompProperties_PowerArmorStation()
-	{
-		compClass = typeof(CompPowerArmorStation);
-	}
+    public CompProperties_PowerArmorStation()
+    {
+        compClass = typeof(CompPowerArmorStation);
+    }
 }

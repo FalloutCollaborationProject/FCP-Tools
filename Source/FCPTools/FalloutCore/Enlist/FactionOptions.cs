@@ -20,7 +20,7 @@ public class FactionOptions : IExposable
         Scribe_Collections.Look(ref factionsStorages, "factionsStorages", LookMode.Def, LookMode.Deep, ref factionKeys3, ref storageValues);
         Scribe_Collections.Look(ref factionsReinforcementsLastTick, "factionsReinforcementsLastTick", LookMode.Def, LookMode.Value, ref factionKeys4, ref intValues);
         Scribe_Collections.Look(ref factionsWithQuests, "factionsWithQuests", LookMode.Def, LookMode.Deep, ref factionKeys5, ref questContainerValues);
-        Scribe_Collections.Look(ref factionsBought, "factionsBought", LookMode.Def, LookMode.Deep, 
+        Scribe_Collections.Look(ref factionsBought, "factionsBought", LookMode.Def, LookMode.Deep,
             ref factionKeys6, ref boughtValues);
         Scribe_Collections.Look(ref activeDeliveries, "activeDeliveries", LookMode.Def, LookMode.Deep, ref factionKeys7, ref deliveryValues);
         if (Scribe.mode == LoadSaveMode.PostLoadInit)

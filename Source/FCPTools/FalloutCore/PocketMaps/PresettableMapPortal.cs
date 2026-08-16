@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using FCP.Core;
 using RimWorld;
 using RimWorld.Planet;
 using Verse;
@@ -26,7 +27,7 @@ namespace FCP.PocketMaps
         protected override Map GeneratePocketMapInt()
         {
             var ext = def.GetModExtension<ModExtensionPresettablePocketMap>();
-            
+
             if (isAbandoned)
             {
                 var message = ext?.abandonedMessage ?? "This pocket map has been abandoned and can no longer be entered.";
@@ -61,21 +62,21 @@ namespace FCP.PocketMaps
                 Log.Error($"{prefab.defName}: No MapGeneratorDef specified");
                 return null;
             }
-            
+
             Map map = PocketMapUtility.GeneratePocketMap(new IntVec3(size.x, 1, size.z), mapGen, GetExtraGenSteps(), Map);
-            
+
             var entranceComp = new MapComponent_PocketMapEntrance(map) { portal = this };
             map.components.Add(entranceComp);
-            
+
             ApplyFloor(map, prefab.floorDef);
             SpawnThings(map, prefab.things);
-            
+
             var faction = prefab.factionDef != null ? Find.FactionManager.FirstFactionOfDef(prefab.factionDef) : null;
             map.info.parent.SetFaction(faction);
-            
+
             var pawns = SpawnPawns(map, prefab.pawnKinds, faction);
             if (pawns.Count > 0 && faction != null && faction != Faction.OfPlayer)
-                LordMaker.MakeNewLord(faction, new LordJob_DefendPoint(map.Center), map, pawns);
+                LordMaker.MakeNewLord(faction, new LordJob_StationedResidents(map.Center), map, pawns);
 
             return map;
         }
@@ -92,6 +93,8 @@ namespace FCP.PocketMaps
         {
             if (container?.items == null) return;
 
+            var spawnedAt = new HashSet<(IntVec3, ThingDef)>();
+
             foreach (var item in container.items)
             {
                 if (item.thingDef == null) continue;
@@ -101,33 +104,45 @@ namespace FCP.PocketMaps
                     var r = ParseRect(item.rect);
                     for (int x = r.x1; x <= r.x2; x++)
                         for (int z = r.z1; z <= r.z2; z++)
-                            TrySpawnThing(item, new IntVec3(x, 0, z), map);
+                            TrySpawnThing(item, new IntVec3(x, 0, z), map, spawnedAt);
                 }
                 else
                 {
                     var pos = string.IsNullOrEmpty(item.position) ? IntVec3.Zero : ParsePosition(item.position);
-                    TrySpawnThing(item, pos, map);
+                    TrySpawnThing(item, pos, map, spawnedAt);
                 }
             }
         }
 
-        private void TrySpawnThing(PrefabItem item, IntVec3 pos, Map map)
+        private void TrySpawnThing(PrefabItem item, IntVec3 pos, Map map, HashSet<(IntVec3, ThingDef)> spawnedAt)
         {
             if (!map.AllCells.Contains(pos) || Rand.Value > item.chance) return;
+            if (!spawnedAt.Add((pos, item.thingDef)))
+            {
+                FCPLog.Warning($"Skipped duplicate {item.thingDef.defName} at {pos} while spawning a pocket map prefab - the def's rects overlap at that cell.");
+                return;
+            }
 
             var thing = ThingMaker.MakeThing(item.thingDef, item.stuff);
             if (thing is Building building)
             {
                 var rot = ParseRotation(item.relativeRotation);
-                
+
                 var quality = building.TryGetComp<CompQuality>();
                 if (quality != null && !string.IsNullOrEmpty(item.quality) && System.Enum.TryParse<QualityCategory>(item.quality, out var qc))
                     quality.SetQuality(qc, null);
 
                 GenSpawn.Spawn(building, pos, map, rot);
-                
+
                 if (item.hp.HasValue && item.hp.Value > 0)
                     building.HitPoints = item.hp.Value;
+
+                if (item.fullFuel)
+                {
+                    var refuelable = building.TryGetComp<CompRefuelable>();
+                    if (refuelable != null)
+                        refuelable.Refuel(refuelable.Props.fuelCapacity);
+                }
             }
             else
             {
@@ -148,7 +163,7 @@ namespace FCP.PocketMaps
                 {
                     var request = new PawnGenerationRequest(def.pawnKindDef, faction, forceGenerateNewPawn: true);
                     var pawn = PawnGenerator.GeneratePawn(request);
-                    
+
                     if (CellFinder.TryRandomClosewalkCellNear(map.Center, map, 999, out var pos))
                     {
                         GenSpawn.Spawn(pawn, pos, map);
@@ -162,7 +177,7 @@ namespace FCP.PocketMaps
                     }
                 }
             }
-            
+
             return spawned;
         }
 

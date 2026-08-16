@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using RimWorld;
 using System;
 using System.Collections.Generic;
@@ -86,7 +86,6 @@ public static class GUIHelper
 		bool wordWrap = Text.WordWrap;
 		if (rect.height < Text.LineHeight * 2f)
 		{
-			//Text.WordWrap = false;
 		}
 		Label(rect, label);
 		Text.Anchor = anchor;

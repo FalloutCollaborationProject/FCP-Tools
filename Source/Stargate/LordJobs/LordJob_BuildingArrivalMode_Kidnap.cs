@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Verse.AI;
 using Verse.AI.Group;
 
@@ -6,7 +6,6 @@ namespace Thek_BuildingArrivalMode
 {
     public class LordJob_BuildingArrivalMode_Kidnap : LordJob_Kidnap
     {
-        // Modified LordJob_Kidnap, calling custom LordToils that go back to the portal
         public override StateGraph CreateGraph()
         {
             StateGraph stateGraph = new();

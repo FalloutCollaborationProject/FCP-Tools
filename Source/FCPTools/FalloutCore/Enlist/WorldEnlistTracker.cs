@@ -97,7 +97,6 @@ public class WorldEnlistTracker : WorldComponent
                && boughtStatus != null;
     }
 
-
     public bool CanCallReinforcementFrom(Faction otherFaction, FactionEnlistOptionsDef options)
     {
         return !factionOptionsContainer[otherFaction].factionsReinforcementsLastTick.TryGetValue(options, out int value) || Find.TickManager.TicksGame >= value + options.reinforcementCallCooldownTicks;

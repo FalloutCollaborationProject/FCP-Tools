@@ -1,0 +1,40 @@
+--- Source/FCPTools/FalloutCore/JobDrivers/JobDriver_AttackHybrid.cs
++++ Source/FCPTools/FalloutCore/JobDrivers/JobDriver_AttackHybrid.cs
+@@ -38,9 +38,6 @@ public class JobDriver_AttackHybrid : JobDriver
+             ((Graphic_Zoomer)zoomer.Graphic).Parent = projectile;
+         }
+ 
+-        // large refactor here
+-        // no more messy switch statement with go-to's everywhere
+-        // replaced with an array lookup to select a miss dir more cleanly
+         LocalTargetInfo hitTarget = Rand.Chance(attack.HitChance)
+             ? TargetB
+             : TryGetMissedTarget();
+@@ -69,8 +66,6 @@ public class JobDriver_AttackHybrid : JobDriver
+             pawn.pather.StopDead();
+         };
+ 
+-        // reduced a ton of unnecessary nesting to make this more readable
+-        // consolidated some checks as well
+         initToil.tickAction = () =>
+         {
+             if (!TargetA.IsValid || (TargetA.HasThing && TargetA.Thing.Destroyed))
+@@ -97,7 +92,6 @@ public class JobDriver_AttackHybrid : JobDriver
+                 return;
+             }
+ 
+-            // handle cases where attack fails
+             if (pawn.stances.FullBodyBusy) return;
+ 
+             Verb attackVerb = pawn.TryGetAttackVerb(TargetA.Thing, !pawn.IsColonist);
+@@ -126,10 +120,6 @@ public class JobDriver_AttackHybrid : JobDriver
+         yield return initToil;
+     }
+ 
+-    /// <summary>
+-    /// Determines the missed shot location.
+-    /// Reduces the number of calls to pawn.TryGetAttackVerb() in the original method.
+-    /// </summary>
+     private IntVec3 TryGetMissedTarget()
+     {
+         IntVec3[] missOffsets =

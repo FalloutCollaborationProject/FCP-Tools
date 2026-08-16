@@ -1,5 +1,4 @@
 using FCP.Core.VATS;
-// ReSharper disable InconsistentNaming
 
 namespace FCP.Core;
 

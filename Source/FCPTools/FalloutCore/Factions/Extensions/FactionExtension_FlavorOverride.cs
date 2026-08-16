@@ -1,9 +1,5 @@
 namespace FCP.Factions;
 
-/// <summary>
-/// Works to override the faction's label (so the NCR's label isn't always New California Republic, same as its name)
-/// Also supports prioritizing faction leader title
-/// </summary>
 [UsedImplicitly]
 public class FactionExtension_FlavorOverride : DefModExtension
 {

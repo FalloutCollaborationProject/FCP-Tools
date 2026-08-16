@@ -53,9 +53,6 @@ namespace FCP.Core.Robotics
                 }
             }
 
-            // Pre-build every (overlay graphic x known robot body color) tint combination up front.
-            // GetGraphic runs on a parallel draw thread and cannot safely build new colored
-            // graphic variants on demand (texture loading must happen on the main thread).
             List<Color> knownBodyColors = CollectKnownBodyColors();
             foreach (KeyValuePair<HediffDef, Graphic> entry in Cache)
             {
@@ -127,8 +124,6 @@ namespace FCP.Core.Robotics
             {
                 return graphic;
             }
-            // Unknown body color (e.g. from a modded source) - fall back to the untinted
-            // graphic rather than risk an off-thread texture load.
             return GetFor(def);
         }
     }

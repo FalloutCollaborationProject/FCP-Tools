@@ -3,7 +3,7 @@ namespace FCP.Core;
 public class Verb_Shoot_ApparelAmmo : Verb_Shoot
 {
     public VerbProperties_ApparelAmmo Props => base.verbProps as VerbProperties_ApparelAmmo;
-    
+
     public override bool Available()
     {
         var comp = CasterPawn.GetAvailableApparelAmmo(this, out _, out _);

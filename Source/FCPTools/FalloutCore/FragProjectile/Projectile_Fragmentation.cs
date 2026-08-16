@@ -5,7 +5,7 @@ namespace FCP.Core;
 public class Projectile_Fragmentation : Bullet
 {
     public ProjectileExtension_Fragmentation extension => def.GetModExtension<ProjectileExtension_Fragmentation>();
-    
+
     protected override void Tick()
     {
         base.Tick();
@@ -17,7 +17,7 @@ public class Projectile_Fragmentation : Bullet
             }
         }
     }
-    
+
     protected override void Impact(Thing hitThing, bool blockedByShield = false)
     {
         if (extension.isSureHit)
@@ -30,10 +30,10 @@ public class Projectile_Fragmentation : Bullet
         }
         else
         {
-            Fragmented();            
+            Fragmented();
         }
     }
-    
+
     public void Fragmented()
     {
         Map map = base.Map;
@@ -48,7 +48,7 @@ public class Projectile_Fragmentation : Bullet
         ThingDef thingDef = equipmentDef;
         ThingDef thingDef2 = def;
         Thing intendedThing = intendedTarget.Thing;
-        
+
         if (extension.isCone)
         {
             IntVec3 finalPos = new IntVec3(Mathf.Max(launcher.PositionHeld.x, positionHeld.x) - Mathf.Min(launcher.PositionHeld.x, positionHeld.x), 0, Mathf.Max(launcher.PositionHeld.z, positionHeld.z) - Mathf.Min(launcher.PositionHeld.z, positionHeld.z));

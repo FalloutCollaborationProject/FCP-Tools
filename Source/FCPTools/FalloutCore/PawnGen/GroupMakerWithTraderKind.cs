@@ -1,5 +1,3 @@
-﻿// ReSharper disable FieldCanBeMadeReadOnly.Global
-// ReSharper disable ClassNeverInstantiated.Global
 
 namespace FCP.Core;
 

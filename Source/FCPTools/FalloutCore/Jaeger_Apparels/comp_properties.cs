@@ -1,14 +1,9 @@
-﻿namespace FCP.Core;
+namespace FCP.Core;
 
 public class CompProperties_TemperatureApparelPreference : CompProperties
 {
     public bool enabled = true;
 
-    // Any combination is valid. Defaults mean "not configured".
-    // - forceBelowTempC: force include when tempC < value
-    // - avoidAboveTempC: avoid when tempC > value
-    // - forceAboveTempC: force include when tempC > value
-    // - avoidBelowTempC: avoid when tempC < value
     public float forceBelowTempC = float.NegativeInfinity;
     public float avoidAboveTempC = float.PositiveInfinity;
 

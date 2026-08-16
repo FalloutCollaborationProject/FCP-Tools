@@ -12,11 +12,11 @@ public static class Pawn_HealthTracker_Downed_Patch
     {
         if (!__result)
             return;
-            
+
         Pawn pawn = __instance.hediffSet?.pawn;
         if (pawn == null)
             return;
-            
+
         if (pawn.health.hediffSet.HasHediff(Buildings.HediffDefOf.FCP_Crucified))
         {
             __result = false;

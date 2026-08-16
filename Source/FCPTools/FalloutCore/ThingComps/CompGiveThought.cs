@@ -41,15 +41,12 @@ public class CompGiveThought : ThingComp
             {
                 switch (thing.holdingOwner?.Owner)
                 {
-                    // Equipment of an Alive Pawn
                     case Pawn_EquipmentTracker { pawn: { Dead: false } equipPawn }:
                         equipPawn.needs.mood.thoughts.memories.TryGainMemory(Props.thoughtDef);
                         break;
-                    // Apparel of an Alive Pawn
                     case Pawn_ApparelTracker { pawn: { Dead: false } apparelPawn }:
                         apparelPawn.needs.mood.thoughts.memories.TryGainMemory(Props.thoughtDef);
                         break;
-                    // Else it's probably an enable in inventory option or for a radius
                     default:
                     {
                         if (Props.enableInInventory && thing.holdingOwner?.Owner is Pawn_InventoryTracker { pawn: { Dead: false } invPawn })

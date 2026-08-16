@@ -27,8 +27,8 @@ public class GenStep_FeralGhoulSpawn : GenStep
         for (int i = 0; i < packSize; i++)
         {
             IntVec3 loc;
-            if (!CellFinder.TryFindRandomEdgeCellWith(c => 
-                        c.Standable(map) && 
+            if (!CellFinder.TryFindRandomEdgeCellWith(c =>
+                        c.Standable(map) &&
                         !c.Fogged(map),
                     map, CellFinder.EdgeRoadChance_Ignore, out loc))
             {
@@ -36,7 +36,7 @@ public class GenStep_FeralGhoulSpawn : GenStep
             }
 
             Pawn ghoul = PawnGenerator.GeneratePawn(pawnKindDef, null);
-                
+
             var feralityGene = ghoul.genes?.GetFirstGeneOfType<Gene_Ferality>();
             if (feralityGene != null)
             {
@@ -44,7 +44,7 @@ public class GenStep_FeralGhoulSpawn : GenStep
             }
 
             GenSpawn.Spawn(ghoul, loc, map);
-                
+
             var mentalState = DefDatabase<MentalStateDef>.GetNamed("FCP_MentalState_PermanentBerserk", false);
             if (mentalState != null)
             {

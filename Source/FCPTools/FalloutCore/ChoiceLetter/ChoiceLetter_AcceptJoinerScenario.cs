@@ -2,7 +2,6 @@
 
 public class ChoiceLetter_AcceptJoinerScenario : ChoiceLetter_AcceptJoiner
 {
-
     public override void OpenLetter()
     {
         DiaNode diaNode = new DiaNode(Text);

@@ -11,17 +11,17 @@ namespace FCP.PocketMaps
     public static class PocketMapExitPatch
     {
         private static MethodBase targetMethod;
-        
+
         public static bool Prepare()
         {
             targetMethod = GenTypes.AllTypes
                 .Where(t => t.Name == "JobGiver_ExitMapPortal")
                 .Select(t => AccessTools.Method(t, "TryGiveJob"))
                 .FirstOrDefault(m => m != null);
-            
+
             return targetMethod != null;
         }
-        
+
         [HarmonyTargetMethods]
         public static IEnumerable<MethodBase> TargetMethods()
         {
@@ -33,15 +33,15 @@ namespace FCP.PocketMaps
         {
             if (__result == null || pawn?.Map == null)
                 return;
-            
+
             var comp = pawn.Map.GetComponent<MapComponent_PocketMapEntrance>();
             if (comp?.portal == null)
                 return;
-            
+
             var exitCell = comp.portal.InteractionCell;
             if (!exitCell.IsValid)
                 return;
-            
+
             __result.targetA = exitCell;
         }
     }

@@ -51,7 +51,7 @@ namespace FCP.Core.Holotapes
         {
             base.ExposeData();
             Scribe_Collections.Look(ref discoveredHolotapes, "discoveredHolotapes", LookMode.Value);
-            
+
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
                 discoveredHolotapes ??= new HashSet<string>();

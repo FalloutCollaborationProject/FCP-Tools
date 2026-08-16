@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Rank Jobs __________-->
+
+    <!-- Training -->
+
+    <JobDef>
+        <defName>FCP_Job_RankTraining</defName>
+        <driverClass>FCP.Ranks.Jobs.JobDriver_RankTraining</driverClass>
+        <reportString>training with TargetA.</reportString>
+    </JobDef>
+
+    <!-- Drilling -->
+
+    <JobDef>
+        <defName>FCP_Job_RankDrilling</defName>
+        <driverClass>FCP.Ranks.Jobs.JobDriver_RankDrilling</driverClass>
+        <reportString>drilling with TargetA.</reportString>
+        <alwaysShowWeapon>true</alwaysShowWeapon>
+    </JobDef>
+
+    <JobDef>
+        <defName>FCP_Job_RankDrillingPartner</defName>
+        <driverClass>FCP.Ranks.Jobs.JobDriver_RankSessionPartner</driverClass>
+        <reportString>drilling with TargetA.</reportString>
+        <alwaysShowWeapon>true</alwaysShowWeapon>
+    </JobDef>
+
+    <!-- Studying -->
+
+    <JobDef>
+        <defName>FCP_Job_RankStudying</defName>
+        <driverClass>FCP.Ranks.Jobs.JobDriver_RankStudying</driverClass>
+        <reportString>studying with TargetA.</reportString>
+    </JobDef>
+
+    <JobDef>
+        <defName>FCP_Job_RankStudyingPartner</defName>
+        <driverClass>FCP.Ranks.Jobs.JobDriver_RankSessionPartner</driverClass>
+        <reportString>studying with TargetA.</reportString>
+    </JobDef>
+
+    <!-- Inspection -->
+
+    <JobDef>
+        <defName>FCP_Job_RankInspection</defName>
+        <driverClass>FCP.Ranks.Jobs.JobDriver_RankInspection</driverClass>
+        <reportString>inspecting TargetA.</reportString>
+    </JobDef>
+
+    <JobDef>
+        <defName>FCP_Job_RankInspectionPartner</defName>
+        <driverClass>FCP.Ranks.Jobs.JobDriver_RankSessionPartner</driverClass>
+        <reportString>standing inspection for TargetA.</reportString>
+        <alwaysShowWeapon>true</alwaysShowWeapon>
+    </JobDef>
+
+    <!-- Punishment Detail -->
+
+    <JobDef>
+        <defName>FCP_Job_PunishmentDetail</defName>
+        <driverClass>FCP.Ranks.Jobs.JobDriver_PunishmentDetail</driverClass>
+        <reportString>on punishment detail.</reportString>
+    </JobDef>
+
+    <!-- Fall In -->
+
+    <JobDef>
+        <defName>FCP_Job_FormUp</defName>
+        <driverClass>FCP.Ranks.Jobs.JobDriver_FormUp</driverClass>
+        <reportString>formed up under TargetA.</reportString>
+        <alwaysShowWeapon>true</alwaysShowWeapon>
+        <neverFleeFromEnemies>true</neverFleeFromEnemies>
+    </JobDef>
+
+    <!-- Visit Mentor -->
+
+    <JobDef>
+        <defName>FCP_Job_VisitMentor</defName>
+        <driverClass>FCP.Ranks.Jobs.JobDriver_VisitMentor</driverClass>
+        <reportString>watching TargetA.</reportString>
+        <joyDuration>2000</joyDuration>
+        <joyKind>Social</joyKind>
+    </JobDef>
+
+    <!-- Gear Maintenance -->
+
+    <JobDef>
+        <defName>FCP_Job_RankGearMaintenance</defName>
+        <driverClass>FCP.Ranks.Jobs.JobDriver_RankGearMaintenance</driverClass>
+        <reportString>servicing gear at TargetA.</reportString>
+        <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+    </JobDef>
+
+</Defs>

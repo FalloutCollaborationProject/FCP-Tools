@@ -31,6 +31,7 @@ public class InfoSettings : SettingsTab
         DrawGroup(list, "FCP_Settings_Info_Group_Survival");
         DrawGroup(list, "FCP_Settings_Info_Group_Settlements");
         DrawGroup(list, "FCP_Settings_Info_Group_Story");
+        DrawGroup(list, "FCP_Settings_Info_Group_Ranks");
         DrawGroup(list, "FCP_Settings_Info_Group_World");
         DrawGroup(list, "FCP_Settings_Info_Group_Misc");
 
@@ -110,6 +111,18 @@ public class InfoSettings : SettingsTab
             "FCP_Settings_Info_FactionIdeology",
             "FCP_Settings_Info_CustomQuests",
             "FCP_Settings_Info_Gauntlet",
+            "FCP_Settings_Info_GOATExam",
+        ],
+        "FCP_Settings_Info_Group_Ranks" =>
+        [
+            "FCP_Settings_Info_RankOverview",
+            "FCP_Settings_Info_RankPromotion",
+            "FCP_Settings_Info_RankTraining",
+            "FCP_Settings_Info_RankDiscipline",
+            "FCP_Settings_Info_RankCommand",
+            "FCP_Settings_Info_RankExpeditions",
+            "FCP_Settings_Info_RankRoster",
+            "FCP_Settings_Info_RankDevTools",
         ],
         "FCP_Settings_Info_Group_World" =>
         [
@@ -120,6 +133,7 @@ public class InfoSettings : SettingsTab
             "FCP_Settings_Info_ProductionBenches",
             "FCP_Settings_Info_Tents",
             "FCP_Settings_Info_PocketMaps",
+            "FCP_Settings_Info_VaultDoor",
         ],
         "FCP_Settings_Info_Group_Misc" =>
         [

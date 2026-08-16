@@ -25,19 +25,17 @@ public class GeneGizmo_Ferality : Gizmo
         Rect rect = new Rect(topLeft.x, topLeft.y, GetWidth(maxWidth), 75f);
         Widgets.DrawWindowBackground(rect);
 
-        // Title
         Text.Font = GameFont.Tiny;
         Text.Anchor = TextAnchor.UpperCenter;
         Rect labelRect = new Rect(rect.x, rect.y + 2f, rect.width, 20f);
         Widgets.Label(labelRect, "Ferality");
 
-        // Bar background
         Rect barRect = new Rect(rect.x + 10f, rect.y + 25f, rect.width - 20f, 20f);
         Widgets.DrawBoxSolid(barRect, EmptyBarTex.GetPixel(0, 0));
 
         float fillWidth = barRect.width * gene.FeralityPercent;
         Rect fillRect = new Rect(barRect.x, barRect.y, fillWidth, barRect.height);
-            
+
         Color barColor;
         if (gene.FeralityPercent < 0.25f)
             barColor = Color.Lerp(Color.green, Color.yellow, gene.FeralityPercent * 4f);
