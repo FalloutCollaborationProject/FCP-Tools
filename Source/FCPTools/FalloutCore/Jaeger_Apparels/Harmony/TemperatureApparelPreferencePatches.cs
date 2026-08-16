@@ -250,6 +250,14 @@ public static class TemperatureApparelPreferencePatches
             return;
         }
 
+        if (pawn.apparel != null && pawn.apparel.AnyApparelLocked)
+        {
+            FCPLog.Verbose("Apply skip pawn=" + SafePawnLabel(pawn) + " reason=hasLockedApparel");
+            state.completed = true;
+            state.isNew = false;
+            return;
+        }
+
         float tempC = map != null && map.mapTemperature != null ? map.mapTemperature.OutdoorTemp : float.NaN;
         if (float.IsNaN(tempC))
         {

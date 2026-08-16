@@ -12,6 +12,11 @@ public static class PawnApparelGenerator_GenerateStartingApparelFor_Patch
 
     public static void Prefix(Pawn pawn)
     {
+        if (UniqueCharactersTracker.Instance != null && UniqueCharactersTracker.Instance.IsUniquePawn(pawn))
+        {
+            FCPLog.Warning($"GenerateStartingApparelFor running on unique pawn {pawn} (this destroys and regenerates all current apparel)");
+        }
+
         var xenotype = pawn.genes?.Xenotype;
         if (xenotype != null)
         {
