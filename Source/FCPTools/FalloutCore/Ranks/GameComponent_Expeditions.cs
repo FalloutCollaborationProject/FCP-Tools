@@ -1,3 +1,4 @@
+using FCP.Core.Logging;
 using FCP.Core.Radio;
 using RimWorld.Planet;
 using UnityEngine;
@@ -155,6 +156,12 @@ public class GameComponent_Expeditions : GameComponent
             entryCell = CellFinder.RandomEdgeCell(map);
 
         Find.WorldPawns.RemovePawn(pawn);
+        if (pawn.Faction != Faction.OfPlayer)
+        {
+            FCPLog.Warning($"Expedition return: {pawn.LabelShortCap} had drifted to faction " +
+                $"'{pawn.Faction?.Name ?? "null"}' while away on expedition '{data.expedition?.defName}'. Restoring to player faction.");
+            pawn.SetFaction(Faction.OfPlayer);
+        }
         GenSpawn.Spawn(pawn, entryCell, map);
 
         RankExpeditionDef expedition = data.expedition;

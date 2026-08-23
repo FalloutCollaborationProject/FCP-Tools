@@ -683,7 +683,7 @@
                         <thingDef>FCP_Chem_Radaway</thingDef>
                         <countRange>1~3</countRange>
                     </li>
-                    <li MayRequire="Rick.FCP.Chems">
+                    <li MayRequire="Rick.FCP.Chems,Rick.FCP.Plants">
                         <thingDef>FCP_Chem_Mentats</thingDef>
                         <countRange>1~2</countRange>
                     </li>

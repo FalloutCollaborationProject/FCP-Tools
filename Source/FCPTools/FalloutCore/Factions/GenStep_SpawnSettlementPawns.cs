@@ -11,6 +11,8 @@ public class GenStep_SpawnSettlementPawns : GenStep
 {
     private static List<Building> tmpBuildings = new List<Building>();
 
+    public bool spawnFillerPawns = true;
+
     public override int SeedPart => 123456789;
 
     public override void Generate(Map map, GenStepParams parms)
@@ -59,11 +61,14 @@ public class GenStep_SpawnSettlementPawns : GenStep
             }
         }
 
-        for (int k = num2; k < num; k++)
+        if (spawnFillerPawns)
         {
-            Pawn pawn3 = PawnGenerator.GeneratePawn(settlement.Faction.RandomPawnKind(), settlement.Faction);
-            GenSpawn.Spawn(pawn3, GetSpawnPosition(map), map);
-            lord.AddPawn(pawn3);
+            for (int k = num2; k < num; k++)
+            {
+                Pawn pawn3 = PawnGenerator.GeneratePawn(settlement.Faction.RandomPawnKind(), settlement.Faction);
+                GenSpawn.Spawn(pawn3, GetSpawnPosition(map), map);
+                lord.AddPawn(pawn3);
+            }
         }
     }
 

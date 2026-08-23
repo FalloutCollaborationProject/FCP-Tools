@@ -1021,7 +1021,7 @@
 
     <!--_____ NCR Weapons _____-->
 
-    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base" MayRequire="Rick.FCP.NCR">
         <defName>FCP_Research_Blueprint_ServiceRifle</defName>
         <label>Blueprint: Service Rifle</label>
         <description>Gun Runners blueprint detailing the construction of the NCR service rifle.</description>
@@ -1032,7 +1032,7 @@
         <researchViewY>15.00</researchViewY>
     </ResearchProjectDef>
 
-    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base" MayRequire="Rick.FCP.NCR">
         <defName>FCP_Research_Blueprint_RangerSequoia</defName>
         <label>Blueprint: Ranger Sequoia</label>
         <description>Gun Runners blueprint detailing the construction of the Ranger Sequoia.</description>
@@ -1043,7 +1043,7 @@
         <researchViewY>15.00</researchViewY>
     </ResearchProjectDef>
 
-    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base" MayRequire="Rick.FCP.NCR">
         <defName>FCP_Research_Blueprint_NCRHuntingRifle</defName>
         <label>Blueprint: NCR Standard Hunting Rifle</label>
         <description>Gun Runners blueprint detailing the construction of the NCR standard hunting rifle.</description>

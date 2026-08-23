@@ -39,7 +39,7 @@ public class FactionExtension_SettlementControl : DefModExtension
 }
 
 [UsedImplicitly(ImplicitUseTargetFlags.WithMembers)]
-public class NamedSettlement
+public class NamedSettlement : IExposable
 {
     public string name;
     public MapGeneratorDef mapGenerator;
@@ -52,6 +52,21 @@ public class NamedSettlement
     public List<SettlementTrader> traders;
     public bool oceanPlacement;
     public bool coastal;
+
+    public void ExposeData()
+    {
+        Scribe_Values.Look(ref name, "name");
+        Scribe_Defs.Look(ref mapGenerator, "mapGenerator");
+        Scribe_Defs.Look(ref prefab, "prefab");
+        Scribe_Collections.Look(ref preferredHilliness, "preferredHilliness", LookMode.Value);
+        Scribe_Collections.Look(ref allowedBiomes, "allowedBiomes", LookMode.Def);
+        Scribe_Values.Look(ref forcedMapSize, "forcedMapSize", IntVec3.Invalid);
+        Scribe_Collections.Look(ref guaranteedPawnKinds, "guaranteedPawnKinds", LookMode.Deep);
+        Scribe_Collections.Look(ref guaranteedCharacters, "guaranteedCharacters", LookMode.Def);
+        Scribe_Collections.Look(ref traders, "traders", LookMode.Deep);
+        Scribe_Values.Look(ref oceanPlacement, "oceanPlacement");
+        Scribe_Values.Look(ref coastal, "coastal");
+    }
 
     public void LoadDataFromXmlCustom(XmlNode xmlRoot)
     {

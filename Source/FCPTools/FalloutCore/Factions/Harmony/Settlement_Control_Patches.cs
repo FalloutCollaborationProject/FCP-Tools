@@ -60,6 +60,8 @@ static class Settlement_FinalizeInit_Patch
                     gameComp.RegisterSettlementWithPrefab(settlement, namedSettlement.prefab, namedSettlement.forcedMapSize, namedSettlement.guaranteedPawnKinds, namedSettlement.guaranteedCharacters, namedSettlement.traders);
                 else if (namedSettlement.mapGenerator != null)
                     gameComp.RegisterSettlement(settlement, namedSettlement.mapGenerator, namedSettlement.forcedMapSize, namedSettlement.guaranteedPawnKinds, namedSettlement.guaranteedCharacters);
+                else if (!namedSettlement.guaranteedCharacters.NullOrEmpty() || !namedSettlement.guaranteedPawnKinds.NullOrEmpty())
+                    gameComp.RegisterGuaranteedOnly(settlement, namedSettlement.guaranteedPawnKinds, namedSettlement.guaranteedCharacters);
 
                 if (namedSettlement.traders != null && namedSettlement.traders.Count > 0)
                 {
@@ -215,7 +217,7 @@ static class Settlement_FinalizeInit_Patch
 [HarmonyPatch(typeof(MapGenerator), nameof(MapGenerator.GenerateMap))]
 static class MapGenerator_GenerateMap_Patch
 {
-    static void Prefix(ref IntVec3 mapSize, MapParent parent, ref MapGeneratorDef mapGenerator, IEnumerable<GenStepWithParams> extraGenStepDefs = null, Action<Map> extraInitBeforeContentGen = null)
+    static void Prefix(ref IntVec3 mapSize, MapParent parent, ref MapGeneratorDef mapGenerator, ref IEnumerable<GenStepWithParams> extraGenStepDefs, Action<Map> extraInitBeforeContentGen = null)
     {
         Settlement settlement = parent as Settlement;
         if (settlement == null)
@@ -233,6 +235,16 @@ static class MapGenerator_GenerateMap_Patch
             IntVec3 customSize = comp.GetMapSize(settlement);
             if (customSize != IntVec3.Invalid)
                 mapSize = customSize;
+        }
+        else if (comp.HasGuaranteedContent(settlement))
+        {
+            GenStepDef genStep = DefDatabase<GenStepDef>.GetNamed("FCP_GenStep_SpawnGuaranteedCharacters", false);
+            if (genStep != null)
+            {
+                List<GenStepWithParams> steps = extraGenStepDefs != null ? new List<GenStepWithParams>(extraGenStepDefs) : new List<GenStepWithParams>();
+                steps.Add(new GenStepWithParams(genStep, default(GenStepParams)));
+                extraGenStepDefs = steps;
+            }
         }
     }
 }

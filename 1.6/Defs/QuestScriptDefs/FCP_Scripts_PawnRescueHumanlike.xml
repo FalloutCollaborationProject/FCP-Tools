@@ -73,7 +73,7 @@
                 <li Class="FCP.Core.RadiantQuests.QuestNode_GetPawnKind">
                     <!--Dont change storeAs its hardcoded in C#-->
                     <storeAs>prisonerPawnKind</storeAs>
-                    <pawnKindDef>FCP_Pawnkind_Wastelander_Citizen</pawnKindDef>
+                    <pawnKindDef MayRequire="Rick.FCP.Wastelanders">FCP_Pawnkind_Wastelander_Citizen</pawnKindDef>
                 </li>
                 <li Class="QuestNode_GetRandomInRangeFloat">
                     <storeAs>chanceToJoinVal</storeAs>

@@ -25,4 +25,12 @@
 		<genStep Class="FCP.Factions.GenStep_SpawnSettlementPawns" />
 	</GenStepDef>
 
+	<GenStepDef>
+		<defName>FCP_GenStep_SpawnGuaranteedCharacters</defName>
+		<order>9999</order>
+		<genStep Class="FCP.Factions.GenStep_SpawnSettlementPawns">
+			<spawnFillerPawns>false</spawnFillerPawns>
+		</genStep>
+	</GenStepDef>
+
 </Defs>

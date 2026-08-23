@@ -53,6 +53,25 @@ public class GameComponent_SettlementMapGenerators : GameComponent
             traders[settlement.ID] = settlementTraders;
     }
 
+    public void RegisterGuaranteedOnly(Settlement settlement, List<PawnKindCount> guaranteedPawnKinds, List<CharacterDef> guaranteedCharacterDefs)
+    {
+        if (settlement == null)
+            return;
+
+        if (guaranteedPawnKinds != null && guaranteedPawnKinds.Count > 0)
+            guaranteedPawns[settlement.ID] = guaranteedPawnKinds;
+        if (guaranteedCharacterDefs != null && guaranteedCharacterDefs.Count > 0)
+            guaranteedCharacters[settlement.ID] = guaranteedCharacterDefs;
+    }
+
+    public bool HasGuaranteedContent(Settlement settlement)
+    {
+        if (settlement == null)
+            return false;
+
+        return guaranteedCharacters.ContainsKey(settlement.ID) || guaranteedPawns.ContainsKey(settlement.ID);
+    }
+
     public MapGeneratorDef GetMapGenerator(Settlement settlement)
     {
         if (settlement == null)

@@ -9,7 +9,7 @@
 
     <PawnKindDef Name="FCP_Vault_TeckindBase" Abstract="True">
         <race>Human</race>
-        <defaultFactionDef>FCP_Faction_Vault_Tec</defaultFactionDef>
+        <defaultFactionDef MayRequire="Rick.FCP.VaultTec">FCP_Faction_Vault_Tec</defaultFactionDef>
         <maxGenerationAge>60</maxGenerationAge>
         <chemicalAddictionChance>0</chemicalAddictionChance>
         <invNutrition>2.7</invNutrition>
@@ -27,7 +27,7 @@
 
     <PawnKindDef Name="FCP_EncalvekindBase" Abstract="True">
         <race>Human</race>
-        <defaultFactionDef>FCP_Faction_Encalve</defaultFactionDef>
+        <defaultFactionDef MayRequire="Rick.FCP.Enclave">FCP_Faction_Enclave</defaultFactionDef>
         <maxGenerationAge>60</maxGenerationAge>
         <chemicalAddictionChance>0</chemicalAddictionChance>
         <invNutrition>2.7</invNutrition>
@@ -45,7 +45,7 @@
 
     <PawnKindDef Name="FCP_NCRkindBase" Abstract="True">
         <race>Human</race>
-        <defaultFactionDef>FCP_Faction_NCR</defaultFactionDef>
+        <defaultFactionDef MayRequire="Rick.FCP.NCR">FCP_Faction_NCR</defaultFactionDef>
         <maxGenerationAge>60</maxGenerationAge>
         <chemicalAddictionChance>0</chemicalAddictionChance>
         <invNutrition>2.7</invNutrition>
@@ -66,7 +66,7 @@
 
 	<PawnKindDef Name="FCP_BoSkindBase" Abstract="True">
 		<race>Human</race>
-		<defaultFactionDef>FCP_Faction_BoS</defaultFactionDef>
+		<defaultFactionDef MayRequire="Rick.FCP.BOS">FCP_Faction_BoS</defaultFactionDef>
 		<maxGenerationAge>60</maxGenerationAge>
 		<chemicalAddictionChance>0</chemicalAddictionChance>
 		<invNutrition>2.7</invNutrition>
@@ -95,9 +95,9 @@
 	<PawnKindDef ParentName="FCP_BoSkindBase" Name="FCP_BoS_PowerArmorBase" Abstract="True">
 		<apparelRequired>
 			<li MayRequire="Rick.FCP.PowerArmor">FCP_Apparel_Power_Armor_Frame</li>
-			<li>FCP_Apparel_BoS_Jumpsuit</li>
-			<li>FCP_Apparel_BOS_T60_Power_Armor</li>
-			<li>FCP_Apparel_T60_Power_Armor_Helmet</li>
+			<li MayRequire="Rick.FCP.BOS">FCP_Apparel_BoS_Jumpsuit</li>
+			<li MayRequire="Rick.FCP.BOS,Rick.FCP.PowerArmor">FCP_Apparel_BoS_T60_Power_Armor</li>
+			<li MayRequire="Rick.FCP.BOS,Rick.FCP.PowerArmor">FCP_Apparel_BoS_T60_Power_Armor_Helmet</li>
 		</apparelRequired>
 		<forcedTraits>
 			<FCP_Power_Armor_Trained />
@@ -110,7 +110,7 @@
     <PawnKindDef Name="FCP_LegionkindBase" Abstract="True">
         <race>Human</race>
         <fixedGender>Male</fixedGender>
-        <defaultFactionDef>FCP_Faction_Caesars_Legion</defaultFactionDef>
+        <defaultFactionDef MayRequire="Rick.FCP.Legion">FCP_Faction_Caesars_Legion</defaultFactionDef>
         <maxGenerationAge>60</maxGenerationAge>
         <chemicalAddictionChance>0</chemicalAddictionChance>
         <invNutrition>2.7</invNutrition>
@@ -165,6 +165,11 @@
         <apparelTags>
             <li>FCP_Wastelander_Apparel</li>
         </apparelTags>
+        <apparelDisallowTags>
+            <li MayRequire="Rick.FCP.Raiders">FCP_Raider_Armor</li>
+            <li MayRequire="Rick.FCP.Raiders">FCP_Raider_Power_Armor</li>
+            <li MayRequire="Rick.FCP.Raiders">FCP_Fiends_Armor</li>
+        </apparelDisallowTags>
         <backstoryFiltersOverride>
             <li>
                 <categoriesChildhood>
@@ -200,6 +205,11 @@
         <apparelTags>
             <li>FCP_Wastelander_Apparel</li>
         </apparelTags>
+        <apparelDisallowTags>
+            <li MayRequire="Rick.FCP.Raiders">FCP_Raider_Armor</li>
+            <li MayRequire="Rick.FCP.Raiders">FCP_Raider_Power_Armor</li>
+            <li MayRequire="Rick.FCP.Raiders">FCP_Fiends_Armor</li>
+        </apparelDisallowTags>
         <backstoryFiltersOverride>
             <li>
                 <categoriesChildhood>
