@@ -227,7 +227,7 @@
         <slot>Childhood</slot>
         <title>Resourceful Scavenger</title>
         <titleShort>Belle's Childhood</titleShort>
-        <description>Growing up in the Capital Wasteland, [PAWN_nameDef] learned to make do with whatever [PAWN_pronoun] could find. [PAWN_pronoun] was quick with a joke, good at making friends, and always found a way to get what [PAWN_pronoun] needed—whether it was food, shelter, or a little extra fun. Belle's early years taught [PAWN_objective] the value of resourcefulness and a sharp tongue.</description>
+        <description>Growing up in the Capital Wasteland, [PAWN_nameDef] learned to make do with whatever [PAWN_pronoun] could find. [PAWN_pronoun] was quick with a joke, good at making friends, and always found a way to get what [PAWN_pronoun] needed, whether that was food, shelter, or a little extra fun. Belle's early years taught [PAWN_objective] the value of resourcefulness and a sharp tongue.</description>
         <skillGains>
             <Social>3</Social>
             <Cooking>2</Cooking>
@@ -305,7 +305,7 @@
         <slot>Adulthood</slot>
         <title>Junk Trader</title>
         <titleShort>Junk Trader</titleShort>
-        <description>[PAWN_nameDef] is the Capital Wasteland's most eccentric junk trader, known for his wild stories, rambling sales pitches, and a caravan bursting with oddities. With a manic grin and a love for all things scrap, Crazy Wolfgang travels the wastes in search of the next big haul—or the next person willing to buy a toaster, a lawnmower blade, or a perfectly good hunk of pre-war junk. Some say he's a little unhinged, but his eye for valuable salvage is unmatched.</description>
+        <description>[PAWN_nameDef] is the Capital Wasteland's most eccentric junk trader, known for his wild stories, rambling sales pitches, and a caravan bursting with oddities. With a manic grin and a love for all things scrap, Crazy Wolfgang travels the wastes in search of the next big haul, or at least the next person willing to buy a toaster, a lawnmower blade, or a perfectly good hunk of pre-war junk. Some say he's a little unhinged, but his eye for valuable salvage is unmatched.</description>
         <skillGains>
             <Shooting>2</Shooting>
             <Cooking>1</Cooking>
@@ -356,7 +356,7 @@
         <slot>Adulthood</slot>
         <title>Traveling Chem Dealer</title>
         <titleShort>Chem Dealer</titleShort>
-        <description>[PAWN_nameDef] wandered the Capital Wasteland as a traveling doctor and chem dealer, peddling medicine and chems to anyone with the caps. Known for [PAWN_possessive] dry wit, questionable medical ethics, and a tendency to sample [PAWN_possessive] own wares, Doc Hoff was always ready with a remedy for pain—or a new addiction. [PAWN_pronoun] could patch up a bullet wound or sell you a dose of Jet, all with the same sly grin.</description>
+        <description>[PAWN_nameDef] wandered the Capital Wasteland as a traveling doctor and chem dealer, peddling medicine and chems to anyone with the caps. Known for [PAWN_possessive] dry wit, questionable medical ethics, and a tendency to sample [PAWN_possessive] own wares, Doc Hoff was always ready with a remedy for pain, or with a new addiction. [PAWN_pronoun] could patch up a bullet wound or sell you a dose of Jet, all with the same sly grin.</description>
         <skillGains>
             <Medicine>7</Medicine>
             <Social>5</Social>
@@ -383,7 +383,7 @@
         <slot>Childhood</slot>
         <title>Curious Tinkerer</title>
         <titleShort>Doc Hoff's Childhood</titleShort>
-        <description>As a child, [PAWN_nameDef] was always poking around old ruins and abandoned clinics, fascinated by bottles, syringes, and anything labeled "medicine." [PAWN_pronoun] was quick to learn first aid—sometimes on the family Brahmin—and had a knack for mixing up strange brews from whatever [PAWN_pronoun] could scavenge. Rules were more like suggestions, and [PAWN_nameDef] was always in trouble for "borrowing" supplies for [PAWN_possessive] experiments.</description>
+        <description>As a child, [PAWN_nameDef] was always poking around old ruins and abandoned clinics, fascinated by bottles, syringes, and anything labeled "medicine." [PAWN_pronoun] was quick to learn first aid, sometimes on the family Brahmin, and had a knack for mixing up strange brews from whatever [PAWN_pronoun] could scavenge. Rules were more like suggestions, and [PAWN_nameDef] was always in trouble for "borrowing" supplies for [PAWN_possessive] experiments.</description>
         <skillGains>
             <Medicine>3</Medicine>
             <Intellectual>2</Intellectual>
@@ -406,7 +406,7 @@
         <slot>Adulthood</slot>
         <title>Weapon Merchant</title>
         <titleShort>Weapon Merchant</titleShort>
-        <description>[PAWN_nameDef] earned the nickname "Lucky" by surviving countless close calls on the treacherous roads of the Capital Wasteland. As a traveling weapons merchant, [PAWN_pronoun] always had a story about a narrow escape or a big score, and [PAWN_possessive] caravan was famous for its ever-changing arsenal. With a quick wit, a gambler's charm, and a knack for finding rare firepower, Lucky Harith could arm a settlement—or talk [PAWN_objective]self out of a firefight.</description>
+        <description>[PAWN_nameDef] earned the nickname "Lucky" by surviving countless close calls on the treacherous roads of the Capital Wasteland. As a traveling weapons merchant, [PAWN_pronoun] always had a story about a narrow escape or a big score, and [PAWN_possessive] caravan was famous for its ever-changing arsenal. With a quick wit, a gambler's charm, and a knack for finding rare firepower, Lucky Harith could arm a settlement just as easily as [PAWN_pronoun] could talk [PAWN_objective]self out of a firefight.</description>
         <skillGains>
             <Shooting>5</Shooting>
             <Social>7</Social>
@@ -433,7 +433,7 @@
         <slot>Childhood</slot>
         <title>Wasteland Gambler</title>
         <titleShort>Lucky Harith's Childhood</titleShort>
-        <description>Growing up, [PAWN_nameDef] was always taking chances—whether it was sneaking into forbidden ruins, betting bottle caps on two-headed ant races, or trading scavenged goods for a shot at something better. [PAWN_pronoun] learned early that luck could be as valuable as skill, and [PAWN_pronoun] was quick to make friends (and the occasional enemy) wherever [PAWN_pronoun] roamed. Every close call was just another story to tell around the campfire.</description>
+        <description>Growing up, [PAWN_nameDef] was always taking chances, sneaking into forbidden ruins, betting bottle caps on two-headed ant races, or trading scavenged goods for a shot at something better. [PAWN_pronoun] learned early that luck could be as valuable as skill, and [PAWN_pronoun] was quick to make friends (and the occasional enemy) wherever [PAWN_pronoun] roamed. Every close call was just another story to tell around the campfire.</description>
         <skillGains>
             <Social>3</Social>
             <Shooting>2</Shooting>
@@ -485,7 +485,7 @@
         <slot>Childhood</slot>
         <title>Junkyard Upbringing</title>
         <titleShort>Carla's Childhood</titleShort>
-        <description>[PAWN_nameDef] grew up picking through scrapyards and collapsed buildings, learning to spot the one usable part in a heap of ruin. Nobody looked out for [PAWN_objective] but [PAWN_pronoun] never seemed to need it—[PAWN_pronoun] could talk [PAWN_possessive] way out of trouble as easily as [PAWN_pronoun] could fix a broken axle.</description>
+        <description>[PAWN_nameDef] grew up picking through scrapyards and collapsed buildings, learning to spot the one usable part in a heap of ruin. Nobody looked out for [PAWN_objective], but [PAWN_pronoun] never seemed to need it. [PAWN_pronoun] could talk [PAWN_possessive] way out of trouble as easily as [PAWN_pronoun] could fix a broken axle.</description>
         <skillGains>
             <Crafting>3</Crafting>
             <Social>1</Social>
@@ -708,7 +708,7 @@
         <slot>Adulthood</slot>
         <title>Rivet City Security Rookie</title>
         <titleShort>Security Rookie</titleShort>
-        <description>New to the force, [PAWN_nameDef] joined Rivet City security eager to prove [PAWN_objective]self. Under the watchful eyes of veteran officers, [PAWN_pronoun] learned the ropes—patrolling the ship, breaking up disputes, and facing the dangers of the wasteland for the first time. Every day brought new challenges and valuable lessons.</description>
+        <description>New to the force, [PAWN_nameDef] joined Rivet City security eager to prove [PAWN_objective]self. Under the watchful eyes of veteran officers, [PAWN_pronoun] learned the ropes: patrolling the ship, breaking up disputes, and facing the dangers of the wasteland for the first time. Every day brought new challenges and valuable lessons.</description>
         <skillGains>
             <Shooting>4</Shooting>
             <Melee>2</Melee>
@@ -3052,7 +3052,7 @@
         <slot>Adulthood</slot>
         <title>Relic Hunter</title>
         <titleShort>Relic Hunter</titleShort>
-        <description>Raiders killed [PAWN_nameDef]'s mother when [PAWN_pronoun] was young, and [PAWN_possessive] gunsmith father disappeared from [PAWN_possessive] life not long after. [PAWN_pronoun] has always believed he simply walked away—in truth, he died chasing one last deal, trying to leave [PAWN_objective] something. Now [PAWN_pronoun] chases the most dangerous scores in the wasteland alone, and prefers it that way.</description>
+        <description>Raiders killed [PAWN_nameDef]'s mother when [PAWN_pronoun] was young, and [PAWN_possessive] gunsmith father disappeared from [PAWN_possessive] life not long after. [PAWN_pronoun] has always believed he simply walked away. In truth, he died chasing one last deal, trying to leave [PAWN_objective] something. Now [PAWN_pronoun] chases the most dangerous scores in the wasteland alone, and prefers it that way.</description>
         <skillGains>
             <Shooting>8</Shooting>
             <Melee>3</Melee>
