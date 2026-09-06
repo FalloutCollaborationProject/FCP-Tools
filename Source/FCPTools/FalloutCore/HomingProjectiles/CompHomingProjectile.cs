@@ -106,35 +106,6 @@ public class CompHomingProjectile : ThingComp
         }
     }
 
-    public bool RotateTowards(Vector3 target, out Vector3 destinationRotated)
-    {
-        destinationRotated = Traverse.Create(Projectile).Field("destination").GetValue<Vector3>();
-        float targetAngle = GetAngleFromTarget(target);
-        var curAngle = AngleAdjusted(Projectile.ExactRotation.eulerAngles.y + 90);
-        float diff = targetAngle - curAngle;
-
-        if (new FloatRange(targetAngle - Props.turnRate, targetAngle + Props.turnRate).Includes(curAngle))
-        {
-            FCPLog.Verbose($"Projectile.ExactRotation: {Projectile.ExactRotation.eulerAngles.y} - Not Rotating: Diff: {diff} - targetAngle: {targetAngle} - {curAngle} - destination: {destinationRotated} - ExactPosition: {Projectile.ExactPosition}");
-            return false;
-        }
-
-        var newTarget = Projectile.ExactPosition + (Quaternion.AngleAxis(curAngle, Vector3.up) * Vector3.forward);
-
-        if (diff > 0 ? diff > 180f : diff >= -180f)
-        {
-            destinationRotated = newTarget.RotatedBy(-Props.turnRate);
-            FCPLog.Verbose($"Projectile.ExactRotation: {Projectile.ExactRotation.eulerAngles.y} - Rotating counterclock: Diff: {diff} - targetAngle: {targetAngle} - {curAngle} - destinationRotated: {destinationRotated} - ExactPosition: {Projectile.ExactPosition}");
-        }
-        else
-        {
-            destinationRotated = newTarget.RotatedBy(Props.turnRate);
-            FCPLog.Verbose($"Projectile.ExactRotation: {Projectile.ExactRotation.eulerAngles.y} - Rotating clock: Diff: {diff} - targetAngle: {targetAngle} - {curAngle} - destinationRotated: {destinationRotated} - ExactPosition: {Projectile.ExactPosition}");
-        }
-        Projectile.Map.debugDrawer.FlashCell(destinationRotated.ToIntVec3());
-        return true;
-    }
-
     private float GetAngleFromTarget(Vector3 target)
     {
         var targetAngle = (Projectile.ExactPosition.Yto0() - target.Yto0()).AngleFlat();

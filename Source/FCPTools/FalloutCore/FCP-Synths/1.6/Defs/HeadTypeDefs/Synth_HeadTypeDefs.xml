@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!--__________ Gen I Synth Heads __________-->
+
+    <HeadTypeDef>
+        <defName>FCP_Male_Synth_GenI_Head</defName>
+        <graphicPath>FCP_Synth/GenI/Heads/Male_Synth_GenI_Head</graphicPath>
+        <gender>Male</gender>
+        <randomChosen>false</randomChosen>
+    </HeadTypeDef>
+
+    <HeadTypeDef>
+        <defName>FCP_Female_Synth_GenI_Head</defName>
+        <graphicPath>FCP_Synth/GenI/Heads/Female_Synth_GenI_Head</graphicPath>
+        <gender>Female</gender>
+        <randomChosen>false</randomChosen>
+    </HeadTypeDef>
+
+    <!--__________ Gen II Synth Heads __________-->
+
+    <HeadTypeDef>
+        <defName>FCP_Male_Synth_GenII_Head_Average</defName>
+        <graphicPath>FCP_Synth/GenII/Heads/Male_Synth_GenII_Average</graphicPath>
+        <gender>Male</gender>
+        <randomChosen>false</randomChosen>
+    </HeadTypeDef>
+
+    <HeadTypeDef>
+        <defName>FCP_Male_Synth_GenII_Head_Narrow</defName>
+        <graphicPath>FCP_Synth/GenII/Heads/Male_Synth_GenII_Narrow</graphicPath>
+        <gender>Male</gender>
+        <randomChosen>false</randomChosen>
+    </HeadTypeDef>
+
+    <HeadTypeDef>
+        <defName>FCP_Female_Synth_GenII_Head_Average</defName>
+        <graphicPath>FCP_Synth/GenII/Heads/Female_Synth_GenII_Average</graphicPath>
+        <gender>Female</gender>
+        <randomChosen>false</randomChosen>
+    </HeadTypeDef>
+
+    <HeadTypeDef>
+        <defName>FCP_Female_Synth_GenII_Head_Narrow</defName>
+        <graphicPath>FCP_Synth/GenII/Heads/Female_Synth_GenII_Narrow</graphicPath>
+        <gender>Female</gender>
+        <randomChosen>false</randomChosen>
+    </HeadTypeDef>
+
+</Defs>

@@ -459,7 +459,7 @@ public static class Patches
         {
             PermitExtension_MaxFactionTitle permitExtension = permit.Permit.GetModExtension<PermitExtension_MaxFactionTitle>();
 
-            if (newTitle.seniority <= permitExtension?.maxTitle.seniority) continue;
+            if (permitExtension == null || newTitle.seniority <= permitExtension.maxTitle.seniority) continue;
 
             Messages.Message("FCP_MessagePermitLostOnPromotion".Translate(pawn, currentTitle.GetLabelFor(pawn), permit.Permit),
                 MessageTypeDefOf.NeutralEvent);

@@ -12,6 +12,9 @@ public class CompApparelDependency : ThingComp
         base.Notify_Unequipped(pawn);
         foreach (Apparel apparel in pawn.apparel.WornApparel.ToList())
         {
+            if (!pawn.apparel.WornApparel.Contains(apparel))
+                continue;
+
             var comp = apparel.GetComp<CompApparelRequirement>();
             if (comp?.Props.requiredApparels != null && !comp.HasRequiredApparel(pawn))
             {

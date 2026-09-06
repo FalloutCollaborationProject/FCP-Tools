@@ -127,17 +127,15 @@ public class LateBiomeWorker : WorldGenStep
             }
             var list = new List<PlanetTile>();
             worldGrid.GetTileNeighbors(i, list);
-            int j = 0;
             int num3 = 0;
             bool flag4 = true;
             if (modExtension.minimumWaterNeighbors > 0)
             {
-                for (int count = list.Count; j < count; j++)
+                for (int j = 0; j < list.Count; j++)
                 {
                     if (worldGrid[list[j]].PrimaryBiome == BiomeDefOf.Ocean)
                     {
                         num3++;
-                        Log.Message("Water Neighbors =" + num3);
                     }
                     if (num3 < modExtension.minimumWaterNeighbors)
                     {
@@ -155,19 +153,19 @@ public class LateBiomeWorker : WorldGenStep
             }
             int num4 = 0;
             bool flag5 = true;
-            if (modExtension.minimumWaterNeighbors > 0)
+            if (modExtension.minimumLandNeighbors > 0)
             {
-                for (int count2 = list.Count; j < count2; j++)
+                for (int j = 0; j < list.Count; j++)
                 {
                     if (worldGrid[list[j]].PrimaryBiome != BiomeDefOf.Ocean)
                     {
                         num4++;
                     }
-                    if (num3 < modExtension.minimumLandNeighbors)
+                    if (num4 < modExtension.minimumLandNeighbors)
                     {
                         flag5 = false;
                     }
-                    if (num3 == modExtension.minimumLandNeighbors)
+                    if (num4 == modExtension.minimumLandNeighbors)
                     {
                         flag5 = true;
                     }

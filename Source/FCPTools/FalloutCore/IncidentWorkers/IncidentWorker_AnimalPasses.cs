@@ -9,7 +9,10 @@ public class IncidentWorker_AnimalPasses : IncidentWorker
 
     protected override bool CanFireNowSub(IncidentParms parms)
     {
-        if (parms.target is not Map map) 
+        if (Config == null)
+            return false;
+
+        if (parms.target is not Map map)
             return false;
 
         bool toxicFalloutActive = !Config.ignoreToxicFallout &&
@@ -29,9 +32,12 @@ public class IncidentWorker_AnimalPasses : IncidentWorker
 
     protected override bool TryExecuteWorker(IncidentParms parms)
     {
+        if (Config == null)
+            return false;
+
         if (parms.target is not Map map)
             return false;
-        
+
         if (!TryFindEntryCell(map, out IntVec3 cell))
             return false;
 

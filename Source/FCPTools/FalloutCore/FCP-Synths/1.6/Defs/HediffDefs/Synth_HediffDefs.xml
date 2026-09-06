@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!--__________ Gen I Synth Hediffs __________-->
+
+    <!-- Gen I Chassis Body -->
+
+    <HediffDef>
+        <defName>FCP_Hediff_Synth_GenI_Chassis</defName>
+        <label>synthetic chassis</label>
+        <description>The frame and actuators underneath, wired to move like something living. Nothing about it hides what it is.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+        <tendable>false</tendable>
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>1</maxSeverity>
+        <comps>
+            <li Class="FCP.Core.Hediffs.HediffCompProperties_BodyGraphicOverride">
+                <texPath>FCP_Synth/GenI/Bodies/FCP_Synth_GenI_Chassis</texPath>
+            </li>
+            <li Class="FCP.Core.Hediffs.HediffCompProperties_HiddenButcherYield">
+                <replacesNormalYield>true</replacesNormalYield>
+                <yield>
+                    <li>
+                        <thingDef>Steel</thingDef>
+                        <count>60</count>
+                    </li>
+                    <li>
+                        <thingDef>ComponentIndustrial</thingDef>
+                        <count>20</count>
+                    </li>
+                </yield>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <!--__________ Gen II Synth Hediffs __________-->
+
+    <!-- Gen II Remains -->
+
+    <HediffDef>
+        <defName>FCP_Hediff_Synth_GenII_Remains</defName>
+        <label>synthetic remains</label>
+        <description>Under the grown tissue, there's still a frame and a handful of parts worth stripping.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+        <tendable>false</tendable>
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>1</maxSeverity>
+        <stages>
+            <li>
+                <statFactors>
+                    <MeatAmount>0.5</MeatAmount>
+                </statFactors>
+            </li>
+        </stages>
+        <comps>
+            <li Class="FCP.Core.Hediffs.HediffCompProperties_HiddenButcherYield">
+                <replacesNormalYield>false</replacesNormalYield>
+                <yield>
+                    <li>
+                        <thingDef>Steel</thingDef>
+                        <count>20</count>
+                    </li>
+                    <li>
+                        <thingDef>ComponentIndustrial</thingDef>
+                        <count>15</count>
+                    </li>
+                </yield>
+            </li>
+        </comps>
+    </HediffDef>
+
+    <!--__________ Gen III Synth Hediffs __________-->
+
+    <!-- Gen III Concealed Components -->
+
+    <HediffDef>
+        <defName>FCP_Hediff_SynthComponents_GenIII</defName>
+        <label>internal components</label>
+        <description>Concealed synthetic components, indistinguishable from the outside. Only an autopsy would find them.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+        <tendable>false</tendable>
+        <initialSeverity>1</initialSeverity>
+        <maxSeverity>1</maxSeverity>
+        <stages>
+            <li>
+                <becomeVisible>false</becomeVisible>
+            </li>
+        </stages>
+        <comps>
+            <li Class="FCP.Core.Hediffs.HediffCompProperties_HiddenButcherYield">
+                <replacesNormalYield>false</replacesNormalYield>
+                <yield>
+                    <li>
+                        <thingDef>FCP_SynthComponents</thingDef>
+                        <count>1</count>
+                    </li>
+                </yield>
+            </li>
+        </comps>
+    </HediffDef>
+
+</Defs>

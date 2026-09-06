@@ -20,6 +20,7 @@ public class ThingComp_RollingVaultDoorNumbers : ThingComp
 
     public override void PostSpawnSetup(bool respawningAfterLoad)
     {
+        base.PostSpawnSetup(respawningAfterLoad);
         _vaultDoor = parent as Building_RollingVaultDoor;
         _compBase = parent.GetComp<ThingComp_RollingVaultDoorBase>();
         _rotation = parent.Rotation;

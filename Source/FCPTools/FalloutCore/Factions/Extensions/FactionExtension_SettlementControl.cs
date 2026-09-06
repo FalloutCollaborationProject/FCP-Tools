@@ -124,13 +124,11 @@ public class NamedSettlement : IExposable
 public class SettlementTrader : IExposable
 {
     public string traderName;
-    public ThingDef characterDef;
     public TraderKindDef traderKind;
 
     public void ExposeData()
     {
         Scribe_Values.Look(ref traderName, "traderName");
-        Scribe_Defs.Look(ref characterDef, "characterDef");
         Scribe_Defs.Look(ref traderKind, "traderKind");
     }
 }

@@ -171,6 +171,9 @@ namespace FCP.Core.Holotapes
         private void DrawEntryContent(Rect rect, HolotapeDef def)
         {
             List<HolotapeEntry> entries = def.entries;
+            if (entries.NullOrEmpty())
+                return;
+
             if (currentEntryIndex >= entries.Count)
                 currentEntryIndex = 0;
 

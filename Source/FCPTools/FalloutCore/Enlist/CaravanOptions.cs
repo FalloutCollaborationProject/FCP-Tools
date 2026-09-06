@@ -11,7 +11,7 @@ public class CaravanOptions : IExposable
 	public int curWorkOptionInd;
 	public bool autoFeedEnabled;
 	public WorldObject curWorldObject;
-	public List<FactionEnlistOptionsDef> OptionsDefs => curWorldObject.GetComponent<WorldObjectCompEnlist>().OptionsDefs;
+	public List<FactionEnlistOptionsDef> OptionsDefs => curWorldObject?.GetComponent<WorldObjectCompEnlist>()?.OptionsDefs;
 
 	public CaravanOptions()
 	{
@@ -36,7 +36,9 @@ public class CaravanOptions : IExposable
 		Scribe_References.Look(ref curWorldObject, "curSettlement");
 		if (Scribe.mode == LoadSaveMode.PostLoadInit)
 		{
-			if (curEnlistOptionInd != -1 && curWorkOptionInd != -1 && OptionsDefs != null)
+			if (curEnlistOptionInd != -1 && curWorkOptionInd != -1 && OptionsDefs != null
+				&& curEnlistOptionInd < OptionsDefs.Count
+				&& curWorkOptionInd < OptionsDefs[curEnlistOptionInd].workOptions?.Count)
 			{
 				curWorkOption = OptionsDefs[curEnlistOptionInd].workOptions[curWorkOptionInd];
 			}

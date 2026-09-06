@@ -16,7 +16,7 @@ public class SitePartWorker_PawnRescueAnimal : SitePartWorker
         Pawn pawn = PawnRescueUtility.GeneratePrisonerAnimal(part.site.Tile, slate.Get<PawnKindDef>("prisonerPawnKind", PawnKindDefOf.Slave), slate.Get<Faction>("prisonerFaction"));
         if (slate.Get<float>("chanceToJoin") >= slate.Get<float>("chanceToJoinVal"))
         {
-            PawnRescueUtility.prisonersWillingJoin.Add(pawn);
+            GameComponent_PawnRescue.Instance.MarkWillingToJoin(pawn);
         }
         part.things = new ThingOwner<Thing>(part, false);
         part.things.TryAdd(pawn);

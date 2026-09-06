@@ -122,5 +122,4 @@ public class IncidentWorker_RandomFactionSite : IncidentWorker
         return count;
     }
 
-    private static List<Settlement> tmpFactionBases = new List<Settlement>();
 }

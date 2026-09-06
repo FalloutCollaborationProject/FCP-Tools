@@ -1,3 +1,4 @@
+using FCP.Enlist;
 using UnityEngine;
 
 namespace FCP.Core;
@@ -23,11 +24,16 @@ public class EnlistSettings : SettingsTab
         }
     }
 
+    private static string DisplayLabelFor(string defName)
+    {
+        return DefDatabase<FactionEnlistOptionsDef>.GetNamed(defName, false)?.label ?? defName;
+    }
+
     public override void DoTabWindowContents(Rect tabRect)
     {
         GUI.color = TerminalColors.PrimaryColor;
-        var keys = enlistStates.Keys.ToList().OrderByDescending(x => x).ToList();
-        var viewRect = new Rect(0f, 0f, tabRect.width - 30f, 30 + (keys.Count * 24));
+        var keys = enlistStates.Keys.ToList().OrderBy(DisplayLabelFor).ToList();
+        var viewRect = new Rect(0f, 0f, tabRect.width - 30f, 90 + (keys.Count * 24));
         Widgets.BeginScrollView(tabRect, ref scrollPosition, viewRect);
 
         var listing = new Listing_Standard();
@@ -37,12 +43,14 @@ public class EnlistSettings : SettingsTab
         listing.Label("FCP_Settings_Enlistment_ActiveTypes".Translate());
         GUI.color = TerminalColors.PrimaryColor;
         Text.Font = GameFont.Small;
+        listing.Label("FCP_Settings_Enlistment_ActiveTypes_Desc".Translate());
         listing.GapLine();
-        for (int num = keys.Count - 1; num >= 0; num--)
+        foreach (string key in keys)
         {
-            var val = enlistStates[keys[num]];
-            listing.CheckboxLabeled(keys[num], ref val);
-            enlistStates[keys[num]] = val;
+            var val = enlistStates[key];
+            var label = DisplayLabelFor(key);
+            listing.CheckboxLabeled(label, ref val, "FCP_Settings_Enlistment_Checkbox_Desc".Translate(label));
+            enlistStates[key] = val;
         }
         listing.End();
         Widgets.EndScrollView();

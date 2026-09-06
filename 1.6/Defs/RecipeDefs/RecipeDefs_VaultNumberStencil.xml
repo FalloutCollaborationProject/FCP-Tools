@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Restencil Vault Number -->
+
+    <RecipeDef>
+        <defName>FCP_Recipe_RestencilVaultNumber</defName>
+        <label>restencil vault number</label>
+        <description>Repaint the stenciled vault number on the back of a loaded apparel piece with a fresh set of digits.</description>
+        <workerClass>FCP.Core.RecipeWorker_RestencilVaultNumber</workerClass>
+        <jobString>Restenciling vault number.</jobString>
+        <workAmount>800</workAmount>
+        <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+        <workSkill>Crafting</workSkill>
+        <workSkillLearnFactor>1</workSkillLearnFactor>
+        <effectWorking>Tailor</effectWorking>
+        <soundWorking>Recipe_Tailor</soundWorking>
+        <ingredients>
+            <li>
+                <filter>
+                    <thingDefs>
+                        <li>Cloth</li>
+                    </thingDefs>
+                </filter>
+                <count>2</count>
+            </li>
+        </ingredients>
+        <fixedIngredientFilter>
+            <thingDefs>
+                <li>Cloth</li>
+            </thingDefs>
+        </fixedIngredientFilter>
+        <recipeUsers>
+            <li>FCP_Production_Tailoring_Workbench</li>
+        </recipeUsers>
+    </RecipeDef>
+
+</Defs>

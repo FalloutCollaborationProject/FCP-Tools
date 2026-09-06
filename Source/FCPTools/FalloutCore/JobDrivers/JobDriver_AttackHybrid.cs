@@ -55,6 +55,8 @@ public class JobDriver_AttackHybrid : JobDriver
 
     protected override IEnumerable<Toil> MakeNewToils()
     {
+        AddFinishAction(_ => VATS_GameComponent.ActiveAttacks.Remove(pawn));
+
         yield return Toils_Misc.ThrowColonistAttackingMote(TargetIndex.A);
 
         Toil initToil = ToilMaker.MakeToil();

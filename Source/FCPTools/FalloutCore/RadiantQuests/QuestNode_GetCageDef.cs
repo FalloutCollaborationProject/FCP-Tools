@@ -23,10 +23,9 @@ public class QuestNode_GetCageDef : QuestNode
     {
         if (cageDef != null)
         {
-            ThingDef def = DefDatabase<ThingDef>.AllDefsListForReading.Where(c => c.defName == cageDef.GetValue(slate)).First();
-            slate.Set(storeAs.GetValue(slate), def);
-
+            ThingDef def = DefDatabase<ThingDef>.GetNamed(cageDef.GetValue(slate), false);
+            if (def != null)
+                slate.Set(storeAs.GetValue(slate), def);
         }
-
     }
 }

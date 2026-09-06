@@ -228,6 +228,8 @@
 	<FCP_ApparelBench_NoApparel>No FCP apparel found on the map.</FCP_ApparelBench_NoApparel>
 	<FCP_ApparelBench_NoHauler>No colonist available to haul the item to the bench.</FCP_ApparelBench_NoHauler>
 	<FCP_ApparelBench_Done>{0} has repaired {1}.</FCP_ApparelBench_Done>
+	<FCP_VaultNumberStencil_DialogTitle>Set vault number</FCP_VaultNumberStencil_DialogTitle>
+	<FCP_VaultNumberStencil_DialogNeedsDigits>Enter 1 to {0} digits.</FCP_VaultNumberStencil_DialogNeedsDigits>
 
 	<!-- Delivery Quests -->
 
@@ -239,6 +241,8 @@
 
 	<FCP_Settings_Enlistment>Enlistment</FCP_Settings_Enlistment>
 	<FCP_Settings_Enlistment_ActiveTypes>Active Enlistment Types</FCP_Settings_Enlistment_ActiveTypes>
+	<FCP_Settings_Enlistment_ActiveTypes_Desc>Uncheck a faction to remove its enlistment option from the game entirely. Colonists already enlisted with a disabled faction keep their enlistment until they resign.</FCP_Settings_Enlistment_ActiveTypes_Desc>
+	<FCP_Settings_Enlistment_Checkbox_Desc>Enable or disable enlistment with {0}.</FCP_Settings_Enlistment_Checkbox_Desc>
 
 	<!-- Debug Settings-->
 

@@ -21,16 +21,19 @@ public class PawnRenderNode_Flying : PawnRenderNode_AnimalPart
 
             PawnKindLifeStage curKindLifeStage = pawn.ageTracker.CurKindLifeStage;
             int curKindLifeStageInd = pawn.ageTracker.CurLifeStageIndex;
-            GraphicData flyingGraphicData;
+            List<GraphicData> femaleGraphicDataList = comp.Props.flyingFemaleBodyGraphicData;
+            List<GraphicData> bodyGraphicDataList = comp.Props.flyingBodyGraphicData;
 
-            if (pawn.gender != Gender.Female || curKindLifeStage.femaleGraphicData == null)
-            {
-                flyingGraphicData = comp.Props.flyingBodyGraphicData[curKindLifeStageInd];
-            }
-            else
-            {
-                flyingGraphicData = comp.Props.flyingFemaleBodyGraphicData[curKindLifeStageInd];
-            }
+            List<GraphicData> graphicDataList = pawn.gender == Gender.Female
+                && curKindLifeStage.femaleGraphicData != null
+                && !femaleGraphicDataList.NullOrEmpty()
+                ? femaleGraphicDataList
+                : bodyGraphicDataList;
+
+            if (graphicDataList.NullOrEmpty() || curKindLifeStageInd >= graphicDataList.Count)
+                return flyingGraphic;
+
+            GraphicData flyingGraphicData = graphicDataList[curKindLifeStageInd];
 
             flyingGraphic = GraphicDatabase.Get(flyingGraphicData.graphicClass, flyingGraphicData.texPath,
                 flyingGraphicData.shaderType?.Shader ?? ShaderDatabase.CutoutComplex, flyingGraphicData.drawSize,

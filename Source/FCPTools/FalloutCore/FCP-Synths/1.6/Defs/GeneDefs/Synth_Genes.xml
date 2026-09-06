@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!--__________ Gen I Synth Genes __________-->
+
+    <!-- Gen I Chassis -->
+
+    <GeneDef>
+        <defName>FCP_Gene_Synth_GenI_Head</defName>
+        <label>gen 1 chassis</label>
+        <description>A bare metal skull on a jointed frame. There is no skin to grow and nothing underneath to hide.</description>
+        <iconPath>UI/Icons/Genes/Gene_SkinColorOverride</iconPath>
+        <displayCategory>Miscellaneous</displayCategory>
+        <displayOrderInCategory>600</displayOrderInCategory>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <exclusionTags>
+            <li>HairStyle</li>
+            <li>SynthGenIHead</li>
+        </exclusionTags>
+        <hairTagFilter>
+            <whitelist>true</whitelist>
+            <tags>
+                <li>Bald</li>
+            </tags>
+        </hairTagFilter>
+        <forcedHeadTypes>
+            <li>FCP_Male_Synth_GenI_Head</li>
+            <li>FCP_Female_Synth_GenI_Head</li>
+        </forcedHeadTypes>
+    </GeneDef>
+
+    <!--__________ Gen II Synth Genes __________-->
+
+    <!-- Gen II Body Base -->
+
+    <GeneDef Name="SynthGenIIBodyBase" Abstract="True">
+        <label>synth tissue</label>
+        <description>Carriers wear lab-grown synthetic tissue over a metal endoskeleton. It moves, sweats, and bruises like the real thing. Almost.</description>
+        <geneClass>FCP.Core.Synths.Gene_SynthBody</geneClass>
+        <iconPath>UI/Icons/Genes/Gene_SkinColorOverride</iconPath>
+        <displayCategory>Miscellaneous</displayCategory>
+        <displayOrderInCategory>610</displayOrderInCategory>
+        <biostatCpx>2</biostatCpx>
+        <biostatMet>0</biostatMet>
+        <exclusionTags>
+            <li>SynthGenIIBody</li>
+        </exclusionTags>
+        <forcedHeadTypes>
+            <li>FCP_Male_Synth_GenII_Head_Average</li>
+            <li>FCP_Male_Synth_GenII_Head_Narrow</li>
+            <li>FCP_Female_Synth_GenII_Head_Average</li>
+            <li>FCP_Female_Synth_GenII_Head_Narrow</li>
+        </forcedHeadTypes>
+    </GeneDef>
+
+    <!-- Gen II Tissue Pale -->
+
+    <GeneDef ParentName="SynthGenIIBodyBase">
+        <defName>FCP_Gene_Synth_GenII_Tissue_Pale</defName>
+        <label>synth tissue (pale)</label>
+        <labelShortAdj>pale synth</labelShortAdj>
+        <selectionWeight>1</selectionWeight>
+        <skinColorOverride>(222, 205, 195)</skinColorOverride>
+    </GeneDef>
+
+    <!-- Gen II Tissue Tan -->
+
+    <GeneDef ParentName="SynthGenIIBodyBase">
+        <defName>FCP_Gene_Synth_GenII_Tissue_Tan</defName>
+        <label>synth tissue (tan)</label>
+        <labelShortAdj>tan synth</labelShortAdj>
+        <selectionWeight>1</selectionWeight>
+        <skinColorOverride>(194, 163, 140)</skinColorOverride>
+    </GeneDef>
+
+    <!-- Gen II Tissue Grey -->
+
+    <GeneDef ParentName="SynthGenIIBodyBase">
+        <defName>FCP_Gene_Synth_GenII_Tissue_Grey</defName>
+        <label>synth tissue (grey)</label>
+        <labelShortAdj>grey synth</labelShortAdj>
+        <selectionWeight>1</selectionWeight>
+        <skinColorOverride>(170, 165, 160)</skinColorOverride>
+    </GeneDef>
+
+</Defs>

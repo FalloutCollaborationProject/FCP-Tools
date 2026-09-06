@@ -345,7 +345,7 @@ public static class RankTrackUtility
     private static void SyncVanillaRankDemotion(Pawn pawn, PawnRankData data, RankTierDef demotedFrom, RankTierDef newTier)
     {
         Faction grantingFaction = GetOwningFaction(data.track);
-        if (demotedFrom.correspondingRoyalTitle != null && ModsConfig.RoyaltyActive && pawn.royalty != null && grantingFaction != null)
+        if (newTier.correspondingRoyalTitle != null && ModsConfig.RoyaltyActive && pawn.royalty != null && grantingFaction != null)
             pawn.royalty.SetTitle(grantingFaction, newTier.correspondingRoyalTitle, grantRewards: false, rewardsOnlyForNewestTitle: false, sendLetter: false);
 
         if (demotedFrom.correspondingIdeoRole != null && demotedFrom.correspondingIdeoRole != newTier.correspondingIdeoRole

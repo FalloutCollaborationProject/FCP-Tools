@@ -11,15 +11,13 @@ public class WorldLayer_FactionTerritory : WorldDrawLayer
     private static readonly int MatColor = Shader.PropertyToID("_Color");
 
     private readonly List<Settlement> _settlements;
-    private readonly List<List<int>> _territoryGroups = [];
+    private readonly List<(int settlementTile, List<int> tiles)> _territoryGroups = [];
     private readonly HashSet<int> _processedTiles = [];
     private readonly Dictionary<int, HashSet<int>> _settlementTiles = [];
+    private readonly Dictionary<int, Material> _territoryMats = [];
+    private readonly Dictionary<int, Material> _territoryBorderMats = [];
     private readonly List<WorldFeatureTextMesh_FactionLabel> _activeFactionLabels = [];
 
-    private Material _territoryMat;
-    private Material _territoryBorderMat;
-    private Color _territoryColor;
-    private Color _territoryBorderColor;
     private bool _tilesDirty = true;
     private bool _renderOverWater;
     private IntRange _territoryRadius = new(10, 50);
@@ -32,21 +30,34 @@ public class WorldLayer_FactionTerritory : WorldDrawLayer
         _settlements = Find.WorldObjects.Settlements;
     }
 
-    private void InitMaterials()
+    private void InitMaterials(int settlementTile, Color territoryColor, Color territoryBorderColor)
     {
-        _territoryMat = new Material(ShaderDatabase.Transparent)
+        Material territoryMat = new Material(ShaderDatabase.Transparent)
         {
             renderQueue = 3560
         };
-        _territoryMat.SetTexture(MatTexture, TextureCache.FactionTerritoryTex);
-        _territoryMat.SetColor(MatColor, _territoryColor);
+        territoryMat.SetTexture(MatTexture, TextureCache.FactionTerritoryTex);
+        territoryMat.SetColor(MatColor, territoryColor);
+        _territoryMats[settlementTile] = territoryMat;
 
-        _territoryBorderMat = new Material(ShaderDatabase.Transparent)
+        Material territoryBorderMat = new Material(ShaderDatabase.Transparent)
         {
             renderQueue = 3560
         };
-        _territoryBorderMat.SetTexture(MatTexture, TextureCache.FactionTerritoryBorderTex);
-        _territoryBorderMat.SetColor(MatColor, _territoryBorderColor);
+        territoryBorderMat.SetTexture(MatTexture, TextureCache.FactionTerritoryBorderTex);
+        territoryBorderMat.SetColor(MatColor, territoryBorderColor);
+        _territoryBorderMats[settlementTile] = territoryBorderMat;
+    }
+
+    private void ClearMaterials()
+    {
+        foreach (Material mat in _territoryMats.Values)
+            UnityEngine.Object.Destroy(mat);
+        _territoryMats.Clear();
+
+        foreach (Material mat in _territoryBorderMats.Values)
+            UnityEngine.Object.Destroy(mat);
+        _territoryBorderMats.Clear();
     }
 
     public override IEnumerable Regenerate()
@@ -61,6 +72,7 @@ public class WorldLayer_FactionTerritory : WorldDrawLayer
         _processedTiles.Clear();
         _settlementTiles.Clear();
         _territoryGroups.Clear();
+        ClearMaterials();
 
         ClearFactionLabels();
 
@@ -71,14 +83,12 @@ public class WorldLayer_FactionTerritory : WorldDrawLayer
                 FactionExtension_HasTerritory ext =
                     settlement.Faction.def.GetModExtension<FactionExtension_HasTerritory>();
 
-                _territoryColor = ext.territoryColor;
-                _territoryBorderColor = ext.territoryBorderColor;
                 _renderOverWater = ext.renderTerritoryOverWater;
 
                 HashSet<int> tiles = TryGetTerritoryTiles(settlement.Tile);
                 _settlementTiles[settlement.Tile] = tiles;
 
-                InitMaterials();
+                InitMaterials(settlement.Tile, ext.territoryColor, ext.territoryBorderColor);
             }
         }
 
@@ -109,12 +119,12 @@ public class WorldLayer_FactionTerritory : WorldDrawLayer
                 }
             }
 
-            _territoryGroups.Add(cluster.ToList());
+            _territoryGroups.Add((kvp.Key, cluster.ToList()));
         }
 
-        foreach (List<int> territory in _territoryGroups)
+        foreach (var (settlementTile, territory) in _territoryGroups)
         {
-            TryGenerateClusterMesh(territory);
+            TryGenerateClusterMesh(settlementTile, territory);
         }
 
         FinalizeMesh(MeshParts.All);
@@ -159,8 +169,12 @@ public class WorldLayer_FactionTerritory : WorldDrawLayer
         return territory;
     }
 
-    private void TryGenerateClusterMesh(List<int> tiles)
+    private void TryGenerateClusterMesh(int settlementTile, List<int> tiles)
     {
+        if (!_territoryMats.TryGetValue(settlementTile, out Material territoryMat) ||
+            !_territoryBorderMats.TryGetValue(settlementTile, out Material territoryBorderMat))
+            return;
+
         WorldGrid worldGrid = Find.WorldGrid;
         HashSet<int> tileSet = [..tiles];
 
@@ -173,7 +187,7 @@ public class WorldLayer_FactionTerritory : WorldDrawLayer
             worldGrid.GetTileNeighbors(tile, neighbors);
             bool isBorderTile = neighbors.Any(n => !tileSet.Contains(n));
 
-            Material tileMat = isBorderTile ? _territoryBorderMat : _territoryMat;
+            Material tileMat = isBorderTile ? territoryBorderMat : territoryMat;
             LayerSubMesh subMesh = GetSubMesh(tileMat);
             List<Vector3> verts = [];
             worldGrid.GetTileVertices(tile, verts);
@@ -214,7 +228,7 @@ public class WorldLayer_FactionTerritory : WorldDrawLayer
     {
         ClearFactionLabels();
 
-        foreach (List<int> territoryGroup in _territoryGroups)
+        foreach (var (settlementTile, territoryGroup) in _territoryGroups)
         {
             if (territoryGroup.NullOrEmpty())
                 continue;
@@ -224,7 +238,7 @@ public class WorldLayer_FactionTerritory : WorldDrawLayer
                 continue;
 
             Vector3 adjustedPos = centerWorldPos + (Vector3.down * 0.5f);
-            Settlement settlement = Find.WorldObjects.SettlementAt(territoryGroup[0]);
+            Settlement settlement = Find.WorldObjects.SettlementAt(settlementTile);
 
             if (settlement == null)
                 continue;

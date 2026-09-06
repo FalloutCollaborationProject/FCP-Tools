@@ -10,7 +10,6 @@ public class QuestNode_SetPawnName : QuestNode
 
     protected override bool TestRunInt(Slate slate)
     {
-        RunInt();
         return true;
     }
 

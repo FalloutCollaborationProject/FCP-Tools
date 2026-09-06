@@ -189,6 +189,7 @@ public class PawnTrader : IExposable, ITrader, IThingHolder
         if (thing == null)
         {
             Log.Error("Changing count of thing trader doesn't have: " + thingDef);
+            return;
         }
         thing.stackCount += count;
     }

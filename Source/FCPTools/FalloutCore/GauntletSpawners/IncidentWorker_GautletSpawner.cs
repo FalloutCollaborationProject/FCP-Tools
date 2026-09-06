@@ -74,6 +74,9 @@ public class IncidentWorker_GautletSpawner : IncidentWorker
         Map map = (Map)parms.target;
         parms.points *= PointsFactorCurve.Evaluate(parms.points);
         List<Thing> thing = new List<Thing>(SpawnThing(parms, map));
+        if (thing.Count == 0)
+            return false;
+
         SendStandardLetter(parms, thing.RandomElement());
         Find.TickManager.slower.SignalForceNormalSpeedShort();
         return true;

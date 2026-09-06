@@ -6,7 +6,7 @@ namespace FCP.Core.WeaponCondition;
 public class CompProperties_ApparelBench : CompProperties
 {
     public float drawOffsetX = 0f;
-    public float drawOffsetZ = 0.15f;
+    public float drawOffsetZ = 0.02f;
 
     public CompProperties_ApparelBench() => compClass = typeof(CompApparelBench);
 }

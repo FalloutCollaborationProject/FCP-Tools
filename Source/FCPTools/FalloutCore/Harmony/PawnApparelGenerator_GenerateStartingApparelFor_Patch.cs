@@ -7,7 +7,7 @@ namespace FCP.Core;
 [HarmonyPatch(typeof(PawnApparelGenerator), "GenerateStartingApparelFor")]
 public static class PawnApparelGenerator_GenerateStartingApparelFor_Patch
 {
-    public static List<ThingStuffPair> staticList = new List<ThingStuffPair>();
+    private static List<ThingStuffPair> removedPairs = new List<ThingStuffPair>();
     private static FieldInfo allApparelPairsField;
 
     public static void Prefix(Pawn pawn)
@@ -18,25 +18,22 @@ public static class PawnApparelGenerator_GenerateStartingApparelFor_Patch
         }
 
         var xenotype = pawn.genes?.Xenotype;
-        if (xenotype != null)
-        {
-            if (allApparelPairsField == null)
-            {
-                allApparelPairsField = typeof(PawnApparelGenerator).GetField("allApparelPairs", BindingFlags.NonPublic | BindingFlags.Static);
-            }
-            var allApparelPairs = (List<ThingStuffPair>)allApparelPairsField.GetValue(null);
-            staticList = allApparelPairs.Where(x => !x.thing.CanUseByXenotype(xenotype)).ToList();
-            allApparelPairs.RemoveAll(x => staticList.Contains(x));
-        }
+        if (xenotype == null)
+            return;
+
+        allApparelPairsField ??= typeof(PawnApparelGenerator).GetField("allApparelPairs", BindingFlags.NonPublic | BindingFlags.Static);
+        var allApparelPairs = (List<ThingStuffPair>)allApparelPairsField.GetValue(null);
+        removedPairs = allApparelPairs.Where(x => !x.thing.CanUseByXenotype(xenotype)).ToList();
+        allApparelPairs.RemoveAll(x => removedPairs.Contains(x));
     }
 
-    public static void Postfix()
+    public static void Finalizer()
     {
-        if (staticList.Any())
-        {
-            var allApparelPairs = (List<ThingStuffPair>)allApparelPairsField.GetValue(null);
-            allApparelPairs.AddRange(staticList);
-            staticList.Clear();
-        }
+        if (removedPairs.Count == 0)
+            return;
+
+        var allApparelPairs = (List<ThingStuffPair>)allApparelPairsField.GetValue(null);
+        allApparelPairs.AddRange(removedPairs);
+        removedPairs.Clear();
     }
 }

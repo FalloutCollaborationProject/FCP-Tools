@@ -11,6 +11,7 @@ public class ThingsContainer
         foreach (XmlNode thingNode in xmlRoot.ChildNodes)
         {
             if (thingNode.NodeType != XmlNodeType.Element) continue;
+            if (!ModsSatisfied(thingNode)) continue;
 
             string defName = thingNode.Name;
             string stuff = thingNode["stuff"]?.InnerText;
@@ -76,6 +77,19 @@ public class ThingsContainer
     {
         return float.TryParse(s, out float v) ? v : def;
     }
+
+    internal static bool ModsSatisfied(XmlNode node)
+    {
+        string mayRequire = node.Attributes?["MayRequire"]?.Value;
+        if (!mayRequire.NullOrEmpty() && !ModLister.AllModsActiveNoSuffix(mayRequire.ToLower().Split(',')))
+            return false;
+
+        string mayRequireAnyOf = node.Attributes?["MayRequireAnyOf"]?.Value;
+        if (!mayRequireAnyOf.NullOrEmpty() && !ModLister.AnyModActiveNoSuffix(mayRequireAnyOf.ToLower().Split(',')))
+            return false;
+
+        return true;
+    }
 }
 
 public class PawnKindsContainer
@@ -87,6 +101,7 @@ public class PawnKindsContainer
         foreach (XmlNode node in xmlRoot.ChildNodes)
         {
             if (node.NodeType != XmlNodeType.Element) continue;
+            if (!ThingsContainer.ModsSatisfied(node)) continue;
 
             int count = int.TryParse(node.InnerText, out int c) ? c : 1;
             items.Add(new PrefabPawn { pawnKindDefName = node.Name, count = count });

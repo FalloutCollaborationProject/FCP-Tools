@@ -22,9 +22,9 @@ public class CompTemporaryHediff_Apparel : CompCauseHediff_Apparel
     public override void CompTickLong()
     {
         base.CompTickLong();
-        if (!HediffGiven && PrereqsComplete)
+        if (!HediffGiven && PrereqsComplete && ParentHolder?.ParentHolder is Pawn pawn)
         {
-            AddHediff(ParentHolder.ParentHolder as Pawn);
+            AddHediff(pawn);
         }
     }
 

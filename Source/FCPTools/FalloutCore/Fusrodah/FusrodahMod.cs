@@ -31,6 +31,9 @@ namespace Fusrodah
             if (victim.DestroyedOrNull() is false)
             {
                 var props = dinfo.Def.GetModExtension<Extension>();
+                if (props == null)
+                    return result;
+
                 if (props.damageToApply != null)
                 {
                     victim.TakeDamage(new DamageInfo(props.damageToApply, props.damageAmount,

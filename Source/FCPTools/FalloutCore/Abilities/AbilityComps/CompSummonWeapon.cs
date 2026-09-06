@@ -13,8 +13,13 @@ public class CompSummonWeapon : CompAbilityEffect
             parent.pawn.equipment.TryTransferEquipmentToContainer(existingWeapon, parent.pawn.inventory.innerContainer);
         }
         var newWeapon = ThingMaker.MakeThing(Props.weapon) as ThingWithComps;
+        if (newWeapon == null)
+            return;
+
         var comp = newWeapon.TryGetComp<CompSummonedWeapon>();
-        comp.ticksSummoned = Find.TickManager.TicksGame;
+        if (comp != null)
+            comp.ticksSummoned = Find.TickManager.TicksGame;
+
         parent.pawn.equipment.AddEquipment(newWeapon);
     }
 }

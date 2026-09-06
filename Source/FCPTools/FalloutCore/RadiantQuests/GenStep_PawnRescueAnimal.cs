@@ -8,9 +8,15 @@ public class GenStep_PawnRescueAnimal : GenStep
 
     public override void Generate(Map map, GenStepParams parms)
     {
+        if (parms.sitePart?.things == null || parms.sitePart.things.Count < 2)
+        {
+            Log.Error("GenStep_PawnRescueAnimal: sitePart is missing the required pawn and cage things.");
+            return;
+        }
+
         Faction faction = ((map.ParentFaction != null && map.ParentFaction != Faction.OfPlayer) ? map.ParentFaction : Find.FactionManager.RandomEnemyFaction());
         CellRect rect = MapGenerator.GetVar<List<CellRect>>("UsedRects").Last();
-        
+
         Pawn singlePawnToSpawn = (Pawn)parms.sitePart.things.Take(parms.sitePart.things[0]);
         Building building =(Building)parms.sitePart.things.Take(parms.sitePart.things[0]);
         GenPlace.TryPlaceThing(building, rect.RandomCell, map, ThingPlaceMode.Near, rot: Rot4.East);

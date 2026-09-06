@@ -115,7 +115,6 @@ namespace FCP.Core.Laser
                 ImpactOverride(hitThing, blockedByShield);
             }
 
-            shouldBeDestroyed = true;
             Destroy(DestroyMode.Vanish);
         }
 
@@ -153,8 +152,6 @@ namespace FCP.Core.Laser
             }
         }
 
-        private bool shouldBeDestroyed;
-
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
             if (activeSustainer != null)
@@ -162,10 +159,11 @@ namespace FCP.Core.Laser
                 activeSustainer.End();
                 activeSustainer = null;
             }
-            if (shouldBeDestroyed)
-            {
-                base.Destroy(mode);
-            }
+
+            endEffecter?.Cleanup();
+            endEffecter = null;
+
+            base.Destroy(mode);
         }
 
         protected override void Tick()
@@ -232,7 +230,6 @@ namespace FCP.Core.Laser
             if (Find.TickManager.TicksGame > launchTick + LaserProperties.lifetimeTicks)
             {
                 Explode();
-                shouldBeDestroyed = true;
                 Destroy();
             }
         }

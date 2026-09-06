@@ -12,7 +12,8 @@ public class QuestNode_Root_StorytellerJoin : QuestNode_Root_WandererJoin
 
 	protected override bool TestRunInt(Slate slate)
 	{
-		return Find.Storyteller.def.HasModExtension<ModExtension_StoryTellerIsJoiner>();
+		var extension = Find.Storyteller.def.GetModExtension<ModExtension_StoryTellerIsJoiner>();
+		return extension != null && extension.AllCharacterDefs.Any(def => !UniqueCharactersTracker.Instance.CharacterPawnExists(def));
 	}
 
 	protected override void RunInt()
@@ -33,7 +34,9 @@ public class QuestNode_Root_StorytellerJoin : QuestNode_Root_WandererJoin
 	public override Pawn GeneratePawn_NewTemp(Map map)
 	{
 		var extension = Find.Storyteller.def.GetModExtension<ModExtension_StoryTellerIsJoiner>();
-		Pawn pawn = UniqueCharactersTracker.Instance.GetOrGenPawn(extension.characterDef);
+		List<CharacterDef> available = extension.AllCharacterDefs.Where(def => !UniqueCharactersTracker.Instance.CharacterPawnExists(def)).ToList();
+		CharacterDef charDef = available.Any() ? available.RandomElement() : extension.AllCharacterDefs.First();
+		Pawn pawn = UniqueCharactersTracker.Instance.GetOrGenPawn(charDef);
 
 		if (!pawn.IsWorldPawn())
 		{

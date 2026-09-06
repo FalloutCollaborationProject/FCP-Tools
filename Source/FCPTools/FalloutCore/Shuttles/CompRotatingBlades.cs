@@ -40,6 +40,13 @@ public class CompRotatingBlades : ThingComp
     {
         base.PostExposeData();
         Scribe_Collections.Look(ref rotationRates, "rotationRates", LookMode.Value);
+
+        if (Scribe.mode == LoadSaveMode.PostLoadInit && rotationRates?.Count != Props.bladeGraphicsData.Count)
+        {
+            rotationRates = new List<float>(Props.bladeGraphicsData.Count);
+            for (int i = 0; i < Props.bladeGraphicsData.Count; i++)
+                rotationRates.Add(0f);
+        }
     }
 
     public override void CompTick()

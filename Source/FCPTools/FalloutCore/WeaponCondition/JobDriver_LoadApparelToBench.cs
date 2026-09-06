@@ -7,14 +7,27 @@ public class JobDriver_LoadApparelToBench : JobDriver
     private Building Bench => (Building)job.GetTarget(TargetIndex.A).Thing;
     private Apparel Apparel => (Apparel)job.GetTarget(TargetIndex.B).Thing;
 
-    public override bool TryMakePreToilReservations(bool errorOnFailed) =>
-        pawn.Reserve(Bench, job, errorOnFailed: errorOnFailed);
+    public override bool TryMakePreToilReservations(bool errorOnFailed)
+    {
+        if (!pawn.Reserve(Bench, job, errorOnFailed: errorOnFailed))
+            return false;
+
+        Apparel a = Apparel;
+        return !a.Spawned || pawn.Reserve(a, job, errorOnFailed: errorOnFailed);
+    }
 
     protected override IEnumerable<Toil> MakeNewToils()
     {
         CompApparelBench benchComp = Bench.TryGetComp<CompApparelBench>();
         this.FailOnDestroyedOrNull(TargetIndex.A);
         this.FailOn(() => benchComp.LoadedApparel != null);
+
+        Apparel apparelAtStart = Apparel;
+        if (apparelAtStart.Spawned)
+        {
+            this.FailOnDestroyedOrNull(TargetIndex.B);
+            yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.ClosestTouch);
+        }
 
         Toil pickUp = ToilMaker.MakeToil();
         pickUp.defaultCompleteMode = ToilCompleteMode.Instant;

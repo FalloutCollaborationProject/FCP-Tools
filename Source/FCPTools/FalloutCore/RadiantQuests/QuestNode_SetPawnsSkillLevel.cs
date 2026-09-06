@@ -12,7 +12,6 @@ public class QuestNode_SetPawnsSkillLevel : QuestNode
 
     protected override bool TestRunInt(Slate slate)
     {
-        RunInt();
         return true;
     }
 

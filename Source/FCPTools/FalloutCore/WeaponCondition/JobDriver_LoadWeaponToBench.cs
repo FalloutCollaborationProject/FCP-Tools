@@ -7,14 +7,27 @@ public class JobDriver_LoadWeaponToBench : JobDriver
     private Building Bench => (Building)job.GetTarget(TargetIndex.A).Thing;
     private ThingWithComps Weapon => (ThingWithComps)job.GetTarget(TargetIndex.B).Thing;
 
-    public override bool TryMakePreToilReservations(bool errorOnFailed) =>
-        pawn.Reserve(Bench, job, errorOnFailed: errorOnFailed);
+    public override bool TryMakePreToilReservations(bool errorOnFailed)
+    {
+        if (!pawn.Reserve(Bench, job, errorOnFailed: errorOnFailed))
+            return false;
+
+        ThingWithComps w = Weapon;
+        return !w.Spawned || pawn.Reserve(w, job, errorOnFailed: errorOnFailed);
+    }
 
     protected override IEnumerable<Toil> MakeNewToils()
     {
         CompWeaponBench benchComp = Bench.TryGetComp<CompWeaponBench>();
         this.FailOnDestroyedOrNull(TargetIndex.A);
         this.FailOn(() => benchComp.LoadedWeapon != null);
+
+        ThingWithComps weaponAtStart = Weapon;
+        if (weaponAtStart.Spawned)
+        {
+            this.FailOnDestroyedOrNull(TargetIndex.B);
+            yield return Toils_Goto.GotoThing(TargetIndex.B, PathEndMode.ClosestTouch);
+        }
 
         Toil pickUp = ToilMaker.MakeToil("PickUp");
         pickUp.initAction = () =>

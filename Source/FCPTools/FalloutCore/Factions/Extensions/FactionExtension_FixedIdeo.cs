@@ -26,7 +26,7 @@ public class FactionExtension_FixedIdeo : DefModExtension
             LongEventHandler.ExecuteWhenFinished(delegate
             {
                 ideo.SetIcon(ideoIconDef,
-                    ideoColorDef.colorDef ?? ideo.colorDef ?? IdeoFoundation.GetRandomColorDef(ideo));
+                    ideoColorDef?.colorDef ?? ideo.colorDef ?? IdeoFoundation.GetRandomColorDef(ideo));
             });
         }
     }

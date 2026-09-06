@@ -38,9 +38,13 @@ public class CharacterAppearanceDefinition : CharacterBaseDefinition
 
         if (faceTattooDef != null)
             pawn.style.FaceTattoo = faceTattooDef;
-        
+        else if (ModsConfig.IdeologyActive)
+            pawn.style.FaceTattoo = TattooDefOf.NoTattoo_Face;
+
         if (bodyTattooDef != null)
             pawn.style.BodyTattoo = bodyTattooDef;
+        else if (ModsConfig.IdeologyActive)
+            pawn.style.BodyTattoo = TattooDefOf.NoTattoo_Body;
 
         if (headTypeDef != null)
             pawn.story.headType = headTypeDef;

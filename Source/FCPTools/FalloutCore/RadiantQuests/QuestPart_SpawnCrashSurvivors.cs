@@ -15,7 +15,7 @@ public class QuestPart_SpawnCrashSurvivors : QuestPart
     public override void Notify_QuestSignalReceived(Signal signal)
     {
         base.Notify_QuestSignalReceived(signal);
-        if (signal.tag != inSignal || mapParent.Map == null) return;
+        if (signal.tag != inSignal || mapParent?.Map == null) return;
 
         Map map = mapParent.Map;
         MapComponent_VertibirdCrash crash = map.GetComponent<MapComponent_VertibirdCrash>();

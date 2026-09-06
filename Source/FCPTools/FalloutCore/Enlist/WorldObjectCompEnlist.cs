@@ -533,16 +533,9 @@ public class WorldObjectCompEnlist : WorldObjectComp
 	private List<Caravan> caravanKeys;
 	private List<CaravanOptions> caravanOptionsValues;
 
-	private List<FactionEnlistOptionsDef> defKeys;
-	private List<PawnTrader> pawnTraderValues;
-
-	private List<int> provisionKeys;
-	private List<ProvisionsInfo> provisionValues;
 	private int MaxLaunchDistance => 100;
 	public bool CanTryLaunch => true;
 
-	private List<FactionEnlistOptionsDef> defKeys2;
-	private List<bool> boolValues;
 	public void StartChoosingDestination(Caravan caravan, FactionEnlistOptionsDef optionsDef)
 	{
 		tmpCaravan = caravan;

@@ -15,7 +15,7 @@ public class WeaponRequirement_Xenotype : WeaponRequirement
         if (bannedXenotypes.Contains(xenotype))
             return false;
 
-        if (!allowedXenotypes.Contains(xenotype))
+        if (allowedXenotypes.Any() && !allowedXenotypes.Contains(xenotype))
             return false;
 
         return true;

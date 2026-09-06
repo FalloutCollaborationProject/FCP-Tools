@@ -21,11 +21,10 @@ public class JobDriver_ReleaseAnimalFromCage : JobDriver
         Toil enter = ToilMaker.MakeToil("MakeNewToils");
         enter.initAction = delegate
         {
-            if (PawnRescueUtility.prisonersWillingJoin.Contains(Cage.Occupant))
+            if (GameComponent_PawnRescue.Instance.IsWillingToJoin(Cage.Occupant))
             {
                 InteractionWorker_RecruitAttempt.DoRecruit(pawn, Cage.Occupant, useAudiovisualEffects: false);
-                PawnRescueUtility.prisonersWillingJoin.Remove(Cage.Occupant);
-
+                GameComponent_PawnRescue.Instance.ClearWillingToJoin(Cage.Occupant);
             }
             Cage.EjectContents(Map);
         };

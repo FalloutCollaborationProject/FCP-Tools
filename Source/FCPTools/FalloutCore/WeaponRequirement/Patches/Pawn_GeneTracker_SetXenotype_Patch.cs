@@ -22,6 +22,9 @@ public static class Pawn_GeneTracker_SetXenotype_Patch
                 continue;
 
             HediffDef hediffDef = ext.requirementsNotMetHediff;
+            if (hediffDef == null)
+                continue;
+
             Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(hediffDef);
 
             if (ext.RequirementsMet(pawn, equipment, onTick: false))

@@ -6,7 +6,7 @@ public class CharacterTitleDefinition : CharacterBaseDefinition
 {
     public RoyalTitleDef title;
 
-    public override bool AppliesPreGeneration => true;
+    public override bool AppliesPreGeneration => title != null;
     public override bool AppliesPostGeneration => title != null;
 
     public override void ApplyToRequest(ref PawnGenerationRequest request)

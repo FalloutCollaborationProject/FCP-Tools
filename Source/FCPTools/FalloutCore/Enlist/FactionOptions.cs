@@ -9,7 +9,6 @@ public class FactionOptions : IExposable
     public Dictionary<FactionEnlistOptionsDef, SalaryInfo> factionsSalaries = new Dictionary<FactionEnlistOptionsDef, SalaryInfo>();
     public Dictionary<FactionEnlistOptionsDef, FactionStorage> factionsStorages = new Dictionary<FactionEnlistOptionsDef, FactionStorage>();
     public Dictionary<FactionEnlistOptionsDef, int> factionsReinforcementsLastTick = new Dictionary<FactionEnlistOptionsDef, int>();
-    public Dictionary<FactionEnlistOptionsDef, QuestContainer> factionsWithQuests = new Dictionary<FactionEnlistOptionsDef, QuestContainer>();
     public Dictionary<FactionEnlistOptionsDef, FactionState> factionsBought = new Dictionary<FactionEnlistOptionsDef, FactionState>();
     public Dictionary<FactionEnlistOptionsDef, DeliveryQuestList> activeDeliveries = new Dictionary<FactionEnlistOptionsDef, DeliveryQuestList>();
 
@@ -19,7 +18,6 @@ public class FactionOptions : IExposable
         Scribe_Collections.Look(ref factionsSalaries, "factionsSalaries", LookMode.Def, LookMode.Deep, ref factionKeys2, ref salaryValues);
         Scribe_Collections.Look(ref factionsStorages, "factionsStorages", LookMode.Def, LookMode.Deep, ref factionKeys3, ref storageValues);
         Scribe_Collections.Look(ref factionsReinforcementsLastTick, "factionsReinforcementsLastTick", LookMode.Def, LookMode.Value, ref factionKeys4, ref intValues);
-        Scribe_Collections.Look(ref factionsWithQuests, "factionsWithQuests", LookMode.Def, LookMode.Deep, ref factionKeys5, ref questContainerValues);
         Scribe_Collections.Look(ref factionsBought, "factionsBought", LookMode.Def, LookMode.Deep,
             ref factionKeys6, ref boughtValues);
         Scribe_Collections.Look(ref activeDeliveries, "activeDeliveries", LookMode.Def, LookMode.Deep, ref factionKeys7, ref deliveryValues);
@@ -29,7 +27,6 @@ public class FactionOptions : IExposable
             factionsSalaries ??= new Dictionary<FactionEnlistOptionsDef, SalaryInfo>();
             factionsStorages ??= new Dictionary<FactionEnlistOptionsDef, FactionStorage>();
             factionsReinforcementsLastTick ??= new Dictionary<FactionEnlistOptionsDef, int>();
-            factionsWithQuests ??= new Dictionary<FactionEnlistOptionsDef, QuestContainer>();
             factionsBought = new Dictionary<FactionEnlistOptionsDef, FactionState>();
             activeDeliveries ??= new Dictionary<FactionEnlistOptionsDef, DeliveryQuestList>();
         }
@@ -46,9 +43,6 @@ public class FactionOptions : IExposable
 
     private List<FactionEnlistOptionsDef> factionKeys4;
     private List<int> intValues;
-
-    private List<FactionEnlistOptionsDef> factionKeys5;
-    private List<QuestContainer> questContainerValues;
 
     private List<FactionEnlistOptionsDef> factionKeys6;
     private List<FactionState> boughtValues;

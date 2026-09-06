@@ -20,18 +20,13 @@ public class Projectile_Fragmentation : Bullet
 
     protected override void Impact(Thing hitThing, bool blockedByShield = false)
     {
-        if (extension.isSureHit)
+        if (extension.isSureHit && intendedTarget.HasThing && intendedTarget.Thing.PositionHeld != PositionHeld)
         {
-            if (intendedTarget.HasThing && intendedTarget.Thing.PositionHeld != PositionHeld)
-            {
-                Launch(launcher, intendedTarget, intendedTarget, ProjectileHitFlags.IntendedTarget);
-                return;
-            }
+            Launch(launcher, intendedTarget, intendedTarget, ProjectileHitFlags.IntendedTarget);
+            return;
         }
-        else
-        {
-            Fragmented();
-        }
+
+        Fragmented();
     }
 
     public void Fragmented()

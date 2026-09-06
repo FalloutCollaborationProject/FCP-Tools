@@ -11,7 +11,7 @@ public class QuestNode_SpawnSettlers : QuestNode
     public SlateRef<int> radius;
     protected override bool TestRunInt(Slate slate)
     {
-        return pawns != null;
+        return pawns.GetValue(slate) != null;
     }
     protected override void RunInt()
     {

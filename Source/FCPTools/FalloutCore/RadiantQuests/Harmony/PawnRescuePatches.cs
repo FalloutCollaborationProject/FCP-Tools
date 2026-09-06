@@ -50,7 +50,7 @@ public static class JobDriver_OfferHelpPatch
             FCPLog.Verbose(__instance.OtherPawn.NameFullColored);
             FCPLog.Verbose(__instance.pawn.NameFullColored);
             FCPLog.Verbose(__instance.OtherPawn.mindState.WillJoinColonyIfRescued);
-            if (__instance.OtherPawn.mindState.WillJoinColonyIfRescued || PawnRescueUtility.prisonersWillingJoin.Contains(__instance.OtherPawn))
+            if (__instance.OtherPawn.mindState.WillJoinColonyIfRescued || GameComponent_PawnRescue.Instance.IsWillingToJoin(__instance.OtherPawn))
             {
                 FCPLog.Verbose("Joining colony");
                 InteractionWorker_RecruitAttempt.DoRecruit(__instance.pawn, __instance.OtherPawn, useAudiovisualEffects: false);
@@ -60,7 +60,7 @@ public static class JobDriver_OfferHelpPatch
                     __instance.OtherPawn.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.RescuedMeByOfferingHelp, __instance.pawn);
                 }
                 Find.LetterStack.ReceiveLetter("LetterLabelRescueQuestFinished".Translate(), "LetterRescueQuestFinished".Translate(__instance.OtherPawn.Named("PAWN")).AdjustedFor(__instance.OtherPawn).CapitalizeFirst(), LetterDefOf.PositiveEvent, __instance.OtherPawn);
-                PawnRescueUtility.prisonersWillingJoin.Remove(__instance.OtherPawn);
+                GameComponent_PawnRescue.Instance.ClearWillingToJoin(__instance.OtherPawn);
                 QuestUtility.SendQuestTargetSignals(__instance.OtherPawn.questTags, "RescuedFromPrison", __instance.OtherPawn.Named("SUBJECT"));
             }
             else

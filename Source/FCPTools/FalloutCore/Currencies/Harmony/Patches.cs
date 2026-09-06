@@ -90,8 +90,9 @@ public static class GenerateThings_Patch
         {
             ThingDefRef(__instance) = currency;
         }
-        foreach (Thing thing in result)
-            yield return thing;
+
+        List<Thing> things = result.ToList();
         ThingDefRef(__instance) = current;
+        return things;
     }
 }

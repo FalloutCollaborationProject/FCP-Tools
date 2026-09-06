@@ -104,6 +104,10 @@ public class UniqueCharactersTracker : WorldComponent
         FCPLog.Warning($"GetOrGenPawn: {charDef.defName} generating fresh pawn ({charDef.definitions.Count} definitions)");
         CharacterDefinitionUtils.ApplyRequestDefinitions(ref request, charDef.definitions);
         character.pawn = PawnGenerator.GeneratePawn(request);
+
+        if (charDef.xenotype != null)
+            character.pawn.genes?.SetXenotype(charDef.xenotype);
+
         CharacterDefinitionUtils.ApplyPawnDefinitions(character.pawn, charDef.definitions);
 
         charactersByPawn[character.pawn] = character;

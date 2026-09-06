@@ -804,7 +804,7 @@
     <StorytellerDef ParentName="BaseStoryteller">
         <defName>FCP_Storyteller_Tabitha</defName>
         <label>Tabitha</label>
-        <description>The schizophrenic Nightkin leader from Black Mountain now narrates your colony's fate through her fractured consciousness. Rhonda, her imaginary Mr. Handy companion, whispers dark truths about things lurking beyond perception. Tabitha's episodes create wildly erratic threat patterns - days of supernatural horror followed by unexplained calm, with entities and anomalies that defy wasteland logic. Her madness sees connections others cannot, drawing forth eldritch phenomena and twisted experiments. Best Friends forever!</description>
+        <description>The schizophrenic Nightkin leader from Black Mountain now narrates your colony's fate through her fractured consciousness. Rhonda, her broken Mister Handy companion, still whispers to her in a voice only Tabitha can hear. Tabitha's episodes create wildly erratic threat patterns - days of supernatural horror followed by unexplained calm, with entities and anomalies that defy wasteland logic. Her madness sees connections others cannot, drawing forth eldritch phenomena and twisted experiments. Best Friends forever!</description>
         <portraitLarge>UI/HeroArt/Storytellers/FCP_Tabitha</portraitLarge>
         <portraitTiny>UI/HeroArt/Storytellers/FCP_Tabitha_Tiny</portraitTiny>
         <listOrder>10</listOrder>
@@ -1002,7 +1002,26 @@
                 <incident>StrangerInBlackJoin</incident>
                 <delayTicks>180</delayTicks>
             </li>
+            <!-- Storyteller Joiner -->
+            <li Class="StorytellerCompProperties_SingleOnceFixed" MayRequire="Rick.FCP.SuperMutants">
+                <fireAfterDaysPassed>4</fireAfterDaysPassed>
+                <incident>FCP_GiveQuest_StorytellerJoiner</incident>
+                <minColonistCount>1</minColonistCount>
+                <allowedTargetTags>
+                    <li>World</li>
+                </allowedTargetTags>
+            </li>
         </comps>
+        <modExtensions>
+            <!-- Storyteller Joiner -->
+            <li Class="FCP.Core.ModExtension_StoryTellerIsJoiner" MayRequire="Rick.FCP.SuperMutants">
+                <characterDefs>
+                    <li>FCP_Character_SuperMutant_Lily</li>
+                    <li>FCP_Character_SuperMutant_Dog</li>
+                    <li>FCP_Character_SuperMutant_MeanSonofabitch</li>
+                </characterDefs>
+            </li>
+        </modExtensions>
     </StorytellerDef>
 
     <!-- Father Elijah -->

@@ -197,6 +197,22 @@
         </rulePack>
     </RulePackDef>
 
+    <!--_____ Vault-Tec Settlement Names _____-->
+
+    <!-- Settlements -->
+
+    <RulePackDef>
+        <defName>FCP_Namer_Settlement_Vault_Tec</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>name->[Vault_Tec_Settlements]</li>
+            </rulesStrings>
+            <rulesFiles>
+                <li>Vault_Tec_Settlements->Settlement_Names/Vault_Tec/Vault_Tec_Settlements</li>
+            </rulesFiles>
+        </rulePack>
+    </RulePackDef>
+
     <!--_____ Railroad Settlement Names _____-->
 
     <!-- Settlements -->

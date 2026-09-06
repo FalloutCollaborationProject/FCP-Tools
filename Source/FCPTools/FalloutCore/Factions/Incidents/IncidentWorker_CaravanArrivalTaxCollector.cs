@@ -12,6 +12,9 @@ public class IncidentWorker_CaravanArrivalTaxCollector : IncidentWorker_TraderCa
 
     protected override bool TryResolveParmsGeneral(IncidentParms parms)
     {
+        if (Extension == null)
+            return false;
+
         Faction faction = Find.FactionManager
             .FirstFactionOfDef(Extension.factionDef);
 
@@ -26,19 +29,20 @@ public class IncidentWorker_CaravanArrivalTaxCollector : IncidentWorker_TraderCa
 
     protected override bool CanFireNowSub(IncidentParms parms)
     {
-        return base.CanFireNowSub(parms) &&
+        return Extension != null &&
+               base.CanFireNowSub(parms) &&
                Find.FactionManager.FirstFactionOfDef(Extension.factionDef) != null;
     }
 
     public override bool FactionCanBeGroupSource(Faction f, IncidentParms parms, bool desperate = false)
     {
         if (!base.FactionCanBeGroupSource(f, parms, desperate)) return false;
-        return f.def == Extension.factionDef;
+        return Extension != null && f.def == Extension.factionDef;
     }
 
     protected override float TraderKindCommonality(TraderKindDef traderKind, Map map, Faction faction)
     {
-        return traderKind != Extension.traderKindDef
+        return Extension == null || traderKind != Extension.traderKindDef
             ? 0f
             : traderKind.CalculatedCommonality;
     }

@@ -2,7 +2,6 @@ namespace FCP.Core.RadiantQuests;
 
 public static class PawnRescueUtility
 {
-    public static List<Pawn> prisonersWillingJoin = new List<Pawn>();
     public static Pawn GeneratePrisoner(int tile, PawnKindDef pawnKindDef, Faction hostFaction)
     {
         PawnGenerationRequest request = new PawnGenerationRequest(pawnKindDef, hostFaction, PawnGenerationContext.NonPlayer, tile, forceGenerateNewPawn: false, allowDead: false, allowDowned: false, canGeneratePawnRelations: true, mustBeCapableOfViolence: false, 75f, forceAddFreeWarmLayerIfNeeded: true, allowGay: true, allowPregnant: false, allowFood: true, allowAddictions: true, inhabitant: false, certainlyBeenInCryptosleep: false, forceRedressWorldPawnIfFormerColonist: true, worldPawnFactionDoesntMatter: true);

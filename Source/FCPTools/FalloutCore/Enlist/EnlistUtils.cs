@@ -15,6 +15,12 @@ public static class EnlistUtils
     {
         FCPCoreMod.SettingsTab<EnlistSettings>().OnSaved = DoDefsRemoval;
 
+        var validDefNames = DefDatabase<FactionEnlistOptionsDef>.AllDefs.Select(d => d.defName).ToHashSet();
+        foreach (var staleKey in EnlistStates.Keys.Where(key => !validDefNames.Contains(key)).ToList())
+        {
+            EnlistStates.Remove(staleKey);
+        }
+
         foreach (var factionEnlistOptionsDef in DefDatabase<FactionEnlistOptionsDef>.AllDefs)
         {
             EnlistStates.TryAdd(factionEnlistOptionsDef.defName, true);

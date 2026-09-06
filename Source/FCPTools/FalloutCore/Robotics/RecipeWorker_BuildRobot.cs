@@ -27,6 +27,11 @@ namespace FCP.Core.Robotics
 
             PawnGenerationRequest request = new PawnGenerationRequest(ext.kindDef, Faction.OfPlayer);
             Pawn robot = PawnGenerator.GeneratePawn(request);
+            if (robot == null)
+            {
+                return;
+            }
+
             if (!ext.presetId.NullOrEmpty())
             {
                 robot.GetComp<CompProtectronLoadout>()?.ApplyPreset(ext.presetId);

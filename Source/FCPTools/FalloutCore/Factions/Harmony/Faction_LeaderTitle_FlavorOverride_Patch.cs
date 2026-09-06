@@ -9,7 +9,7 @@ public static class Faction_LeaderTitle_FlavorOverride_Patch
     {
         var ext = __instance.def?.GetModExtension<FactionExtension_FlavorOverride>();
 
-        if (ext?.preferFactionLeaderTitle != true)
+        if (ext?.preferFactionLeaderTitle != true || __instance.leader == null)
             return true;
 
         if (__instance.leader.gender == Gender.Female && !__instance.def.leaderTitleFemale.NullOrEmpty())

@@ -31,8 +31,6 @@ public class CompPowerArmorStation : ThingComp, IThingHolder, ISearchableContent
 
     private readonly List<CachedGraphicRenderInfo> cachedApparelGraphicsNonHeadgear = new List<CachedGraphicRenderInfo>();
 
-    private bool cachedApparelRenderInfoSkipHead;
-
     private bool graphicsDirty = true;
 
     private Dictionary<ThingDef, float> accumulatedResourceCosts = new Dictionary<ThingDef, float>();
@@ -157,7 +155,6 @@ public class CompPowerArmorStation : ThingComp, IThingHolder, ISearchableContent
     {
         cachedApparelGraphicsHeadgear.Clear();
         cachedApparelGraphicsNonHeadgear.Clear();
-        cachedApparelRenderInfoSkipHead = false;
         List<Apparel> apparelList = [.. innerContainer.InnerListForReading.OfType<Apparel>()];
         apparelList.SortBy(a => a.def.apparel.LastLayer.drawOrder);
         Dictionary<ApparelLayerDef, int> dictionary = new Dictionary<ApparelLayerDef, int>();
@@ -165,7 +162,6 @@ public class CompPowerArmorStation : ThingComp, IThingHolder, ISearchableContent
         {
             ApparelLayerDef lastLayer = apparel.def.apparel.LastLayer;
             bool flag = lastLayer == ApparelLayerDefOf.Overhead || lastLayer == ApparelLayerDefOf.EyeCover;
-            cachedApparelRenderInfoSkipHead = cachedApparelRenderInfoSkipHead || apparel.def.apparel.renderSkipFlags.NotNullAndContains(RenderSkipFlagDefOf.Head);
             if (!ApparelGraphicRecordGetter.TryGetGraphicApparel(apparel, BodyTypeDefOf.Hulk, forStatue: false, out var rec))
             {
                 continue;

@@ -925,6 +925,107 @@
         <researchViewY>15.00</researchViewY>
     </ResearchProjectDef>
 
+    <!--_____ Plasma Weapons _____-->
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_PlasmaPistol</defName>
+        <label>Blueprint: Plasma Pistol</label>
+        <description>Gun Runners blueprint detailing the construction of the plasma pistol.</description>
+        <prerequisites>
+            <li>FCP_Research_Plasma_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>2.00</researchViewX>
+        <researchViewY>16.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_PlasmaRifle</defName>
+        <label>Blueprint: Plasma Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the plasma rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Plasma_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>3.00</researchViewX>
+        <researchViewY>16.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_MultiplasRifle</defName>
+        <label>Blueprint: Multiplas Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the multiplas rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Plasma_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>4.00</researchViewX>
+        <researchViewY>16.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_PlasmaCaster</defName>
+        <label>Blueprint: Plasma Caster</label>
+        <description>Gun Runners blueprint detailing the construction of the plasma caster.</description>
+        <prerequisites>
+            <li>FCP_Research_Plasma_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>5.00</researchViewX>
+        <researchViewY>16.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_PlasmaDefender</defName>
+        <label>Blueprint: Plasma Defender</label>
+        <description>Gun Runners blueprint detailing the construction of the plasma defender.</description>
+        <prerequisites>
+            <li>FCP_Research_Plasma_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>6.00</researchViewX>
+        <researchViewY>16.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_PlasmaCasterMkI</defName>
+        <label>Blueprint: Plasma Caster MkI</label>
+        <description>Gun Runners blueprint detailing the construction of the plasma caster MkI.</description>
+        <prerequisites>
+            <li>FCP_Research_Plasma_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>7.00</researchViewX>
+        <researchViewY>16.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_Glock86PlasmaPistol</defName>
+        <label>Blueprint: Glock 86 Plasma Pistol</label>
+        <description>Gun Runners blueprint detailing the construction of the Glock 86 plasma pistol.</description>
+        <prerequisites>
+            <li>FCP_Research_Plasma_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>8.00</researchViewX>
+        <researchViewY>16.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_P94PlasmaRifle</defName>
+        <label>Blueprint: P94 Plasma Rifle</label>
+        <description>Gun Runners blueprint detailing the construction of the P94 plasma rifle.</description>
+        <prerequisites>
+            <li>FCP_Research_Plasma_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>9.00</researchViewX>
+        <researchViewY>16.00</researchViewY>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
+        <defName>FCP_Research_Blueprint_PlasmaMachineGun</defName>
+        <label>Blueprint: Plasma Machine Gun</label>
+        <description>Gun Runners blueprint detailing the construction of the plasma machine gun.</description>
+        <prerequisites>
+            <li>FCP_Research_Plasma_Weapons_Manufacturing</li>
+        </prerequisites>
+        <researchViewX>10.00</researchViewX>
+        <researchViewY>16.00</researchViewY>
+    </ResearchProjectDef>
+
     <!--_____ Gauss Weapons _____-->
 
     <ResearchProjectDef ParentName="FCP_GunRunners_Weapon_Blueprint_Base">
