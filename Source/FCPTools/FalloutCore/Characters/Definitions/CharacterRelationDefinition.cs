@@ -22,6 +22,13 @@ public class CharacterRelationDefinition : CharacterBaseDefinition
 
     public override void ApplyToPawn(Pawn pawn)
     {
+        // During early world generation (faction leader generation in particular) the player
+        // faction may not exist yet. GetOrGenPawn below passes the related pawn to the world,
+        // which touches Faction.OfPlayer internally and logs an error if it's not there yet.
+        // Skip wiring up relations until it's safe; the pawn itself still generates fine either way.
+        if (Find.FactionManager?.OfPlayer == null)
+            return;
+
         foreach (CharacterRelation rel in relations)
         {
             if (rel?.relation == null || rel.otherCharacter == null)
