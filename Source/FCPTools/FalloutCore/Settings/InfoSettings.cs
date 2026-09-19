@@ -47,8 +47,31 @@ public class InfoSettings : SettingsTab
         GUI.color = Color.white;
     }
 
+    // Entries whose feature only exists when a specific separate FCP mod is active.
+    // Anything not listed here is a core FCP-Tools feature and always shows.
+    private static readonly Dictionary<string, string> RequiredModByEntryKey = new()
+    {
+        ["FCP_Settings_Info_PowerArmor"] = "Rick.FCP.PowerArmor",
+        ["FCP_Settings_Info_Robotics"] = "Rick.FCP.Robotics",
+        ["FCP_Settings_Info_Cyberdogs"] = "Rick.FCP.Animals",
+        ["FCP_Settings_Info_SuperMutants"] = "Rick.FCP.SuperMutants",
+        ["FCP_Settings_Info_Blueprints"] = "Rick.FCP.Wastelanders",
+        ["FCP_Settings_Info_PocketMaps"] = "Rick.FCPPocketMap",
+        ["FCP_Settings_Info_FeralWildlife"] = "Rick.FCP.Animals",
+        ["FCP_Settings_Info_AnimalHerds"] = "Rick.FCP.Animals",
+        ["FCP_Settings_Info_Synths"] = "Rick.FCP.Institute",
+        ["FCP_Settings_Info_Institute"] = "Rick.FCP.Institute",
+    };
+
+    private static bool IsEntryAvailable(string entryKey) =>
+        !RequiredModByEntryKey.TryGetValue(entryKey, out string modId) || ModsConfig.IsActive(modId);
+
     private static void DrawGroup(Listing_Standard list, string groupKey)
     {
+        List<string> entries = EntryKeysFor(groupKey).Where(IsEntryAvailable).ToList();
+        if (entries.Count == 0)
+            return;
+
         list.Gap(6f);
         Text.Font = GameFont.Medium;
         GUI.color = TerminalColors.HighlightColor;
@@ -57,7 +80,7 @@ public class InfoSettings : SettingsTab
         Text.Font = GameFont.Small;
         list.GapLine();
 
-        foreach (string entryKey in EntryKeysFor(groupKey))
+        foreach (string entryKey in entries)
         {
             list.Label("<b>" + (entryKey + ".Title").Translate() + "</b>");
             GUI.color = DimPrimary;
@@ -94,6 +117,7 @@ public class InfoSettings : SettingsTab
             "FCP_Settings_Info_SuperMutants",
             "FCP_Settings_Info_Mutations",
             "FCP_Settings_Info_Xenotypes",
+            "FCP_Settings_Info_Synths",
         ],
         "FCP_Settings_Info_Group_Survival" =>
         [
@@ -114,6 +138,7 @@ public class InfoSettings : SettingsTab
         ],
         "FCP_Settings_Info_Group_Story" =>
         [
+            "FCP_Settings_Info_Institute",
             "FCP_Settings_Info_Enlistment",
             "FCP_Settings_Info_UniqueCharacters",
             "FCP_Settings_Info_UniqueItems",

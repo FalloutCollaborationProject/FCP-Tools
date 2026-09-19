@@ -2234,8 +2234,8 @@
         <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Gamblers_Kid</identifier>
         <slot>Childhood</slot>
-        <title>Gambler’s Kid</title>
-        <titleShort>Gambler’s Kid</titleShort>
+        <title>Gambler's Kid</title>
+        <titleShort>Gambler's Kid</titleShort>
         <description>As a child of a passionate gambler [PAWN_nameDef] was used to a roving lifestyle, as [PAWN_possessive] parents often changed their place of residence. Usually, the family stayed in the same place as long as there were casinos or people to exploit and hastened off quickly as soon as the victims grew angry enough to resort to violence. While [PAWN_nameDef] never was much of a book learner, [PAWN_pronoun] was cunning and sly.</description>
         <skillGains>
             <Shooting>1</Shooting>
@@ -2830,8 +2830,8 @@
         <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Apothecarys_Apprentice</identifier>
         <slot>Childhood</slot>
-        <title>Apothecary’s Apprentice</title>
-        <titleShort>Apothecary’s Apprentice</titleShort>
+        <title>Apothecary's Apprentice</title>
+        <titleShort>Apothecary's Apprentice</titleShort>
         <description>In [PAWN_possessive] youth, [PAWN_nameDef] worked for a local pharmacist as an assistant. While the remedies they produced were much less effective compared to a stimpak or other pre-war medicine, the overall lack of medical supplies in the wasteland, paired with the numerous dangers that lurked within it ensured that they never lacked customers.</description>
         <skillGains>
             <Plants>4</Plants>
@@ -2973,8 +2973,8 @@
         <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Shopkeepers_Child</identifier>
         <slot>Childhood</slot>
-        <title>Shopkeeper’s Child</title>
-        <titleShort>Shopkeeper’s Child</titleShort>
+        <title>Shopkeeper's Child</title>
+        <titleShort>Shopkeeper's Child</titleShort>
         <description>[PAWN_nameDef] was born as the child of shopkeepers. Early on [PAWN_pronoun] learned about trade and bartering. Since the small settlement, their shop was located in had no security forces to speak off, [PAWN_pronoun] too had to learn how to scare of thieves and other rascals.</description>
         <skillGains>
             <Shooting>2</Shooting>
@@ -3022,8 +3022,8 @@
         <bodyTypeFemale>Female</bodyTypeFemale>
         <identifier>FCP_Backstory_Wastelander_Mercs_Kid</identifier>
         <slot>Childhood</slot>
-        <title>Merc’s Kid</title>
-        <titleShort>Merc’s Kid</titleShort>
+        <title>Merc's Kid</title>
+        <titleShort>Merc's Kid</titleShort>
         <description>[PAWN_nameDef] was born as the child of a wasteland mercenary. While [PAWN_possessive] parent trade ensured [PAWN_nameDef] rarely had to go hungry for an extended period of time, [PAWN_pronoun] was well aware that the dangers of the merc life could very well leave [PAWN_objective] orphaned. Despite this, [PAWN_nameDef] took after [PAWN_possessive] parent and started to fire, clean, and modify all the guns [PAWN_pronoun] could get [PAWN_possessive] hands on.</description>
         <skillGains>
             <Shooting>4</Shooting>

@@ -28,10 +28,7 @@ public static class CharacterDefinitionUtils
         foreach (CharacterBaseDefinition definition in definitions)
         {
             if (!definition.AppliesPostGeneration)
-            {
-                FCPLog.Warning($"ApplyPawnDefinitions: skipping {definition.GetType().Name} for {pawn} (AppliesPostGeneration false)");
                 continue;
-            }
 
             definition.ApplyToPawn(pawn);
         }

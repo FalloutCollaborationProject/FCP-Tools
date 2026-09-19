@@ -10,9 +10,10 @@ public class FCPSettings : ModSettings
     public EnlistSettings Enlist = new EnlistSettings();
     public TentsSettings Tents = new TentsSettings();
     public ScenarioSettings Scenarios = new ScenarioSettings();
+    public InstituteSettings Institute = new InstituteSettings();
     public DebugSettings Debug = new DebugSettings();
 
-    public IReadOnlyList<SettingsTab> Tabs => [Info, General, VATS, Enlist, Scenarios, Debug];
+    public IReadOnlyList<SettingsTab> Tabs => [Info, General, VATS, Enlist, Scenarios, Institute, Debug];
     
     private Dictionary<Type, SettingsTab> _tabsByType;
     private Dictionary<Type, SettingsTab> TabsByType
@@ -30,6 +31,7 @@ public class FCPSettings : ModSettings
         Scribe_Deep.Look(ref Enlist, nameof(Enlist));
         Scribe_Deep.Look(ref Tents, nameof(Tents));
         Scribe_Deep.Look(ref Scenarios, nameof(Scenarios));
+        Scribe_Deep.Look(ref Institute, nameof(Institute));
         Scribe_Deep.Look(ref Debug, nameof(Debug));
 
         if (Scribe.mode == LoadSaveMode.PostLoadInit)
@@ -40,6 +42,7 @@ public class FCPSettings : ModSettings
             Enlist ??= new EnlistSettings();
             Tents ??= new TentsSettings();
             Scenarios ??= new ScenarioSettings();
+            Institute ??= new InstituteSettings();
             Debug ??= new DebugSettings();
         }
     }

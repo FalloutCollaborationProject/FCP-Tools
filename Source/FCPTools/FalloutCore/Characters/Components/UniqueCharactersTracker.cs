@@ -87,21 +87,15 @@ public class UniqueCharactersTracker : WorldComponent
         }
         else if (character.PawnExists())
         {
-            FCPLog.Warning($"GetOrGenPawn: {charDef.defName} cache hit, reapplying definitions to {character.pawn}");
             CharacterDefinitionUtils.ApplyPawnDefinitions(character.pawn, charDef.definitions);
             return character.pawn;
         }
-
-#if DEBUG
-        FCPLog.Message($"Generating Unique Pawn: {charDef.defName}");
-#endif
 
         PawnGenerationRequest request = requestParams ?? new PawnGenerationRequest(charDef.pawnKind);
         request.KindDef ??= charDef.pawnKind;
         request.Faction ??= Find.FactionManager.FirstFactionOfDef(charDef.faction);
         request.ForceGenerateNewPawn = true;
 
-        FCPLog.Warning($"GetOrGenPawn: {charDef.defName} generating fresh pawn ({charDef.definitions.Count} definitions)");
         CharacterDefinitionUtils.ApplyRequestDefinitions(ref request, charDef.definitions);
         character.pawn = PawnGenerator.GeneratePawn(request);
 

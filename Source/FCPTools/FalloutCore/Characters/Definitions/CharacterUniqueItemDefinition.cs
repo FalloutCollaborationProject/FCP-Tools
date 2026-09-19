@@ -16,27 +16,19 @@ public class CharacterUniqueItemDefinition : CharacterBaseDefinition
 
         if (uniqueItem.IsApparel)
         {
-            FCPLog.Warning($"CharacterUniqueItemDefinition: applying {uniqueItem.defName} to {pawn}");
-
             Apparel existing = pawn.apparel?.WornApparel.FirstOrDefault(a => a.def == uniqueItem);
             if (existing != null)
             {
-                FCPLog.Warning($"CharacterUniqueItemDefinition: {pawn} already wearing {uniqueItem.defName}, locking");
                 pawn.apparel.Lock(existing);
                 return;
             }
 
             if (pawn.apparel == null)
-            {
-                FCPLog.Warning($"CharacterUniqueItemDefinition: {pawn} has no apparel tracker, cannot equip {uniqueItem.defName}");
                 return;
-            }
 
             var apparel = (Apparel)ThingMaker.MakeThing(uniqueItem, uniqueItem.MadeFromStuff ? GenStuff.RandomStuffFor(uniqueItem) : null);
             pawn.apparel.Wear(apparel, dropReplacedApparel: true);
-            bool nowWorn = pawn.apparel.WornApparel.Contains(apparel);
-            FCPLog.Warning($"CharacterUniqueItemDefinition: {pawn} Wear() called for {uniqueItem.defName}, now worn: {nowWorn}");
-            if (nowWorn)
+            if (pawn.apparel.WornApparel.Contains(apparel))
             {
                 pawn.apparel.Lock(apparel);
             }

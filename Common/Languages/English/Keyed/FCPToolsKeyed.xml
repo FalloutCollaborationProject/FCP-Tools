@@ -10,6 +10,8 @@
 	<FCP_Settings.General.tt>Options that affect the whole mod or don't fit anywhere else.</FCP_Settings.General.tt>
 	<FCP_Settings.Scenarios>Scenarios</FCP_Settings.Scenarios>
 	<FCP_Settings.Scenarios.tt>Options that affect new-game scenarios, like starting already enlisted with a faction.</FCP_Settings.Scenarios.tt>
+	<FCP_Settings_Institute>Institute</FCP_Settings_Institute>
+	<FCP_Settings_Institute_tt>Options for the Institute's synth replacement incident and relocation offer. Requires the Institute mod.</FCP_Settings_Institute_tt>
 
 	<!-- Info Tab -->
 
@@ -54,6 +56,8 @@
 	<FCP_Settings_Info_Mutations.Desc>Some pawns carry mutation genes born from radiation exposure. One shocks anyone who hits them in melee, another can inflict radiation sickness right back on an attacker, and others change how much a pawn needs to eat meat versus plants or buff them in specific situations.</FCP_Settings_Info_Mutations.Desc>
 	<FCP_Settings_Info_Xenotypes.Title>Ghoul &amp; Super Mutant Xenotypes</FCP_Settings_Info_Xenotypes.Title>
 	<FCP_Settings_Info_Xenotypes.Desc>If you'd rather not wait for it to happen in-game, Ghoul, Feral Ghoul, Glowing One, Super Mutant, and Nightkin are all available as xenotypes at character creation. Same genes as the vat and radiation systems, just chosen upfront instead of earned. FEV monsters like Centaurs and Behemoths only recognize certain super mutant strains as friendly, so which xenotype a mutant pawn has actually matters around them.</FCP_Settings_Info_Xenotypes.Desc>
+	<FCP_Settings_Info_Synths.Title>Institute Synths</FCP_Settings_Info_Synths.Title>
+	<FCP_Settings_Info_Synths.Desc>The Institute can gestate synths in a Synthesizer Pod: Gen 1 units that are obviously mechanical, Gen 2 units built to pass as human at a glance, and Gen 3 units that are indistinguishable from a real person without cutting them open. There's also a small, low chance that a colonist who's been away on a caravan trip, a trip to a different map, or a Rank expedition comes back quietly swapped for a Gen 3 infiltrator instead. Nothing shows up on their health tab either way; the only way to find out for certain is to butcher the body and see what falls out.</FCP_Settings_Info_Synths.Desc>
 
 	<FCP_Settings_Info_Group_Survival.Title>Survival &amp; Health</FCP_Settings_Info_Group_Survival.Title>
 	<FCP_Settings_Info_AutoStim.Title>Auto-Stims</FCP_Settings_Info_AutoStim.Title>
@@ -82,6 +86,8 @@
 	<FCP_Settings_Info_Radio.Desc>A working radio picks up in-world stations broadcasting Fallout-style chatter and music. Pure flavor, but a nice one.</FCP_Settings_Info_Radio.Desc>
 
 	<FCP_Settings_Info_Group_Story.Title>Story &amp; Characters</FCP_Settings_Info_Group_Story.Title>
+	<FCP_Settings_Info_Institute.Title>The Institute</FCP_Settings_Info_Institute.Title>
+	<FCP_Settings_Info_Institute.Desc>A hidden, high-tech faction operating beneath the surface, more interested in the Commonwealth as a research subject than a place to live. Comes with its own leadership, backstories for its rank-and-file scientists and security, and a synth production chain (see Institute Synths above). It can also make a one-time offer to permanently relocate one of your colonists underground in exchange for a shipment of goods and improved standing, no obligation attached.</FCP_Settings_Info_Institute.Desc>
 	<FCP_Settings_Info_Enlistment.Title>Enlistment &amp; Faction Work Contracts</FCP_Settings_Info_Enlistment.Title>
 	<FCP_Settings_Info_Enlistment.Desc>Enlist a colonist with a faction and they can take on paid contracts and missions instead of that faction only ever being someone to trade with or fight.</FCP_Settings_Info_Enlistment.Desc>
 	<FCP_Settings_Info_UniqueCharacters.Title>Unique Named Characters</FCP_Settings_Info_UniqueCharacters.Title>
@@ -243,6 +249,20 @@
 	<FCP_Settings_Enlistment_ActiveTypes>Active Enlistment Types</FCP_Settings_Enlistment_ActiveTypes>
 	<FCP_Settings_Enlistment_ActiveTypes_Desc>Uncheck a faction to remove its enlistment option from the game entirely. Colonists already enlisted with a disabled faction keep their enlistment until they resign.</FCP_Settings_Enlistment_ActiveTypes_Desc>
 	<FCP_Settings_Enlistment_Checkbox_Desc>Enable or disable enlistment with {0}.</FCP_Settings_Enlistment_Checkbox_Desc>
+
+	<!-- Institute Settings -->
+
+	<FCP_Settings_Institute_Replacement>Synth Replacement</FCP_Settings_Institute_Replacement>
+	<FCP_Settings_Institute_ReplacementEnabled>Enable synth replacement</FCP_Settings_Institute_ReplacementEnabled>
+	<FCP_Settings_Institute_ReplacementEnabled_Desc>When enabled, colonists returning from a caravan trip, a different map, or a Rank expedition have a small chance of quietly being replaced by a Gen 3 synth infiltrator.</FCP_Settings_Institute_ReplacementEnabled_Desc>
+	<FCP_Settings_Institute_ReplacementChance>Replacement chance: {0}</FCP_Settings_Institute_ReplacementChance>
+	<FCP_Settings_Institute_ReplacementChance_Desc>Chance, per eligible colonist per return trip, that they're quietly replaced.</FCP_Settings_Institute_ReplacementChance_Desc>
+	<FCP_Settings_Institute_Relocation>Relocation Offer</FCP_Settings_Institute_Relocation>
+	<FCP_Settings_Institute_RelocationEnabled>Enable relocation offers</FCP_Settings_Institute_RelocationEnabled>
+	<FCP_Settings_Institute_RelocationEnabled_Desc>When enabled, the Institute can occasionally offer to permanently relocate one of your colonists underground in exchange for goods and goodwill.</FCP_Settings_Institute_RelocationEnabled_Desc>
+	<FCP_Settings_Institute_RelocationRewardMin>Minimum reward value: {0}</FCP_Settings_Institute_RelocationRewardMin>
+	<FCP_Settings_Institute_RelocationRewardMax>Maximum reward value: {0}</FCP_Settings_Institute_RelocationRewardMax>
+	<FCP_Settings_Institute_RelocationGoodwill>Goodwill gained: {0}</FCP_Settings_Institute_RelocationGoodwill>
 
 	<!-- Debug Settings-->
 
