@@ -47,8 +47,6 @@ public class InfoSettings : SettingsTab
         GUI.color = Color.white;
     }
 
-    // Entries whose feature only exists when a specific separate FCP mod is active.
-    // Anything not listed here is a core FCP-Tools feature and always shows.
     private static readonly Dictionary<string, string> RequiredModByEntryKey = new()
     {
         ["FCP_Settings_Info_PowerArmor"] = "Rick.FCP.PowerArmor",
