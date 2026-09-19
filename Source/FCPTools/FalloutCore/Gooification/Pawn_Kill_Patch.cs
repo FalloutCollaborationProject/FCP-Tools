@@ -51,6 +51,9 @@ public static class Pawn_Kill_Patch
         {
             foreach (var drop in __state.Drops)
             {
+                if (drop == null || drop.Destroyed || drop.stackCount <= 0)
+                    continue;
+
                 drop.holdingOwner?.Remove(drop);
                 if (drop.Spawned)
                 {
