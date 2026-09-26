@@ -87,6 +87,9 @@ public class UniqueCharactersTracker : WorldComponent
         }
         else if (character.PawnExists())
         {
+            if (charDef.xenotype != null && character.pawn.genes != null && character.pawn.genes.Xenotype != charDef.xenotype)
+                character.pawn.genes.SetXenotype(charDef.xenotype);
+
             CharacterDefinitionUtils.ApplyPawnDefinitions(character.pawn, charDef.definitions);
             return character.pawn;
         }

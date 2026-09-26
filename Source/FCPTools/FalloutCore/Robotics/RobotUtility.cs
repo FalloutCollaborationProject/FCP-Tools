@@ -3,6 +3,7 @@ using System.Linq;
 using RimWorld;
 using UnityEngine;
 using Verse;
+using Verse.AI;
 
 namespace FCP.Core.Robotics
 {
@@ -92,6 +93,77 @@ namespace FCP.Core.Robotics
             }
 
             return false;
+        }
+
+        public static bool IsValidForcedTarget(Pawn attacker, Thing target)
+        {
+            if (target == null || !target.Spawned || target.Destroyed || target.Map != attacker.Map)
+            {
+                return false;
+            }
+
+            if (target is Pawn targetPawn && (targetPawn.Dead || targetPawn.Downed))
+            {
+                return false;
+            }
+
+            return attacker.HostileTo(target);
+        }
+
+        public static Job TryMakeForcedAttackJob(Pawn pawn, Thing target)
+        {
+            if (!IsValidForcedTarget(pawn, target))
+            {
+                return null;
+            }
+
+            Verb verb = pawn.TryGetAttackVerb(target, !pawn.IsColonist);
+            if (verb == null)
+            {
+                return null;
+            }
+
+            Job job = JobMaker.MakeJob(verb.IsMeleeAttack ? JobDefOf.AttackMelee : JobDefOf.AttackStatic, target);
+            job.expiryInterval = 400;
+            job.checkOverrideOnExpire = true;
+            return job;
+        }
+
+        public static Job TryMakeFallBackJob(Pawn pawn)
+        {
+            Building_Bed bed = FindAssignedBed(pawn);
+            Job job = bed != null && pawn.Position != bed.OccupiedRect().CenterCell
+                ? JobMaker.MakeJob(JobDefOf.Goto, bed.OccupiedRect().CenterCell)
+                : JobMaker.MakeJob(JobDefOf.Wait_MaintainPosture);
+            job.expiryInterval = 200;
+            job.checkOverrideOnExpire = true;
+            return job;
+        }
+
+        public static Job TryGiveCombatOverrideJob(Pawn pawn)
+        {
+            CompRobotCombatOverride combatOverride = pawn.GetComp<CompRobotCombatOverride>();
+            if (combatOverride == null)
+            {
+                return null;
+            }
+
+            if (combatOverride.FallBack)
+            {
+                return TryMakeFallBackJob(pawn);
+            }
+
+            if (combatOverride.HasValidForcedTarget)
+            {
+                Job forcedJob = TryMakeForcedAttackJob(pawn, combatOverride.ForcedTarget);
+                if (forcedJob != null)
+                {
+                    return forcedJob;
+                }
+                combatOverride.ClearForcedTarget();
+            }
+
+            return null;
         }
 
         public static Building_Bed FindAssignedBed(Pawn robot)

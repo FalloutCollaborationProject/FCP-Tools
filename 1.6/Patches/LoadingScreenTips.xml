@@ -12,6 +12,7 @@
             <li>Pre-war technology is scattered across the wasteland. Researching pre-war advancements can unlock powerful equipment your enemies won't expect.</li>
             <li MayRequire="Rick.FCP.EnergyWeapons">Energy weapons deal high damage but require specialized ammunition. Establish a supply chain before arming your colony with laser rifles.</li>
             <li MayRequire="Rick.FCP.Enclave">The Enclave considers itself the true continuation of the United States government. They will use that authority to justify anything.</li>
+            <li MayRequire="Rick.FCP.Robotics">Robots aren't drafted. Select one during a fight to focus it on a target or pull it back to its charging spot instead.</li>
         </value>
     </Operation>
 

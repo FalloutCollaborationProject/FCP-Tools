@@ -15,6 +15,15 @@ public class FCPDefOf
     [MayRequire("Rick.FCP.COA")]
     public static TraitDef FCP_Trait_CongregantOfAtom;
 
+    [MayRequire("Rick.FCP.Institute")]
+    public static TraitDef FCP_Trait_Institute_Loyalist;
+
+    [MayRequire("Rick.FCP.Railroad")]
+    public static TraitDef FCP_Trait_Railroad_Sympathizer;
+
+    [MayRequire("Rick.FCP.BOS")]
+    public static TraitDef FCP_Trait_BoS_Zealot;
+
     public static PawnGroupKindDef FCP_PawnGroupKind_TaxCollector;
     public static LetterDef FCP_Letter_AcceptStoryteller;
     public static LetterDef FCP_Letter_Squatters;

@@ -32,6 +32,27 @@ namespace FCP.Core.Robotics
             });
         }
 
+        public override IEnumerable<Gizmo> CompGetGizmosExtra()
+        {
+            foreach (Gizmo gizmo in base.CompGetGizmosExtra())
+            {
+                yield return gizmo;
+            }
+
+            if (!(parent is Pawn robot) || robot.Faction != Faction.OfPlayer)
+            {
+                yield break;
+            }
+
+            yield return new Command_Action
+            {
+                defaultLabel = "FCP_ControlRobots_Gizmo".Translate(),
+                defaultDesc = "FCP_ControlRobots_GizmoDesc".Translate(),
+                icon = TexButton.Info,
+                action = OpenRobotSelectMenu,
+            };
+        }
+
         public void OpenRobotSelectMenu()
         {
             Find.WindowStack.Add(new Dialog_RobotControl(parent.Map));

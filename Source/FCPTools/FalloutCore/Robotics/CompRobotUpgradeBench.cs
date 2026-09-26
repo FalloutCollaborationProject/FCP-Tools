@@ -119,10 +119,15 @@ namespace FCP.Core.Robotics
 
         private Pawn FindDockedRobot()
         {
-            foreach (Pawn p in parent.Map.mapPawns.AllPawnsSpawned)
+            return FindDockedRobotAt(parent);
+        }
+
+        public static Pawn FindDockedRobotAt(Thing bench)
+        {
+            foreach (Pawn p in bench.Map.mapPawns.AllPawnsSpawned)
             {
                 if (RobotUtility.IsAnyRobot(p) && p.CurJobDef == JobDefOf_Robotics.FCP_RobotDock &&
-                    p.CurJob.GetTarget(TargetIndex.A).Thing == parent)
+                    p.CurJob.GetTarget(TargetIndex.A).Thing == bench)
                 {
                     return p;
                 }

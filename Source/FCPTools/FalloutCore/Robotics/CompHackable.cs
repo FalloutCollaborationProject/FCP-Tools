@@ -25,14 +25,17 @@ namespace FCP.Core.Robotics
 
     public class CompHackable : ThingComp
     {
+        private const int FallbackIntellectualSkillThreshold = 14;
+
         public CompProperties_Hackable Props => (CompProperties_Hackable)props;
+
+        private bool IsValidHackTarget => parent is Pawn pawn && pawn.Faction != Faction.OfPlayer;
 
         public bool CanBeHacked
         {
             get
             {
-                Pawn pawn = parent as Pawn;
-                if (pawn == null || pawn.Faction == Faction.OfPlayer)
+                if (!(parent is Pawn pawn) || pawn.Faction == Faction.OfPlayer)
                 {
                     return false;
                 }
@@ -43,7 +46,11 @@ namespace FCP.Core.Robotics
 
         public static bool HackerQualified(Pawn hacker)
         {
-            return hacker?.story?.traits?.HasTrait(TraitsDefOf.FCP_Trait_Robotics_Expert) == true;
+            if (hacker?.story?.traits?.HasTrait(TraitsDefOf.FCP_Trait_Robotics_Expert) == true)
+            {
+                return true;
+            }
+            return (hacker?.skills?.GetSkill(SkillDefOf.Intellectual)?.Level ?? 0) >= FallbackIntellectualSkillThreshold;
         }
 
         public float GetSuccessChance(Pawn hacker)
@@ -77,14 +84,20 @@ namespace FCP.Core.Robotics
 
         public override IEnumerable<FloatMenuOption> CompFloatMenuOptions(Pawn selPawn)
         {
+            if (!IsValidHackTarget)
+            {
+                yield break;
+            }
+
             if (!CanBeHacked)
             {
+                yield return new FloatMenuOption("FCP_HackRobot_Perform".Translate() + ": " + "FCP_HackRobot_StillPowered".Translate(), null);
                 yield break;
             }
 
             if (!HackerQualified(selPawn))
             {
-                yield return new FloatMenuOption("FCP_HackRobot_Perform".Translate() + ": " + "FCP_HackRobot_NeedsRoboticsExpert".Translate(), null);
+                yield return new FloatMenuOption("FCP_HackRobot_Perform".Translate() + ": " + "FCP_HackRobot_NeedsRoboticsExpert".Translate(FallbackIntellectualSkillThreshold), null);
                 yield break;
             }
 
@@ -101,6 +114,22 @@ namespace FCP.Core.Robotics
                 Job job = JobMaker.MakeJob(JobDefOf_Robotics.FCP_HackRobot, parent);
                 selPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
             });
+        }
+
+        public override string CompInspectStringExtra()
+        {
+            if (!IsValidHackTarget)
+            {
+                return null;
+            }
+
+            CompRefuelable fuel = parent.GetComp<CompRefuelable>();
+            if (fuel == null)
+            {
+                return null;
+            }
+
+            return fuel.HasFuel ? "FCP_Hackable_StillPowered".Translate() : "FCP_Hackable_ReadyToHack".Translate();
         }
     }
 }

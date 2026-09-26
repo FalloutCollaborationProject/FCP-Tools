@@ -15,6 +15,12 @@ namespace FCP.Core.Robotics
 
         protected override Job TryGiveJob(Pawn pawn)
         {
+            Job combatOverrideJob = RobotUtility.TryGiveCombatOverrideJob(pawn);
+            if (combatOverrideJob != null)
+            {
+                return combatOverrideJob;
+            }
+
             CompRobotUpgrade upgradeComp = pawn.GetComp<CompRobotUpgrade>();
             if (upgradeComp?.PendingBench != null)
             {
@@ -28,18 +34,18 @@ namespace FCP.Core.Robotics
                 }
             }
 
-            CompRefuelable fuel = pawn.GetComp<CompRefuelable>();
-            if (fuel != null && !fuel.HasFuel)
-            {
-                return null;
-            }
-
             if (!RobotUtility.IsPoweredOn(pawn))
             {
                 return null;
             }
 
             if (pawn.Faction != Faction.OfPlayer)
+            {
+                return base.TryGiveJob(pawn);
+            }
+
+            CompRefuelable fuel = pawn.GetComp<CompRefuelable>();
+            if (fuel != null && !fuel.HasFuel)
             {
                 return base.TryGiveJob(pawn);
             }
