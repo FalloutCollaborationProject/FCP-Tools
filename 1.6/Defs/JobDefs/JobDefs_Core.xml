@@ -283,6 +283,14 @@
         <casualInterruptible>false</casualInterruptible>
     </JobDef>
 
+    <!-- Mr. Handy Cook -->
+
+    <JobDef>
+        <defName>FCP_MrHandyCook</defName>
+        <driverClass>FCP.Core.Robotics.JobDriver_MrHandyCook</driverClass>
+        <reportString>cooking at TargetA.</reportString>
+    </JobDef>
+
     <!-- Radio -->
 
     <JobDef>

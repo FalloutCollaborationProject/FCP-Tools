@@ -10,6 +10,7 @@ namespace FCP.Core.Robotics
         public static JobDef FCP_ControlRobots;
         public static JobDef FCP_HackRobot;
         public static JobDef FCP_RobotPowerDown;
+        public static JobDef FCP_MrHandyCook;
 
         static JobDefOf_Robotics()
         {

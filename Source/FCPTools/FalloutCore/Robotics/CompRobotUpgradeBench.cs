@@ -39,6 +39,13 @@ namespace FCP.Core.Robotics
 
         private void OpenUpgradeSelectMenu()
         {
+            Pawn claimant = FindClaimantRobot();
+            if (claimant != null)
+            {
+                Messages.Message("FCP_UpgradeRobot_BenchOccupied".Translate(claimant.LabelShort), parent, MessageTypeDefOf.RejectInput, historical: false);
+                return;
+            }
+
             List<FloatMenuOption> options = new List<FloatMenuOption>();
             IEnumerable<Pawn> robots = parent.Map.mapPawns.AllPawnsSpawned
                 .Where(p => p.Faction == Faction.OfPlayer && RobotUtility.IsAnyRobot(p));
@@ -128,6 +135,18 @@ namespace FCP.Core.Robotics
             {
                 if (RobotUtility.IsAnyRobot(p) && p.CurJobDef == JobDefOf_Robotics.FCP_RobotDock &&
                     p.CurJob.GetTarget(TargetIndex.A).Thing == bench)
+                {
+                    return p;
+                }
+            }
+            return null;
+        }
+
+        private Pawn FindClaimantRobot()
+        {
+            foreach (Pawn p in parent.Map.mapPawns.AllPawnsSpawned)
+            {
+                if (RobotUtility.IsAnyRobot(p) && p.GetComp<CompRobotUpgrade>()?.PendingBench == parent)
                 {
                     return p;
                 }

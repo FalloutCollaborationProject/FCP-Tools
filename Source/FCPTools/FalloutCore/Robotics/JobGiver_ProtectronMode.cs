@@ -80,7 +80,7 @@ namespace FCP.Core.Robotics
             {
                 return false;
             }
-            return pawn.Map.areaManager.Home[target.Position];
+            return RobotUtility.IsWithinGuardArea(pawn, target.Position);
         }
 
         protected override bool TryFindShootingPosition(Pawn pawn, out IntVec3 dest, Verb verbToUse = null)

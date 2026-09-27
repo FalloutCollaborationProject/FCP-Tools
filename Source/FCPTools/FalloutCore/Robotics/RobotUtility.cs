@@ -129,6 +129,12 @@ namespace FCP.Core.Robotics
             return job;
         }
 
+        public static bool IsWithinGuardArea(Pawn pawn, IntVec3 cell)
+        {
+            Area restrictedArea = pawn.GetComp<CompRobotAreaRestriction>()?.RestrictedArea;
+            return restrictedArea != null ? restrictedArea[cell] : pawn.Map.areaManager.Home[cell];
+        }
+
         public static Job TryMakeFallBackJob(Pawn pawn)
         {
             Building_Bed bed = FindAssignedBed(pawn);

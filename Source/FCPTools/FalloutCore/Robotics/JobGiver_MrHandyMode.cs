@@ -60,8 +60,7 @@ namespace FCP.Core.Robotics
                 case MrHandyMode.GuardPawn:
                     return TryGuardPawn(pawn, modeComp);
                 case MrHandyMode.Cook:
-                    return TryWorkGiver(pawn, "DoBillsCook", ThingRequestGroup.BuildingArtificial)
-                        ?? TryWorkGiver(pawn, "DoBillsCookCampfire", ThingRequestGroup.BuildingArtificial);
+                    return TryCook(pawn);
                 case MrHandyMode.Clean:
                     return TryWorkGiver(pawn, "CleanFilth", ThingRequestGroup.Filth);
                 case MrHandyMode.Garden:
@@ -110,7 +109,7 @@ namespace FCP.Core.Robotics
                 return target.Position.InHorDistOf(modeComp.GuardedPawn.Position, GuardEngageRadius);
             }
 
-            return pawn.Map.areaManager.Home[target.Position];
+            return RobotUtility.IsWithinGuardArea(pawn, target.Position);
         }
 
         protected override bool TryFindShootingPosition(Pawn pawn, out IntVec3 dest, Verb verbToUse = null)
@@ -133,6 +132,16 @@ namespace FCP.Core.Robotics
                 maxRangeFromLocus = 9999f,
                 wantCoverFromTarget = verb.EffectiveRange > 7f,
             }, out dest);
+        }
+
+        private static Job TryCook(Pawn pawn)
+        {
+            Thing stove = GenClosest.ClosestThingReachable(pawn.Position, pawn.Map,
+                ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial), PathEndMode.InteractionCell,
+                TraverseParms.For(pawn), 9999f,
+                thing => MrHandyCookUtility.IsCookingStation(thing) && MrHandyCookUtility.HasEnoughRawFoodNear(thing, MrHandyCookUtility.RawFoodNeeded));
+
+            return stove == null ? null : JobMaker.MakeJob(JobDefOf_Robotics.FCP_MrHandyCook, stove);
         }
 
         private static Job TryWorkGiver(Pawn pawn, string workGiverDefName, ThingRequestGroup group)

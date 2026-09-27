@@ -72,7 +72,7 @@ Can be addictive with regular use.</description>
         <tradeTags>
             <li>ExoticMisc</li>
         </tradeTags>
-        <tradeability>Sellable</tradeability>
+        <tradeability>All</tradeability>
     </ThingDef>
 
     <!-- Stealthboy 3001B -->
@@ -146,7 +146,7 @@ Can be addictive with regular use.</description>
         <tradeTags>
             <li>ExoticMisc</li>
         </tradeTags>
-        <tradeability>Sellable</tradeability>
+        <tradeability>All</tradeability>
     </ThingDef>
 
 </Defs>
