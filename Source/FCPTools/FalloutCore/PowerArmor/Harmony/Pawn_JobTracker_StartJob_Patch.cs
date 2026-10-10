@@ -15,12 +15,15 @@ public static class Pawn_JobTracker_StartJob_Patch
         if (newJob.def != JobDefOf.LayDown)
             return;
 
+        if (pawn.Faction == null || !pawn.Faction.IsPlayer)
+            return;
+
         foreach (Apparel apparel in pawn.apparel.WornApparel)
         {
             var props = apparel.def.GetCompProperties<CompProperties_PowerArmor>();
             if (props != null && !props.canSleep)
             {
-                pawn.jobs.StartJob(JobMaker.MakeJob(JobDefOf.RemoveApparel, apparel), resumeCurJobAfterwards: true);
+                pawn.jobs.StartJob(JobMaker.MakeJob(JobDefOf.RemoveApparel, apparel), JobCondition.InterruptForced, resumeCurJobAfterwards: true);
             }
         }
     }

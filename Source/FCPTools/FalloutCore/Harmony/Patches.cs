@@ -81,6 +81,9 @@ public static class Patches
         harmony.Patch(original: AccessTools.Method(typeof(RoyalTitleAwardWorker_Instant), "DoAward"),
             postfix: new HarmonyMethod(typeof(Patches), nameof(RoyalTitleAwardWorker_DoAward_Postfix)));
 
+        harmony.Patch(original: AccessTools.Constructor(typeof(Dialog_InfoCard), [typeof(Thing), typeof(Precept_ThingStyle)]),
+            postfix: new HarmonyMethod(typeof(Patches), nameof(Dialog_InfoCard_Ctor_Postfix)));
+
         harmony.Patch(original: AccessTools.Method(typeof(PawnGroupKindWorker_Trader), "GeneratePawns", parameters: [typeof(PawnGroupMakerParms), typeof(PawnGroupMaker), typeof(List<Pawn>), typeof(bool)]),
             prefix: new HarmonyMethod(typeof(Patches), nameof(PawnGroupKindWorker_Trader_GeneratePawns_Prefix)));
 
@@ -465,6 +468,20 @@ public static class Patches
                 MessageTypeDefOf.NeutralEvent);
             pawn.royalty.AllFactionPermits.Remove(permit);
         }
+    }
+
+    private static void Dialog_InfoCard_Ctor_Postfix(Thing thing)
+    {
+        if (thing is not Pawn pawn || pawn.royalty == null)
+            return;
+
+        Faction selected = PermitsCardUtility.selectedFaction;
+        if (selected != null && pawn.royalty.GetCurrentTitle(selected) != null)
+            return;
+
+        List<RoyalTitle> titles = pawn.royalty.AllTitlesForReading;
+        if (titles.Count > 0)
+            PermitsCardUtility.selectedFaction = titles[0].faction;
     }
     #endregion
 

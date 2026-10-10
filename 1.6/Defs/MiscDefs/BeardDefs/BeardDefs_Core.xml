@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!--__________ Beards __________-->
+
+    <!-- Backwater -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Backwater</defName>
+        <label>Backwater</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Backwater/FCP_Backwater</texPath>
+        <category>FCP_Style_Wasteland</category>
+        <styleTags>
+            <li>Wasteland</li>
+            <li>Rough</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Bar Brawler -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Bar_Brawler</defName>
+        <label>Bar Brawler</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Bar_Brawler/FCP_Bar_Brawler</texPath>
+        <category>FCP_Style_Wasteland</category>
+        <styleTags>
+            <li>Wasteland</li>
+            <li>Rough</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Beatnick -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Beatnick</defName>
+        <label>Beatnick</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Beatnick/FCP_Beatnick</texPath>
+        <category>FCP_Style_Pre_War</category>
+        <styleTags>
+            <li>Pre_War</li>
+            <li>Urban</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Bristly Cool -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Bristly_Cool</defName>
+        <label>Bristly Cool</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Bristly_Cool/FCP_Bristly_Cool</texPath>
+        <category>FCP_Style_Wasteland</category>
+        <styleTags>
+            <li>Wasteland</li>
+            <li>Rough</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Cavalry -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Cavalry</defName>
+        <label>Cavalry</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Cavalry/FCP_Cavalry</texPath>
+        <category>FCP_Style_Military</category>
+        <styleTags>
+            <li>Military</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Chairman Cheng -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Chairman_Cheng</defName>
+        <label>Chairman Cheng</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Chairman_Cheng/FCP_Chairman_Cheng</texPath>
+        <category>FCP_Style_Pre_War</category>
+        <styleTags>
+            <li>Pre_War</li>
+            <li>Traditional</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Chin Dusting -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Chin_Dusting</defName>
+        <label>Chin Dusting</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Chin_Dusting/FCP_Chin_Dusting</texPath>
+        <category>FCP_Style_Wasteland</category>
+        <styleTags>
+            <li>Wasteland</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Chin Scruff -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Chin_Scruff</defName>
+        <label>Chin Scruff</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Chin_Scruff/FCP_Chin_Scruff</texPath>
+        <category>FCP_Style_Wasteland</category>
+        <styleTags>
+            <li>Wasteland</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Chin Strip -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Chin_Strip</defName>
+        <label>Chin Strip</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Chin_Strip/FCP_Chin_Strip</texPath>
+        <category>FCP_Style_Pre_War</category>
+        <styleTags>
+            <li>Pre_War</li>
+            <li>Urban</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Chopper -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Chopper</defName>
+        <label>Chopper</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Chopper/FCP_Chopper</texPath>
+        <category>FCP_Style_Raider</category>
+        <styleTags>
+            <li>Raider</li>
+            <li>Gang</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Daddy O -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Daddy_O</defName>
+        <label>Daddy O</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Daddy_O/FCP_Daddy_O</texPath>
+        <category>FCP_Style_Pre_War</category>
+        <styleTags>
+            <li>Pre_War</li>
+            <li>Greaser</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Dashing Rogue -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Dashing_Rogue</defName>
+        <label>Dashing Rogue</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Dashing_Rogue/FCP_Dashing_Rogue</texPath>
+        <category>FCP_Style_Pre_War</category>
+        <styleTags>
+            <li>Pre_War</li>
+            <li>Elegant</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Dead Man's Hand -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Dead_Mans_Hand</defName>
+        <label>Dead Man's Hand</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Dead_Mans_Hand/FCP_Dead_Mans_Hand</texPath>
+        <category>FCP_Style_Wasteland</category>
+        <styleTags>
+            <li>Wasteland</li>
+            <li>Rough</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Doom Rider -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Doom_Rider</defName>
+        <label>Doom Rider</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Doom_Rider/FCP_Doom_Rider</texPath>
+        <category>FCP_Style_Raider</category>
+        <styleTags>
+            <li>Raider</li>
+            <li>Gang</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- El Carcinero -->
+
+    <BeardDef>
+        <defName>FCP_Beard_El_Carcinero</defName>
+        <label>El Carcinero</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/El_Carcinero/FCP_El_Carcinero</texPath>
+        <category>FCP_Style_Raider</category>
+        <styleTags>
+            <li>Raider</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Goatee -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Goatee</defName>
+        <label>Goatee</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Goatee/FCP_Goatee</texPath>
+        <category>FCP_Style_Pre_War</category>
+        <styleTags>
+            <li>Pre_War</li>
+            <li>Urban</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Grizzled Samurai -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Grizzled_Samurai</defName>
+        <label>Grizzled Samurai</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Grizzled_Samurai/FCP_Grizzled_Samurai</texPath>
+        <category>FCP_Style_Pre_War</category>
+        <styleTags>
+            <li>Pre_War</li>
+            <li>Traditional</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Gruff Stuff -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Gruff_Stuff</defName>
+        <label>Gruff Stuff</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Gruff_Stuff/FCP_Gruff_Stuff</texPath>
+        <category>FCP_Style_Wasteland</category>
+        <styleTags>
+            <li>Wasteland</li>
+            <li>Rough</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Gunslinger -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Gunslinger</defName>
+        <label>Gunslinger</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Gunslinger/FCP_Gunslinger</texPath>
+        <category>FCP_Style_Wasteland</category>
+        <styleTags>
+            <li>Wasteland</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Hombre -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Hombre</defName>
+        <label>Hombre</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Hombre/FCP_Hombre</texPath>
+        <category>FCP_Style_Wasteland</category>
+        <styleTags>
+            <li>Wasteland</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Honest Abe -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Honest_Abe</defName>
+        <label>Honest Abe</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Honest_Abe/FCP_Honest_Abe</texPath>
+        <category>FCP_Style_Pre_War</category>
+        <styleTags>
+            <li>Pre_War</li>
+            <li>Traditional</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Lady's Man -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Ladys_Man</defName>
+        <label>Lady's Man</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Ladys_Man/FCP_Ladys_Man</texPath>
+        <category>FCP_Style_Pre_War</category>
+        <styleTags>
+            <li>Pre_War</li>
+            <li>Elegant</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Machiavellian -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Machiavellian</defName>
+        <label>Machiavellian</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Machiavellian/FCP_Machiavellian</texPath>
+        <category>FCP_Style_Pre_War</category>
+        <styleTags>
+            <li>Pre_War</li>
+            <li>Elegant</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Manchurian -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Manchurian</defName>
+        <label>Manchurian</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Manchurian/FCP_Manchurian</texPath>
+        <category>FCP_Style_Pre_War</category>
+        <styleTags>
+            <li>Pre_War</li>
+            <li>Traditional</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Man's Man -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Mans_Man</defName>
+        <label>Man's Man</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Mans_Man/FCP_Mans_Man</texPath>
+        <category>FCP_Style_Wasteland</category>
+        <styleTags>
+            <li>Wasteland</li>
+            <li>Rough</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Mephistopheles -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Mephistopheles</defName>
+        <label>Mephistopheles</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Mephistopheles/FCP_Mephistopheles</texPath>
+        <category>FCP_Style_Raider</category>
+        <styleTags>
+            <li>Raider</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Muttonstache -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Muttonstache</defName>
+        <label>Muttonstache</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Muttonstache/FCP_Muttonstache</texPath>
+        <category>FCP_Style_Pre_War</category>
+        <styleTags>
+            <li>Pre_War</li>
+            <li>Traditional</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Old Coot -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Old_Coot</defName>
+        <label>Old Coot</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Old_Coot/FCP_Old_Coot</texPath>
+        <category>FCP_Style_Wasteland</category>
+        <styleTags>
+            <li>Wasteland</li>
+            <li>Rough</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Renegade -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Renegade</defName>
+        <label>Renegade</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Renegade/FCP_Renegade</texPath>
+        <category>FCP_Style_Raider</category>
+        <styleTags>
+            <li>Raider</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Ronin -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Ronin</defName>
+        <label>Ronin</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Ronin/FCP_Ronin</texPath>
+        <category>FCP_Style_Pre_War</category>
+        <styleTags>
+            <li>Pre_War</li>
+            <li>Traditional</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Rough Beard -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Rough_Beard</defName>
+        <label>Rough Beard</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Rough_Beard/FCP_Rough_Beard</texPath>
+        <category>FCP_Style_Wasteland</category>
+        <styleTags>
+            <li>Wasteland</li>
+            <li>Rough</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Roughneck -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Roughneck</defName>
+        <label>Roughneck</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Roughneck/FCP_Roughneck</texPath>
+        <category>FCP_Style_Wasteland</category>
+        <styleTags>
+            <li>Wasteland</li>
+            <li>Rough</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Serious Chic -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Serious_Chic</defName>
+        <label>Serious Chic</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Serious_Chic/FCP_Serious_Chic</texPath>
+        <category>FCP_Style_Pre_War</category>
+        <styleTags>
+            <li>Pre_War</li>
+            <li>Elegant</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Shag Strip -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Shag_Strip</defName>
+        <label>Shag Strip</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Shag_Strip/FCP_Shag_Strip</texPath>
+        <category>FCP_Style_Wasteland</category>
+        <styleTags>
+            <li>Wasteland</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Shaggy Sideburns -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Shaggy_Sideburns</defName>
+        <label>Shaggy Sideburns</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Shaggy_Sideburns/FCP_Shaggy_Sideburns</texPath>
+        <category>FCP_Style_Wasteland</category>
+        <styleTags>
+            <li>Wasteland</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Slickster -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Slickster</defName>
+        <label>Slickster</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Slickster/FCP_Slickster</texPath>
+        <category>FCP_Style_Pre_War</category>
+        <styleTags>
+            <li>Pre_War</li>
+            <li>Urban</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Soul Patch -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Soul_Patch</defName>
+        <label>Soul Patch</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Soul_Patch/FCP_Soul_Patch</texPath>
+        <category>FCP_Style_Pre_War</category>
+        <styleTags>
+            <li>Pre_War</li>
+            <li>Urban</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Stranded -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Stranded</defName>
+        <label>Stranded</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Stranded/FCP_Stranded</texPath>
+        <category>FCP_Style_Wasteland</category>
+        <styleTags>
+            <li>Wasteland</li>
+            <li>Rough</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Survivalist -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Survivalist</defName>
+        <label>Survivalist</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Survivalist/FCP_Survivalist</texPath>
+        <category>FCP_Style_Wasteland</category>
+        <styleTags>
+            <li>Wasteland</li>
+            <li>Rough</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Swashbuckler -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Swashbuckler</defName>
+        <label>Swashbuckler</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Swashbuckler/FCP_Swashbuckler</texPath>
+        <category>FCP_Style_Pre_War</category>
+        <styleTags>
+            <li>Pre_War</li>
+            <li>Elegant</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- The Comrade -->
+
+    <BeardDef>
+        <defName>FCP_Beard_The_Comrade</defName>
+        <label>The Comrade</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/The_Comrade/FCP_The_Comrade</texPath>
+        <category>FCP_Style_Military</category>
+        <styleTags>
+            <li>Military</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- The Gentleman -->
+
+    <BeardDef>
+        <defName>FCP_Beard_The_Gentleman</defName>
+        <label>The Gentleman</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/The_Gentleman/FCP_The_Gentleman</texPath>
+        <category>FCP_Style_Pre_War</category>
+        <styleTags>
+            <li>Pre_War</li>
+            <li>Elegant</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- The Gettysburg -->
+
+    <BeardDef>
+        <defName>FCP_Beard_The_Gettysburg</defName>
+        <label>The Gettysburg</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/The_Gettysburg/FCP_The_Gettysburg</texPath>
+        <category>FCP_Style_Military</category>
+        <styleTags>
+            <li>Military</li>
+            <li>Traditional</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Thin Strip -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Thin_Strip</defName>
+        <label>Thin Strip</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Thin_Strip/FCP_Thin_Strip</texPath>
+        <category>FCP_Style_Pre_War</category>
+        <styleTags>
+            <li>Pre_War</li>
+            <li>Urban</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Tire Track -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Tire_Track</defName>
+        <label>Tire Track</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Tire_Track/FCP_Tire_Track</texPath>
+        <category>FCP_Style_Wasteland</category>
+        <styleTags>
+            <li>Wasteland</li>
+        </styleTags>
+    </BeardDef>
+
+    <!-- Tough Guy -->
+
+    <BeardDef>
+        <defName>FCP_Beard_Tough_Guy</defName>
+        <label>Tough Guy</label>
+        <styleGender>Male</styleGender>
+        <texPath>Hairs/Beards/Tough_Guy/FCP_Tough_Guy</texPath>
+        <category>FCP_Style_Wasteland</category>
+        <styleTags>
+            <li>Wasteland</li>
+            <li>Rough</li>
+        </styleTags>
+    </BeardDef>
+
+</Defs>
