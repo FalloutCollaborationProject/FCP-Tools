@@ -21,6 +21,9 @@ static class Settlement_FinalizeInit_Patch
         WorldGrid grid = Find.WorldGrid;
         List<Settlement> allSettlements = Find.WorldObjects.Settlements;
         GameComponent_SettlementMapGenerators gameComp = GetOrCreateGameComponent();
+        if (gameComp.worldSetupDone)
+            return;
+        gameComp.worldSetupDone = true;
 
         foreach (Faction faction in Find.FactionManager.AllFactionsListForReading)
         {
@@ -65,14 +68,7 @@ static class Settlement_FinalizeInit_Patch
 
                 if (namedSettlement.traders != null && namedSettlement.traders.Count > 0)
                 {
-                    WorldObjectComp_SettlementTraders comp = settlement.GetComponent<WorldObjectComp_SettlementTraders>();
-                    if (comp == null)
-                    {
-                        comp = new WorldObjectComp_SettlementTraders();
-                        comp.parent = settlement;
-                        settlement.AllComps.Add(comp);
-                    }
-                    comp.SetTraders(namedSettlement.traders);
+                    settlement.GetComponent<WorldObjectComp_SettlementTraders>()?.SetTraders(namedSettlement.traders);
                 }
 
                 if (namedSettlement.oceanPlacement)

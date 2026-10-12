@@ -22,7 +22,7 @@ public class AbilityTrainingSession : IExposable
 		}
 	}
 
-	public bool IsDone => trainee != null && !trainee.Dead && Find.TickManager.TicksGame >= startTick + durationTicks;
+	public bool IsDone => Find.TickManager.TicksGame >= startTick + durationTicks;
 
 	public void Complete()
 	{

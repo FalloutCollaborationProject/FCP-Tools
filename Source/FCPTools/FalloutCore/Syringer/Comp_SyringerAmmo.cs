@@ -59,7 +59,11 @@ public class Comp_SyringerAmmo : ThingComp
                 options.Add(new FloatMenuOption(defLocal.LabelCap, delegate
                 {
                     Thing syringeThing = pawn.inventory.innerContainer.FirstOrDefault(t => t.def == defLocal);
-                    syringeThing?.SplitOff(1).Destroy();
+                    if (syringeThing == null)
+                        return;
+                    syringeThing.SplitOff(1).Destroy();
+                    if (loadedSyringeDef != null)
+                        pawn.inventory.innerContainer.TryAdd(ThingMaker.MakeThing(loadedSyringeDef));
                     loadedSyringeDef = defLocal;
                 }));
             }

@@ -141,8 +141,9 @@ public class WorldLayer_FactionTerritory : WorldDrawLayer
         openSet.Enqueue(centerTile);
         visited.Add(centerTile);
 
+        int radius = Rand.RangeInclusiveSeeded(_territoryRadius.min, _territoryRadius.max, centerTile);
         int currentRadius = 0;
-        while (openSet.Count > 0 && currentRadius < CurrentTerritoryRadius)
+        while (openSet.Count > 0 && currentRadius < radius)
         {
             int layerSize = openSet.Count;
             for (int i = 0; i < layerSize; i++)

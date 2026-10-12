@@ -17,6 +17,7 @@ namespace FCP.Core.Holotapes
 
             if (holotape.Spawned)
                 holotape.DeSpawn();
+            holotape.holdingOwner?.Remove(holotape);
 
             storedHolotapes.Add(holotape);
             return true;

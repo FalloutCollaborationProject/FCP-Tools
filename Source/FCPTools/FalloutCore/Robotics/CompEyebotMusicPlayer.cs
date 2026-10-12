@@ -55,10 +55,13 @@ namespace FCP.Core.Robotics
             eyebot.GetComp<CompEyebotMode>()?.SetMode(EyebotMode.Music);
         }
 
-        public override void CompTickRare()
+        public override void CompTick()
         {
-            base.CompTickRare();
-            UpdateSustainer();
+            base.CompTick();
+            if (parent.IsHashIntervalTick(120))
+            {
+                UpdateSustainer();
+            }
         }
 
         private void UpdateSustainer()

@@ -23,7 +23,7 @@ public class QuestPart_SpawnCrashSurvivors : QuestPart
 
         int deadCount = Rand.RangeInclusive(1, 3);
         int injuredCount = Rand.RangeInclusive(2, 4);
-        if (8 - deadCount - injuredCount < 1) deadCount--;
+        deadCount = Math.Min(deadCount, Math.Max(0, pawns.Count - 1));
 
         pawns.Shuffle();
         List<Pawn> livingPawns = new List<Pawn>();
@@ -56,9 +56,11 @@ public class QuestPart_SpawnCrashSurvivors : QuestPart
             }
         }
 
+        livingPawns.RemoveAll(p => p.Dead);
         if (livingPawns.Count > 0)
         {
-            LordMaker.MakeNewLord(pawns[0].Faction, new LordJob_DefendBase(pawns[0].Faction, center, 0, false), map, livingPawns);
+            Faction faction = livingPawns[0].Faction;
+            LordMaker.MakeNewLord(faction, new LordJob_DefendBase(faction, center, 0, false), map, livingPawns);
         }
         
         int survivorCount = livingPawns.Count;

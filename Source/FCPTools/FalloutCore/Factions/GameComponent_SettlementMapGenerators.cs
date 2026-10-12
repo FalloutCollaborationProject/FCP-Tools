@@ -14,6 +14,7 @@ public class GameComponent_SettlementMapGenerators : GameComponent
     private Dictionary<int, List<PawnKindCount>> guaranteedPawns = new Dictionary<int, List<PawnKindCount>>();
     private Dictionary<int, List<CharacterDef>> guaranteedCharacters = new Dictionary<int, List<CharacterDef>>();
     private Dictionary<int, List<SettlementTrader>> traders = new Dictionary<int, List<SettlementTrader>>();
+    public bool worldSetupDone;
 
     public GameComponent_SettlementMapGenerators(Game game)
     {
@@ -132,6 +133,7 @@ public class GameComponent_SettlementMapGenerators : GameComponent
     {
         base.ExposeData();
 
+        Scribe_Values.Look(ref worldSetupDone, "worldSetupDone");
         Scribe_Collections.Look(ref mapGenerators, "mapGenerators", LookMode.Value, LookMode.Def);
         Scribe_Collections.Look(ref mapSizes, "mapSizes", LookMode.Value, LookMode.Value);
         Scribe_Collections.Look(ref prefabs, "prefabs", LookMode.Value, LookMode.Def);

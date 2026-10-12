@@ -431,8 +431,8 @@ public static class Patches
         PermitExtension_MaxFactionTitle permitExtension = PermitsCardUtility.selectedPermit.GetModExtension<PermitExtension_MaxFactionTitle>();
         if (permitExtension?.maxTitle == null) return text;
 
-        bool meetsMaxTitleRequirements = pawn.royalty.GetCurrentTitle(PermitsCardUtility.selectedFaction).seniority
-                                         <= permitExtension.maxTitle.seniority;
+        RoyalTitleDef currentTitle = pawn.royalty.GetCurrentTitle(PermitsCardUtility.selectedFaction);
+        bool meetsMaxTitleRequirements = currentTitle == null || currentTitle.seniority <= permitExtension.maxTitle.seniority;
 
         return text + "\n" + "Maximum Title: " + permitExtension.maxTitle.GetLabelForBothGenders()
             .Colorize(meetsMaxTitleRequirements ? Color.white : ColorLibrary.RedReadable);
@@ -444,12 +444,14 @@ public static class Patches
             return;
 
         PermitExtension_MaxFactionTitle permitExtension = __instance.GetModExtension<PermitExtension_MaxFactionTitle>();
-        if (permitExtension == null)
+        if (permitExtension?.maxTitle == null)
             return;
 
         RoyalTitleDef currentTitle = pawn.royalty.GetCurrentTitle(faction);
+        if (currentTitle == null)
+            return;
 
-        if (currentTitle.seniority < __instance.minTitle.seniority ||
+        if ((__instance.minTitle != null && currentTitle.seniority < __instance.minTitle.seniority) ||
             currentTitle.seniority > permitExtension.maxTitle.seniority)
         {
             __result = false;
@@ -460,9 +462,11 @@ public static class Patches
     {
         foreach (FactionPermit permit in pawn.royalty.AllFactionPermits.ToList())
         {
+            if (permit.Faction != faction) continue;
+
             PermitExtension_MaxFactionTitle permitExtension = permit.Permit.GetModExtension<PermitExtension_MaxFactionTitle>();
 
-            if (permitExtension == null || newTitle.seniority <= permitExtension.maxTitle.seniority) continue;
+            if (permitExtension?.maxTitle == null || newTitle.seniority <= permitExtension.maxTitle.seniority) continue;
 
             Messages.Message("FCP_MessagePermitLostOnPromotion".Translate(pawn, currentTitle.GetLabelFor(pawn), permit.Permit),
                 MessageTypeDefOf.NeutralEvent);
@@ -516,7 +520,7 @@ public static class Patches
         {
             var tracker = UniqueCharactersTracker.Instance;
             var dedicatedCharacter = dedicatedTrader.characterDefs.FirstOrDefault(c => !tracker.CharacterPawnDead(c) && !tracker.CharacterPawnSpawned(c));
-            if (dedicatedCharacter == null) return false;
+            if (dedicatedCharacter == null) return true;
             var dedicatedPawn = tracker.GetOrGenPawn(dedicatedCharacter, null, parms.faction);
             dedicatedPawn.mindState.wantsToTradeWithColony = true;
             PawnComponentsUtility.AddAndRemoveDynamicComponents(dedicatedPawn, true);

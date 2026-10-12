@@ -34,7 +34,7 @@ public class CompGiveThought : ThingComp
             {
                 if (bed.CurOccupants == null) return;
                 foreach (Pawn pawn in bed.CurOccupants)
-                    pawn.needs.mood.thoughts.memories.TryGainMemory(Props.thoughtDef);
+                    pawn.needs?.mood?.thoughts.memories.TryGainMemory(Props.thoughtDef);
                 break;
             }
             case ThingWithComps thing:
@@ -42,15 +42,15 @@ public class CompGiveThought : ThingComp
                 switch (thing.holdingOwner?.Owner)
                 {
                     case Pawn_EquipmentTracker { pawn: { Dead: false } equipPawn }:
-                        equipPawn.needs.mood.thoughts.memories.TryGainMemory(Props.thoughtDef);
+                        equipPawn.needs?.mood?.thoughts.memories.TryGainMemory(Props.thoughtDef);
                         break;
                     case Pawn_ApparelTracker { pawn: { Dead: false } apparelPawn }:
-                        apparelPawn.needs.mood.thoughts.memories.TryGainMemory(Props.thoughtDef);
+                        apparelPawn.needs?.mood?.thoughts.memories.TryGainMemory(Props.thoughtDef);
                         break;
                     default:
                     {
                         if (Props.enableInInventory && thing.holdingOwner?.Owner is Pawn_InventoryTracker { pawn: { Dead: false } invPawn })
-                            invPawn.needs.mood.thoughts.memories.TryGainMemory(Props.thoughtDef);
+                            invPawn.needs?.mood?.thoughts.memories.TryGainMemory(Props.thoughtDef);
                         else
                             ApplyThoughtInRadius();
                         break;
@@ -72,7 +72,7 @@ public class CompGiveThought : ThingComp
         foreach (IntVec3 cell in cells)
         {
             Pawn pawn = cell.GetFirstPawn(parent.Map);
-            pawn?.needs.mood.thoughts.memories.TryGainMemory(Props.thoughtDef);
+            pawn?.needs?.mood?.thoughts.memories.TryGainMemory(Props.thoughtDef);
         }
     }
 }

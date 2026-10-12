@@ -37,7 +37,7 @@ public static class Pawn_Kill_MentorDied_Patch
     [HarmonyPostfix]
     public static void Postfix(Pawn __instance)
     {
-        if (__instance == null)
+        if (__instance == null || !__instance.Dead)
             return;
 
         GameComponent_PawnRanks comp = Current.Game.GetComponent<GameComponent_PawnRanks>();

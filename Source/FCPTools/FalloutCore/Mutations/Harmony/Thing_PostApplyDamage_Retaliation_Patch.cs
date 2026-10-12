@@ -10,8 +10,12 @@ public static class Thing_PostApplyDamage_Retaliation_Patch
     private const float IsotopeChance = 0.10f;
     private const float IsotopeSeverity = 0.08f;
 
+    private static bool retaliating;
+
     public static void Postfix(Thing __instance, DamageInfo dinfo, float totalDamageDealt)
     {
+        if (retaliating || dinfo.Def.isRanged)
+            return;
         if (totalDamageDealt <= 0f || __instance is not Pawn victim || victim.Dead || victim.genes == null)
             return;
         if (dinfo.Instigator is not Pawn attacker || attacker == victim || attacker.Dead)
@@ -22,13 +26,18 @@ public static class Thing_PostApplyDamage_Retaliation_Patch
         if (victim.genes.HasActiveGene(MutationsDefOf.FCP_Gene_ElectricallyCharged))
         {
             DamageInfo shock = new DamageInfo(DamageDefOf.Burn, ShockDamageAmount, 0f, -1f, victim);
-            attacker.TakeDamage(shock);
+            retaliating = true;
+            try
+            {
+                attacker.TakeDamage(shock);
+            }
+            finally
+            {
+                retaliating = false;
+            }
         }
 
-        if (victim.genes.HasActiveGene(MutationsDefOf.FCP_Gene_UnstableIsotope) && Rand.Chance(IsotopeChance))
-        {
-            Hediff hediff = attacker.health.AddHediff(HediffDefOf.ToxicBuildup);
-            hediff.Severity += IsotopeSeverity;
-        }
+        if (!attacker.Dead && victim.genes.HasActiveGene(MutationsDefOf.FCP_Gene_UnstableIsotope) && Rand.Chance(IsotopeChance))
+            HealthUtility.AdjustSeverity(attacker, HediffDefOf.ToxicBuildup, IsotopeSeverity);
     }
 }

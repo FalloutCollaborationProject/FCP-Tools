@@ -99,9 +99,6 @@ namespace FCP.Core.Buildings
             {
                 InitializeGraphics();
             }
-            
-            if (!respawningAfterLoad)
-                holotapeExtracted = false;
         }
 
         public override void ExposeData()

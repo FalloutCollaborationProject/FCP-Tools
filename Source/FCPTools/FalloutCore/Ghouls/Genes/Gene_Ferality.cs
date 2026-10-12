@@ -7,6 +7,7 @@ public class Gene_Ferality : Gene
     private float feralityValue;
     private int tickCounter;
     private bool needsTransform;
+    private bool wentFeral;
 
     public float Ferality => feralityValue;
     public float FeralityPercent => feralityValue / 100f;
@@ -22,6 +23,9 @@ public class Gene_Ferality : Gene
     public override void Tick()
     {
         base.Tick();
+
+        if (wentFeral)
+            return;
 
         if (needsTransform)
         {
@@ -65,6 +69,8 @@ public class Gene_Ferality : Gene
     private void TryGoFeral()
     {
         if (pawn.Dead || pawn.Downed) return;
+
+        wentFeral = true;
 
         if (pawn.equipment?.Primary != null)
         {
@@ -124,6 +130,7 @@ public class Gene_Ferality : Gene
         Scribe_Values.Look(ref feralityValue, "feralityValue", 0f);
         Scribe_Values.Look(ref tickCounter, "tickCounter", 0);
         Scribe_Values.Look(ref needsTransform, "needsTransform", false);
+        Scribe_Values.Look(ref wentFeral, "wentFeral", false);
     }
 }
 

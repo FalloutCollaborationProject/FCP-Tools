@@ -22,14 +22,6 @@ public static class AnimalCageUtility
             }
             else
             {
-                foreach (Thing item in Find.CurrentMap.listerBuildings.allBuildingsColonist.Where(c=> c.HasComp<CompAnimalCage>()))
-                {
-                    if (!item.TryGetComp(out CompAnimalCage compAnimalCage) || animal != compAnimalCage.Occupant)
-                    {
-                        Messages.Message("MessageHolderReserved".Translate(t.Thing.Label), MessageTypeDefOf.RejectInput);
-                        return;
-                    }
-                }
                 if (carrier != null)
                 {
                     Job job = (transferBetweenCages ? JobMaker.MakeJob(DefOfs.FCP_TransferAnimalBetweenCages, sourceCage, t, animal) : JobMaker.MakeJob(DefOfs.FCP_CarryAnimalToCage, t, animal));

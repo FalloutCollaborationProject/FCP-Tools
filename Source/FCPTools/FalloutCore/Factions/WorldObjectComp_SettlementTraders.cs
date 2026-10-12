@@ -5,26 +5,79 @@ using Verse;
 
 namespace FCP.Factions;
 
+public class WorldObjectCompProperties_SettlementTraders : WorldObjectCompProperties
+{
+    public WorldObjectCompProperties_SettlementTraders()
+    {
+        compClass = typeof(WorldObjectComp_SettlementTraders);
+    }
+}
+
 public class WorldObjectComp_SettlementTraders : WorldObjectComp
 {
-    private List<SettlementTrader> traders;
+    private const int RestockIntervalTicks = 15 * GenDate.TicksPerDay;
 
-    public bool HasTraders => !traders.NullOrEmpty();
+    private List<SettlementTrader> traders;
+    private List<SettlementTraderStock> stocks = new List<SettlementTraderStock>();
+    private bool resolvedFromDef;
+
+    private List<SettlementTrader> Traders
+    {
+        get
+        {
+            if (traders == null && !resolvedFromDef)
+            {
+                resolvedFromDef = true;
+                if (parent is Settlement settlement)
+                {
+                    FactionExtension_SettlementControl ext = settlement.Faction?.def.GetModExtension<FactionExtension_SettlementControl>();
+                    NamedSettlement named = ext?.namedSettlements?.Find(n => n.name == settlement.Name);
+                    if (named != null && !named.traders.NullOrEmpty())
+                        traders = named.traders;
+                }
+            }
+            return traders;
+        }
+    }
+
+    public bool HasTraders => !Traders.NullOrEmpty();
 
     public void SetTraders(List<SettlementTrader> traderList)
     {
         traders = traderList;
     }
 
+    private SettlementTraderStock GetStock(Settlement settlement, TraderKindDef kind)
+    {
+        SettlementTraderStock stock = stocks.Find(s => s.TraderKind == kind);
+        if (stock == null)
+        {
+            stock = new SettlementTraderStock(settlement, kind);
+            stocks.Add(stock);
+        }
+        else if (Find.TickManager.TicksGame - stock.generatedTick >= RestockIntervalTicks)
+        {
+            stock.GenerateStock();
+        }
+        return stock;
+    }
+
     public override void PostExposeData()
     {
         base.PostExposeData();
         Scribe_Collections.Look(ref traders, "traders", LookMode.Deep);
+        Scribe_Collections.Look(ref stocks, "stocks", LookMode.Deep);
+
+        if (Scribe.mode == LoadSaveMode.PostLoadInit)
+        {
+            stocks ??= new List<SettlementTraderStock>();
+            stocks.RemoveAll(s => s == null || s.TraderKind == null);
+        }
     }
 
     public override IEnumerable<Gizmo> GetCaravanGizmos(Caravan caravan)
     {
-        if (traders == null || traders.Count == 0)
+        if (!HasTraders)
             yield break;
 
         Settlement settlement = parent as Settlement;
@@ -47,8 +100,7 @@ public class WorldObjectComp_SettlementTraders : WorldObjectComp
                 FloatMenuOption opt = new FloatMenuOption(trader.traderName, delegate
                 {
                     Pawn negotiator = BestCaravanPawnUtility.FindBestNegotiator(caravan);
-                    SettlementTraderStock stock = new SettlementTraderStock(settlement, trader.traderKind);
-                    Find.WindowStack.Add(new Dialog_Trade(negotiator, stock));
+                    Find.WindowStack.Add(new Dialog_Trade(negotiator, GetStock(settlement, trader.traderKind)));
                 });
                 opts.Add(opt);
             }

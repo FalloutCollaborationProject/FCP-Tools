@@ -76,7 +76,11 @@ namespace FCP.Core.Robotics
             }
             else
             {
-                target.SetFaction(Faction.OfMechanoids);
+                Faction hostile = Faction.OfMechanoids ?? Find.FactionManager.RandomEnemyFaction(true, true);
+                if (hostile != null)
+                {
+                    target.SetFaction(hostile);
+                }
                 target.GetComp<CompSecuritronFace>()?.Notify_FactionChanged();
                 Messages.Message("FCP_Hack_Failure".Translate(target.LabelShort), target, MessageTypeDefOf.NegativeEvent);
             }

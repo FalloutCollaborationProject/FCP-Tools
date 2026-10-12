@@ -100,7 +100,7 @@ public class CompAnimalCage : CompRefuelable, IThingHolder, ISuspendableThingHol
         }
         if (parent.IsHashIntervalTick(6000))
         {
-            if (base.Fuel == 0f)
+            if (base.Fuel == 0f && Occupant != null)
             {
                 pawnStarving = true;
             }
@@ -169,6 +169,8 @@ public class CompAnimalCage : CompRefuelable, IThingHolder, ISuspendableThingHol
 
     public bool InsertPawn(Pawn pawn)
     {
+        pawnStarving = false;
+        starvingCounter = 0;
         return innerContainer.TryAddOrTransfer(pawn, canMergeWithExistingStacks: false);
     }
 
@@ -180,6 +182,8 @@ public class CompAnimalCage : CompRefuelable, IThingHolder, ISuspendableThingHol
     public bool TryAcceptPawn(Pawn pawn)
     {
         innerContainer.ClearAndDestroyContents();
+        pawnStarving = false;
+        starvingCounter = 0;
         bool flag = pawn.DeSpawnOrDeselect();
         if (pawn.holdingOwner != null)
         {
@@ -207,6 +211,7 @@ public class CompAnimalCage : CompRefuelable, IThingHolder, ISuspendableThingHol
         Scribe_Values.Look(ref contentsKnown, "contentsKnown", defaultValue: false);
         Scribe_Values.Look(ref pawnStarving, "pawnStarving", defaultValue: false);
         Scribe_Values.Look(ref starvingCounter, "starvingCounter", 0);
+        Scribe_Values.Look(ref shouldCapture, "shouldCapture", true);
         Scribe_Deep.Look(ref innerContainer, "innerContainer", this);
         Scribe_References.Look(ref queuedEnterJob, "queuedEnterJob");
         Scribe_References.Look(ref queuedPawn, "queuedPawn");
@@ -323,7 +328,9 @@ public class CompAnimalCage : CompRefuelable, IThingHolder, ISuspendableThingHol
     public void EjectAndKillContents(Map map)
     {
         ThingDef filth_Slime = ThingDefOf.Filth_Slime;
-        foreach (Thing item in (IEnumerable<Thing>)innerContainer)
+        pawnStarving = false;
+        starvingCounter = 0;
+        foreach (Thing item in ((IEnumerable<Thing>)innerContainer).ToList())
         {
             if (item is Pawn pawn)
             {

@@ -7,6 +7,21 @@ public class CompHatcherCustom : CompHatcher
     private float gestateProgress;
     private new CompProperties_HatcherCustom Props => (CompProperties_HatcherCustom)props;
 
+    public override void PostExposeData()
+    {
+        base.PostExposeData();
+        Scribe_Values.Look(ref gestateProgress, "customGestateProgress");
+    }
+
+    public override string CompInspectStringExtra()
+    {
+        if (TemperatureDamaged)
+            return null;
+
+        return "EggProgress".Translate() + ": " + gestateProgress.ToStringPercent() + "\n"
+            + "HatchesIn".Translate() + ": " + "PeriodDays".Translate((Props.hatcherDaystoHatch * (1f - gestateProgress)).ToString("F1"));
+    }
+
     public override void CompTick()
     {
         if (!TemperatureDamaged)

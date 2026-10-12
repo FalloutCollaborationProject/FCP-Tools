@@ -55,6 +55,16 @@ namespace FCP.Core.Buildings
 
             GenerateColumn(leftColumn, leftWords, 0);
             GenerateColumn(rightColumn, rightWords, LINES_PER_COLUMN);
+
+            int excessBrackets = hackableElements.Count(e => e.type == HackType.BracketPair) - comp.BracketPairsLeft;
+            for (int i = hackableElements.Count - 1; i >= 0 && excessBrackets > 0; i--)
+            {
+                if (hackableElements[i].type == HackType.BracketPair)
+                {
+                    hackableElements.RemoveAt(i);
+                    excessBrackets--;
+                }
+            }
         }
 
         private void GenerateColumn(List<string> column, List<string> wordsToPlace, int startLine)
@@ -341,7 +351,6 @@ namespace FCP.Core.Buildings
                 if (comp.TryHack(element.text))
                 {
                     attemptHistory.Add(">ACCESS GRANTED");
-                    Messages.Message("FCP_TerminalHackSuccess".Translate(), MessageTypeDefOf.PositiveEvent);
                     Close();
                     return;
                 }
@@ -359,6 +368,7 @@ namespace FCP.Core.Buildings
             }
             else if (element.type == HackType.BracketPair)
             {
+                comp.UseBracketPair();
                 if (Rand.Bool)
                 {
                     comp.RestoreAttempt();

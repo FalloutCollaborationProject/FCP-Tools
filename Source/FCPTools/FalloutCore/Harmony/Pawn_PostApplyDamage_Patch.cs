@@ -12,7 +12,7 @@ public static class Pawn_PostApplyDamage_Patch
     {
         if (!FCPCoreMod.Settings.General.autoStim)
             return;
-        if (__instance.story == null)
+        if (__instance.story == null || __instance.Dead || __instance.Downed)
             return;
         if (!FCPCoreMod.Settings.General.teetotalerAutoStim &&
             __instance.story.traits.DegreeOfTrait(TraitDefOf.DrugDesire) < 0)

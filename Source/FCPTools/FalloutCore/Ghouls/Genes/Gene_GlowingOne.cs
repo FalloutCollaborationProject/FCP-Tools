@@ -11,6 +11,7 @@ public class Gene_Ghoul_GlowingOne : Gene
     private const float HealAmount = 3f;
 
     private static ThingDef moteDef;
+    private static ThingDef MoteDef => moteDef ??= DefDatabase<ThingDef>.GetNamedSilentFail("FCP_Mote_GlowingOneAura");
 
     public override void PostAdd()
     {
@@ -19,11 +20,6 @@ public class Gene_Ghoul_GlowingOne : Gene
         if (!pawn.health.hediffSet.HasHediff(HediffDefOf_Ghoul.ToxicHealing))
         {
             pawn.health.AddHediff(HediffDefOf_Ghoul.ToxicHealing);
-        }
-
-        if (moteDef == null)
-        {
-            moteDef = DefDatabase<ThingDef>.GetNamedSilentFail("FCP_Mote_GlowingOneAura");
         }
     }
 
@@ -53,7 +49,7 @@ public class Gene_Ghoul_GlowingOne : Gene
         }
 
         moteCounter++;
-        if (moteCounter >= MoteTickInterval && moteDef != null)
+        if (moteCounter >= MoteTickInterval && MoteDef != null)
         {
             moteCounter = 0;
             SpawnGlowMote();

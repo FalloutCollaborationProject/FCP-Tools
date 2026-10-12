@@ -40,13 +40,13 @@ public class JobDriver_InstallTurretWeapon : JobDriver
         Toil finish = ToilMaker.MakeToil("FinishInstall");
         finish.initAction = () =>
         {
-            ThingDef weaponDef = Weapon.def;
-            if (!TryConsumeComponents(Mount.Props.componentCost))
+            Thing weapon = pawn.carryTracker.CarriedThing;
+            if (weapon == null || !TryConsumeComponents(Mount.Props.componentCost))
             {
                 return;
             }
-            pawn.carryTracker.CarriedThing?.Destroy();
-            Mount.FinishInstall(weaponDef);
+            pawn.carryTracker.innerContainer.Remove(weapon);
+            Mount.FinishInstall(weapon);
         };
         finish.defaultCompleteMode = ToilCompleteMode.Instant;
         yield return finish;

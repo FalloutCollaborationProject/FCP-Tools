@@ -18,6 +18,7 @@ public class BiomesKitWorldLayer : WorldDrawLayer_Hills
         Rand.PushState();
         Rand.Seed = Find.World.info.Seed;
         WorldGrid worldGrid = Find.WorldGrid;
+        bool wmbpActive = ModsConfig.IsActive("Odeum.WMBP");
         for (int i = 0; i < Find.WorldGrid.TilesCount; i++)
         {
             var tile = Find.WorldGrid[i] as SurfaceTile;
@@ -97,7 +98,7 @@ public class BiomesKitWorldLayer : WorldDrawLayer_Hills
                         }
                     }
                 }
-                else if (!tile.WaterCovered && ModsConfig.IsActive("Odeum.WMBP"))
+                else if (!tile.WaterCovered && wmbpActive)
                 {
                     string text2 = "WorldMaterials/BiomesKit/Default/Hills/";
                     switch (tile.hilliness)
@@ -163,7 +164,7 @@ public class BiomesKitWorldLayer : WorldDrawLayer_Hills
                     WorldRendererUtility.PrintTextureAtlasUVs(Rand.Range(0, TexturesInAtlas.x), Rand.Range(0, TexturesInAtlas.z), TexturesInAtlas.x, TexturesInAtlas.z, subMesh4);
                 }
             }
-            else if (ModsConfig.IsActive("Odeum.WMBP"))
+            else if (wmbpActive)
             {
                 string text4 = "WorldMaterials/BiomesKit/Default/Hills/";
                 switch (tile.hilliness)

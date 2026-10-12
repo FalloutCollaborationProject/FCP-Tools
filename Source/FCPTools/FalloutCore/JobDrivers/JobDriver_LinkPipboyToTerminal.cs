@@ -45,38 +45,20 @@ namespace FCP.Core.JobDrivers
 
                 for (int i = 0; i < terminalStorage.StoredHolotapes.Count; i++)
                 {
-                    Thing holotape = terminalStorage.StoredHolotapes[i];
-                    bool found = false;
-                    for (int j = 0; j < pipboyStorage.StoredHolotapes.Count; j++)
+                    ThingDef tapeDef = terminalStorage.StoredHolotapes[i].def;
+                    if (!HasTape(pipboyStorage.StoredHolotapes, tapeDef))
                     {
-                        if (pipboyStorage.StoredHolotapes[j] == holotape)
-                        {
-                            found = true;
-                            break;
-                        }
-                    }
-                    if (!found)
-                    {
-                        pipboyStorage.TryStoreHolotape(holotape);
+                        pipboyStorage.TryStoreHolotape(ThingMaker.MakeThing(tapeDef));
                         synced++;
                     }
                 }
 
                 for (int i = 0; i < pipboyStorage.StoredHolotapes.Count; i++)
                 {
-                    Thing holotape = pipboyStorage.StoredHolotapes[i];
-                    bool found = false;
-                    for (int j = 0; j < terminalStorage.StoredHolotapes.Count; j++)
+                    ThingDef tapeDef = pipboyStorage.StoredHolotapes[i].def;
+                    if (!HasTape(terminalStorage.StoredHolotapes, tapeDef))
                     {
-                        if (terminalStorage.StoredHolotapes[j] == holotape)
-                        {
-                            found = true;
-                            break;
-                        }
-                    }
-                    if (!found)
-                    {
-                        terminalStorage.TryStoreHolotape(holotape);
+                        terminalStorage.TryStoreHolotape(ThingMaker.MakeThing(tapeDef));
                         synced++;
                     }
                 }
@@ -87,6 +69,16 @@ namespace FCP.Core.JobDrivers
                     Messages.Message(pawn.LabelShort + "'s Pip-Boy is already synced.", pawn, MessageTypeDefOf.NeutralEvent);
             };
             yield return syncToil;
+        }
+
+        private static bool HasTape(List<Thing> tapes, ThingDef tapeDef)
+        {
+            for (int i = 0; i < tapes.Count; i++)
+            {
+                if (tapes[i].def == tapeDef)
+                    return true;
+            }
+            return false;
         }
     }
 }

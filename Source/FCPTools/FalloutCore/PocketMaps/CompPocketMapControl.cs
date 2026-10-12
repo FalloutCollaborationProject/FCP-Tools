@@ -67,10 +67,10 @@ namespace FCP.PocketMaps
             foreach (var map in Find.Maps)
             {
                 if (map == targetMap) continue;
-                foreach (var thing in map.listerThings.AllThings.OfType<MapPortal>())
+                foreach (Thing thing in map.listerThings.ThingsInGroup(ThingRequestGroup.MapPortal))
                 {
-                    if (thing.GetOtherMap() == targetMap)
-                        return thing;
+                    if (thing is MapPortal portal && portal.GetOtherMap() == targetMap)
+                        return portal;
                 }
             }
             return null;

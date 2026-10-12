@@ -36,13 +36,13 @@ public class QuestPart_SendRewardCaravan : QuestPart
         List<Pawn> pawns = GeneratePawns();
         Thing payment = GeneratePayment();
         
-        IntVec3 spawnLoc = CellFinder.RandomClosewalkCellNear(MapGenerator.PlayerStartSpot, map, 8);
+        IntVec3 dropLoc = DropCellFinder.TradeDropSpot(map);
+        IntVec3 spawnLoc = CellFinder.RandomClosewalkCellNear(dropLoc, map, 8);
         foreach (Pawn pawn in pawns)
         {
             GenSpawn.Spawn(pawn, CellFinder.RandomClosewalkCellNear(spawnLoc, map, 3), map);
         }
 
-        IntVec3 dropLoc = DropCellFinder.TradeDropSpot(map);
         GenPlace.TryPlaceThing(payment, dropLoc, map, ThingPlaceMode.Near);
 
         SendLetter(payment);

@@ -23,7 +23,7 @@ public abstract class RecipeWorker_RepairApparel : RecipeWorker
         if (slot?.LoadedApparel == null) return;
         Thing apparel = slot.LoadedApparel;
         apparel.HitPoints = apparel.MaxHitPoints;
-        billDoer.skills.Learn(SkillDefOf.Crafting, 0.5f);
+        billDoer.skills?.Learn(SkillDefOf.Crafting, 0.5f);
         Messages.Message("FCP_ApparelBench_Done".Translate(billDoer.LabelShort, apparel.LabelShort),
             billDoer, MessageTypeDefOf.PositiveEvent, historical: false);
         slot.Eject();

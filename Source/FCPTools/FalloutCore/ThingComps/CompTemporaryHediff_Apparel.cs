@@ -19,10 +19,16 @@ public class CompTemporaryHediff_Apparel : CompCauseHediff_Apparel
         HediffGiven = false;
     }
 
-    public override void CompTickLong()
+    public override void PostExposeData()
     {
-        base.CompTickLong();
-        if (!HediffGiven && PrereqsComplete && ParentHolder?.ParentHolder is Pawn pawn)
+        base.PostExposeData();
+        Scribe_Values.Look(ref HediffGiven, "hediffGiven");
+    }
+
+    public override void CompTick()
+    {
+        base.CompTick();
+        if (!HediffGiven && parent.IsHashIntervalTick(2000) && PrereqsComplete && ParentHolder?.ParentHolder is Pawn pawn)
         {
             AddHediff(pawn);
         }

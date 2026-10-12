@@ -36,7 +36,9 @@ public class WorkGiver_RankGearMaintenance : WorkGiver_Scanner
                 var repairComp = apparel.GetComp<CompRepairableAtStation>();
                 if (repairComp != null && repairComp.Props.repairResourcesPerHP != null && repairComp.Props.repairResourcesPerHP.Count > 0)
                 {
-                    repairResources.AddRange(repairComp.Props.repairResourcesPerHP);
+                    int missingHP = apparel.MaxHitPoints - apparel.HitPoints;
+                    foreach (ThingDefFloatClass perHP in repairComp.Props.repairResourcesPerHP)
+                        repairResources.Add(new ThingDefFloatClass { thingDef = perHP.thingDef, count = perHP.count * missingHP });
                     break;
                 }
             }

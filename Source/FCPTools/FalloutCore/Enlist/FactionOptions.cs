@@ -27,7 +27,7 @@ public class FactionOptions : IExposable
             factionsSalaries ??= new Dictionary<FactionEnlistOptionsDef, SalaryInfo>();
             factionsStorages ??= new Dictionary<FactionEnlistOptionsDef, FactionStorage>();
             factionsReinforcementsLastTick ??= new Dictionary<FactionEnlistOptionsDef, int>();
-            factionsBought = new Dictionary<FactionEnlistOptionsDef, FactionState>();
+            factionsBought ??= new Dictionary<FactionEnlistOptionsDef, FactionState>();
             activeDeliveries ??= new Dictionary<FactionEnlistOptionsDef, DeliveryQuestList>();
         }
     }

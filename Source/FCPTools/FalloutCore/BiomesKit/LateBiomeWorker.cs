@@ -33,20 +33,20 @@ public class LateBiomeWorker : WorldGenStep
 
     private void BiomesKit()
     {
+        firstOrderBiomes.Clear();
+        secondOrderBiomes.Clear();
+        thirdOrderBiomes.Clear();
         foreach (BiomeDef item in DefDatabase<BiomeDef>.AllDefsListForReading.Where((BiomeDef x) => x.HasModExtension<BiomesKitControls>()))
         {
             switch (item.GetModExtension<BiomesKitControls>().biomePriority)
             {
             default:
-                Log.Message("adding " + item.defName + "to primary biomes");
                 firstOrderBiomes.Add(item);
                 break;
             case 2:
-                Log.Message("adding " + item.defName + "to secondary biomes");
                 secondOrderBiomes.Add(item);
                 break;
             case 3:
-                Log.Message("adding " + item.defName + "to tertiary biomes");
                 thirdOrderBiomes.Add(item);
                 break;
             }
@@ -71,6 +71,8 @@ public class LateBiomeWorker : WorldGenStep
         float num = modExtension.minSouthLatitude * -1f;
         float num2 = modExtension.maxSouthLatitude * -1f;
         WorldGrid worldGrid = Find.WorldGrid;
+        bool perTileSeed = !modExtension.perlinCustomSeed.HasValue && modExtension.useAlternativePerlinSeedPreset;
+        ModuleBase sharedNoise = null;
         for (int i = 0; i < worldGrid.TilesCount; i++)
         {
             var tile = worldGrid[i] as SurfaceTile;
@@ -115,7 +117,9 @@ public class LateBiomeWorker : WorldGenStep
             }
             if (modExtension.usePerlin)
             {
-                PerlinNoise = new Perlin(0.1, 10.0, 0.6, 12, seed, QualityMode.Low);
+                PerlinNoise = perTileSeed
+                    ? new Perlin(0.1, 10.0, 0.6, 12, seed, QualityMode.Low)
+                    : sharedNoise ??= new Perlin(0.1, 10.0, 0.6, 12, seed, QualityMode.Low);
                 if (PerlinNoise.GetValue(tileCenter) <= modExtension.perlinCulling)
                 {
                     continue;
@@ -215,6 +219,5 @@ public class LateBiomeWorker : WorldGenStep
                 tile.elevation = modExtension.setElevation.Value;
             }
         }
-        Log.Message("finished biome cycle");
     }
 }

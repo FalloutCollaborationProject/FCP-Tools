@@ -30,11 +30,20 @@ public class CompTurretWeaponMount : ThingComp
     public override void PostSpawnSetup(bool respawningAfterLoad)
     {
         base.PostSpawnSetup(respawningAfterLoad);
-        if (installedWeaponDef != null)
+        if (installedWeaponDef != null && Turret.gun?.def != installedWeaponDef)
         {
             RebuildGun(installedWeaponDef);
         }
         UpdatePower();
+    }
+
+    public override void PostDestroy(DestroyMode mode, Map previousMap)
+    {
+        base.PostDestroy(mode, previousMap);
+        if (Armed && previousMap != null && mode != DestroyMode.Vanish && Turret.gun != null)
+        {
+            GenPlace.TryPlaceThing(Turret.gun, parent.Position, previousMap, ThingPlaceMode.Near);
+        }
     }
 
     public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -157,11 +166,12 @@ public class CompTurretWeaponMount : ThingComp
         return null;
     }
 
-    public void FinishInstall(ThingDef weaponDef)
+    public void FinishInstall(Thing weapon)
     {
-        installedWeaponDef = weaponDef;
+        installedWeaponDef = weapon.def;
         reservedWeapon = null;
-        RebuildGun(weaponDef);
+        Turret.gun = weapon;
+        UpdateGunVerbsMethod?.Invoke(Turret, null);
         UpdatePower();
     }
 
@@ -172,15 +182,14 @@ public class CompTurretWeaponMount : ThingComp
             return;
         }
 
-        ThingDef weaponDef = installedWeaponDef;
+        Thing weapon = Turret.gun;
         installedWeaponDef = null;
         RebuildGun(Props.emptyGunDef);
         UpdatePower();
 
-        if (parent.Map != null)
+        if (parent.Map != null && weapon != null)
         {
-            Thing dropped = ThingMaker.MakeThing(weaponDef);
-            GenPlace.TryPlaceThing(dropped, parent.Position, parent.Map, ThingPlaceMode.Near);
+            GenPlace.TryPlaceThing(weapon, parent.Position, parent.Map, ThingPlaceMode.Near);
         }
     }
 

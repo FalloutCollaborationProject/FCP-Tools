@@ -80,15 +80,6 @@ public class QuestPart_DefendCrashSite : QuestPart
         Scribe_Values.Look(ref ticksBetweenWaves, "ticksBetweenWaves", 15000);
         Scribe_Values.Look(ref outSignalComplete, "outSignalComplete");
         Scribe_References.Look(ref mapParent, "mapParent");
-        
-        if (Scribe.mode == LoadSaveMode.PostLoadInit)
-        {
-            comp = Current.Game?.GetComponent<DefendCrashSiteComp>();
-            if (comp != null && comp.questPart == null)
-            {
-                comp.questPart = this;
-            }
-        }
     }
 }
 
@@ -98,6 +89,8 @@ public class DefendCrashSiteComp : GameComponent
     private int wavesSpawned;
     private int ticksUntilNext;
     private bool initialized;
+    private int questId = -1;
+    private int partIndex = -1;
 
     public DefendCrashSiteComp()
     {
@@ -150,23 +143,21 @@ public class DefendCrashSiteComp : GameComponent
         Scribe_Values.Look(ref wavesSpawned, "wavesSpawned");
         Scribe_Values.Look(ref ticksUntilNext, "ticksUntilNext");
         Scribe_Values.Look(ref initialized, "initialized");
-        
-        if (Scribe.mode == LoadSaveMode.PostLoadInit && questPart == null)
+
+        if (Scribe.mode == LoadSaveMode.Saving && questPart?.quest != null)
         {
-            List<Quest> quests = Find.QuestManager.QuestsListForReading;
-            for (int i = 0; i < quests.Count; i++)
+            questId = questPart.quest.id;
+            partIndex = QuestPartCompLink.PartIndex(questPart);
+        }
+        Scribe_Values.Look(ref questId, "questId", -1);
+        Scribe_Values.Look(ref partIndex, "partIndex", -1);
+
+        if (Scribe.mode == LoadSaveMode.PostLoadInit)
+        {
+            questPart = QuestPartCompLink.Resolve<QuestPart_DefendCrashSite>(questId, partIndex, p => p.comp == null);
+            if (questPart != null)
             {
-                List<QuestPart> parts = quests[i].PartsListForReading;
-                for (int j = 0; j < parts.Count; j++)
-                {
-                    QuestPart_DefendCrashSite defendPart = parts[j] as QuestPart_DefendCrashSite;
-                    if (defendPart != null && defendPart.comp == null)
-                    {
-                        questPart = defendPart;
-                        defendPart.comp = this;
-                        return;
-                    }
-                }
+                questPart.comp = this;
             }
         }
     }

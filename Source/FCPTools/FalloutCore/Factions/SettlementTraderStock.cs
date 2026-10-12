@@ -5,20 +5,36 @@ using Verse;
 
 namespace FCP.Factions;
 
-public class SettlementTraderStock : ITrader, IThingHolder
+public class SettlementTraderStock : ITrader, IThingHolder, IExposable
 {
     private Settlement settlement;
     private TraderKindDef kind;
     private ThingOwner things;
     private int seed;
+    public int generatedTick;
 
-    public SettlementTraderStock(Settlement settlement, TraderKindDef traderKind)
+    public SettlementTraderStock()
+    {
+        things = new ThingOwner<Thing>(this, false);
+    }
+
+    public SettlementTraderStock(Settlement settlement, TraderKindDef traderKind) : this()
     {
         this.settlement = settlement;
         kind = traderKind;
-        things = new ThingOwner<Thing>(this, false);
-        seed = Find.TickManager.TicksAbs + settlement.ID * 3541;
         GenerateStock();
+    }
+
+    public void ExposeData()
+    {
+        Scribe_References.Look(ref settlement, "settlement");
+        Scribe_Defs.Look(ref kind, "kind");
+        Scribe_Deep.Look(ref things, "things", this);
+        Scribe_Values.Look(ref seed, "seed");
+        Scribe_Values.Look(ref generatedTick, "generatedTick");
+
+        if (Scribe.mode == LoadSaveMode.PostLoadInit)
+            things ??= new ThingOwner<Thing>(this, false);
     }
 
     public string TraderName => settlement.Label;
@@ -88,9 +104,11 @@ public class SettlementTraderStock : ITrader, IThingHolder
     public ThingOwner GetDirectlyHeldThings() => things;
     public void GetChildHolders(List<IThingHolder> outChildren) {}
 
-    void GenerateStock()
+    public void GenerateStock()
     {
-        things.Clear();
+        things.ClearAndDestroyContents();
+        seed = Find.TickManager.TicksAbs + settlement.ID * 3541;
+        generatedTick = Find.TickManager.TicksGame;
         ThingSetMakerParams parms = default(ThingSetMakerParams);
         parms.traderDef = kind;
         parms.tile = settlement.Tile;

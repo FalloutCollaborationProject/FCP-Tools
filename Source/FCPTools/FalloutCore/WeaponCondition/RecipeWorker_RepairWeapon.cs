@@ -21,7 +21,7 @@ public class RecipeWorker_RepairWeapon : RecipeWorker
         comp.SetCondition(100f);
         comp.ClearJam();
         weapon.HitPoints = weapon.MaxHitPoints;
-        billDoer.skills.Learn(SkillDefOf.Crafting, 0.5f);
+        billDoer.skills?.Learn(SkillDefOf.Crafting, 0.5f);
         Messages.Message("FCP_RepairBench_Done".Translate(billDoer.LabelShort, weapon.LabelShort),
             billDoer, MessageTypeDefOf.PositiveEvent, historical: false);
         slot.Eject();

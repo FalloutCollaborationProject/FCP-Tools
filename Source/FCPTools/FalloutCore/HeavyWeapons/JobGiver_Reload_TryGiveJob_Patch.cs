@@ -15,33 +15,49 @@ public static class JobGiver_Reload_TryGiveJob_Patch
             {
                 return;
             }
-            var pawns = pawn.Map.mapPawns.PawnsInFaction(pawn.Faction)
-                .Where(x => x.RaceProps.Humanlike && x != pawn).OrderBy(x => x.Position.DistanceTo(pawn.Position)).ToList();
-            foreach (var otherPawn in pawns)
+            if (pawn.Faction == null)
             {
-                var verb = otherPawn.equipment?.PrimaryEq?.PrimaryVerb as Verb_Shoot_ApparelAmmo;
-                if (verb != null)
+                return;
+            }
+            int bestDist = int.MaxValue;
+            List<Pawn> factionPawns = pawn.Map.mapPawns.PawnsInFaction(pawn.Faction);
+            for (int i = 0; i < factionPawns.Count; i++)
+            {
+                Pawn otherPawn = factionPawns[i];
+                if (otherPawn == pawn || !otherPawn.RaceProps.Humanlike)
                 {
-                    var comp = otherPawn.GetAvailableApparelAmmo(verb, out _, out _);
-                    if (comp != null && comp.RemainingCharges <= 0)
-                    {
-                        if (pawn.CanReserve(comp.parent) is false)
-                        {
-                            continue;
-                        }
-                        if (pawn.carryTracker.AvailableStackSpace(comp.AmmoDef) < comp.MinAmmoNeeded(allowForcedReload: true))
-                        {
-                            continue;
-                        }
-                        List<Thing> list = ReloadableUtility.FindEnoughAmmo(pawn, pawn.Position, comp, forceReload: false);
-                        if (list.NullOrEmpty())
-                        {
-                            continue;
-                        }
-                        __result = MakeReloadJob(comp, list, otherPawn);
-                        return;
-                    }
+                    continue;
                 }
+                int dist = otherPawn.Position.DistanceToSquared(pawn.Position);
+                if (dist >= bestDist)
+                {
+                    continue;
+                }
+                var verb = otherPawn.equipment?.PrimaryEq?.PrimaryVerb as Verb_Shoot_ApparelAmmo;
+                if (verb == null)
+                {
+                    continue;
+                }
+                var comp = otherPawn.GetAvailableApparelAmmo(verb, out _, out _);
+                if (comp == null || comp.RemainingCharges > 0)
+                {
+                    continue;
+                }
+                if (pawn.CanReserve(comp.parent) is false)
+                {
+                    continue;
+                }
+                if (pawn.carryTracker.AvailableStackSpace(comp.AmmoDef) < comp.MinAmmoNeeded(allowForcedReload: true))
+                {
+                    continue;
+                }
+                List<Thing> list = ReloadableUtility.FindEnoughAmmo(pawn, pawn.Position, comp, forceReload: false);
+                if (list.NullOrEmpty())
+                {
+                    continue;
+                }
+                bestDist = dist;
+                __result = MakeReloadJob(comp, list, otherPawn);
             }
         }
     }

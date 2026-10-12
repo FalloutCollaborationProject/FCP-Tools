@@ -25,14 +25,14 @@ public class HediffCompConvertPawnAfterFullSeverity : HediffComp
             }
         }
 
-        if (parent.Severity >= Props.severityToTransform)
+        if (parent.Severity >= Props.severityToTransform && Pawn.Spawned)
         {
             if (Props.isUsingImmunityList)
             {
                 bool transformed = false;
                 if (ModsConfig.BiotechActive && !Props.immuneXenotypeDef.NullOrEmpty())
                 {
-                    if (!Props.immuneXenotypeDef.Contains(parent.pawn.genes.Xenotype))
+                    if (parent.pawn.genes == null || !Props.immuneXenotypeDef.Contains(parent.pawn.genes.Xenotype))
                     {
                         if (Props.isPlayer)
                         {
@@ -169,6 +169,6 @@ public class HediffCompConvertPawnAfterFullSeverity : HediffComp
         Props.transformSound?.PlayOneShot(SoundInfo.InMap(new TargetInfo(curPos, currentMap)));
 
         parent.pawn.Kill(new DamageInfo(DamageDefOf.Cut, 999f, 999f));
-        parent.pawn.Corpse.Destroy();
+        parent.pawn.Corpse?.Destroy();
     }
 }

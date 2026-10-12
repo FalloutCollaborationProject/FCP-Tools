@@ -39,6 +39,7 @@ public class WorldObjectCompEnlist : WorldObjectComp
 	public Dictionary<FactionEnlistOptionsDef, AbilityTrainingSession> activeTrainingSessions;
 	public Dictionary<FactionEnlistOptionsDef, DeliveryQuestList> deliveryBoards;
 
+	private static readonly List<Caravan> tmpCaravans = new List<Caravan>();
 	private List<FactionEnlistOptionsDef> optionDefs;
 	public List<FactionEnlistOptionsDef> OptionsDefs => optionDefs ??= parent.Faction.GetEnlistOptions();
 	public CaravanOptions GetCaravanOptions(Caravan caravan)
@@ -173,7 +174,7 @@ public class WorldObjectCompEnlist : WorldObjectComp
 				if (session.IsDone)
 				{
 					session.Complete();
-					if (!def.abilityTrainingCompleteLetterTitleKey.NullOrEmpty())
+					if (!def.abilityTrainingCompleteLetterTitleKey.NullOrEmpty() && session.trainee != null && !session.trainee.Dead)
 					{
 						Find.LetterStack.ReceiveLetter(
 							def.abilityTrainingCompleteLetterTitleKey.Translate(parent.Faction.Named("FACTION")),
@@ -185,11 +186,12 @@ public class WorldObjectCompEnlist : WorldObjectComp
 				}
 			}
 		}
-		List<Caravan> caravans = new List<Caravan>();
+		List<FactionEnlistOptionsDef> optionsDefs = OptionsDefs;
+		List<Caravan> caravans = tmpCaravans;
+		caravans.Clear();
 		Find.World.worldObjects.GetPlayerControlledCaravansAt(parent.Tile, caravans);
 		if (caravans.Any())
 		{
-			List<FactionEnlistOptionsDef> optionsDefs = OptionsDefs;
 			foreach (Caravan caravan in caravans)
 			{
 				if (caravan != null)
@@ -278,6 +280,10 @@ public class WorldObjectCompEnlist : WorldObjectComp
 				}
 			}
 
+		}
+
+		if (Find.TickManager.TicksGame % GenDate.TicksPerDay == 0)
+		{
 			if (pawnTraders != null && optionsDefs != null)
 			{
 				foreach (FactionEnlistOptionsDef optionDefs in optionsDefs)
@@ -715,6 +721,10 @@ public class WorldObjectCompEnlist : WorldObjectComp
 			if (fee > 0)
 			{
 				List<Thing> currencies = caravan.AllThings.Where(x => x.def == currencyDef).ToList();
+				if (currencies.Count == 0)
+				{
+					break;
+				}
 				for (int i = currencies.Count - 1; i >= 0; i--)
 				{
 					Thing currency = currencies[i];

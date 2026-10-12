@@ -70,6 +70,9 @@ public class QuestPart_SpawnRaiders : QuestPart
         Scribe_Collections.Look(ref pawns, "pawns", LookMode.Reference);
         Scribe_References.Look(ref mapParent, "mapParent");
         Scribe_Values.Look(ref cell, "cell");
+        Scribe_Values.Look(ref mapTile, "mapTile");
+        Scribe_Values.Look(ref spawnOnEdge, "spawnOnEdge");
+        Scribe_Values.Look(ref radius, "radius", 20);
 
     }
         

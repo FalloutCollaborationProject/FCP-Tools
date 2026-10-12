@@ -76,7 +76,7 @@ public class GameComponent_PawnRanks : GameComponent
 
         foreach (KeyValuePair<Pawn, PawnRankData> entry in ranks)
         {
-            if (entry.Key == null || entry.Key.Dead)
+            if (entry.Key == null || entry.Key.Dead || entry.Key.Faction != Faction.OfPlayer)
                 continue;
 
             List<RankTierDef> options = entry.Value.currentTier?.nextTierOptions;
@@ -264,6 +264,9 @@ public class GameComponent_PawnRanks : GameComponent
     public override void ExposeData()
     {
         base.ExposeData();
+        if (Scribe.mode == LoadSaveMode.Saving)
+            ranks.RemoveAll(entry => entry.Key == null || entry.Key.Discarded);
+
         Scribe_Collections.Look(ref ranks, "ranks", LookMode.Reference, LookMode.Deep, ref rankKeys, ref rankValues);
 
         if (Scribe.mode == LoadSaveMode.LoadingVars && ranks == null)

@@ -10,6 +10,13 @@ public class WorkGiver_RankTraining : WorkGiver_Scanner
 
     public override PathEndMode PathEndMode => PathEndMode.ClosestTouch;
 
+    public override IEnumerable<Thing> PotentialWorkThingsGlobal(Pawn pawn)
+    {
+        Pawn mentor = Current.Game.GetComponent<GameComponent_PawnRanks>()?.GetRankData(pawn)?.mentor;
+        if (mentor != null && mentor.Spawned && mentor.Map == pawn.Map)
+            yield return mentor;
+    }
+
     public override bool HasJobOnThing(Pawn pawn, Thing t, bool forced = false)
     {
         if (t is not Pawn mentor || !mentor.RaceProps.Humanlike)

@@ -30,14 +30,14 @@ public static class ShuttleArrivalAction
                         TraverseParms.For(TraverseMode.NoPassClosedDoors, Danger.Deadly, false),
                         (IntVec3 c) => IsFootprintClear(c, map, shipSize), null, out landingSpot))
                 {
-                    DropCellFinder.TryFindDropSpotNear(MapGenerator.PlayerStartSpot, map, out landingSpot, false, false);
+                    DropCellFinder.TryFindDropSpotNear(DropCellFinder.TradeDropSpot(map), map, out landingSpot, false, false);
                 }
                 footprintClear = landingSpot.InBounds(map) && IsFootprintClear(landingSpot, map, shipSize);
                 tries++;
                 if (tries > 1000)
                 {
                     FCPLog.Error("FCP.Core.Shuttles: Could not find a suitable landing spot after 1000 tries.");
-                    landingSpot = MapGenerator.PlayerStartSpot;
+                    landingSpot = DropCellFinder.TradeDropSpot(map);
                     break;
                 }
             } while (!footprintClear

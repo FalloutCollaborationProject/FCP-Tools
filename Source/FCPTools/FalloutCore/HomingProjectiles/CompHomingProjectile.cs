@@ -54,22 +54,26 @@ public class CompHomingProjectile : ThingComp
             delayTurning = true;
             return false;
         }
-        return Find.TickManager.TicksGame % Props.tickRate == 0;
+        return Props.tickRate <= 1 || Find.TickManager.TicksGame % Props.tickRate == 0;
     }
+
+    private static readonly Func<Projectile, float> ArcHeightFactor =
+        AccessTools.MethodDelegate<Func<Projectile, float>>(AccessTools.PropertyGetter(typeof(Projectile), "ArcHeightFactor"));
+    private static readonly Func<Projectile, float> DistanceCoveredFraction =
+        AccessTools.MethodDelegate<Func<Projectile, float>>(AccessTools.PropertyGetter(typeof(Projectile), "DistanceCoveredFraction"));
+    private static readonly AccessTools.FieldRef<Projectile, Vector3> Origin =
+        AccessTools.FieldRefAccess<Projectile, Vector3>("origin");
 
     public override void CompTick()
     {
         base.CompTick();
         if (parent.Map != null)
         {
-            var travProj = Traverse.Create(Projectile);
-            float arcHeight = travProj.Property("ArcHeightFactor").GetValue<float>();
-            float distCovered = travProj.Property("DistanceCoveredFraction").GetValue<float>();
-            float num = arcHeight * GenMath.InverseParabola(distCovered);
-            Vector3 drawPos = Projectile.DrawPos;
+            Projectile projectile = Projectile;
+            float num = ArcHeightFactor(projectile) * GenMath.InverseParabola(DistanceCoveredFraction(projectile));
+            Vector3 drawPos = projectile.DrawPos;
             Vector3 position = drawPos + new Vector3(0f, 0f, 1f) * num;
-            Vector3 origin = travProj.Field("origin").GetValue<Vector3>();
-            ThrowEffect(position, Projectile.Map, Vector3.Angle(origin, position), Props.effectSize);
+            ThrowEffect(position, projectile.Map, Vector3.Angle(Origin(projectile), position), Props.effectSize);
         }
     }
 
@@ -77,7 +81,7 @@ public class CompHomingProjectile : ThingComp
     {
         if (loc.InBounds(map))
         {
-            float distCovered = Traverse.Create(Projectile).Property("DistanceCoveredFraction").GetValue<float>();
+            float distCovered = DistanceCoveredFraction(Projectile);
             var solidTimeOverride = Props.effectLifetime.HasValue
                 ? Props.effectLifetime.Value
                 : 0.20f * (1f - (distCovered + 0.1f));

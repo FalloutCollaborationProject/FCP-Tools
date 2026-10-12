@@ -30,13 +30,10 @@ public class VATS_GameComponent(Game game) : GameComponent
         SlowMoCauser = null;
     }
 
-    private static List<Pawn> activeAttackKeys;
-    private static List<VATSAction> activeAttackValues;
-
-    public override void ExposeData()
+    public override void FinalizeInit()
     {
-        ActiveAttacks ??= new Dictionary<Pawn, VATSAction>();
-        Scribe_Collections.Look(ref ActiveAttacks, "ActiveAttacks", LookMode.Reference, LookMode.Reference, ref activeAttackKeys, ref activeAttackValues);
+        ActiveAttacks.Clear();
+        ResetSlowMo();
     }
 
     public override void GameComponentTick()

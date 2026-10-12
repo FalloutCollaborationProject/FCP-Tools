@@ -1,5 +1,3 @@
-using System.Globalization;
-
 namespace FCP.Core.Stims;
 
 public class HediffComp_Stimpack : HediffComp
@@ -11,6 +9,13 @@ public class HediffComp_Stimpack : HediffComp
     public override string CompDescriptionExtra => $"\nHealing left : {toHeal} HP";
 
     private int nextTickHeal = 0;
+
+    public override void CompExposeData()
+    {
+        base.CompExposeData();
+        Scribe_Values.Look(ref toHeal, "toHeal");
+        Scribe_Values.Look(ref nextTickHeal, "nextTickHeal");
+    }
 
     public override void CompPostMerged(Hediff other)
     {
@@ -58,10 +63,7 @@ public class HediffComp_Stimpack : HediffComp
             {
                 Pawn.health.RemoveHediff(parent);
             }
-            else
-            {
-                return;
-            }
+            return;
         }
 
         if (nextTickHeal > Current.Game.tickManager.TicksGame)
@@ -124,7 +126,6 @@ public class HediffComp_Stimpack : HediffComp
             Pawn.health.RemoveHediff(missing);
             Hediff toAdd = HediffMaker.MakeHediff(HediffDefOf.Cut, Pawn, missing.Part);
             float partHealth = toAdd.Part.def.GetMaxHealth(Pawn) - 1f;
-            FCPLog.Warning(partHealth.ToString(CultureInfo.InvariantCulture));
             toAdd.Severity = partHealth;
             Pawn.health.AddHediff(toAdd);
             toHeal -= 3;

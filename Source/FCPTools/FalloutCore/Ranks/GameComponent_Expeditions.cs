@@ -59,7 +59,8 @@ public class GameComponent_Expeditions : GameComponent
             return;
 
         expeditions.Remove(pawn);
-        Return(pawn, data);
+        if (!Return(pawn, data))
+            expeditions[pawn] = data;
     }
 
     public override void GameComponentTick()
@@ -90,7 +91,8 @@ public class GameComponent_Expeditions : GameComponent
         {
             ExpeditionData data = expeditions[pawn];
             expeditions.Remove(pawn);
-            Return(pawn, data);
+            if (!Return(pawn, data))
+                expeditions[pawn] = data;
         }
     }
 
@@ -146,11 +148,11 @@ public class GameComponent_Expeditions : GameComponent
         };
     }
 
-    private void Return(Pawn pawn, ExpeditionData data)
+    private bool Return(Pawn pawn, ExpeditionData data)
     {
         Map map = (data.originMap != null && Find.Maps.Contains(data.originMap)) ? data.originMap : Find.AnyPlayerHomeMap;
         if (map == null)
-            return;
+            return false;
 
         if (!RCellFinder.TryFindRandomPawnEntryCell(out IntVec3 entryCell, map, CellFinder.EdgeRoadChance_Ignore))
             entryCell = CellFinder.RandomEdgeCell(map);
@@ -203,7 +205,7 @@ public class GameComponent_Expeditions : GameComponent
                 pawn);
 
             WalkInFromEdge(pawn, map);
-            return;
+            return true;
         }
 
         if (expedition.xpReward != null && pawn.skills != null)
@@ -244,6 +246,7 @@ public class GameComponent_Expeditions : GameComponent
         }
 
         WalkInFromEdge(pawn, map);
+        return true;
     }
 
     private static float GetCompetenceFactor(Pawn pawn, PawnRankData rankData)

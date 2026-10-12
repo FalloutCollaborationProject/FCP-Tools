@@ -16,24 +16,38 @@ public static class JobGiver_Reload_TryGiveJob_Patch
         if (!pawn.health.capacities.CapableOf(PawnCapacityDefOf.Manipulation))
             return;
 
-        var factionHumanlikesByDistance = pawn.Map.mapPawns.PawnsInFaction(pawn.Faction).Where(x => x.RaceProps.Humanlike)
-            .OrderBy(x => x.Position.DistanceTo(pawn.Position)).ToList();
+        if (pawn.Faction == null)
+            return;
 
-        foreach (Pawn other in factionHumanlikesByDistance)
+        Pawn bestWearer = null;
+        Apparel bestApparel = null;
+        int bestDist = int.MaxValue;
+        List<Pawn> factionPawns = pawn.Map.mapPawns.PawnsInFaction(pawn.Faction);
+        for (int i = 0; i < factionPawns.Count; i++)
         {
-            foreach (Apparel apparel in other.apparel.WornApparel)
+            Pawn other = factionPawns[i];
+            if (!other.RaceProps.Humanlike || other.apparel == null)
+                continue;
+
+            int dist = other.Position.DistanceToSquared(pawn.Position);
+            if (dist >= bestDist)
+                continue;
+
+            List<Apparel> worn = other.apparel.WornApparel;
+            for (int j = 0; j < worn.Count; j++)
             {
-                var powerArmor = apparel.GetComp<CompPowerArmor>();
-                if (powerArmor == null)
+                if (worn[j].def.GetCompProperties<CompProperties_PowerArmor>() == null || !CanRefuel(pawn, worn[j]))
                     continue;
 
-                if (!CanRefuel(pawn, apparel))
-                    continue;
-
-                __result = RefuelJob(pawn, apparel, other);
-                return;
+                bestWearer = other;
+                bestApparel = worn[j];
+                bestDist = dist;
+                break;
             }
         }
+
+        if (bestApparel != null)
+            __result = RefuelJob(pawn, bestApparel, bestWearer);
     }
 
     public static bool CanRefuel(Pawn pawn, Thing t, bool forced = false)

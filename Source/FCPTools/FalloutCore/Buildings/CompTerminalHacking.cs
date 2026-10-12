@@ -9,6 +9,23 @@ public class CompTerminalHacking : ThingComp
     private string correctPassword;
     private List<string> displayedWords;
     private int attemptsRemaining;
+    private int bracketPairsLeft = -1;
+
+    public int BracketPairsLeft
+    {
+        get
+        {
+            if (bracketPairsLeft < 0)
+                bracketPairsLeft = Rand.RangeInclusive(4, 8);
+            return bracketPairsLeft;
+        }
+    }
+
+    public void UseBracketPair()
+    {
+        if (BracketPairsLeft > 0)
+            bracketPairsLeft--;
+    }
 
     public CompProperties_TerminalHacking Props => (CompProperties_TerminalHacking)props;
 
@@ -34,13 +51,14 @@ public class CompTerminalHacking : ThingComp
         base.CompTick();
         if (parent.IsHashIntervalTick(60) && lockoutTicksRemaining > 0)
         {
-            lockoutTicksRemaining--;
+            lockoutTicksRemaining = Math.Max(0, lockoutTicksRemaining - 60);
         }
     }
 
     public void GeneratePasswords()
     {
         displayedWords = new List<string>(Props.wordCount);
+        bracketPairsLeft = Rand.RangeInclusive(4, 8);
         var usedWords = new HashSet<string>();
             
         correctPassword = GenerateRandomWord(Props.wordLength, usedWords);
@@ -256,6 +274,7 @@ public class CompTerminalHacking : ThingComp
         Scribe_Values.Look(ref lockoutTicksRemaining, "lockoutTicksRemaining", 0);
         Scribe_Values.Look(ref correctPassword, "correctPassword");
         Scribe_Values.Look(ref attemptsRemaining, "attemptsRemaining", Props.maxAttempts);
+        Scribe_Values.Look(ref bracketPairsLeft, "bracketPairsLeft", -1);
         Scribe_Collections.Look(ref displayedWords, "displayedWords", LookMode.Value);
     }
 }

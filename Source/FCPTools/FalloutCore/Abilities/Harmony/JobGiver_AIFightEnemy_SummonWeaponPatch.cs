@@ -28,19 +28,29 @@ public static class JobGiver_AIFightEnemy_SummonWeaponPatch
         {
             return;
         }
-        foreach (var abilityDef in DefDatabase<AbilityDef>.AllDefs.InRandomOrder())
+        if (pawn.abilities == null || SummonAbilities.Count == 0)
         {
-            if (abilityDef.comps != null && abilityDef.comps.OfType<CompProperties_SummonWeapon>().FirstOrDefault() != null)
+            return;
+        }
+        foreach (var abilityDef in SummonAbilities.InRandomOrder())
+        {
+            if (pawn.abilities.GetAbility(abilityDef) == null)
             {
-                var jbg = new JobGiver_AICastSummonWeapon();
-                AbilityRef(jbg) = abilityDef;
-                var otherJob = TryGiveJob(jbg, pawn);
-                if (otherJob != null)
-                {
-                    __result = otherJob;
-                    return;
-                }
+                continue;
+            }
+            var jbg = new JobGiver_AICastSummonWeapon();
+            AbilityRef(jbg) = abilityDef;
+            var otherJob = TryGiveJob(jbg, pawn);
+            if (otherJob != null)
+            {
+                __result = otherJob;
+                return;
             }
         }
     }
+
+    private static List<AbilityDef> summonAbilities;
+
+    private static List<AbilityDef> SummonAbilities => summonAbilities ??= DefDatabase<AbilityDef>.AllDefsListForReading
+        .Where(d => d.comps != null && d.comps.Any(c => c is CompProperties_SummonWeapon)).ToList();
 }

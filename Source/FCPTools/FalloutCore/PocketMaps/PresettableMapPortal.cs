@@ -24,6 +24,17 @@ namespace FCP.PocketMaps
             isAbandoned = true;
         }
 
+        public override bool IsEnterable(out string reason)
+        {
+            if (isAbandoned)
+            {
+                reason = def.GetModExtension<ModExtensionPresettablePocketMap>()?.abandonedMessage
+                    ?? "This pocket map has been abandoned and can no longer be entered.";
+                return false;
+            }
+            return base.IsEnterable(out reason);
+        }
+
         protected override Map GeneratePocketMapInt()
         {
             var ext = def.GetModExtension<ModExtensionPresettablePocketMap>();
@@ -116,7 +127,7 @@ namespace FCP.PocketMaps
 
         private void TrySpawnThing(PrefabItem item, IntVec3 pos, Map map, HashSet<(IntVec3, ThingDef)> spawnedAt)
         {
-            if (!map.AllCells.Contains(pos) || Rand.Value > item.chance) return;
+            if (!pos.InBounds(map) || Rand.Value > item.chance) return;
             if (!spawnedAt.Add((pos, item.thingDef)))
             {
                 FCPLog.Warning($"Skipped duplicate {item.thingDef.defName} at {pos} while spawning a pocket map prefab - the def's rects overlap at that cell.");

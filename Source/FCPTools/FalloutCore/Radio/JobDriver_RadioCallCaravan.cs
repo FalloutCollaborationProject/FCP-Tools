@@ -42,20 +42,29 @@ public class JobDriver_RadioCallCaravan : JobDriver
             if (!RadioUtility.TryConsumeCurrency(pawn.Map, currency, option.cost))
                 return;
 
+            bool arrived;
             if (option.characterDef != null)
             {
-                RadioUtility.TrySpawnNamedCaravan(pawn.Map, option.characterDef, option.traderKind, out _);
-                return;
+                arrived = RadioUtility.TrySpawnNamedCaravan(pawn.Map, option.characterDef, option.traderKind, out _);
+            }
+            else
+            {
+                Faction faction = option.factionDef != null ? Find.FactionManager.FirstFactionOfDef(option.factionDef) : null;
+                IncidentParms parms = new IncidentParms
+                {
+                    target = pawn.Map,
+                    faction = faction,
+                    traderKind = option.traderKind
+                };
+                arrived = IncidentDefOf.TraderCaravanArrival.Worker.TryExecute(parms);
             }
 
-            Faction faction = option.factionDef != null ? Find.FactionManager.FirstFactionOfDef(option.factionDef) : null;
-            IncidentParms parms = new IncidentParms
+            if (!arrived && option.cost > 0)
             {
-                target = pawn.Map,
-                faction = faction,
-                traderKind = option.traderKind
-            };
-            IncidentDefOf.TraderCaravanArrival.Worker.TryExecute(parms);
+                Thing refund = ThingMaker.MakeThing(currency);
+                refund.stackCount = option.cost;
+                GenPlace.TryPlaceThing(refund, pawn.Position, pawn.Map, ThingPlaceMode.Near);
+            }
         };
         call.defaultCompleteMode = ToilCompleteMode.Instant;
         yield return call;

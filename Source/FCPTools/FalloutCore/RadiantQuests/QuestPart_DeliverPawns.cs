@@ -24,18 +24,20 @@ public class QuestPart_DeliverPawns : QuestPart
             return;
         }
 
+        int requiredCount = 0;
         int deliveredCount = 0;
         foreach (Pawn pawn in pawnsToDeliver)
         {
             if (pawn == null) continue;
-            if (!allowDead && pawn.Dead) continue;
+            if (allowDead && pawn.Dead) continue;
+            requiredCount++;
             if (caravan.ContainsPawn(pawn))
             {
                 deliveredCount++;
             }
         }
 
-        if (deliveredCount == pawnsToDeliver.Count)
+        if (deliveredCount == requiredCount)
         {
             Complete(outSignalSuccess);
         }

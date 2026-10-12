@@ -44,10 +44,7 @@ public static class RadioUtility
             trader.needs.food.CurLevel = trader.needs.food.MaxLevel;
 
         if (!RCellFinder.TryFindRandomSpotJustOutsideColony(trader.Position, map, trader, out IntVec3 chillSpot))
-        {
-            failReason = null;
-            return true;
-        }
+            chillSpot = trader.Position;
 
         LordMaker.MakeNewLord(faction, new LordJob_TradeWithColony(faction, chillSpot), map, pawns);
         Find.LetterStack.ReceiveLetter("FCP_Radio_TraderArrivedTitle".Translate(),
@@ -109,8 +106,7 @@ public static class RadioUtility
         if (faction == null)
             return false;
 
-        int tile = TileFinder.RandomSettlementTileFor(faction, false);
-        if (tile < 0)
+        if (!TileFinder.TryFindNewSiteTile(out PlanetTile tile, pawn.Tile, 3, 15))
             return false;
 
         SitePartDef partDef = siteParts.RandomElement();

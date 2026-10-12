@@ -29,6 +29,8 @@ public static class CurrencyManager
             if (toAdd != null)
                 traderKind.stockGenerators.AddRange(toAdd);
         }
+
+        SwapCurrency(defaultCurrencyDef);
     }
 
     public static bool TryGetCurrency(this ITrader trader, out ThingDef currency)

@@ -87,6 +87,7 @@ public class CompGauntletSpawner : ThingComp
 
     public void DoAttack()
     {
+        CheckExistingPawns();
         foreach (var item in spawnedPawns)
         {
             if (item.jobs?.curJob?.def == JobDefOf.AttackMelee)
@@ -130,6 +131,7 @@ public class CompGauntletSpawner : ThingComp
                 Find.Targeter.BeginTargeting(GetTargetingParameters(), delegate (LocalTargetInfo t)
                 {
                     targetPos = t.Cell;
+                    CheckExistingPawns();
                     if (!spawnedPawns.NullOrEmpty())
                     {
                         if (Props.effectOnMark != null)
@@ -156,6 +158,7 @@ public class CompGauntletSpawner : ThingComp
                 Thing target = null;
                 Find.Targeter.BeginTargeting(GetTargetingParametersAttack(), delegate (LocalTargetInfo t)
                 {
+                    CheckExistingPawns();
                     if (t.HasThing && t.Thing != null)
                     {
                         target = t.Thing;
@@ -178,7 +181,7 @@ public class CompGauntletSpawner : ThingComp
                     {
                         foreach (var item in GenRadial.RadialDistinctThingsAround(t.Cell, parent.Map, Props.groupMarkingRadius, true))
                         {
-                            if (item.Faction.HostileTo(parent.Faction) || item.HostileTo(parent))
+                            if ((item.Faction != null && item.Faction.HostileTo(parent.Faction)) || item.HostileTo(parent))
                             {
                                 if (Props.effectOnMark != null)
                                 {
@@ -191,6 +194,10 @@ public class CompGauntletSpawner : ThingComp
                             {
                                 continue;
                             }
+                        }
+                        if (groupOfTarget.Count == 0)
+                        {
+                            return;
                         }
                         foreach (var item in spawnedPawns)
                         {
@@ -211,6 +218,7 @@ public class CompGauntletSpawner : ThingComp
                 Thing target = null;
                 Find.Targeter.BeginTargeting(GetTargetingParametersAttack(), delegate (LocalTargetInfo t)
                 {
+                    CheckExistingPawns();
                     if (t.HasThing && t.Thing != null)
                     {
                         target = t.Thing;

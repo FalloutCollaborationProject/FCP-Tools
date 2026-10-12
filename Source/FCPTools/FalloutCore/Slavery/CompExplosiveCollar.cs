@@ -45,5 +45,6 @@ public class CompExplosiveCollar : ThingComp
 
         GenExplosion.DoExplosion(wearer.Position, wearer.Map, Props.explosionRadius,
             Props.explosionDamageDef ?? DamageDefOf.Bomb, wearer, Props.explosionDamage);
+        parent.Destroy();
     }
 }

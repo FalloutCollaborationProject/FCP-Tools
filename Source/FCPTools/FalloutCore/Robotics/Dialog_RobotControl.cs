@@ -207,10 +207,11 @@ namespace FCP.Core.Robotics
 
         private static void DrawEyebotButtons(Rect rect, CompEyebotMode modeComp)
         {
-            float buttonWidth = rect.width / 3f;
+            float buttonWidth = (rect.width - 15f) / 4f;
             var defendRect = new Rect(rect.x, rect.y, buttonWidth, rect.height);
             var musicRect = new Rect(defendRect.xMax + 5f, rect.y, buttonWidth, rect.height);
             var exploreRect = new Rect(musicRect.xMax + 5f, rect.y, buttonWidth, rect.height);
+            var scavengeRect = new Rect(exploreRect.xMax + 5f, rect.y, buttonWidth, rect.height);
 
             GUI.color = TerminalColors.PrimaryColor;
             if (Widgets.ButtonText(defendRect, "FCP_EyebotMode_Defend".Translate()))
@@ -224,6 +225,10 @@ namespace FCP.Core.Robotics
             if (Widgets.ButtonText(exploreRect, "FCP_EyebotMode_Explore".Translate()))
             {
                 modeComp.SetMode(EyebotMode.Explore);
+            }
+            if (Widgets.ButtonText(scavengeRect, "FCP_EyebotMode_Scavenge".Translate()))
+            {
+                modeComp.SetMode(EyebotMode.Scavenge);
             }
             GUI.color = Color.white;
         }

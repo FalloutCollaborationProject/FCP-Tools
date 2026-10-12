@@ -44,7 +44,7 @@ namespace FCP.Core.Robotics
                 fuel.ConsumeFuel(fuel.Fuel);
             }
 
-            billDoer.skills.Learn(SkillDefOf.Crafting, 1f);
+            billDoer.skills?.Learn(SkillDefOf.Crafting, 1f);
             Messages.Message("FCP_BuildRobot_Done".Translate(billDoer.LabelShort, robot.LabelShort), robot, MessageTypeDefOf.PositiveEvent, historical: false);
         }
     }

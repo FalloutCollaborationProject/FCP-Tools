@@ -169,6 +169,10 @@ namespace FCP.Core.Laser
         protected override void Tick()
         {
             base.Tick();
+            if (Destroyed)
+            {
+                return;
+            }
             LockOnCaster();
             textureScroll += LaserProperties.textureScrollOffsetPerTick;
 
@@ -388,6 +392,7 @@ namespace FCP.Core.Laser
             Scribe_Values.Look(ref angleOffset, "angleOffset");
             Scribe_Values.Look(ref originDest, "originDest");
             Scribe_Values.Look(ref launcherPosOld, "launcherPosOld");
+            Scribe_Values.Look(ref originOld, "originOld");
             Scribe_Values.Look(ref launcherAngleOld, "launcherAngleOld");
             Scribe_Values.Look(ref sustainerStartTick, "sustainerStartTick");
         }

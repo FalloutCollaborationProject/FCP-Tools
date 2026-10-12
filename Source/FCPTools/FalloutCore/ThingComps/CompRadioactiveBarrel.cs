@@ -32,15 +32,10 @@ public class CompRadioactiveBarrel : ThingComp
             if (pawn == null || pawn.Dead || !pawn.RaceProps.IsFlesh)
                 continue;
 
-            Hediff hediff = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ToxicBuildup);
-            if (hediff != null)
+            float amount = Props.toxicBuildupAmount * (1f - pawn.GetStatValue(StatDefOf.ToxicResistance));
+            if (amount > 0f)
             {
-                hediff.Severity += Props.toxicBuildupAmount;
-            }
-            else
-            {
-                hediff = pawn.health.AddHediff(HediffDefOf.ToxicBuildup);
-                hediff.Severity = Props.toxicBuildupAmount;
+                HealthUtility.AdjustSeverity(pawn, HediffDefOf.ToxicBuildup, amount);
             }
         }
     }

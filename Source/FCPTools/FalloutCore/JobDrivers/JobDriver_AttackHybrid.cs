@@ -88,6 +88,12 @@ public class JobDriver_AttackHybrid : JobDriver
                 return;
             }
 
+            if (!VATS_GameComponent.ActiveAttacks.ContainsKey(pawn))
+            {
+                EndJobWith(JobCondition.Incompletable);
+                return;
+            }
+
             if (TryStartAttack(TargetA))
             {
                 hasAttacked = true;

@@ -30,15 +30,17 @@ public class Building_PowerLine : Building
         }
     }
     
-    public bool HasCorpse => containedCorpse != null && !containedCorpse.Destroyed;
-    
+    public bool HasCorpse => containedCorpse != null && !containedCorpse.Destroyed
+        && containedCorpse.Spawned && containedCorpse.Position.InHorDistOf(Position, 3f);
+
     private void ConvertToCorpse(Corpse corpse)
     {
         containedCorpse = corpse;
         containedPawn = null;
         storedHostFaction = null;
         storedGuestStatus = null;
-        corpse.Rotation = Rotation.Opposite;
+        if (corpse != null)
+            corpse.Rotation = Rotation.Opposite;
     }
     
     public override void ExposeData()
@@ -101,7 +103,15 @@ public class Building_PowerLine : Building
             if (!p.Spawned)
                 GenSpawn.Spawn(p, Position, Map);
             if (!p.Dead)
+            {
+                Hediff crucified = p.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.FCP_Crucified);
+                if (crucified != null)
+                    p.health.RemoveHediff(crucified);
+                Hediff exhaustion = p.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.FCP_CrucifixionExhaustion);
+                if (exhaustion != null)
+                    p.health.RemoveHediff(exhaustion);
                 p.health.AddHediff(HediffDefOf.FCP_WasCrucified);
+            }
         }
         if (HasCorpse)
         {

@@ -28,15 +28,21 @@ public class CompPowerArmor : ThingComp
         if (parent is not Apparel apparel || apparel.Wearer is null)
             return;
 
-        if (CompRefuelable == null)
+        CompRefuelable refuelable = CompRefuelable;
+        if (refuelable == null)
             return;
 
-        CompRefuelable.ConsumeFuel(CompRefuelable.GetConsumptionRatePerTick());
-        if (Props.hediffOnEmptyFuel == null || CompRefuelable.HasFuel)
+        refuelable.ConsumeFuel(refuelable.GetConsumptionRatePerTick());
+        if (Props.hediffOnEmptyFuel == null || !parent.IsHashIntervalTick(30))
             return;
 
         Hediff hediff = apparel.Wearer.health.hediffSet.GetFirstHediffOfDef(Props.hediffOnEmptyFuel);
-        if (hediff is null)
+        if (refuelable.HasFuel)
+        {
+            if (hediff != null)
+                apparel.Wearer.health.RemoveHediff(hediff);
+        }
+        else if (hediff is null)
         {
             apparel.Wearer.health.AddHediff(Props.hediffOnEmptyFuel);
         }

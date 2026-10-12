@@ -18,7 +18,6 @@ public class CompWeaponCondition : ThingComp
 {
     private float condition = 100f;
     private bool isJammed;
-    private bool spawned;
 
     public float Condition => condition;
     public bool IsDisabled => condition <= 1f;
@@ -30,14 +29,16 @@ public class CompWeaponCondition : ThingComp
     {
         Scribe_Values.Look(ref condition, "condition", 100f);
         Scribe_Values.Look(ref isJammed, "isJammed", false);
-        Scribe_Values.Look(ref spawned, "spawned", false);
     }
 
-    public override void PostSpawnSetup(bool respawningAfterLoad)
+    public override void PostPostMake()
     {
-        if (spawned || respawningAfterLoad) return;
-        spawned = true;
         condition = Rand.Range(Props.spawnConditionMin, Props.spawnConditionMax);
+    }
+
+    public override void Notify_RecipeProduced(Pawn pawn)
+    {
+        condition = 100f;
     }
 
     public void NotifyShot(Pawn wielder = null)
@@ -92,10 +93,10 @@ public class CompWeaponCondition : ThingComp
     {
         if (!FCPCoreMod.Settings.General.weaponConditionEnabled)
             yield break;
-        if (!selPawn.story.traits.HasTrait(WeaponConditionDefOf.FCP_Trait_JuryRigging))
+        if (selPawn.story?.traits == null || !selPawn.story.traits.HasTrait(WeaponConditionDefOf.FCP_Trait_JuryRigging))
             yield break;
 
-        ThingWithComps equipped = selPawn.equipment.Primary;
+        ThingWithComps equipped = selPawn.equipment?.Primary;
         if (equipped == null || equipped.def != parent.def)
             yield break;
 

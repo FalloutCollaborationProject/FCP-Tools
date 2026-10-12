@@ -346,6 +346,7 @@ public class CompPowerArmorStation : ThingComp, IThingHolder, ISearchableContent
                         accumulatedResourceCosts[repairResource.thingDef] += repairResource.count;
                     }
 
+                    bool unpaid = false;
                     foreach (var kvp in accumulatedResourceCosts.ToList())
                     {
                         int wholeUnits = Mathf.FloorToInt(kvp.Value);
@@ -363,7 +364,16 @@ public class CompPowerArmorStation : ThingComp, IThingHolder, ISearchableContent
                                 if (remaining <= 0) break;
                             }
                             accumulatedResourceCosts[kvp.Key] -= (wholeUnits - remaining);
+                            if (remaining > 0)
+                            {
+                                unpaid = true;
+                            }
                         }
+                    }
+
+                    if (unpaid)
+                    {
+                        return false;
                     }
 
                     apparel.HitPoints++;

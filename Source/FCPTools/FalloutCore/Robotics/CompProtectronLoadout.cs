@@ -76,6 +76,7 @@ namespace FCP.Core.Robotics
         private void DoInitialSetup()
         {
             ApplyPreset(DefaultPresetId);
+            didInitialSetup = true;
         }
 
         public void ApplyPreset(string presetId)

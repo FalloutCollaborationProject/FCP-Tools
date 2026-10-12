@@ -27,9 +27,10 @@ namespace FCP.Core.Buildings
 
             if (!storedHolotapes.Contains(holotape))
             {
-                storedHolotapes.Add(holotape);
                 if (holotape.Spawned)
                     holotape.DeSpawn();
+                holotape.holdingOwner?.Remove(holotape);
+                storedHolotapes.Add(holotape);
                 return true;
             }
             return false;

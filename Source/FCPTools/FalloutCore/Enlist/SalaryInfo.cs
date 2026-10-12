@@ -32,7 +32,7 @@ public class SalaryInfo : IExposable
         }
         int tickDiff = Find.TickManager.TicksGame - lastPaidTick;
         int salaryPeriodTicks = options.salaryPeriodDays * GenDate.TicksPerDay;
-        while (tickDiff > salaryPeriodTicks)
+        while (tickDiff >= salaryPeriodTicks)
         {
             float curBatch = options.salaryRange.RandomInRange * multiplier;
             Thing silver = ThingMaker.MakeThing(options.salaryDef);
@@ -40,7 +40,7 @@ public class SalaryInfo : IExposable
             CaravanInventoryUtility.GiveThing(caravan, silver);
             tickDiff -= salaryPeriodTicks;
         }
-        lastPaidTick = Find.TickManager.TicksGame;
+        lastPaidTick = Find.TickManager.TicksGame - tickDiff;
     }
     public void ExposeData()
     {

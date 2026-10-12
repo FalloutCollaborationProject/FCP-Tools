@@ -13,6 +13,9 @@ public static class Pawn_Kill_BloodyMess_Patch
 
     public static void Postfix(Pawn __instance, DamageInfo? dinfo)
     {
+        if (!__instance.Dead)
+            return;
+
         Map map = __instance.Corpse?.Map ?? __instance.MapHeld;
         if (map == null)
             return;

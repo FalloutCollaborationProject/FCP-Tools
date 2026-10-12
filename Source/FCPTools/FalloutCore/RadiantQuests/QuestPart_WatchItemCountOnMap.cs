@@ -60,15 +60,6 @@ public class QuestPart_WatchItemCountOnMap : QuestPart
         Scribe_Defs.Look(ref itemDef, "itemDef");
         Scribe_Values.Look(ref requiredCount, "requiredCount");
         Scribe_Values.Look(ref outSignalComplete, "outSignalComplete");
-
-        if (Scribe.mode == LoadSaveMode.PostLoadInit)
-        {
-            comp = Current.Game?.GetComponent<WatchItemCountComp>();
-            if (comp != null && comp.questPart == null)
-            {
-                comp.questPart = this;
-            }
-        }
     }
 }
 
@@ -78,6 +69,8 @@ public class WatchItemCountComp : GameComponent
 
     private const int CheckIntervalTicks = 250;
     private int ticksUntilNextCheck;
+    private int questId = -1;
+    private int partIndex = -1;
 
     public WatchItemCountComp()
     {
@@ -122,5 +115,22 @@ public class WatchItemCountComp : GameComponent
     {
         base.ExposeData();
         Scribe_Values.Look(ref ticksUntilNextCheck, "ticksUntilNextCheck");
+
+        if (Scribe.mode == LoadSaveMode.Saving && questPart?.quest != null)
+        {
+            questId = questPart.quest.id;
+            partIndex = QuestPartCompLink.PartIndex(questPart);
+        }
+        Scribe_Values.Look(ref questId, "questId", -1);
+        Scribe_Values.Look(ref partIndex, "partIndex", -1);
+
+        if (Scribe.mode == LoadSaveMode.PostLoadInit)
+        {
+            questPart = QuestPartCompLink.Resolve<QuestPart_WatchItemCountOnMap>(questId, partIndex, p => p.comp == null);
+            if (questPart != null)
+            {
+                questPart.comp = this;
+            }
+        }
     }
 }

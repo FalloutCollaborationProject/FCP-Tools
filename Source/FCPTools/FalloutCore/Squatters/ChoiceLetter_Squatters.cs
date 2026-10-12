@@ -8,7 +8,7 @@ public class ChoiceLetter_Squatters : ChoiceLetter
     {
         get
         {
-            if (!squatters.Any(p => p.Spawned))
+            if (!squatters.Any(p => p != null && p.Spawned))
             {
                 yield return DiaOption.DefaultOK;
                 yield break;
@@ -67,5 +67,11 @@ public class ChoiceLetter_Squatters : ChoiceLetter
     {
         base.ExposeData();
         Scribe_Collections.Look(ref squatters, "squatters", LookMode.Reference);
+
+        if (Scribe.mode == LoadSaveMode.PostLoadInit)
+        {
+            squatters ??= new List<Pawn>();
+            squatters.RemoveAll(p => p == null);
+        }
     }
 }

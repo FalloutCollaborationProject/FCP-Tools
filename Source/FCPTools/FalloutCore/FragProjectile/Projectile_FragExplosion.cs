@@ -9,7 +9,7 @@ public class Projectile_FragExplosion : Projectile_Explosive
     protected override void Tick()
     {
         base.Tick();
-        if (extension.isExplodePreemptively)
+        if (!Destroyed && extension.isExplodePreemptively)
         {
             if (ticksToImpact <= extension.tickBeforeImpact)
             {
@@ -63,6 +63,10 @@ public class Projectile_FragExplosion : Projectile_Explosive
 
         if (extension.isCone)
         {
+            if (launcher == null)
+            {
+                return;
+            }
             IntVec3 finalPos = new IntVec3(Mathf.Max(launcher.PositionHeld.x, positionHeld.x) - Mathf.Min(launcher.PositionHeld.x, positionHeld.x), 0, Mathf.Max(launcher.PositionHeld.z, positionHeld.z) - Mathf.Min(launcher.PositionHeld.z, positionHeld.z));
 
             if (thing.PositionHeld.x > positionHeld.x)

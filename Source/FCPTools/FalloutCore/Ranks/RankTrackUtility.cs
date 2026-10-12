@@ -297,7 +297,7 @@ public static class RankTrackUtility
         {
             RoyalTitleDef current = pawn.royalty.GetCurrentTitle(grantingFaction);
             if (current == null || current.seniority < tier.correspondingRoyalTitle.seniority)
-                pawn.royalty.SetTitle(grantingFaction, tier.correspondingRoyalTitle, grantRewards: true, rewardsOnlyForNewestTitle: false, sendLetter: false);
+                SetTitleKeepFavor(pawn, grantingFaction, tier.correspondingRoyalTitle, grantRewards: true);
         }
 
         if (tier.correspondingIdeoRole != null && ModsConfig.IdeologyActive && pawn.Ideo != null)
@@ -305,6 +305,14 @@ public static class RankTrackUtility
             if (pawn.Ideo.GetPrecept(tier.correspondingIdeoRole) is Precept_Role role && !role.IsAssigned(pawn))
                 role.Assign(pawn, true);
         }
+    }
+
+    private static void SetTitleKeepFavor(Pawn pawn, Faction faction, RoyalTitleDef title, bool grantRewards)
+    {
+        int favor = pawn.royalty.GetFavor(faction);
+        pawn.royalty.SetTitle(faction, title, grantRewards, rewardsOnlyForNewestTitle: false, sendLetter: false);
+        if (favor > 0)
+            pawn.royalty.SetFavor(faction, favor, notifyOnFavorChanged: false);
     }
 
     public static void Demote(Pawn pawn, PawnRankData data, string reasonTextKey)
@@ -346,7 +354,7 @@ public static class RankTrackUtility
     {
         Faction grantingFaction = GetOwningFaction(data.track);
         if (newTier.correspondingRoyalTitle != null && ModsConfig.RoyaltyActive && pawn.royalty != null && grantingFaction != null)
-            pawn.royalty.SetTitle(grantingFaction, newTier.correspondingRoyalTitle, grantRewards: false, rewardsOnlyForNewestTitle: false, sendLetter: false);
+            SetTitleKeepFavor(pawn, grantingFaction, newTier.correspondingRoyalTitle, grantRewards: false);
 
         if (demotedFrom.correspondingIdeoRole != null && demotedFrom.correspondingIdeoRole != newTier.correspondingIdeoRole
             && ModsConfig.IdeologyActive && pawn.Ideo != null)

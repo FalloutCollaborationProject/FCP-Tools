@@ -87,19 +87,17 @@ public static class WillingToAnimalsInCagePatch
 
     private static void Postfix(ref IEnumerable<Thing> __result, Pawn_TraderTracker __instance, Pawn ___pawn)
     {
-        List<Thing> list = __result.ToList();
-        if (ModsConfig.AnomalyActive)
+        if (___pawn.Map == null)
         {
-            List<Building> list1 = ___pawn.Map.listerBuildings.allBuildingsColonist.Where(c => c.HasComp<CompAnimalCage>()).ToList();
-            foreach (Building item in list1)
+            return;
+        }
+        List<Thing> list = __result.ToList();
+        foreach (Building item in ___pawn.Map.listerBuildings.allBuildingsColonist)
+        {
+            Pawn occupant = item.GetComp<CompAnimalCage>()?.Occupant;
+            if (occupant != null)
             {
-                //Log.Message(item.Label);
-                CompAnimalCage comp = item.GetComp<CompAnimalCage>();
-                if (comp.Occupant != null)
-                {
-                    //Log.Message(comp.HeldPawn.Label);
-                    list.Add(comp.Occupant);
-                }
+                list.Add(occupant);
             }
         }
         __result = list;
@@ -113,12 +111,12 @@ public static class CageTradeDealPatch
         return AccessTools.Method(typeof(TradeDeal), "InSellablePosition");
     }
 
-    private static void Postfix(ref bool __result, TradeDeal __instance, Thing t, out string reason)
+    private static void Postfix(ref bool __result, TradeDeal __instance, Thing t, ref string reason)
     {
-        if (!__result && !t.Spawned && t is Pawn pawn && t.holdingOwner != null && pawn.health.capacities.CanBeAwake && !pawn.DeadOrDowned)
+        if (!__result && !t.Spawned && t is Pawn pawn && t.holdingOwner?.Owner is CompAnimalCage && pawn.health.capacities.CanBeAwake && !pawn.DeadOrDowned)
         {
             __result = true;
+            reason = null;
         }
-        reason = null;
     }
 }

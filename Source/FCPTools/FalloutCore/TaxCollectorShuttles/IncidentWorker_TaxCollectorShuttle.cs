@@ -1,5 +1,6 @@
 using FCP.Core.Shuttles;
 using FCP.Factions;
+using Verse.AI.Group;
 
 namespace FCP.TaxCollectorShuttles;
 
@@ -39,6 +40,10 @@ public class IncidentWorker_TaxCollectorShuttle : IncidentWorker_CaravanArrivalT
 
         ShuttleArrivalAction.Arrive(pawns.Cast<Thing>().ToList(), map, parms.faction, shuttleExtension, parms.spawnCenter);
         SendLetter(parms, pawns, parms.traderKind);
+
+        if (!RCellFinder.TryFindRandomSpotJustOutsideColony(parms.spawnCenter, map, out IntVec3 chillSpot))
+            chillSpot = parms.spawnCenter;
+        LordMaker.MakeNewLord(parms.faction, new LordJob_TradeWithColony(parms.faction, chillSpot), map, pawns);
 
         return true;
     }

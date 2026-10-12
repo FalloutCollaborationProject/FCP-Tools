@@ -44,10 +44,22 @@ public class CharacterUniqueItemDefinition : CharacterBaseDefinition
         var item = ThingMaker.MakeThing(uniqueItem, uniqueItem.MadeFromStuff ? GenStuff.RandomStuffFor(uniqueItem) : null);
         if (item is ThingWithComps weapon && weapon.def.IsWeapon)
         {
-            if (pawn.equipment != null && pawn.equipment.Primary == null)
+            if (pawn.equipment == null)
             {
-                pawn.equipment.AddEquipment(weapon);
+                item.Destroy();
+                return;
             }
+
+            ThingWithComps generated = pawn.equipment.Primary;
+            if (generated != null)
+            {
+                pawn.equipment.Remove(generated);
+                if (pawn.inventory == null || !pawn.inventory.innerContainer.TryAdd(generated))
+                {
+                    generated.Destroy();
+                }
+            }
+            pawn.equipment.AddEquipment(weapon);
         }
         else
         {

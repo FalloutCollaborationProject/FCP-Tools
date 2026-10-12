@@ -40,6 +40,7 @@ public class WorldEnlistTracker : WorldComponent
                 if (EnlistUtils.EnlistStates[subData.Key.defName] && subData.Value)
                 {
                     yield return data.Key;
+                    break;
                 }
             }
         }
@@ -104,7 +105,7 @@ public class WorldEnlistTracker : WorldComponent
 
     public void CallReinforcement(Faction otherFaction, FactionEnlistOptionsDef options, Pawn caller, IntVec3 cell)
     {
-        factionOptionsContainer[otherFaction].factionsReinforcementsLastTick[options] = Find.TickManager.TicksGame + options.reinforcementCallCooldownTicks;
+        factionOptionsContainer[otherFaction].factionsReinforcementsLastTick[options] = Find.TickManager.TicksGame;
         int curGoodwill = otherFaction.GoodwillWith(caller.Faction);
         ReinforcementOption reinforcementOption = GetReinforcementOption(curGoodwill, options);
         IncidentParms parms = new IncidentParms
