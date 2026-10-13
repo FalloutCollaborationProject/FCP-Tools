@@ -72,7 +72,7 @@ public static class Patch_TryFindTile
 [HarmonyPatch("TryAffectGoodwillWith")]
 public static class Patch_TryAffectGoodwillWith
 {
-    public static void Postfix(Faction __instance, Faction other, int goodwillChange, bool canSendMessage = true, bool canSendHostilityLetter = true, string reason = null, GlobalTargetInfo? lookTarget = null)
+    public static void Postfix(Faction __instance, Faction other, int goodwillChange, bool canSendMessage = true, bool canSendHostilityLetter = true, HistoryEventDef reason = null, GlobalTargetInfo? lookTarget = null)
     {
         var worldTracker = WorldEnlistTracker.Instance;
         if (__instance != Faction.OfPlayer && other == Faction.OfPlayer && other.RelationKindWith(__instance) == FactionRelationKind.Hostile)
