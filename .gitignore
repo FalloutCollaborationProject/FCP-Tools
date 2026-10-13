@@ -1,2 +1,8 @@
 Source/**/obj/
 Source/**/bin/
+/Source/ApparelExtension/.idea/.idea.ApparelExtension/.idea
+/Source/Enlist/.idea/.idea.Enlist.dir/.idea
+/Source/FCPTools/FalloutCore/.idea/.idea.FalloutCore.dir/.idea
+/Source/FCPTools/FalloutCore/Folder.DotSettings.user
+/Source/FCPTools.sln.DotSettings.user
+/Source/FCP_Lasers/.idea/.idea.FCP_Lasers.dir/.idea

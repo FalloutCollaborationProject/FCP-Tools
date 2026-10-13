@@ -1,41 +1,41 @@
 <Project>
-  
-  <!-- Targets -->
-  <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
-    <LangVersion>12</LangVersion>
-  </PropertyGroup>
 
-  <!-- Assembly Info -->
-  <PropertyGroup>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
-    <Copyright>Copyright ©Fallout Collaboration Project 2024</Copyright>
-    <Authors>Fallout Collaboration Project</Authors>
-    <Product>FalloutCollaborationProject</Product>
-  </PropertyGroup>
-  
-  <!-- So it doesn't do Assemblies/net472/*.dll -->
-  <PropertyGroup>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
-  </PropertyGroup>
-  
-  <!-- References -->
-  <ItemGroup>
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.*-*" />
-    <PackageReference Include="Lib.Harmony" Version="2.3.*" ExcludeAssets="runtime" />
-  </ItemGroup>
+    <!-- Targets -->
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <LangVersion>14</LangVersion>
+    </PropertyGroup>
 
-  <!-- Global Usings -->
-  <ItemGroup>
-    <Using Include="Verse"/>
-    <Using Include="RimWorld"/>
-    <Using Include="System"/>
-    <Using Include="System.Linq"/>
-    <Using Include="System.IO"/>
-    <Using Include="System.Collections.Generic"/>
-    <Using Include="JetBrains.Annotations"/>
-  </ItemGroup>
-  
+    <!-- Assembly Info -->
+    <PropertyGroup>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <FileVersion>1.0.0.0</FileVersion>
+        <Copyright>Copyright ©Fallout Collaboration Project 2024</Copyright>
+        <Authors>Fallout Collaboration Project</Authors>
+        <Product>FalloutCollaborationProject</Product>
+    </PropertyGroup>
+
+    <!-- So it doesn't do Assemblies/net472/*.dll -->
+    <PropertyGroup>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    </PropertyGroup>
+
+    <!-- References -->
+    <ItemGroup>
+        <!--<PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.*-*" />-->
+        <PackageReference Include="Lib.Harmony" Version="3.0.0-rc.2" ExcludeAssets="runtime"/>
+    </ItemGroup>
+
+    <!-- Global Usings -->
+    <ItemGroup>
+        <Using Include="Verse"/>
+        <Using Include="RimWorld"/>
+        <Using Include="System"/>
+        <Using Include="System.Linq"/>
+        <Using Include="System.IO"/>
+        <Using Include="System.Collections.Generic"/>
+        <Using Include="JetBrains.Annotations"/>
+    </ItemGroup>
+
 </Project>
