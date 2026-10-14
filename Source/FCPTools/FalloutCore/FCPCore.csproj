@@ -23,25 +23,4 @@
     <ItemGroup>
         <Using Include="FCP.Core.Logging"/>
     </ItemGroup>
-
-    <ItemGroup>
-        <Reference Include="Assembly-CSharp">
-            <HintPath>..\..\..\..\..\Assembly-CSharp.dll</HintPath>
-            <Private>False</Private>
-        </Reference>
-        <Reference Include="UnityStubs">
-            <HintPath>..\..\..\..\..\UnityStubs.dll</HintPath>
-            <Private>False</Private>
-        </Reference>
-        <Reference Include="Waylith">
-            <HintPath>..\..\..\..\..\Waylith.dll</HintPath>
-            <Private>False</Private>
-        </Reference>
-    </ItemGroup>
-
-    <ItemGroup>
-        <Reference Include="System.Data.DataSetExtensions"/>
-        <Reference Include="Microsoft.CSharp"/>
-        <Reference Include="System.Net.Http"/>
-    </ItemGroup>
 </Project>
