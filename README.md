@@ -1,4 +1,4 @@
-# FCP - Tools
+# FCP - Tools  ![release number](https://img.shields.io/badge/release-unreleased-red) [![RimWorld 1.6 / 1.7](https://img.shields.io/badge/RimWorld-1.6%20%2F%201.7-green.svg?longCache=true&style=flat)](http://rimworldgame.com/)
 
 ![release](https://img.shields.io/badge/release-unreleased-red)
 [![RimWorld 1.6](https://img.shields.io/badge/RimWorld-1.6-green.svg)](http://rimworldgame.com/)
@@ -97,3 +97,10 @@ Portions of the materials used to create this content/mod are trademarks and/or 
 Portions of the materials used to create this content/mod are trademarks and/or copyrighted works of **Ludeon Studios Inc**. All rights reserved by Ludeon. This content/mod is not official and is not endorsed by Ludeon.
 
 By forking, cloning, or pull requesting this software, you agree to grant **Ranger Rick** and the **Fallout Collaboration Project** a non transferable option to claim, for now and for ever more, your immortal soul. Should We wish to exercise this option, you agree to surrender your immortal soul, and any claim you may have on it, within 5 (five) working days of receiving written notification from the FCP or one of its duly authorised minions. We reserve the right to serve such notice in 6 (six) foot high letters of fire, however we can accept no liability for any loss or damage caused by such an act.
+
+
+Copyright (c) 2026 Ranger Rick. All Rights Reserved.
+
+No part of this mod (code, assets, textures, XML, or text) may be copied,
+modified, redistributed, or reuploaded without prior written permission
+from the author.
