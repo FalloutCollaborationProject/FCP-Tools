@@ -3,14 +3,40 @@
 
     <!--__________ Shaders __________-->
 
-    <!-- V.A.T.S. Zoom Shader -->
+    <!--
+        V.A.T.S. Zoom lens. Magnifies the scene behind the quad.
+        Queue 3174 is after the map visuals and before fog of war (3175); the scene grab is
+        taken at the same queue so the lens magnifies everything drawn up to that point.
+    -->
+    <ShaderDef>
+        <defName>FCP_VATSZoom</defName>
+        <shaderProgram>
+            <vertexShaderFileName>FCP_VATSZoom.vert.glsl</vertexShaderFileName>
+            <fragmentShaderFileName>FCP_VATSZoom.frag.glsl</fragmentShaderFileName>
+            <useTexture>false</useTexture>
+            <flipTextureST>false</flipTextureST>
+            <transparent>true</transparent>
+            <depthTest>false</depthTest>
+            <depthWrite>false</depthWrite>
+            <cullMode>None</cullMode>
+            <blendMode>Alpha</blendMode>
+            <renderQueue>3174</renderQueue>
+            <sceneGrab>
+                <name>FCP_VATSZoom</name>
+                <queue>3174</queue>
+            </sceneGrab>
+            <textureWrapOverrides>
+                <li>
+                    <key>_Mask</key>
+                    <value>Clamp</value>
+                </li>
+            </textureWrapOverrides>
+        </shaderProgram>
+    </ShaderDef>
 
     <ShaderTypeDef>
-        <defName>FCP_ZoomShader</defName>
-        <shaderPath>Assets/Shaders/ZoomShader.shader</shaderPath>
-        <modExtensions>
-            <li Class="FCP.Core.ModExtension_Shader" />
-        </modExtensions>
+        <defName>FCP_VATSZoom</defName>
+        <shaderPath>FCP_VATSZoom</shaderPath>
     </ShaderTypeDef>
 
 </Defs>

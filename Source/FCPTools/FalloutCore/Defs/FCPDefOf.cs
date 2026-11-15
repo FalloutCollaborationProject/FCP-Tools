@@ -34,6 +34,7 @@ public class FCPDefOf
 
     public static JobDef FCP_VATS_AttackHybrid;
     public static ThingDef FCP_VATS_Zoomer;
+    public static ShaderTypeDef FCP_VATSZoom;
     public static EffecterDef FCP_VATSLegendaryEffect_Explosive_Explosion;
 
     public static KeyBindingDef FCP_VatsKeyBinding;

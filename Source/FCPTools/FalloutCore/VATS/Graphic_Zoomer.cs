@@ -1,24 +1,23 @@
-﻿using FCP.Core.Unity;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace FCP.Core.VATS;
 
 public class Graphic_Zoomer : Graphic_Single
 {
     public Thing Parent;
-    public override Material MatSingle => Materials.ZoomMat;
+    public override Material MatSingle => VATSMaterials.ZoomMat;
 
-    public override Material MatWest => Materials.ZoomMat;
+    public override Material MatWest => VATSMaterials.ZoomMat;
 
-    public override Material MatSouth => Materials.ZoomMat;
+    public override Material MatSouth => VATSMaterials.ZoomMat;
 
-    public override Material MatEast => Materials.ZoomMat;
+    public override Material MatEast => VATSMaterials.ZoomMat;
 
-    public override Material MatNorth => Materials.ZoomMat;
+    public override Material MatNorth => VATSMaterials.ZoomMat;
 
     public override Material MatAt(Rot4 rot, Thing thing = null)
     {
-        return Materials.ZoomMat;
+        return VATSMaterials.ZoomMat;
     }
 
     public override void DrawWorker(Vector3 loc, Rot4 rot, ThingDef thingDef, Thing thing, float extraRotation)

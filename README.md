@@ -38,9 +38,8 @@ Use the official updater tool to easily install and keep FCP-Tools up to date:
    - Click code -> download as zip file
    - This is located in your game install, for steam you can right click RimWorld -> manage -> browse local files
    - Extract so that your folders look like RimWorld/Mods/FCP-Tools-Main and FCP-Tools-Main has the About Folder
-2. Download [FCP-UnityAssets](https://github.com/FalloutCollaborationProject/FCP-UnityAssets) separately and extract it into the `FCP-UnityAssets` folder inside the mod directory. The FCP Mod Updater does this automatically, but manual zip downloads do not include submodule contents.
-3. Enable in the mod manager
-4. Load after Harmony, and Core DLCs, but high up.
+2. Enable in the mod manager
+3. Load after Harmony, and Core DLCs, but high up.
 
 ### Alternative: Git
 ```bash
