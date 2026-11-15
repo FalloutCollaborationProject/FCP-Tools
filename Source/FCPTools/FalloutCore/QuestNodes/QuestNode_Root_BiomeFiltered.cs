@@ -17,19 +17,19 @@ public class QuestNode_GetSiteTile_BiomeFiltered : QuestNode
 
 	protected override bool TestRunInt(Slate slate)
 	{
-		return Find.AnyPlayerHomeMap != null;
+		return TryFindTile(slate, out _);
 	}
 
 	protected override void RunInt()
 	{
 		Slate slate = QuestGen.slate;
-		if (TryFindTile(out int tile))
+		if (TryFindTile(slate, out int tile))
 		{
-			slate.Set(storeAs.GetValue(slate), tile);
+			slate.Set(storeAs.GetValue(slate), (PlanetTile)tile);
 		}
 	}
 
-	private bool TryFindTile(out int tile)
+	private bool TryFindTile(Slate slate, out int tile)
 	{
 		tile = -1;
 		Map map = Find.AnyPlayerHomeMap;
@@ -39,22 +39,11 @@ public class QuestNode_GetSiteTile_BiomeFiltered : QuestNode
 		}
 		
 		int colonyTile = map.Tile;
-		int min = (int)(minDist.GetValue(QuestGen.slate) ?? 7f);
-		int max = (int)(maxDist.GetValue(QuestGen.slate) ?? 27f);
+		int min = (int)(minDist.GetValue(slate) ?? 7f);
+		int max = (int)(maxDist.GetValue(slate) ?? 27f);
 		WorldGrid grid = Find.WorldGrid;
-		bool prefer = preferCloserTiles.GetValue(QuestGen.slate) ?? false;
+		bool prefer = preferCloserTiles.GetValue(slate) ?? false;
 		bool filterBiomes = allowedBiomes != null && allowedBiomes.Count > 0;
-		
-		if (filterBiomes)
-		{
-			string biomeList = "";
-			for (int i = 0; i < allowedBiomes.Count; i++)
-			{
-				if (i > 0) biomeList += ", ";
-				biomeList += allowedBiomes[i].defName;
-			}
-			Log.Message($"[NCRCF Quest] Filtering for {allowedBiomes.Count} biomes: {biomeList}");
-		}
 		
 		tmpCandidates.Clear();
 		for (int i = 0; i < grid.TilesCount; i++)
@@ -65,7 +54,7 @@ public class QuestNode_GetSiteTile_BiomeFiltered : QuestNode
 				continue;
 			}
 			BiomeDef biome = data.PrimaryBiome;
-			if (biome == null || !biome.implemented || data.hilliness == Hilliness.Impassable)
+			if (biome == null || !biome.implemented || data.hilliness == Hilliness.Impassable || Find.WorldObjects.AnyWorldObjectAt(i))
 			{
 				continue;
 			}
@@ -99,8 +88,6 @@ public class QuestNode_GetSiteTile_BiomeFiltered : QuestNode
 			return false;
 		}
 		
-		Log.Message($"[NCRCF Quest] Found {tmpCandidates.Count} valid candidate tiles");
-		
 		if (prefer)
 		{
 			float totalWeight = 0f;
@@ -118,14 +105,12 @@ public class QuestNode_GetSiteTile_BiomeFiltered : QuestNode
 				if (accum >= rand)
 				{
 					tile = tmpCandidates[i];
-					Log.Message($"[NCRCF Quest] Selected tile {tile} with biome {Find.WorldGrid[tile].PrimaryBiome.defName}");
 					return true;
 				}
 			}
 		}
 		
 		tile = tmpCandidates.RandomElement();
-		Log.Message($"[NCRCF Quest] Selected random tile {tile} with biome {Find.WorldGrid[tile].PrimaryBiome.defName}");
 		return true;
 	}
 	

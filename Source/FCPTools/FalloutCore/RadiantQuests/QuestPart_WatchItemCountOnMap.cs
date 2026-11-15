@@ -8,10 +8,13 @@ public class QuestPart_WatchItemCountOnMap : QuestPart
 {
     public Map map;
     public ThingDef itemDef;
+    public ThingCategoryDef itemCategory;
     public int requiredCount;
     public string outSignalComplete;
 
     internal WatchItemCountComp comp;
+
+    public int CountOnMap => itemCategory != null ? map.resourceCounter.GetCountIn(itemCategory) : map.resourceCounter.GetCount(itemDef);
 
     public void StartWatching()
     {
@@ -26,15 +29,23 @@ public class QuestPart_WatchItemCountOnMap : QuestPart
     public void Complete()
     {
         int remaining = requiredCount;
-        foreach (Thing stack in map.listerThings.ThingsOfDef(itemDef).ToList())
+        IEnumerable<ThingDef> defs = itemCategory != null ? itemCategory.DescendantThingDefs : new[] { itemDef };
+        foreach (ThingDef def in defs)
         {
-            if (remaining <= 0)
+            foreach (Thing stack in map.listerThings.ThingsOfDef(def).ToList())
             {
-                break;
+                if (remaining <= 0)
+                {
+                    break;
+                }
+                if (!stack.IsInAnyStorage())
+                {
+                    continue;
+                }
+                int take = Mathf.Min(remaining, stack.stackCount);
+                remaining -= take;
+                stack.SplitOff(take).Destroy();
             }
-            int take = Mathf.Min(remaining, stack.stackCount);
-            remaining -= take;
-            stack.SplitOff(take).Destroy();
         }
 
         if (!outSignalComplete.NullOrEmpty())
@@ -58,6 +69,7 @@ public class QuestPart_WatchItemCountOnMap : QuestPart
         base.ExposeData();
         Scribe_References.Look(ref map, "map");
         Scribe_Defs.Look(ref itemDef, "itemDef");
+        Scribe_Defs.Look(ref itemCategory, "itemCategory");
         Scribe_Values.Look(ref requiredCount, "requiredCount");
         Scribe_Values.Look(ref outSignalComplete, "outSignalComplete");
     }
@@ -97,12 +109,12 @@ public class WatchItemCountComp : GameComponent
         }
         ticksUntilNextCheck = CheckIntervalTicks;
 
-        if (questPart.map == null || questPart.itemDef == null || !Find.Maps.Contains(questPart.map))
+        if (questPart.quest?.State != QuestState.Ongoing || questPart.map == null || questPart.itemDef == null && questPart.itemCategory == null || !Find.Maps.Contains(questPart.map))
         {
             return;
         }
 
-        if (questPart.map.resourceCounter.GetCount(questPart.itemDef) < questPart.requiredCount)
+        if (questPart.CountOnMap < questPart.requiredCount)
         {
             return;
         }

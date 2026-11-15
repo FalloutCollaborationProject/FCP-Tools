@@ -4,7 +4,7 @@ namespace FCP.Core.RadiantQuests;
 
 public class QuestNode_AddCacheSecuredPart : QuestNode
 {
-    public SlateRef<int> mapTile;
+    public SlateRef<RimWorld.Planet.PlanetTile> mapTile;
     public SlateRef<string> completeSignal;
 
     protected override bool TestRunInt(Slate slate)
@@ -17,7 +17,7 @@ public class QuestNode_AddCacheSecuredPart : QuestNode
         Slate slate = QuestGen.slate;
         QuestPart_CacheSecured questPart = new QuestPart_CacheSecured();
         questPart.checkSignal = "site.AllEnemiesDefeated";
-        questPart.mapTile = mapTile.GetValue(slate);
+        questPart.mapTile = mapTile.GetValue(slate).tileId;
         questPart.outSignal = QuestGenUtility.HardcodedSignalWithQuestID(completeSignal.GetValue(slate));
         QuestGen.quest.AddPart(questPart);
     }

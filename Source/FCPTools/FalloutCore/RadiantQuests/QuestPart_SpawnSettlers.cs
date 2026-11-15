@@ -29,6 +29,11 @@ public class QuestPart_SpawnSettlers : QuestPart
         }
     }
 
+    public override bool QuestPartReserves(Pawn p)
+    {
+        return pawns != null && pawns.Contains(p);
+    }
+
     public override void ExposeData()
     {
         base.ExposeData();

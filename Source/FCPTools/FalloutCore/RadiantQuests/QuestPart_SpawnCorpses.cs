@@ -41,6 +41,11 @@ public class QuestPart_SpawnCorpses : QuestPart
         spawned = true;
     }
 
+    public override bool QuestPartReserves(Pawn p)
+    {
+        return pawns != null && pawns.Contains(p);
+    }
+
     public override void ExposeData()
     {
         base.ExposeData();

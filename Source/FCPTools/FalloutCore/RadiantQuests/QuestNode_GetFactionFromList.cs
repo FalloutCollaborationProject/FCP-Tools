@@ -21,8 +21,11 @@ public class QuestNode_GetFactionFromList : QuestNode
         
         bool checkHostile = mustBeNonHostile.GetValue(slate);
         var validFactions = checkHostile ? allFactions.Where(f => !f.HostileTo(Faction.OfPlayer)).ToList() : allFactions;
-        
-        return validFactions.Any();
+
+        if (!validFactions.TryRandomElement(out Faction faction))
+            return false;
+        slate.Set(storeAs.GetValue(slate), faction);
+        return true;
     }
 
     protected override void RunInt()

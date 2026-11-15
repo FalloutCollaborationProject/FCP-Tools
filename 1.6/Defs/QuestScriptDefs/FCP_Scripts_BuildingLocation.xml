@@ -64,6 +64,7 @@
                 </li>
                 <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>enemyFaction</storeAs>
+                    <mustBeNonHostile>false</mustBeNonHostile>
                     <factionDefs>
                         <li>Empire</li>
                     </factionDefs>

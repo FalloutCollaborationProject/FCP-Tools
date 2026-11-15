@@ -61,7 +61,6 @@ public static class JobDriver_OfferHelpPatch
                 }
                 Find.LetterStack.ReceiveLetter("LetterLabelRescueQuestFinished".Translate(), "LetterRescueQuestFinished".Translate(__instance.OtherPawn.Named("PAWN")).AdjustedFor(__instance.OtherPawn).CapitalizeFirst(), LetterDefOf.PositiveEvent, __instance.OtherPawn);
                 GameComponent_PawnRescue.Instance.ClearWillingToJoin(__instance.OtherPawn);
-                QuestUtility.SendQuestTargetSignals(__instance.OtherPawn.questTags, "RescuedFromPrison", __instance.OtherPawn.Named("SUBJECT"));
             }
             else
             {
@@ -69,6 +68,7 @@ public static class JobDriver_OfferHelpPatch
 
                 //__instance.OtherPawn.jobs.TryTakeOrderedJob(JobMaker.MakeJob(DefDatabase<JobDef>.GetNamedSilentFail("Job"), __instance.OtherPawn), JobTag.Escaping, false);
             }
+            QuestUtility.SendQuestTargetSignals(__instance.OtherPawn.questTags, "RescuedFromPrison", __instance.OtherPawn.Named("SUBJECT"));
 
         });
     }

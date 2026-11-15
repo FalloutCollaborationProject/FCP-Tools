@@ -8,6 +8,7 @@ public class QuestNode_WatchItemCountOnMap : QuestNode
 {
     public SlateRef<Map> map;
     public SlateRef<ThingDef> itemDef;
+    public SlateRef<ThingCategoryDef> itemCategory;
     public SlateRef<int> requiredCount;
     public SlateRef<string> outSignalComplete;
 
@@ -20,6 +21,7 @@ public class QuestNode_WatchItemCountOnMap : QuestNode
         {
             map = map.GetValue(slate),
             itemDef = itemDef.GetValue(slate),
+            itemCategory = itemCategory.GetValue(slate),
             requiredCount = requiredCount.GetValue(slate),
             outSignalComplete = QuestGenUtility.HardcodedSignalWithQuestID(outSignalComplete.GetValue(slate))
         };

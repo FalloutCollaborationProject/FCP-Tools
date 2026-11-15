@@ -26,20 +26,39 @@ public class QuestPart_DeliverPawns : QuestPart
 
         int requiredCount = 0;
         int deliveredCount = 0;
+        List<Thing> items = null;
         foreach (Pawn pawn in pawnsToDeliver)
         {
             if (pawn == null) continue;
-            if (allowDead && pawn.Dead) continue;
             requiredCount++;
             if (caravan.ContainsPawn(pawn))
             {
                 deliveredCount++;
+            }
+            else if (allowDead && pawn.Dead && pawn.Corpse != null)
+            {
+                items ??= CaravanInventoryUtility.AllInventoryItems(caravan);
+                if (items.Contains(pawn.Corpse))
+                    deliveredCount++;
             }
         }
 
         if (deliveredCount == requiredCount)
         {
             Complete(outSignalSuccess);
+            foreach (Pawn pawn in pawnsToDeliver)
+            {
+                if (pawn == null) continue;
+                if (caravan.ContainsPawn(pawn))
+                {
+                    caravan.RemovePawn(pawn);
+                    Find.WorldPawns.PassToWorld(pawn);
+                }
+                else
+                {
+                    pawn.Corpse?.Destroy();
+                }
+            }
         }
         else
         {
@@ -53,6 +72,11 @@ public class QuestPart_DeliverPawns : QuestPart
         {
             Find.SignalManager.SendSignal(new Signal(signal, quest.Named("SUBJECT")));
         }
+    }
+
+    public override bool QuestPartReserves(Pawn p)
+    {
+        return pawnsToDeliver != null && pawnsToDeliver.Contains(p);
     }
 
     public override void ExposeData()

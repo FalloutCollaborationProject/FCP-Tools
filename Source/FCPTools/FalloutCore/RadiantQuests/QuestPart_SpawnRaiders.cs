@@ -59,7 +59,7 @@ public class QuestPart_SpawnRaiders : QuestPart
 
     public override bool QuestPartReserves(Pawn p)
     {
-        return false;
+        return pawns != null && pawns.Contains(p);
     }
 
     public override void ExposeData()

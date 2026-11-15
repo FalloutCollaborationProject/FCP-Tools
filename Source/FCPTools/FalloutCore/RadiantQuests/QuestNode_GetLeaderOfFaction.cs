@@ -15,7 +15,7 @@ public class QuestNode_GetLeaderOfFaction : QuestNode
 
     protected override bool TestRunInt(Slate slate)
     {
-        return factionDef != null || faction != null || factionToUse != null;
+        return FindFaction(slate)?.leader != null;
     }
 
     private bool TryFindFaction(out Faction outFaction, Slate slate)
@@ -33,21 +33,23 @@ public class QuestNode_GetLeaderOfFaction : QuestNode
         SetVars(QuestGen.slate);
     }
 
+    private Faction FindFaction(Slate slate)
+    {
+        if (factionToUse != null && factionToUse.TryGetValue(slate, out Faction ftu) && ftu != null)
+        {
+            return ftu;
+        }
+        if (faction != null && faction.TryGetValue(slate, out Faction f) && f != null)
+        {
+            return f;
+        }
+        TryFindFaction(out Faction found, slate);
+        return found;
+    }
+
     private void SetVars(Slate slate)
     {
-        Faction lfaction = null;
-        if (factionToUse != null && factionToUse.TryGetValue(slate, out Faction ftu))
-        {
-            lfaction = ftu;
-        }
-        else if (faction != null && faction.TryGetValue(slate, out Faction f))
-        {
-            lfaction = f;
-        }
-        else if (factionDef != null)
-        {
-            TryFindFaction(out lfaction, slate);
-        }
+        Faction lfaction = FindFaction(slate);
 
         if (lfaction == null)
         {

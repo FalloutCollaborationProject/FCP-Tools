@@ -20,7 +20,7 @@ public class QuestNode_SpawnRaiders : QuestNode
         questPart.inSignal = QuestGenUtility.HardcodedSignalWithQuestID(inSignal.GetValue(slate)) ?? QuestGen.slate.Get<string>("inSignal");
         questPart.pawns = pawns.GetValue(slate).ToList();
         questPart.radius = radius.TryGetValue(slate, out int rad) ? rad : 20;
-        questPart.mapTile = slate.Get<int>("siteTile");
+        questPart.mapTile = slate.Get<RimWorld.Planet.PlanetTile>("siteTile").tileId;
         questPart.spawnOnEdge = spawnOnEdge.GetValue(slate);
         QuestGen.quest.AddPart(questPart);
     }

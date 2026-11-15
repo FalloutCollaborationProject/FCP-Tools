@@ -13,7 +13,7 @@ public class SitePartWorker_PawnRescue : SitePartWorker
         int enemiesCount = GetEnemiesCount(part.site, part.parms);
         outExtraDescriptionRules.Add(new Rule_String("enemiesCount", enemiesCount.ToString()));
         outExtraDescriptionRules.Add(new Rule_String("enemiesLabel", GetEnemiesLabel(part.site, enemiesCount)));
-        Pawn pawn = PawnRescueUtility.GeneratePrisoner(part.site.Tile, slate.Get<PawnKindDef>("prisonerPawnKind", PawnKindDefOf.Slave), slate.Get<Faction>("prisonerFaction"));
+        Pawn pawn = PawnRescueUtility.GeneratePrisoner(part.site.Tile, slate.Get<PawnKindDef>("prisonerPawnKind", PawnKindDefOf.Slave), slate.Get<Faction>("prisonerFaction"), part.site.Faction);
         if (slate.Get<float>("chanceToJoin") >= slate.Get<float>("chanceToJoinVal"))
         {
             GameComponent_PawnRescue.Instance.MarkWillingToJoin(pawn);

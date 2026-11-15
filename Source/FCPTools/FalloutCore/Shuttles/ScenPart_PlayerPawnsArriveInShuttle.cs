@@ -17,6 +17,16 @@ public class ScenPart_PlayerPawnsArriveInShuttle : ScenPart
         {
             allThings.AddRange(part.PlayerStartingThings());
         }
+        foreach (Pawn pawn in Find.GameInitData.startingAndOptionalPawns)
+        {
+            if (Find.GameInitData.startingPossessions.TryGetValue(pawn, out var possessions))
+            {
+                foreach (ThingDefCount item in possessions)
+                {
+                    allThings.Add(StartingPawnUtility.GenerateStartingPossession(item));
+                }
+            }
+        }
         foreach (var thing in allThings)
         {
             if (thing.def.CanHaveFaction)

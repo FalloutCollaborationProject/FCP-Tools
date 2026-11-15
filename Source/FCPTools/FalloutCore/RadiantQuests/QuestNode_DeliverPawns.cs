@@ -24,8 +24,8 @@ public class QuestNode_DeliverPawns : QuestNode
         {
             inSignal = QuestGenUtility.HardcodedSignalWithQuestID(inSignal.GetValue(slate)) ?? slate.Get<string>("inSignal"),
             pawnsToDeliver = pawnList.ToList(),
-            outSignalSuccess = outSignalSuccess.GetValue(slate),
-            outSignalFailed = outSignalFailed.GetValue(slate),
+            outSignalSuccess = QuestGenUtility.HardcodedSignalWithQuestID(outSignalSuccess.GetValue(slate)),
+            outSignalFailed = QuestGenUtility.HardcodedSignalWithQuestID(outSignalFailed.GetValue(slate)),
             allowDead = allowDead.GetValue(slate) ?? false
         };
         

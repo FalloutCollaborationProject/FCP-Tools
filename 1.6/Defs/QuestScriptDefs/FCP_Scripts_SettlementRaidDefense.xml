@@ -52,6 +52,7 @@
                 </li>
                 <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
                     <storeAs>enemyFaction</storeAs>
+                    <mustBeNonHostile>false</mustBeNonHostile>
                     <!--The faction def that will raid-->
                     <factionDefs>
                         <li>PirateWaster</li>

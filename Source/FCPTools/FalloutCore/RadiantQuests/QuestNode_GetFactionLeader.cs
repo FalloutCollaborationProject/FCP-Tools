@@ -12,9 +12,7 @@ public class QuestNode_GetFactionLeader : QuestNode
     protected override bool TestRunInt(Slate slate)
     {
         Faction fac = faction.GetValue(slate);
-        bool result = fac?.leader != null && !fac.leader.Dead;
-        Log.Message($"[VertibirdCrash] QuestNode_GetFactionLeader.TestRunInt: faction={fac?.Name.ToStringSafe() ?? "null"}, leader={fac?.leader?.Name.ToStringSafe() ?? "null"}, result={result}");
-        return result;
+        return fac?.leader != null && !fac.leader.Dead;
     }
 
     protected override void RunInt()

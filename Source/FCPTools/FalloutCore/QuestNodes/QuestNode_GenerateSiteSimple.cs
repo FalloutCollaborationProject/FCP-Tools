@@ -10,7 +10,7 @@ public class QuestNode_GenerateSiteSimple : QuestNode
 {
 	[NoTranslate]
 	public SlateRef<string> storeAs;
-	public SlateRef<int?> tile;
+	public SlateRef<PlanetTile> tile;
 	public SlateRef<Faction> faction;
 	public SlateRef<string> factionDefName;
 	public SlateRef<float?> threatPoints;
@@ -24,8 +24,8 @@ public class QuestNode_GenerateSiteSimple : QuestNode
 	protected override void RunInt()
 	{
 		Slate slate = QuestGen.slate;
-		int tileInt = tile.GetValue(slate) ?? -1;
-		if (tileInt < 0)
+		PlanetTile tileValue = tile.GetValue(slate);
+		if (!tileValue.Valid)
 		{
 			Log.Warning("[QuestNode_GenerateSiteSimple] Invalid tile");
 			return;
@@ -34,14 +34,12 @@ public class QuestNode_GenerateSiteSimple : QuestNode
 		if (factionValue == null)
 		{
 			string defName = factionDefName.GetValue(slate);
-			Log.Message("[QuestNode_GenerateSiteSimple] Faction is null, trying factionDefName: " + defName);
 			if (!string.IsNullOrEmpty(defName))
 			{
 				FactionDef factionDef = DefDatabase<FactionDef>.GetNamedSilentFail(defName);
 				if (factionDef != null)
 				{
 					factionValue = Find.FactionManager.FirstFactionOfDef(factionDef);
-					Log.Message("[QuestNode_GenerateSiteSimple] Resolved faction from defName: " + (factionValue != null ? factionValue.Name : "NULL"));
 				}
 			}
 			if (factionValue == null)
@@ -51,7 +49,6 @@ public class QuestNode_GenerateSiteSimple : QuestNode
 			}
 		}
 		float points = threatPoints.GetValue(slate) ?? 1000f;
-		Log.Message("[QuestNode_GenerateSiteSimple] Generating site at tile " + tileInt + " for " + factionValue.Name + " with " + points + " threat points");
 		
 		List<SitePartDefWithParams> list = new List<SitePartDefWithParams>();
 		if (sitePartDefs != null)
@@ -62,18 +59,11 @@ public class QuestNode_GenerateSiteSimple : QuestNode
 				partParams.threatPoints = points;
 				SitePartDefWithParams partWithParams = new SitePartDefWithParams(sitePartDefs[i], partParams);
 				list.Add(partWithParams);
-				Log.Message("[QuestNode_GenerateSiteSimple] Added site part: " + sitePartDefs[i].defName + " with " + points + " threat points");
 			}
 		}
 		
-		Site site = QuestGen_Sites.GenerateSite(list, tileInt, factionValue);
+		Site site = QuestGen_Sites.GenerateSite(list, tileValue, factionValue);
 		site.SetFaction(factionValue);
-		Log.Message("[QuestNode_GenerateSiteSimple] Generated site with " + site.parts.Count + " parts");
-		Log.Message("[QuestNode_GenerateSiteSimple] Site faction: " + (site.Faction != null ? site.Faction.Name : "NULL") + ", hostile: " + (site.Faction != null && site.Faction.HostileTo(Faction.OfPlayer)));
-		if (site.parts.Count > 0)
-		{
-			Log.Message("[QuestNode_GenerateSiteSimple] First part: " + site.parts[0].def.defName + ", threatPoints: " + site.parts[0].parms.threatPoints);
-		}
 		slate.Set(storeAs.GetValue(slate), site);
 	}
 }

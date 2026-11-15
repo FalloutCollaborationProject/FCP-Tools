@@ -33,6 +33,9 @@ public class GameComponent_PawnRescue : GameComponent
     public override void ExposeData()
     {
         base.ExposeData();
+        if (Scribe.mode == LoadSaveMode.Saving)
+            prisonersWillingJoin.RemoveAll(p => p == null || p.Destroyed);
+
         Scribe_Collections.Look(ref prisonersWillingJoin, "prisonersWillingJoin", LookMode.Reference);
 
         if (Scribe.mode == LoadSaveMode.PostLoadInit)
