@@ -28,7 +28,6 @@ public static class TileFinder_RandomSettlementTileFor_Patch
             __result = SpawnConfigHelper.AnyValidTile(Find.WorldGrid.Surface, predicate)
                 ? TileFinder.RandomSettlementTileFor(faction, mustBeAutoChoosable, predicate)
                 : TileFinder.RandomSettlementTileFor(faction, mustBeAutoChoosable);
-            // Vanilla's real search has constraints beyond our pre-check and can still come back empty; fall back to it rather than fail.
             if (!__result.Valid)
             {
                 __result = TileFinder.RandomSettlementTileFor(faction, mustBeAutoChoosable);
@@ -60,7 +59,6 @@ public static class TileFinder_RandomSettlementTileFor_LayerPatch
             __result = SpawnConfigHelper.AnyValidTile(layer, predicate)
                 ? TileFinder.RandomSettlementTileFor(layer, faction, mustBeAutoChoosable, predicate)
                 : TileFinder.RandomSettlementTileFor(layer, faction, mustBeAutoChoosable);
-            // Vanilla's real search has constraints beyond our pre-check and can still come back empty; fall back to it rather than fail.
             if (!__result.Valid)
             {
                 __result = TileFinder.RandomSettlementTileFor(layer, faction, mustBeAutoChoosable);

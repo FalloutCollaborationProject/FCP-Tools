@@ -70,8 +70,6 @@ public class Window_EnlistTerminal : Window
 
     private bool Enlisted => WorldEnlistTracker.Instance.EnlistedTo(faction, options);
 
-    // Plain-text translate helpers: strips embedded rich-text (e.g. a faction's own name color)
-    // so every label reads in a single, consistent terminal color instead of clashing tones.
     private static string Tr(string key) => ((string)key.Translate()).StripTags();
     private static string Tr(string key, NamedArgument arg) => ((string)key.Translate(arg)).StripTags();
 
@@ -181,8 +179,6 @@ public class Window_EnlistTerminal : Window
             confirmingResign = false;
         }
     }
-
-    // ============================== Overview ==============================
 
     private void DrawOverviewTab(Rect rect)
     {
@@ -367,8 +363,6 @@ public class Window_EnlistTerminal : Window
         return curY;
     }
 
-    // ============================== Missions ==============================
-
     private void DrawMissionsTab(Rect rect)
     {
         if (!options.missionsAreEnabled)
@@ -445,8 +439,6 @@ public class Window_EnlistTerminal : Window
 
         return curY + 46f;
     }
-
-    // ============================== Trade ==============================
 
     private void DrawTradeTab(Rect rect)
     {
@@ -692,8 +684,6 @@ public class Window_EnlistTerminal : Window
         Find.WindowStack.Add(new Dialog_Trade(negotiator, trader));
     }
 
-    // ============================== Work ==============================
-
     private void DrawWorkTab(Rect rect)
     {
         var viewRect = new Rect(0f, 0f, rect.width - 16f, 700f);
@@ -825,8 +815,6 @@ public class Window_EnlistTerminal : Window
         Find.WindowStack.Add(new FloatMenu(trainingOptions));
     }
 
-    // ============================== Command ==============================
-
     private void DrawCommandTab(Rect rect)
     {
         var viewRect = new Rect(0f, 0f, rect.width - 16f, 500f);
@@ -880,8 +868,6 @@ public class Window_EnlistTerminal : Window
 
         Widgets.EndScrollView();
     }
-
-    // ============================== Shared helpers ==============================
 
     private static float DrawSectionHeader(Rect viewRect, float curY, string label)
     {

@@ -45,11 +45,7 @@ public class GenStep_FeralGhoulSpawn : GenStep
 
             GenSpawn.Spawn(ghoul, loc, map);
 
-            var mentalState = DefDatabase<MentalStateDef>.GetNamed("FCP_MentalState_PermanentBerserk", false);
-            if (mentalState != null)
-            {
-                ghoul.mindState.mentalStateHandler.TryStartMentalState(mentalState, forceWake: true);
-            }
+            ghoul.mindState.mentalStateHandler.TryStartMentalState(FCPDefOf.FCP_MentalState_PermanentBerserk, forceWake: true);
         }
     }
 }

@@ -130,12 +130,12 @@ public class CompAnimalCage : CompRefuelable, IThingHolder, ISuspendableThingHol
     {
         if (Props.animalsThatGetCaught == null) return;
         
-        if (!parent.Map.Biome.AllWildAnimals.Any(c => Props.animalsThatGetCaught.Any(x => c.defName == x.defName)))
+        if (!parent.Map.Biome.AllWildAnimals.Any(c => Props.animalsThatGetCaught.Contains(c)))
         {
             return;
         }
         
-        PawnKindDef def = parent.Map.Biome.AllWildAnimals.Where(c => Props.animalsThatGetCaught.Any(x => c == x)).RandomElement();
+        PawnKindDef def = parent.Map.Biome.AllWildAnimals.Where(c => Props.animalsThatGetCaught.Contains(c)).RandomElement();
         Pawn pawn = PawnGenerator.GeneratePawn(def);
         Letter letter = LetterMaker.MakeLetter("FCP_CageAnimalCapturedLabel".Translate(), "FCP_CageAnimalCapturedText".Translate(pawn), LetterDefOf.PositiveEvent, base.parent);
         Find.LetterStack.ReceiveLetter(letter);

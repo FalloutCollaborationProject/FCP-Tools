@@ -42,7 +42,7 @@ public class QuestNode_GeneratePawns : QuestNode
         {
             FCPLog.Verbose(maker.kindDef.defName);
         }
-        if(pawnGroup == null || !settlementFaction.def.pawnGroupMakers.Any(c => c.kindDef.defName == pawnGroup.defName))
+        if(pawnGroup == null || !settlementFaction.def.pawnGroupMakers.Any(c => c.kindDef == pawnGroup))
         {
             FCPLog.Verbose("Faction does not contain the inputted pawnGroupKind");
             pawnGroup = PawnGroupKindDefOf.Combat;

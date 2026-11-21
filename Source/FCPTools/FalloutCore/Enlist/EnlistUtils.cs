@@ -157,14 +157,7 @@ public static class EnlistUtils
 
     public static void RemoveDef(FactionEnlistOptionsDef def)
     {
-        try
-        {
-            if (DefDatabase<FactionEnlistOptionsDef>.AllDefsListForReading.Contains(def))
-            {
-                DefDatabase<FactionEnlistOptionsDef>.AllDefsListForReading.Remove(def);
-            }
-        }
-        catch { };
+        DefDatabase<FactionEnlistOptionsDef>.AllDefsListForReading.Remove(def);
     }
     public static void DoDefsRemoval()
     {

@@ -62,16 +62,16 @@ namespace FCP.Core.Robotics
                 case MrHandyMode.Cook:
                     return TryCook(pawn);
                 case MrHandyMode.Clean:
-                    return TryWorkGiver(pawn, "CleanFilth", ThingRequestGroup.Filth);
+                    return TryWorkGiver(pawn, FCPDefOf.CleanFilth, ThingRequestGroup.Filth);
                 case MrHandyMode.Garden:
-                    return TryCellWorkGiver(pawn, "GrowerSow") ?? TryCellWorkGiver(pawn, "GrowerHarvest");
+                    return TryCellWorkGiver(pawn, FCPDefOf.GrowerSow) ?? TryCellWorkGiver(pawn, FCPDefOf.GrowerHarvest);
                 case MrHandyMode.BasicCare:
-                    return TryWorkGiver(pawn, "DoctorFeedHumanlikes", ThingRequestGroup.Pawn);
+                    return TryWorkGiver(pawn, FCPDefOf.DoctorFeedHumanlikes, ThingRequestGroup.Pawn);
                 case MrHandyMode.Tend:
-                    return TryWorkGiver(pawn, "DoctorTendToHumanlikes", ThingRequestGroup.Pawn);
+                    return TryWorkGiver(pawn, FCPDefOf.DoctorTendToHumanlikes, ThingRequestGroup.Pawn);
                 case MrHandyMode.Childcare:
-                    return TryWorkGiver(pawn, "BottleFeedBaby", ThingRequestGroup.Pawn)
-                        ?? TryWorkGiver(pawn, "PlayWithBaby", ThingRequestGroup.Pawn);
+                    return TryWorkGiver(pawn, FCPDefOf.BottleFeedBaby, ThingRequestGroup.Pawn)
+                        ?? TryWorkGiver(pawn, FCPDefOf.PlayWithBaby, ThingRequestGroup.Pawn);
                 default:
                     return null;
             }
@@ -144,9 +144,8 @@ namespace FCP.Core.Robotics
             return stove == null ? null : JobMaker.MakeJob(JobDefOf_Robotics.FCP_MrHandyCook, stove);
         }
 
-        private static Job TryWorkGiver(Pawn pawn, string workGiverDefName, ThingRequestGroup group)
+        private static Job TryWorkGiver(Pawn pawn, WorkGiverDef def, ThingRequestGroup group)
         {
-            WorkGiverDef def = DefDatabase<WorkGiverDef>.GetNamedSilentFail(workGiverDefName);
             if (!(def?.Worker is WorkGiver_Scanner giver))
             {
                 return null;
@@ -160,9 +159,8 @@ namespace FCP.Core.Robotics
             return target == null ? null : giver.JobOnThing(pawn, target);
         }
 
-        private static Job TryCellWorkGiver(Pawn pawn, string workGiverDefName)
+        private static Job TryCellWorkGiver(Pawn pawn, WorkGiverDef def)
         {
-            WorkGiverDef def = DefDatabase<WorkGiverDef>.GetNamedSilentFail(workGiverDefName);
             if (!(def?.Worker is WorkGiver_Scanner giver))
             {
                 return null;

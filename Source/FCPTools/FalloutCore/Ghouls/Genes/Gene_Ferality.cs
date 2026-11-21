@@ -86,34 +86,28 @@ public class Gene_Ferality : Gene
 
             foreach (var gene in pawn.genes.GenesListForReading)
             {
-                if (gene.def.defName == "FCP_Gene_Ghoul_Skin_GlowingOne")
+                if (gene.def == FCPDefOf.FCP_Gene_Ghoul_Skin_GlowingOne)
                 {
                     isGlowing = true;
                     break;
                 }
-                if (gene.def.defName.StartsWith("FCP_Gene_Ghoul_Skin"))
+                if (gene is Gene_GhoulBody)
                     skinGene = gene;
             }
 
             if (skinGene != null && !isGlowing)
             {
                 pawn.genes.RemoveGene(skinGene);
-                var feralSkin = DefDatabase<GeneDef>.GetNamed("FCP_Gene_Ghoul_Feral_Skin", false);
-                if (feralSkin != null)
-                {
-                    pawn.genes.AddGene(feralSkin, false);
-                    pawn.Drawer.renderer.SetAllGraphicsDirty();
-                    PortraitsCache.SetDirty(pawn);
-                }
+                pawn.genes.AddGene(FCPDefOf.FCP_Gene_Ghoul_Feral_Skin, false);
+                pawn.Drawer.renderer.SetAllGraphicsDirty();
+                PortraitsCache.SetDirty(pawn);
             }
         }
 
         if (pawn.Faction?.IsPlayer == true)
             pawn.SetFaction(null);
 
-        var berserk = DefDatabase<MentalStateDef>.GetNamed("FCP_MentalState_PermanentBerserk", false);
-        if (berserk != null)
-            pawn.mindState.mentalStateHandler.TryStartMentalState(berserk, forceWake: true);
+        pawn.mindState.mentalStateHandler.TryStartMentalState(FCPDefOf.FCP_MentalState_PermanentBerserk, forceWake: true);
 
         Messages.Message("MessageFeralGhoul".Translate(pawn.Named("PAWN")), pawn, MessageTypeDefOf.NegativeEvent);
     }

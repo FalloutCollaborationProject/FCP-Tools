@@ -21,6 +21,6 @@ public class ComplexThreatWorker_SleepingFeralGhouls : ComplexThreatWorker_Sleep
 
     protected override IEnumerable<PawnKindDef> GetPawnKindsForPoints(float points)
     {
-        return PawnUtility.GetCombatPawnKindsForPoints((PawnKindDef k) => k.defName == "FCP_Pawnkind_Ghoul_Feral", points);
+        return PawnUtility.GetCombatPawnKindsForPoints((PawnKindDef k) => k == FCPDefOf.FCP_Pawnkind_Ghoul_Feral, points);
     }
 }

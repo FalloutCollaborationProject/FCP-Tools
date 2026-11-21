@@ -11,7 +11,7 @@ public class QuestNode_GetPawnKind : QuestNode
 
     protected override bool TestRunInt(Slate slate)
     {
-        if (DefDatabase<PawnKindDef>.AllDefsListForReading.Any(c => c.defName == pawnKindDef.GetValue(slate)))
+        if (DefDatabase<PawnKindDef>.GetNamedSilentFail(pawnKindDef.GetValue(slate)) != null)
         {
             SetVars(slate);
             return true;
@@ -26,7 +26,7 @@ public class QuestNode_GetPawnKind : QuestNode
 
     private void SetVars(Slate slate)
     {
-        PawnKindDef def = DefDatabase<PawnKindDef>.AllDefsListForReading.First(c => c.defName == pawnKindDef.GetValue(slate));
+        PawnKindDef def = DefDatabase<PawnKindDef>.GetNamed(pawnKindDef.GetValue(slate));
         slate.Set(storeAs.GetValue(slate), def);
     }
 }

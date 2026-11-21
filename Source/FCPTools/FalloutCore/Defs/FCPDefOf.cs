@@ -44,6 +44,49 @@ public class FCPDefOf
 
     [MayRequire("Rick.FCP.Animals")]
     public static ThingDef FCP_PawnFlyer_BurrowAmbush;
+
+    [MayRequire("Rick.FCP.NCR")]
+    public static ThingDef FCP_Building_NCR_Tent;
+
+    public static MentalStateDef FCP_MentalState_PermanentBerserk;
+    public static ResearchTabDef FCP_Pre_War_Research;
+
+    [MayRequire("Rick.FCP.Lore")]
+    public static ThingDef FCP_Production_Old_Wall_Terminal;
+    [MayRequire("Rick.FCP.Lore")]
+    public static ThingDef FCP_Production_Clean_Wall_Terminal;
+
+    [MayRequire("Rick.FCP.Ghouls")]
+    public static GeneDef FCP_Gene_Ferality;
+    [MayRequire("Rick.FCP.Ghouls")]
+    public static GeneDef FCP_Gene_Ghoul_Feral_Skin;
+    [MayRequire("Rick.FCP.Ghouls")]
+    public static GeneDef FCP_Gene_Ghoul_Skin_GlowingOne;
+    [MayRequire("Rick.FCP.Ghouls")]
+    public static HediffDef FCP_Hediff_GhoulTransformation;
+    [MayRequire("Rick.FCP.Ghouls")]
+    public static PawnKindDef FCP_Pawnkind_Ghoul_Feral;
+    [MayRequire("Rick.FCP.Ghouls")]
+    public static XenotypeDef FCP_Xenotype_Ghoul;
+    [MayRequire("Rick.FCP.Ghouls")]
+    public static XenotypeDef FCP_Xenotype_Ghoul_Feral;
+    [MayRequire("Rick.FCP.Ghouls")]
+    public static XenotypeDef FCP_Xenotype_Ghoul_Glowing_One;
+
+    public static WorkGiverDef HaulGeneral;
+    public static WorkGiverDef CleanFilth;
+    public static WorkGiverDef GrowerSow;
+    public static WorkGiverDef GrowerHarvest;
+    public static WorkGiverDef DoctorFeedHumanlikes;
+    public static WorkGiverDef DoctorTendToHumanlikes;
+    public static WorkGiverDef ConstructDeliverResourcesToBlueprints;
+    public static WorkGiverDef ConstructDeliverResourcesToFrames;
+    public static WorkGiverDef ConstructFinishFrames;
+    [MayRequireBiotech]
+    public static WorkGiverDef BottleFeedBaby;
+    [MayRequireBiotech]
+    public static WorkGiverDef PlayWithBaby;
+
     static FCPDefOf()
     {
         DefOfHelper.EnsureInitializedInCtor(typeof(FCPDefOf));

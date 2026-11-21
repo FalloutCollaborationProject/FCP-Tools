@@ -17,7 +17,7 @@ public class QuestNode_GetFactionFromList : QuestNode
         IEnumerable<FactionDef> defs;
         if (!factionDefs.TryGetValue(slate, out defs) || defs == null) return false;
         
-        var allFactions = Find.FactionManager.GetFactions().Where(c => defs.Any(x => x.defName == c.def.defName)).ToList();
+        var allFactions = Find.FactionManager.GetFactions().Where(c => defs.Contains(c.def)).ToList();
         
         bool checkHostile = mustBeNonHostile.GetValue(slate);
         var validFactions = checkHostile ? allFactions.Where(f => !f.HostileTo(Faction.OfPlayer)).ToList() : allFactions;
@@ -33,7 +33,7 @@ public class QuestNode_GetFactionFromList : QuestNode
     private void SetVars(Slate slate)
     {
         var allFactions = Find.FactionManager.GetFactions()
-            .Where(c => factionDefs.GetValue(slate).Any(x => x.defName == c.def.defName));
+            .Where(c => factionDefs.GetValue(slate).Contains(c.def));
         
         bool checkHostile = mustBeNonHostile.GetValue(slate);
         var validFactions = checkHostile ? allFactions.Where(f => !f.HostileTo(Faction.OfPlayer)) : allFactions;

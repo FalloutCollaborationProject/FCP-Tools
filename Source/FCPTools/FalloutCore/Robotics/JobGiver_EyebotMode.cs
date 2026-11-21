@@ -99,7 +99,7 @@ namespace FCP.Core.Robotics
 
         private static Job TryScavenge(Pawn pawn)
         {
-            WorkGiver_HaulGeneral haulGiver = (WorkGiver_HaulGeneral)DefDatabase<WorkGiverDef>.GetNamed("HaulGeneral").Worker;
+            WorkGiver_HaulGeneral haulGiver = (WorkGiver_HaulGeneral)FCPDefOf.HaulGeneral.Worker;
             Thing haulable = GenClosest.ClosestThingReachable(pawn.Position, pawn.Map,
                 ThingRequest.ForGroup(ThingRequestGroup.HaulableEver), PathEndMode.ClosestTouch,
                 TraverseParms.For(pawn), 9999f,

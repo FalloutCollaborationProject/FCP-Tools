@@ -26,6 +26,8 @@ public class GeneralSettings : SettingsTab
     public bool namedSettlementsEnabled = true;
     public bool namedSettlementTradersOnly = true;
 
+    public bool noRankTraining = true;
+
     private static Color DimPrimary => new Color(TerminalColors.PrimaryColor.r, TerminalColors.PrimaryColor.g, TerminalColors.PrimaryColor.b, 0.5f);
 
     public override void DoTabWindowContents(Rect tabRect)
@@ -117,6 +119,16 @@ public class GeneralSettings : SettingsTab
                 "FCP_Settings_NamedTraders_Enabled_Desc".Translate());
         }
 
+        list.Gap();
+        Text.Font = GameFont.Medium;
+        GUI.color = TerminalColors.HighlightColor;
+        list.Label("FCP_Settings_Ranks".Translate());
+        GUI.color = TerminalColors.PrimaryColor;
+        Text.Font = GameFont.Small;
+        list.GapLine();
+        list.CheckboxLabeled("FCP_Settings_Ranks_NoTraining".Translate(), ref noRankTraining,
+            "FCP_Settings_Ranks_NoTraining_Desc".Translate());
+
         list.End();
         GUI.color = Color.white;
     }
@@ -137,5 +149,7 @@ public class GeneralSettings : SettingsTab
 
         Scribe_Values.Look(ref namedSettlementsEnabled, nameof(namedSettlementsEnabled), defaultValue: true);
         Scribe_Values.Look(ref namedSettlementTradersOnly, nameof(namedSettlementTradersOnly), defaultValue: true);
+
+        Scribe_Values.Look(ref noRankTraining, nameof(noRankTraining), defaultValue: true);
     }
 }

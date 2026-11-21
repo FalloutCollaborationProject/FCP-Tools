@@ -41,24 +41,22 @@ public class HediffComp_GhoulTransformation : HediffComp
             return;
         }
 
-        if (roll < 0.86f) ApplyTransform("FCP_Xenotype_Ghoul_Feral", false, false, true);
-        else if (roll < 0.93f) ApplyTransform("FCP_Xenotype_Ghoul", true, true, false);
-        else if (roll < 0.98f) ApplyTransform("FCP_Xenotype_Ghoul", false, false, false);
-        else if (roll < 0.99f) ApplyTransform("FCP_Xenotype_Ghoul_GlowingOne", true, true, false);
-        else ApplyTransform("FCP_Xenotype_Ghoul_GlowingOne", false, false, false);
+        if (roll < 0.86f) ApplyTransform(FCPDefOf.FCP_Xenotype_Ghoul_Feral, false, false, true);
+        else if (roll < 0.93f) ApplyTransform(FCPDefOf.FCP_Xenotype_Ghoul, true, true, false);
+        else if (roll < 0.98f) ApplyTransform(FCPDefOf.FCP_Xenotype_Ghoul, false, false, false);
+        else if (roll < 0.99f) ApplyTransform(FCPDefOf.FCP_Xenotype_Ghoul_Glowing_One, true, true, false);
+        else ApplyTransform(FCPDefOf.FCP_Xenotype_Ghoul_Glowing_One, false, false, false);
     }
 
-    private void ApplyTransform(string xenotypeDef, bool addFeral, bool randomFeral, bool maxFeral)
+    private void ApplyTransform(XenotypeDef xenotype, bool addFeral, bool randomFeral, bool maxFeral)
     {
-        var xenotype = DefDatabase<XenotypeDef>.GetNamed(xenotypeDef, false);
-        if (xenotype == null || Pawn.genes == null) return;
+        if (Pawn.genes == null) return;
 
         Pawn.genes.SetXenotype(xenotype);
 
         if (addFeral)
         {
-            var feralDef = DefDatabase<GeneDef>.GetNamed("FCP_Gene_Ferality", false);
-            if (feralDef != null) Pawn.genes.AddGene(feralDef, false);
+            Pawn.genes.AddGene(FCPDefOf.FCP_Gene_Ferality, false);
         }
 
         if (maxFeral || randomFeral)

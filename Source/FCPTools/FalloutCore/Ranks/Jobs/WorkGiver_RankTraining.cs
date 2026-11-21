@@ -10,6 +10,8 @@ public class WorkGiver_RankTraining : WorkGiver_Scanner
 
     public override PathEndMode PathEndMode => PathEndMode.ClosestTouch;
 
+    public override bool ShouldSkip(Pawn pawn, bool forced = false) => Core.FCPCoreMod.Settings.General.noRankTraining;
+
     public override IEnumerable<Thing> PotentialWorkThingsGlobal(Pawn pawn)
     {
         Pawn mentor = Current.Game.GetComponent<GameComponent_PawnRanks>()?.GetRankData(pawn)?.mentor;

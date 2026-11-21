@@ -36,6 +36,7 @@ public class InfoSettings : SettingsTab
         DrawGroup(list, "FCP_Settings_Info_Group_Survival");
         DrawGroup(list, "FCP_Settings_Info_Group_Settlements");
         DrawGroup(list, "FCP_Settings_Info_Group_Story");
+        DrawGroup(list, "FCP_Settings_Info_Group_Enlistment");
         DrawGroup(list, "FCP_Settings_Info_Group_Ranks");
         DrawGroup(list, "FCP_Settings_Info_Group_World");
         DrawGroup(list, "FCP_Settings_Info_Group_Misc");
@@ -137,7 +138,6 @@ public class InfoSettings : SettingsTab
         "FCP_Settings_Info_Group_Story" =>
         [
             "FCP_Settings_Info_Institute",
-            "FCP_Settings_Info_Enlistment",
             "FCP_Settings_Info_UniqueCharacters",
             "FCP_Settings_Info_UniqueItems",
             "FCP_Settings_Info_CustomTraits",
@@ -145,6 +145,16 @@ public class InfoSettings : SettingsTab
             "FCP_Settings_Info_CustomQuests",
             "FCP_Settings_Info_Gauntlet",
             "FCP_Settings_Info_GOATExam",
+        ],
+        "FCP_Settings_Info_Group_Enlistment" =>
+        [
+            "FCP_Settings_Info_Enlistment",
+            "FCP_Settings_Info_EnlistTerminal",
+            "FCP_Settings_Info_EnlistPay",
+            "FCP_Settings_Info_EnlistMissions",
+            "FCP_Settings_Info_EnlistWorkDetail",
+            "FCP_Settings_Info_EnlistServices",
+            "FCP_Settings_Info_EnlistLeaving",
         ],
         "FCP_Settings_Info_Group_Ranks" =>
         [

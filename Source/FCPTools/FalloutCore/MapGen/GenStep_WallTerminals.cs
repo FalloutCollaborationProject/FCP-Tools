@@ -25,10 +25,10 @@ public class GenStep_WallTerminals : GenStep
         if (Rand.Value > spawnChance)
             return;
 
-        var oldTerminalDef = DefDatabase<ThingDef>.GetNamedSilentFail("FCP_Production_Old_Wall_Terminal");
-        var cleanTerminalDef = DefDatabase<ThingDef>.GetNamedSilentFail("FCP_Production_Clean_Wall_Terminal");
+        var oldTerminalDef = FCPDefOf.FCP_Production_Old_Wall_Terminal;
+        var cleanTerminalDef = FCPDefOf.FCP_Production_Clean_Wall_Terminal;
 
-        if (oldTerminalDef == null && cleanTerminalDef == null)
+        if (oldTerminalDef == null)
             return;
 
         List<IntVec3> potentialSpots = new List<IntVec3>();
@@ -66,13 +66,7 @@ public class GenStep_WallTerminals : GenStep
             IntVec3 spot = potentialSpots.RandomElement();
             potentialSpots.Remove(spot);
 
-            ThingDef terminalDef;
-            if (cleanTerminalDef != null && Rand.Value < 0.2f)
-                terminalDef = cleanTerminalDef;
-            else if (oldTerminalDef != null)
-                terminalDef = oldTerminalDef;
-            else
-                continue;
+            ThingDef terminalDef = Rand.Value < 0.2f ? cleanTerminalDef : oldTerminalDef;
 
             Rot4 rotation = Rot4.Invalid;
             foreach (Rot4 rot in new[] { Rot4.North, Rot4.South, Rot4.East, Rot4.West })

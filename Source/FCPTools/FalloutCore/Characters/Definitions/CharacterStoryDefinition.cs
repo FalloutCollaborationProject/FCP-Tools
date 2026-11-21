@@ -25,9 +25,6 @@ public class CharacterStoryDefinition : CharacterBaseDefinition
         request.FixedBiologicalAge = age ?? request.FixedBiologicalAge;
         request.FixedChronologicalAge = chronologicalAge ?? age ?? request.FixedChronologicalAge;
 
-        // Named child characters (e.g. Maggie, Harden Simms) need the generator restricted to a
-        // non-adult stage, not just a young FixedBiologicalAge - PawnGenerationRequest otherwise
-        // defaults to Adult-only and will reject or override a childlike fixed age.
         if (developmentalStage != DevelopmentalStage.None && Find.Storyteller.difficulty.ChildrenAllowed)
         {
             request.AllowedDevelopmentalStages = developmentalStage;

@@ -7,11 +7,6 @@ public class CharacterRelation
     public CharacterDef otherCharacter;
 }
 
-// Declares social relations (Parent, Child, Spouse, Sibling, etc.) between this character and
-// another unique CharacterDef. Only declare a relationship from ONE side - this automatically
-// adds the matching opposite relation to the other pawn directly, so declaring it on both
-// characters would double up (and for Parent/Child specifically, could recurse forever through
-// UniqueCharactersTracker.GetOrGenPawn's "reapply definitions" cache-hit path).
 [UsedImplicitly]
 public class CharacterRelationDefinition : CharacterBaseDefinition
 {
@@ -22,10 +17,6 @@ public class CharacterRelationDefinition : CharacterBaseDefinition
 
     public override void ApplyToPawn(Pawn pawn)
     {
-        // During early world generation (faction leader generation in particular) the player
-        // faction may not exist yet. GetOrGenPawn below passes the related pawn to the world,
-        // which touches Faction.OfPlayer internally and logs an error if it's not there yet.
-        // Skip wiring up relations until it's safe; the pawn itself still generates fine either way.
         if (Find.FactionManager?.OfPlayer == null)
             return;
 

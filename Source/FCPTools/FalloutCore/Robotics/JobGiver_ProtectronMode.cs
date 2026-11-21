@@ -67,7 +67,7 @@ namespace FCP.Core.Robotics
                     bool hasDefaultHead = CompProtectronLoadout.HasHead(pawn, HediffDefOf_Protectron.FCP_Hediff_Protectron_Head_Default);
                     bool hasDefaultHand = CompProtectronLoadout.HasHand(pawn, HediffDefOf_Protectron.FCP_Hediff_Protectron_Hand_Default);
                     return hasDefaultHead && hasDefaultHand
-                        ? TryWorkGiver(pawn, "CleanFilth", ThingRequestGroup.Filth)
+                        ? TryWorkGiver(pawn, FCPDefOf.CleanFilth, ThingRequestGroup.Filth)
                         : null;
                 default:
                     return null;
@@ -107,7 +107,7 @@ namespace FCP.Core.Robotics
 
         private static Job TryHaul(Pawn pawn)
         {
-            WorkGiver_HaulGeneral haulGiver = (WorkGiver_HaulGeneral)DefDatabase<WorkGiverDef>.GetNamed("HaulGeneral").Worker;
+            WorkGiver_HaulGeneral haulGiver = (WorkGiver_HaulGeneral)FCPDefOf.HaulGeneral.Worker;
             Thing haulable = GenClosest.ClosestThingReachable(pawn.Position, pawn.Map,
                 ThingRequest.ForGroup(ThingRequestGroup.HaulableEver), PathEndMode.ClosestTouch,
                 TraverseParms.For(pawn), 9999f,
@@ -118,14 +118,13 @@ namespace FCP.Core.Robotics
 
         private static Job TryConstruct(Pawn pawn)
         {
-            return TryWorkGiver(pawn, "ConstructDeliverResourcesToBlueprints", ThingRequestGroup.Blueprint)
-                ?? TryWorkGiver(pawn, "ConstructDeliverResourcesToFrames", ThingRequestGroup.BuildingFrame)
-                ?? TryWorkGiver(pawn, "ConstructFinishFrames", ThingRequestGroup.BuildingFrame);
+            return TryWorkGiver(pawn, FCPDefOf.ConstructDeliverResourcesToBlueprints, ThingRequestGroup.Blueprint)
+                ?? TryWorkGiver(pawn, FCPDefOf.ConstructDeliverResourcesToFrames, ThingRequestGroup.BuildingFrame)
+                ?? TryWorkGiver(pawn, FCPDefOf.ConstructFinishFrames, ThingRequestGroup.BuildingFrame);
         }
 
-        private static Job TryWorkGiver(Pawn pawn, string workGiverDefName, ThingRequestGroup group)
+        private static Job TryWorkGiver(Pawn pawn, WorkGiverDef def, ThingRequestGroup group)
         {
-            WorkGiverDef def = DefDatabase<WorkGiverDef>.GetNamedSilentFail(workGiverDefName);
             if (!(def?.Worker is WorkGiver_Scanner giver))
             {
                 return null;

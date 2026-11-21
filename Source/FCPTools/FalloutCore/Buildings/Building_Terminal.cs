@@ -271,7 +271,7 @@ namespace FCP.Core.Buildings
             var techprints = new List<ResearchProjectDef>();
             foreach (var research in DefDatabase<ResearchProjectDef>.AllDefsListForReading)
             {
-                if (research.techprintCount > 0 && research.tab?.defName == "FCP_Pre_War_Research")
+                if (research.techprintCount > 0 && research.tab == FCPDefOf.FCP_Pre_War_Research)
                     techprints.Add(research);
             }
 
