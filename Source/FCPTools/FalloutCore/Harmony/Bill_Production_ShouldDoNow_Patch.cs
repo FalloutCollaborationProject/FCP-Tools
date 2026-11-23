@@ -10,7 +10,8 @@ public class Bill_Production_ShouldDoNow_Patch
     [HarmonyPrefix]
     public static void ShouldDoNow_GoodWillCheck(ref bool __result, Bill_Production __instance)
     {
-        var modExtension = __instance.recipe.GetModExtension<RecipeExtension_FactionGoodwillCheck>();
+        var modExtension = __instance.recipe.GetModExtension<RecipeExtension_FactionGoodwillCheck>()
+            ?? __instance.recipe.ProducedThingDef?.GetModExtension<RecipeExtension_FactionGoodwillCheck>();
         if (modExtension == null)
             return;
 

@@ -33,6 +33,7 @@ public class FactionExtension_SettlementControl : DefModExtension
     public List<NamedSettlement> namedSettlements;
     public List<Hilliness> preferredHilliness;
     public List<BiomeDef> allowedBiomes;
+    public List<BiomeDef> preferredBiomes;
     public int searchRadius = 40;
     public bool clustered;
     public int clusterRadius = 30;

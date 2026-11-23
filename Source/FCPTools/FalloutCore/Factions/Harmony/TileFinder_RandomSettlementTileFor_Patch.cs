@@ -24,7 +24,7 @@ public static class TileFinder_RandomSettlementTileFor_Patch
         Active = true;
         try
         {
-            Predicate<PlanetTile> predicate = SpawnConfigHelper.MakePredicate(ext, hasBiomeFilter, anchors);
+            Predicate<PlanetTile> predicate = SpawnConfigHelper.MakePredicate(Find.WorldGrid.Surface, ext, hasBiomeFilter, anchors);
             __result = SpawnConfigHelper.AnyValidTile(Find.WorldGrid.Surface, predicate)
                 ? TileFinder.RandomSettlementTileFor(faction, mustBeAutoChoosable, predicate)
                 : TileFinder.RandomSettlementTileFor(faction, mustBeAutoChoosable);
@@ -55,7 +55,7 @@ public static class TileFinder_RandomSettlementTileFor_LayerPatch
         TileFinder_RandomSettlementTileFor_Patch.Active = true;
         try
         {
-            Predicate<PlanetTile> predicate = SpawnConfigHelper.MakePredicate(ext, hasBiomeFilter, anchors);
+            Predicate<PlanetTile> predicate = SpawnConfigHelper.MakePredicate(layer, ext, hasBiomeFilter, anchors);
             __result = SpawnConfigHelper.AnyValidTile(layer, predicate)
                 ? TileFinder.RandomSettlementTileFor(layer, faction, mustBeAutoChoosable, predicate)
                 : TileFinder.RandomSettlementTileFor(layer, faction, mustBeAutoChoosable);
@@ -98,10 +98,20 @@ internal static class SpawnConfigHelper
             }
         }
 
-        return hasBiomeFilter || anchors != null;
+        return hasBiomeFilter || anchors != null || !ext.preferredBiomes.NullOrEmpty();
     }
 
-    internal static Predicate<PlanetTile> MakePredicate(FactionExtension_SettlementControl ext, bool hasBiomeFilter, List<PlanetTile> anchors)
+    internal static Predicate<PlanetTile> MakePredicate(PlanetLayer layer, FactionExtension_SettlementControl ext, bool hasBiomeFilter, List<PlanetTile> anchors)
+    {
+        Predicate<PlanetTile> allowed = MakePredicate(ext, hasBiomeFilter, anchors);
+        if (anchors != null || ext.preferredBiomes.NullOrEmpty())
+            return allowed;
+
+        Predicate<PlanetTile> preferred = tile => allowed(tile) && ext.preferredBiomes.Contains(Find.WorldGrid[(int)tile].PrimaryBiome);
+        return AnyValidTile(layer, preferred) ? preferred : allowed;
+    }
+
+    private static Predicate<PlanetTile> MakePredicate(FactionExtension_SettlementControl ext, bool hasBiomeFilter, List<PlanetTile> anchors)
     {
         return tile =>
         {

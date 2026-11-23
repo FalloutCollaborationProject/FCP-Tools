@@ -1,4 +1,5 @@
 using HarmonyLib;
+using RimWorld.Planet;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -149,6 +150,62 @@ public static class TemperatureApparelPreferencePatches
 
             ApplyGenerationOverrideIfEligible(__instance, map);
         }
+    }
+
+    [HarmonyPatchCategory(FCPCoreMod.LatePatchesCategory)]
+    [HarmonyPatch(typeof(PawnApparelGenerator), nameof(PawnApparelGenerator.GenerateStartingApparelFor))]
+    public static class Patch_PawnApparelGenerator_GenerateStartingApparelFor
+    {
+        [HarmonyPrefix]
+        public static void Prefix(Pawn pawn, PawnGenerationRequest request, out bool __state)
+        {
+            __state = false;
+            if (tlsContext != null || pawn?.RaceProps == null || !pawn.RaceProps.Humanlike || pawn.apparel == null)
+                return;
+            if (request.Context == PawnGenerationContext.PlayerStarter)
+                return;
+
+            float tempC = TemperatureAt(request.Tile);
+            if (float.IsNaN(tempC))
+                return;
+
+            EnsureCachesBuilt();
+            tlsContext = BuildContext(pawn, tempC);
+            __state = true;
+        }
+
+        [HarmonyFinalizer]
+        public static void Finalizer(bool __state)
+        {
+            if (__state)
+                tlsContext = null;
+        }
+    }
+
+    private static float TemperatureAt(PlanetTile tile)
+    {
+        if (!tile.Valid)
+            tile = Find.AnyPlayerHomeMap?.Tile ?? PlanetTile.Invalid;
+        if (!tile.Valid || Find.World == null)
+            return float.NaN;
+
+        Map map = Current.Game.FindMap(tile);
+        if (map != null)
+            return map.mapTemperature.OutdoorTemp;
+        return Find.World.tileTemperatures.GetOutdoorTemp(tile);
+    }
+
+    private static GenerationContext BuildContext(Pawn pawn, float tempC)
+    {
+        HashSet<ThingDef> protectedDefs = BuildProtectedApparelSet(pawn);
+        HashSet<ThingDef> avoided = BuildAvoidedNow(tempC, pawn, protectedDefs);
+        HashSet<ThingDef> forced = BuildForcedNow(tempC, pawn, protectedDefs, avoided);
+        return new GenerationContext
+        {
+            avoided = avoided,
+            forced = forced,
+            incompatible = BuildIncompatibleWithForced(pawn, protectedDefs, avoided, forced)
+        };
     }
 
     [HarmonyPatchCategory(FCPCoreMod.LatePatchesCategory)]

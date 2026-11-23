@@ -16,6 +16,7 @@ public class FCPCoreMod : Mod
     public const string LatePatchesCategory = "FCP.Core.LatePatches";
     public const string CurrencyPatchesCategory = "FCP.Core.Currency";
     public const string TentsPatchesCategory = "FCP.Core.Tents";
+    public const string InstitutePatchesCategory = "FCP.Core.Institute";
     
     private SettingsTab currentTab = null;
 
@@ -28,7 +29,9 @@ public class FCPCoreMod : Mod
         Harmony.PatchCategory(CurrencyPatchesCategory);
         if (ModsConfig.IsActive("Rick.FCP.Tents"))
             Harmony.PatchCategory(TentsPatchesCategory);
-        
+        if (ModsConfig.IsActive("Rick.FCP.Institute"))
+            Harmony.PatchCategory(InstitutePatchesCategory);
+
         LongEventHandler.ExecuteWhenFinished(() =>
         {
             Harmony.PatchCategory(LatePatchesCategory);
