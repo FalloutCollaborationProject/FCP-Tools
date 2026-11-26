@@ -1,27 +1,33 @@
-using System.Collections.Concurrent;
 using Verse;
+using Waylith.Injection;
 
 namespace FCP.Core;
 
+[StaticConstructorOnStartup]
 public static class ApparelExtensionUtility
 {
-    private static readonly ConcurrentDictionary<ThingDef, ApparelExtension> CachedExtensions = [];
-
-    public static bool ShouldHideBody(this ThingDef def)
+    // Waylith injects a real ApparelExtension field into ThingDef and replaces these
+    // accessor bodies, so the throws should never happen.
+    extension(ThingDef def)
     {
-        var extension = CachedExtensions.GetOrAdd(def, static d => d.GetModExtension<ApparelExtension>());
-        return extension != null && extension.shouldHideBody;
+        [InjectedField]
+        private ApparelExtension P_ApparelExtension
+        {
+            get => throw new InvalidOperationException("ApparelExtensionUtility: Waylith field injection is not active.");
+            set => throw new InvalidOperationException("ApparelExtensionUtility: Waylith field injection is not active.");
+        }
+    }
+    
+    static ApparelExtensionUtility()
+    {
+        foreach (ThingDef def in DefDatabase<ThingDef>.AllDefsListForReading)
+            def.P_ApparelExtension = def.GetModExtension<ApparelExtension>();
     }
 
-    public static bool ShouldHideHead(this ThingDef def)
+    extension(ThingDef def)
     {
-        var extension = CachedExtensions.GetOrAdd(def, static d => d.GetModExtension<ApparelExtension>());
-        return extension != null && extension.shouldHideHead;
-    }
-
-    public static BodyTypeDef GetDisplayBodyType(this ThingDef def)
-    {
-        var extension = CachedExtensions.GetOrAdd(def, static d => d.GetModExtension<ApparelExtension>());
-        return extension?.displayBodyType;
+        public bool ShouldHideBody() => def.P_ApparelExtension?.shouldHideBody ?? false;
+        public bool ShouldHideHead() => def.P_ApparelExtension?.shouldHideHead ?? false;
+        public BodyTypeDef GetDisplayBodyType() => def.P_ApparelExtension?.displayBodyType;
     }
 }
