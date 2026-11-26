@@ -1,4 +1,3 @@
-using System.Reflection;
 using HarmonyLib;
 
 namespace FCP.Factions;
@@ -6,26 +5,12 @@ namespace FCP.Factions;
 [HarmonyPatch(typeof(FactionUIUtility), "DrawFactionRow")]
 public static class FactionUIUtility_DrawFactionRow_Patch
 {
-    public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+    // Infix: only the faction.def.LabelCap read inside DrawFactionRow is changed;
+    [HarmonyInfix(typeof(Def), nameof(Def.LabelCap), InnerTargetKind.Getter)]
+    [HarmonyPostfix]
+    public static void LabelCap_Postfix(Def __instance, ref TaggedString __result)
     {
-        MethodInfo labelCapGetter = AccessTools.PropertyGetter(typeof(Def), nameof(Def.LabelCap));
-
-        foreach (CodeInstruction instruction in instructions)
-        {
-            if (instruction.Calls(labelCapGetter))
-            {
-                yield return CodeInstruction.Call(typeof(FactionUIUtility_DrawFactionRow_Patch), nameof(GetLabel));
-            }
-            else
-            {
-                yield return instruction;
-            }
-        }
-    }
-
-    private static TaggedString GetLabel(FactionDef def)
-    {
-        TaggedString label = FactionExtension_FlavorOverride.TryGetLabel(def) ?? def.LabelCap;
-        return label;
+        if (__instance is FactionDef factionDef && FactionExtension_FlavorOverride.TryGetLabel(factionDef) is { } label)
+            __result = label;
     }
 }

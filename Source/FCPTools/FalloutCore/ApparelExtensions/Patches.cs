@@ -1,10 +1,4 @@
 using HarmonyLib;
-using RimWorld;
-using System.Collections.Generic;
-using System.Reflection.Emit;
-using JetBrains.Annotations;
-using Verse;
-using Verse.AI;
 
 namespace FCP.Core;
 
@@ -14,9 +8,8 @@ public static class ApparelGraphicRecordGetter_TryGetGraphicApparel_Patch
 {
     public static void Prefix(Apparel apparel, ref BodyTypeDef bodyType)
     {
-        var overrideType = apparel.def.GetDisplayBodyType();
-        if (overrideType != null)
-            bodyType = overrideType;
+        BodyTypeDef overrideType = apparel.def.GetDisplayBodyType();
+        bodyType = overrideType ?? bodyType;
     }
 }
 
@@ -61,7 +54,7 @@ public static class PawnRenderNodeWorker_Apparel_Head_CanDrawNow_Patch
         __state = Prefs.HatsOnlyOnMap;
         if (parms.pawn.apparel.AnyApparel)
         {
-            var headgear = parms.pawn.apparel.WornApparel
+            Apparel headgear = parms.pawn.apparel.WornApparel
                 .FirstOrDefault(x => x.def.ShouldHideHead());
             if (headgear != null)
             {
@@ -80,33 +73,15 @@ public static class PawnRenderNodeWorker_Apparel_Head_CanDrawNow_Patch
 [HarmonyPatch(typeof(PawnRenderNodeWorker_Apparel_Head), "HeadgearVisible")]
 public static class PawnRenderNodeWorker_Apparel_Head_HeadgearVisible_Patch
 {
-    public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> codeInstructions)
+    // Head-hiding apparel must show in portraits even when "hats only on map" is on.
+    [HarmonyInfix(typeof(Prefs), nameof(Prefs.HatsOnlyOnMap), InnerTargetKind.Getter)]
+    [HarmonyPostfix]
+    public static void HatsOnlyOnMap_Postfix(ref bool __result, [HarmonyOuter] PawnDrawParms parms)
     {
-        var get_HatsOnlyOnMap = AccessTools.PropertyGetter(typeof(Prefs), nameof(Prefs.HatsOnlyOnMap));
-        foreach (var codeInstruction in codeInstructions)
+        if (__result && parms.pawn.apparel.AnyApparel
+            && parms.pawn.apparel.WornApparel.Any(x => x.def.ShouldHideHead()))
         {
-            yield return codeInstruction;
-            if (codeInstruction.Calls(get_HatsOnlyOnMap))
-            {
-                yield return new CodeInstruction(OpCodes.Ldarg_0);
-                yield return new CodeInstruction(OpCodes.Call,
-                    AccessTools.Method(typeof(PawnRenderNodeWorker_Apparel_Head_HeadgearVisible_Patch),
-                        "TryOverrideHatsOnlyOnMap"));
-            }
+            __result = false;
         }
-    }
-
-    public static bool TryOverrideHatsOnlyOnMap(bool result, PawnDrawParms parms)
-    {
-        if (result is true && parms.pawn.apparel.AnyApparel)
-        {
-            var headgear = parms.pawn.apparel.WornApparel
-                .FirstOrDefault(x => x.def.ShouldHideHead());
-            if (headgear != null)
-            {
-                return false;
-            }
-        }
-        return result;
     }
 }
