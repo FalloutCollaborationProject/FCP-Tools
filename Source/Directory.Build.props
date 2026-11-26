@@ -15,10 +15,9 @@
         <Product>FalloutCollaborationProject</Product>
     </PropertyGroup>
 
-    <!-- So it doesn't do Assemblies/net472/*.dll -->
+    <!-- Exclude Dependency Files -->
     <PropertyGroup>
-        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-        <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+        <GenerateDependencyFile>false</GenerateDependencyFile>
     </PropertyGroup>
 
     <!-- References -->
