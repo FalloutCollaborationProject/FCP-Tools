@@ -9,7 +9,6 @@ namespace FCP.Core;
 [HarmonyPatch]
 public static class TemperatureApparelPreferencePatches
 {
-
     private sealed class PawnGenState
     {
         public PawnGenerationRequest request;
@@ -190,9 +189,7 @@ public static class TemperatureApparelPreferencePatches
             return float.NaN;
 
         Map map = Current.Game.FindMap(tile);
-        if (map != null)
-            return map.mapTemperature.OutdoorTemp;
-        return Find.World.tileTemperatures.GetOutdoorTemp(tile);
+        return map != null ? map.mapTemperature.OutdoorTemp : Find.World.tileTemperatures.GetOutdoorTemp(tile);
     }
 
     private static GenerationContext BuildContext(Pawn pawn, float tempC)
@@ -318,7 +315,8 @@ public static class TemperatureApparelPreferencePatches
         float tempC = map != null && map.mapTemperature != null ? map.mapTemperature.OutdoorTemp : float.NaN;
         if (float.IsNaN(tempC))
         {
-            FCPLog.Verbose($"Apply skip pawn={SafePawnLabel(pawn)} reason=noTemp map={map != null} mapTemp={map != null && map.mapTemperature != null}");
+            FCPLog.Verbose(
+                $"Apply skip pawn={SafePawnLabel(pawn)} reason=noTemp map={map != null} mapTemp={map != null && map.mapTemperature != null}");
             return;
         }
 
@@ -335,7 +333,8 @@ public static class TemperatureApparelPreferencePatches
             HashSet<ThingDef> forcedNow = BuildForcedNow(tempC, pawn, protectedDefs, avoidedNow);
             HashSet<ThingDef> incompatibleNow = BuildIncompatibleWithForced(pawn, protectedDefs, avoidedNow, forcedNow);
 
-            FCPLog.Verbose($"Apply RUN pawn={SafePawnLabel(pawn)} temp={tempC:F1} protected={protectedDefs.Count} avoided={avoidedNow.Count} forced={forcedNow.Count} incompatible={incompatibleNow.Count} ctx={state.request.Context} tile={state.request.Tile}");
+            FCPLog.Verbose(
+                $"Apply RUN pawn={SafePawnLabel(pawn)} temp={tempC:F1} protected={protectedDefs.Count} avoided={avoidedNow.Count} forced={forcedNow.Count} incompatible={incompatibleNow.Count} ctx={state.request.Context} tile={state.request.Tile}");
 
             if (forcedNow.Count > 0)
                 FCPLog.Verbose($"Apply forced sample pawn={SafePawnLabel(pawn)} forced={JoinDefNames(forcedNow, 6)}");
@@ -346,7 +345,8 @@ public static class TemperatureApparelPreferencePatches
             int lockedSkippedCount;
             RemoveAllApparelExceptLocked(pawn, out removedCount, out lockedSkippedCount);
 
-            FCPLog.Verbose($"Apply strip pawn={SafePawnLabel(pawn)} removed={removedCount} lockedSkipped={lockedSkippedCount} wornAfterStrip={DescribeWornApparel(pawn)}");
+            FCPLog.Verbose(
+                $"Apply strip pawn={SafePawnLabel(pawn)} removed={removedCount} lockedSkipped={lockedSkippedCount} wornAfterStrip={DescribeWornApparel(pawn)}");
 
             var ctx = new GenerationContext
             {
@@ -372,7 +372,8 @@ public static class TemperatureApparelPreferencePatches
                 bool anyForcedWorn = IsAnyForcedWorn(pawn, forcedNow);
                 if (!anyForcedWorn)
                 {
-                    FCPLog.Verbose($"Apply WARNING pawn={SafePawnLabel(pawn)} forcedCount={forcedNow.Count} but none worn. pawnKind={pawn.kindDef?.defName ?? "null"} pawnKindApparelTags={DescribeKindApparelTags(pawn.kindDef)}");
+                    FCPLog.Verbose(
+                        $"Apply WARNING pawn={SafePawnLabel(pawn)} forcedCount={forcedNow.Count} but none worn. pawnKind={pawn.kindDef?.defName ?? "null"} pawnKindApparelTags={DescribeKindApparelTags(pawn.kindDef)}");
                     FCPLog.Verbose($"Apply WARNING forced def details={DescribeForcedDefs(forcedNow)}");
                 }
                 else
@@ -389,7 +390,8 @@ public static class TemperatureApparelPreferencePatches
             if (sw != null)
             {
                 sw.Stop();
-                FCPLog.Verbose($"Apply time pawn={SafePawnLabel(pawn)} ms={sw.ElapsedMilliseconds} markedTick={state.markedTick}");
+                FCPLog.Verbose(
+                    $"Apply time pawn={SafePawnLabel(pawn)} ms={sw.ElapsedMilliseconds} markedTick={state.markedTick}");
             }
         }
     }
@@ -412,7 +414,8 @@ public static class TemperatureApparelPreferencePatches
         return set;
     }
 
-    private static HashSet<ThingDef> BuildForcedNow(float tempC, Pawn pawn, HashSet<ThingDef> protectedDefs, HashSet<ThingDef> avoided)
+    private static HashSet<ThingDef> BuildForcedNow(float tempC, Pawn pawn, HashSet<ThingDef> protectedDefs,
+        HashSet<ThingDef> avoided)
     {
         var set = new HashSet<ThingDef>();
 
@@ -631,6 +634,7 @@ public static class TemperatureApparelPreferencePatches
             sb.Append(d.defName);
             if (n >= max) break;
         }
+
         if (n == 0) return "(none)";
         return sb.ToString();
     }
@@ -640,12 +644,12 @@ public static class TemperatureApparelPreferencePatches
         if (pawn == null) return "null";
         try
         {
-            return pawn.LabelShortCap + "|" + (pawn.Faction != null ? pawn.Faction.Name : "null") + "|" + pawn.thingIDNumber;
+            return pawn.LabelShortCap + "|" + (pawn.Faction != null ? pawn.Faction.Name : "null") + "|" +
+                   pawn.thingIDNumber;
         }
         catch
         {
             return pawn.ToStringSafe();
         }
     }
-
 }

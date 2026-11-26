@@ -1,5 +1,7 @@
-namespace FCP.Core;
+﻿namespace FCP.Core;
+// ReSharper disable FieldCanBeMadeReadOnly.Global
 
+[UsedImplicitly]
 public class CompProperties_TemperatureApparelPreference : CompProperties
 {
     public bool enabled = true;
@@ -38,4 +40,9 @@ public class CompProperties_TemperatureApparelPreference : CompProperties
                          " TemperatureApparelPreference has no thresholds configured (set at least one of forceBelowTempC, avoidAboveTempC, forceAboveTempC, avoidBelowTempC).";
         }
     }
+}
+
+public class CompTemperatureApparelPreference : ThingComp
+{
+    public CompProperties_TemperatureApparelPreference Props => (CompProperties_TemperatureApparelPreference)props;
 }

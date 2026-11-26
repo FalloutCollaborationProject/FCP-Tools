@@ -10,8 +10,8 @@ public static class TemperatureApparelPreferenceCompatibility
     private static readonly ConcurrentDictionary<ThingDef, object> cachedExtensions =
         new ConcurrentDictionary<ThingDef, object>();
 
-    private static Type harmonyInitType;
-    private static Type apparelExtensionType;
+    private static readonly Type harmonyInitType;
+    private static readonly Type apparelExtensionType;
 
     private static MethodInfo getModExtensionClosed;
     private static FieldInfo shouldHideBodyField;
@@ -44,15 +44,14 @@ public static class TemperatureApparelPreferenceCompatibility
     private static void BindFalloutCoreHandles()
     {
         MethodInfo openGeneric = null;
-        var methods = typeof(Def).GetMethods(BindingFlags.Public | BindingFlags.Instance);
-        for (int i = 0; i < methods.Length; i++)
+        MethodInfo[] methods = typeof(Def).GetMethods(BindingFlags.Public | BindingFlags.Instance);
+        foreach (MethodInfo methodInfo in methods)
         {
-            var m = methods[i];
-            if (m.Name != "GetModExtension") continue;
-            if (!m.IsGenericMethodDefinition) continue;
-            if (m.GetParameters().Length != 0) continue;
+            if (methodInfo.Name != "GetModExtension") continue;
+            if (!methodInfo.IsGenericMethodDefinition) continue;
+            if (methodInfo.GetParameters().Length != 0) continue;
 
-            openGeneric = m;
+            openGeneric = methodInfo;
             break;
         }
 
